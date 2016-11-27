@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Roma install on tei-c.org</title>
+                <author>Martin Holmes</author>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <date>2015-12-29</date>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <p>freely available</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born-digital document</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    
+    <text>
+        <front>
+            <div>
+                <p>During the fall of 2015, Martin Holmes and Ian Rifkin worked on deploying a new version 
+                of Roma with a minor bugfix on tei-c.org, and formalized a previously rather ad-hoc setup
+                so that future bugfixes and updates might be less mysterious. This document explains how the 
+                current setup works, and how to deploy an updated version of Roma.</p>
+            </div>
+        </front>
+        <body>
+            <div>
+                <head>Where is Roma on tei-c.org?</head>
+                
+                <p>Roma, a helpful but rather outdated front end which enables people to create customized 
+                ODD files and schemas in a GUI interface, is available for public use here:
+                <list>
+                    <item><ref target="http://www.tei-c.org/Roma/">http://www.tei-c.org/Roma/</ref></item>
+                </list>
+            If you click on "Start" to enter the process, you will see that the footer of the page shows 
+            detailed information about the current Roma version as well as the version of P5 it is using.
+            </p>
+            
+            <p>If you have permission to log into the tei-c server, you will find it quite difficult to 
+            locate the actual running versions of Roma; they are (for largely historical reasons) located in
+            <list>
+                <item><code>/var/www/vhosts/tei-c.org/opencms_tomcat/usr/share</code></item>
+            </list>
+            
+            In that directory, you will find multiple versions of the Roma codebase, in folders named for their
+            versions:
+            
+            <list>
+                <item><code>tei-roma-4.15</code></item>
+                <item><code>tei-roma-4.18</code></item>
+            </list>
+                
+                Each of these versions is working and available on a special URL based on its version number:
+                
+                <list>
+                    <item><code>http://www.tei-c.org/Roma-4.15/</code></item>
+                    <item><code>http://www.tei-c.org/Roma-4.18/</code></item>
+                </list>
+                
+                In addition, there is a symbolic link, which at the time of writing points thus:
+                
+                <list>
+                    <item><code>tei-roma -&gt; tei-roma-4.18</code></item>
+                </list>
+                
+                This means that the current "live" version is 4.18.
+            </p>
+            </div>
+            
+            <div>
+                <head>How to deploy a new version</head>
+                
+                <p>Although Roma is not currently in active development, from time to time, bugfixes may be 
+                made and new versions deployed. This is how to do that:</p>
+                
+                <list>
+                    <item>Fix bugs on the <ref target="https://github.com/TEIC/Roma">GitHub repository</ref>.</item>
+                    <item>Check out a fresh version from the GitHub repo into a folder in the deployment location,
+                    naming the folder based on the version number of the new version:
+                        <list>
+                            <item><code>/var/www/vhosts/tei-c.org/opencms_tomcat/usr/share/tei-roma-4.20</code></item>
+                        </list>
+                    </item>
+                    <item>Test the new version thoroughly using its version-based URL:
+                        <list>
+                            <item><code>http://www.tei-c.org/Roma-4.20/</code></item>
+                        </list>
+                        which will be available automatically through the Apache configuration.
+                    </item>
+                    <item>When you are confident that it's working correctly, ask the server administrator 
+                    (currently Ian Rifkin) to update the symbolic link so that it becomes the current live
+                    version. (You may be able to do this yourself.)</item>
+                </list>
+            </div>
+            
+            <div>
+                <head>Configuration of Roma to run on tei-c.org</head>
+                
+                <p>The configuration of Roma is controlled by a number of files:
+                <list>
+                    <item><code>VERSION</code>, which contains the Roma version number. When doing a bugfix, don't forget 
+                    to update this file.</item>
+                    <item><code>roma/config.php</code>, which has all the URLs pointing to OxGarage and the eXist XML database
+                    required for Roma to function, as well as some local paths. It is recommended that you copy the config.php
+                    from the previous live version of Roma into a new deployment, and then just make a couple of required 
+                    tweaks (such as changing the release date and the version number).</item>
+                    <item><code>roma/templates/main.tem</code>. Due to <ref target="https://github.com/TEIC/Roma/issues/10">a bug</ref>, 
+                        this file must also be updated to provide the date of the roma release, in order for the correct date
+                    to appear in the footer of pages.</item>
+                </list>
+                </p>
+            </div>
+            
+            <div>
+                <head>What does Roma depend on?</head>
+                
+                <p>
+                    Roma does not do a great deal of real work itself. Instead, it requires a number of resources and services 
+                    in order to work; these are apparent in the configuration file:<lb/>
+                    
+                <code>
+                    define ( 'roma_xquery_server',       'http://www.tei-c.org/Query/' );
+                </code><lb/>
+                
+                Roma uses the P5 Subset file retrieved via an XQuery call to the eXist XML 
+                database running on tei-c.org as a source of 
+                    information on the modules, classes, elements and attributes available in the current release version 
+                    of P5. That's why the eXist XML database must be updated as part of a P5 release.<lb/>
+                    
+                    <code>
+                        define ( 'roma_teiweb_server',       'http://www.tei-c.org/release/doc/tei-p5-doc/' );
+                    </code><lb/>
+                    
+                In other operations such as adding elements and attributes to a schema, it retrieves information
+                from the current live version of TEI P5 on the tei-c server.<lb/>
+                    
+                    <code>
+                        define ( 'oxgarage_server',          'http://www.tei-c.org/ege-webservice');
+                    </code><lb/>
+                    
+                    Finally, in order to transform an ODD file into a schema or into documentation, it calls on 
+                    the web service provided by OxGarage.</p>
+                
+                <p>In order for Roma to function correctly, all these services have to be updated to matching 
+                versions, including (in the case of OxGarage) the latest version of the Stylesheets.</p>
+            </div>
+            
+        </body>
+    </text>
+</TEI>
