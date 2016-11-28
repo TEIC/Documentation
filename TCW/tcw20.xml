@@ -113,9 +113,9 @@ introduce or define particular modules.  </p>
                 <gi>specList</gi> to reference the description from your new spec within the body of
               the text, like this:
 <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
-<p>This module also defines the following canonical element: <specList>
-<specDesc key="saintName"/>
-</specList></p>
+  <p>This module also defines the following canonical element: <specList>
+    <specDesc key="saintName"/>
+  </specList></p>
 </egXML> 
 
 and follow up with some discussion of usage.
@@ -310,11 +310,11 @@ attribute is defined, you'll find this constraint, inside the <gi>attDef</gi> fo
         
         <exemplum xml:lang="en">
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
-<constraintSpec ident="targetLang" scheme="isoschematron">
-             <constraint>
+            <constraintSpec ident="targetLang" scheme="isoschematron">
+              <constraint>
                 <sch:rule context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
                   <sch:assert test="count(@target)">@targetLang can only be used if 
-                       @target is specified.</sch:assert>
+                    @target is specified.</sch:assert>
                 </sch:rule>
               </constraint>
             </constraintSpec>
@@ -334,19 +334,19 @@ We'll go through the process of adding a constraint like the one above. The cons
 the <att>calendar</att> attribute. <att>calendar</att> <q>indicates the system or calendar to which the date represented by the content of this element belongs.</q> In other 
 words, <att>calendar</att> should only be used if the dating element has textual content. This makes sense (assuming that <att>calendar</att> points at a valid <gi>calendar</gi> element):
         
-        <exemplum xml:lang="en">
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
-<date calendar="#julian">January, 1622</date>
-          </egXML>
-        </exemplum>
+          <exemplum xml:lang="en">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
+              <date calendar="#julian">January, 1622</date>
+            </egXML>
+          </exemplum>
         
    whereas this is not:
         
-        <exemplum xml:lang="en">
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
-<date when="1622" calendar="#julian"/>
-          </egXML>
-        </exemplum>
+          <exemplum xml:lang="en">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
+              <date when="1622" calendar="#julian"/>
+            </egXML>
+          </exemplum>
         
         because the <gi>date</gi> element has no textual content to which the <att>calendar</att> attribute could apply. We're going to express this in the form of a Schematron 
 constraint, along the lines of the one we've examined above. First, we open the att.datable.xml file, and find the <gi>attDef</gi> element which defines <att>calendar</att>. 
@@ -398,16 +398,16 @@ our tests to one of these files. The question is which one? We'll add it to the 
 which should contain all the dating features we're interested in testing. If we look at that file, we find there are already several date elements in there, so we can try adding our 
 <att>calendar</att> attribute to one of those. Let's choose the date of 1685 on a dictionary entry sense:
         
-        <exemplum xml:lang="en">
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
-<sense>
-              <date calendar="http://en.wikipedia.org/wiki/Julian_calendar">1685</date>
-              <form>
-                <orth>pamplemousse </orth>
-              </form>
-            </sense>
-          </egXML>
-        </exemplum>
+          <exemplum xml:lang="en">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
+              <sense>
+                <date calendar="http://en.wikipedia.org/wiki/Julian_calendar">1685</date>
+                <form>
+                  <orth>pamplemousse </orth>
+                </form>
+              </sense>
+            </egXML>
+          </exemplum>
         
         We could go to the trouble of adding <gi>calendarDesc</gi> and <gi>calendar</gi> to the header of the file so we can point to a calendar element in the same document, 
 but since <att>calendar</att> is a <ident>data.pointer</ident>, we can point to an external source of calendar information.</p>
@@ -415,14 +415,14 @@ but since <att>calendar</att> is a <ident>data.pointer</ident>, we can point to 
         <p>We also want to add, somewhere, a date element which has no textual content and no <att>calendar</att> attribute. We might as well do this in the header, 
 by adding a simple <gi>revisionDesc</gi> element, which gives us the added bonus of being able to describe our change:
         
-        <exemplum xml:lang="en">
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
-<revisionDesc>
-              <change>&lt;date when="2012-09-06"/>MDH: Added @calendar to one date, and the date 
-                element in here, for testing a new Schematron constraint.</change>
-            </revisionDesc>
-          </egXML>
-       </exemplum>
+          <exemplum xml:lang="en">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
+              <revisionDesc>
+                <change>&lt;date when="2012-09-06"/>MDH: Added @calendar to one date, and the date 
+                  element in here, for testing a new Schematron constraint.</change>
+              </revisionDesc>
+            </egXML>
+          </exemplum>
         
         Now we can commit our change, and see if the build of TEIP5-Test completes successfully on our Jenkins servers.</p>
         
