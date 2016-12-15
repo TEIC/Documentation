@@ -222,7 +222,7 @@
             </item>
           <item><hi rend="bold">Merge the release branch into <code>master</code></hi><lb/>
             <code>git checkout master</code><lb/>
-            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" origin/release-X.X.X</code></item>
           <item><hi rend="bold">Push your changes</hi> to the git repository, <code>git push origin
               master</code><lb/> and watch Jenkins build P5 for you.<lb/> This should be the final
             push for this version, and it will trigger the Jenkins servers into rebuilding the TEI
