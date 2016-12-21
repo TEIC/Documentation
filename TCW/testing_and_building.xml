@@ -66,7 +66,7 @@
           The directory containing your repositories will be mapped to a directory in the container
           (which is why it's easier to put them side-by-side). You'll run the test container with a
           command like: 
-          <lb/><code>docker run -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York teidev-docker /bin/bash</code>
+          <lb/><code>docker run -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York teic/teidev-docker /bin/bash</code>
           <lb/>Which will put you in a Bash shell inside the container, at the root directory. If
           you do <code>cd tei</code> and then <code>ls</code>, you should see the repos you cloned
           above. There's one more piece of work to be done, and that's to tell the Guidelines build
