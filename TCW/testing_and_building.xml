@@ -7,12 +7,14 @@
     <fileDesc>
       <titleStmt>
         <title>Building and Testing the TEI Guidelines and Stylesheets</title>
+        <author>Hugh Cayless</author>
       </titleStmt>
       <publicationStmt>
-        <p>Publication information</p>
+        <publisher>TEI Technical Council</publisher>
+        <date>2016</date>
       </publicationStmt>
       <sourceDesc>
-        <p>Information about the source</p>
+        <p>Born digital document.</p>
       </sourceDesc>
     </fileDesc>
   </teiHeader>
