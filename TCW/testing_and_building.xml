@@ -87,12 +87,12 @@
           shell, you can browse to this folder, find the index.html file, and open it in a browser.
           “Make” is a program typically used for compiling programs, but it’s also very useful as a 
           kind of generic batch scripting tool, which is how it’s being used here. In the
-          Guidelines, you’ll typically want to run make inside the <code>P5/</code> directory and in
+          Guidelines, you’ll typically want to run Make inside the <code>P5/</code> directory and in
           the Stylesheets, you’ll want to run it at the top of the repo (in
           <code>Stylesheets/</code>. You can also run Make in any directory that contains a
           <code>Makefile</code>. Note that the targets may vary. Running <code>make</code> inside
-          <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code> on
-          level up. You can also run individual test targets if, e.g., there’s a particular set of
+          <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code> one
+          level up. But you can also run individual test targets there if, e.g., there’s a particular set of
           tests you want to troubleshoot. The targets are all defined in the
           <code>Makefile</code>s.</p>
         <p>The <ref target="http://www.tei-c.org/Guidelines/P5/get.xml">Using the TEI GitHub
