@@ -91,18 +91,11 @@
           the Stylesheets, you’ll want to run it at the top of the repo (in
           <code>Stylesheets/</code>. You can also run Make in any directory that contains a
           <code>Makefile</code>. Note that the targets may vary. Running <code>make</code> inside
-<<<<<<< cb9b88252b2f11e1391a711ab6f4b8beee74543a
-          <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code> one
-          level up. But you can also run individual test targets there if, e.g., there’s a particular set of
-          tests you want to troubleshoot. The targets are all defined in the
-          <code>Makefile</code>s.</p>
-=======
           <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code>
           one level up. You can also run individual test targets if, e.g., there’s a particular set 
           of tests you want to troubleshoot (e.g. <code>make test-oddity</code> in
           <code>Stylesheets/Test</code> to test ODD-conversion methods). The targets are all defined
           in the <code>Makefile</code>s.</p>
->>>>>>> Updated docs.
         <p>The <ref target="http://www.tei-c.org/Guidelines/P5/get.xml">Using the TEI GitHub
           Repository</ref> document has more detail on all the processes you can run, and very
           meager information on how to get set up to run them—but you just bypassed all that.
