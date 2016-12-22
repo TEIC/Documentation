@@ -92,7 +92,7 @@
           <code>Stylesheets/</code>. You can also run Make in any directory that contains a
           <code>Makefile</code>. Note that the targets may vary. Running <code>make</code> inside
           <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code>
-          one level up. You can also run individual test targets if, e.g., there’s a particular set 
+          one level up. You can also run individual test targets if there’s a particular set 
           of tests you want to troubleshoot (e.g. <code>make test-oddity</code> in
           <code>Stylesheets/Test</code> to test ODD-conversion methods). The targets are all defined
           in the <code>Makefile</code>s.</p>
