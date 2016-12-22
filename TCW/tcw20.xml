@@ -240,7 +240,11 @@ processing instruction. If you think of other content that could be generated in
           contain xml-model processing instructions linking them to the latest version 
           of the NVDL file used for validation of the P5 source.</item>
           <item>If you have a locally installed P5 build environment, make sure you can still build,
-            and that the examples are still valid. If you don't, just use git to check your updated version back in and wait for our two <ident>Jenkins</ident> Continuous Integration servers (<ptr target="http://jenkins.tei-c.org/"/> and <ptr target="http://jenkins2.tei-c.org/"/>) to assess your work.</item>
+            and that the examples are still valid. You can set up a Docker-based build environment
+            by following the instructions in <ptr
+              target="http://teic.github.io/TCW/testing_and_building.html"/>. If you have a build
+            environment nor the means to set one up, just use git to push your updated version to
+            GitHub and wait for our two <ident>Jenkins</ident> Continuous Integration servers (<ptr target="http://jenkins.tei-c.org/"/> and <ptr target="http://jenkins2.tei-c.org/"/>) to assess your work.</item>
           <item>Check in your changes:
             <list>
               <item>If the file is new, add it to the git repository: <code>git add filename.xml</code></item>
