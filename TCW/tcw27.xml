@@ -59,11 +59,9 @@
                   to remove an element or attribute, or to remove an element or attribute entirely
                   from the Guidelines. In this case:</p>
                <list>
-                  <item>The appropriate spec is modified to add <att>validUntil</att> on the appropriate
-                        <gi>elementSpec</gi>, <gi>classRef</gi>, or <gi>attDef</gi> elements. The
-                     value of <att>validUntil</att> shall be no sooner than two years from the date of the
-                     change (thus guaranteeing <emph>at least</emph> one year from the release in which the
-                     deprecation is announced to the change in which the feature disappears).</item>
+                  <item>The appropriate specification is given a <att>validUntil</att> attribute indicating the intended date 
+                     after which the specification will be withdrawn. Specifications which can be deprecated this way are all 
+                     members of the class <ident type="class">att.deprecated</ident>.</item>
                   <item>An announcement is sent to TEI-L that the Technical Council has decided to 
                      depreacate elementName and will drop it as early as YYYY-MM-DD. If anyone strongly objects, 
                      they should reply to the list so that the Council might reconsider.</item>
