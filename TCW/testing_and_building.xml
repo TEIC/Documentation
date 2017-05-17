@@ -68,9 +68,9 @@
           The directory containing your repositories will be mapped to a directory in the container
           (which is why it’s easier to put them side-by-side). You’ll run the test container with a
           command like: 
-          <lb/><code>docker run -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
-            teic/teidev-docker /bin/bash</code>
-          <lb/>which will put you in a Bash shell inside the container, at the root directory.
+          <lb/><code>docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
+            teic/teidev-docker</code>
+          <lb/>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
           The directory on your local file system where you cloned the TEI and
           Stylesheets repos is mapped to <code>/tei</code> in the container (that’s the part after
           <code>-v</code> above). If you then do <code>cd tei</code> and then <code>ls</code>, you
@@ -80,7 +80,14 @@
           So,  (from <code>/tei</code>) do <code>cd TEI/P5</code> and then 
           <code>echo "XSL=/tei/Stylesheets" > local.mk</code>. Now
           you can build things! And, what’s more, you can work on the Guidelines and Stylesheets in
-          your regular environment, and test them in Docker.</p>
+          your regular environment, and test them in Docker. The Docker command above will create a
+          container named “tei”, which you can return to later. Because it runs a Bash terminal, you
+          can exit it by typing <code>exit</code> at the command prompt, and that will stop the 
+          container. You can restart it with a command like <code>docker start -ai tei</code>, which
+          will start the container and attach your terminal to it, with whatever state it was in
+          when you left it. You may want to alias a simple command like <code>teidocker</code> to 
+          <code>docker start -ai tei</code>.
+        </p>
         <p>To build the HTML version of the Guidelines, for example, you can run (in
             <code>/tei/TEI/P5</code>) <code>make html-web</code>, and after the process finishes,
           you’ll have a directory called “Guidelines-web” in your P5 directory. Outside your Docker
