@@ -160,6 +160,8 @@
           <head>1-2 weeks before release:</head>
           <item>Ask one of the Jenkins maintainers (currently Martin Holmes, Peter Stadler, and 
             James Cummings) to run a link check on the Guidelines and fix broken links in the dev branch</item>
+          <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
+            (The GPG private key itself is hosted on the server at the default location.)</item>
           <item>At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
             features. A release branch will be created by the release technician, to which ONLY
@@ -316,11 +318,16 @@
               target="http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-2.9.1.zip"
               >Jenkins</ref>. NOTE: THIS STEP WILL BE AUTOMATED SOON.</item>
 
-          <item><hi rend="bold">Inform the Debian Package Maintainer of the new release</hi><lb/>
-            <emph>Note: This step may change as we review Debian Package Creation</emph> The Debian
-            repository can only be updated by its maintainers, so let the Debian Package Maintainer
-            know that your release is done, so they can grab the new packages and add them to the
-            repository. </item>
+          <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
+            The TEI Debian packages are regularily created during each Jenkins build. 
+            For each release you need to update the TEI Debian repository at 
+            <ref target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> 
+            which can be done by simply running <code>ant</code> on the TEI server within the 
+            <code>~/packages.tei-c.org/deb/</code> directory. 
+            (The ANT script is currently hosted at <ref target="https://github.com/peterstadler/TEI-apt-repo">Peter's GitHub</ref>.)
+            <emph>Since the repository index needs to be signed, you'll need the passphrase for the GPG key.</emph> 
+            Make sure you've received it in advance! 
+          </item>
 
           <item><hi rend="bold">Update the list of <ref
                 target="http://www.tei-c.org/Guidelines/P5/index.xml#previous">Previous releases of
