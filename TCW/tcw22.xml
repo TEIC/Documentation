@@ -181,7 +181,10 @@
         <list type="ordered">
           <head>On release day:</head>
           <item>The instructions below for Git commands are assumed to be run in the release-X.X.X
-            branch unless otherwise specified.
+            branch unless otherwise specified. If you did not create the release branch, you can 
+            set up a copy of it using the following commands:<lb/>
+            <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
+            <code>git checkout --track origin/release-X.X.X</code>
           </item>
           <item><hi rend="bold">Ensure that P5/ReleaseNotes/readme-X.X.X.xml has been
             written</hi><lb/> Normally, this will have been created by the TEI Council chair at the
@@ -228,8 +231,8 @@
           <item><hi rend="bold">Merge the release branch into <code>master</code></hi><lb/>
             <code>git checkout master</code><lb/>
             <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-          <item><list type="ordered">
-            <head>Repeat the steps above for the Stylesheets</head>
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets:</hi>
+            <list type="ordered">
             <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
               remove the 'a').</item>
             <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
@@ -245,11 +248,15 @@
             to rebuild the TEI packages. This is where you'll find the Jenkins servers: <list>
               <item><ptr target="http://jenkins.tei-c.org/"/></item>
               <item><ptr target="http://jenkins2.tei-c.org/"/></item>
-            </list> And now you wait, and watch the Jenkins servers build the packages. This can
+            </list> And now you wait while the Jenkins servers build the packages. This can
             take a couple of hours, so be patient. Both of the Jenkins servers should behave
-            identically, and they should both build all three TEI packages successfully. </item>
+            identically, and they should both build all three TEI packages successfully. 
+            <hi rend="bold">Note</hi>: The P5 and Stylesheets builds have circular dependencies,
+            so the first build of either the Stylesheets or the Guidelines may fail just because
+            there isn't yet a current build of the other for it to use. This isn't a cause for
+            panic, but it may mean that (e.g.) the Stylesheets build needs to run twice.</item>
           <item><hi rend="bold">Ensure all changes have been committed, built, and successfully
-              passed tests on the continual integration server</hi><lb/> When all builds have
+              passed tests on the continuous integration server</hi><lb/> When all builds have
             completed on both servers, click on the job number of the last build for each of the
             three TEI jobs to make sure that it was triggered by the commit that you made in the
             previous step (you should see your own commit message on the build page). Make sure that
@@ -330,7 +337,7 @@
             http://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html. Add a copy of the zipped
             release from <ref
               target="http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-2.9.1.zip"
-              >Jenkins</ref>. NOTE: THIS STEP WILL BE AUTOMATED SOON.</item>
+              >Jenkins</ref>. </item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
             The TEI Debian packages are regularily created during each Jenkins build. 
@@ -412,20 +419,13 @@
             Write to the TEI Council list and let them know that they can once again start
             committing changes to the repository.</item>
 
-          <item><hi rend="bold">Inform the Stylesheets maintainer that a new release has been
-              completed</hi><lb/> The TEI Stylesheets project depends on the current release of P5,
-            and when a new release appears, the tests which are part of the stylesheet build process
-            will probably fail, breaking the build. The maintainer will have to change the tests in
-            accordance with the new release of P5. This can only be done after the release process
-            has been completed. Refer to the TEI Council chair to find out who the current
-            Stylesheets maintainer is.</item>
           <item><hi rend="bold">Increment the build number for the next release cycle</hi><lb/>
-            After the release process has been completed, the release number in the repository needs
-            to be updated. Edit the P5/VERSION file to the correct number. This file contains
-            nothing except the bare version number. It should be incremented appropriately, and "a"
-            added to the end of it, so if for example the release was number 2.8.2, you would change
-            the number in the file to:<lb/>
-            <code>2.8.3a</code><lb/> signifying that the versions built subsequent to the release
+            After the release process has been completed, the release number for both P5 and the
+            Stylesheets needs to be updated. Edit the P5/VERSION file and the Stylesheets/VERSION
+            file to the correct numbers. These files contain nothing except the bare version number. 
+            It should be incremented appropriately, and "a" added to the end of it, so if for example 
+            the release was number 2.8.0, you would change the number in the file to:<lb/>
+            <code>2.9.0a</code><lb/> signifying that the versions built subsequent to the release
             are now in the alpha stage. </item>
 
         </list>
