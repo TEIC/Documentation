@@ -180,6 +180,9 @@
         </list>
         <list type="ordered">
           <head>On release day:</head>
+          <item>The instructions below for Git commands are assumed to be run in the release-X.X.X
+            branch unless otherwise specified.
+          </item>
           <item><hi rend="bold">Ensure that P5/ReleaseNotes/readme-X.X.X.xml has been
             written</hi><lb/> Normally, this will have been created by the TEI Council chair at the
             point when the repository moved from its "alpha" stage to "beta", so you should not have
@@ -216,7 +219,7 @@
             <code>2.8.3alpha</code><lb/> signifying that the versions built subsequent to the
             release are now in the alpha stage. </item>
 
-          <item><hi rend="bold">Announce a temporary freeze on pushes to the release branch on the
+          <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
           <item>In the P5 directory, do<lb/>
             <code>make changelog</code><lb/> to generate an updated ChangeLog file. Then commit the
@@ -224,11 +227,22 @@
             </item>
           <item><hi rend="bold">Merge the release branch into <code>master</code></hi><lb/>
             <code>git checkout master</code><lb/>
-            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" origin/release-X.X.X</code></item>
-          <item><hi rend="bold">Push your changes</hi> to the git repository, <code>git push origin
-              master</code><lb/> and watch Jenkins build P5 for you.<lb/> This should be the final
-            push for this version, and it will trigger the Jenkins servers into rebuilding the TEI
-            packages. This is where you'll find the Jenkins servers: <list>
+            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+          <item><list type="ordered">
+            <head>Repeat the steps above for the Stylesheets</head>
+            <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
+              remove the 'a').</item>
+            <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
+            <item>Merge the release branch into <code>master</code><lb/>
+              <code>git checkout master</code><lb/>
+              <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
+            </item>
+          </list>
+          </item>
+          <item><hi rend="bold">Push your changes</hi> for both P5 and the Stylesheets to the git 
+            repository, <code>git push origin master</code><lb/> and watch Jenkins build P5 for you.<lb/> 
+            This should be the final push for this version, and it will trigger the Jenkins servers 
+            to rebuild the TEI packages. This is where you'll find the Jenkins servers: <list>
               <item><ptr target="http://jenkins.tei-c.org/"/></item>
               <item><ptr target="http://jenkins2.tei-c.org/"/></item>
             </list> And now you wait, and watch the Jenkins servers build the packages. This can
