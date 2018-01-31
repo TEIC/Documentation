@@ -311,7 +311,7 @@
 
           <item><hi rend="bold">Check the TEI website and all downloadable files are displaying the
               correct version</hi><lb/> Everything should now be done, so go to <ref
-              target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html">the newly
+              target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">the newly
               released version on the TEI site</ref> and browse the Guidelines. Check that your
             version number is displayed in the footer of the page, and check that at least one
             change made since the last release is being reflected online. Visit Roma at <ptr
@@ -329,7 +329,8 @@
           <item>
             <hi rend="bold">Update tags on GitHub</hi><lb/> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
-            You can do this from the command line on your own computer. This is how to do it:<lb/>
+            You can do this from the command line on your own computer. Still in the master branch,
+            do:<lb/>
             <code>git tag -a P5_Release_X.X.X -m "Release X.X.X of the TEI Guidelines."</code><lb/>
             where X.X.X is your new release. Then<lb/>
             <code>git push origin P5_Release_X.X.X</code>
