@@ -266,12 +266,13 @@
             <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/>
             <code>ssh tei@tei-c.org</code><lb/>
             <code>cd ~/private/git/P5</code> then run <code>git pull</code><lb/>then <code>cd
-              Utilities</code> (this is where the scripts are)<lb/> (running git pull will update
-            the local copy of the git repository because the scripts in that the release technician
-            is using are <emph>in</emph> git. You should <emph>not</emph> be editing these scripts
-            locally on tei-c.org instead, edit them and commit them to the git repository. Wherever
-            possible there should be no special local magic files.)<lb/> Do the following three
-            steps: <list>
+              Utilities</code> (this is where the scripts are, cf. 
+            <ptr target="https://github.com/TEIC/TEI/tree/dev/P5/Utilities"/>).<lb/> 
+            Running <code>git pull</code> will update the local copy of the git repository because the 
+            scripts that the release technician is using are <emph>in</emph> git. If something goes wrong, 
+            and you need to edit the scripts described here, make certain that any changes make it
+            back into the dev branch on GitHub. Wherever possible there should be no special local magic 
+            files.<lb/> Do the following three steps: <list>
               <item>Install locally: <code>./tei-install.sh --package=TEIP5 --version=X.X.X
                   --sfuser=username --install</code> and then <emph>go test the version this puts in
                   the Vault</emph>.</item>
@@ -289,8 +290,12 @@
             the script completes successfully each time changing the final parameter from --install,
             to --makecurrent, and then --upload. </item>
           
-          <item>NOTE (MDH 2016-04-02): STEPS SIMILAR TO THE ABOVE SHOULD BE ADDED TO COVER THE 
-          RELEASE AND MAKING CURRENT OF THE STYLESHEETS.</item>
+          <item>To upload the Stylesheets to SourceForge, run the install script again with the 
+          following parameters:<lb/>
+            <code>./tei-install.sh --package=Stylesheets
+              --version=X.X.X --sfuser=username --upload</code><lb/>
+          Remember, the version number is the Stylesheets version, which will be different from
+          the Guidelines version.</item>
 
           <item>Still in ~/private/git/P5/Utilities, run<lb/>
             <code>./tei-database-rebuild.sh</code><lb/> This will update the eXist-db used by Roma.
