@@ -110,10 +110,8 @@
             are below). Take a little time to watch them work, and see how a push to the GitHub
             repository causes them to start building TEI packages. There are three specific build
             jobs associated with P5, and they run in a fixed sequence.</item>
-          <item>A nickname for <code>irc.freenode.net</code>, so you can log into
-              <code>#tei-c</code> channel for live help from other Council members. For more
-            information, see <ref target="http://wiki.tei-c.org/index.php/IRC">the TEI wiki page on
-              IRC</ref>.</item>
+          <item>Access to the <ref target="https://tei-c.slack.com">TEI Council Slack</ref> 
+            which will be the communication channel during the release process.</item>
           <item>Several hours of time. You won't be busy all the time, but the process from
             beginning to end takes several hours, especially if something goes a bit wrong and you
             have to retrace your steps. It's best to start first thing in the morning, and prepare
@@ -126,7 +124,7 @@
             SourceForge. <list>
               <item>log in to the tei server (ssh tei@tei-c.org; this requires that you've completed
                 the other public key step above).</item>
-              <item>cat ~/.ssh/id_rsa.pub and copy the contents to the clipboard.</item>
+              <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
               <item>paste the result into a text editor and remove any linebreaks added by the
                 terminal.</item>
               <item>copy-paste the result into https://sourceforge.net/account/ssh</item>
@@ -158,8 +156,8 @@
 
         <list type="ordered">
           <head>1-2 weeks before release:</head>
-          <item>Ask one of the Jenkins maintainers (currently Martin Holmes, Peter Stadler, and 
-            James Cummings) to run a link check on the Guidelines and fix broken links in the dev branch</item>
+          <item>Ask one of the Jenkins maintainers (currently Martin Holmes, and Peter Stadler) 
+            to run a link check on the Guidelines and fix broken links in the dev branch</item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
             (The GPG private key itself is hosted on the server at the default location.)</item>
           <item>At least one week before releasing, we enter a review period, during which the only
