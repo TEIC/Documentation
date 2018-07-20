@@ -9,11 +9,11 @@ $LastChangedRevision: 0001$
     <fileDesc>
       <titleStmt>
         <title>Style Guide for Editing the TEI Guidelines</title>
-        <author>Rebecca Welzenbach</author>
+        <author>TEI Technical Council</author>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
-        <date>2012</date>
+        <date>2018</date>
       </publicationStmt>
       <sourceDesc>
         <p>The first draft of this document was created by moving the "House Style: preferred
@@ -23,17 +23,18 @@ $LastChangedRevision: 0001$
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
-      <change when="2016-03-11" who="HAC">Added egXML guidance</change>
-      <change when="2013-09-02" who="KSH">Link to BCP 14</change>
-      <change when="2013-03-16" who="KSH">Fixed ptrs</change>
-      <change when="2013-02-01" who="KSH">"TEI header" is preferred</change>
-      <change when="2013-01-27" who="KSH">Explained -ize vs. -ise. Also a markup fix.</change>
-      <change when="2012-01-08" who="KSH">desc's for attributes should also be verbal phrases</change>
-      <change when="2012-12-28" who="KSH">Added note about desc elements containing verbal 
+      <change when="2018-07-20" who="#JC">Added section on modal verbs</change>
+      <change when="2016-03-11" who="#HAC">Added egXML guidance</change>
+      <change when="2013-09-02" who="#KSH">Link to BCP 14</change>
+      <change when="2013-03-16" who="#KSH">Fixed ptrs</change>
+      <change when="2013-02-01" who="#KSH">"TEI header" is preferred</change>
+      <change when="2013-01-27" who="#KSH">Explained -ize vs. -ise. Also a markup fix.</change>
+      <change when="2012-01-08" who="#KSH">desc's for attributes should also be verbal phrases</change>
+      <change when="2012-12-28" who="#KSH">Added note about desc elements containing verbal 
         phrases; some light copyediting</change>
-      <change when="2012-08-09" who="RAW">Adding prose about use of first-person/"we" and
+      <change when="2012-08-09" who="#RAW">Adding prose about use of first-person/"we" and
         second-person/"you" in the Guidelines. </change>
-      <change when="2012-08-06" who="RAW">started first draft: moving sections from TCW20, "How to
+      <change when="2012-08-06" who="#RAW">started first draft: moving sections from TCW20, "How to
         Edit the TEI Guidelines" to their own document. Re-ordered some sections, proofread, added
         some examples, and added discussion of hyphenation. </change>
     </revisionDesc>
@@ -270,6 +271,35 @@ $LastChangedRevision: 0001$
           <item>Similarly, examples often omit text that doesn't serve the purpose of the example.
             Such text is to be marked with an ellipsis in square brackets, thus: <code>[...]</code>.</item>
         </list>
+      </div>
+      
+      <div xml:id="modal-verbs">
+        <head>The use of modal verbs</head>
+        <p>In general the TEI guidelines try to be careful when using modal verbs and phrases such as 'must', 'must not, 
+          'should', 'should not' and 'may'. In terms of the meanings, these generally follow <ref target="https://tools.ietf.org/html/bcp14">https://tools.ietf.org/html/bcp14</ref> in the different meanings of these words.
+          In particular:
+          <list type"gloss">
+            <label>MUST</label>
+            <item>This word, or the terms "REQUIRED" or "SHALL", mean that this is an absolute requirement of the TEI Guidelines 
+              for production of a TEI conformant file.</item>
+            <label>MUST NOT</label>
+            <item>This phrase, or the phrase "SHALL NOT", mean that this is an absolute prohibition of the 
+              TEI Guidelines for produciton of a TEI conformant file.</item>
+            <label>SHOULD</label>
+            <item>This word, or the adjective "RECOMMENDED", mean that there may exist valid reasons in 
+              particular circumstances to ignore a particular recommendation, but the full implications 
+              must be understood and carefully weighed before choosing a different course.</item>
+            <label>SHOULD NOT</label>
+            <item>This phrase, or the phrase "NOT RECOMMENDED" mean that there may exist valid reasons in 
+              particular circumstances when the particular behavior is acceptable or even useful, but the full implications 
+              should be understood and the case carefully weighed before implementing any behavior so described.</item>
+            <label>MAY</label>
+            <item>This word, or the adjective "OPTIONAL", mean that a recommendation is truly optional.  One user may 
+            choose to follow the recommendation because a particular project requires it or feels that
+            it enhances their work while another project may choose to not follow this recommendation.</item>
+          </list>
+          Periodic reviews of new prose must be carried out by the TEI Technical Council to ensure the use of modal verbs and phrases is clear.
+        </p>
       </div>
     </body>
     <back>
