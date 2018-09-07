@@ -1,5 +1,5 @@
 # Documentation
-Repository for current TEI Technical Council documentation while the TEI website is in transition
+Repository for current TEI Technical Council documentation 
 
 The Official working papers archive is at: http://www.tei-c.org/activities/council/working/ which should contain links to these documents but also older non-current technical council working papers.
 
