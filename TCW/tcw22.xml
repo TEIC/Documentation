@@ -222,10 +222,6 @@
 
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
-          <item>In the P5 directory, do<lb/>
-            <code>make changelog</code><lb/> to generate an updated ChangeLog file. Then commit the
-            update.
-            </item>
           <item><hi rend="bold">Merge the release branch into <code>master</code></hi><lb/>
             <code>git checkout master</code><lb/>
             <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
