@@ -4,8 +4,11 @@ $LastChangedDate: 2011-12-06$.
 $LastChangedBy: martindholmes$
 $LastChangedRevision: 8769 $
 -->
-<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/teilite.rng" type="xml"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  >
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -13,6 +16,7 @@ $LastChangedRevision: 8769 $
         <author>Lou Burnard</author>
       </titleStmt>
       <publicationStmt>
+        <publisher>Text Encoding Initiative</publisher>
         <date>2011</date>
       </publicationStmt>
       <sourceDesc>
@@ -20,6 +24,8 @@ $LastChangedRevision: 8769 $
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2018-09-16" who="MDH">Linked to schema that actually exists, and tweaked to handle the fallout.</change>
+      <change when="2018-09-16" who="MDH">Adding documentation on how to create or edit an Appendix to the Guidelines.</change>
       <change when="2016-07-08" who="MDH">Adding more documentation to clarify where some processing instructions in the Guidelines are actually processed.</change>
       <change when="2015-12-14" who="MDH">Updates to account for new Jenkins server subdomains.</change>
       <change when="2015-11-10" who="MDH">Updates to account for the change from master to dev branch on GitHub.</change>
@@ -124,13 +130,13 @@ and follow up with some discussion of usage.
 	  <item>Also in the relevant chapter, make sure you include an XInclude instruction to bring the specification 
 	  file for your element into the Guidelines source. Normally you would add it to an existing <gi>specGrp</gi>
 	  element somewhere in the chapter source which already contains similar links:
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
- <specGrp xml:id="DNDPER" n="Personal and organizational names">
-  <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/orgName.xml"/>
-  <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/saintName.xml"/>
+<eg>
+  &lt;specGrp xml:id="DNDPER" n="Personal and organizational names"&gt;
+  &lt;include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/orgName.xml"/&gt;
+  &lt;include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/saintName.xml"/&gt;
   [...]
- </specGrp>
-</egXML>
+  &lt;/specGrp&gt;
+</eg>
 	  
 	  </item>
           </list>
@@ -292,6 +298,107 @@ processing instruction. If you think of other content that could be generated in
                     file named the same as the image file (so for an image <ident>fred.png</ident>, include
                     permission documents in a file called <ident>fred.zip</ident>).</p>
         </div>
+        
+<!--      This div added by MDH 2018-09-16 following work
+          on ticket #1657. 
+        -->
+        <div xml:id="appendices">
+          <head>Adding or Editing an Appendix</head>
+          
+          <p>The Appendices to the <title level="m">TEI Guidelines</title> mostly constitute lists of features (elements, attributes, classes etc.) which have been automatically harvested from the Guidelines compiled source (<code>p5.xml</code> or <code>p5subset.xml</code>) during the build process. When adding a new appendix of this type, you need to:
+          
+          <list rend="numbered">
+          <item>Create a new <code>APPENDIXTHING.xml</code> file in the <code>TEI/P5/Source/Guidelines/en</code> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file <code>UPPERCASE.xml</code>.</item>
+          
+          <item>Add a line to <code>TEI/P5/Source/guidelines-en.xml</code> (right near the end of the file) to XInclude your file in the <title level="m">Guidelines</title>. Again, follow the examples already there. Put your new appendix in the sequence in a location that makes sense in relation to the other appendices.</item>
+          
+          <item>If your appendix listing is to be created automatically, edit the appropriate file in the Stylesheets repository (most likely Stylesheets/common/common_tagdocs.xsl) to enable it to generate the list or table (see below).</item>
+          
+          <item>If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <code>Stylesheets/i18n.xml</code>.</item>
+          </list>
+          </p>
+          
+          <p>Auto-generated appendix listings will require two things: a TEI <gi>divGen</gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <gi>divGen</gi> to create the output. For example, the list of Deprecations consists of this <code>DEPRECATIONS.xml</code> file:
+            
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="div1" xml:id="DEPRECATIONS">
+              <head>Deprecations</head>
+              <div>
+                <head>About the Deprecation Appendix</head>
+                <p>This appendix gives you a list of all items (elements,
+                  attributes, attribute values, datatypes etc.) which are deprecated
+                  in this revision of the TEI Guidelines (revision <?insert
+    revision?> of TEI P5 <?insert version?>).</p>
+              </div>
+              
+              <divGen type="deprecationcat"/>
+            </div>
+            </egXML>
+            
+            Note that there are two kinds of auto-generated content here: first, the two processing instructions 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?insert revision?&gt;</egXML> and 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?insert version?&gt;</egXML>, which are self-explanatory and can simply be used, and 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"><divGen type="deprecationcat"/></egXML>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
+            
+            If you now look at <code>Stylesheets/common/common_tagdocs.xsl</code>, you'll find this template:
+            
+            
+<eg>
+  &lt;xsl:template match="tei:divGen[@type = 'deprecationcat']"&gt;
+    &lt;xsl:element namespace="{$outputNS}" name="{$tableName}"&gt;
+      &lt;xsl:attribute name="{$rendName}"&gt;
+      &lt;xsl:text&gt;deprecationcat&lt;/xsl:text&gt;
+    &lt;/xsl:attribute&gt;
+  [...]
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+</eg>
+            
+            This template creates a table in whatever the target output format is, listing the deprecations. Note that the table headings are created like this:
+            
+            
+<eg>
+  &lt;xsl:element namespace="{$outputNS}" name="{$cellName}"&gt;
+    &lt;xsl:element namespace="{$outputNS}" name="{$hiName}"&gt;
+      &lt;xsl:attribute name="{$rendName}"&gt;
+        &lt;xsl:text&gt;label&lt;/xsl:text&gt;
+    &lt;/xsl:attribute&gt;
+    &lt;xsl:attribute name="{$langAttributeName}"&gt;
+      &lt;xsl:value-of select="$documentationLanguage"/&gt;
+    &lt;/xsl:attribute&gt;
+    &lt;xsl:sequence select="tei:i18n('Identifier')"/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:element&gt;
+</eg>
+            
+            
+            where the token <q>Identifier</q> is used to look up the appropriate language translation in the <code>Stylesheets/i18n.xml</code> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <code>Stylesheets/i18n.xml</code> like this:
+            
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <entry>
+              <key>Identifier</key>
+              <text xml:lang="en" lang3="eng">Identifier</text>
+            </entry>
+            </egXML>
+            
+            and if you are competent to add the equivalent translations in any of the <title level="m">Guidelines</title> languages, you can add them alongside the English version:
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <entry>
+              <key>Description</key>
+              <text xml:lang="en" lang3="eng">Description</text>
+              <text xml:lang="de" lang3="deu">Beschreibung</text>
+              <text xml:lang="fr" lang3="fra">Description</text>
+              <text xml:lang="it" lang3="ita">Descrizione</text>
+            </entry>
+            </egXML>
+            Only when all these pieces are in place can the new appendix function correctly. It would normally be appropriate to do work on this scale in a branch of the repo, but this is a little complicated by the fact that you need to edit two repositories separately. It is fine to make the changes in the TEI repository first, resulting in an appendix page that simply lacks its listing, then do the Stylesheets changes to make the listing.</p>
+            
+            <p>Of course, a simple <soCalled>manual</soCalled> appendix consisting of some explanatory prose can be created simply by adding the <code>APPENDIXTHING.xml</code> file and XIncluding it in <code>guidelines-en.xml</code>, with no Stylesheets changes required.</p>
+            
+        </div>
 
       </div>
       
@@ -312,7 +419,6 @@ processing instruction. If you think of other content that could be generated in
         <p>For this reason, we often use ISO Schematron to express constraints like this. If you look in att.pointing.xml, where the <att>targetLang</att> 
 attribute is defined, you'll find this constraint, inside the <gi>attDef</gi> for <att>targetLang</att>:</p>
         
-        <exemplum xml:lang="en">
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <constraintSpec ident="targetLang" scheme="isoschematron">
               <constraint>
@@ -323,7 +429,7 @@ attribute is defined, you'll find this constraint, inside the <gi>attDef</gi> fo
               </constraint>
             </constraintSpec>
           </egXML>
-        </exemplum>
+        
         
         <p>This Schematron rule is an assertion that if <att>targetLang</att> is used, <att>target</att> should also be present. <gi>constraintSpec</gi> 
 has an attribute <att>scheme</att> (normally set to <val>isoschematron</val>). Inside <gi>constraintSpec</gi>, <gi>constraints</gi>s have <gi>assert</gi> elements, 
@@ -338,25 +444,23 @@ We'll go through the process of adding a constraint like the one above. The cons
 the <att>calendar</att> attribute. <att>calendar</att> <q>indicates the system or calendar to which the date represented by the content of this element belongs.</q> In other 
 words, <att>calendar</att> should only be used if the dating element has textual content. This makes sense (assuming that <att>calendar</att> points at a valid <gi>calendar</gi> element):
         
-          <exemplum xml:lang="en">
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
               <date calendar="#julian">January, 1622</date>
             </egXML>
-          </exemplum>
+          
         
    whereas this is not:
         
-          <exemplum xml:lang="en">
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
               <date when="1622" calendar="#julian"/>
             </egXML>
-          </exemplum>
+          
         
         because the <gi>date</gi> element has no textual content to which the <att>calendar</att> attribute could apply. We're going to express this in the form of a Schematron 
 constraint, along the lines of the one we've examined above. First, we open the att.datable.xml file, and find the <gi>attDef</gi> element which defines <att>calendar</att>. 
 We can add the <gi>constraintSpec</gi> element immediately after the <gi>datatype</gi> element, like this:
         
-<exemplum xml:lang="en">
+        
   <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
     <constraintSpec ident="calendar" scheme="isoschematron">
       <constraint>
@@ -371,7 +475,6 @@ We can add the <gi>constraintSpec</gi> element immediately after the <gi>datatyp
       </constraint>
     </constraintSpec>
   </egXML>
-</exemplum>
         
         (Obviously, by the time you're reading this, the <gi>constraintSpec</gi> is already in the TEI source, so you'll see it there.) If the Schematron namespace is not 
 already defined somewhere in the file, we'll also have to make sure we add it; in this case, I defined the prefix in the <gi>classSpec</gi> root element: 
@@ -382,7 +485,7 @@ we didn't get anything wrong.</p>
           <list>
               <item>Ensure that the context item for the rule is an element, not an attribute, as in the example above. For technical reasons, the Schematron processing in the build process will generate error messages if the context item is an attribute.</item>
               <item>Break up the message up into fairly short lines, so that it's easy to read when it appears in the build log.</item>
-              <item>Use the <gi>name/</gi> element in place of the name of the context element. This will be helpful for future processing needs. </item>
+              <item>Use the <gi>name</gi> element in place of the name of the context element. This will be helpful for future processing needs. </item>
               <item>Refer to attributes using the "@" prefix, rather than quotation marks or plain names (as above).</item>
           </list>
           
@@ -402,7 +505,7 @@ our tests to one of these files. The question is which one? We'll add it to the 
 which should contain all the dating features we're interested in testing. If we look at that file, we find there are already several date elements in there, so we can try adding our 
 <att>calendar</att> attribute to one of those. Let's choose the date of 1685 on a dictionary entry sense:
         
-          <exemplum xml:lang="en">
+        
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
               <sense>
                 <date calendar="http://en.wikipedia.org/wiki/Julian_calendar">1685</date>
@@ -411,7 +514,6 @@ which should contain all the dating features we're interested in testing. If we 
                 </form>
               </sense>
             </egXML>
-          </exemplum>
         
         We could go to the trouble of adding <gi>calendarDesc</gi> and <gi>calendar</gi> to the header of the file so we can point to a calendar element in the same document, 
 but since <att>calendar</att> is a <ident>data.pointer</ident>, we can point to an external source of calendar information.</p>
@@ -419,14 +521,13 @@ but since <att>calendar</att> is a <ident>data.pointer</ident>, we can point to 
         <p>We also want to add, somewhere, a date element which has no textual content and no <att>calendar</att> attribute. We might as well do this in the header, 
 by adding a simple <gi>revisionDesc</gi> element, which gives us the added bonus of being able to describe our change:
         
-          <exemplum xml:lang="en">
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
               <revisionDesc>
                 <change>&lt;date when="2012-09-06"/>MDH: Added @calendar to one date, and the date 
                   element in here, for testing a new Schematron constraint.</change>
               </revisionDesc>
             </egXML>
-          </exemplum>
+          
         
         Now we can commit our change, and see if the build of TEIP5-Test completes successfully on our Jenkins servers.</p>
         
@@ -462,15 +563,14 @@ In order to do that, we have to use the "detest" system. In <ident>trunk/P5/Test
         
         We'll add this div to the <ident>detest.xml</ident> file:
         
-        <exemplum xml:lang="en">
+        
 <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
-            <div>
-              <p>Added by MDH. This tests the Schematron constraint that any element with 
-                    @calendar must have some textual content.</p>
-              <p><date when="2012-09-06" calendar="http://en.wikipedia.org/wiki/Gregorian_calendar"/></p>
-            </div>
-          </egXML>
-        </exemplum>
+  <div>
+    <p>Added by MDH. This tests the Schematron constraint that any element with 
+          @calendar must have some textual content.</p>
+    <p><date when="2012-09-06" calendar="http://en.wikipedia.org/wiki/Gregorian_calendar"/></p>
+  </div>
+</egXML>
         
         Now we commit the change to git, and Jenkins will start building. The build should fail, and it does. If we now go to the Jenkins workspace on one of our two build servers:
         
