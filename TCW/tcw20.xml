@@ -305,20 +305,20 @@ processing instruction. If you think of other content that could be generated in
         <div xml:id="appendices">
           <head>Adding or Editing an Appendix</head>
           
-          <p>The Appendices to the <title level="m">TEI Guidelines</title> mostly constitute lists of features (elements, attributes, classes etc.) which have been automatically harvested from the Guidelines compiled source (<code>p5.xml</code> or <code>p5subset.xml</code>) during the build process. When adding a new appendix of this type, you need to:
+          <p>The Appendices to the <title level="m">TEI Guidelines</title> mostly constitute lists of features (elements, attributes, classes etc.) which have been automatically harvested from the Guidelines compiled source (<ident>p5.xml</ident> or <ident>p5subset.xml</ident>) during the build process. When adding a new appendix of this type, you need to:
           
           <list rend="numbered">
-          <item>Create a new <code>APPENDIXTHING.xml</code> file in the <code>TEI/P5/Source/Guidelines/en</code> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file <code>UPPERCASE.xml</code>.</item>
+          <item>Create a new <ident>APPENDIXTHING.xml</ident> file in the <ident>TEI/P5/Source/Guidelines/en</ident> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file <ident>UPPERCASE.xml</ident>.</item>
           
-          <item>Add a line to <code>TEI/P5/Source/guidelines-en.xml</code> (right near the end of the file) to XInclude your file in the <title level="m">Guidelines</title>. Again, follow the examples already there. Put your new appendix in the sequence in a location that makes sense in relation to the other appendices.</item>
+          <item>Add a line to <ident>TEI/P5/Source/guidelines-en.xml</ident> (right near the end of the file) to XInclude your file in the <title level="m">Guidelines</title>. Again, follow the examples already there. Put your new appendix in the sequence in a location that makes sense in relation to the other appendices.</item>
           
           <item>If your appendix listing is to be created automatically, edit the appropriate file in the Stylesheets repository (most likely Stylesheets/common/common_tagdocs.xsl) to enable it to generate the list or table (see below).</item>
           
-          <item>If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <code>Stylesheets/i18n.xml</code>.</item>
+          <item>If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <ident>Stylesheets/i18n.xml</ident>.</item>
           </list>
           </p>
           
-          <p>Auto-generated appendix listings will require two things: a TEI <gi>divGen</gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <gi>divGen</gi> to create the output. For example, the list of Deprecations consists of this <code>DEPRECATIONS.xml</code> file:
+          <p>Auto-generated appendix listings will require two things: a TEI <gi>divGen</gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <gi>divGen</gi> to create the output. For example, the list of Deprecations consists of this <ident>DEPRECATIONS.xml</ident> file:
             
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -341,7 +341,7 @@ processing instruction. If you think of other content that could be generated in
             <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?insert version?&gt;</egXML>, which are self-explanatory and can simply be used, and 
             <egXML xmlns="http://www.tei-c.org/ns/Examples"><divGen type="deprecationcat"/></egXML>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
             
-            If you now look at <code>Stylesheets/common/common_tagdocs.xsl</code>, you'll find this template:
+            If you now look at <ident>Stylesheets/common/common_tagdocs.xsl</ident>, you'll find this template:
             
             
 <eg>
@@ -373,7 +373,7 @@ processing instruction. If you think of other content that could be generated in
 </eg>
             
             
-            where the token <q>Identifier</q> is used to look up the appropriate language translation in the <code>Stylesheets/i18n.xml</code> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <code>Stylesheets/i18n.xml</code> like this:
+            where the token <q>Identifier</q> is used to look up the appropriate language translation in the <ident>Stylesheets/i18n.xml</ident> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <ident>Stylesheets/i18n.xml</ident> like this:
             
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -396,7 +396,7 @@ processing instruction. If you think of other content that could be generated in
             </egXML>
             Only when all these pieces are in place can the new appendix function correctly. It would normally be appropriate to do work on this scale in a branch of the repo, but this is a little complicated by the fact that you need to edit two repositories separately. It is fine to make the changes in the TEI repository first, resulting in an appendix page that simply lacks its listing, then do the Stylesheets changes to make the listing.</p>
             
-            <p>Of course, a simple <soCalled>manual</soCalled> appendix consisting of some explanatory prose can be created simply by adding the <code>APPENDIXTHING.xml</code> file and XIncluding it in <code>guidelines-en.xml</code>, with no Stylesheets changes required.</p>
+            <p>Of course, a simple <soCalled>manual</soCalled> appendix consisting of some explanatory prose can be created simply by adding the <ident>APPENDIXTHING.xml</ident> file and XIncluding it in <ident>guidelines-en.xml</ident>, with no Stylesheets changes required.</p>
             
         </div>
 
