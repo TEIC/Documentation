@@ -308,38 +308,37 @@ processing instruction. If you think of other content that could be generated in
           <p>The Appendices to the <title level="m">TEI Guidelines</title> mostly constitute lists of features (elements, attributes, classes etc.) which have been automatically harvested from the Guidelines compiled source (<ident>p5.xml</ident> or <ident>p5subset.xml</ident>) during the build process. When adding a new appendix of this type, you need to:
           
           <list rend="numbered">
-          <item>Create a new <ident>APPENDIXTHING.xml</ident> file in the <ident>TEI/P5/Source/Guidelines/en</ident> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file <ident>UPPERCASE.xml</ident>.</item>
+          <item>Create a new <ident>APPENDIXTHING.xml</ident> file in the <ident>TEI/P5/Source/Guidelines/en/</ident> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file with an all-caps name followed by lower-case <ident>.xml</ident>.</item>
           
           <item>Add a line to <ident>TEI/P5/Source/guidelines-en.xml</ident> (right near the end of the file) to XInclude your file in the <title level="m">Guidelines</title>. Again, follow the examples already there. Put your new appendix in the sequence in a location that makes sense in relation to the other appendices.</item>
           
-          <item>If your appendix listing is to be created automatically, edit the appropriate file in the Stylesheets repository (most likely Stylesheets/common/common_tagdocs.xsl) to enable it to generate the list or table (see below).</item>
+          <item>If your appendix listing is to be created automatically, edit the appropriate file in the Stylesheets repository (most likely <ident>Stylesheets/common/common_tagdocs.xsl</ident>) to enable it to generate the list or table (see below).</item>
           
-          <item>If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <ident>Stylesheets/i18n.xml</ident>.</item>
+          <item>If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <ident>Stylesheets/i18n.xml</ident> (if they're not already there).</item>
           </list>
           </p>
           
-          <p>Auto-generated appendix listings will require two things: a TEI <gi>divGen</gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <gi>divGen</gi> to create the output. For example, the list of Deprecations consists of this <ident>DEPRECATIONS.xml</ident> file:
+          <p>Auto-generated appendix listings will require two things: a TEI <gi>divGen</gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <gi>divGen</gi> to create the output. For example, the list of deprecations consists of this <ident>DEPRECATIONS.xml</ident> file:
             
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <div type="div1" xml:id="DEPRECATIONS">
-              <head>Deprecations</head>
-              <div>
-                <head>About the Deprecation Appendix</head>
-                <p>This appendix gives you a list of all items (elements,
-                  attributes, attribute values, datatypes etc.) which are deprecated
-                  in this revision of the TEI Guidelines (revision <?insert
-    revision?> of TEI P5 <?insert version?>).</p>
-              </div>
-              
-              <divGen type="deprecationcat"/>
-            </div>
-            </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+    <div type="div1" xml:id="DEPRECATIONS">
+      <head>Deprecations</head>
+      <div>
+        <head>About the Deprecation Appendix</head>
+        <p>This appendix gives you a list of all items (elements,
+          attributes, attribute values, datatypes etc.) which are deprecated
+          in this revision of the TEI Guidelines (revision <?insert
+revision?> of TEI P5 <?insert version?>).</p>
+      </div>
+      <divGen type="deprecationcat"/>
+    </div>
+    </egXML>
             
             Note that there are two kinds of auto-generated content here: first, the two processing instructions 
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?insert revision?&gt;</egXML> and 
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?insert version?&gt;</egXML>, which are self-explanatory and can simply be used, and 
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"><divGen type="deprecationcat"/></egXML>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
+            <code>&lt;?insert revision?&gt;</code> and 
+            <code>&lt;?insert version?&gt;</code>, which are self-explanatory and can simply be used, and 
+            <tag >divGen type="deprecationcat"/</tag>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
             
             If you now look at <ident>Stylesheets/common/common_tagdocs.xsl</ident>, you'll find this template:
             
@@ -348,9 +347,9 @@ processing instruction. If you think of other content that could be generated in
   &lt;xsl:template match="tei:divGen[@type = 'deprecationcat']"&gt;
     &lt;xsl:element namespace="{$outputNS}" name="{$tableName}"&gt;
       &lt;xsl:attribute name="{$rendName}"&gt;
-      &lt;xsl:text&gt;deprecationcat&lt;/xsl:text&gt;
-    &lt;/xsl:attribute&gt;
-  [...]
+        &lt;xsl:text&gt;deprecationcat&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;!-- .. --&gt;
     &lt;/xsl:element&gt;
   &lt;/xsl:template&gt;
 </eg>
@@ -363,11 +362,11 @@ processing instruction. If you think of other content that could be generated in
     &lt;xsl:element namespace="{$outputNS}" name="{$hiName}"&gt;
       &lt;xsl:attribute name="{$rendName}"&gt;
         &lt;xsl:text&gt;label&lt;/xsl:text&gt;
-    &lt;/xsl:attribute&gt;
-    &lt;xsl:attribute name="{$langAttributeName}"&gt;
-      &lt;xsl:value-of select="$documentationLanguage"/&gt;
-    &lt;/xsl:attribute&gt;
-    &lt;xsl:sequence select="tei:i18n('Identifier')"/&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:attribute name="{$langAttributeName}"&gt;
+        &lt;xsl:value-of select="$documentationLanguage"/&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:sequence select="tei:i18n('Identifier')"/&gt;
     &lt;/xsl:element&gt;
   &lt;/xsl:element&gt;
 </eg>
@@ -376,24 +375,24 @@ processing instruction. If you think of other content that could be generated in
             where the token <q>Identifier</q> is used to look up the appropriate language translation in the <ident>Stylesheets/i18n.xml</ident> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <ident>Stylesheets/i18n.xml</ident> like this:
             
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <entry>
-              <key>Identifier</key>
-              <text xml:lang="en" lang3="eng">Identifier</text>
-            </entry>
-            </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+  <entry>
+    <key>Identifier</key>
+    <text xml:lang="en" lang3="eng">Identifier</text>
+  </entry>
+  </egXML>
             
             and if you are competent to add the equivalent translations in any of the <title level="m">Guidelines</title> languages, you can add them alongside the English version:
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <entry>
-              <key>Description</key>
-              <text xml:lang="en" lang3="eng">Description</text>
-              <text xml:lang="de" lang3="deu">Beschreibung</text>
-              <text xml:lang="fr" lang3="fra">Description</text>
-              <text xml:lang="it" lang3="ita">Descrizione</text>
-            </entry>
-            </egXML>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+  <entry>
+    <key>Description</key>
+    <text xml:lang="en" lang3="eng">Description</text>
+    <text xml:lang="de" lang3="deu">Beschreibung</text>
+    <text xml:lang="fr" lang3="fra">Description</text>
+    <text xml:lang="it" lang3="ita">Descrizione</text>
+  </entry>
+  </egXML>
             Only when all these pieces are in place can the new appendix function correctly. It would normally be appropriate to do work on this scale in a branch of the repo, but this is a little complicated by the fact that you need to edit two repositories separately. It is fine to make the changes in the TEI repository first, resulting in an appendix page that simply lacks its listing, then do the Stylesheets changes to make the listing.</p>
             
             <p>Of course, a simple <soCalled>manual</soCalled> appendix consisting of some explanatory prose can be created simply by adding the <ident>APPENDIXTHING.xml</ident> file and XIncluding it in <ident>guidelines-en.xml</ident>, with no Stylesheets changes required.</p>
