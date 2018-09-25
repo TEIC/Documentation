@@ -328,8 +328,8 @@ processing instruction. If you think of other content that could be generated in
         <head>About the Deprecation Appendix</head>
         <p>This appendix gives you a list of all items (elements,
           attributes, attribute values, datatypes etc.) which are deprecated
-          in this revision of the TEI Guidelines (revision <?insert
-revision?> of TEI P5 <?insert version?>).</p>
+          in this revision of the TEI Guidelines (revision &lt;?insert
+revision?&gt; of TEI P5 &lt;?insert version?&gt;).</p>
       </div>
       <divGen type="deprecationcat"/>
     </div>
@@ -338,7 +338,7 @@ revision?> of TEI P5 <?insert version?>).</p>
             Note that there are two kinds of auto-generated content here: first, the two processing instructions 
             <code>&lt;?insert revision?&gt;</code> and 
             <code>&lt;?insert version?&gt;</code>, which are self-explanatory and can simply be used, and 
-            <tag >divGen type="deprecationcat"/</tag>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
+            <code>&lt;divGen type="deprecationcat"/&gt;</code>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
             
             If you now look at <ident>Stylesheets/common/common_tagdocs.xsl</ident>, you'll find this template:
             
@@ -372,7 +372,7 @@ revision?> of TEI P5 <?insert version?>).</p>
 </eg>
             
             
-            where the token <q>Identifier</q> is used to look up the appropriate language translation in the <ident>Stylesheets/i18n.xml</ident> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <ident>Stylesheets/i18n.xml</ident> like this:
+            where the keyword <val>Identifier</val> is used to look up the appropriate language translation in the <ident>Stylesheets/i18n.xml</ident> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <ident>Stylesheets/i18n.xml</ident> like this:
             
             
   <egXML xmlns="http://www.tei-c.org/ns/Examples">
