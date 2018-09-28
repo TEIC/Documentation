@@ -280,9 +280,9 @@
             In each of these steps, replace the Xs with your release version. Supply your
             SourceForge user name, and type your SourceForge password when prompted. By default, the
             script will pull the release package from the first Jenkins server, but you can supply
-            the URL of the other server if necessary; read the script to see the details. Make sure
-            the script completes successfully each time changing the final parameter from --install,
-            to --makecurrent, and then --upload. </item>
+            the URL of the other server if necessary with the --Jenkins parameter, e.g. 
+            --Jenkins=http://jenkins2.tei-c.org/. Make sure the script completes successfully each time 
+            changing the final parameter from --install, to --makecurrent, and then --upload. </item>
           
           <item>To upload the Stylesheets to SourceForge, run the install script again with the 
           following parameters:<lb/>
