@@ -127,7 +127,7 @@
               <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
               <item>paste the result into a text editor and remove any linebreaks added by the
                 terminal.</item>
-              <item>copy-paste the result into https://sourceforge.net/account/ssh</item>
+              <item>copy-paste the result into https://sourceforge.net/auth/shell_services</item>
             </list> What this does is to enable you (when logged in as tei to tei-c.org) to connect
             to SourceForge (as your SF user) to upload the release files. </item>
 
