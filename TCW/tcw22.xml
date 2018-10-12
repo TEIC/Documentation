@@ -13,7 +13,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
-        <date>2016</date>
+        <date>2018</date>
       </publicationStmt>
       <sourceDesc>
         <p>This document was originally a section of tcw20.xml, but has now been spun off into its
@@ -56,10 +56,6 @@
   </teiHeader>
   <text>
     <body>
-
-      <p>NOTE: THIS DOCUMENT is currently in transition, as we move from keeping our code repository
-        on SourceForge and releasing our products there to a process based on GitHub. It is
-        therefore potentially incomplete. </p>
 
       <p>This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
@@ -291,26 +287,22 @@
           Remember, the version number is the Stylesheets version, which will be different from
           the Guidelines version.</item>
 
-          <item>Still in ~/private/git/P5/Utilities, run<lb/>
-            <code>./tei-database-rebuild.sh</code><lb/> This will update the eXist-db used by Roma.
-            The script takes no parameters but expects a configuration file in the user’s home
-            directory at ~/etc/tei-exist.conf with the appropriate paths and credentials. For the
-            main server at tei-c.org this should already be set and no adjustments should be needed.
-            This is the database used by Roma, so this operation will ensure that Roma is using the
-            new version. Ask Martin, Peter, or James to check the version of P5 used by
-            Roma, to ensure that this has succeeded, and fix it manually if it has not. This
-            procedure is undergoing revision right now, so it would not be surprising if there were
-            a minor glitch here. Eventually, a new process will be put in place and this
-            instructions will be updated. </item>
-
           <item><hi rend="bold">Check the TEI website and all downloadable files are displaying the
               correct version</hi><lb/> Everything should now be done, so go to <ref
               target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">the newly
               released version on the TEI site</ref> and browse the Guidelines. Check that your
             version number is displayed in the footer of the page, and check that at least one
-            change made since the last release is being reflected online. Visit Roma at <ptr
-              target="http://www.tei-c.org/Roma/"/>, and generate a simple schema to confirm it
-            works, and check that the version number is right in the footer. </item>
+            change made since the last release is being reflected online. </item>
+          
+          <item><hi rend="bold">Check <ref target="http://oxgarage.tei-c.org/">OxGarage</ref></hi> 
+            to see whether it picked up the new Stylesheets and TEI sources automatically.
+            If not, you'll need to ask Ian (the one with root access to the TEI server) to 
+            update (i.e. nuke, pull and recreate) the OxGarage docker container. </item>
+          
+          <item><hi rend="bold">Update <ref target="http://roma.tei-c.org/">Roma</ref></hi> 
+            <lb/>Ask Ian to update (i.e. nuke, pull and recreate) the Roma docker container. 
+            Visit Roma and generate a simple schema to confirm it
+            works, and check that the version number is right in the footer.</item>
 
           <item><hi rend="bold">NOTE: AGAIN THIS ASSUMES THAT WE ARE STILL RELEASING PRODUCTS ON
               SOURCEFORGE.</hi>
