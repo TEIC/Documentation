@@ -76,7 +76,7 @@
           should  see the repos you cloned above. There’s one more piece of work to be done, and
           that’s  to tell the Guidelines build process where it can find your copy of the
           Stylesheets.  You do that by adding a <code>local.mk</code> file in <code>TEI/P5</code>.
-          So,  (from <code>/tei</code>) do <code>cd TEIC/P5</code> and then 
+          So,  (from <code>/tei</code>) do <code>cd TEI/P5</code> and then 
           <code>echo "XSL=/tei/Stylesheets" > local.mk</code>. Now
           you can build things! And, what’s more, you can work on the Guidelines and Stylesheets in
           your regular environment, and test them in Docker. The Docker command above will create a
