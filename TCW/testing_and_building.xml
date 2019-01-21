@@ -23,7 +23,7 @@
       <div>
         <head>How to build and test the Guidelines and Stylesheets</head>
         <p>Getting set up to run the various building and testing targets in the Guidelines and
-          Stylesheets is relatively easy in Debian Linuxes like Ubuntu. But it is quite tricky on
+          Stylesheets is relatively easy in Debian-based Linuxes like Ubuntu. But it is quite tricky on
           other systems, like Mac OS X or Windows. The TEI Jenkins server will run a variety of
           builds when you push changes to the TEI or Stylesheets repos, but you may find you prefer
           to run the tests locally, as they will likely be faster and will save you the trouble of
@@ -52,15 +52,14 @@
           got working copies of the TEI and Stylesheets repos, and that you’ve made some changes
           you’d like to test before you push them back up to GitHub and make them available to
           everyone. The TEI has set up a pre-built test environment in Docker that you can use.
-          First, you should get Docker. On a Mac, go to <ptr
-            target="https://www.docker.com/products/docker#/mac"/>, on Windows, <ptr
-            target="https://www.docker.com/products/docker#/windows"/>, and on Linux, <ptr
-            target="https://www.docker.com/products/docker#/linux"/>. Once you have docker
-          installed, you can run <lb/><code>docker pull teic/teidev-docker</code>
+          First, you should get Docker Community Edition (CE). On a Mac, go to <ptr
+            target="https://docs.docker.com/v17.12/docker-for-mac/install/"/>, on Windows, <ptr
+              target="https://docs.docker.com/v17.12/docker-for-windows/install/"/>, and on Linux, choose your specific platform here: <ptr
+                target="https://docs.docker.com/v17.12/install/"/>. Follow Docker’s “Get Started” instructions for your installation to configure Docker and include the TEI repositories in your Docker container. Once you have Docker
+          installed and set up, you can run <lb/><code>docker pull teic/teidev-docker:dev</code>
           <lb/>to grab a copy of the pre-built image.</p>
         <p>Now you’re ready to run your test environment. You’ll need a couple of pieces of
-          information for Docker: the location of your repositories and your timezone. Your timezone
-          can be looked up on <ref
+          information for Docker: the location of your repositories and your timezone. You can look up your timezone at <ref
             target="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</ref>.
           You need it because the default timezone of the container is UTC, which will lead to
           strange warnings when you run the builds unless you actually happen to be in sync with
@@ -69,7 +68,7 @@
           (which is why it’s easier to put them side-by-side). You’ll run the test container with a
           command like: 
           <lb/><code>docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
-            teic/teidev-docker</code>
+            teic/teidev-docker:dev</code>
           <lb/>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
           The directory on your local file system where you cloned the TEI and
           Stylesheets repos is mapped to <code>/tei</code> in the container (that’s the part after
