@@ -21,6 +21,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
       <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate preparing the Release Notes.</change>
       <change when="2016-04-02" who="mdh">Beginning edits arising out of the experiences
       releasing 3.0.0. More to come.</change>
@@ -152,7 +153,7 @@
 
         <list type="ordered">
           <head>1-2 weeks before release:</head>
-          <item>Ask one of the Jenkins maintainers (currently Martin Holmes, and Peter Stadler) 
+          <item>Ask one of the Jenkins maintainers (currently Martin Holmes and Peter Stadler) 
             to run a link check on the Guidelines and fix broken links in the dev branch</item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
             (The GPG private key itself is hosted on the server at the default location.)</item>
@@ -161,16 +162,21 @@
             features. A release branch will be created by the release technician, to which ONLY
             release-blocking bug fixes and corrections to typographical errors will be pushed. The
             release technician should announce a temporary hold on pushes to the dev branch on the
-            Council list, then create the branch and push it to GitHub using the following commands:<lb/>
-            <code>git checkout dev</code> (make sure you start from the dev branch)<lb/>
-            <code>git checkout -b release-X.X.X</code><lb/>
-            <code>git push -u origin release-X.X.X</code><lb/> After the release branch has been
-            pushed, the release technician should inform the Council list and ask the maintainers of
-            the TEI Jenkins systems to
-            add a build of the release branch so that commits pushed there are properly tested. </item>
-          <item>Pushes to the release branch should be merged back into dev regularly:<lb/>
-            <code>git checkout dev</code><lb/>
-            <code>git merge release-X.X.X</code></item>
+            Council list, then create the branch and push it to GitHub using the following commands:
+	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch)
+	    <lb/><code>git checkout -b release-X.X.X</code>
+	    <lb/><code>git push -u origin release-X.X.X</code></item>
+	  <item>Immediately after the release branch has been pushed,
+	  the release technician should inform the <ref
+	  target="mailto:tei-council@lists.tei-c.org">Council
+	  list</ref> and ask the maintainers of the TEI Jenkins
+	  systems to add a build of the release branch so that commits
+	  pushed there are properly tested. Remember that the
+	  maintainers (currently Martin Holmes and Peter Stadler)
+	  may not be on the Council list.</item>
+          <item>Pushes to the release branch should be merged back into dev regularly:
+	  <lb/><code>git checkout dev</code>
+	  <lb/><code>git merge release-X.X.X</code></item>
         </list>
         <list type="ordered">
           <head>On release day:</head>
