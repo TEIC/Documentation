@@ -171,9 +171,10 @@
 	  target="mailto:tei-council@lists.tei-c.org">Council
 	  list</ref> and ask the maintainers of the TEI Jenkins
 	  systems to add a build of the release branch so that commits
-	  pushed there are properly tested. Remember that the
-	  maintainers (currently Martin Holmes and Peter Stadler)
-	  may not be on the Council list.</item>
+	  pushed there are properly tested, and advise them of the
+	  release schedule. Remember that the maintainers (currently
+	  Martin Holmes and Peter Stadler) may not be on the Council
+	  list.</item>
           <item>Pushes to the release branch should be merged back into dev regularly:
 	  <lb/><code>git checkout dev</code>
 	  <lb/><code>git merge release-X.X.X</code></item>
