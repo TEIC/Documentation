@@ -10,6 +10,7 @@
         <author>Sebastian Rahtz</author>
         <author>David Sewell</author>
         <author xml:id="HC">Hugh Cayless</author>
+        <author xml:id="PS">Peter Stadler</author>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
@@ -21,6 +22,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
       <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
       <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate preparing the Release Notes.</change>
       <change when="2016-04-02" who="mdh">Beginning edits arising out of the experiences
@@ -347,6 +349,10 @@
             (The ANT script is currently hosted at <ref target="https://github.com/peterstadler/TEI-apt-repo">Peter's GitHub</ref>.)
             <emph>Since the repository index needs to be signed, you'll need the passphrase for the GPG key.</emph> 
             Make sure you've received it in advance! 
+            <lb/>Another caveat: <code>ant</code> fails to fetch the packages via HTTPS when 
+            running an outdated Java VM. Make sure to set the environment variable <code>JAVA_HOME</code>
+            to some appropriate version! At present <code>export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk</code>
+            will do.
           </item>
 
           <item><hi rend="bold">Update the list of <ref
