@@ -149,31 +149,7 @@
         <item>Use ticket reference in any commits addressing or fixing the issue</item>
         <item>At least for the final commit addressing the issue try to prepare the commit message so it can be used for Release Notes</item>
         <item>Label the issue as Release Note (green label) if it’s important to include the note about it in Release Notes</item>
-        <item><hi rend="bold">Ensure that P5/ReleaseNotes/readme-X.X.X.xml has been
-          written</hi><lb/> Normally, this will have been created by the TEI Council chair at the
-          point when the repository moved from its "alpha" stage to "beta", so you should not have
-          to do this, but in case you do: <list>
-            <item>Confirm the version number for the new release in consultation with Council. TEI
-              version numbers are based on the <ref target="http://www.unicode.org/versions/"
-                >system used by the Unicode Consortium</ref> but with the first digit for major
-              changes, the second for schema-changing revisions, and the third for
-              non-schema-changing revisions. When the first or second digit is incremented, the
-              following digit or digits is set to zero. During initial development, the version
-              number is followed by "alpha"; during the pre-release checking stage, it's followed
-              by "beta"; and when the release takes place, "beta" is removed and the version
-              number has only digits and periods.</item>
-            <item>Create the new file by cloning a previous one.</item>
-            <item>Consult the git log log to check for all the significant changes since the last
-              release. You can do this by opening a terminal in the root of a working copy of the
-              TEI repository and running:<lb/>
-              <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
-              release. </item>
-            <item>Add the new file into the repository with <code>git
-              add</code>.<!-- You may also want to set its svn properties. Make 
-                sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
-                file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
-          </list>
-        </item>
+        
       </list>
       </div>
 
@@ -188,13 +164,38 @@
             to run a link check on the Guidelines and fix broken links in the dev branch</item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
             (The GPG private key itself is hosted on the server at the default location.)</item>
+          <item><hi rend="bold">Communicate with the TEI Council chair to make sure that the P5/ReleaseNotes/readme-X.X.X.xml 
+            is compiled</hi><lb/> Normally, this will be created by the TEI Council chair at the
+            point when the repository moved from its "alpha" stage to "beta", following these steps: <list>
+              <item>Confirm the version number for the new release in consultation with Council. TEI
+                version numbers are based on the <ref target="http://www.unicode.org/versions/"
+                  >system used by the Unicode Consortium</ref> but with the first digit for major
+                changes, the second for schema-changing revisions, and the third for
+                non-schema-changing revisions. When the first or second digit is incremented, the
+                following digit or digits is set to zero. During initial development, the version
+                number is followed by "alpha"; during the pre-release checking stage, it's followed
+                by "beta"; and when the release takes place, "beta" is removed and the version
+                number has only digits and periods.</item>
+              <item>Create the new file by cloning a previous one.</item>
+              <item>Consult the git log log to check for all the significant changes since the last
+                release. You can do this by opening a terminal in the root of a working copy of the
+                TEI repository and running:<lb/>
+                <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
+                release. </item>
+              <item>Add the new file into the repository with <code>git
+                add</code>.<!-- You may also want to set its svn properties. Make 
+                sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
+                file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
+            </list>
+          </item>
           <item>At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
             features. A release branch will be created by the release technician, to which ONLY
             release-blocking bug fixes and corrections to typographical errors will be pushed. The
             release technician should announce a temporary hold on pushes to the dev branch on the
             Council list, then create the branch and push it to GitHub using the following commands:
-	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch)
+	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch) or if you have the dev branch 
+            checked out, <code>git status</code> in order to make sure that you have the current version and no uncommited changes.
 	    <lb/><code>git checkout -b release-X.X.X</code>
 	    <lb/><code>git push -u origin release-X.X.X</code></item>
 	  <item>Immediately after the release branch has been pushed,
@@ -219,8 +220,7 @@
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
           </item>
-         
-
+         <item>Check the release notes for typos or other glaring errors, one last time.</item>
           <item><hi rend="bold">Edit the P5/VERSION file to the correct number</hi><lb/> This file
             consists only of the bare version number, followed by "alpha" or "beta":<lb/>
             <code>2.8.2beta</code><lb/> For the release process, you need to remove the letters from
@@ -233,11 +233,11 @@
 
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
-          <item><hi rend="bold">Merge the release branch into <code>master</code></hi>. If you already have 
-            the master branch checked out, do a <code>git pull</code> before merging. <lb/>
+          <item><hi rend="bold">Merge the release branch into <code>master</code></hi>.  <lb/>
             <code>git checkout master</code><lb/>
             <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-          <item><hi rend="bold">Repeat the steps above for the Stylesheets:</hi>
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand 
+            when releasing Stylesheets to help debug problems):
             <list type="ordered">
             <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
               remove the 'a').</item>
