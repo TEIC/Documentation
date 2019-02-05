@@ -172,6 +172,7 @@
               add</code>.<!-- You may also want to set its svn properties. Make 
                 sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
                 file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
+          </list>
       </list>
       </div>
 
