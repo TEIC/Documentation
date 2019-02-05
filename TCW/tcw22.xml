@@ -11,6 +11,7 @@
         <author>David Sewell</author>
         <author xml:id="HC">Hugh Cayless</author>
         <author xml:id="PS">Peter Stadler</author>
+        <author xml:id="EM">Elli Mylonas</author>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
@@ -22,6 +23,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-02-04" who="#EM">Add updates and clarifications learned from last release.</change>
       <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
       <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
       <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate preparing the Release Notes.</change>
@@ -147,6 +149,29 @@
         <item>Use ticket reference in any commits addressing or fixing the issue</item>
         <item>At least for the final commit addressing the issue try to prepare the commit message so it can be used for Release Notes</item>
         <item>Label the issue as Release Note (green label) if it’s important to include the note about it in Release Notes</item>
+        <item><hi rend="bold">Ensure that P5/ReleaseNotes/readme-X.X.X.xml has been
+          written</hi><lb/> Normally, this will have been created by the TEI Council chair at the
+          point when the repository moved from its "alpha" stage to "beta", so you should not have
+          to do this, but in case you do: <list>
+            <item>Confirm the version number for the new release in consultation with Council. TEI
+              version numbers are based on the <ref target="http://www.unicode.org/versions/"
+                >system used by the Unicode Consortium</ref> but with the first digit for major
+              changes, the second for schema-changing revisions, and the third for
+              non-schema-changing revisions. When the first or second digit is incremented, the
+              following digit or digits is set to zero. During initial development, the version
+              number is followed by "alpha"; during the pre-release checking stage, it's followed
+              by "beta"; and when the release takes place, "beta" is removed and the version
+              number has only digits and periods.</item>
+            <item>Create the new file by cloning a previous one.</item>
+            <item>Consult the git log log to check for all the significant changes since the last
+              release. You can do this by opening a terminal in the root of a working copy of the
+              TEI repository and running:<lb/>
+              <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
+              release. </item>
+            <item>Add the new file into the repository with <code>git
+              add</code>.<!-- You may also want to set its svn properties. Make 
+                sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
+                file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
       </list>
       </div>
 
@@ -155,6 +180,8 @@
 
         <list type="ordered">
           <head>1-2 weeks before release:</head>
+          <item>Inform the Jenkins maintainers (who may not be on the Council listserv, and the 
+            TEI sysadmin, of the pending release date, so that they can be available or on-call.</item>
           <item>Ask one of the Jenkins maintainers (currently Martin Holmes and Peter Stadler) 
             to run a link check on the Guidelines and fix broken links in the dev branch</item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
@@ -180,6 +207,7 @@
           <item>Pushes to the release branch should be merged back into dev regularly:
 	  <lb/><code>git checkout dev</code>
 	  <lb/><code>git merge release-X.X.X</code></item>
+          
         </list>
         <list type="ordered">
           <head>On release day:</head>
@@ -189,29 +217,7 @@
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
           </item>
-          <item><hi rend="bold">Ensure that P5/ReleaseNotes/readme-X.X.X.xml has been
-            written</hi><lb/> Normally, this will have been created by the TEI Council chair at the
-            point when the repository moved from its "alpha" stage to "beta", so you should not have
-            to do this, but in case you do: <list>
-              <item>Confirm the version number for the new release in consultation with Council. TEI
-                version numbers are based on the <ref target="http://www.unicode.org/versions/"
-                  >system used by the Unicode Consortium</ref> but with the first digit for major
-                changes, the second for schema-changing revisions, and the third for
-                non-schema-changing revisions. When the first or second digit is incremented, the
-                following digit or digits is set to zero. During initial development, the version
-                number is followed by "alpha"; during the pre-release checking stage, it's followed
-                by "beta"; and when the release takes place, "beta" is removed and the version
-                number has only digits and periods.</item>
-              <item>Create the new file by cloning a previous one.</item>
-              <item>Consult the git log log to check for all the significant changes since the last
-                release. You can do this by opening a terminal in the root of a working copy of the
-                TEI repository and running:<lb/>
-                <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
-                release. </item>
-              <item>Add the new file into the repository with <code>git
-                add</code>.<!-- You may also want to set its svn properties. Make 
-                sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
-                file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
+          
             </list>
           </item>
 
@@ -227,7 +233,8 @@
 
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
-          <item><hi rend="bold">Merge the release branch into <code>master</code></hi><lb/>
+          <item><hi rend="bold">Merge the release branch into <code>master</code></hi>. If you already have 
+            the master branch checked out, do a <code>git pull</code> before merging. <lb/>
             <code>git checkout master</code><lb/>
             <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
           <item><hi rend="bold">Repeat the steps above for the Stylesheets:</hi>
@@ -305,11 +312,11 @@
           
           <item><hi rend="bold">Check <ref target="http://oxgarage.tei-c.org/">OxGarage</ref></hi> 
             to see whether it picked up the new Stylesheets and TEI sources automatically.
-            If not, you'll need to ask Ian (the one with root access to the TEI server) to 
+            If not, you'll need to ask the TEI sysadmin (the one with root access to the TEI server) to 
             update (i.e. nuke, pull and recreate) the OxGarage docker container. </item>
           
           <item><hi rend="bold">Update <ref target="http://roma.tei-c.org/">Roma</ref></hi> 
-            <lb/>Ask Ian to update (i.e. nuke, pull and recreate) the Roma docker container. 
+            <lb/>Ask the TEI sysadmin to update (i.e. nuke, pull and recreate) the Roma docker container. 
             Visit Roma and generate a simple schema to confirm it
             works, and check that the version number is right in the footer.</item>
 
@@ -333,12 +340,11 @@
 
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the <ref
               target="https://github.com/TEIC/TEI/tags">TEI Tags</ref> page on GitHub. You should
-            see the tag you just pushed there. Click on "Add release notes". Give it a title,
-            generally "Release X.X.X" and add a link to the release notes README, which should be at
-            http://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html. Add a copy of the zipped
-            release from <ref
+            see the tag you just pushed there. Click on it and then click on "Edit Release". Add a link to the release notes README, which should be at
+            http://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html into the text box. Add a copy of the zipped
+            release by downloading it from <ref
               target="http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-2.9.1.zip"
-              >Jenkins</ref>. </item>
+              >Jenkins</ref> and then uploading it to the release page. </item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
             The TEI Debian packages are regularily created during each Jenkins build. 
@@ -357,9 +363,9 @@
 
           <item><hi rend="bold">Update the list of <ref
                 target="http://www.tei-c.org/Guidelines/P5/index.xml#previous">Previous releases of
-                P5</ref></hi><lb/> If you have editing privileges on the OpenCMS system on
+                P5</ref></hi><lb/> If you have editing privileges on the TEI WordPress on
             tei-c.org, add the new release to the top of the release table. If not, ask one of the
-            other Council members who does (currently Hugh Cayless and James Cummings) to make the
+            other Council members who does to make the
             change. </item>
 
           <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
