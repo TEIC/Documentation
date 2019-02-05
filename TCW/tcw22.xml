@@ -219,9 +219,7 @@
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
           </item>
-          
-            </list>
-          </item>
+         
 
           <item><hi rend="bold">Edit the P5/VERSION file to the correct number</hi><lb/> This file
             consists only of the bare version number, followed by "alpha" or "beta":<lb/>
