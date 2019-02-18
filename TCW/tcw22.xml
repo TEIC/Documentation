@@ -4,11 +4,12 @@
     <fileDesc>
       <titleStmt>
         <title>Building a TEI Release</title>
-        <author>Martin Holmes</author>
+        <author xml:id="MDH">Martin Holmes</author>
         <author>James Cummings</author>
         <author>Lou Burnard</author>
         <author>Sebastian Rahtz</author>
         <author>David Sewell</author>
+	<author xml:id="KSH">Kevin Hawkins</author>
         <author xml:id="HC">Hugh Cayless</author>
         <author xml:id="PS">Peter Stadler</author>
         <author xml:id="EM">Elli Mylonas</author>
@@ -27,36 +28,36 @@
       <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
       <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
       <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate preparing the Release Notes.</change>
-      <change when="2016-04-02" who="mdh">Beginning edits arising out of the experiences
+      <change when="2016-04-02" who="#MDH">Beginning edits arising out of the experiences
       releasing 3.0.0. More to come.</change>
-      <change when="2016-03-16" who="KSH">Fixed error in git command as just reported on
+      <change when="2016-03-16" who="#KSH">Fixed error in git command as just reported on
         tei-council</change>
       <change when="2016-02-23" who="#HC">Edits for new release process.</change>
-      <change when="2015-12-14" who="MDH">Updates for new Jenkins server subdomains.</change>
-      <change when="2015-10-07" who="MDH">Update for use of ant build process for oxygen-tei rather
+      <change when="2015-12-14" who="#MDH">Updates for new Jenkins server subdomains.</change>
+      <change when="2015-10-07" who="#MDH">Update for use of ant build process for oxygen-tei rather
         than the old .sh file.</change>
-      <change when="2015-10-04" who="MDH">More updates to account for the shift from SF SVN to
+      <change when="2015-10-04" who="#MDH">More updates to account for the shift from SF SVN to
         GitHub.</change>
-      <change when="2015-10-03" who="MDH">Updates to account for the shift from SF SVN to
+      <change when="2015-10-03" who="#MDH">Updates to account for the shift from SF SVN to
         GitHub.</change>
-      <change when="2015-04-06" who="MDH">Updates arising out of release process for 2.8.0.</change>
-      <change when="2015-04-06" who="KSH">Added link to http://wiki.tei-c.org/index.php/IRC</change>
-      <change when="2015-04-04" who="MDH">Updates to take account of oxygen-tei's move from Google
+      <change when="2015-04-06" who="#MDH">Updates arising out of release process for 2.8.0.</change>
+      <change when="2015-04-06" who="#KSH">Added link to http://wiki.tei-c.org/index.php/IRC</change>
+      <change when="2015-04-04" who="#MDH">Updates to take account of oxygen-tei's move from Google
         Code to GitHub, along with a couple of other tweaks.</change>
-      <change when="2014-01" who="MDH">Updates for changes in procedure ahead of the 2.6.0
+      <change when="2014-01" who="#MDH">Updates for changes in procedure ahead of the 2.6.0
         release.</change>
-      <change when="2013-11" who="MDH">Updates following move of some code from SourceForge to
+      <change when="2013-11" who="#MDH">Updates following move of some code from SourceForge to
         GitHub, and automation of the P5 version number in output.</change>
-      <change when="2012-10-25" who="MDH">Updates following Primrose Path release
+      <change when="2012-10-25" who="#MDH">Updates following Primrose Path release
         experience.</change>
-      <change when="2012-07-24" who="KSH">Newsfeed blog is no longer in SourceForge.</change>
-      <change when="2012-06-28" who="KSH">A few changes based on messages to tei-council on
+      <change when="2012-07-24" who="#KSH">Newsfeed blog is no longer in SourceForge.</change>
+      <change when="2012-06-28" who="#KSH">A few changes based on messages to tei-council on
         2012-06-19 and 2012-06-20.</change>
-      <change when="2012-06-19" who="KSH">Improvements suggested by various Council members based on
+      <change when="2012-06-19" who="#KSH">Improvements suggested by various Council members based on
         experiences with version 2.1.0.</change>
-      <change when="2012-06-16" who="KSH">Explained version numbers and added reminder about
+      <change when="2012-06-16" who="#KSH">Explained version numbers and added reminder about
         including readme file in announcement.</change>
-      <change when="2012-02-02" who="MDH">Document forked from tcw20.xml.</change>
+      <change when="2012-02-02" who="#MDH">Document forked from tcw20.xml.</change>
     </revisionDesc>
   </teiHeader>
   <text>
@@ -93,9 +94,7 @@
             ever pushed a change to the master branch TEI repository, you should have all the
             required permissions.</item>
           <item>Shell access on the TEI SourceForge project. Contact one of the admins to have this
-            turned on. Normal committers don't have shell access. NOTE: THIS IS ONLY REQUIRED IF WE
-            CONTINUE TO RELEASE PRODUCTS THROUGH THE SOURCEFORGE WEBSITE. COUNCIL IS STILL IN THE
-            PROCESS OF DECIDING WHETHER WE SHOULD CONTINUE TO DO THIS.</item>
+            turned on. Normal committers don't have shell access.</item>
           <item> The release manager will need SSH login access to the tei account on the tei-c.org
             server. This involves two steps: <list type="ordered">
               <item>Generate an SSH key pair (if you don't have one already). If this is new to you,
@@ -183,9 +182,7 @@
                 <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
                 release. </item>
               <item>Add the new file into the repository with <code>git
-                add</code>.<!-- You may also want to set its svn properties. Make 
-                sure it has an SVN header block immediately after the XML declaration, and if it doesn't, copy and paste from another 
-                file. Then run <code>svn propset svn:keywords 'LastChangedRevision LastChangedBy Id LastChangedDate HeadURL' filename.xml</code>. --></item>
+                add</code>.</item>
             </list>
           </item>
           <item>At least one week before releasing, we enter a review period, during which the only
@@ -257,18 +254,20 @@
             </list> And now you wait while the Jenkins servers build the packages. This can
             take a couple of hours, so be patient. Both of the Jenkins servers should behave
             identically, and they should both build all three TEI packages successfully. 
-            <hi rend="bold">Note</hi>: The P5 and Stylesheets builds have circular dependencies,
+            <hi rend="bold">Note</hi>: The P5 and Stylesheets builds have reciprocal dependencies,
             so the first build of either the Stylesheets or the Guidelines may fail just because
             there isn't yet a current build of the other for it to use. This isn't a cause for
-            panic, but it may mean that (e.g.) the Stylesheets build needs to run twice.</item>
+            panic, but it may mean that (e.g.) the Stylesheets build needs to run twice. In particular,
+	    the Stylesheets build may fail after the TEI release is complete, so it is better to wait
+	    until the TEI release is complete before doing the Stylesheets release. (Council is considering 
+	    changing how the dependency is managed).</item>
           <item><hi rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</hi><lb/> When all builds have
             completed on both servers, click on the job number of the last build for each of the
             three TEI jobs to make sure that it was triggered by the commit that you made in the
             previous step (you should see your own commit message on the build page). Make sure that
             all builds were successful (they should have green balls next to them). </item>
-          <item><hi rend="bold">NOTE: INSTRUCTIONS FROM HERE ON ASSUME THAT WE ARE RELEASING
-              PRODUCTS ON THE SOURCEFORGE WEBSITE.</hi>
+          <item>
             <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/>
             <code>ssh tei@tei-c.org</code><lb/>
             <code>cd ~/private/git/P5</code> then run <code>git pull</code><lb/>then <code>cd
@@ -320,8 +319,7 @@
             Visit Roma and generate a simple schema to confirm it
             works, and check that the version number is right in the footer.</item>
 
-          <item><hi rend="bold">NOTE: AGAIN THIS ASSUMES THAT WE ARE STILL RELEASING PRODUCTS ON
-              SOURCEFORGE.</hi>
+          <item>
             <hi rend="bold">Make your release the default downloadable version from
             Sourceforge</hi><lb/> Go to the SourceForge site:<lb/>
             <ptr target="https://sourceforge.net/projects/tei/files/TEI-P5-all/"/><lb/> log in, and
@@ -365,8 +363,7 @@
                 target="http://www.tei-c.org/Guidelines/P5/index.xml#previous">Previous releases of
                 P5</ref></hi><lb/> If you have editing privileges on the TEI WordPress on
             tei-c.org, add the new release to the top of the release table. If not, ask one of the
-            other Council members who does to make the
-            change. </item>
+            other Council members who does (currently Martina Scholger and Hugh Cayless) to make the change. </item>
 
           <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
