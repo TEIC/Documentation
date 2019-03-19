@@ -56,7 +56,7 @@
             target="https://docs.docker.com/v17.12/docker-for-mac/install/"/>, on Windows, <ptr
               target="https://docs.docker.com/v17.12/docker-for-windows/install/"/>, and on Linux, choose your specific platform here: <ptr
                 target="https://docs.docker.com/v17.12/install/"/>. Follow Docker’s “Get Started” instructions for your installation to configure Docker and include the TEI repositories in your Docker container. Once you have Docker
-          installed and set up, you can run <lb/><code>docker pull teic/teidev-docker:dev</code>
+          installed and set up, you can run <lb/><code>docker pull teic/teidev-docker</code>
           <lb/>to grab a copy of the pre-built image.</p>
         <p>Now you’re ready to run your test environment. You’ll need a couple of pieces of
           information for Docker: the location of your repositories and your timezone. You can look up your timezone at <ref
@@ -68,7 +68,7 @@
           (which is why it’s easier to put them side-by-side). You’ll run the test container with a
           command like: 
           <lb/><code>docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
-            teic/teidev-docker:dev</code>
+            teic/teidev-docker</code>
           <lb/>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
           The directory on your local file system where you cloned the TEI and
           Stylesheets repos is mapped to <code>/tei</code> in the container (that’s the part after
