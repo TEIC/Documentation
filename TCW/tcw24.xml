@@ -90,6 +90,8 @@ $LastChangedRevision: 0001$
           <item>The description of an element, attribute, model class, or attribute class contained in 
             <gi>desc</gi> should always be a verbal phrase beginning with a present-tense verb 
             ("contains a ...", "groups together ...", etc.)</item>
+          <label>Internal references</label>
+          <item>Language like "the preceding" and "the following" should not be used to refer to specific figures, tables, and examples. Instead, be sure there is an <att>xml:id</att> on the object in question and link to it with <gi>ref</gi>.</item>
         </list>
       </div>
       <div xml:id="house-style-naming-conventions">
