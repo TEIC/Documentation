@@ -421,7 +421,7 @@ attribute is defined, you'll find this constraint, inside the <gi>attDef</gi> fo
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <constraintSpec ident="targetLang" scheme="isoschematron">
               <constraint>
-                <sch:rule context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
+                <sch:rule context="tei:*[not(self::tei:schemaSpec)][@targetLang]" role="error">
                   <sch:assert test="count(@target)">@targetLang can only be used if 
                     @target is specified.</sch:assert>
                 </sch:rule>
@@ -431,12 +431,12 @@ attribute is defined, you'll find this constraint, inside the <gi>attDef</gi> fo
         
         
         <p>This Schematron rule is an assertion that if <att>targetLang</att> is used, <att>target</att> should also be present. <gi>constraintSpec</gi> 
-has an attribute <att>scheme</att> (normally set to <val>isoschematron</val>). Inside <gi>constraintSpec</gi>, <gi>constraints</gi>s have <gi>assert</gi> elements, 
-which have <att>test</att> attributes. The <att>test</att> attribute value is always an XPath expression; if the XPath tests false, the assertion will be triggered, and its 
+has an attribute <att>scheme</att> (normally set to <val>isoschematron</val>). Inside <gi>constraintSpec</gi>, <gi>constraints</gi>s hold elements in the Schematron namespace. The Schematron <gi>rule</gi> element establishes the TEI node to be tested with its <att>context</att> attribute. The <gi>rule</gi> holds one or more elements, either <gi>assert</gi> or <gi>report</gi> that define conditions to be checked in a <att>test</att> attribute. Here we see an <gi>assert</gi> element, 
+which has <att>test</att> attributes. The <att>test</att> attribute value is always an XPath expression; if the XPath tests false, the assertion will be triggered, and its 
 contents will appear on the console when you build or validate. There is also a <gi>report</gi> element which is similar, but which triggers when true rather than when false,
 so you can check both positive and negative conditions. In Roma, you can also generate a Schematron schema which you can also use to test your document against. 
 This document is essentially a compilation in Schematron of all the TEI constraints. The operation of checking a document with Schematron is independent of any other validation 
-processes that take place using other schemas. For a full introduction to Schematron, see the <ref target="http://www.schematron.com">Schematron website</ref>.</p>
+processes that take place using other schemas. Notice, finally, the <att>role</att> attribute, set in our example on the <gi>rule</gi> element. This attribute defines a level of severity for the test if its test passes with a Boolean true result in a <gi>report</gi>, or if the test fails with a Boolean false result in a <gi>assert</gi>. Values for <att>role</att> basically define three levels of severity, for which we use standard Schematron values: with "fatal" and "error" as the most extreme values, "warning" as a gentle caution, and "info" for to provide neutral information. When no <att>role</att> attribute is set, the default severity in Schematron is "error". The <att>role</att> attribute can be applied either to the Schematron <gi>rule</gi> element or to its <gi>assert</gi> and <gi>report</gi> children, which can have differing levels of severity. For a full introduction to Schematron, see the <ref target="http://www.schematron.com">Schematron website</ref>.</p>
         
         <p><gi>constraintSpec</gi> can appear as a child of <gi>attDef</gi>, <gi>classSpec</gi>, <gi>elementSpec</gi>, <gi>macroSpec</gi>, and <gi>schemaSpec</gi>. 
 We'll go through the process of adding a constraint like the one above. The constraint we're going to add relates to dating elements (<gi>date</gi>, <gi>birth</gi> etc.) and 
