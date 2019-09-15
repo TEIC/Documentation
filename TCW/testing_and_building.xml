@@ -53,9 +53,9 @@
           you’d like to test before you push them back up to GitHub and make them available to
           everyone. The TEI has set up a pre-built test environment in Docker that you can use.
           First, you should get Docker Community Edition (CE). On a Mac, go to <ptr
-            target="https://docs.docker.com/v17.12/docker-for-mac/install/"/>, on Windows, <ptr
-              target="https://docs.docker.com/v17.12/docker-for-windows/install/"/>, and on Linux, choose your specific platform here: <ptr
-                target="https://docs.docker.com/v17.12/install/"/>. Follow Docker’s “Get Started” instructions for your installation to configure Docker and include the TEI repositories in your Docker container. Once you have Docker
+            target="https://docs.docker.com/docker-for-mac/install/"/>, on Windows, <ptr
+              target="https://docs.docker.com/docker-for-windows/install/"/>, and on Linux, choose your specific platform here: <ptr
+                target="https://docs.docker.com/install/"/>. Follow Docker’s “Get Started” instructions for your installation to configure Docker and include the TEI repositories in your Docker container. Once you have Docker
           installed and set up, you can run <lb/><code>docker pull teic/teidev-docker</code>
           <lb/>to grab a copy of the pre-built image.</p>
         <p>Now you’re ready to run your test environment. You’ll need a couple of pieces of
