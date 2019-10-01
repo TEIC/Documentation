@@ -286,7 +286,7 @@ $LastChangedRevision: 0001$
               for production of a TEI conformant file.</item>
             <label>MUST NOT</label>
             <item>This phrase, or the phrase "SHALL NOT", mean that this is an absolute prohibition of the 
-              TEI Guidelines for produciton of a TEI conformant file.</item>
+              TEI Guidelines for production of a TEI conformant file.</item>
             <label>SHOULD</label>
             <item>This word, or the adjective "RECOMMENDED", mean that there may exist valid reasons in 
               particular circumstances to ignore a particular recommendation, but the full implications 
