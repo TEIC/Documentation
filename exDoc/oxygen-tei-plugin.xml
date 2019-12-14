@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+$LastChangedDate: 2011-12-06$.
+$LastChangedBy: martindholmes$
+$LastChangedRevision: 8769 $
+-->
+
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  >
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>How to automatically update your TEI framework in oXygen</title>
+        <author xml:id="EBB">Elisa Beshero-Bondar</author>
+        <author xml:id="JC">James Cummings</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Text Encoding Initiative</publisher>
+        <date>2019</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Based on James Cummings' blog posting at <ptr target="https://faqingperplxd.wordpress.com/2014/04/02/auto-update-your-tei-framework-in-oxygen/"/></p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2019-12-14" who="#EBB">Began drafting this tutorial, adapting and updating James's language from his blog site.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <p>Much of the TEI community relies on the <ref target="https://www.oxygenxml.com/">&lt;oXygen/&gt; XML Editor</ref> to provide the most up-to-date frameworks for the TEI, including element specs, schema validation rules, and transformation scenarios packaged with the latest releases of the TEI Guidelines. The <ref target="https://tei-c.org/">TEI Consortium</ref> and &lt;oXygen/&gt; jointly maintain an open source and openly-licensed oxygen-tei framework at <ptr target="https://github.com/TEIC/oxygen-tei"/>.</p>
+      <p>In this guide, we explain how to add and install the oXygen TEI plugin to  keep the TEI framework up to date with new releases of the TEI Guidelines and Stylesheets. Keeping your framework up to date will ensure that current TEI encoding projects are checked for validity against updates to the TEI-All schema and that you have access to the latest additions (new elements and attributes for example) in the TEI Guidelines. Releases of the TEI Guidelines come roughly twice per year and the oXygen TEI plugin will help ensure you have access to the latest release of the TEI source code. Follow the steps outlined here to install the oXygen TEI plugin.</p>
+    </body>
+    
+   </text>
+</TEI>
+
