@@ -267,15 +267,12 @@
             all builds were successful (they should have green balls next to them). </item>
           <item>
             <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/>
-            <code>ssh tei@tei-c.org</code><lb/>
-            <code>cd ~/private/git/P5</code> then run <code>git pull</code><lb/>then <code>cd
-              Utilities</code> (this is where the scripts are, cf. 
-            <ptr target="https://github.com/TEIC/TEI/tree/dev/P5/Utilities"/>).<lb/> 
-            Running <code>git pull</code> will update the local copy of the git repository because the 
-            scripts that the release technician is using are <emph>in</emph> git. If something goes wrong, 
-            and you need to edit the scripts described here, make certain that any changes make it
-            back into the dev branch on GitHub. Wherever possible there should be no special local magic 
-            files.<lb/> Do the following three steps: <list>
+            Log into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code> 
+            and fetch the current version of the install script by issuing 
+            <code>curl https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o ~/tei-install.sh</code>.
+            <lb/> (If you'll need to tweak that script later during the install process please make 
+            sure to feed the changes back to the original script in the TEI repo.) 
+            <lb/> Do the following three steps: <list>
               <item>Install on tei-c.org: <code>./tei-install.sh --package=TEIP5 --version=X.X.X
                   --sfuser=username --install</code> and then <emph>go test the version this puts in
                   the Vault</emph>.</item>
@@ -293,10 +290,14 @@
             --Jenkins=http://jenkins2.tei-c.org/. Make sure the script completes successfully each time 
             changing the final parameter from --install, to --makecurrent, and then --upload. </item>
           
-          <item>To upload the Stylesheets to SourceForge, run the install script again with the 
-          following parameters:<lb/>
-            <code>./tei-install.sh --package=Stylesheets
-              --version=X.X.X --sfuser=username --upload</code><lb/>
+          <item>Repeat the steps above for the Stylesheets:
+            <lb/><code>./tei-install.sh --package=Stylesheets
+              --version=X.X.X --sfuser=username --install</code>
+            <lb/><code>./tei-install.sh --package=Stylesheets
+              --version=X.X.X --sfuser=username --makecurrent</code>
+            <lb/><code>./tei-install.sh --package=Stylesheets
+              --version=X.X.X --sfuser=username --upload</code>
+            <lb/>
           Remember, the version number is the Stylesheets version, which will be different from
           the Guidelines version.</item>
 
@@ -307,15 +308,18 @@
             version number is displayed in the footer of the page, and check that at least one
             change made since the last release is being reflected online. </item>
           
-          <item><hi rend="bold">Check <ref target="http://oxgarage.tei-c.org/">OxGarage</ref></hi> 
-            to see whether it picked up the new Stylesheets and TEI sources automatically.
-            If not, you'll need to ask the TEI sysadmin (the one with root access to the TEI server) to 
-            update (i.e. nuke, pull and recreate) the OxGarage docker container. </item>
-          
-          <item><hi rend="bold">Update <ref target="http://roma.tei-c.org/">Roma</ref></hi> 
-            <lb/>Ask the TEI sysadmin to update (i.e. nuke, pull and recreate) the Roma docker container. 
-            Visit Roma and generate a simple schema to confirm it
-            works, and check that the version number is right in the footer.</item>
+          <item><hi rend="bold">Update <ref target="https://roma.tei-c.org/">Roma</ref>, 
+            <ref target="https://romabeta.tei-c.org/">Romabeta</ref>, and <ref target="https://oxgarage.tei-c.org/">OxGarage</ref></hi> 
+            <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code> and issue the script 
+            <code>docker-update.sh</code> for every service, i.e. 
+            <list>
+              <item><code># docker-update.sh roma</code></item>
+              <item><code># docker-update.sh romabeta</code></item>
+              <item><code># docker-update.sh oxgarage</code></item>
+            </list>
+            NB: Every invocation might take some time but each should succesfully finish with the notification 
+            "Creating $CONTAINER$ ... done" 
+          </item>
 
           <item>
             <hi rend="bold">Make your release the default downloadable version from
