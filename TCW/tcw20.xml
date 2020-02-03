@@ -24,6 +24,7 @@ $LastChangedRevision: 8769 $
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2020-02-03" who="MS">Changed link to TCW 24.</change>
       <change when="2019-12-26" who="EBB">Revised explanation of how to work in repo branches other than dev branch.</change>
       <change when="2018-09-16" who="MDH">Linked to schema that actually exists, and tweaked to handle the fallout.</change>
       <change when="2018-09-16" who="MDH">Adding documentation on how to create or edit an Appendix to the Guidelines.</change>
@@ -178,7 +179,7 @@ processing instruction. If you think of other content that could be generated in
         <head>Style Notes</head>
         <div>
           <head>General</head>
-          <p>See the <ref target="http://www.tei-c.org/Activities/Council/Working/tcw24.xml">Style 
+          <p>See the <ref target="https://teic.github.io/TCW/tcw24.html">Style 
             Guide for Editing the TEI Guidelines</ref>, 
             which attempts to state preferred practice on vexed issues
             issues about spelling, punctuation, etc. The goal of these rules is to avoid
