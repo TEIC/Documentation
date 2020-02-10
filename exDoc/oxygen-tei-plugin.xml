@@ -28,8 +28,7 @@
      <div xml:id="addPlugin">
        <head>Add the oXygen TEI plugin</head>
        <list type="ordered">
-         <item>In the Options menu, select Preferences. Then select Add-ons, as shown in the figure below. <figure><graphic width="80%" url="Images/oxygenPrefsAddons.png"/></figure></item>
-         <item></item>
+         <item>You can add the the plugin from either the Help menu or the Options menu. In the Help Menu, select “Install new add-ons...”. Alternatively, in the Options menu, select Preferences. Then select Add-ons, as shown in the figure below.  <figure><graphic width="80%" url="Images/oxygenPrefsAddons.png"/></figure></item>
          <item>Click on the Add button to add a new Add-on, and in the pop-up window that appears, paste in this URL: <ptr target="https://www.tei-c.org/release/oxygen/updateSite.oxygen"/>. This is the oXygen-TEI add-on file which is updated every time there is a TEI Guidelines or Stylesheets release. Click <q>OK</q> to add it to your list of available add-ons.
            <figure><graphic url="Images/addPlugin.png"/></figure></item>
          <item>Back in the Preferences window in Add-ons, be sure that the <q>Enable automatic updates checking</q> is checked, and click <q>OK</q>. <figure><graphic url="Images/enableUpdates.png"/></figure></item>
