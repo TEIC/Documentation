@@ -2,7 +2,7 @@ language: minimal
 
 before-install:
   - sudo apt-get update
-  - sudo apt-get -y install xsltproc
+  - sudo apt-get -y install libxml2-utils xsltproc
 
 script:
   - curl https://raw.githubusercontent.com/TEIC/CETEIcean/master/xslt/make-CETEIcean.xsl -o make-CETEIcean.xsl
@@ -16,3 +16,6 @@ deploy:
   keep_history: true
   on:
     branch: master
+  local_dir: teic.github.io
+  repo: TEIC/teic.github.io
+  target_branch: master
