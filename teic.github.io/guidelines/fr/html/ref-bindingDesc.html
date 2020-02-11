@@ -1,0 +1,109 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI element bindingDesc  (binding description) </title><meta property="Language" content="fr" /><meta property="DC.Title" content="TEI element bindingDesc  (binding description) " /><meta property="DC.Language" content="SCHEME=iso639 fr" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Recommandations pour l'encodage et l'échange de textes électroniques</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Accueil</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C Éléments</a></li></ul></div><div><h3 class="oddSpec" id="bindingDesc">&lt;bindingDesc&gt;</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">&lt;bindingDesc&gt; </span>(description de la reliure) décrit les reliures actuelles et anciennes d'un manuscrit, soit en une série de paragraphes <span class="term">p</span>, soit sous la forme d'une série d'éléments <a class="gi" title="(reliure) contient la description d'une reliure, i.e. du type de couverture, d'ais, etc., rencontrés." href="ref-binding.html">binding</a>, un pour chaque reliure [<a class="link_ptr" href="MS.html#msphbi" title="Binding Descriptions"><span class="headingNumber">10.7.3.1 </span>Binding Descriptions</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Module</span></td><td class="wovenodd-col2">msdescription — Manuscript Description</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Attributs</span></td><td class="wovenodd-col2"><a class="link_odd" title="fournit un jeu d'attributs communs à tous les éléments dans le système de codage TEI." href="ref-att.global.html">att.global</a> (<span class="attribute">@xml:id</span>, <span class="attribute">@n</span>, <span class="attribute">@xml:lang</span>, <span class="attribute">@xml:base</span>, <span class="attribute">@xml:space</span>)  (<a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition</a> (<span class="attribute">@rend</span>, <span class="attribute">@style</span>, <span class="attribute">@rendition</span>))  (<a class="link_odd" title="fournit un ensemble d'attributs pour décrire les liens hypertextuels." href="ref-att.global.linking.html">att.global.linking</a> (<span class="attribute">@corresp</span>, <span class="attribute">@synch</span>, <span class="attribute">@sameAs</span>, <span class="attribute">@copyOf</span>, <span class="attribute">@next</span>, <span class="attribute">@prev</span>, <span class="attribute">@exclude</span>, <span class="attribute">@select</span>))  (<a class="link_odd" title="fournit des attributs globaux complémentaires pour associer des analyses ou des interprétations spécifiques avec des portions de texte appropriées." href="ref-att.global.analytic.html">att.global.analytic</a> (<span class="attribute">@ana</span>))  (<a class="link_odd" title="attributs utilisables pour les éléments correspondant à tout ou partie d'une image, parce qu'ils contiennent une représentation alternative de cette image, généralement mais pas nécessairement, une transcription." href="ref-att.global.facs.html">att.global.facs</a> (<span class="attribute">@facs</span>))  (<a class="link_odd" title="" href="ref-att.global.change.html">att.global.change</a> (<span class="attribute">@change</span>))  (<a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a> (<span class="attribute">@cert</span>, <span class="attribute">@resp</span>))  (<a class="link_odd" title="" href="ref-att.global.source.html">att.global.source</a> (<span class="attribute">@source</span>)) </td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Membre du</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_classSpec" title="regroupe des éléments spécialisés constituant la description physique d'un manuscrit ou d'une source écrite de même nature" href="ref-model.physDescPart.html">model.physDescPart</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Contenu dans</span></td><td class="wovenodd-col2"><div class="parent"><div class="specChildren"><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(description physique) contient la description physique complète d'un manuscrit ou d'une partie d'un manuscrit, éventuellement structurée en utilisant les éléments plus spécialisés appartenant à la classe model.physDescPart." href="ref-physDesc.html">physDesc</a></span></div></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Peut contenir</span></td><td class="wovenodd-col2"><div class="specChildren"><div class="specChild"><span class="specChildModule">core: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(paragraphe) marque les paragraphes dans un texte en prose." href="ref-p.html">p</a></span></div><div class="specChild"><span class="specChildModule">linking: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(bloc anonyme) contient une unité de texte quelconque, de niveau &#34;composant&#34;, faisant office de contenant anonyme pour une expression ou des éléments de niveau intermédiaire, analogue à un paragraphe mais sans sa portée sémantique." href="ref-ab.html">ab</a></span></div><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(reliure) contient la description d'une reliure, i.e. du type de couverture, d'ais, etc., rencontrés." href="ref-binding.html">binding</a> <a class="link_odd_elementSpec" title="(état matériel) contient la description de l'état matériel du manuscrit." href="ref-condition.html">condition</a> <a class="link_odd_elementSpec" title="(note sur un élément de décoration) contient une note décrivant soit un élément de décoration du mansucrit, soit une catégorie relativement homogène de tels éléments." href="ref-decoNote.html">decoNote</a></span></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Exemple</span></td><td class="wovenodd-col2"><div id="index-egXML-d52e89845" class="pre egXML_valid"><span class="element">&lt;bindingDesc&gt;</span><br /> <span class="element">&lt;binding <span class="attribute">contemporary</span>="<span class="attributevalue">true</span>"&gt;</span><br />  <span class="element">&lt;p&gt;</span><br />   <span class="element">&lt;index <span class="attribute">indexName</span>="<span class="attributevalue">typo_reliure</span>"&gt;</span><br />    <span class="element">&lt;term&gt;</span>Reliure à décor<span class="element">&lt;/term&gt;</span><br />   <span class="element">&lt;/index&gt;</span><br />   <span class="element">&lt;index <span class="attribute">indexName</span>="<span class="attributevalue">typo_decor</span>"&gt;</span><br />    <span class="element">&lt;term&gt;</span>Décor mosaïqué, avec formes géométriques à répétition<span class="element">&lt;/term&gt;</span><br />   <span class="element">&lt;/index&gt;</span> Reliure en <span class="element">&lt;material&gt;</span>maroquin<span class="element">&lt;/material&gt;</span> citron<span class="element">&lt;/p&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">plats</span>"&gt;</span>à décor mosaïqué dit à répétition, dont l’effet de dallage est<br />     obtenu par des pièces polylobées de maroquin noir, ornée chacune d’une composition de<br />     petits fers plein or, cantonnées de petits disques de maroquin rouge ponctué chacun<br />     d’un cercle plein or, le tout serti de filets dorés courbes.<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">plat_sup</span>"/&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">plat_inf</span>"/&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">dos</span>"&gt;</span>Dos à 5 nerfs à décor analogue (pièce polylobée de maroquin noir<br />     avec composition identique, cantonnée de quatre disques rouges, ponctués du même<br />     cercle plein or) ; filets dorés sur les nerfs ; pièce de titre rouge dans le 2e<br />     caisson, soulignée de deux lignes de points dorés identiques à celle portée en tête et<br />     queue du dos, sur une bande de maroquin noir.<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">tranchefiles</span>"&gt;</span>Tranchefiles simples droites, tricolores (noir, bleu et<br />     rose).<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">coupes</span>"&gt;</span>Coupes dorées, proposant en alternance un filet simple et une<br />     succession de traits obliques.<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">annexes</span>"&gt;</span>Signet de soie rose.<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">tranches</span>"&gt;</span>Tranches dorées sur marbrure à motif caillouté, dans les tons<br />     bleu et rose.<span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">contreplats</span>"/&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">chasses</span>"&gt;</span>Chasses ornées d’une roulette à motif de zigzag.<span class="element">&lt;/decoNote&gt;</span><br /><span class="comment">&lt;!-- Description des gardes : gardes blanches ; gardes couleurs (marbrées, gaufrées, peintes, dominotées, etc.) généralement suivies de gardes blanches ; dans tous les cas, spécifier le nombre de gardes (début + fin du volume)--&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">gardes</span>"&gt;</span>Gardes en papier plein or et gardes blanches (1 + 1), sans<br />     filigrane.<span class="element">&lt;watermark/&gt;</span><br />  <span class="element">&lt;/decoNote&gt;</span><br /><span class="comment">&lt;!-- Élément qui inclut aussi bien des remarques sur la couture que les charnières, claies ou modes d'attaches des plats : tous éléments de la structure dont la description est jugée utile à la description et l'identification de la reliure--&gt;</span><br />  <span class="element">&lt;decoNote <span class="attribute">type</span>="<span class="attributevalue">structure</span>"/&gt;</span><br />  <span class="element">&lt;condition/&gt;</span><br /> <span class="element">&lt;/binding&gt;</span><br /><span class="element">&lt;/bindingDesc&gt;</span><div style="float: right;"><a href="BIB.html#fr-ex-BnF-Reliures">bibliography</a> </div><div style="float: right;"><a href="examples-bindingDesc.html">Toute la liste</a> </div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Modèle de contenu</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;alternate&gt;</span><br />  <span class="element">&lt;alternate <span class="attribute">minOccurs</span>="<span class="attributevalue">1</span>"<br />   <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"&gt;</span><br />   <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.pLike.html">model.pLike</a>"/&gt;</span><br />   <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-decoNote.html">decoNote</a>"/&gt;</span><br />   <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-condition.html">condition</a>"/&gt;</span><br />  <span class="element">&lt;/alternate&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-binding.html">binding</a>" <span class="attribute">minOccurs</span>="<span class="attributevalue">1</span>"<br />   <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"/&gt;</span><br /> <span class="element">&lt;/alternate&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Schéma Declaration</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">Syntaxe XML</span><span class="RNG_XML">Syntaxe compact</span></button><pre class="RNG_XML"><span class="element">&lt;rng:element <span class="attribute">name</span>="<span class="attributevalue">bindingDesc</span>"&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.rendition.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.linking.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.analytic.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.facs.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.change.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.responsibility.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.source.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:choice&gt;</span><br />  <span class="element">&lt;rng:oneOrMore&gt;</span><br />   <span class="element">&lt;rng:choice&gt;</span><br />    <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.pLike</span>"/&gt;</span><br />    <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">decoNote</span>"/&gt;</span><br />    <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">condition</span>"/&gt;</span><br />   <span class="element">&lt;/rng:choice&gt;</span><br />  <span class="element">&lt;/rng:oneOrMore&gt;</span><br />  <span class="element">&lt;rng:oneOrMore&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">binding</span>"/&gt;</span><br />  <span class="element">&lt;/rng:oneOrMore&gt;</span><br /> <span class="element">&lt;/rng:choice&gt;</span><br /><span class="element">&lt;/rng:element&gt;</span></pre><pre class="RNG_Compact">
+<span class="rnc_keyword">element</span> <span class="rnc_nc">bindingDesc</span>
+{
+   <a class="link_odd" title="fournit un jeu d'attributs communs à tous les éléments dans le système de codage TEI." href="ref-att.global.html">att.global.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition.attributes</a>,
+   <a class="link_odd" title="fournit un ensemble d'attributs pour décrire les liens hypertextuels." href="ref-att.global.linking.html">att.global.linking.attributes</a>,
+   <a class="link_odd" title="fournit des attributs globaux complémentaires pour associer des analyses ou des interprétations spécifiques avec des portions de texte appropriées." href="ref-att.global.analytic.html">att.global.analytic.attributes</a>,
+   <a class="link_odd" title="attributs utilisables pour les éléments correspondant à tout ou partie d'une image, parce qu'ils contiennent une représentation alternative de cette image, généralement mais pas nécessairement, une transcription." href="ref-att.global.facs.html">att.global.facs.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.change.html">att.global.change.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.source.html">att.global.source.attributes</a>,
+   ( ( <a class="link_odd" title="regroupe des éléments de type paragraphe." href="ref-model.pLike.html">model.pLike</a> | <a class="link_odd" title="(note sur un élément de décoration) contient une note décrivant soit un élément de décoration du mansucrit, soit une catégorie relativement homogène de tels éléments." href="ref-decoNote.html">decoNote</a> | <a class="link_odd" title="(état matériel) contient la description de l'état matériel du manuscrit." href="ref-condition.html">condition</a> )+ | <a class="link_odd" title="(reliure) contient la description d'une reliure, i.e. du type de couverture, d'ais, etc., rencontrés." href="ref-binding.html">binding</a>+ )
+}</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-bindingDesc.html">English</a>]
+    [<a href="../../de/html/ref-bindingDesc.html">Deutsch</a>]
+    [<a href="../../es/html/ref-bindingDesc.html">Español</a>]
+    [<a href="../../it/html/ref-bindingDesc.html">Italiano</a>]
+    [<a href="../../fr/html/ref-bindingDesc.html">Français</a>]
+    [<a href="../../ja/html/ref-bindingDesc.html">日本語</a>]
+    [<a href="../../ko/html/ref-bindingDesc.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-bindingDesc.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commentaires</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:06:21Z.</address></div></body></html>

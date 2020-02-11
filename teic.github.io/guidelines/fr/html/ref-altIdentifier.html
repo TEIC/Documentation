@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI element altIdentifier  (alternative identifier) </title><meta property="Language" content="fr" /><meta property="DC.Title" content="TEI element altIdentifier  (alternative identifier) " /><meta property="DC.Language" content="SCHEME=iso639 fr" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Recommandations pour l'encodage et l'échange de textes électroniques</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Accueil</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C Éléments</a></li></ul></div><div><h3 class="oddSpec" id="altIdentifier">&lt;altIdentifier&gt;</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">&lt;altIdentifier&gt; </span>(autre identifiant) Contient un autre ou un ancien identifiant pour un manuscrit, par exemple un numéro anciennement utilisé dans un catalogue. [<a class="link_ptr" href="MS.html#msid" title="The Manuscript Identifier"><span class="headingNumber">10.4 </span>The Manuscript Identifier</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Module</span></td><td class="wovenodd-col2">msdescription — Manuscript Description</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Attributs</span></td><td class="wovenodd-col2"><a class="link_odd" title="fournit un jeu d'attributs communs à tous les éléments dans le système de codage TEI." href="ref-att.global.html">att.global</a> (<span class="attribute">@xml:id</span>, <span class="attribute">@n</span>, <span class="attribute">@xml:lang</span>, <span class="attribute">@xml:base</span>, <span class="attribute">@xml:space</span>)  (<a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition</a> (<span class="attribute">@rend</span>, <span class="attribute">@style</span>, <span class="attribute">@rendition</span>))  (<a class="link_odd" title="fournit un ensemble d'attributs pour décrire les liens hypertextuels." href="ref-att.global.linking.html">att.global.linking</a> (<span class="attribute">@corresp</span>, <span class="attribute">@synch</span>, <span class="attribute">@sameAs</span>, <span class="attribute">@copyOf</span>, <span class="attribute">@next</span>, <span class="attribute">@prev</span>, <span class="attribute">@exclude</span>, <span class="attribute">@select</span>))  (<a class="link_odd" title="fournit des attributs globaux complémentaires pour associer des analyses ou des interprétations spécifiques avec des portions de texte appropriées." href="ref-att.global.analytic.html">att.global.analytic</a> (<span class="attribute">@ana</span>))  (<a class="link_odd" title="attributs utilisables pour les éléments correspondant à tout ou partie d'une image, parce qu'ils contiennent une représentation alternative de cette image, généralement mais pas nécessairement, une transcription." href="ref-att.global.facs.html">att.global.facs</a> (<span class="attribute">@facs</span>))  (<a class="link_odd" title="" href="ref-att.global.change.html">att.global.change</a> (<span class="attribute">@change</span>))  (<a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a> (<span class="attribute">@cert</span>, <span class="attribute">@resp</span>))  (<a class="link_odd" title="" href="ref-att.global.source.html">att.global.source</a> (<span class="attribute">@source</span>)) <a class="link_odd" title="fournit des attributs qui peuvent être utilisés pour classer ou interclasser des éléments de n'importe quelle façon." href="ref-att.typed.html">att.typed</a> (<span class="attribute">@type</span>, <span class="attribute">@subtype</span>) </td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Contenu dans</span></td><td class="wovenodd-col2"><div class="parent"><div class="specChildren"><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(fragment d'un manuscrit) contient des informations sur un fragment d'un manuscrit dispersé, aujourd'hui conservé séparément ou incorporé dans un autre manuscrit." href="ref-msFrag.html">msFrag</a> <a class="link_odd_elementSpec" title="(identifiant du manuscrit) Contient les informations requises pour identifier le manuscrit en cours de description." href="ref-msIdentifier.html">msIdentifier</a></span></div><div class="specChild"><span class="specChildModule">namesdates: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="" href="ref-objectIdentifier.html">objectIdentifier</a></span></div></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Peut contenir</span></td><td class="wovenodd-col2"><div class="specChildren"><div class="specChild"><span class="specChildModule">core: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="contient une note ou une annotation" href="ref-note.html">note</a></span></div><div class="specChild"><span class="specChildModule">header: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(identifiant) donne un numéro normalisé ou non qui peut être utilisé pour identifier une référence bibliographique." href="ref-idno.html">idno</a></span></div><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(collection) Contient le nom d'une collection de manuscrits, ceux-ci ne se trouvant pas nécessairement dans le même lieu de conservation." href="ref-collection.html">collection</a> <a class="link_odd_elementSpec" title="(institution) Contient le nom d'un organisme (comme une université ou une bibliothèque), avec lequel un manuscrit est identifié ; en général c'est le nom de l'institution qui conserve ce manuscrit." href="ref-institution.html">institution</a> <a class="link_odd_elementSpec" title="(lieu de conservation) Contient le nom d'un dépôt dans lequel des manuscrits sont entreposés, et qui peut faire partie d'une institution." href="ref-repository.html">repository</a></span></div><div class="specChild"><span class="specChildModule">namesdates: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(bloc) contient le nom d'une unité géo-politique composée d'au moins deux états ou pays" href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="(pays) contient le nom d'une unité géo-politique, comme une nation, un pays, une colonie ou une communauté, plus grande ou administrativement supérieure à une région et plus petite qu'un bloc." href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="(district) contient le nom d'une subdivision quelconque d'une ville, comme une paroisse, une circonscription électorale ou toute autre unité administrative ou géographique." href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="(nom de lieu géographique) un nom associé à une caractéristique géographique comme Windrush Valley ou le Mont Sinaï." href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="(nom de lieu) contient un nom de lieu absolu ou relatif." href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="(région) contient le nom d'une unité administrative comme un état, une province ou un comté, plus grande qu'un lieu de peuplement, mais plus petite qu'un pays." href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="(lieu de peuplement) contient le nom d'un lieu de peuplement comme une cité, une ville ou un village, identifié comme une unité géo-politique ou administrative unique." href="ref-settlement.html">settlement</a></span></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Note</span></td><td class="wovenodd-col2"><!-- --><p>Un numéro identifiant quelconque doit être fourni s'il est connu ; si on ne le connaît pas, cela devrait être signalé.</p></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Exemple</span></td><td class="wovenodd-col2"><div id="index-egXML-d52e85057" class="pre egXML_valid"><span class="element">&lt;altIdentifier&gt;</span><br /> <span class="element">&lt;idno&gt;</span>B 106<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;note&gt;</span>Cote de la Bibliothèque royale au XVIIIe siècle.<span class="element">&lt;/note&gt;</span><br /><span class="element">&lt;/altIdentifier&gt;</span><div style="float: right;"><a href="BIB.html#fr-ex-BnF-Reliures">bibliography</a> </div><div style="float: right;"><a href="examples-altIdentifier.html">Toute la liste</a> </div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Modèle de contenu</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;sequence&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.placeNamePart.html">model.placeNamePart</a>"<br />   <span class="attribute">expand</span>="<span class="attributevalue">sequenceOptional</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-institution.html">institution</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-repository.html">repository</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-collection.html">collection</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-idno.html">idno</a>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-note.html">note</a>" <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br /> <span class="element">&lt;/sequence&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Schéma Declaration</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">Syntaxe XML</span><span class="RNG_XML">Syntaxe compact</span></button><pre class="RNG_XML"><span class="element">&lt;rng:element <span class="attribute">name</span>="<span class="attributevalue">altIdentifier</span>"&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.rendition.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.linking.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.analytic.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.facs.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.change.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.responsibility.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.source.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.typed.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:group&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">placeName</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">bloc</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">country</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">region</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">settlement</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">district</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">geogName</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">institution</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">repository</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">collection</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">idno</span>"/&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">note</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br /> <span class="element">&lt;/rng:group&gt;</span><br /><span class="element">&lt;/rng:element&gt;</span></pre><pre class="RNG_Compact">
+<span class="rnc_keyword">element</span> <span class="rnc_nc">altIdentifier</span>
+{
+   <a class="link_odd" title="fournit un jeu d'attributs communs à tous les éléments dans le système de codage TEI." href="ref-att.global.html">att.global.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition.attributes</a>,
+   <a class="link_odd" title="fournit un ensemble d'attributs pour décrire les liens hypertextuels." href="ref-att.global.linking.html">att.global.linking.attributes</a>,
+   <a class="link_odd" title="fournit des attributs globaux complémentaires pour associer des analyses ou des interprétations spécifiques avec des portions de texte appropriées." href="ref-att.global.analytic.html">att.global.analytic.attributes</a>,
+   <a class="link_odd" title="attributs utilisables pour les éléments correspondant à tout ou partie d'une image, parce qu'ils contiennent une représentation alternative de cette image, généralement mais pas nécessairement, une transcription." href="ref-att.global.facs.html">att.global.facs.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.change.html">att.global.change.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.source.html">att.global.source.attributes</a>,
+   <a class="link_odd" title="fournit des attributs qui peuvent être utilisés pour classer ou interclasser des éléments de n'importe quelle façon." href="ref-att.typed.html">att.typed.attributes</a>,
+   (
+      <a class="link_odd" title="(nom de lieu) contient un nom de lieu absolu ou relatif." href="ref-placeName.html">placeName</a>?,
+      <a class="link_odd" title="(bloc) contient le nom d'une unité géo-politique composée d'au moins deux états ou pays" href="ref-bloc.html">bloc</a>?,
+      <a class="link_odd" title="(pays) contient le nom d'une unité géo-politique, comme une nation, un pays, une colonie ou une communauté, plus grande ou administrativement supérieure à une région et plus petite qu'un bloc." href="ref-country.html">country</a>?,
+      <a class="link_odd" title="(région) contient le nom d'une unité administrative comme un état, une province ou un comté, plus grande qu'un lieu de peuplement, mais plus petite qu'un pays." href="ref-region.html">region</a>?,
+      <a class="link_odd" title="(lieu de peuplement) contient le nom d'un lieu de peuplement comme une cité, une ville ou un village, identifié comme une unité géo-politique ou administrative unique." href="ref-settlement.html">settlement</a>?,
+      <a class="link_odd" title="(district) contient le nom d'une subdivision quelconque d'une ville, comme une paroisse, une circonscription électorale ou toute autre unité administrative ou géographique." href="ref-district.html">district</a>?,
+      <a class="link_odd" title="(nom de lieu géographique) un nom associé à une caractéristique géographique comme Windrush Valley ou le Mont Sinaï." href="ref-geogName.html">geogName</a>?,
+      <a class="link_odd" title="(institution) Contient le nom d'un organisme (comme une université ou une bibliothèque), avec lequel un manuscrit est identifié ; en général c'est le nom de l'institution qui conserve ce manuscrit." href="ref-institution.html">institution</a>?,
+      <a class="link_odd" title="(lieu de conservation) Contient le nom d'un dépôt dans lequel des manuscrits sont entreposés, et qui peut faire partie d'une institution." href="ref-repository.html">repository</a>?,
+      <a class="link_odd" title="(collection) Contient le nom d'une collection de manuscrits, ceux-ci ne se trouvant pas nécessairement dans le même lieu de conservation." href="ref-collection.html">collection</a>?,
+      <a class="link_odd" title="(identifiant) donne un numéro normalisé ou non qui peut être utilisé pour identifier une référence bibliographique." href="ref-idno.html">idno</a>,
+      <a class="link_odd" title="contient une note ou une annotation" href="ref-note.html">note</a>?
+   )
+}</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-altIdentifier.html">English</a>]
+    [<a href="../../de/html/ref-altIdentifier.html">Deutsch</a>]
+    [<a href="../../es/html/ref-altIdentifier.html">Español</a>]
+    [<a href="../../it/html/ref-altIdentifier.html">Italiano</a>]
+    [<a href="../../fr/html/ref-altIdentifier.html">Français</a>]
+    [<a href="../../ja/html/ref-altIdentifier.html">日本語</a>]
+    [<a href="../../ko/html/ref-altIdentifier.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-altIdentifier.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commentaires</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:06:21Z.</address></div></body></html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class att.canonical </title><meta property="Language" content="zh-TW" /><meta property="DC.Title" content="TEI class att.canonical " /><meta property="DC.Language" content="SCHEME=iso639 zh-TW" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEI指引</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">首頁</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-ATTS.html">B 屬性集</a></li></ul></div><div><h3 class="oddSpec" id="att.canonical">att.canonical</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">att.canonical</span> provides attributes which can be used to associate a representation such as a name or title with canonical information about the object being named or referenced. [<a class="link_ptr" href="ND.html#NDATTSnr" title="Linking Names and Their Referents"><span class="headingNumber">13.1.1 </span>Linking Names and Their Referents</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">組件</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW"> 成員</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="提供屬性，通用於參照到人物、地點、組織等的元素。" href="ref-att.naming.html">att.naming</a><span class="showmembers2"> [<a class="link_odd_classSpec" title="(用於個人名稱元件的屬性) 構成部分個人名稱的元素所用之通用屬性" href="ref-att.personal.html">att.personal</a><span class="showmembers3"> [<a class="link_odd_elementSpec" title="(附加名稱) 附加的名稱，例如綽號、稱號、或別名，或是在人名中出現的其他描述性措辭。" href="ref-addName.html">addName</a> <a class="link_odd_elementSpec" title="包含名字或教名。" href="ref-forename.html">forename</a> <a class="link_odd_elementSpec" title="() 該名稱用來和其他相似名稱做區別，以個人的相對年紀或隸屬世代作依據。" href="ref-genName.html">genName</a> <a class="link_odd_elementSpec" title="(名稱，特定名稱) 包含一個特定名稱 或名詞詞組。" href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="(組織名稱) 包含一個組織名稱。" href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="(個人名稱) 包含一個人名，可能是任何或全部屬於該人物的名字、姓氏、敬稱、或附加名等。" href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="包含一個確切位置或相對位置的名稱。" href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="包含一個身份名稱，代表個人在社會上所扮演的特殊角色或所處地位，例如官方頭銜或地位。" href="ref-roleName.html">roleName</a> <a class="link_odd_elementSpec" title="包含一個家族姓氏，並非名字、教名、或綽號。" href="ref-surname.html">surname</a>] </span> <a class="link_odd_elementSpec" title="包含非正式性的描述，關於個人現在或過去隸屬的團體，例如雇主或贊助者。" href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="在書目參照中，包含一件作品的作者 (群) 姓名，無論是個人或是團體性質；這也是書目項目責任歸屬的主要陳述。" href="ref-author.html">author</a> <a class="link_odd_elementSpec" title="包含個人的出生資訊，例如日期及地點等。" href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="包含一個地理政治區域名稱，由一個或多個國家所組成。" href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="" href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="包含手稿集合的名稱，手稿未必皆位於單一收藏點。" href="ref-collection.html">collection</a> <a class="link_odd_elementSpec" title="包含一個地理政治區域名稱，例如民族、國家、殖民地、或聯邦區域，範圍大於一般地區或行政地位較高，但小於國家聯盟性的地理政治區。" href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="包含個人的死亡資訊，例如日期及地點等。" href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="包含任何次行政區名稱，例如教區、選區、或其他行政或地理單元。" href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="書目項目的次要責任歸屬，例如扮演編輯、編譯、翻譯等角色的個人、機構或組織 (或其他類似者) 的名稱。" href="ref-editor.html">editor</a> <a class="link_odd_elementSpec" title="包含個人教育經歷的描述。" href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="任何未必是口說的或溝通上的現象或發生情況，例如偶然的噪音或其他影響溝通的事件。" href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="" href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="(地理名稱) 與地形名稱結合的地名，例如威拉索溪谷、西奈山等。" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="包含一個組織名稱，例如大學或圖書館，手稿屬於該組織，通常是手稿所在地。" href="ref-institution.html">institution</a> <a class="link_odd_elementSpec" title="包含一非正式的敘述，表示個人現在或過去擁有的國籍或公民身分。" href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="包含非正式的敘述，表示個人所從事的行業或所屬的專業。" href="ref-occupation.html">occupation</a> <a class="link_odd_elementSpec" title="在時間或空間差距的表示中，該部分指出兩個地名、日期、或時間之間差距的方向性。" href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="() 包含任何格式的地名，用以確認手稿或手稿部分的來源地點。" href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="" href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="() 包含書目項目的出版地名稱。" href="ref-pubPlace.html">pubPlace</a> <a class="link_odd_elementSpec" title="包含行政單位的名稱，例如州、省、或郡，範圍大於主政區，但小於國家。" href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="包含該手稿收藏所在地的名稱，可能是某機構的一部分。" href="ref-repository.html">repository</a> <a class="link_odd_elementSpec" title="(住所) 描述個人過去或現在的住所。" href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="(參照字串) 包含一般名稱或參照字串。" href="ref-rs.html">rs</a> <a class="link_odd_elementSpec" title="包含主行政區的名稱，例如城市、鄉鎮、村莊等單一地理政治或行政單位。" href="ref-settlement.html">settlement</a> <a class="link_odd_elementSpec" title="(社會經濟地位) 包含個人的社會或經濟地位的非正式描述。" href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="標明分界方法所定義的權威參照標準裡其中ㄧ個組件。" href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="" href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="" href="ref-trait.html">trait</a>] </span> <a class="link_odd_elementSpec" title="角色名單中的演員姓名。" href="ref-actor.html">actor</a> <a class="link_odd_elementSpec" title="(供應機構) 說明除了出版者或發行者之外，負責提供電子檔案的個人或其他經銷商的名稱。" href="ref-authority.html">authority</a> <a class="link_odd_elementSpec" title="" href="ref-correspDesc.html">correspDesc</a> <a class="link_odd_elementSpec" title="包含任何格式的日期表示。" href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="提供負責發行文件的個人或其他經銷商的名稱。" href="ref-distributor.html">distributor</a> <a class="link_odd_elementSpec" title="(文件作者) 包含文件作者名稱，同於題名頁上顯示的作者名 (經常但不一定出現在署名當中) 。" href="ref-docAuthor.html">docAuthor</a> <a class="link_odd_elementSpec" title="(文件題名) 包含文件題名，包含所有組成部分，同於題名頁上所顯示的題名。" href="ref-docTitle.html">docTitle</a> <a class="link_odd_elementSpec" title="標明個人的宗教信仰或其他信念。" href="ref-faith.html">faith</a> <a class="link_odd_elementSpec" title="(資助者) 標明負責資助一項計畫或文件製作的個人、機構或組織名稱。" href="ref-funder.html">funder</a> <a class="link_odd_elementSpec" title="用一個字詞描述手稿 (或手稿部分) 的組成材料。" href="ref-material.html">material</a> <a class="link_odd_elementSpec" title="在書目參照當中，標記該書目項目來源的會議相關描述。" href="ref-meeting.html">meeting</a> <a class="link_odd_elementSpec" title="" href="ref-object.html">object</a> <a class="link_odd_elementSpec" title="" href="ref-objectType.html">objectType</a> <a class="link_odd_elementSpec" title="(主導研究者) 提供負責電子文件製作的主導研究者的姓名。" href="ref-principal.html">principal</a> <a class="link_odd_elementSpec" title="提供負責出版或發行書目項目的機構名稱。" href="ref-publisher.html">publisher</a> <a class="link_odd_elementSpec" title="(人際關係) 描述在特定團體中，參與者彼此之間的關係或關聯。" href="ref-relation.html">relation</a> <a class="link_odd_elementSpec" title="() 包含一個詞彙，來描述個人智慧責任的類型。" href="ref-resp.html">resp</a> <a class="link_odd_elementSpec" title="(責任陳述) 當未使用作者、編輯者等特定元素，或元素內容不足時，在此補充說明文件、版本、記錄、或是叢書的智慧內容所屬負責人的責任陳述。" href="ref-respStmt.html">respStmt</a> <a class="link_odd_elementSpec" title="標明贊助的組織或機構名稱。" href="ref-sponsor.html">sponsor</a> <a class="link_odd_elementSpec" title="包含作為專有名詞的一個單字、詞彙、或是表示符號。" href="ref-term.html">term</a> <a class="link_odd_elementSpec" title="包含任何種類作品的完整題名 。" href="ref-title.html">title</a></span></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">屬性</span></td><td class="wovenodd-col2">屬性<table class="attList"><tr><td class="odd_label">key<span class="bookmarklink"><a class="bookmarklink" id="tei_att.key" href="#tei_att.key" title="link to this attribute "><span class="invisible"> key</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="zh-TW">狀態</span> </td><td class="odd_value"><span lang="zh-TW">非必備的</span></td></tr><tr><td class="odd_label"><span lang="zh-TW" class="label">資料類型</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.text.html">teidata.text</a></td></tr><tr><td colspan="2"><div id="index-egXML-d52e4860" class="pre egXML_valid"><span class="element">&lt;author&gt;</span><br /> <span class="element">&lt;name <span class="attribute">key</span>="<span class="attributevalue">name 427308</span>"<br />  <span class="attribute">type</span>="<span class="attributevalue">organisation</span>"&gt;</span>[New Zealand Parliament, Legislative Council]<span class="element">&lt;/name&gt;</span><br /><span class="element">&lt;/author&gt;</span><div style="float: right;"><a href="BIB.html#NONE">bibliography</a> </div></div></td></tr><tr><td colspan="2"><div id="index-egXML-d52e4865" class="pre egXML_valid"><span class="element">&lt;author&gt;</span><br /> <span class="element">&lt;name <span class="attribute">key</span>="<span class="attributevalue">Hugo, Victor (1802-1885)</span>"<br />  <span class="attribute">ref</span>="<span class="attributevalue">http://www.idref.fr/026927608</span>"&gt;</span>Victor Hugo<span class="element">&lt;/name&gt;</span><br /><span class="element">&lt;/author&gt;</span><div style="float: right;"><a href="BIB.html#NONE">bibliography</a> </div></div></td></tr></table></td></tr><tr><td class="odd_label">ref<span class="bookmarklink"><a class="bookmarklink" id="tei_att.ref" href="#tei_att.ref" title="link to this attribute "><span class="invisible"> ref</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value"> (reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="zh-TW">狀態</span> </td><td class="odd_value"><span lang="zh-TW">非必備的</span></td></tr><tr><td class="odd_label"><span lang="zh-TW" class="label">資料類型</span> </td><td class="odd_value"> 1–∞ <span lang="zh-TW">次可出現:</span> <a class="link_element" href="ref-teidata.pointer.html">teidata.pointer</a> <span lang="zh-TW">以空白鍵隔開</span></td></tr><tr><td colspan="2"><div id="index-egXML-d52e4914" class="pre egXML_valid"><span class="element">&lt;name <span class="attribute">ref</span>="<span class="attributevalue">http://viaf.org/viaf/109557338</span>"<br /> <span class="attribute">type</span>="<span class="attributevalue">person</span>"&gt;</span>Seamus Heaney<span class="element">&lt;/name&gt;</span><div style="float: right;"><a href="BIB.html#NONE">bibliography</a> </div></div></td></tr></table></td></tr></table></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-att.canonical.html">English</a>]
+    [<a href="../../de/html/ref-att.canonical.html">Deutsch</a>]
+    [<a href="../../es/html/ref-att.canonical.html">Español</a>]
+    [<a href="../../it/html/ref-att.canonical.html">Italiano</a>]
+    [<a href="../../fr/html/ref-att.canonical.html">Français</a>]
+    [<a href="../../ja/html/ref-att.canonical.html">日本語</a>]
+    [<a href="../../ko/html/ref-att.canonical.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-att.canonical.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">回饋</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:08:02Z.</address></div></body></html>

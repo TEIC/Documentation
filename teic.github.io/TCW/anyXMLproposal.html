@@ -1,0 +1,323 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
+          var c = new CETEI();
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","publicationStmt","p","sourceDesc","text","body","ref","gi","ident","div","head","table","row","cell","code","tag",];
+          c.els.push("egXML");
+          if (document.registerElement) {
+            c.registerAll(c.els);
+          } else {
+            c.fallback(c.els);
+          }
+        </script></head><body>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"><tei-tei data-xmlns="http://www.tei-c.org/ns/1.0" data-teiname="TEI">
+   <tei-teiheader data-teiname="teiHeader">
+      <tei-filedesc data-teiname="fileDesc">
+         <tei-titlestmt data-teiname="titleStmt">
+            <tei-title data-teiname="title">ANY XML and what should replace it</tei-title>
+            <tei-author data-teiname="author">Lou Burnard</tei-author>
+         </tei-titlestmt>
+         <tei-publicationstmt data-teiname="publicationStmt">
+            <tei-p data-teiname="p">Circulated to TEI Council for discussion in Vienna</tei-p>
+         </tei-publicationstmt>
+         <tei-sourcedesc data-teiname="sourceDesc">
+            <tei-p data-teiname="p">No source</tei-p>
+         </tei-sourcedesc>
+      </tei-filedesc>
+   </tei-teiheader>
+   <tei-text data-teiname="text">
+      <tei-body data-teiname="body">
+
+         <tei-p data-teiname="p">In an attempt to progress <tei-ref data-teiname="ref" target="https://github.com/TEIC/TEI/issues/1373">issue
+               1173</tei-ref>, I have defined a new element <tei-gi data-teiname="gi">anyElement</tei-gi> which is intended to
+            make a bit more transparent the currently rather obscure working of the macro
+               <tei-ident data-teiname="ident">macro.anyXML</tei-ident>. Think of it as a little piece of pure ODD we did not
+            finish. You can see its elementSpec <tei-ref data-teiname="ref" target="https://github.com/TEIC/TEI/blob/dev/P5/Source/Specs/anyElement.xml">here,</tei-ref> but of course it doesn't do anything yet since the stylesheets have yet
+            to be modified to take any notice of it. </tei-p>
+         <tei-p data-teiname="p">In the rest of this note, I will try to summarize how I plan to change elements which
+            currently make use of macro.anyXML. There are five (or six) of them:
+            <tei-gi data-teiname="gi">constraint</tei-gi>, <tei-gi data-teiname="gi">content</tei-gi>, <tei-gi data-teiname="gi">egXML</tei-gi>, <tei-gi data-teiname="gi">xenoData</tei-gi>,
+               <tei-ident data-teiname="ident">macro.schemaPattern</tei-ident> and of course <tei-ident data-teiname="ident">macro.anyXML</tei-ident> itself.
+            This macro is declared in ST, but redefined in the Exemplar ODDS for tei_AllPlus, tei_math, and
+            tei_svg, on which see further below. </tei-p>
+
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-gi data-teiname="gi">constraint</tei-gi></tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate" minOccurs="0" maxOccurs="unbounded">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-macroref data-teiname="macroRef" key="macro.anyXML"></teieg-macroref>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate" minOccurs="0" maxOccurs="unbounded">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-anyelement data-teiname="anyElement"></teieg-anyelement>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"> We simply replace the macroRef here with an elementRef. We could
+                     require that constraints be expressed using the ISO Schematron namespace:
+                           <tei-code data-teiname="code"><tei-tag data-teiname="tag">anyElement
+                           include="http://purl.oclc.org/dsdl/schematron"</tei-tag></tei-code> But that
+                     would close the door to constraints expressed in any other schema language,
+                     which might not be such a good thing (and would invalidate an existing example)
+                  </tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-gi data-teiname="gi">content</tei-gi></tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate">
+      <teieg-macroref data-teiname="macroRef" key="macro.anyXML"></teieg-macroref>
+      <teieg-classref data-teiname="classRef" minOccurs="0" maxOccurs="unbounded" key="model.contentPart"></teieg-classref>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+      <teieg-classref data-teiname="classRef" minOccurs="0" maxOccurs="unbounded" key="model.contentPart"></teieg-classref>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"> Since <tei-gi data-teiname="gi">anyElement</tei-gi> and <tei-gi data-teiname="gi">textNode</tei-gi> are already
+                     members of model.contentPart, all that is needed here is to remove the
+                     macroRef. It would be nice to be able to add the constraint that elements
+                     appearing here should come from the RelaxNG namespace, but there is no obvious
+                     way of doing this without introducing an ambiguity. </tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-gi data-teiname="gi">egXML</tei-gi></tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate" minOccurs="0" maxOccurs="unbounded">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-macroref data-teiname="macroRef" key="macro.anyXML"></teieg-macroref>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate" minOccurs="0" maxOccurs="unbounded">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-anyelement data-teiname="anyElement" include="http://www.tei-c.org/ns/Examples"></teieg-anyelement>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"> We can do better here, by requiring that the content be from the
+                     egXML namespace </tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-gi data-teiname="gi">xenoData</tei-gi></tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-macroref data-teiname="macroRef" key="macro.anyXML"></teieg-macroref>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-alternate data-teiname="alternate" minOccurs="1" maxOccurs="unbounded">
+      <teieg-textnode data-teiname="textNode"></teieg-textnode>
+      <teieg-anyelement data-teiname="anyElement" except="http://www.tei-c.org/ns/1.0"></teieg-anyelement>
+   </teieg-alternate>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"> Again, we can do better by excluding TEI namespaced elements from
+                     the content. Note that the original definition relied on repetition inherent in
+                     the macro. </tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-ident data-teiname="ident">macro.schemaPattern</tei-ident></tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-macroref data-teiname="macroRef" key="macro.anyXML"></teieg-macroref>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-anyelement data-teiname="anyElement" include="http://relaxng.org/ns/structure/1.0"></teieg-anyelement>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"> This macro is used only as part of the content model for
+                        <tei-gi data-teiname="gi">datatype</tei-gi>, in order to permit continued use of relaxng data
+                     definitions. The redefinition above makes this explicit.</tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head"><tei-ident data-teiname="ident">macro.anyXML</tei-ident> itself</tei-head>
+            <tei-table data-teiname="table">
+               <tei-row data-teiname="row" role="label">
+                  <tei-cell data-teiname="cell">Current content model</tei-cell>
+                  <tei-cell data-teiname="cell">Proposed content model</tei-cell>
+               </tei-row>
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <element xmlns="http://relaxng.org/ns/structure/1.0">
+      <anyName>
+         <except>
+            <nsName ns="http://www.tei-c.org/ns/1.0"></nsName>
+            <name ns="http://www.tei-c.org/ns/Examples">egXML</name>
+         </except>
+      </anyName>
+      <zeroOrMore>
+         <attribute>
+            <anyName></anyName>
+         </attribute>
+      </zeroOrMore>
+      <zeroOrMore>
+         <choice>
+            <text></text>
+            <ref name="macro.anyXML"></ref>
+         </choice>
+      </zeroOrMore>
+   </element>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+                  <tei-cell data-teiname="cell">
+                     <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+<teieg-content data-teiname="content">
+   <teieg-sequence data-teiname="sequence">
+      <teieg-anyelement data-teiname="anyElement" except="http://www.tei-c.org/ns/1.0"></teieg-anyelement>
+      <teieg-alternate data-teiname="alternate" minOccurs="0" maxOccurs="undefined">
+         <teieg-textnode data-teiname="textNode"></teieg-textnode>
+         <teieg-anyelement data-teiname="anyElement" except="http://www.tei-c.org/ns/1.0"></teieg-anyelement>
+      </teieg-alternate>
+   </teieg-sequence>
+</teieg-content>
+                     </teieg-egxml>
+                  </tei-cell>
+               </tei-row>
+
+               <tei-row data-teiname="row">
+                  <tei-cell data-teiname="cell" cols="2"><tei-p data-teiname="p">The part of the original definition precluding a
+                           self-nesting<tei-gi data-teiname="gi">teix:egXML</tei-gi> has to be implemented with a schematron
+                           <tei-gi data-teiname="gi">constraint</tei-gi> if we want to include it.</tei-p>
+                  </tei-cell>
+               </tei-row>
+            </tei-table>
+         </tei-div>
+         <tei-div data-teiname="div">
+            <tei-head data-teiname="head">Exemplars</tei-head>
+            <tei-p data-teiname="p">As noted above, three of the supplied TEI Exemplars redefine
+                  <tei-ident data-teiname="ident">macro.anyXML</tei-ident>. In each case, the redefinition is needed to exclude
+               elements from specific namespaces. In <tei-ident data-teiname="ident">teiAllPlus</tei-ident>, the
+                  <tei-gi data-teiname="gi">elementRef</tei-gi> needs to be <tei-code data-teiname="code"> &lt;anyElement
+                  except="http://www.tei-c.org/ns/1.0 http://www.w3.org/1998/Math/MathML
+                  http://www.w3.org/2000/svg"/&gt; </tei-code>. Similarly, in <tei-ident data-teiname="ident">tei_math</tei-ident>, the
+               exclusion list needs to mention <tei-code data-teiname="code">http://www.w3.org/1998/Math/MathML</tei-code> and
+               in <tei-ident data-teiname="ident">tei_svg</tei-ident>, <tei-code data-teiname="code">http://www.w3.org/2000/svg</tei-code></tei-p>
+      </tei-div><tei-div data-teiname="div"><tei-head data-teiname="head">Implementation</tei-head>
+      <tei-p data-teiname="p">Here's a sketch of a template that might be used to replace <tei-gi data-teiname="gi">anyElement</tei-gi> with suitable RELAXNG content: 
+      <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+         <xsl:template xmlns:xsl="http://" name="matchanyElement">
+            <element xmlns="http://relaxng.org/ns/structure/1.0">
+               <anyName>
+                  <xsl:choose>
+                     <xsl:when test="@except">
+                        <except>
+                           <nsName ns="{@except}"></nsName>
+                        </except>
+                        <!-- this code will/may need revising to deal with multiple values for the attribute -->
+                     </xsl:when>
+                     <xsl:when test="@include">
+                        <xsl:attribute name="ns">
+                           <xsl:value-of select="@include"></xsl:value-of>
+                        </xsl:attribute>
+                        <!-- this code will/may need revising to deal with multiple values for the attribute -->                    
+                     </xsl:when>
+                  </xsl:choose>
+               </anyName>
+               <zeroOrMore>
+                  <attribute>
+                     <anyName></anyName>
+                  </attribute>
+               </zeroOrMore>
+            </element>
+         </xsl:template> 
+      </teieg-egxml></tei-p><tei-p data-teiname="p">It's not clear where exactly this or something like it should fit inside the current ODD processing stylesheets.</tei-p></tei-div>
+      </tei-body>
+   </tei-text>
+</tei-tei>
+</body></html>

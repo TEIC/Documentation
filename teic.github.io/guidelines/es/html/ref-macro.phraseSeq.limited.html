@@ -1,0 +1,98 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI macro macro.phraseSeq.limited  (limited phrase sequence) </title><meta property="Language" content="es" /><meta property="DC.Title" content="TEI macro macro.phraseSeq.limited  (limited phrase sequence) " /><meta property="DC.Language" content="SCHEME=iso639 es" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Directrices para la codificación y el intercambio de textos electrónicos</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Principal</a></li><li class="subtoc"><a class="navigation" href="REF-MACROS.html">E Datatypes and Other Macros</a></li></ul></div><div><h3 class="oddSpec" id="macro.phraseSeq.limited">macro.phraseSeq.limited</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">macro.phraseSeq.limited</span> (secuencia de sintagma limitada) define una secuencia de caracteres y elementos de tipo sintagmático que no se usan normalmente para transcribir. [<a class="link_ptr" href="ST.html#STECST" title="Standard Content Models"><span class="headingNumber">1.4.1 </span>Standard Content Models</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Módulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Usado por</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="contiene una breve descripción informal, si cabe, sobre qué está haciendo, además de hablar, un participante en una interacción lingüística." href="ref-activity.html">activity</a> <a class="link_odd_elementSpec" title="especifica la edad de una persona." href="ref-age.html">age</a> <a class="link_odd_elementSpec" title="(responsable de la presentación) proporciona el nombre de la persona o agente responsable que ha hecho disponible un archivo electrónico, que no es ni el editor ni el distribudor." href="ref-authority.html">authority</a> <a class="link_odd_elementSpec" title="(canal principal) describe el medio o el canal en el que un texto se produce; en el caso de ser un texto escrito podría ser a través de un texto impreso, manuscrito, electrónico, etc.; en el caso de un texto hablado, podría ser a través de la radio, el teléfono, cara a cara, etc." href="ref-channel.html">channel</a> <a class="link_odd_elementSpec" title="(código de clasificación) indica el código de clasificación empleado para este texto en algún sistema de clasificación estándard." href="ref-classCode.html">classCode</a> <a class="link_odd_elementSpec" title="describe la composición interna de un texto o de un texto de muestra, por ejemplo como fragmentario, completo, etc." href="ref-constitution.html">constitution</a> <a class="link_odd_elementSpec" title="describe la naturaleza y la originalidad de este texto." href="ref-derivation.html">derivation</a> <a class="link_odd_elementSpec" title="(campo de uso) describle el contexto social más importante en el que el texto fue realizado o para el que se destina, p.ej. privado o público, educacional, religioso, etc." href="ref-domain.html">domain</a> <a class="link_odd_elementSpec" title="indica la posibilidad de ver un texto como ficcional o no, es decir atendiendo a si describle un mundo ficticio o no." href="ref-factuality.html">factuality</a> <a class="link_odd_elementSpec" title="(responsable de la financiación) proporciona el nombre del individuo, la institución o la organización responsable de la financiación de un proyecto o de un texto." href="ref-funder.html">funder</a> <a class="link_odd_elementSpec" title="describe la existencia, localización y naturaleza de cualquier interacción entre los participantes de un texto, por ejemplo en forma de respuesta o interjección, comentario, etc." href="ref-interaction.html">interaction</a> <a class="link_odd_elementSpec" title="(competencia lingüística) resume la competencia de una persona en la lengua indicada." href="ref-langKnown.html">langKnown</a> <a class="link_odd_elementSpec" title="caracteriza una lengua o jerga empleada en un texto." href="ref-language.html">language</a> <a class="link_odd_elementSpec" title="contiene una breve descripción informal del tipo de lugar, p.ej. una habitación, un restaurante, un banco del parque, etc." href="ref-locale.html">locale</a> <a class="link_odd_elementSpec" title="(símbolo métrico de la notación) documenta la significación ideada para un carácter concreto o secuencia de caracteres al interno de una anotación métrica, o explícitamente o en términos de otros elementos simbólicos de la metDecl." href="ref-metSym.html">metSym</a> <a class="link_odd_elementSpec" title="describe la posibilidad de considerar un texto como preparado o espontáneo." href="ref-preparedness.html">preparedness</a> <a class="link_odd_elementSpec" title="(investigador principal) proporciona el nombre del investigador principal de la creación de un texto electrónico." href="ref-principal.html">principal</a> <a class="link_odd_elementSpec" title="caracteriza una única finalidad o función comunicatica del texto." href="ref-purpose.html">purpose</a> <a class="link_odd_elementSpec" title="(responsabilidad) contiene un sintagma que describe la naturaleza de la responsabilidad intelectual de una persona." href="ref-resp.html">resp</a> <a class="link_odd_elementSpec" title="asocia una anotación interpretativa directamente con un periodo de texto." href="ref-span.html">span</a> <a class="link_odd_elementSpec" title="especifica el nombre de la organización o institución responsable." href="ref-sponsor.html">sponsor</a> <a class="link_odd_elementSpec" title="(valor de la descripción) especifica cualquier vínculo de tipo semántico o sintáctico respecto al valor que un atributo puede asumir, añadiendo informaciones referentes al elemento datatype." href="ref-valDesc.html">valDesc</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;alternate <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"<br />  <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"&gt;</span><br />  <span class="element">&lt;textNode/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.limitedPhrase.html">model.limitedPhrase</a>"/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.global.html">model.global</a>"/&gt;</span><br /> <span class="element">&lt;/alternate&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Declaración</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">De formato compacto a XML</span><span class="RNG_XML">De formato XML a compacto</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">macro.phraseSeq.limited</span>"&gt;</span><br /> <span class="element">&lt;rng:zeroOrMore&gt;</span><br />  <span class="element">&lt;rng:choice&gt;</span><br />   <span class="element">&lt;rng:text/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.limitedPhrase</span>"/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.global</span>"/&gt;</span><br />  <span class="element">&lt;/rng:choice&gt;</span><br /> <span class="element">&lt;/rng:zeroOrMore&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+macro.phraseSeq.limited = ( text | <a class="link_odd" title="agrupa los elementos que pueden aparecer a nivel de palabras o sintagmas, excluyendo los elementos destinados a la transcripción." href="ref-model.limitedPhrase.html">model.limitedPhrase</a> | <a class="link_odd" title="agrupa elementos vacíos que pueden aparecer en cualquier punto de un texto TEI" href="ref-model.global.html">model.global</a> )*</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-macro.phraseSeq.limited.html">English</a>]
+    [<a href="../../de/html/ref-macro.phraseSeq.limited.html">Deutsch</a>]
+    [<a href="../../es/html/ref-macro.phraseSeq.limited.html">Español</a>]
+    [<a href="../../it/html/ref-macro.phraseSeq.limited.html">Italiano</a>]
+    [<a href="../../fr/html/ref-macro.phraseSeq.limited.html">Français</a>]
+    [<a href="../../ja/html/ref-macro.phraseSeq.limited.html">日本語</a>]
+    [<a href="../../ko/html/ref-macro.phraseSeq.limited.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-macro.phraseSeq.limited.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Comentarios</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:03:06Z.</address></div></body></html>

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml"><!--THIS IS A GENERATED FILE. DO NOT EDIT (98) --><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Example: &lt;dim&gt; </title><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><meta content="Text Encoding Initiative Consortium XSLT stylesheets" name="generator" /><meta property="Language" content="en" /><meta property="DC.Title" content="Example: dim " /><meta property="DC.Language" content="SCHEME=iso639 en" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Guidelines for Electronic Text Encoding and Interchange</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Home</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C Elements</a></li></ul></div><h3>Example<a href="ref-dim.html">: &lt;dim&gt; </a></h3><p>These search results reproduce every example of the
+	      use of &lt;dim&gt; in the Guidelines, including all localised
+	      and translated versions. In some cases, the examples have been drawn
+	      from discussion of other elements in the Guidelines and illustrating
+	      the use of &lt;dim&gt;
+	      is not the main 
+	      focus of the passage in question. In other cases, examples may be direct 
+	      translations of each other, and hence identical from the perspective of 
+	      their encoding.</p><ul><li><b><a href="#MS"><span class="headingNumber">10 </span><span class="head">Manuscript Description</span><em> (defining module)</em></a></b></li></ul><ul><li><a href="#ND"><span class="headingNumber">13 </span><span class="head">Names, Dates, People, and Places</span></a></li><li><a href="#CE"><span class="headingNumber">21 </span><span class="head">Certainty, Precision, and Responsibility</span></a></li></ul><h4 id="MS"><span class="headingNumber">10 </span><span class="head">Manuscript Description</span></h4><hr /><p><a href="MS.html#msdim"><span class="headingNumber">10.3.4 </span><span class="head">Dimensions</span></a></p><div id="index-egXML-d39e82449" class="pre egXML_valid"><span class="element">&lt;dimensions <span class="attribute">unit</span>="<span class="attributevalue">cm</span>"&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">dim</span> <span class="attribute">type</span>="<span class="attributevalue">circumference</span>" <span class="attribute">quantity</span>="<span class="attributevalue">48</span>"<br />  <span class="attribute">unit</span>="<span class="attributevalue">mm</span>"/&gt;</span><br /> <span class="element">&lt;height <span class="attribute">quantity</span>="<span class="attributevalue">90</span>" <span class="attribute">unit</span>="<span class="attributevalue">mm</span>"/&gt;</span><br /><span class="element">&lt;/dimensions&gt;</span></div><hr /><p><a href="../../en/html/ref-dimensions.html">&lt;dimensions&gt;</a></p><div id="index-egXML-d39e83211" class="pre egXML_valid"><span class="element">&lt;dimensions <span class="attribute">type</span>="<span class="attributevalue">panels</span>"&gt;</span><br /> <span class="element">&lt;height <span class="attribute">scope</span>="<span class="attributevalue">all</span>"&gt;</span>7004<span class="element">&lt;/height&gt;</span><br /> <span class="element">&lt;width <span class="attribute">scope</span>="<span class="attributevalue">all</span>"&gt;</span>1803<span class="element">&lt;/width&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">dim</span> <span class="attribute">type</span>="<span class="attributevalue">relief</span>" <span class="attribute">unit</span>="<span class="attributevalue">mm</span>"&gt;</span>345<span class="element">&lt;/<span class="highlightelementname">dim</span>&gt;</span><br /><span class="element">&lt;/dimensions&gt;</span></div><hr /><p><a href="../../en/html/ref-dim.html">&lt;dim&gt;</a></p><div id="index-egXML-d39e83262" class="pre egXML_valid"><span class="element">&lt;<span class="highlightelementname">dim</span> <span class="attribute">type</span>="<span class="attributevalue">circumference</span>" <span class="attribute">extent</span>="<span class="attributevalue">4.67 in</span>"/&gt;</span></div><h4 id="ND"><span class="headingNumber">13 </span><span class="head">Names, Dates, People, and Places</span></h4><hr /><p><a href="ND.html#NDOBJ"><span class="headingNumber">13.3.5 </span><span class="head">Objects</span></a></p><div id="index-egXML-d39e112302" class="pre egXML_valid"><span class="element">&lt;object <span class="attribute">type</span>="<span class="attributevalue">building</span>" <span class="attribute">xml:lang</span>="<span class="attributevalue">en</span>"<br /> <span class="attribute">xml:id</span>="<span class="attributevalue">UNAM-CL</span>"&gt;</span><br /> <span class="element">&lt;objectIdentifier&gt;</span><br />  <span class="element">&lt;objectName <span class="attribute">type</span>="<span class="attributevalue">abbr</span>"&gt;</span>The Central Library of UNAM<span class="element">&lt;/objectName&gt;</span><br />  <span class="element">&lt;objectName <span class="attribute">type</span>="<span class="attributevalue">full</span>"&gt;</span>The Central Library of the National Autonomous University of Mexico<span class="element">&lt;/objectName&gt;</span><br />  <span class="element">&lt;objectName <span class="attribute">xml:lang</span>="<span class="attributevalue">es</span>"&gt;</span>La Biblioteca Central de la Universidad Nacional Autónoma de México<span class="element">&lt;/objectName&gt;</span><br />  <span class="element">&lt;settlement&gt;</span>Mexico City<span class="element">&lt;/settlement&gt;</span><br />  <span class="element">&lt;region&gt;</span>Coyoacán<span class="element">&lt;/region&gt;</span><br />  <span class="element">&lt;country&gt;</span>Mexico<span class="element">&lt;/country&gt;</span><br /> <span class="element">&lt;/objectIdentifier&gt;</span><br /> <span class="element">&lt;physDesc&gt;</span><br />  <span class="element">&lt;objectDesc&gt;</span><br />   <span class="element">&lt;p&gt;</span> The Central Library encompasses an area of <span class="element">&lt;<span class="highlightelementname">dim</span> <span class="attribute">unit</span>="<span class="attributevalue">m</span>" <span class="attribute">quantity</span>="<span class="attributevalue">16000</span>"<br />     <span class="attribute">type</span>="<span class="attributevalue">area</span>"&gt;</span>16 thousand square<br />         meters<span class="element">&lt;/<span class="highlightelementname">dim</span>&gt;</span> and is built on a three meter platform. The base contains two <span class="element">&lt;material&gt;</span>basalt<span class="element">&lt;/material&gt;</span><br />    <span class="element">&lt;objectType&gt;</span>fountains<span class="element">&lt;/objectType&gt;</span> and <span class="element">&lt;objectType&gt;</span>decorative reliefs<span class="element">&lt;/objectType&gt;</span> inspired by<br />       pre-Hispanic art.<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;p&gt;</span>The library has ten windowless floors for book storage, each having enough space for 120 thousand volumes.<br />       These storage areas have the necessary lighting, temperature and humidty conditions for book conservation.<br />       In the reading room, flanked by a garden on each side, the diffuse and matte light is filtered through<br />   <span class="element">&lt;material&gt;</span>thin tecali stone slabs<span class="element">&lt;/material&gt;</span>. The semi-basement of the building contains the service<br />       and administrative offices of the library.<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;p&gt;</span>The building facades are covered with one of the largest murals in the world and is made from naturally<br />       colored stone tiles. It is entitled <span class="element">&lt;title&gt;</span>Historical Representation of Culture<span class="element">&lt;/title&gt;</span> and is by<br />   <span class="element">&lt;persName <span class="attribute">role</span>="<span class="attributevalue">artist</span>"&gt;</span>Juan O'Gorman<span class="element">&lt;/persName&gt;</span>.<span class="element">&lt;/p&gt;</span><br />  <span class="element">&lt;/objectDesc&gt;</span><br />  <span class="element">&lt;decoDesc&gt;</span><br />   <span class="element">&lt;decoNote&gt;</span><br />    <span class="element">&lt;label&gt;</span>Base<span class="element">&lt;/label&gt;</span> At the base of the building there are two basalt fountains and decorative reliefs<br />       around the outside that are inspired by pre-Hispanic art. The color of the stone in these elements is left<br />       exposed to take advantage of the stone's texture as an aesthetic and expressive element, and to give a<br />       sense of continuity to the external pavement.<span class="element">&lt;/decoNote&gt;</span><br />   <span class="element">&lt;decoNote&gt;</span><br />    <span class="element">&lt;label&gt;</span>Murals<span class="element">&lt;/label&gt;</span><br />    <span class="element">&lt;p&gt;</span>The outside windowless portion of the building contains one of the largest murals in the world. This is<br />         called <span class="element">&lt;title&gt;</span>Historical Representation of the Culture<span class="element">&lt;/title&gt;</span> and is a <span class="element">&lt;material&gt;</span>stone polychromatic<br />           mosaic<span class="element">&lt;/material&gt;</span> based on the combination of 12 basic colors. The mural is created in an<br />         impressionist style where the coloured tiles when seen from a distance form specific figures. The 12<br />         colors where chosen from 150 samples of original stones with the criteria including the stone's<br />         resistance to degredation by weather. According to the artist, <span class="element">&lt;persName <span class="attribute">role</span>="<span class="attributevalue">artist</span>"&gt;</span>Juan<br />           O'Gorman<span class="element">&lt;/persName&gt;</span>, in the mosaic he represented three fundamental historical facets of the Mexican<br />         culture: the pre-Hispanic era, the Spanish colonial era, and the modern age. For example with the North<br />         Wall, this represents the pre-Hispanic era and is dominated by mythical elements relating to the<br />         life-death duality. The left side of the main axis there are<br />         deities and scenes pertaining to the creation of life. The right hand side of the mural contains figures<br />         relating to death. For a more detailed description see <span class="element">&lt;ref <span class="attribute">target</span>="<span class="attributevalue">https://en.wikipedia.org/wiki/Central_Library_(UNAM)#Murals</span>"&gt;</span>https://en.wikipedia.org/wiki/Central_Library_(UNAM)#Murals<span class="element">&lt;/ref&gt;</span>. <span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/decoNote&gt;</span><br />  <span class="element">&lt;/decoDesc&gt;</span><br /> <span class="element">&lt;/physDesc&gt;</span><br /> <span class="element">&lt;history&gt;</span><br />  <span class="element">&lt;origin&gt;</span> In <span class="element">&lt;origDate <span class="attribute">when</span>="<span class="attributevalue">1948</span>" <span class="attribute">type</span>="<span class="attributevalue">conceptual</span>"&gt;</span>1948<span class="element">&lt;/origDate&gt;</span> the architect and artist Juan O'Gorman, in<br />     collaboration with architects Gustavo Saavedra and Juan Martinez de Velasco designed the building with a<br />     functionalist approach, as part of the greater project of the construction of the University City on the<br />     grounds of the Pedregal de San Angel in Mexico City. Originally the building was planned to host the National<br />     Library and National Newspaper Library of Mexico. The library finally opened its doors for the first time on<br />  <span class="element">&lt;origDate <span class="attribute">when</span>="<span class="attributevalue">1956-04-05</span>"<br />    <span class="attribute">type</span>="<span class="attributevalue">opening</span>"&gt;</span>5 April 1956<span class="element">&lt;/origDate&gt;</span>. In July 2007 it was declared a UNESCO<br />     world heritage site. <span class="element">&lt;/origin&gt;</span><br /> <span class="element">&lt;/history&gt;</span><br /> <span class="element">&lt;additional&gt;</span><br />  <span class="element">&lt;adminInfo&gt;</span><br />   <span class="element">&lt;custodialHist&gt;</span><br />    <span class="element">&lt;custEvent <span class="attribute">from</span>="<span class="attributevalue">1981</span>" <span class="attribute">to</span>="<span class="attributevalue">1983</span>"&gt;</span> The library was significantly remodelled from 1981 - 1983 with the<br />         purpose of changing from closed shelving to open stacks, providing users more direct access to the<br />         collections. <span class="element">&lt;/custEvent&gt;</span><br />   <span class="element">&lt;/custodialHist&gt;</span><br />  <span class="element">&lt;/adminInfo&gt;</span><br /> <span class="element">&lt;/additional&gt;</span><br /><span class="element">&lt;/object&gt;</span></div><h4 id="CE"><span class="headingNumber">21 </span><span class="head">Certainty, Precision, and Responsibility</span></h4><hr /><p><a href="CE.html#CEPREC"><span class="headingNumber">21.2 </span><span class="head">Indications of Precision</span></a></p><div id="index-egXML-d39e142354" class="pre egXML_valid"><span class="element">&lt;<span class="highlightelementname">dim</span> <span class="attribute">xml:id</span>="<span class="attributevalue">dim1</span>" <span class="attribute">type</span>="<span class="attributevalue">avgLineLength</span>"<br /> <span class="attribute">unit</span>="<span class="attributevalue">chars</span>" <span class="attribute">quantity</span>="<span class="attributevalue">62.4</span>"/&gt;</span><br /><span class="element">&lt;precision <span class="attribute">target</span>="<span class="attributevalue">#dim1</span>" <span class="attribute">stdDeviation</span>="<span class="attributevalue">4</span>"/&gt;</span></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/examples-dim.html">English</a>]
+    [<a href="../../de/html/examples-dim.html">Deutsch</a>]
+    [<a href="../../es/html/examples-dim.html">Español</a>]
+    [<a href="../../it/html/examples-dim.html">Italiano</a>]
+    [<a href="../../fr/html/examples-dim.html">Français</a>]
+    [<a href="../../ja/html/examples-dim.html">日本語</a>]
+    [<a href="../../ko/html/examples-dim.html">한국어</a>]
+    [<a href="../../zh-TW/html/examples-dim.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Feedback</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:02:11Z.</address></div></body></html>

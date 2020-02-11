@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI data teidata.word </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI data teidata.word " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li></ul></div><div><h3 class="oddSpec" id="teidata.word">teidata.word</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">teidata.word</span> 단일 단어 또는 토큰으로 표현된 속성 값 범위를 정의한다.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_dataSpec" title="" href="ref-teidata.enumerated.html">teidata.enumerated</a> <a class="link_odd_dataSpec" title="" href="ref-teidata.sex.html">teidata.sex</a><div>부류: <ul class="attrefs-class"><li><a class="link_odd_class" title="" href="ref-att.citing.html">att.citing</a>/@from </li><li><a class="link_odd_class" title="" href="ref-att.citing.html">att.citing</a>/@to </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@when-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@notBefore-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@notAfter-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@from-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@to-custom </li><li><a class="link_odd_class" title="" href="ref-att.edition.html">att.edition</a>/@ed </li><li><a class="link_odd_class" title="" href="ref-att.global.rendition.html">att.global.rendition</a>/@rend </li><li><a class="link_odd_class" title="표준 분류법을 사용하는 컴퓨터 자원의 유형을 명시하는 속성을 제시한다." href="ref-att.internetMedia.html">att.internetMedia</a>/@mimeType </li><li><a class="link_odd_class" title="정상화 또는 규격화된 측정 방식을 표상하는 속성을 제시한다." href="ref-att.measurement.html">att.measurement</a>/@commodity </li><li><a class="link_odd_class" title="포인터 요소군을 포함하는 모든 요소에 공통적인 속성 집합을 정의한다." href="ref-att.pointing.group.html">att.pointing.group</a>/@targFunc </li><li><a class="link_odd_class" title="" href="ref-att.sortable.html">att.sortable</a>/@sortKey </li></ul></div><div>요소: <ul class="attrefs-element"><li><a class="link_odd_element" title="(참조 도구 표제 항목) 수의적 레마와 적어도 하나의 독법을 포함하여 비평적 참조 도구에서 하나의 표제 항목을 포함한다." href="ref-app.html">app</a>/@loc </li><li><a class="link_odd_element" title="(속성 포인터) 속성 또는 속성의 그룹에 대한 정의를 가리킨다." href="ref-attRef.html">attRef</a>/@class </li><li><a class="link_odd_element" title="인라인 그래픽 또는 다른 개체를 표상하는 부호화된 이진 데이터를 제시한다." href="ref-binaryObject.html">binaryObject</a>/@encoding </li><li><a class="link_odd_element" title="텍스트 마크업의 어떤 특성과 관련된 확실성 또는 불확실성의 정도를 가리킨다." href="ref-certainty.html">certainty</a>/@assertedValue </li><li><a class="link_odd_element" title="프로그래밍 언어와 같은 형식 언어의 문자적 부호를 포함한다." href="ref-code.html">code</a>/@lang </li><li><a class="link_odd_element" title="" href="ref-dataFacet.html">dataFacet</a>/@name </li><li><a class="link_odd_element" title="(언어 능력) 개인의 언어 능력 상태를 요약한다. 즉, 한 언어에 대한 지식" href="ref-langKnown.html">langKnown</a>/@level </li><li><a class="link_odd_element" title="원고 또는 원고의 일부 내에서 위치를 정의한다." href="ref-locus.html">locus</a>/@from </li><li><a class="link_odd_element" title="원고 또는 원고의 일부 내에서 위치를 정의한다." href="ref-locus.html">locus</a>/@to </li><li><a class="link_odd_element" title="(형태소) 문법적인 형태소를 표시한다." href="ref-m.html">m</a>/@baseForm </li><li><a class="link_odd_element" title="" href="ref-media.html">media</a>/@mimeType </li><li><a class="link_odd_element" title="(운율 표기법 기호) 직접적으로 또는 동일 metDecl에서 다른 기호 요소로, 운율 표기법 내에서 특별한 문자 또는 문자열의 의도된 의미를 기록한다." href="ref-metSym.html">metSym</a>/@value </li><li><a class="link_odd_element" title="" href="ref-metamark.html">metamark</a>/@function </li><li><a class="link_odd_element" title="(조직) 업무, 종족, 또는 사람들의 다른 종류의 그룹과 같은 식별 가능한 조직에 대한 정보를 제공한다." href="ref-org.html">org</a>/@role </li><li><a class="link_odd_element" title="(개인군) 분석적 목적을 위해 하나의 개인으로 처리된 개인군을 기술한다." href="ref-personGrp.html">personGrp</a>/@size </li><li><a class="link_odd_element" title="운율 행의 운 부분을 표시한다." href="ref-rhyme.html">rhyme</a>/@label </li><li><a class="link_odd_element" title="" href="ref-secl.html">secl</a>/@reason </li><li><a class="link_odd_element" title="일반적으로 원본은 물리적 손상 또는 손실로 인해 읽을 수 없기 때문에 전사자 또는 편집자에 의해 제공된 텍스트를 표시한다." href="ref-supplied.html">supplied</a>/@reason </li><li><a class="link_odd_element" title="" href="ref-surplus.html">surplus</a>/@reason </li><li><a class="link_odd_element" title="(기호 값) 유한한 목록의 기호 중 하나를 포함하는 자질-값 명세에서 값 부분을 표시한다." href="ref-symbol.html">symbol</a>/@value </li><li><a class="link_odd_element" title="(값 표지) 자질 구조에서 하나 이상의 위치에 나타나는 자질-값 명세 중 값의 부분을 표시한다." href="ref-vLabel.html">vLabel</a>/@name </li></ul></div></div></td></tr>
+  
+  
+  
+  
+  
+  
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="ko">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">token</span>"<br />  <span class="attribute">restriction</span>="<span class="attributevalue">(\p{L}|\p{N}|\p{P}|\p{S})+</span>"/&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">선언</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML 형식에 따른 규약?</span><span class="RNG_XML">규약에 대한 XML 형식?</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">teidata.word</span>"&gt;</span><br /> <span class="element">&lt;rng:data <span class="attribute">type</span>="<span class="attributevalue">token</span>"&gt;</span><br />  <span class="element">&lt;rng:param <span class="attribute">name</span>="<span class="attributevalue">pattern</span>"&gt;</span>(\p{L}|\p{N}|\p{P}|\p{S})+<span class="element">&lt;/rng:param&gt;</span><br /> <span class="element">&lt;/rng:data&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+teidata.word = token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }</pre></div></td></tr>
+  
+  
+  
+</table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teidata.word.html">English</a>]
+    [<a href="../../de/html/ref-teidata.word.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teidata.word.html">Español</a>]
+    [<a href="../../it/html/ref-teidata.word.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teidata.word.html">Français</a>]
+    [<a href="../../ja/html/ref-teidata.word.html">日本語</a>]
+    [<a href="../../ko/html/ref-teidata.word.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teidata.word.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

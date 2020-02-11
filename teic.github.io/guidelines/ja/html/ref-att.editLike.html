@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class att.editLike </title><meta property="Language" content="ja" /><meta property="DC.Title" content="TEI class att.editLike " /><meta property="DC.Language" content="SCHEME=iso639 ja" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEIガイドライン</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">ホーム</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-ATTS.html">B 属性クラス</a></li></ul></div><div><h3 class="oddSpec" id="att.editLike">att.editLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">att.editLike</span> 学術的調整・解釈の性質を表す属性を示す． [<a class="link_ptr" href="CO.html#COED" title="Simple Editorial Changes"><span class="headingNumber">3.4 </span>Simple Editorial Changes</a> <a class="link_ptr" href="MS.html#msdates" title="Origination"><span class="headingNumber">10.3.1 </span>Origination</a> <a class="link_ptr" href="ND.html#NDPERSE" title="The Person Element"><span class="headingNumber">13.3.2 </span>The Person Element</a> <a class="link_ptr" href="PH.html#PHCO" title="Core Elements for Transcriptional Work"><span class="headingNumber">11.3.1.1 </span>Core Elements for Transcriptional Work</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">モジュール</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">構成</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="手書き資料や同様の資料を転記する場合，著者や筆写者に関する調整を記録 する要素に付与される属性を示す．" href="ref-att.transcriptional.html">att.transcriptional</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(書き入れ) 著者，筆写者，注釈者，校正者によって挿入された文字，単語，句を示す．" href="ref-add.html">add</a> <a class="link_odd_elementSpec" title="(追加テキストの範囲) 著者，筆写者，注釈者，校正者の手による長めの追加テキストを挿入する始 点を示す(&lt;add&gt;も参照のこと)．" href="ref-addSpan.html">addSpan</a> <a class="link_odd_elementSpec" title="著者・筆写者・注釈者・校正者により，削除または削除として符号化または 余分なものまたは間違いとして示されている，文字，単語，句を示す．" href="ref-del.html">del</a> <a class="link_odd_elementSpec" title="著者・筆写者・注釈者・校正者により，削除または削除として符号化または 余分なものまたは間違いとして示されている，長めのテキスト部分の始点を 示す．" href="ref-delSpan.html">delSpan</a> <a class="link_odd_elementSpec" title="" href="ref-mod.html">mod</a> <a class="link_odd_elementSpec" title="" href="ref-redo.html">redo</a> <a class="link_odd_elementSpec" title="編集者や著者による指示を覆し，以前の状態のテキストを復元することを示 す．" href="ref-restore.html">restore</a> <a class="link_odd_elementSpec" title="" href="ref-retrace.html">retrace</a> <a class="link_odd_elementSpec" title="追加と削除が一連の調整と考えられる場合，そのひとつ以上の追加部分や削 除部分をまとめる．" href="ref-subst.html">subst</a> <a class="link_odd_elementSpec" title="" href="ref-substJoin.html">substJoin</a> <a class="link_odd_elementSpec" title="" href="ref-undo.html">undo</a>] </span> <a class="link_odd_elementSpec" title="人物が所属している，またはしていた団体に関する情報を示す．例えば，雇 い主や出資者など．" href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="人物の年齢を示す．" href="ref-age.html">age</a> <a class="link_odd_elementSpec" title="(省略記号) 当該省略形が，原形を省略またはそれに代わったことを示す文字列または記 号列．" href="ref-am.html">am</a> <a class="link_odd_elementSpec" title="人物の出生に関する情報を示す．例えば，日時や場所など．" href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="ある場所の天候に関する情報を示す．" href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="元資料中の明らかな間違いを正したものを示す．" href="ref-corr.html">corr</a> <a class="link_odd_elementSpec" title="日付を示す．" href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="人物の死亡に関する情報を示す．例えば，日付や場所など．" href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="人物の学歴を示す．" href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="人生における特定の重要事象の解説を示す．" href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="編集者や転記者が，省略形を元に戻した結果の文字列を示す．" href="ref-ex.html">ex</a> <a class="link_odd_elementSpec" title="省略形の元の表現を示す．" href="ref-expan.html">expan</a> <a class="link_odd_elementSpec" title="人物の信仰・宗教を示す．" href="ref-faith.html">faith</a> <a class="link_odd_elementSpec" title="人物が活躍した時期に関する情報を示す．" href="ref-floruit.html">floruit</a> <a class="link_odd_elementSpec" title="TEIヘダーにある編集上の理由，または当該資料が判読できない・聞こえな いことを理由に，転記の際に省略された部分の場所を示す．" href="ref-gap.html">gap</a> <a class="link_odd_elementSpec" title="地理上の名前，例えば，谷，山などに含まれている地物を特定する名前を示 す．" href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="ウィンドラッシュ峡谷，シナイ山などの地理的特性に関する名前．" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="個人の言語学的知識を散文または要素&lt;langKnown&gt;のリストでまとめ る．" href="ref-langKnowledge.html">langKnowledge</a> <a class="link_odd_elementSpec" title="個人の言語能力を示す．すなわち，単一言語の知識を示す．" href="ref-langKnown.html">langKnown</a> <a class="link_odd_elementSpec" title="地理上の座標集合，地政学上の名前付き実体，アドレスなどにより場所を定 義する．" href="ref-location.html">location</a> <a class="link_odd_elementSpec" title="固有名詞．" href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="人物の国籍や市民権の形式的でない解説を示す．" href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="人物の仕事や職業の，形式的でない説明を示す．" href="ref-occupation.html">occupation</a> <a class="link_odd_elementSpec" title="当該表現に含まれている2つの場所名，日付，時間のオフセットの方向を示 す，相対的な時空表現の部分を示す．" href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="特定可能な団体の情報を示す．例えば，会社，集団など，人の集まり．" href="ref-org.html">org</a> <a class="link_odd_elementSpec" title="組織の名前を示す．" href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="手書き資料が生まれた日付を特定するたための日付を示す．" href="ref-origDate.html">origDate</a> <a class="link_odd_elementSpec" title="手書き資料が生まれた場所を特定するための場所を示す．" href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="手書き資料の出自に関する解説や情報を示す．" href="ref-origin.html">origin</a> <a class="link_odd_elementSpec" title="人物の固有名詞を示す．例えば，名，姓，敬称，追加名など．" href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="特定可能な個人の情報を示す．例えば，言語交流の参加者，歴史資料中で参 照される人物など．" href="ref-person.html">person</a> <a class="link_odd_elementSpec" title="" href="ref-persona.html">persona</a> <a class="link_odd_elementSpec" title="地理上の場所のデータを示す．" href="ref-place.html">place</a> <a class="link_odd_elementSpec" title="絶対的，相対的場所名を示す．" href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="ある場所の人口に関する情報を示す．" href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="() 正規化された読みを示す．" href="ref-reg.html">reg</a> <a class="link_odd_elementSpec" title="指定された参加者グループ間の関連性の種類を示す．" href="ref-relation.html">relation</a> <a class="link_odd_elementSpec" title="人物の，現在または過去の住居を示す．" href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="" href="ref-secl.html">secl</a> <a class="link_odd_elementSpec" title="人物の性別を示す．" href="ref-sex.html">sex</a> <a class="link_odd_elementSpec" title="ある個人の，社会的・経済的状態を示す，形式的でない解説を示す．" href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="人物，場所，組織などの，現在の社会的状態や地位を示す．" href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="転記者や編集者にひょって付加されたテキストを示す．例えば，元のテキス トが物理的損傷や欠損から判読できない場合などに付加されるもの．" href="ref-supplied.html">supplied</a> <a class="link_odd_elementSpec" title="" href="ref-surplus.html">surplus</a> <a class="link_odd_elementSpec" title="場所の地形情報を示す．" href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="時間を表す語句を示す．" href="ref-time.html">time</a> <a class="link_odd_elementSpec" title="人物や場所の文化的な特性を示す．" href="ref-trait.html">trait</a> <a class="link_odd_elementSpec" title="元資料からは判読できないまたは聞こえないという理由で，確実に転記でき ない語句や一節を示す．" href="ref-unclear.html">unclear</a></span></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">属性</span></td><td class="wovenodd-col2">属性<table class="attList"><tr><td class="odd_label">evidence<span class="bookmarklink"><a class="bookmarklink" id="tei_att.evidence" href="#tei_att.evidence" title="link to this attribute "><span class="invisible"> evidence</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">当該解釈や調整の信頼度や正確さを判断する証拠を示す．<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ja">状態</span> </td><td class="odd_value"><span lang="ja">任意</span></td></tr><tr><td class="odd_label"><span lang="ja" class="label">データ型</span> </td><td class="odd_value"> 1–∞ <span lang="ja">occurrences of</span> <a class="link_element" href="ref-teidata.enumerated.html">teidata.enumerated</a> <span lang="ja">空白文字で区切られる</span></td></tr><tr><td class="odd_label"><span class="label" lang="ja">提案する値は以下の通り:</span></td><td class="odd_value"><dl class="valList"><dt class="odd_label">internal</dt><dd class="odd_value">当該調整を判断する内部証拠を示す．</dd><dt class="odd_label">external</dt><dd class="odd_value">当該調整を判断する外部証拠を示す．</dd><dt class="odd_label">conjecture</dt><dd class="odd_value">編集者，カタログ作成者，研究者による解釈や調整．</dd></dl></td></tr></table></td></tr><tr><td class="odd_label">instant<span class="bookmarklink"><a class="bookmarklink" id="tei_att.instant" href="#tei_att.instant" title="link to this attribute "><span class="invisible"> instant</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">indicates whether this is an instant revision or not.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ja">状態</span> </td><td class="odd_value"><span lang="ja">任意</span></td></tr><tr><td class="odd_label"><span lang="ja" class="label">データ型</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.xTruthValue.html">teidata.xTruthValue</a></td></tr><tr><td class="odd_label"><span lang="ja" class="label">初期値</span> </td><td class="odd_value">false</td></tr></table></td></tr></table></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">解説</span></td><td class="wovenodd-col2"><!-- --><p>当該クラスは，編集上の調整，例えば，原稿に対する修正や解釈，日時 や場所の特定などを示すために，一般には使用される． </p></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-att.editLike.html">English</a>]
+    [<a href="../../de/html/ref-att.editLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-att.editLike.html">Español</a>]
+    [<a href="../../it/html/ref-att.editLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-att.editLike.html">Français</a>]
+    [<a href="../../ja/html/ref-att.editLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-att.editLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-att.editLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">ご意見・ご感想</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:04:43Z.</address></div></body></html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
+          var c = new CETEI();
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","publicationStmt","publisher","date","sourceDesc","p","revisionDesc","change","name","text","body","emph","div","head","list","item","gi","ptr","ident","att","soCalled","ref","eg","label","q","val","code","table","row","cell","back","listBibl","bibl","idno",];
+          c.els.push("egXML");
+          if (document.registerElement) {
+            c.registerAll(c.els);
+          } else {
+            c.fallback(c.els);
+          }
+        </script></head><body>
+<!--
+$LastChangedDate: 2011-12-06$.
+$LastChangedBy: martindholmes$
+$LastChangedRevision: 8769 $
+--><?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"><?xml-model href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"><tei-tei data-xmlns="http://www.tei-c.org/ns/1.0" data-teiname="TEI">
+  <tei-teiheader data-teiname="teiHeader">
+    <tei-filedesc data-teiname="fileDesc">
+      <tei-titlestmt data-teiname="titleStmt">
+        <tei-title data-teiname="title">How to edit the TEI Guidelines</tei-title>
+        <tei-author data-teiname="author">Lou Burnard</tei-author>
+      </tei-titlestmt>
+      <tei-publicationstmt data-teiname="publicationStmt">
+        <tei-publisher data-teiname="publisher">Text Encoding Initiative</tei-publisher>
+        <tei-date data-teiname="date">2011</tei-date>
+      </tei-publicationstmt>
+      <tei-sourcedesc data-teiname="sourceDesc">
+        <tei-p data-teiname="p">All my own work</tei-p>
+      </tei-sourcedesc>
+    </tei-filedesc>
+    <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2020-02-10" who="EBB">Adding guidance on how to provide supporting explanation with remarks and with paragraphs within exempla.</tei-change>
+      <tei-change data-teiname="change" when="2020-02-03" who="MS">Changed link to TCW 24.</tei-change>
+      <tei-change data-teiname="change" when="2019-12-26" who="EBB">Revised explanation of how to work in repo branches other than dev branch.</tei-change>
+      <tei-change data-teiname="change" when="2018-09-16" who="MDH">Linked to schema that actually exists, and tweaked to handle the fallout.</tei-change>
+      <tei-change data-teiname="change" when="2018-09-16" who="MDH">Adding documentation on how to create or edit an Appendix to the Guidelines.</tei-change>
+      <tei-change data-teiname="change" when="2016-07-08" who="MDH">Adding more documentation to clarify where some processing instructions in the Guidelines are actually processed.</tei-change>
+      <tei-change data-teiname="change" when="2015-12-14" who="MDH">Updates to account for new Jenkins server subdomains.</tei-change>
+      <tei-change data-teiname="change" when="2015-11-10" who="MDH">Updates to account for the change from master to dev branch on GitHub.</tei-change>
+      <tei-change data-teiname="change" when="2015-10-03" who="MDH">Updates to account for the shift from SF SVN to GitHub.</tei-change>
+      <tei-change data-teiname="change" when="2015-04-06" who="MDH">Added exhortation to include sufficient linebreaks in examples,
+        to avoid distorted page rendering in the Guidelines HTML output.</tei-change>
+      <tei-change data-teiname="change" when="2015-02-11" who="MDH">Added clarification about how to XInclude a new spec file.</tei-change>
+      <tei-change data-teiname="change" when="2013-12-22" who="KSH">Some clarifications, including not to use valDesc.</tei-change>
+      <tei-change data-teiname="change" when="2013-11-17" who="KSH">Made more explicit that you have to update @versionDate when editing the content of an element that it's located on.</tei-change>
+      <tei-change data-teiname="change" when="2013-06-24" who="KSH">When closing a ticket, add the URL of the revision number. Also replaced all "SVN" with "Subversion" when referring to the software.</tei-change>
+      <tei-change data-teiname="change" when="2013-06-20" who="KSH">Copyediting and clarified how to do citations per https://sourceforge.net/p/tei/bugs/527/ .</tei-change>
+      <tei-change data-teiname="change" when="2013-04-08" who="KSH">Full path to schema for validation</tei-change>
+      <tei-change data-teiname="change" when="2013-02-01" who="KSH">We should use egXML@source instead of egXML@corresp per Sebastian.</tei-change>
+      <tei-change data-teiname="change" when="2012-12-30" who="KSH">Clarified svn commit instructions.</tei-change>
+      <tei-change data-teiname="change" when="2012-12-28" who="KSH">Clarified what to include in a specList. Removed info that duplicates tcw24. Some light copyediting.</tei-change>
+      <tei-change data-teiname="change" when="2012-12-17" who="MDH">Revised instructions for creating a new element to take account of the switch to XInclude from entities.</tei-change>
+      <tei-change data-teiname="change" when="2012-09-13" who="MDH">Revised Schematron section based on feedback from KH.</tei-change>
+      <tei-change data-teiname="change" when="2012-09-06" who="MDH">Added a section on adding Schematron constraints.</tei-change>
+      <tei-change data-teiname="change" when="2012-08-09" who="DRS">Removed sections redundant with new TCW24 and redirected a link there.</tei-change>
+      <tei-change data-teiname="change" when="2012-05-15" who="KSH">Added instructions on when you can edit translations of specs.</tei-change>
+      <tei-change data-teiname="change" when="2012-05-14" who="KSH">Removed mention of P5/Source/Guidelines/en/style-guide.txt since this has been removed from SourceForge.  Corrected @target to local copy of this document.</tei-change>
+      <tei-change data-teiname="change" when="2012-02-18" who="KSH">Created new section on good encoding practice, which includes info on @xml:id and @target and new note about using ptr instead of ref.</tei-change>
+      <tei-change data-teiname="change" when="2012-02-13" who="MDH">Removed "building a release" section and replaced with link to tcw22.</tei-change>
+      <tei-change data-teiname="change" when="2011-12-16" who="KSH">updated publicationStmt; added steps on updating latest download and creating news item in SourceForge</tei-change>
+      <tei-change data-teiname="change" when="2011-12-16">correction by <tei-name data-teiname="name">David Sewell</tei-name> per SR request</tei-change>
+      <tei-change data-teiname="change" when="2011-02-19">started first draft</tei-change>
+    </tei-revisiondesc>
+  </tei-teiheader>
+  <tei-text data-teiname="text">
+    <tei-body data-teiname="body">
+      <tei-p data-teiname="p">This document is intended to set out the way things are
+      currently managed  in the
+        editing of the TEI Guidelines. General notes on the rationale
+	for this state -- <tei-emph data-teiname="emph">why</tei-emph> it is the way it is -- may be added here
+        later. The intention is to provide information for Council
+      members wishing to contribute actively to the continued
+      development and maintenance of the text of the Guidelines. </tei-p>
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Organization of the Guidelines chapters</tei-head>
+        <tei-p data-teiname="p">It cannot have escaped your notice that each chapter (almost) of the Guidelines defines a
+          distinct module. In theory at least, each chapter is organised in more or less the same
+          way: <tei-list data-teiname="list">
+            <tei-item data-teiname="item">it begins with a paragraph explaining what the module is for, and containing a lot
+              of links to the individual subsections it contains; </tei-item>
+            <tei-item data-teiname="item">each subsection introduces a (small) group of elements, usually beginning with a
+              <tei-gi data-teiname="gi">specList</tei-gi>, which will typically list all the elements discussed within a 
+              given section, listed in whatever order makes sense for the context, but not necessary
+              all possible child elements for a given element; </tei-item>
+            <tei-item data-teiname="item">each element is then introduced in turn, usually including an appropriate usage
+              example (on examples, see further <tei-ptr data-teiname="ptr" target="#examples"></tei-ptr>); </tei-item>
+            <tei-item data-teiname="item">a <tei-gi data-teiname="gi">specGrp</tei-gi> for each group of elements defined may be given at the end of
+              each section; </tei-item>
+            <tei-item data-teiname="item">a <tei-gi data-teiname="gi">specGrp</tei-gi> for the whole module is given at the end of the chapter: it
+              includes the other specifications either directly (by means XIncludes) or
+              indirectly (by means of a <tei-gi data-teiname="gi">specGrpRef</tei-gi> pointing to a preceding
+              <tei-gi data-teiname="gi">specGrp</tei-gi>).</tei-item>
+          </tei-list></tei-p>
+<tei-p data-teiname="p">The only chapters not organised in this way are those which do not
+introduce or define particular modules.  </tei-p>
+      </tei-div>
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Organization of the specifications</tei-head>
+        <tei-p data-teiname="p">Each element, class, and macro defined in the Guidelines is
+	declared within its own XML file,
+          containing an <tei-gi data-teiname="gi">elementSpec</tei-gi>, <tei-gi data-teiname="gi">classSpec</tei-gi>, or <tei-gi data-teiname="gi">macroSpec</tei-gi> as
+          appropriate. These files are in the directory
+	  <tei-ident data-teiname="ident">Source/Specs</tei-ident>. For example, the file
+            <tei-ident data-teiname="ident">Source/Specs/abbr.xml</tei-ident> contains the element spec for the <tei-gi data-teiname="gi">abbr</tei-gi> element.
+            Note that the elements for the major components of the spec each have a <tei-att data-teiname="att">versionDate</tei-att>.
+            <tei-emph data-teiname="emph" rend="bold">If editing the content of the element, you must remember to update the value of this 
+            attribute</tei-emph> in order to allow for detection of translations (stored in the same file) that need 
+            updating. As a general rule, don't update a translation for any language of which you are not 
+            a native speaker. If you feel confident enough to adjust the translation, leave the 
+            <tei-att data-teiname="att">versionDate</tei-att> attribute unchanged on the translation in order to ensure the translation 
+            will be reviewed eventually.</tei-p>
+        <tei-p data-teiname="p">Each chapter of the Guidelines is stored in a file called
+            <tei-ident data-teiname="ident">Source/Guidelines/xx/YY-name.xml</tei-ident> where xx is the language (currently only en or
+          fr), YY is the two letter identifier for each chapter (see <tei-ptr data-teiname="ptr" target="#chaptercodes"></tei-ptr>)
+          and name is the name of the module being defined by that chapter. </tei-p>
+        <tei-p data-teiname="p">The file <tei-ident data-teiname="ident">Source/guidelines-xx.xml</tei-ident> (where xx is either en or fr) is the
+            <tei-socalled data-teiname="soCalled">driver file</tei-socalled> for the whole shebang. It contains XInclude elements 
+            for each of the chapters making up the Guidelines. </tei-p>
+        <tei-p data-teiname="p">Hence, to add a new element (say <tei-gi data-teiname="gi">saintName</tei-gi>) you
+	might proceed as follows: <tei-list data-teiname="list" type="ordered">
+            <tei-item data-teiname="item">Write a new file <tei-ident data-teiname="ident">saintName.xml</tei-ident> containing an <tei-gi data-teiname="gi">elementSpec</tei-gi>
+              for your new element and add it to the <tei-ident data-teiname="ident">Specs</tei-ident> folder. Look at other specifications
+              to see which <tei-ref data-teiname="ref" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystals">ODD elements</tei-ref>
+              to use. Note that we do not use <tei-gi data-teiname="gi">valDesc</tei-gi> at this time, instead using only a <tei-gi data-teiname="gi">datatype</tei-gi>.</tei-item>
+            <tei-item data-teiname="item">Edit the source of the relevant chapter (presumably
+                <tei-ident data-teiname="ident">ND-namesdates.xml</tei-ident> in this example) to include a documentation of the element. Use a
+                <tei-gi data-teiname="gi">specList</tei-gi> to reference the description from your new spec within the body of
+              the text, like this:
+<teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML"> 
+  <teieg-p data-teiname="p">This module also defines the following canonical element: <teieg-speclist data-teiname="specList">
+    <teieg-specdesc data-teiname="specDesc" key="saintName"></teieg-specdesc>
+  </teieg-speclist></teieg-p>
+</teieg-egxml> 
+
+and follow up with some discussion of usage.
+</tei-item>
+<!--	   This item added by MDH 2015-02-11. -->
+	  <tei-item data-teiname="item">Also in the relevant chapter, make sure you include an XInclude instruction to bring the specification 
+	  file for your element into the Guidelines source. Normally you would add it to an existing <tei-gi data-teiname="gi">specGrp</tei-gi>
+	  element somewhere in the chapter source which already contains similar links:
+<tei-eg data-teiname="eg">
+  &lt;specGrp xml:id="DNDPER" n="Personal and organizational names"&gt;
+  &lt;include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/orgName.xml"/&gt;
+  &lt;include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/saintName.xml"/&gt;
+  [...]
+  &lt;/specGrp&gt;
+</tei-eg>
+	  
+	  </tei-item>
+          </tei-list>
+        </tei-p>
+      </tei-div>
+      
+      <!-- This section added by MDH 2013-04-26 as part of work on https://sourceforge.net/p/tei/bugs/512/. 
+          Extra clarification added by MDH 2016-07-08.   -->
+      <tei-div data-teiname="div">
+<tei-head data-teiname="head">Processing Instructions</tei-head>
+ <tei-p data-teiname="p">In some places in the Guidelines source code, you will notice processing instructions which look like this:
+ 
+        <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+          &lt;?insert totalElements?&gt;
+        </teieg-egxml>
+        
+These processing instructions are replaced during the Guidelines build process by generated content. (That processing
+takes place in the XSL module P5/Utilities/expand.xsl.) In the 
+case of the example above, the total number of elements defined in the current version of the Guidelines is
+calculated and inserted. This is a list of the processing instructions currently in use, and what they are replaced 
+by:
+
+<tei-list data-teiname="list" type="gloss">
+  <tei-label data-teiname="label">&lt;?insert tab-content-models?&gt;</tei-label>
+  <tei-item data-teiname="item">Inserts a generated table of content models into the ST chapter (not likely to be used elsewhere)</tei-item>
+  <tei-label data-teiname="label">&lt;?insert totalElements?&gt;</tei-label>
+  <tei-item data-teiname="item">Inserts a count of the total number of elements defined in the current version</tei-item>
+  <tei-label data-teiname="label">&lt;?insert version?&gt;</tei-label>
+  <tei-item data-teiname="item">Inserts the current version number of the TEI release</tei-item>
+</tei-list>
+
+If you are writing a Guidelines section that can use one of these variables, feel free to insert the appropriate 
+processing instruction. If you think of other content that could be generated in this way, raise an issue on GitHub so that it can be implemented.
+ </tei-p>
+     </tei-div>
+
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Style Notes</tei-head>
+        <tei-div data-teiname="div">
+          <tei-head data-teiname="head">General</tei-head>
+          <tei-p data-teiname="p">See the <tei-ref data-teiname="ref" target="https://teic.github.io/TCW/tcw24.html">Style 
+            Guide for Editing the TEI Guidelines</tei-ref>, 
+            which attempts to state preferred practice on vexed issues
+            issues about spelling, punctuation, etc. The goal of these rules is to avoid
+            inconsistency, and also (wherever possible) to avoid producing text which is markedly
+            either British or American English. </tei-p>
+          <tei-p data-teiname="p"></tei-p>
+        </tei-div>
+        <tei-div id="examples" data-teiname="div" xml:id="examples">
+          <tei-head data-teiname="head">Examples</tei-head>
+          <tei-p data-teiname="p">The purpose of an example is to illustrate a specific element or feature. Do not
+            include irrelevant encoding which does not contribute to this primary goal. If such
+            encoding is unavoidable (eg to make your example valid), then it must be explained in
+            the supporting text. You may provide supporting explanation for an example in one of two ways: 
+            in a <tei-gi data-teiname="gi">p</tei-gi> element within the <tei-gi data-teiname="gi">exemplum</tei-gi>, or in a <tei-gi data-teiname="gi">remarks</tei-gi> element. 
+            A <tei-gi data-teiname="gi">p</tei-gi> element within an <tei-gi data-teiname="gi">exemplum</tei-gi> should only be used for an explanation specific to that particular example. 
+          A <tei-gi data-teiname="gi">remarks</tei-gi> element should provide explanation for the usage of an element or attribute and need not be tied to a specific example, 
+            though it may refer to one. Be careful when writing a supporting explanation not to refer to an example as 
+            <tei-q data-teiname="q">above</tei-q> or <tei-q data-teiname="q">below</tei-q> the explanation, or to indicate the <tei-q data-teiname="q">first</tei-q> or <tei-q data-teiname="q">second</tei-q> example in a series since 
+            the rendering of the Guidelines could change and examples could change order or position as new ones are added.</tei-p>
+          <tei-p data-teiname="p">Wherever possible, choose your examples from real documents and provide bibliographic
+            citations for them, either:
+            <tei-list data-teiname="list">
+              <tei-item data-teiname="item">in a <tei-gi data-teiname="gi">note</tei-gi> element, with a <tei-att data-teiname="att">place</tei-att> whose value is <tei-val data-teiname="val">bottom</tei-val> or 
+                <tei-val data-teiname="val">foot</tei-val>, following the <tei-gi data-teiname="gi">egXML</tei-gi> (if the citation is only a URL in a 
+                <tei-gi data-teiname="gi">ptr</tei-gi>)</tei-item>
+              <tei-item data-teiname="item">in a full bibliographic citation (with or without a URL in <tei-gi data-teiname="gi">ptr</tei-gi>) in 
+                the file <tei-ident data-teiname="ident">BIB-Bibliography.xml</tei-ident></tei-item>
+            </tei-list> 
+            Use the <tei-att data-teiname="att">source</tei-att> attribute on the <tei-gi data-teiname="gi">egXML</tei-gi> element to link an example to its source. Note
+            that the <tei-att data-teiname="att">xml:lang</tei-att> attribute is mandatory on <tei-gi data-teiname="gi">exemplum</tei-gi>: this is to
+            ensure that the ODD processor knows which examples to choose in a given context.</tei-p>
+          <tei-p data-teiname="p">All examples should be valid against a modified TEI schema in which any element can act
+            as a root element; this validity is checked during the build process. </tei-p>
+          <tei-p data-teiname="p">When you have added or edited examples, always check in the following Jenkins build 
+          that they are displaying correctly. In particular, note that if your examples include 
+          long lines without linebreaks, the result can be a horizontally-scrolling page and a 
+          broken table layout in the reference page. If you see this in the output, you can fix it 
+          by adding hard-coded linebreaks at suitable points in the example code.</tei-p>
+        </tei-div>
+        
+        <tei-div id="encoding" data-teiname="div" xml:id="encoding">
+          <tei-head data-teiname="head">Good encoding practice</tei-head>
+          <tei-p data-teiname="p">Good encoding practice will ensure not only valid but 
+            also highly functional Guidelines.</tei-p>
+          <tei-p data-teiname="p">When referencing figures and to other sections of the 
+            Guidelines, use <tei-gi data-teiname="gi">ptr</tei-gi>, not <tei-gi data-teiname="gi">ref</tei-gi>, to ensure 
+            that the title and number of the referenced item is 
+            automatically inserted when the Guidelines are compiled.</tei-p>
+          <tei-p data-teiname="p">The build process validates cross-references. 
+          Since the Guidelines is compiled into a single XML document 
+          at build time, IDs must be unique across the text and the
+          examples.  Consequently, any <tei-att data-teiname="att">xml:id</tei-att> attribute
+          values appearing in your examples must be unique within the
+          text of the whole of the Guidelines. Furthermore, any
+          <tei-att data-teiname="att">target</tei-att> (etc.) values which do not point to
+          anything in the source will be flagged with a warning during
+	  the build process. </tei-p>
+        </tei-div>
+      </tei-div>
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Making a change to the Guidelines</tei-head>
+<!--    Substantially edited by MDH 2015-10-03 for shift to GitHub.   -->
+        <tei-p data-teiname="p">Most changes to the Guidelines are the result of a bug or feature request 
+        ticket on GitHub. Once a ticket is assigned to you, and you're sure there
+        is agreement to proceed with the change, follow the steps below.</tei-p>
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">If you don't have a local clone of the git repo, go to the <tei-ref data-teiname="ref" target="https://github.com/TEIC/TEI">GitHub site</tei-ref> and clone the repository following the instructions there. It's usually something like <tei-code data-teiname="code">git clone https://github.com/TEIC/TEI.git TEI</tei-code> </tei-item>
+          <tei-item data-teiname="item">If you have already checked out a copy, make sure to update it (<tei-code data-teiname="code">git pull</tei-code>) <tei-emph data-teiname="emph">before</tei-emph>
+            you make any changes in it.</tei-item>
+          <tei-item data-teiname="item">Make sure you are on the <tei-code data-teiname="code">dev</tei-code> branch (we do not make direct changes to the master branch): <tei-code data-teiname="code">git checkout dev</tei-code></tei-item>
+          <tei-item data-teiname="item">Edit the appropriate file(s) to make your changes, or if the change requires it, create a new file. Make sure your source is still valid. The TEI source files should all 
+          contain xml-model processing instructions linking them to the latest version 
+          of the NVDL file used for validation of the P5 source.</tei-item>
+          <tei-item data-teiname="item">If you have a locally installed P5 build environment, make sure you can still build,
+            and that the examples are still valid. You can set up a Docker-based build environment
+            by following the instructions in <tei-ptr data-teiname="ptr" target="http://teic.github.io/TCW/testing_and_building.html"></tei-ptr>. If you do not have a build
+            environment nor the means to set one up, just use git to push your updated version to
+            GitHub and wait for our two <tei-ident data-teiname="ident">Jenkins</tei-ident> Continuous Integration servers (<tei-ptr data-teiname="ptr" target="http://jenkins.tei-c.org/"></tei-ptr> and <tei-ptr data-teiname="ptr" target="http://jenkins2.tei-c.org/"></tei-ptr>) to assess your work.</tei-item>
+          <tei-item data-teiname="item">Check in your changes:
+            <tei-list data-teiname="list">
+              <tei-item data-teiname="item">If the file is new, add it to the git repository: <tei-code data-teiname="code">git add filename.xml</tei-code></tei-item>
+                </tei-list>
+              </tei-item>
+              <tei-item data-teiname="item">Commit your changes: <tei-code data-teiname="code">git commit -m "Your commit message" filename.xml</tei-code> <tei-emph data-teiname="emph">Be sure to add a detailed commit message which includes a link to the git issue ticket which prompted the change</tei-emph>.</tei-item>
+          <tei-item data-teiname="item">Push the change to the git repository: <tei-code data-teiname="code">git push origin dev</tei-code></tei-item>
+          <tei-item data-teiname="item">Make a note of the revision hash when git receives your change.</tei-item>
+          <tei-item data-teiname="item">Assuming the change was successful (see below), add a comment to the GitHub issue ticket which includes the hash of the revision. You may also close the ticket if it is complete.</tei-item>
+        </tei-list>
+        <tei-p data-teiname="p">Error messages may appear at any stage. Please do not leave the source in an invalid
+          state (it makes life unnecessarily difficult for others). If you cannot immediately fix a
+          validity error, revert your change while you think about it.</tei-p>
+        <tei-p data-teiname="p">Most minor changes, such as edits to explanatory text, can be committed directly to the dev branch. Some edits are more complex, and particularly when these involve multiple files as in adding new elements or changing class specs, it is best to open a new temporary branch to do this work. If it takes some time to complete work on the new branch, you should probably keep the temporary branch up to date with the dev branch with <tei-code data-teiname="code">git rebase</tei-code>, since this sets the branch work ahead of the latest commits to dev. (It is also a good idea to ensure that other Council members are not committing edits on the dev branch to the same files that you are working on in the new branch.) For more details on keeping branches up to date, see the <tei-ref data-teiname="ref" target="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atalassian tutorial on merging vs. rebasing</tei-ref>. When your work on the temporary branch is ready for review, push your latest changes and open a pull request. (You can do this by opening the web browser view of the remote TEI GitHub repo, selecting the Pull Requests tab and “New Pull Request”, and comparing your branch to the base dev branch.) Once you have created the pull request, another member of Council should approve it. You can assign specific Council members to this task, or assign the entire Council as a team with <tei-code data-teiname="code">@TEIC/tei-technical-council</tei-code>. Bear in mind that our Jenkins servers only build the dev branch, so you cannot depend on them to test-build your working branch. If you need regular test-builds for your branch, or you would like to be able to share the results of your branch build with others while you're working on it, you can ask one of the Jenkins maintainers to set up a temporary build job for your branch. A pull request should only be approved when its contents pass the Jenkins server tests. The Council member who approves a pull request should delete the temporary branch once its content has been merged into dev.</tei-p>
+        
+        <tei-p data-teiname="p">The Jenkins servers monitor the Git repository, and when they detect a change, they check it out and commence building several targets, just as you would build them on your local machine. There are a couple of advantages to letting the Jenkins servers check your build for you:</tei-p>
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">You don't have to have all the various packages and other software required for a build installed on your system. This means you can make a quick fix to the Guidelines on any computer you happen to be using, without installing a lot of extra software.</tei-item>
+          <tei-item data-teiname="item">The required packages on the Jenkins servers tend to be updated regularly, and we're watching them to make sure they work properly.</tei-item>
+          <tei-item data-teiname="item">Jenkins attempts to let you know by email if there's a problem, and provides useful debugging tools.</tei-item>
+        </tei-list>
+        
+        <tei-p data-teiname="p">If you submit a change, and later get an email from one of the Jenkins servers telling you that the build failed, it will provide a link to the build information on the server. Here's what to do:</tei-p>
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">First, check that the build is broken on both Jenkins servers. If it's only broken on one of them, it may have been caused by a lag in updates to packages on that server. </tei-item>
+          <tei-item data-teiname="item">If both servers have completed a build since your commit, and both are showing an error, then you need to check where the error is occurring. On the page for that build on the Jenkins server site, click on <tei-q data-teiname="q">Parsed Console Output</tei-q> on the left menu. You'll see links to <tei-q data-teiname="q">Errors</tei-q> and <tei-q data-teiname="q">Warnings</tei-q>; these will show you the exact point in the build script where the errors or warnings occurred. This may give you a useful clue to the cause of the failure.</tei-item>
+          <tei-item data-teiname="item">If you still can't figure out the problem, email the Council list with a link to the build information, and someone will be able to help.</tei-item>
+          <tei-item data-teiname="item">Once you know what the problem is, fix it by editing the source again and committing the change to the git repository. Jenkins will then do its stuff, and you'll know whether your fix worked as expected.</tei-item>
+        </tei-list>
+        
+        <tei-p data-teiname="p">Error messages appearing during the <tei-ident data-teiname="ident">make test</tei-ident> phase (the <tei-q data-teiname="q">TEIP5-Test</tei-q> job on Jenkins) usually indicate that
+          your changes are in conflict with the Birnbaum Doctrine, which decrees that changes in the
+          Guideline schemas should not invalidate existing documents. You may wish to discuss the
+          specific issue with other Council members.</tei-p>
+
+	
+<!-- The following div added by MDH 2013-11-10 per https://sourceforge.net/p/tei/bugs/612/. -->
+        <tei-div data-teiname="div">
+            <tei-head data-teiname="head">Images</tei-head>
+            
+            <tei-p data-teiname="p">If you use an image in your  Guidelines change, you will need to add it to the git repository
+                    in the <tei-ident data-teiname="ident">P5/Images</tei-ident> directory. If you have asked for and received permission 
+                    from a rights-holder to use the image, include all of the relevant correspondence in a zip 
+                    file named the same as the image file (so for an image <tei-ident data-teiname="ident">fred.png</tei-ident>, include
+                    permission documents in a file called <tei-ident data-teiname="ident">fred.zip</tei-ident>).</tei-p>
+        </tei-div>
+        
+<!--      This div added by MDH 2018-09-16 following work
+          on ticket #1657. 
+        -->
+        <tei-div id="appendices" data-teiname="div" xml:id="appendices">
+          <tei-head data-teiname="head">Adding or Editing an Appendix</tei-head>
+          
+          <tei-p data-teiname="p">The Appendices to the <tei-title data-teiname="title" level="m">TEI Guidelines</tei-title> mostly constitute lists of features (elements, attributes, classes etc.) which have been automatically harvested from the Guidelines compiled source (<tei-ident data-teiname="ident">p5.xml</tei-ident> or <tei-ident data-teiname="ident">p5subset.xml</tei-ident>) during the build process. When adding a new appendix of this type, you need to:
+          
+          <tei-list data-teiname="list" rend="numbered">
+          <tei-item data-teiname="item">Create a new <tei-ident data-teiname="ident">APPENDIXTHING.xml</tei-ident> file in the <tei-ident data-teiname="ident">TEI/P5/Source/Guidelines/en/</tei-ident> folder. Model this on the already-existing files for other appendices. The basic pattern is to provide a very short introduction to the list you're creating (see below). The convention is to name this file with an all-caps name followed by lower-case <tei-ident data-teiname="ident">.xml</tei-ident>.</tei-item>
+          
+          <tei-item data-teiname="item">Add a line to <tei-ident data-teiname="ident">TEI/P5/Source/guidelines-en.xml</tei-ident> (right near the end of the file) to XInclude your file in the <tei-title data-teiname="title" level="m">Guidelines</tei-title>. Again, follow the examples already there. Put your new appendix in the sequence in a location that makes sense in relation to the other appendices.</tei-item>
+          
+          <tei-item data-teiname="item">If your appendix listing is to be created automatically, edit the appropriate file in the Stylesheets repository (most likely <tei-ident data-teiname="ident">Stylesheets/common/common_tagdocs.xsl</tei-ident>) to enable it to generate the list or table (see below).</tei-item>
+          
+          <tei-item data-teiname="item">If your auto-generated appendix content uses headings that should be translated for other language versions of the Guidelines, add the appropriate language entries to <tei-ident data-teiname="ident">Stylesheets/i18n.xml</tei-ident> (if they're not already there).</tei-item>
+          </tei-list>
+          </tei-p>
+          
+          <tei-p data-teiname="p">Auto-generated appendix listings will require two things: a TEI <tei-gi data-teiname="gi">divGen</tei-gi> element which acts as a trigger to cause the list to be generated, and a Stylesheets template which processes the <tei-gi data-teiname="gi">divGen</tei-gi> to create the output. For example, the list of deprecations consists of this <tei-ident data-teiname="ident">DEPRECATIONS.xml</tei-ident> file:
+            
+            
+    <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+    <teieg-div id="DEPRECATIONS" data-teiname="div" type="div1" xml:id="DEPRECATIONS">
+      <teieg-head data-teiname="head">Deprecations</teieg-head>
+      <teieg-div data-teiname="div">
+        <teieg-head data-teiname="head">About the Deprecation Appendix</teieg-head>
+        <teieg-p data-teiname="p">This appendix gives you a list of all items (elements,
+          attributes, attribute values, datatypes etc.) which are deprecated
+          in this revision of the TEI Guidelines (revision &lt;?insert
+revision?&gt; of TEI P5 &lt;?insert version?&gt;).</teieg-p>
+      </teieg-div>
+      <teieg-divgen data-teiname="divGen" type="deprecationcat"></teieg-divgen>
+    </teieg-div>
+    </teieg-egxml>
+            
+            Note that there are two kinds of auto-generated content here: first, the two processing instructions 
+            <tei-code data-teiname="code">&lt;?insert revision?&gt;</tei-code> and 
+            <tei-code data-teiname="code">&lt;?insert version?&gt;</tei-code>, which are self-explanatory and can simply be used, and 
+            <tei-code data-teiname="code">&lt;divGen type="deprecationcat"/&gt;</tei-code>, which was created specifically for this appendix file, and for which processing had to be explicitly written.
+            
+            If you now look at <tei-ident data-teiname="ident">Stylesheets/common/common_tagdocs.xsl</tei-ident>, you'll find this template:
+            
+            
+<tei-eg data-teiname="eg">
+  &lt;xsl:template match="tei:divGen[@type = 'deprecationcat']"&gt;
+    &lt;xsl:element namespace="{$outputNS}" name="{$tableName}"&gt;
+      &lt;xsl:attribute name="{$rendName}"&gt;
+        &lt;xsl:text&gt;deprecationcat&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;!-- .. --&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+</tei-eg>
+            
+            This template creates a table in whatever the target output format is, listing the deprecations. Note that the table headings are created like this:
+            
+            
+<tei-eg data-teiname="eg">
+  &lt;xsl:element namespace="{$outputNS}" name="{$cellName}"&gt;
+    &lt;xsl:element namespace="{$outputNS}" name="{$hiName}"&gt;
+      &lt;xsl:attribute name="{$rendName}"&gt;
+        &lt;xsl:text&gt;label&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:attribute name="{$langAttributeName}"&gt;
+        &lt;xsl:value-of select="$documentationLanguage"/&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:sequence select="tei:i18n('Identifier')"/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:element&gt;
+</tei-eg>
+            
+            
+            where the keyword <tei-val data-teiname="val">Identifier</tei-val> is used to look up the appropriate language translation in the <tei-ident data-teiname="ident">Stylesheets/i18n.xml</tei-ident> file. If those items already exist in the file, you can simply use them, but if you are creating headings which do not yet have entries, you will need to add them to <tei-ident data-teiname="ident">Stylesheets/i18n.xml</tei-ident> like this:
+            
+            
+  <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+  <teieg-entry data-teiname="entry">
+    <teieg-key data-teiname="key">Identifier</teieg-key>
+    <teieg-text lang="en" data-teiname="text" xml:lang="en" lang3="eng">Identifier</teieg-text>
+  </teieg-entry>
+  </teieg-egxml>
+            
+            and if you are competent to add the equivalent translations in any of the <tei-title data-teiname="title" level="m">Guidelines</tei-title> languages, you can add them alongside the English version:
+            
+  <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+  <teieg-entry data-teiname="entry">
+    <teieg-key data-teiname="key">Description</teieg-key>
+    <teieg-text lang="en" data-teiname="text" xml:lang="en" lang3="eng">Description</teieg-text>
+    <teieg-text lang="de" data-teiname="text" xml:lang="de" lang3="deu">Beschreibung</teieg-text>
+    <teieg-text lang="fr" data-teiname="text" xml:lang="fr" lang3="fra">Description</teieg-text>
+    <teieg-text lang="it" data-teiname="text" xml:lang="it" lang3="ita">Descrizione</teieg-text>
+  </teieg-entry>
+  </teieg-egxml>
+            Only when all these pieces are in place can the new appendix function correctly. It would normally be appropriate to do work on this scale in a branch of the repo, but this is a little complicated by the fact that you need to edit two repositories separately. It is fine to make the changes in the TEI repository first, resulting in an appendix page that simply lacks its listing, then do the Stylesheets changes to make the listing.</tei-p>
+            
+            <tei-p data-teiname="p">Of course, a simple <tei-socalled data-teiname="soCalled">manual</tei-socalled> appendix consisting of some explanatory prose can be created simply by adding the <tei-ident data-teiname="ident">APPENDIXTHING.xml</tei-ident> file and XIncluding it in <tei-ident data-teiname="ident">guidelines-en.xml</tei-ident>, with no Stylesheets changes required.</tei-p>
+            
+        </tei-div>
+
+      </tei-div>
+      
+
+      <tei-div id="schematron" data-teiname="div" xml:id="schematron">
+        
+        <tei-head data-teiname="head">Adding Schematron constraints to specifications</tei-head>
+        
+        <tei-p data-teiname="p">The TEI ODD system is primarily concerned with generating schemas in the form of RelaxNG or XML Schema.
+        However, there are often circumstances in which you want to apply constraints to elements and attributes which cannot easily be captured by
+        normal XML schemas. For instance, you might want to apply a co-occurrence constraint on some attributes. The <tei-att data-teiname="att">targetLang</tei-att> attribute
+        is a good example. <tei-att data-teiname="att">targetLang</tei-att> is an optional attribute which “specifies the language of the content to be found
+        at the destination referenced by <tei-att data-teiname="att">target</tei-att>, using a <tei-socalled data-teiname="soCalled">language tag</tei-socalled> generated according to
+       <tei-ref data-teiname="ref" target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</tei-ref>.” Obviously, there is no point in using <tei-att data-teiname="att">targetLang</tei-att>
+       if you're not also using <tei-att data-teiname="att">target</tei-att>. However, many such co-occurrence constraints are difficult to express
+        in RelaxNG schemas, and may not survive conversion to other schema formats such as XML Schema or DTD.</tei-p>
+        
+        <tei-p data-teiname="p">For this reason, we often use ISO Schematron to express constraints like this. If you look in att.pointing.xml, where the <tei-att data-teiname="att">targetLang</tei-att> 
+attribute is defined, you'll find this constraint, inside the <tei-gi data-teiname="gi">attDef</tei-gi> for <tei-att data-teiname="att">targetLang</tei-att>:</tei-p>
+        
+          <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML">
+            <teieg-constraintspec data-teiname="constraintSpec" ident="targetLang" scheme="isoschematron">
+              <teieg-constraint data-teiname="constraint">
+                <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:*[not(self::tei:schemaSpec)][@targetLang]" role="error">
+                  <sch:assert test="count(@target)">@targetLang can only be used if 
+                    @target is specified.</sch:assert>
+                </sch:rule>
+              </teieg-constraint>
+            </teieg-constraintspec>
+          </teieg-egxml>
+        
+        
+        <tei-p data-teiname="p">This Schematron rule is an assertion that if <tei-att data-teiname="att">targetLang</tei-att> is used, <tei-att data-teiname="att">target</tei-att> should also be present. <tei-gi data-teiname="gi">constraintSpec</tei-gi> 
+has an attribute <tei-att data-teiname="att">scheme</tei-att> (normally set to <tei-val data-teiname="val">isoschematron</tei-val>). Inside <tei-gi data-teiname="gi">constraintSpec</tei-gi>, <tei-gi data-teiname="gi">constraints</tei-gi>s hold elements in the Schematron namespace. The Schematron <tei-gi data-teiname="gi">rule</tei-gi> element establishes the TEI node to be tested with its <tei-att data-teiname="att">context</tei-att> attribute. The <tei-gi data-teiname="gi">rule</tei-gi> holds one or more elements, either <tei-gi data-teiname="gi">assert</tei-gi> or <tei-gi data-teiname="gi">report</tei-gi> that define conditions to be checked in a <tei-att data-teiname="att">test</tei-att> attribute. Here we see an <tei-gi data-teiname="gi">assert</tei-gi> element, 
+which has <tei-att data-teiname="att">test</tei-att> attributes. The <tei-att data-teiname="att">test</tei-att> attribute value is always an XPath expression; if the XPath tests false, the assertion will be triggered, and its 
+contents will appear on the console when you build or validate. There is also a <tei-gi data-teiname="gi">report</tei-gi> element which is similar, but which triggers when true rather than when false,
+so you can check both positive and negative conditions. In Roma, you can also generate a Schematron schema which you can also use to test your document against. 
+This document is essentially a compilation in Schematron of all the TEI constraints. The operation of checking a document with Schematron is independent of any other validation 
+processes that take place using other schemas. Notice, finally, the <tei-att data-teiname="att">role</tei-att> attribute, set in our example on the <tei-gi data-teiname="gi">rule</tei-gi> element. This attribute defines a level of severity for the test if its test passes with a Boolean true result in a <tei-gi data-teiname="gi">report</tei-gi>, or if the test fails with a Boolean false result in a <tei-gi data-teiname="gi">assert</tei-gi>. Values for <tei-att data-teiname="att">role</tei-att> basically define three levels of severity, for which we use standard Schematron values: with "fatal" and "error" as the most extreme values, "warning" as a gentle caution, and "info" to provide neutral information. When no <tei-att data-teiname="att">role</tei-att> attribute is set, the default severity in Schematron is "error". The <tei-att data-teiname="att">role</tei-att> attribute can be applied either to the Schematron <tei-gi data-teiname="gi">rule</tei-gi> element or to its <tei-gi data-teiname="gi">assert</tei-gi> and <tei-gi data-teiname="gi">report</tei-gi> children, which can have differing levels of severity. For a full introduction to Schematron, see the <tei-ref data-teiname="ref" target="http://www.schematron.com">Schematron website</tei-ref>.</tei-p>
+        
+        <tei-p data-teiname="p"><tei-gi data-teiname="gi">constraintSpec</tei-gi> can appear as a child of <tei-gi data-teiname="gi">attDef</tei-gi>, <tei-gi data-teiname="gi">classSpec</tei-gi>, <tei-gi data-teiname="gi">elementSpec</tei-gi>, <tei-gi data-teiname="gi">macroSpec</tei-gi>, and <tei-gi data-teiname="gi">schemaSpec</tei-gi>. 
+We'll go through the process of adding a constraint like the one above. The constraint we're going to add relates to dating elements (<tei-gi data-teiname="gi">date</tei-gi>, <tei-gi data-teiname="gi">birth</tei-gi> etc.) and 
+the <tei-att data-teiname="att">calendar</tei-att> attribute. <tei-att data-teiname="att">calendar</tei-att> <tei-q data-teiname="q">indicates the system or calendar to which the date represented by the content of this element belongs.</tei-q> In other 
+words, <tei-att data-teiname="att">calendar</tei-att> should only be used if the dating element has textual content. This makes sense (assuming that <tei-att data-teiname="att">calendar</tei-att> points at a valid <tei-gi data-teiname="gi">calendar</tei-gi> element):
+        
+            <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="true">
+              <teieg-date data-teiname="date" calendar="#julian">January, 1622</teieg-date>
+            </teieg-egxml>
+          
+        
+   whereas this is not:
+        
+            <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="false">
+              <teieg-date data-teiname="date" when="1622" calendar="#julian"></teieg-date>
+            </teieg-egxml>
+          
+        
+        because the <tei-gi data-teiname="gi">date</tei-gi> element has no textual content to which the <tei-att data-teiname="att">calendar</tei-att> attribute could apply. We're going to express this in the form of a Schematron 
+constraint, along the lines of the one we've examined above. First, we open the att.datable.xml file, and find the <tei-gi data-teiname="gi">attDef</tei-gi> element which defines <tei-att data-teiname="att">calendar</tei-att>. 
+We can add the <tei-gi data-teiname="gi">constraintSpec</tei-gi> element immediately after the <tei-gi data-teiname="gi">datatype</tei-gi> element, like this:
+        
+        
+  <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="true">
+    <teieg-constraintspec data-teiname="constraintSpec" ident="calendar" scheme="isoschematron">
+      <teieg-constraint data-teiname="constraint">
+        <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:*[@calendar]">
+          <sch:assert test="string-length(.) gt 0">
+            @calendar indicates the system or calendar 
+            to which the date represented by the content 
+            of this element belongs, but this element 
+            has no textual content.
+          </sch:assert>
+        </sch:rule>
+      </teieg-constraint>
+    </teieg-constraintspec>
+  </teieg-egxml>
+        
+        (Obviously, by the time you're reading this, the <tei-gi data-teiname="gi">constraintSpec</tei-gi> is already in the TEI source, so you'll see it there.) If the Schematron namespace is not 
+already defined somewhere in the file, we'll also have to make sure we add it; in this case, I defined the prefix in the <tei-gi data-teiname="gi">classSpec</tei-gi> root element: 
+<tei-code data-teiname="code">xmlns:sch="http://purl.oclc.org/dsdl/schematron"</tei-code>. Then we commit our changes, and let the TEI build process build all the products, and make sure that 
+we didn't get anything wrong.</tei-p>
+          
+          <tei-p data-teiname="p">When writing Schematron constraints for the Guidelines, bear these points in mind:
+          <tei-list data-teiname="list">
+              <tei-item data-teiname="item">Ensure that the context item for the rule is an element, not an attribute, as in the example above. For technical reasons, the Schematron processing in the build process will generate error messages if the context item is an attribute.</tei-item>
+              <tei-item data-teiname="item">Break up the message up into fairly short lines, so that it's easy to read when it appears in the build log.</tei-item>
+              <tei-item data-teiname="item">Use the <tei-gi data-teiname="gi">name</tei-gi> element in place of the name of the context element. This will be helpful for future processing needs. </tei-item>
+              <tei-item data-teiname="item">Refer to attributes using the "@" prefix, rather than quotation marks or plain names (as above).</tei-item>
+          </tei-list>
+          
+          </tei-p>
+        
+        <tei-p data-teiname="p">The Schematron constraint above should cover what we're trying to accomplish. However, it's quite difficult for us to test whether it is in fact doing exactly what it should be, unless we build a new copy of Roma 
+and use it to generate a Schematron schema, then validate a test document against it. This is probably not practical for most of us. Fortunately, the TEI build system provides a 
+way for us to do this; in fact, we can put in place a couple of tests that will always be run whenever P5 is built, checking that our Schematron constraint is intact and functioning 
+as we expect. </tei-p>
+        
+        <tei-p data-teiname="p">The first thing we're going to do is add a couple of tests that should pass. We'll add a dating element which has both <tei-att data-teiname="att">calendar</tei-att> and some textual content, as well as an 
+empty dating element with no textual content. If these tests pass, then we know that our constraint is not doing anything wrong. (We don't yet know whether it's doing anything at 
+all, of course; that comes later.) </tei-p>
+        
+        <tei-p data-teiname="p">If you look at <tei-ident data-teiname="ident">trunk/P5/Test</tei-ident>, you'll see there is a whole folder full of files whose purpose is to test various aspects of the TEI build process and products. We want to add 
+our tests to one of these files. The question is which one? We'll add it to the basic test file, which is <tei-ident data-teiname="ident">testbasic.xml</tei-ident>; this is tested against schemas generated from <tei-ident data-teiname="ident">testbasic.odd</tei-ident>, 
+which should contain all the dating features we're interested in testing. If we look at that file, we find there are already several date elements in there, so we can try adding our 
+<tei-att data-teiname="att">calendar</tei-att> attribute to one of those. Let's choose the date of 1685 on a dictionary entry sense:
+        
+        
+            <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="true">
+              <teieg-sense data-teiname="sense">
+                <teieg-date data-teiname="date" calendar="http://en.wikipedia.org/wiki/Julian_calendar">1685</teieg-date>
+                <teieg-form data-teiname="form">
+                  <teieg-orth data-teiname="orth">pamplemousse </teieg-orth>
+                </teieg-form>
+              </teieg-sense>
+            </teieg-egxml>
+        
+        We could go to the trouble of adding <tei-gi data-teiname="gi">calendarDesc</tei-gi> and <tei-gi data-teiname="gi">calendar</tei-gi> to the header of the file so we can point to a calendar element in the same document, 
+but since <tei-att data-teiname="att">calendar</tei-att> is a <tei-ident data-teiname="ident">data.pointer</tei-ident>, we can point to an external source of calendar information.</tei-p>
+        
+        <tei-p data-teiname="p">We also want to add, somewhere, a date element which has no textual content and no <tei-att data-teiname="att">calendar</tei-att> attribute. We might as well do this in the header, 
+by adding a simple <tei-gi data-teiname="gi">revisionDesc</tei-gi> element, which gives us the added bonus of being able to describe our change:
+        
+            <teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="true">
+              <teieg-revisiondesc data-teiname="revisionDesc">
+                <teieg-change data-teiname="change">&lt;date when="2012-09-06"/&gt;MDH: Added @calendar to one date, and the date 
+                  element in here, for testing a new Schematron constraint.</teieg-change>
+              </teieg-revisiondesc>
+            </teieg-egxml>
+          
+        
+        Now we can commit our change, and see if the build of TEIP5-Test completes successfully on our Jenkins servers.</tei-p>
+        
+        <tei-p data-teiname="p">If that build successfully completes, we haven't broken anything. But we still don't know whether our constraint will actually fire when something is wrong. 
+In order to do that, we have to use the "detest" system. In <tei-ident data-teiname="ident">trunk/P5/Test</tei-ident>, you'll find the following files:
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item"><tei-ident data-teiname="ident">expected-results/detest.log</tei-ident></tei-item>
+          <tei-item data-teiname="item"><tei-ident data-teiname="ident">detest.odd</tei-ident></tei-item>
+          <tei-item data-teiname="item"><tei-ident data-teiname="ident">detest.xml</tei-ident></tei-item>
+        </tei-list>
+        
+        detest.odd and detest.xml are test files like the ones we've seen above, but the purpose of the <tei-socalled data-teiname="soCalled">detest</tei-socalled> files is to introduce deliberate errors and make sure that the testing process throws up the expected error results. What happens is basically this:
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">Schemas are built from detest.odd (including a Schematron schema).</tei-item>
+          <tei-item data-teiname="item">The file <tei-ident data-teiname="ident">detest.xml</tei-ident> is validated against those schemas.</tei-item>
+          <tei-item data-teiname="item">Resulting error messages are collected in a file called <tei-ident data-teiname="ident">detest.log</tei-ident> (in the Test directory).</tei-item>
+          <tei-item data-teiname="item">That file is compared with the <tei-ident data-teiname="ident">detest.log</tei-ident> file in the <tei-ident data-teiname="ident">expected-results</tei-ident> subdirectory.</tei-item>
+          <tei-item data-teiname="item">If they are not identical, the test build fails.</tei-item>
+        </tei-list>
+        
+        So what we need to do is to add some new markup to <tei-ident data-teiname="ident">detest.xml</tei-ident> which is designed to fail our Schematron test. The problem is that we cannot reliably predict how it will fail—in other words, we can't know in advance what the resulting <tei-ident data-teiname="ident">detest.log</tei-ident> file should look like, because we can't know in what order the tests will run, and what the precise error messages might be. We could find this out if we had a working local build environment of our own, but it's far simpler to let Jenkins do the job for us. So this is what we'll do:
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">Add our new test to <tei-ident data-teiname="ident">detest.xml</tei-ident>.</tei-item>
+          <tei-item data-teiname="item">Commit the change to the git repository.</tei-item>
+          <tei-item data-teiname="item">Let Jenkins run the build (which should fail).</tei-item>
+          <tei-item data-teiname="item">Examine the resulting <tei-ident data-teiname="ident">detest.log</tei-ident> on Jenkins, and copy it to our local <tei-ident data-teiname="ident">expected-results/detest.log</tei-ident>.</tei-item>
+          <tei-item data-teiname="item">Commit that change to the repository.</tei-item>
+          <tei-item data-teiname="item">Let Jenkins build again, and make sure that the build completes successfully.</tei-item>
+        </tei-list>
+        
+        We'll add this div to the <tei-ident data-teiname="ident">detest.xml</tei-ident> file:
+        
+        
+<teieg-egxml data-xmlns="http://www.tei-c.org/ns/Examples" data-teiname="egXML" valid="false">
+  <teieg-div data-teiname="div">
+    <teieg-p data-teiname="p">Added by MDH. This tests the Schematron constraint that any element with 
+          @calendar must have some textual content.</teieg-p>
+    <teieg-p data-teiname="p"><teieg-date data-teiname="date" when="2012-09-06" calendar="http://en.wikipedia.org/wiki/Gregorian_calendar"></teieg-date></teieg-p>
+  </teieg-div>
+</teieg-egxml>
+        
+        Now we commit the change to git, and Jenkins will start building. The build should fail, and it does. If we now go to the Jenkins workspace on one of our two build servers:
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins.tei-c.org/job/TEIP5-Test-dev/ws/P5/Test/">https://jenkins.tei-c.org/job/TEIP5-Test-dev/ws/P5/Test/</tei-ref></tei-item>
+          <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins2.tei-c.org/job/TEIP5-Test-dev/ws/P5/Test/">https://jenkins2.tei-c.org/job/TEIP5-Test-dev/ws/P5/Test/</tei-ref></tei-item>
+        </tei-list>
+
+        we'll see a file called <tei-ident data-teiname="ident">detest.log</tei-ident>, and if we look inside it, we'll find this bit, generated by our constraint:
+        
+        <tei-q data-teiname="q">@calendar indicates the system or calendar to which the date represented by the content of this element belongs, but this element has no textual content. (string-length(.) gt 0)</tei-q>
+        
+        This line is obviously missing from <tei-ident data-teiname="ident">expected-results/detest.log</tei-ident>, so the build failed when the two files were compared. We can fix that very simply:
+        
+        <tei-list data-teiname="list">
+          <tei-item data-teiname="item">Download the <tei-ident data-teiname="ident">detest.log</tei-ident> file from the TEIP5-Test workspace on the Jenkins server (<tei-ident data-teiname="ident">job/TEIP5-Test/ws/Test/</tei-ident>).</tei-item>
+          <tei-item data-teiname="item">Copy its contents into our local file <tei-ident data-teiname="ident">expected-results/detest.log</tei-ident>.</tei-item>
+          <tei-item data-teiname="item">Commit this change to git (git commit followed by git push).</tei-item>
+          <tei-item data-teiname="item">Watch Jenkins build P5-Test again, and make sure it completes successfully.</tei-item>
+        </tei-list>
+        </tei-p>
+          
+    
+        
+      </tei-div>
+
+<tei-div id="release" data-teiname="div" xml:id="release">
+<tei-head data-teiname="head">Building the release</tei-head>
+
+<tei-p data-teiname="p">Note: the original content of this section has been removed, because a longer document dedicated to 
+   documenting the release process has been created. Please refer to <tei-ref data-teiname="ref" target="http://www.tei-c.org/Activities/Council/Working/tcw22.xml">TCW22: Building a TEI Release</tei-ref>.</tei-p>
+
+<!-- Content deleted by mholmes 2012-02-13. -->
+</tei-div>
+
+
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Reference section</tei-head>
+        <tei-div id="chaptercodes" data-teiname="div" xml:id="chaptercodes">
+          <tei-head data-teiname="head">Chapter codes</tei-head>
+<tei-p data-teiname="p">Following a lengthy debate in the Council as to whether the
+two-character codes originally used to identify individual chapters 
+should be dropped in favour of longer more human-readable names, a
+compromise solution was reached in which the two character codes were
+retained as prefixes to longer human-readable names. The same
+two-character codes are also used to identify the HTML and PDF files
+generated during the release process.</tei-p>
+<tei-p data-teiname="p">The following
+table shows the correspondence between the printed organization of the
+Guidelines and the corresponding filenames. The order is determined by the
+driver file <tei-ident data-teiname="ident">Source/guidelines-xx.xml</tei-ident>, from which the
+table is derived.
+<tei-table data-teiname="table">
+<tei-row data-teiname="row" role="label"><tei-cell data-teiname="cell">Section</tei-cell><tei-cell data-teiname="cell">Title</tei-cell><tei-cell data-teiname="cell">filename</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[i]</tei-cell><tei-cell data-teiname="cell">Releases of the TEI Guidelines</tei-cell>
+<tei-cell data-teiname="cell">TitlePageVerso.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[ii]</tei-cell><tei-cell data-teiname="cell">Dedication</tei-cell>
+<tei-cell data-teiname="cell">Dedication.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[iii]</tei-cell><tei-cell data-teiname="cell">Preface and Acknowledgments</tei-cell>
+<tei-cell data-teiname="cell">FM1-IntroductoryNote.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[iv]</tei-cell><tei-cell data-teiname="cell">About These Guidelines</tei-cell>
+<tei-cell data-teiname="cell">AB-About.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[v]</tei-cell><tei-cell data-teiname="cell">A Gentle Introduction to XML</tei-cell>
+<tei-cell data-teiname="cell">SG-GentleIntroduction.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[vi]</tei-cell><tei-cell data-teiname="cell">Languages and Character Sets</tei-cell>
+<tei-cell data-teiname="cell">CH-LanguagesCharacterSets.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[1]</tei-cell><tei-cell data-teiname="cell">The TEI Infrastructure</tei-cell>
+<tei-cell data-teiname="cell">ST-Infrastructure.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[2]</tei-cell><tei-cell data-teiname="cell">The TEI Header</tei-cell>
+<tei-cell data-teiname="cell">HD-Header.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[3]</tei-cell><tei-cell data-teiname="cell">Elements Available in All TEI Documents</tei-cell>
+<tei-cell data-teiname="cell">CO-CoreElements.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[4]</tei-cell><tei-cell data-teiname="cell">Default Text Structure</tei-cell>
+<tei-cell data-teiname="cell">DS-DefaultTextStructure.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[5]</tei-cell><tei-cell data-teiname="cell">Representation of Non-standard Characters and
+Glyphs</tei-cell><tei-cell data-teiname="cell">WD-NonStandardCharacters.xml</tei-cell>
+</tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[6]</tei-cell><tei-cell data-teiname="cell">Verse</tei-cell><tei-cell data-teiname="cell">VE-Verse.xml</tei-cell>
+</tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[7]</tei-cell><tei-cell data-teiname="cell">Performance Texts</tei-cell>
+<tei-cell data-teiname="cell">DR-PerformanceTexts.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[8]</tei-cell><tei-cell data-teiname="cell">Transcriptions of Speech</tei-cell>
+<tei-cell data-teiname="cell">TS-TranscriptionsofSpeech.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[9]</tei-cell><tei-cell data-teiname="cell">Dictionaries</tei-cell>
+<tei-cell data-teiname="cell">DI-PrintDictionaries.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[10]</tei-cell><tei-cell data-teiname="cell">Manuscript Description</tei-cell>
+<tei-cell data-teiname="cell">MS-ManuscriptDescription.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[11]</tei-cell><tei-cell data-teiname="cell">Representation of Primary Sources</tei-cell>
+<tei-cell data-teiname="cell">PH-PrimarySources.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[12]</tei-cell><tei-cell data-teiname="cell">Critical Apparatus</tei-cell>
+<tei-cell data-teiname="cell">TC-CriticalApparatus.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[13]</tei-cell><tei-cell data-teiname="cell">Names, Dates, People, and Places</tei-cell>
+<tei-cell data-teiname="cell">ND-NamesDates.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[14]</tei-cell><tei-cell data-teiname="cell">Tables, Formulæ, and Graphics</tei-cell>
+<tei-cell data-teiname="cell">FT-TablesFormulaeGraphics.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[15]</tei-cell><tei-cell data-teiname="cell">Language Corpora</tei-cell>
+<tei-cell data-teiname="cell">CC-LanguageCorpora.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[16]</tei-cell><tei-cell data-teiname="cell">Linking, Segmentation, and Alignment</tei-cell>
+<tei-cell data-teiname="cell">SA-LinkingSegmentationAlignment.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[17]</tei-cell><tei-cell data-teiname="cell">Simple Analytic Mechanisms</tei-cell>
+<tei-cell data-teiname="cell">AI-AnalyticMechanisms.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[18]</tei-cell><tei-cell data-teiname="cell">Feature Structures</tei-cell>
+<tei-cell data-teiname="cell">FS-FeatureStructures.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[19]</tei-cell><tei-cell data-teiname="cell">Graphs, Networks, and Trees</tei-cell>
+<tei-cell data-teiname="cell">GD-GraphsNetworksTrees.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[20]</tei-cell><tei-cell data-teiname="cell">Non-hierarchical Structures</tei-cell>
+<tei-cell data-teiname="cell">NH-Non-hierarchical.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[21]</tei-cell><tei-cell data-teiname="cell">Certainty, Precision, and Responsibility</tei-cell>
+<tei-cell data-teiname="cell">CE-CertaintyResponsibility.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[22]</tei-cell><tei-cell data-teiname="cell">Documentation Elements</tei-cell>
+<tei-cell data-teiname="cell">TD-DocumentationElements.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[23]</tei-cell><tei-cell data-teiname="cell">Using the TEI</tei-cell>
+<tei-cell data-teiname="cell">USE.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A1]</tei-cell><tei-cell data-teiname="cell">Model Classes</tei-cell>
+<tei-cell data-teiname="cell">REF-CLASSES-MODEL.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A2]</tei-cell><tei-cell data-teiname="cell">Attribute Classes</tei-cell>
+<tei-cell data-teiname="cell">REF-CLASSES-ATTS.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A3]</tei-cell><tei-cell data-teiname="cell">Elements</tei-cell>
+<tei-cell data-teiname="cell">REF-ELEMENTS.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A4]</tei-cell><tei-cell data-teiname="cell">Attributes</tei-cell>
+<tei-cell data-teiname="cell">REF-ATTRIBUTES.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A5]</tei-cell><tei-cell data-teiname="cell">Datatypes and Other Macros</tei-cell>
+<tei-cell data-teiname="cell">REF-MACROS.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A6]</tei-cell><tei-cell data-teiname="cell">Bibliography</tei-cell>
+<tei-cell data-teiname="cell">BIB-Bibliography.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A7]</tei-cell><tei-cell data-teiname="cell">Prefatory Notes</tei-cell>
+<tei-cell data-teiname="cell">PrefatoryNote.xml</tei-cell></tei-row>
+<tei-row data-teiname="row">
+<tei-cell data-teiname="cell">[A8]</tei-cell><tei-cell data-teiname="cell">Colophon</tei-cell>
+<tei-cell data-teiname="cell">COL-Colophon.xml</tei-cell></tei-row></tei-table>
+</tei-p>
+<tei-p data-teiname="p">In most chapters, the two character code is also used as a prefix
+for the <tei-att data-teiname="att">xml:id</tei-att> values given to each <tei-gi data-teiname="gi">div</tei-gi>
+element. Note that every <tei-gi data-teiname="gi">div</tei-gi> element carries an
+<tei-att data-teiname="att">xml:id</tei-att> value, whether or not it is actually referenced
+explicitly elewhere in the Guidelines.
+</tei-p>
+<tei-p data-teiname="p">Note that files with names beginning <tei-code data-teiname="code">REF</tei-code> contain
+only <tei-gi data-teiname="gi">divGen</tei-gi> elements: their content, which provides the
+reference documentation (sections A1 to A5 inclusive), is
+automatically generated during the build process.</tei-p>
+  </tei-div>
+        <tei-div data-teiname="div">
+          <tei-head data-teiname="head">Naming conventions</tei-head>
+          <tei-p data-teiname="p">TEI naming conventions have evolved over time, but remain fairly consistent. </tei-p>
+          <tei-list data-teiname="list" type="gloss">
+            <tei-label data-teiname="label">generic identifiers</tei-label>
+            <tei-item data-teiname="item">An element and attribute identifiers should be a single natural language word in
+              lowercase if possible. If more than one word is conjoined to form a name, then the
+              first letter of the second and any subsequent word should be uppercased. Hyphens,
+              underscores, dots etc are not used within element or attribute names. </tei-item>
+            <tei-label data-teiname="label">class names</tei-label>
+            <tei-item data-teiname="item">Class names are made up three parts: a name, constructed like an element name,
+              with a prefix and optionally a suffix. The prefix is one of <tei-code data-teiname="code">model.</tei-code> or
+                <tei-code data-teiname="code">att.</tei-code> and indicates whether this is a model or an attribute class. The
+              suffix, if present, is used to indicate subclassing: for example
+                <tei-ident data-teiname="ident">att.linking.foo</tei-ident> is the <tei-ident data-teiname="ident">foo</tei-ident> subclass of the attribute
+              class <tei-ident data-teiname="ident">att.linking</tei-ident></tei-item>
+            <tei-label data-teiname="label">xml:id values</tei-label>
+            <tei-item data-teiname="item">The conventions for these vary somewhat. Most of the older chapters of the
+              guidelines have consistently constructed identifiers, derived from the individual
+              section headings. Identifiers must be provided for:<tei-list data-teiname="list">
+                <tei-item data-teiname="item">every <tei-gi data-teiname="gi">div</tei-gi>, whether or not it is explicitly linked to elsewhere</tei-item>
+                <tei-item data-teiname="item">every bibliographic reference in the <tei-ident data-teiname="ident">BIB-Bibliography.xml</tei-ident> file</tei-item>
+              </tei-list></tei-item>
+          </tei-list>
+        </tei-div>
+<tei-div id="fileOrg" data-teiname="div" xml:id="fileOrg"><tei-head data-teiname="head">File release structure</tei-head>
+<tei-p data-teiname="p">
+Currently, the organisation of the <tei-code data-teiname="code">/usr/share/xml/tei</tei-code> and
+<tei-code data-teiname="code">/usr/share/doc/tei-*</tei-code> directories on the TEI web site is
+as follows:
+<tei-eg data-teiname="eg">
+tei
+|-- Test
+|-- custom
+|   |-- odd
+|   |-- schema
+|   |   |-- dtd
+|   |   |-- relaxng
+|   |   `-- xsd
+|   `-- templates
+|-- odd
+|   |-- Exemplars
+|   |-- ReleaseNotes
+|   |-- Source
+|   |   |-- Guidelines
+|   |   |   |-- en
+|   |   |   |   `-- Images
+|   |   |   `-- fr
+|   |   |       `-- Images
+|   |   |-- Images
+|   |   `-- Specs
+|   |       |-- 18decembre
+|   |       `-- exemples
+|   |-- Utilities
+|   `-- webnav
+|       `-- icons
+|-- schema
+|   |-- dtd
+|   `-- relaxng
+|-- stylesheet
+|   |-- common
+|   |-- common2
+|   |-- docx
+|   |   |-- from
+|   |   |   |-- dynamic
+|   |   |   |   `-- tests
+|   |   |   |       `-- xspec
+|   |   |   |-- graphics
+|   |   |   |-- lists
+|   |   |   |-- marginals
+|   |   |   |-- maths
+|   |   |   |-- paragraphs
+|   |   |   |-- pass0
+|   |   |   |-- pass2
+|   |   |   |-- tables
+|   |   |   |-- templates
+|   |   |   |-- textruns
+|   |   |   |-- utils
+|   |   |   `-- wordsections
+|   |   |-- misc
+|   |   |-- to
+|   |   |   |-- docxfiles
+|   |   |   |-- drama
+|   |   |   |-- dynamic
+|   |   |   |-- graphics
+|   |   |   |-- lists
+|   |   |   |-- maths
+|   |   |   |-- templates
+|   |   |   `-- wordsections
+|   |   `-- utils
+|   |       |-- graphics
+|   |       |-- identity
+|   |       |-- maths
+|   |       `-- verbatim
+|   |-- epub
+|   |-- fo
+|   |-- fo2
+|   |-- html
+|   |-- latex
+|   |-- latex2
+|   |-- nlm
+|   |-- odds
+|   |-- odds2
+|   |-- oo
+|   |-- profiles
+|   |   |-- bodley
+|   |   |   `-- epub
+|   |   |-- default
+|   |   |   |-- csv
+|   |   |   |-- docbook
+|   |   |   |-- docx
+|   |   |   |-- dtd
+|   |   |   |-- epub
+|   |   |   |-- fo
+|   |   |   |-- html
+|   |   |   |-- latex
+|   |   |   |-- lite
+|   |   |   |-- oddhtml
+|   |   |   |-- oo
+|   |   |   |-- p4
+|   |   |   `-- relaxng
+|   |   |-- enrich
+|   |   |   |-- docx
+|   |   |   |-- fo
+|   |   |   |-- html
+|   |   |   `-- latex
+|   |   |-- iso
+|   |   |   |-- docx
+|   |   |   |   `-- model
+|   |   |   |-- epub
+|   |   |   |-- fo
+|   |   |   |-- html
+|   |   |   |-- latex
+|   |   |   |-- schema
+|   |   |   `-- tbx
+|   |   |-- ota
+|   |   |   |-- epub
+|   |   |   `-- html
+|   |   |-- oucs
+|   |   |   |-- docx
+|   |   |   |-- epub
+|   |   |   `-- p4
+|   |   |-- oucscourses
+|   |   |   `-- docx
+|   |   |-- podcasts
+|   |   |   |-- docx
+|   |   |   `-- epub
+|   |   `-- tei
+|   |       `-- epub
+|   |-- slides
+|   |-- slides2
+|   |-- tite
+|   |-- tools2
+|   |-- xhtml
+|   `-- xhtml2
+`-- xquery
+
+</tei-eg>
+</tei-p></tei-div>
+
+      </tei-div>
+    </tei-body>
+<tei-back data-teiname="back">
+<tei-div data-teiname="div" type="appendix">
+<tei-head data-teiname="head">Some other (mostly superceded) documents on the topic</tei-head>
+
+<tei-listbibl data-teiname="listBibl">
+ <tei-bibl data-teiname="bibl"><tei-idno data-teiname="idno">TEI ED W9</tei-idno>
+<tei-title data-teiname="title">Points of Style For Drafts of TEI Guidelines</tei-title>
+<tei-date data-teiname="date">2 Mar 1990</tei-date>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw09.gml">in Waterloo Script format</tei-ref>
+</tei-bibl>
+
+<tei-bibl data-teiname="bibl">
+<tei-title data-teiname="title">Notes on House Style</tei-title>
+<tei-idno data-teiname="idno">TEI ED W11</tei-idno>
+<tei-date data-teiname="date">14 Sep 1992</tei-date>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw11.gml">in Waterloo script</tei-ref>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw11.txt">formatted text</tei-ref>
+</tei-bibl>
+
+
+ <tei-bibl data-teiname="bibl"><tei-idno data-teiname="idno">TEI ED W55</tei-idno>
+<tei-title data-teiname="title">Form for Draft Chapters of the TEI Guidelines</tei-title>
+<tei-date data-teiname="date">5 june 1996</tei-date>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw55.tei">in TEI P2 format</tei-ref>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw55.htm">in HTML format</tei-ref>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw55.odd">in ODD format</tei-ref>
+</tei-bibl>
+
+ <tei-bibl data-teiname="bibl"><tei-idno data-teiname="idno">TEI ED W57</tei-idno>
+<tei-title data-teiname="title">Procedures for Correcting Errors in the TEI Guidelines</tei-title>
+<tei-date data-teiname="date">July 23, 1994</tei-date>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw57.tei">in TEI P2 format</tei-ref>
+<tei-ref data-teiname="ref" target="http://www.tei-c.org/Vault/ED/edw57.htm">in HTML format</tei-ref>
+</tei-bibl>
+
+</tei-listbibl>
+</tei-div>
+</tei-back>  </tei-text>
+</tei-tei>
+</body></html>

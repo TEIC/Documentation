@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.placeStateLike </title><meta property="Language" content="it" /><meta property="DC.Title" content="TEI class model.placeStateLike " /><meta property="DC.Language" content="SCHEME=iso639 it" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Linee guida per la codifica e l'interscambio del testo elettronico</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Home</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Classi di modelli</a></li></ul></div><div><h3 class="oddSpec" id="model.placeStateLike">model.placeStateLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.placeStateLike</span> raggruppa elementi che descrivono stati mutevoli di un luogo</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Modulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Usato da</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_classSpec" title="raggruppa gli elementi che nominano o indicano una persona, un luogo (costruito dall'uomo o geografico), o un'organizzazione" href="ref-model.nameLike.html">model.nameLike</a> <a class="link_odd_elementSpec" title="contiene informazioni relative a un luogo geografico" href="ref-place.html">place</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Membri</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="raggruppa gli elementi che fanno parte del nome di un luogo" href="ref-model.placeNamePart.html">model.placeNamePart</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="contiene il nome di un'unità geopolitica comprendente uno o più stati nazione o paesi" href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="contiene il nome di un'unità geopolitica, come una nazione, un paese, una colonia, o un'unione di stati, che sia più ampia o amministrativamente superiore rispetto a una regione ma di dimensioni inferiori rispetto a un blocco" href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="contiene il nome di una qualsiasi suddivisione all'interno di un insediamento, come una circoscrizione, un quartiere o altre unità amministrative o geografiche" href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="(nome proprio geografico) nome associato a un elemento geografico, come valle Windrush o Monte Sinai" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="contiene l'indicazione assoluta o relativa di un nome di luogo" href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="contiene il nome di un'unità amministrativa, come uno stato o una provincia, che sia più ampia di un piccolo insediamento ma più piccola di un paese" href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="contiene il nome di un insediamento quale una città o un comune considerati come unità geopolitica o amministrativa" href="ref-settlement.html">settlement</a>] </span> <a class="link_odd_elementSpec" title="contiene informazioni relative al clima fisico di un luogo" href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="definisce la posizione di un luogo tramite una serie di coordinate geografiche, in termini di entità geopolitiche definite da altri o sotto forma di indirizzo" href="ref-location.html">location</a> <a class="link_odd_elementSpec" title="contiene informazioni relative alla popolazione di un dato luogo" href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="specifica un componente di un riferimento canonico definito dal metodo milestone." href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="contiene informazioni relative al terreno fisico di un luogo" href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="contiene la descrizione di una caratteristica personale o legata alla cultura di appartenenza di una determinata persona" href="ref-trait.html">trait</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.placeStateLike.html">English</a>]
+    [<a href="../../de/html/ref-model.placeStateLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.placeStateLike.html">Español</a>]
+    [<a href="../../it/html/ref-model.placeStateLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.placeStateLike.html">Français</a>]
+    [<a href="../../ja/html/ref-model.placeStateLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.placeStateLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.placeStateLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commenti e suggerimenti</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:07:11Z.</address></div></body></html>

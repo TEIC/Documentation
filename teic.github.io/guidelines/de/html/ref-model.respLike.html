@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.respLike </title><meta property="Language" content="de" /><meta property="DC.Title" content="TEI class model.respLike " /><meta property="DC.Language" content="SCHEME=iso639 de" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Richtlinien für die Auszeichnung und den Austausch elektronischer Texte</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Anfang</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Model Classes</a></li></ul></div><div><h3 class="oddSpec" id="model.respLike">model.respLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.respLike</span> groups elements which are used to indicate intellectual or other significant responsibility, for example within a bibliographic element.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="de">Modul</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="de">Verwendet von</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(Angaben zur Ausgabe) umfasst Angaben, die sich auf eine spezifische Ausgabe eines Textes beziehen." href="ref-editionStmt.html">editionStmt</a> <a class="link_odd_classSpec" title="" href="ref-model.biblPart.html">model.biblPart</a> <a class="link_odd_classSpec" title="" href="ref-model.msItemPart.html">model.msItemPart</a> <a class="link_odd_elementSpec" title="(Angaben zum Titel) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen." href="ref-titleStmt.html">titleStmt</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="de">Mitglieder</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_elementSpec" title="(Autor) enthält in einer bibliografischen Referenz den oder die Namen eines Autors eines Werks (oder einer für das Werk verantwortlichen Körperschaft); zum Beispiel in der Form, wie sie eine anerkannte bibliografische Instanz anbietet." href="ref-author.html">author</a> <a class="link_odd_elementSpec" title="beinhaltet zusätzliche Angaben zur Verantwortlichkeit für ein bibliografisches Objekt, z. B. den Namen einer Person, Institution oder Organisation (oder mehreren davon), welche als Herausgeber, Kompilator, Übersetzer etc. fungiert." href="ref-editor.html">editor</a> <a class="link_odd_elementSpec" title="(Geldgeber) gibt den Namen einer Einzelperson, Institution oder Organisation an, die für die Finanzierung eines Projekts oder Textes verantwortlich ist." href="ref-funder.html">funder</a> <a class="link_odd_elementSpec" title="" href="ref-meeting.html">meeting</a> <a class="link_odd_elementSpec" title="(Projektleiter) gibt den Namen des Projektleiters an, der für die Erstellung eines elektronischen Textes verantwortlich ist." href="ref-principal.html">principal</a> <a class="link_odd_elementSpec" title="(Angaben zur Verantwortlichkeit) enthält Angaben zur Verantwortlichkeit für den intellektuellen Inhalt eines Textes, einer Edition, einer Aufnahme oder Reihe, wo die spezialisierten Elemente &lt;author&gt;, &lt;editor&gt; etc. nicht ausreichen oder unzutreffend sind; auch verwendbar für Informationen zu Individuen oder Organisationen, die bei der Produktion oder Verbreitung eines bibliografischen Objekts eine Rolle gespielt." href="ref-respStmt.html">respStmt</a> <a class="link_odd_elementSpec" title="(Förderer) gibt den Namen einer Organisation oder Institution an, die als Förderer auftritt." href="ref-sponsor.html">sponsor</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.respLike.html">English</a>]
+    [<a href="../../de/html/ref-model.respLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.respLike.html">Español</a>]
+    [<a href="../../it/html/ref-model.respLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.respLike.html">Français</a>]
+    [<a href="../../ja/html/ref-model.respLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.respLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.respLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Kommentare</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:03:54Z.</address></div></body></html>

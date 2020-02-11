@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/tei.css" media="screen" title="no title" charset="utf-8"/>
+      <link type="application/tei+xml" rel="alternative" href="https://raw.githubusercontent.com/TEIC/TEI/dev/Documents/pureODD/pureODDtutorial.xml"/>
+    <script src="../js/CETEI.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var ceteicean = new CETEI();
+    ceteicean.shadowCSS = "http://teic.github.io/css/tei.css";
+    ceteicean.getHTML5('https://raw.githubusercontent.com/TEIC/TEI/dev/Documents/pureODD/pureODDtutorial.xml', function(data) {
+      document.getElementsByTagName("body")[0].appendChild(data);
+    });
+    </script>
+      <title>Introducing Pure ODD</title>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI element teiHeader  (TEI header) </title><meta property="Language" content="ja" /><meta property="DC.Title" content="TEI element teiHeader  (TEI header) " /><meta property="DC.Language" content="SCHEME=iso639 ja" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEIガイドライン</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">ホーム</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C 要素</a></li></ul></div><div><h3 class="oddSpec" id="teiHeader">&lt;teiHeader&gt;</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">&lt;teiHeader&gt; </span> (TEI header) 全てのTEI準拠テキストが伴う，電子版のタイトルページを構成する，記述 的・宣言的情報を示す． [<a class="link_ptr" href="HD.html#HD11" title="The TEI Header and Its Components"><span class="headingNumber">2.1.1 </span>The TEI Header and Its Components</a> <a class="link_ptr" href="CC.html#CCDEF" title="Varieties of Composite Text"><span class="headingNumber">15.1 </span>Varieties of Composite Text</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">モジュール</span></td><td class="wovenodd-col2">header — The TEI Header</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">属性</span></td><td class="wovenodd-col2"><a class="link_odd" title="TEI符号化スキーム中の全要素に共通する属性を示す．" href="ref-att.global.html">att.global</a> (<span class="attribute">@xml:id</span>, <span class="attribute">@n</span>, <span class="attribute">@xml:lang</span>, <span class="attribute">@xml:base</span>, <span class="attribute">@xml:space</span>)  (<a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition</a> (<span class="attribute">@rend</span>, <span class="attribute">@style</span>, <span class="attribute">@rendition</span>))  (<a class="link_odd" title="リンクに関する付加的タグが使用される場合，全ての要素に付与可能な，リ ンクやハイパーテキストのための属性を定義する．" href="ref-att.global.linking.html">att.global.linking</a> (<span class="attribute">@corresp</span>, <span class="attribute">@synch</span>, <span class="attribute">@sameAs</span>, <span class="attribute">@copyOf</span>, <span class="attribute">@next</span>, <span class="attribute">@prev</span>, <span class="attribute">@exclude</span>, <span class="attribute">@select</span>))  (<a class="link_odd" title="任意のテキスト部分への分析・解釈に関連するグローバル属性を示す．" href="ref-att.global.analytic.html">att.global.analytic</a> (<span class="attribute">@ana</span>))  (<a class="link_odd" title="要素&lt;facsimile&gt;に含まれる画像や紙面に関する要素．" href="ref-att.global.facs.html">att.global.facs</a> (<span class="attribute">@facs</span>))  (<a class="link_odd" title="" href="ref-att.global.change.html">att.global.change</a> (<span class="attribute">@change</span>))  (<a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a> (<span class="attribute">@cert</span>, <span class="attribute">@resp</span>))  (<a class="link_odd" title="" href="ref-att.global.source.html">att.global.source</a> (<span class="attribute">@source</span>)) </td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">上位</span></td><td class="wovenodd-col2"><div class="parent"><div class="specChildren"><div class="specChild"><span class="specChildModule">core: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="TEI準拠のコーパス全体を示す．ヘダーが1つと，ひとつ以上の要素TEIから 成る．各要素TEIには，テキストヘダーと要素textが1つある．" href="ref-teiCorpus.html">teiCorpus</a></span></div><div class="specChild"><span class="specChildModule">textstructure: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(TEI文書) 一つ以上のmodel.resourceLikeクラスを持つ一つのTEIヘッダを持つ，単一のTEI準拠文書を含む．&lt;teiCorpus&gt;エレメントには複数の&lt;TEI&gt;要素が含まれてもよい．" href="ref-TEI.html">TEI</a></span></div></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">下位</span></td><td class="wovenodd-col2"><div class="specChildren"><div class="specChild"><span class="specChildModule">header: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="電子テキストとその元資料との関係を示す．" href="ref-encodingDesc.html">encodingDesc</a> <a class="link_odd_elementSpec" title="電子ファイルに関する完全な書誌情報を示す．" href="ref-fileDesc.html">fileDesc</a> <a class="link_odd_elementSpec" title="書誌情報的ではない詳細な解説を示す．例えば，言語や特殊言語，生成され たときの状況，参加者など．" href="ref-profileDesc.html">profileDesc</a> <a class="link_odd_elementSpec" title="ファイルの改訂履歴を示す．" href="ref-revisionDesc.html">revisionDesc</a> <a class="link_odd_elementSpec" title="" href="ref-xenoData.html">xenoData</a></span></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">解説</span></td><td class="wovenodd-col2"><!-- --><p>当該要素は，TEI文書中で無条件に必要となる要素の1つである． </p></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">例</span></td><td class="wovenodd-col2"><div id="index-egXML-d52e17158" class="pre egXML_valid"><span class="element">&lt;teiHeader&gt;</span><br /> <span class="element">&lt;fileDesc&gt;</span><br />  <span class="element">&lt;titleStmt&gt;</span><br />   <span class="element">&lt;title&gt;</span>Shakespeare: the first folio (1623) in electronic form<span class="element">&lt;/title&gt;</span><br />   <span class="element">&lt;author&gt;</span>Shakespeare, William (1564–1616)<span class="element">&lt;/author&gt;</span><br />   <span class="element">&lt;respStmt&gt;</span><br />    <span class="element">&lt;resp&gt;</span>Originally prepared by<span class="element">&lt;/resp&gt;</span><br />    <span class="element">&lt;name&gt;</span>Trevor Howard-Hill<span class="element">&lt;/name&gt;</span><br />   <span class="element">&lt;/respStmt&gt;</span><br />   <span class="element">&lt;respStmt&gt;</span><br />    <span class="element">&lt;resp&gt;</span>Revised and edited by<span class="element">&lt;/resp&gt;</span><br />    <span class="element">&lt;name&gt;</span>Christine Avern-Carr<span class="element">&lt;/name&gt;</span><br />   <span class="element">&lt;/respStmt&gt;</span><br />  <span class="element">&lt;/titleStmt&gt;</span><br />  <span class="element">&lt;publicationStmt&gt;</span><br />   <span class="element">&lt;distributor&gt;</span>Oxford Text Archive<span class="element">&lt;/distributor&gt;</span><br />   <span class="element">&lt;address&gt;</span><br />    <span class="element">&lt;addrLine&gt;</span>13 Banbury Road, Oxford OX2 6NN, UK<span class="element">&lt;/addrLine&gt;</span><br />   <span class="element">&lt;/address&gt;</span><br />   <span class="element">&lt;idno <span class="attribute">type</span>="<span class="attributevalue">OTA</span>"&gt;</span>119<span class="element">&lt;/idno&gt;</span><br />   <span class="element">&lt;availability&gt;</span><br />    <span class="element">&lt;p&gt;</span>Freely available on a non-commercial basis.<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/availability&gt;</span><br />   <span class="element">&lt;date <span class="attribute">when</span>="<span class="attributevalue">1968</span>"&gt;</span>1968<span class="element">&lt;/date&gt;</span><br />  <span class="element">&lt;/publicationStmt&gt;</span><br />  <span class="element">&lt;sourceDesc&gt;</span><br />   <span class="element">&lt;bibl&gt;</span>The first folio of Shakespeare, prepared by Charlton Hinman (The Norton Facsimile,<br />       1968)<span class="element">&lt;/bibl&gt;</span><br />  <span class="element">&lt;/sourceDesc&gt;</span><br /> <span class="element">&lt;/fileDesc&gt;</span><br /> <span class="element">&lt;encodingDesc&gt;</span><br />  <span class="element">&lt;projectDesc&gt;</span><br />   <span class="element">&lt;p&gt;</span>Originally prepared for use in the production of a series of old-spelling<br />       concordances in 1968, this text was extensively checked and revised for use during the<br />       editing of the new Oxford Shakespeare (Wells and Taylor, 1989).<span class="element">&lt;/p&gt;</span><br />  <span class="element">&lt;/projectDesc&gt;</span><br />  <span class="element">&lt;editorialDecl&gt;</span><br />   <span class="element">&lt;correction&gt;</span><br />    <span class="element">&lt;p&gt;</span>Turned letters are silently corrected.<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/correction&gt;</span><br />   <span class="element">&lt;normalization&gt;</span><br />    <span class="element">&lt;p&gt;</span>Original spelling and typography is retained, except that long s and ligatured<br />         forms are not encoded.<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/normalization&gt;</span><br />  <span class="element">&lt;/editorialDecl&gt;</span><br />  <span class="element">&lt;refsDecl <span class="attribute">xml:id</span>="<span class="attributevalue">ASLREF</span>"&gt;</span><br />   <span class="element">&lt;cRefPattern <span class="attribute">matchPattern</span>="<span class="attributevalue">(\S+) ([^.]+)\.(.*)</span>"<br />    <span class="attribute">replacementPattern</span>="<span class="attributevalue">#xpath(//div1[@n='$1']/div2/[@n='$2']//lb[@n='$3'])</span>"&gt;</span><br />    <span class="element">&lt;p&gt;</span>A reference is created by assembling the following, in the reverse order as that<br />         listed here: <span class="element">&lt;list&gt;</span><br />      <span class="element">&lt;item&gt;</span>the <span class="element">&lt;att&gt;</span>n<span class="element">&lt;/att&gt;</span> value of the preceding <span class="element">&lt;gi&gt;</span>lb<span class="element">&lt;/gi&gt;</span><br />      <span class="element">&lt;/item&gt;</span><br />      <span class="element">&lt;item&gt;</span>a period<span class="element">&lt;/item&gt;</span><br />      <span class="element">&lt;item&gt;</span>the <span class="element">&lt;att&gt;</span>n<span class="element">&lt;/att&gt;</span> value of the ancestor <span class="element">&lt;gi&gt;</span>div2<span class="element">&lt;/gi&gt;</span><br />      <span class="element">&lt;/item&gt;</span><br />      <span class="element">&lt;item&gt;</span>a space<span class="element">&lt;/item&gt;</span><br />      <span class="element">&lt;item&gt;</span>the <span class="element">&lt;att&gt;</span>n<span class="element">&lt;/att&gt;</span> value of the parent <span class="element">&lt;gi&gt;</span>div1<span class="element">&lt;/gi&gt;</span><br />      <span class="element">&lt;/item&gt;</span><br />     <span class="element">&lt;/list&gt;</span><br />    <span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/cRefPattern&gt;</span><br />  <span class="element">&lt;/refsDecl&gt;</span><br /> <span class="element">&lt;/encodingDesc&gt;</span><br /> <span class="element">&lt;revisionDesc&gt;</span><br />  <span class="element">&lt;list&gt;</span><br />   <span class="element">&lt;item&gt;</span><br />    <span class="element">&lt;date <span class="attribute">when</span>="<span class="attributevalue">1989-04-12</span>"&gt;</span>12 Apr 89<span class="element">&lt;/date&gt;</span> Last checked by CAC<span class="element">&lt;/item&gt;</span><br />   <span class="element">&lt;item&gt;</span><br />    <span class="element">&lt;date <span class="attribute">when</span>="<span class="attributevalue">1989-03-01</span>"&gt;</span>1 Mar 89<span class="element">&lt;/date&gt;</span> LB made new file<span class="element">&lt;/item&gt;</span><br />  <span class="element">&lt;/list&gt;</span><br /> <span class="element">&lt;/revisionDesc&gt;</span><br /><span class="element">&lt;/teiHeader&gt;</span><div style="float: right;"><a href="examples-teiHeader.html">一括表示</a> </div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;sequence&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-fileDesc.html">fileDesc</a>"/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.teiHeaderPart.html">model.teiHeaderPart</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>" <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-revisionDesc.html">revisionDesc</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br /> <span class="element">&lt;/sequence&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">宣言</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML表記</span><span class="RNG_XML">簡易表記</span></button><pre class="RNG_XML"><span class="element">&lt;rng:element <span class="attribute">name</span>="<span class="attributevalue">teiHeader</span>"&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.rendition.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.linking.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.analytic.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.facs.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.change.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.responsibility.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.source.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:group&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">fileDesc</span>"/&gt;</span><br />  <span class="element">&lt;rng:zeroOrMore&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.teiHeaderPart</span>"/&gt;</span><br />  <span class="element">&lt;/rng:zeroOrMore&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">revisionDesc</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br /> <span class="element">&lt;/rng:group&gt;</span><br /><span class="element">&lt;/rng:element&gt;</span></pre><pre class="RNG_Compact">
+<span class="rnc_keyword">element</span> <span class="rnc_nc">teiHeader</span>
+{
+   <a class="link_odd" title="TEI符号化スキーム中の全要素に共通する属性を示す．" href="ref-att.global.html">att.global.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition.attributes</a>,
+   <a class="link_odd" title="リンクに関する付加的タグが使用される場合，全ての要素に付与可能な，リ ンクやハイパーテキストのための属性を定義する．" href="ref-att.global.linking.html">att.global.linking.attributes</a>,
+   <a class="link_odd" title="任意のテキスト部分への分析・解釈に関連するグローバル属性を示す．" href="ref-att.global.analytic.html">att.global.analytic.attributes</a>,
+   <a class="link_odd" title="要素&lt;facsimile&gt;に含まれる画像や紙面に関する要素．" href="ref-att.global.facs.html">att.global.facs.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.change.html">att.global.change.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.source.html">att.global.source.attributes</a>,
+   ( <a class="link_odd" title="電子ファイルに関する完全な書誌情報を示す．" href="ref-fileDesc.html">fileDesc</a>, <a class="link_odd" title="TEIヘダー内で高々1回出現する，上位レベルの要素をまとめる．" href="ref-model.teiHeaderPart.html">model.teiHeaderPart</a>*, <a class="link_odd" title="ファイルの改訂履歴を示す．" href="ref-revisionDesc.html">revisionDesc</a>? )
+}</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teiHeader.html">English</a>]
+    [<a href="../../de/html/ref-teiHeader.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teiHeader.html">Español</a>]
+    [<a href="../../it/html/ref-teiHeader.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teiHeader.html">Français</a>]
+    [<a href="../../ja/html/ref-teiHeader.html">日本語</a>]
+    [<a href="../../ko/html/ref-teiHeader.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teiHeader.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">ご意見・ご感想</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:04:43Z.</address></div></body></html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.inter </title><meta property="Language" content="zh-TW" /><meta property="DC.Title" content="TEI class model.inter " /><meta property="DC.Language" content="SCHEME=iso639 zh-TW" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEI指引</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">首頁</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A 元素集</a></li></ul></div><div><h3 class="oddSpec" id="model.inter">model.inter</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.inter</span> 匯集中間層次的元素：可出現於段落內與段落之間，或方塊性層次內與層次間。 [<a class="link_ptr" href="ST.html#STEC" title="The TEI Class System"><span class="headingNumber">1.3 </span>The TEI Class System</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">組件</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">屬於</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="() 字典辭條的片段，包含自由組合的詞組層次字典元素。" href="ref-dictScrap.html">dictScrap</a> <a class="link_odd_elementSpec" title="() 所包含的辭條項目未必符合元素&lt;entry&gt;該有的限制條件。" href="ref-entryFree.html">entryFree</a> <a class="link_odd_elementSpec" title="(詞源) 包含詞源學資訊。" href="ref-etym.html">etym</a> <a class="link_odd_elementSpec" title="(形式資訊群) 匯集一個標題字在書寫及發音形式方面的所有資訊。" href="ref-form.html">form</a> <a class="link_odd_elementSpec" title="(文法資訊群) 匯集文字的型態及句法資訊，例如詞性、性別、單複數、格、或屈折變化種類。" href="ref-gramGrp.html">gramGrp</a> <a class="link_odd_elementSpec" title="(標題) 包含任何種類的標題，如章節、列表、詞彙表、寫本描述等的標題。" href="ref-head.html">head</a> <a class="link_odd_elementSpec" title="(詩行) 包含詩文的一行，也許是不完整的詩行。" href="ref-l.html">l</a> <a class="link_odd_elementSpec" title="(主題) 包含一個原文變異的主題或基礎文件。" href="ref-lem.html">lem</a> <a class="link_odd_macroSpec" title="" href="ref-macro.limitedContent.html">macro.limitedContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.paraContent.html">macro.paraContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.specialPara.html">macro.specialPara</a> <a class="link_odd_classSpec" title="匯集通用的方塊性與中間層次元素。" href="ref-model.common.html">model.common</a> <a class="link_odd_elementSpec" title="(對應本) 包含原文變異中的一個對應本。" href="ref-rdg.html">rdg</a> <a class="link_odd_elementSpec" title="包含文本中一個區段結束時的結尾題名或尾錄。" href="ref-trailer.html">trailer</a> <a class="link_odd_elementSpec" title="(交互參照) 包含一字詞、句子、或圖象，用以參照到相同文本或不同文本中的其他位置。" href="ref-xr.html">xr</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW"> 成員</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="匯集包含書目描述的元素。" href="ref-model.biblLike.html">model.biblLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(書目資料) 包含結構零散的書目資料，其中次要元件不一定會明確標記。" href="ref-bibl.html">bibl</a> <a class="link_odd_elementSpec" title="() 包含結構完整的書目資料，其中呈現出TEI檔案描述內的所有元件。" href="ref-biblFull.html">biblFull</a> <a class="link_odd_elementSpec" title="(結構次要書目) 包含僅出現子節點的結構書目資料，並以特定順序呈現。" href="ref-biblStruct.html">biblStruct</a> <a class="link_odd_elementSpec" title="(書目列表) 包含任何種類的書目資料列表。" href="ref-listBibl.html">listBibl</a> <a class="link_odd_elementSpec" title="() 包含單一份可識別手稿的描述。" href="ref-msDesc.html">msDesc</a>] </span> <a class="link_odd_classSpec" title="匯集包含範例的元素" href="ref-model.egLike.html">model.egLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="() 包含任何種類的說明範例。" href="ref-eg.html">eg</a> <a class="link_odd_elementSpec" title="() 包含形式完整的單一XML範例的根結構，用以說明某些XML元素或屬性的使用方法。" href="ref-egXML.html">egXML</a>] </span> <a class="link_odd_classSpec" title="" href="ref-model.labelLike.html">model.labelLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(描述) 包含一段簡短描述，說明一元素、屬性、或屬性值的應用與目的。" href="ref-desc.html">desc</a> <a class="link_odd_elementSpec" title="包含和列表中某項目相關聯的標號；在詞彙表中則用來標記被定義的字詞。" href="ref-label.html">label</a>] </span> <a class="link_odd_classSpec" title="匯集所有類似列表的元素" href="ref-model.listLike.html">model.listLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="包含以列表方式呈現的任何連續項目。" href="ref-list.html">list</a> <a class="link_odd_elementSpec" title="" href="ref-listApp.html">listApp</a> <a class="link_odd_elementSpec" title="" href="ref-listEvent.html">listEvent</a> <a class="link_odd_elementSpec" title="包含一正式名稱列表，即任何事物的標準名稱。" href="ref-listNym.html">listNym</a> <a class="link_odd_elementSpec" title="" href="ref-listObject.html">listObject</a> <a class="link_odd_elementSpec" title="" href="ref-listOrg.html">listOrg</a> <a class="link_odd_elementSpec" title="人物描述清單，其中每個項目包含一個已知人物的相關資料，例如語言互動中的參與者、或是歷史來源中提及的人物。" href="ref-listPerson.html">listPerson</a> <a class="link_odd_elementSpec" title="" href="ref-listPlace.html">listPlace</a> <a class="link_odd_elementSpec" title="描述一項語言互動中參與者之間的關係或社交關聯。" href="ref-listRelation.html">listRelation</a> <a class="link_odd_elementSpec" title="" href="ref-listWit.html">listWit</a> <a class="link_odd_elementSpec" title="以表格形式呈現、包含在直行橫列中的文字內容。" href="ref-table.html">table</a>] </span> <a class="link_odd_classSpec" title="匯集的元素使ODD文件內某些標記語言中產生宣告。" href="ref-model.oddDecl.html">model.oddDecl</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="() 包含一個TEI元素集的參照資訊；元素集是一群在內容模組中同時出現、或共用某些屬性、或兩者皆包括的元素。" href="ref-classSpec.html">classSpec</a> <a class="link_odd_elementSpec" title="" href="ref-constraintSpec.html">constraintSpec</a> <a class="link_odd_elementSpec" title="" href="ref-dataSpec.html">dataSpec</a> <a class="link_odd_elementSpec" title="() 紀錄單一元素類型的結構、內容、以及用途。" href="ref-elementSpec.html">elementSpec</a> <a class="link_odd_elementSpec" title="(參照列表) 提供一個重要參照的列表，這些參照連結到詳述此元素的位置，在此文件裡或是其他地方。" href="ref-listRef.html">listRef</a> <a class="link_odd_elementSpec" title="() 記錄模式的功能與實行。" href="ref-macroSpec.html">macroSpec</a> <a class="link_odd_elementSpec" title="記錄單一模組的結構、內容、以及用途，例如：一個已命名且外部明確的宣告組。" href="ref-moduleSpec.html">moduleSpec</a> <a class="link_odd_elementSpec" title="" href="ref-outputRendition.html">outputRendition</a> <a class="link_odd_elementSpec" title="(說明群組) 包含在現有模組中的細節使用說明群組。" href="ref-specGrp.html">specGrp</a> <a class="link_odd_elementSpec" title="(參照到一個說明群組) 指出被參照的元素&lt;specGrp&gt;中的宣告應在此插入。" href="ref-specGrpRef.html">specGrpRef</a>] </span> <a class="link_odd_classSpec" title="匯集和顯目標示相關、且出現於方塊性層次元素內或之間的元素。" href="ref-model.qLike.html">model.qLike</a><span class="showmembers2"> [<a class="link_odd_classSpec" title="匯集直接包含引言的元素。" href="ref-model.quoteLike.html">model.quoteLike</a><span class="showmembers3"> [<a class="link_odd_elementSpec" title="() 從其他文件中引用的內容，並包含引用來源的書目參照資料。" href="ref-cit.html">cit</a> <a class="link_odd_elementSpec" title="(引文) 包含敘述者或作者引用自文本以外來源的字 (句) 詞或段落。" href="ref-quote.html">quote</a>] </span> <a class="link_odd_elementSpec" title="包含一份任何種類的文本，無論是單一或複合的，該份文本任意穿插於整體文本中，而週遭文字則接續其後。" href="ref-floatingText.html">floatingText</a> <a class="link_odd_elementSpec" title="(引用的言詞、思想、或文字) 包含標記為 (看似) 引用自他處的內容；在敘述文中，此元素用來標記直接或間接敘述；在字典中，用來標記實例或編者設計的範例；在寫本描述或其他上層資訊中，用來標記由來源文本中所摘錄的引文。" href="ref-q.html">q</a> <a class="link_odd_elementSpec" title="" href="ref-said.html">said</a>] </span> <a class="link_odd_classSpec" title="匯集的元素包含特殊的舞台指示，定義於劇本的附加標籤組中。" href="ref-model.stageLike.html">model.stageLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="描述電影視劇本中攝影機的某特定視角或觀看角度。" href="ref-camera.html">camera</a> <a class="link_odd_elementSpec" title="包含呈現在對白本或電影視劇本中的字幕或其他文字。" href="ref-caption.html">caption</a> <a class="link_odd_elementSpec" title="(動作) 標記舞台上人物的實際進場或退場。" href="ref-move.html">move</a> <a class="link_odd_elementSpec" title="描述電影或廣播劇本中的音效或配樂。" href="ref-sound.html">sound</a> <a class="link_odd_elementSpec" title="(舞台指示) 包含劇本中任何一種舞台場景或演出動作指示。" href="ref-stage.html">stage</a> <a class="link_odd_elementSpec" title="(技術性舞台指示) 描述一個具有特殊目的，但並非針對演員的舞台指示。" href="ref-tech.html">tech</a> <a class="link_odd_elementSpec" title="劇本中描述觀眾所看到的景象，一般不包含任何對話內容。" href="ref-view.html">view</a>] </span> <a class="link_odd_elementSpec" title="(角色清單) 包含單一角色名單或出場人物列表。" href="ref-castList.html">castList</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.inter.html">English</a>]
+    [<a href="../../de/html/ref-model.inter.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.inter.html">Español</a>]
+    [<a href="../../it/html/ref-model.inter.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.inter.html">Français</a>]
+    [<a href="../../ja/html/ref-model.inter.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.inter.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.inter.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">回饋</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:08:02Z.</address></div></body></html>

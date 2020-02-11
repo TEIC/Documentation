@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.gLike </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI class model.gLike " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Model Classes</a></li></ul></div><div><h3 class="oddSpec" id="model.gLike">model.gLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.gLike</span> 개별 비유니코드 문자 또는 그림문자를 표상하는 요소를 모아 놓는다.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(축약 표지) 축약의 확장형에서 생략되거나 대체된 축약형으로, 제시된 문자열 또는 기호열을 포함한다." href="ref-am.html">am</a> <a class="link_odd_elementSpec" title="(서지 인용) 하위 성분이 명시적으로 구분된 또는 그렇지 않은 덜 구조화된 서지 인용을 포함한다." href="ref-bibl.html">bibl</a> <a class="link_odd_elementSpec" title="제목 페이지 또는 작품의 시작부 또는 종료부에서 작품 책임성에 대한 주요 진술을 포함한다." href="ref-byline.html">byline</a> <a class="link_odd_elementSpec" title="(배역 목록 항목) 배역 목록에서 하나의 배역, 또는 대사가 없는 배역 목록을 기술하는 하나의 항목을 포함한다." href="ref-castItem.html">castItem</a> <a class="link_odd_elementSpec" title="구역의 마지막, 특히 편지의 종료부에 발문으로 나타나는 인사말, 날짜 표시란, 그리고 유사 구를 합하여 모아 놓는다." href="ref-closer.html">closer</a> <a class="link_odd_elementSpec" title="다양한 형식의 날짜를 포함한다." href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="편지, 신문 기사 또는 다른 작품에 제목부 또는 종료 요약부로서, 앞에 또는 뒤에 부착되어 있는, 그것이 생성된 장소, 날짜, 시간 등의 간단한 기술." href="ref-dateline.html">dateline</a> <a class="link_odd_elementSpec" title="(사전 발췌부) 다른 구-층위 사전 요소들이 자유롭게 결합된 사전 표제 항목의 부분을 포함한다." href="ref-dictScrap.html">dictScrap</a> <a class="link_odd_elementSpec" title="(문서 간기) 대개 제목 페이지 아래에 제시되는 인쇄 판 진술(출판 장소와 날짜, 출판사명)을 포함한다." href="ref-docImprint.html">docImprint</a> <a class="link_odd_elementSpec" title="(구조화되지 않은 표제 항목) &lt;entry&gt; 요소에 의해 부과된 제약에 반드시 부합할 필요 없는 사전 표제 항목을 포함한다." href="ref-entryFree.html">entryFree</a> <a class="link_odd_elementSpec" title="(어원) 사전 표제 항목의 어원 정보를 포함한다." href="ref-etym.html">etym</a> <a class="link_odd_elementSpec" title="(형태 정보군) 하나의 표제어에 대한 문어와 구어 형태에 관한 모든 정보군" href="ref-form.html">form</a> <a class="link_odd_elementSpec" title="(문법 정보군) 어휘 항목에 관한 형태-통사적 정보를 모아 놓는다. 예, &lt;pos&gt;, &lt;gen&gt;, &lt;number&gt;, &lt;case&gt;, 또는 &lt;iType&gt; (굴절 부류)" href="ref-gramGrp.html">gramGrp</a> <a class="link_odd_elementSpec" title="(표제부) 예를 들어 절의 제목 또는 용어집, 원고 기술의 제목 등과 같이 표제부 유형을 포함한다." href="ref-head.html">head</a> <a class="link_odd_elementSpec" title="(식별 숫자) 서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다." href="ref-idno.html">idno</a> <a class="link_odd_elementSpec" title="(해석) 텍스트의 범위에 연결될 수 있는 명시적인 해석적 부호를 요약한다." href="ref-interp.html">interp</a> <a class="link_odd_elementSpec" title="(운문 시행) 미완성일 수도 있지만 운문의 하나의 시행을 포함한다." href="ref-l.html">l</a> <a class="link_odd_elementSpec" title="(레마) 텍스트 변이형의 레마 또는 기본 텍스트를 포함한다." href="ref-lem.html">lem</a> <a class="link_odd_elementSpec" title="" href="ref-line.html">line</a> <a class="link_odd_elementSpec" title="원고 또는 원고의 일부 내에서 위치를 정의한다." href="ref-locus.html">locus</a> <a class="link_odd_elementSpec" title="(형태소) 문법적인 형태소를 표시한다." href="ref-m.html">m</a> <a class="link_odd_macroSpec" title="" href="ref-macro.paraContent.html">macro.paraContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.phraseSeq.html">macro.phraseSeq</a> <a class="link_odd_macroSpec" title="" href="ref-macro.specialPara.html">macro.specialPara</a> <a class="link_odd_macroSpec" title="" href="ref-macro.xtext.html">macro.xtext</a> <a class="link_odd_elementSpec" title="(측정 그룹) 예를 들어, 원고지 페이지의 가로 세로 크기와 같이 동일 개체에 관련된 여러 종류의 측량값의 그룹을 포함한다." href="ref-measureGrp.html">measureGrp</a> <a class="link_odd_elementSpec" title="(이명) ‘ocellus nominum’ 또는 별명처럼 원고에 사용된 어떤 형식의 구조화되지 않은 이명(대체명)을 포함한다." href="ref-msName.html">msName</a> <a class="link_odd_elementSpec" title="(철자-형태 참조) 사전 예문에서 표제어의 철자 형식에 대한 참조를 나타낸다." href="ref-oRef.html">oRef</a> <a class="link_odd_elementSpec" title="구역, 특히 편지의 시작부에 서문군으로 나타나는 날짜 표시란, 필자명 행, 인사말, 그리고 유사 구를 합하여 모아 놓는다." href="ref-opener.html">opener</a> <a class="link_odd_elementSpec" title="(생성 날짜) 원고 또는 원고의 일부의 생산 날짜를 식별하는 날짜 형식을 포함한다." href="ref-origDate.html">origDate</a> <a class="link_odd_elementSpec" title="(발음 참조) 사전의 예에서 표제어의 발음에 대한 참조를 표시한다." href="ref-pRef.html">pRef</a> <a class="link_odd_elementSpec" title="" href="ref-pc.html">pc</a> <a class="link_odd_elementSpec" title="(독법) 텍스트 변이형 내에서 단일 독법을 포함한다." href="ref-rdg.html">rdg</a> <a class="link_odd_elementSpec" title="(관련 표제 항목) 복합어, 또는 큰 표제 항목 내부에 포함된 파생 형태와 같이 표제 항목과 관련된 어휘 항목을 포함한다." href="ref-re.html">re</a> <a class="link_odd_elementSpec" title="하나의 사전 표제 항목에서 하나의 단어 의미와 관련된 모든 정보를 모아 놓는다. 예를 들어 정의, 예문, 번역어" href="ref-sense.html">sense</a> <a class="link_odd_elementSpec" title="(연간물 정보) 책 또는 다른 참고문헌 항목이 나타나는 연간물 정보를 포함한다." href="ref-series.html">series</a> <a class="link_odd_elementSpec" title="어떤 형식의, 하루의 시간을 정의하는 구를 포함한다." href="ref-time.html">time</a> <a class="link_odd_elementSpec" title="텍스트 구역의 종료부에 나타나는 마지막 제목 또는 꼬리말을 포함한다." href="ref-trailer.html">trailer</a> <a class="link_odd_elementSpec" title="(단어) 문법적 (반드시 철자상이 아닌) 단어를 표시한다." href="ref-w.html">w</a> <a class="link_odd_elementSpec" title="(비교 대상 텍스트 세목) 특별한 비교 대상 텍스트에 관한 상세한 정보를 특별한 독법에 제공한다." href="ref-witDetail.html">witDetail</a> <a class="link_odd_elementSpec" title="(교차 참조 구) 현재 또는 다른 텍스트에서 다른 위치를 지시하는 구, 문장, 또는 아이콘을 포함한다." href="ref-xr.html">xr</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">원소</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_elementSpec" title="(문자 또는 그림문자) 비표준 문자 또는 그림문자를 표시한다." href="ref-g.html">g</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.gLike.html">English</a>]
+    [<a href="../../de/html/ref-model.gLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.gLike.html">Español</a>]
+    [<a href="../../it/html/ref-model.gLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.gLike.html">Français</a>]
+    [<a href="../../ja/html/ref-model.gLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.gLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.gLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

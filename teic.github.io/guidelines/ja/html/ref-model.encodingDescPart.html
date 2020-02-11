@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.encodingDescPart </title><meta property="Language" content="ja" /><meta property="DC.Title" content="TEI class model.encodingDescPart " /><meta property="DC.Language" content="SCHEME=iso639 ja" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEIガイドライン</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">ホーム</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A モデルクラス</a></li></ul></div><div><h3 class="oddSpec" id="model.encodingDescPart">model.encodingDescPart</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.encodingDescPart</span> 要素<a class="gi" title="電子テキストとその元資料との関係を示す．" href="ref-encodingDesc.html">encodingDesc</a>内で使われ，複数回出現可能な要素をまとめる．</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">モジュール</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">当該モジュールを使用するもの</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="電子テキストとその元資料との関係を示す．" href="ref-encodingDesc.html">encodingDesc</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">構成</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_elementSpec" title="(アプリケーション情報) TEIファイルを編集したソフトウェアに関する情報を示す．" href="ref-appInfo.html">appInfo</a> <a class="link_odd_elementSpec" title="規格にない文字やグリフに関する情報を示す．" href="ref-charDecl.html">charDecl</a> <a class="link_odd_elementSpec" title="当該テキスト中で使用されている分類コードを定義する，ひとつ以上の分類 法を示す．" href="ref-classDecl.html">classDecl</a> <a class="link_odd_elementSpec" title="テキストを符号化する際に適用される編集方針や編集方法の詳細を示す．" href="ref-editorialDecl.html">editorialDecl</a> <a class="link_odd_elementSpec" title="ひとつ以上の素性構造宣言または素性構造宣言へのリンクを含む，素性シス テム宣言を示す．" href="ref-fsdDecl.html">fsdDecl</a> <a class="link_odd_elementSpec" title="当該文書中にある要素&lt;geo&gt;の内容が表す座標の表記法を示す．" href="ref-geoDecl.html">geoDecl</a> <a class="link_odd_elementSpec" title="" href="ref-listPrefixDef.html">listPrefixDef</a> <a class="link_odd_elementSpec" title="韻律パタンを表す表記法を示す．韻文のための要素(例えば，&lt;lg&gt;, &lt;l&gt;, &lt;seg&gt;など)にある属性@met, @real, @rhymeの値として定義される．" href="ref-metDecl.html">metDecl</a> <a class="link_odd_elementSpec" title="制作過程に関する情報も含めて，電子ファイルが作られた目的の詳細を示す．" href="ref-projectDesc.html">projectDesc</a> <a class="link_odd_elementSpec" title="標準的な参照の作られ方を示す．" href="ref-refsDecl.html">refsDecl</a> <a class="link_odd_elementSpec" title="コーパス等を作成する際，テキストを標本化する原理や手法に関する，散文 による解説を含む．" href="ref-samplingDecl.html">samplingDecl</a> <a class="link_odd_elementSpec" title="" href="ref-schemaRef.html">schemaRef</a> <a class="link_odd_elementSpec" title="TEI準拠のスキーマや文書を示す．" href="ref-schemaSpec.html">schemaSpec</a> <a class="link_odd_elementSpec" title="" href="ref-styleDefDecl.html">styleDefDecl</a> <a class="link_odd_elementSpec" title="タグ付けに関する詳細な情報を示す．" href="ref-tagsDecl.html">tagsDecl</a> <a class="link_odd_elementSpec" title="" href="ref-transcriptionDesc.html">transcriptionDesc</a> <a class="link_odd_elementSpec" title="校勘対象を符号化する手法を示す．" href="ref-variantEncoding.html">variantEncoding</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.encodingDescPart.html">English</a>]
+    [<a href="../../de/html/ref-model.encodingDescPart.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.encodingDescPart.html">Español</a>]
+    [<a href="../../it/html/ref-model.encodingDescPart.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.encodingDescPart.html">Français</a>]
+    [<a href="../../ja/html/ref-model.encodingDescPart.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.encodingDescPart.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.encodingDescPart.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">ご意見・ご感想</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:04:43Z.</address></div></body></html>

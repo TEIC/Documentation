@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.inter </title><meta property="Language" content="it" /><meta property="DC.Title" content="TEI class model.inter " /><meta property="DC.Language" content="SCHEME=iso639 it" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Linee guida per la codifica e l'interscambio del testo elettronico</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Home</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Classi di modelli</a></li></ul></div><div><h3 class="oddSpec" id="model.inter">model.inter</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.inter</span> raggruppa elementi della classe intermedia (interlivello): tali elementi possono apparire sia all'interno che tra paragrafi e altri elementi del tipo porzione di testo [<a class="link_ptr" href="ST.html#STEC" title="The TEI Class System"><span class="headingNumber">1.3 </span>The TEI Class System</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Modulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Usato da</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(frammento di dizionario) include una parte di una voce di dizionario in cui sono combinati liberamente altri elementi di dizionario a livello sintagmatico" href="ref-dictScrap.html">dictScrap</a> <a class="link_odd_elementSpec" title="(voce non strutturata) contiene una voce di dizionario non necessariamente conforme ai vincoli imposti dall'elemento entry." href="ref-entryFree.html">entryFree</a> <a class="link_odd_elementSpec" title="(etimologia) comprende informazioni etimologiche in una voce di dizionario." href="ref-etym.html">etym</a> <a class="link_odd_elementSpec" title="(gruppo di informazioni sulla form) raggruppa tutte le informazioni sulle form scritte e orali di un lemma" href="ref-form.html">form</a> <a class="link_odd_elementSpec" title="(gruppo di informazioni grammaticali) raggruppa le informazioni morfo-sintattiche di un'unità lessicale, ad esempio &lt;pos&gt;, &lt;gen&gt;, &lt;number&gt;, &lt;case&gt;, or &lt;iType&gt; (tipologie flessive)." href="ref-gramGrp.html">gramGrp</a> <a class="link_odd_elementSpec" title="(titolo) contiene qualsiasi tipo di titolo, per esempio il titolo di una sezione, di una lista, di un glossario, di una descrizione di manoscritto, ecc." href="ref-head.html">head</a> <a class="link_odd_elementSpec" title="(verso) contiene un singolo verso, anche incompleto." href="ref-l.html">l</a> <a class="link_odd_elementSpec" title="contiene il lemma, o testo base, di una variante testuale" href="ref-lem.html">lem</a> <a class="link_odd_macroSpec" title="" href="ref-macro.limitedContent.html">macro.limitedContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.paraContent.html">macro.paraContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.specialPara.html">macro.specialPara</a> <a class="link_odd_classSpec" title="raggruppa elementi comuni a livello di porzioni di testo o interlivello" href="ref-model.common.html">model.common</a> <a class="link_odd_elementSpec" title="(lettura) contiene un'unica lettura entro una variante testuale" href="ref-rdg.html">rdg</a> <a class="link_odd_elementSpec" title="contiene una formula di chiusura o un elemento a piè di pagina che compare alla fine di una sezione di testo" href="ref-trailer.html">trailer</a> <a class="link_odd_elementSpec" title="(frase di riferimento incrociato) contiene un sintagma, una frase o un'icona che rimanda il lettore ad un altra porzione di questo o altro testo." href="ref-xr.html">xr</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Membri</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="raggruppa elementi che contengono una descrizione bibliografica" href="ref-model.biblLike.html">model.biblLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(citazione bibliografica) contiene una citazione bibliografica strutturata liberamente i cui componeneti potrebbero o meno essere codificati esplicitamente." href="ref-bibl.html">bibl</a> <a class="link_odd_elementSpec" title="(citazione bibliografica strutturata) contiene una citazione bibliografica interamente strutturata nella quale sono presenti tutti i componenti di descrizione di un file TEI." href="ref-biblFull.html">biblFull</a> <a class="link_odd_elementSpec" title="(citazione bibliografica strutturata) contiene una citazione bibliografica strutturata che può contenere solo altri elemento nell'ordine specificato." href="ref-biblStruct.html">biblStruct</a> <a class="link_odd_elementSpec" title="(lista di citazioni) contiene una lista di citazioni bibliografiche di qualsiasi natura." href="ref-listBibl.html">listBibl</a> <a class="link_odd_elementSpec" title="(decrizione del manoscritto) contiene la descrizione di un unico manoscritto" href="ref-msDesc.html">msDesc</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi che contengono esempi o illustrazioni" href="ref-model.egLike.html">model.egLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(esempio) contiene un qualsiasi esempio" href="ref-eg.html">eg</a> <a class="link_odd_elementSpec" title="(esempio di XML) contiene un unico esempio ben formato secondo il linguaggio XML che illustra l'impiego di un elemento o attributo XML" href="ref-egXML.html">egXML</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi utilizzati per spiegare o illustrare altre parti di un documento" href="ref-model.labelLike.html">model.labelLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(descrizione) contiene una breve descrizione dello scopo o dell'applicazione di un elemento, attributo, o valore di attributo." href="ref-desc.html">desc</a> <a class="link_odd_elementSpec" title="contiene l'etichetta associata ad una voce in una lista; nei glossari indica il dermine che viene definito" href="ref-label.html">label</a>] </span> <a class="link_odd_classSpec" title="raggruppa tutti gli elementi del tipo lista" href="ref-model.listLike.html">model.listLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="contiene una qualsiasi sequenza di voci organizzate in una lista." href="ref-list.html">list</a> <a class="link_odd_elementSpec" title="" href="ref-listApp.html">listApp</a> <a class="link_odd_elementSpec" title="" href="ref-listEvent.html">listEvent</a> <a class="link_odd_elementSpec" title="(elenco di nomi canonici) contiene una lista di nym, cioè nomi standard per qualsiasi cosa" href="ref-listNym.html">listNym</a> <a class="link_odd_elementSpec" title="" href="ref-listObject.html">listObject</a> <a class="link_odd_elementSpec" title="(elenco delle organizzazioni) contiene una lista di descrizioni, ognuna delle quali fornisce informazioni relative a una determinata organizzazione" href="ref-listOrg.html">listOrg</a> <a class="link_odd_elementSpec" title="(elenco delle persone) contiene una lista di descrizioni, ciascuna delle quali fornisce informazioni relative a una persona specifica o a un gruppo di persone, per esempio i partecipanti a un'interazione verbale o le persone identificate da una fonte storica" href="ref-listPerson.html">listPerson</a> <a class="link_odd_elementSpec" title="(elenco dei luoghi) contiene una lista di luoghi, eventualmente seguita da una lista di relazioni tra questi (ad eccezione di quella contenete-contenuto)" href="ref-listPlace.html">listPlace</a> <a class="link_odd_elementSpec" title="fornisce informazioni relative alle relazioni identificate tra persone, luoghi e organizzazioni, a livello informale discorsivo o sotto forma di legami formalmente espressi" href="ref-listRelation.html">listRelation</a> <a class="link_odd_elementSpec" title="(lista dei testimoni) contiene una lista di tutti i testimoni a cui si fa riferimento negli elementi e attributi relativi ai testimoni nell'apparato critico" href="ref-listWit.html">listWit</a> <a class="link_odd_elementSpec" title="contiene testo visualizzato in forma di tabella, in righe e colonne." href="ref-table.html">table</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi che generano dichiarazioni in un dato linguaggio di codifica in documenti isolati" href="ref-model.oddDecl.html">model.oddDecl</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(indicazione di classe) contiene informazioni relative a una classe di elementi TEI, cioè un gruppo di elementi che compaiono insieme in modelli di contenuto, oppure che hanno alcuni attributi in comune, o entrambe le cose" href="ref-classSpec.html">classSpec</a> <a class="link_odd_elementSpec" title="" href="ref-constraintSpec.html">constraintSpec</a> <a class="link_odd_elementSpec" title="" href="ref-dataSpec.html">dataSpec</a> <a class="link_odd_elementSpec" title="(specifica dell'elemento) documenta struttura, contenuto e scopo di un unico tipo di elemento" href="ref-elementSpec.html">elementSpec</a> <a class="link_odd_elementSpec" title="(lista di riferimenti) fornisce una lista di riferimenti significativi a punti, nel documento corrente o altrove, in cui è discusso l'elemento in questione" href="ref-listRef.html">listRef</a> <a class="link_odd_elementSpec" title="(indicazione di macro) documenta la funzione e l'applicazione di un pattern" href="ref-macroSpec.html">macroSpec</a> <a class="link_odd_elementSpec" title="(specifica del modulo) documenta struttura, contenuto e scopo di un unico modulo, cioè un gruppo di dichiarazioni specificamente indicato ed esternamente visibile" href="ref-moduleSpec.html">moduleSpec</a> <a class="link_odd_elementSpec" title="" href="ref-outputRendition.html">outputRendition</a> <a class="link_odd_elementSpec" title="(gruppo di istruzioni) contiene un qualsiasi raggruppamento funzionale di istruzioni per l'uso all'interno del modulo corrente" href="ref-specGrp.html">specGrp</a> <a class="link_odd_elementSpec" title="(riferimento a gruppo di istruzioni) indica il punto in cui devono essere inserite le dichiarazioni contenute nello &lt;specGrp&gt; indicato" href="ref-specGrpRef.html">specGrpRef</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi relativi all'evidenziatura che appaiono all'interno di o tra elementi a livello di porzioni di testo" href="ref-model.qLike.html">model.qLike</a><span class="showmembers2"> [<a class="link_odd_classSpec" title="raggruppa elementi che contengono direttamente le citazioni" href="ref-model.quoteLike.html">model.quoteLike</a><span class="showmembers3"> [<a class="link_odd_elementSpec" title="(citazione) Un acitazione da un altro documento accompagnata da riferimenti bibliografici alla fonte." href="ref-cit.html">cit</a> <a class="link_odd_elementSpec" title="(citazione) contiene una frase o un brano attribuito dall'autore o dal narratore a soggetti esterni al testo" href="ref-quote.html">quote</a>] </span> <a class="link_odd_elementSpec" title="contiene un unico testo di qualsiasi tipo, sia esso unitario o composito, che interrompe il testo che lo contiene in un qualsiasi punto e dopo il quale il testo circostante riprende" href="ref-floatingText.html">floatingText</a> <a class="link_odd_elementSpec" title="(citazione di discorso, pensiero o testo scritto) contiene una citazione codificata come se fosse (formalmente) espressa da qualcun altro; in narrativa, l'elemento è usato per codificare discorso diretto o indiretto; nei dizionari, può essere usato per indicare esempi, reali o inventati, dell'uso di un termine; nelle descrizioni dei manoscritti o altre metainformazioni per codificare estratti citati da fonti documentate." href="ref-q.html">q</a> <a class="link_odd_elementSpec" title="(parlato o pensiero) indica brani pensati o pronunciati, siano essi esplicitamente indicati nella fonte o meno, in discorso diretto o indiretto e attribuibili a persone realmente esistenti o personaggi di fantasia" href="ref-said.html">said</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi che contengono specifiche indicazioni di scena definite nell'insieme aggiuntivo di marcatori per testi teatrali" href="ref-model.stageLike.html">model.stageLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="descrive un particolare angolatura o punto di vista in una sceneggiatura." href="ref-camera.html">camera</a> <a class="link_odd_elementSpec" title="contiene il testo di una leggenda o altro testo facente parte di un copione o di una sceneggiatura." href="ref-caption.html">caption</a> <a class="link_odd_elementSpec" title="(movimento) segnala l'entrata o uscita di uno o più personaggi." href="ref-move.html">move</a> <a class="link_odd_elementSpec" title="descrive un effetto sonoro o una sequenza musicale descritti in una sceneggiatura o di un copione radiofonico." href="ref-sound.html">sound</a> <a class="link_odd_elementSpec" title="(direttiva di scena) contiene qualsiasi tipo di didascalie e direttive di scena all'interno di un testo o di un frammento di testo drammatico." href="ref-stage.html">stage</a> <a class="link_odd_elementSpec" title="(Indicazioni i scena tecniche) descrive particolari indicazioni di scena non indirizzate agli attori." href="ref-tech.html">tech</a> <a class="link_odd_elementSpec" title="descrive il contenuto visivo di una parte della sceneggiatura, rispetto a ciò che lo spettatore vede, di solito indipendentemente dai dialoghi." href="ref-view.html">view</a>] </span> <a class="link_odd_elementSpec" title="(elenco dei personaggi) contiene un unico elenco dei personaggio le dramatis personae." href="ref-castList.html">castList</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.inter.html">English</a>]
+    [<a href="../../de/html/ref-model.inter.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.inter.html">Español</a>]
+    [<a href="../../it/html/ref-model.inter.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.inter.html">Français</a>]
+    [<a href="../../ja/html/ref-model.inter.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.inter.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.inter.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commenti e suggerimenti</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:07:11Z.</address></div></body></html>

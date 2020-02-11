@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class att.naming </title><meta property="Language" content="it" /><meta property="DC.Title" content="TEI class att.naming " /><meta property="DC.Language" content="SCHEME=iso639 it" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Linee guida per la codifica e l'interscambio del testo elettronico</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Home</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-ATTS.html">B Classi di attributi</a></li></ul></div><div><h3 class="oddSpec" id="att.naming">att.naming</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">att.naming</span> identifica degli attributi comuni a elementi che si riferiscono a persone, luoghi, organizzazioni, ecc. indicati per nome [<a class="link_ptr" href="CO.html#CONARS" title="Referring Strings"><span class="headingNumber">3.5.1 </span>Referring Strings</a> <a class="link_ptr" href="ND.html#NDNYM" title="Names and Nyms"><span class="headingNumber">13.3.6 </span>Names and Nyms</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Modulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Membri</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="(attributi per componenti di nomi propri di persona) attributi comuni agli elementi che compongono un nome proprio di persona" href="ref-att.personal.html">att.personal</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(nome aggiuntivo) contiene una componente aggiuntiva del nome, come un soprannome, un epiteto, o eventuali altre espressioni utilizzate all'interno di un nome proprio di persona" href="ref-addName.html">addName</a> <a class="link_odd_elementSpec" title="contiene un prenome assegnato o un nome di battesimo" href="ref-forename.html">forename</a> <a class="link_odd_elementSpec" title="(componente generazionale del nome) contiene una componente del nome utilizzata per distinguere nomi simili tra loro sulla base della differenza di età o dell'appartenenza a generazioni diverse delle persone nominate" href="ref-genName.html">genName</a> <a class="link_odd_elementSpec" title="(nome, nome proprio) contiene un nome proprio o un sintagma nominale." href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="(nome di organizzazione) contiene il nome proprio di un'organizzazione" href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="(nome proprio di persona) contiene un nome proprio o un sintagma identificabile come nome proprio, che si riferisce a una persona e può includere qualsiasi o tutti i prenomi, cognomi, titoli onorifici, o nomi aggiunti della persona in questione" href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="contiene l'indicazione assoluta o relativa di un nome di luogo" href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="contiene una componente del nome che indica un ruolo o una posizione specifici a livello sociale, come nel caso di titoli ufficiali o grado militare" href="ref-roleName.html">roleName</a> <a class="link_odd_elementSpec" title="contiene un nome di famiglia (ereditato) piuttosto che un nome assegnato, un nome di battesimo o un soprannome" href="ref-surname.html">surname</a>] </span> <a class="link_odd_elementSpec" title="contiene una descrizione informale dell'appartenenza presente o passata di una persona a una determinata organizzazione, per esempio un'azienda o un ente finanziatore" href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="in un riferimento bibliografico contiene il nome dell'autore (o degli autori), personale o collettivo, di un'opera; è la dichiarazione di responsabilità primaria di ciascuna unità bibliografica." href="ref-author.html">author</a> <a class="link_odd_elementSpec" title="contiene informazioni relative al luogo e alla data di nascita di una persona" href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="contiene il nome di un'unità geopolitica comprendente uno o più stati nazione o paesi" href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="contiene informazioni relative al clima fisico di un luogo" href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="contiene il nome di una raccolta di manoscritti non necessariamente collocati in un unico deposito" href="ref-collection.html">collection</a> <a class="link_odd_elementSpec" title="contiene il nome di un'unità geopolitica, come una nazione, un paese, una colonia, o un'unione di stati, che sia più ampia o amministrativamente superiore rispetto a una regione ma di dimensioni inferiori rispetto a un blocco" href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="contiene informazioni relative al luogo e alla data di morte di una persona" href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="contiene il nome di una qualsiasi suddivisione all'interno di un insediamento, come una circoscrizione, un quartiere o altre unità amministrative o geografiche" href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="è la dichiarazione di responsabilità secondaria di ciascuna unità bibliografica, ad esempio il nome di un individuo, di un'istituzione o organizzazione che agisce come curatore, compilatore, traduttore, ecc." href="ref-editor.html">editor</a> <a class="link_odd_elementSpec" title="contiene una descrizione relativa all'istruzione di una persona" href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="qualsiasi fenomeno o evento non necessariamente vocale o comunicativo, come rumori accidentali o altri fenomeni che incidano sulla comunicazione in atto" href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="(nome di elemento geografico) contiene un nome comune che identifica elementi geografici inclusi in un nome proprio geografico, come valle, monte, ecc." href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="(nome proprio geografico) nome associato a un elemento geografico, come valle Windrush o Monte Sinai" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="contiene il nome di un'organizzazione (per esempio un'università o una biblioteca) nella quale si trova il deposito del manoscritto" href="ref-institution.html">institution</a> <a class="link_odd_elementSpec" title="contiene una descrizione informale della nazionalità o cittadinanza presente o passata di una persona" href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="contiene una descrizione informale dell'attività, professione o occupazione di una persona" href="ref-occupation.html">occupation</a> <a class="link_odd_elementSpec" title="la parte di un'espressione temporale o spaziale relativa che indica la direzione dello sfasamento tra due nomi di luogo, date o orari all'interno dell'espressione" href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="(luogo di origine) contiene un qualsiasi nome di luogo utilizzato per indicare il luogo di origine di un manoscritto o di una sua parte" href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="contiene informazioni relative alla popolazione di un dato luogo" href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="(luogo di pubblicazione) contiene il nome del luogo in cui un'unità bibliografica è stata pubblicata" href="ref-pubPlace.html">pubPlace</a> <a class="link_odd_elementSpec" title="contiene il nome di un'unità amministrativa, come uno stato o una provincia, che sia più ampia di un piccolo insediamento ma più piccola di un paese" href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="contiene il nome di un deposito, parte o meno di un'istituzione, nel quale sono conservati i manoscritti" href="ref-repository.html">repository</a> <a class="link_odd_elementSpec" title="(residenza) descrive il luogo di residenza presente o passato di una persona" href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="(stringa di riferimento) contiene un nome generico o una stringa di riferimento" href="ref-rs.html">rs</a> <a class="link_odd_elementSpec" title="contiene il nome di un insediamento quale una città o un comune considerati come unità geopolitica o amministrativa" href="ref-settlement.html">settlement</a> <a class="link_odd_elementSpec" title="(condizione socio-economica) contiene una descrizione informale della condizione socio-economica percepita di una persona" href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="specifica un componente di un riferimento canonico definito dal metodo milestone." href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="contiene informazioni relative al terreno fisico di un luogo" href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="contiene la descrizione di una caratteristica personale o legata alla cultura di appartenenza di una determinata persona" href="ref-trait.html">trait</a></span></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Attributi</span></td><td class="wovenodd-col2"><a class="link_odd" title="" href="ref-att.canonical.html">att.canonical</a> (<span class="attribute">@key</span>, <span class="attribute">@ref</span>) <table class="attList"><tr><td class="odd_label">role<span class="bookmarklink"><a class="bookmarklink" id="tei_att.role" href="#tei_att.role" title="link to this attribute "><span class="invisible"> role</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="it">Stato</span> </td><td class="odd_value"><span lang="it">Opzionale</span></td></tr><tr><td class="odd_label"><span lang="it" class="label">Tipo di dati</span> </td><td class="odd_value"> 1–∞ <span lang="it">occorrenze di</span> <a class="link_element" href="ref-teidata.enumerated.html">teidata.enumerated</a> <span lang="it">separato da spazio bianco</span></td></tr></table></td></tr><tr><td class="odd_label">nymRef<span class="bookmarklink"><a class="bookmarklink" id="tei_att.nymRef" href="#tei_att.nymRef" title="link to this attribute "><span class="invisible"> nymRef</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">(riferimento al nome canonico) indica un modo di localizzare la forma canonica (nym) dei nomi associati all'oggetto definito dall'elemento che lo contiene<table class="attDef"><tr><td class="odd_label"><span class="label" lang="it">Stato</span> </td><td class="odd_value"><span lang="it">Opzionale</span></td></tr><tr><td class="odd_label"><span lang="it" class="label">Tipo di dati</span> </td><td class="odd_value"> 1–∞ <span lang="it">occorrenze di</span> <a class="link_element" href="ref-teidata.pointer.html">teidata.pointer</a> <span lang="it">separato da spazio bianco</span></td></tr></table></td></tr></table></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-att.naming.html">English</a>]
+    [<a href="../../de/html/ref-att.naming.html">Deutsch</a>]
+    [<a href="../../es/html/ref-att.naming.html">Español</a>]
+    [<a href="../../it/html/ref-att.naming.html">Italiano</a>]
+    [<a href="../../fr/html/ref-att.naming.html">Français</a>]
+    [<a href="../../ja/html/ref-att.naming.html">日本語</a>]
+    [<a href="../../ko/html/ref-att.naming.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-att.naming.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commenti e suggerimenti</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:07:11Z.</address></div></body></html>

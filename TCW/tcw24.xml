@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+$LastChangedDate: 2012-08-09$
+$LastChangedBy: rebeccawelzenbach$
+$LastChangedRevision: 0001$
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Style Guide for Editing the TEI Guidelines</title>
+        <author>TEI Technical Council</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>TEI Technical Council</publisher>
+        <date>2018</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>The first draft of this document was created by moving the "House Style: preferred
+          orthography" and "House Style: notes on usage" sections from TCW20, "How to Edit the TEI
+          Guidelines" to their own document, TCW24, which will serve as a full style guide for the
+          Guidelines.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2018-07-20" who="#JC">Added section on modal verbs</change>
+      <change when="2016-03-11" who="#HAC">Added egXML guidance</change>
+      <change when="2013-09-02" who="#KSH">Link to BCP 14</change>
+      <change when="2013-03-16" who="#KSH">Fixed ptrs</change>
+      <change when="2013-02-01" who="#KSH">"TEI header" is preferred</change>
+      <change when="2013-01-27" who="#KSH">Explained -ize vs. -ise. Also a markup fix.</change>
+      <change when="2012-01-08" who="#KSH">desc's for attributes should also be verbal phrases</change>
+      <change when="2012-12-28" who="#KSH">Added note about desc elements containing verbal 
+        phrases; some light copyediting</change>
+      <change when="2012-08-09" who="#RAW">Adding prose about use of first-person/"we" and
+        second-person/"you" in the Guidelines. </change>
+      <change when="2012-08-06" who="#RAW">started first draft: moving sections from TCW20, "How to
+        Edit the TEI Guidelines" to their own document. Re-ordered some sections, proofread, added
+        some examples, and added discussion of hyphenation. </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <p>This document aims to capture decisions about House Style for writing and editing the TEI
+        Guidelines, in order to maintain consistency throughout the Guidelines.</p>
+      <div xml:id="house-style-tone-and-voice">
+        <head>Tone and voice</head>
+        <p>The Guidelines are a reference manual, not a tutorial. You should not talk down to the
+          reader, but assume they have a reasonably well-informed knowledge of the subjects under
+          discussion. Make copious use of cross references, rather than repetition.</p>
+        <p>Bear in mind however that your reader may not have English as their first language. Avoid
+          needlessly complex sentences and unnecessarily obscure terminology.</p>
+        <p>Choose clarity and concision over adherence to any particular voice. However, you should
+          be careful in your use of the first person, avoiding the implication that a community of
+          scholars, or the whole TEI community, takes a certain view. The use of "we" is appropriate
+          in passages of formal textual exposition, where "we" refers to both the reader and the
+          authorial voice. For instance: "Each chapter of the Guidelines presents a group of related
+          elements, and also defines a corresponding set of declarations, which we call a
+          module."</p>
+        <p>Avoid the use of a first-person authorial voice that does not include the reader as part
+          of "we." For instance: "We do not describe them in detail here," which refers to a
+          particular editorial decision made by the authors of the Guidelines. In this case, "They
+          are not described in detail here" is preferred.</p>
+        <p>As a test, ask yourself whether the material being asserted, typically a technical term
+          or usage, is something the reader is expected to internalize and use themselves
+          thereafter. If so, use "we." If not, it is more appropriate to use the passive voice.</p>
+        <p>In general, avoid imperative constructions ("you should..."). However, key words like 
+          "should", "must", "must not", "recommended", etc. should be used in accordance with 
+          <ref target="http://tools.ietf.org/html/bcp14">BCP 14</ref>.</p>
+        
+      </div>
+      <div xml:id="house-style-usage">
+        <head>General notes on usage</head>
+        <p>This is a list of notes on usage preferences and conventions, which we expect to expand
+          over time.</p>
+        <list type="gloss">
+          <label>Gender-neutral pronouns</label>
+          <item>We prefer the usage "they", "their" etc. where the third person singular is
+            required, but gender is unspecified. For instance: "The encoder may follow their own
+            preference here." This is less ungainly than "his/her" etc. </item>
+          <label>Technical terms</label>
+          <item>Make sure that technical terms are glossed on their first appearance. For instance,
+            XML-related terminology should be introduced in the chapter on XML. If you want to
+            provide other references, do so as footnotes, using the <gi>note</gi> element.</item>
+          <label>References</label>
+          <item>Provide bibliographic citations for any other standards (etc) referenced, following
+            the existing style. Do not introduce bibliographic citations simply in order to
+            demonstrate your learning. </item>
+          <label>Descriptions in specifications</label>
+          <item>The description of an element, attribute, model class, or attribute class contained in 
+            <gi>desc</gi> should always be a verbal phrase beginning with a present-tense verb 
+            ("contains a ...", "groups together ...", etc.)</item>
+          <label>Internal references</label>
+          <item>Language like "the preceding" and "the following" should not be used to refer to specific figures, tables, and examples. Instead, be sure there is an <att>xml:id</att> on the object in question and link to it with <gi>ref</gi>.</item>
+        </list>
+      </div>
+      <div xml:id="house-style-naming-conventions">
+        <head>Naming conventions</head>
+        <p>TEI naming conventions have evolved over time, but remain fairly consistent. </p>
+        <list type="gloss">
+          <label>generic identifiers</label>
+          <item>Element and attribute identifiers should be a single natural language word in
+            lowercase if possible. For instance: <gi>bibl</gi>. If more than one word is conjoined
+            to form a name, then the first letter of the second and any subsequent word should be
+            uppercased. For instance: <gi>biblStruct</gi>. Hyphens, underscores, dots etc are not
+            used within element or attribute names. </item>
+          <label>class names</label>
+          <item>Class names are made up three parts: a name, constructed like an element name, with
+            a prefix and optionally a suffix. The prefix is one of <code>model.</code> or
+            <code>att.</code> and indicates whether this is a model or an attribute class. The
+            suffix, if present, is used to indicate subclassing. For example
+            <ident>att.linking.foo</ident> is the <ident>foo</ident> subclass of the attribute
+            class <ident>att.linking</ident></item>
+          <label>xml:id values</label>
+          <item>The conventions for these vary somewhat. Most of the older chapters of the
+            guidelines have consistently constructed identifiers, derived from the individual
+            section headings. Identifiers must be provided for:- <list>
+              <item>every <gi>div</gi>, whether or not it is explicitly linked to elsewhere</item>
+              <item>every bibliographic reference in the <ident>BIB.xml</ident> file</item>
+            </list></item>
+        </list>
+      </div>
+      <div xml:id="house-style-capitalization">
+        <head>Capitalization of headings</head>
+        <p>Use title case as defined in the <title level="m">Chicago Manual of Style</title> for 
+          all headings (i.e. all text in <gi>head</gi> elements that occur as children of <gi>div</gi>
+          elements). </p>
+        
+      </div>
+      
+      <div xml:id="house-style-orthography">
+        <head>Preferred orthography</head>
+        <p>The goal of these rules is to avoid inconsistency, and also (wherever possible) to avoid
+          producing text which is markedly either British or American English. For example, use the 
+          "-ize" suffix instead of "-ise" for words that are a Latinized version of a Greek suffix because 
+          while both spellings are given in the Oxford English Dictionary, only the "-ize" form is used 
+          in American English. The following table
+          lists the preferred word-spacing and hyphenation for a number of frequently-used terms: <table>
+            <row role="label">
+              <cell>Word or Term</cell>
+              <cell>Authority/explanation</cell>
+            </row>
+            <row>
+              <cell>code point (n.); code-point (adj.)</cell>
+              <cell>UCG [discussed on TEI Council list]</cell>
+            </row>
+            <row>
+              <cell>cross-reference</cell>
+              <cell>MW, OED</cell>
+            </row>
+            <row>
+              <cell>data set</cell>
+              <cell>OED</cell>
+            </row>
+            <row>
+              <cell>datatype</cell>
+              <cell>[OED, ORDS have 'data type', but Guidelines consistently use single word dozens
+                of places]</cell>
+            </row>
+            <row>
+              <cell>email (not *e-mail)</cell>
+              <cell>commoner usage; consistency with JTEI; name of TEI element; bug #664</cell>
+            </row>
+            <row>
+              <cell>end-tag</cell>
+              <cell>ORDS</cell>
+            </row>
+            <row>
+              <cell>GitHub</cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>TEI header; the &lt;teiHeader&gt;</cell>
+              <cell>[discussed on TEI Council list in January/February 2013]</cell>
+            </row>
+            <row>
+              <cell>high-level (adj.)</cell>
+              <cell>MW, OED</cell>
+            </row>
+            <row>
+              <cell>line break</cell>
+              <cell/>
+            </row>
+            <row>
+              <cell>lowercase/uppercase</cell>
+              <cell>MW, ORDS</cell>
+            </row>
+            <row>
+              <cell>proofread</cell>
+              <cell>MW, OED</cell>
+            </row>
+            <row>
+              <cell>SourceForge</cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>start-tag</cell>
+              <cell>ORDS</cell>
+            </row>
+            <row>
+              <cell>stylesheet</cell>
+              <cell>ORDS</cell>
+            </row>
+            <row>
+              <cell>typeface</cell>
+              <cell>MW</cell>
+            </row>
+            <row>
+              <cell>the Web</cell>
+              <cell>ORDS</cell>
+            </row>
+            <row>
+              <cell>web page</cell>
+              <cell>ORDS</cell>
+            </row>
+            <row>
+              <cell>web site</cell>
+              <cell> ORDS, OED</cell>
+            </row>
+            <row>
+              <cell>well-formed (even in a predicate usage: "the XML is well-formed")</cell>
+              <cell>W3CXML</cell>
+            </row>
+            <row>
+              <cell>whitespace</cell>
+              <cell>ORDS</cell>
+            </row>
+          </table>
+        </p>
+        <p>The abbreviations above refer to the following list of authorities, which may also be
+          consulted for other vexed issues: <list type="gloss">
+            <label> CMS</label>
+            <item> Chicago Manual of Style, 15th ed.</item>
+            <label> MW</label>
+            <item> Merriam-Webster's Collegiate Dictionary, 11th ed.</item>
+            <label> OED</label>
+            <item> Oxford English Dictionary, 2d ed. online (<ptr target="http://dictionary.oed.com/"
+            />)</item>
+            <label> ODE</label>
+            <item> Oxford Dictionary of English (aka NODE), 2d ed.</item>
+            <label> ORDS</label>
+            <item> O'Reilly Default Stylesheet, <ptr
+              target="http://www.oreilly.com/oreilly/author/stylesheet.html"/></item>
+            <label> UCG</label>
+            <item> Unicode Consortium Glossary, <ptr target="http://unicode.org/glossary/"/></item>
+            <label> W3CXML</label>
+            <item> W3C XML Recommendation, <ptr target="http://www.w3.org/TR/xml/"/></item>
+          </list>
+        </p>
+      </div>
+      <div xml:id="house-style-punctuation">
+        <head>Punctuation</head>
+        <list type="gloss">
+          <label>Em dashes</label>
+          <item>Only em dashes should be used parenthetically (do not use en dashes or hyphens for
+            this purpose). There should be no spaces around them when they are used in this way. The
+            only exception to the above (currently) is where we refer to the titles of ISO
+            documents, where we must follow the ISO practice of using spaces.</item>
+          <label>En dashes</label>
+          <item>En dashes should be used for numerical ranges such as dates, page-ranges, etc. En
+            dashes should not have spaces around them.</item>
+        </list>
+      </div>
+      <div xml:id="house-style-egXML">
+        <head>Conventions in <gi>egXML</gi></head>
+        <list type="gloss">
+          <label>Elided elements</label>
+          <item>Very often, examples will omit markup, even markup that would ordinarily be necessary
+            for the example to be valid. Such elisions should be marked with an ellipsis inside a
+            comment, usually on its own line, thus: <lb/>
+            <code>&lt;!-- ... --&gt;</code>.</item>
+          <label>Elided text</label>
+          <item>Similarly, examples often omit text that doesn't serve the purpose of the example.
+            Such text is to be marked with an ellipsis in square brackets, thus: <code>[...]</code>.</item>
+        </list>
+      </div>
+      
+      <div xml:id="modal-verbs">
+        <head>The use of modal verbs</head>
+        <p>In general the TEI guidelines try to be careful when using modal verbs and phrases such as 'must', 'must not, 
+          'should', 'should not' and 'may'. In terms of the meanings, these generally follow <ref target="https://tools.ietf.org/html/bcp14">https://tools.ietf.org/html/bcp14</ref> in the different meanings of these words.
+          In particular:
+          <list type="gloss">
+            <label>MUST</label>
+            <item>This word, or the terms "REQUIRED" or "SHALL", mean that this is an absolute requirement of the TEI Guidelines 
+              for production of a TEI conformant file.</item>
+            <label>MUST NOT</label>
+            <item>This phrase, or the phrase "SHALL NOT", mean that this is an absolute prohibition of the 
+              TEI Guidelines for production of a TEI conformant file.</item>
+            <label>SHOULD</label>
+            <item>This word, or the adjective "RECOMMENDED", mean that there may exist valid reasons in 
+              particular circumstances to ignore a particular recommendation, but the full implications 
+              must be understood and carefully weighed before choosing a different course.</item>
+            <label>SHOULD NOT</label>
+            <item>This phrase, or the phrase "NOT RECOMMENDED" mean that there may exist valid reasons in 
+              particular circumstances when the particular behavior is acceptable or even useful, but the full implications 
+              should be understood and the case carefully weighed before implementing any behavior so described.</item>
+            <label>MAY</label>
+            <item>This word, or the adjective "OPTIONAL", mean that a recommendation is truly optional.  One user may 
+            choose to follow the recommendation because a particular project requires it or feels that
+            it enhances their work while another project may choose to not follow this recommendation.</item>
+          </list>
+          Periodic reviews of new prose must be carried out by the TEI Technical Council to ensure the use of modal verbs and phrases is clear.
+        </p>
+      </div>
+    </body>
+    <back>
+      <div type="appendix">
+        <head>Some other (mostly superseded) documents on the topic of style</head>
+        
+        <listBibl>
+          <bibl><idno>TEI ED W9</idno>
+            <title>Points of Style For Drafts of TEI Guidelines</title>,
+            <date>2 Mar 1990</date>
+            (<ref target="http://www.tei-c.org/Vault/ED/edw09.gml">in Waterloo Script format</ref>)
+          </bibl>
+          
+          <bibl>
+            <idno>TEI ED W11</idno>
+            <title>Notes on House Style</title>,
+            <date>14 Sep 1992</date>
+            (<ref target="http://www.tei-c.org/Vault/ED/edw11.gml">in Waterloo script</ref>,
+            <ref target="http://www.tei-c.org/Vault/ED/edw11.txt">formatted text</ref>)
+          </bibl>
+          
+          
+          <bibl><idno>TEI ED W55</idno>
+            <title>Form for Draft Chapters of the TEI Guidelines</title>,
+            <date>5 june 1996</date>
+            (<ref target="http://www.tei-c.org/Vault/ED/edw55.tei">in TEI P2 format</ref>,
+            <ref target="http://www.tei-c.org/Vault/ED/edw55.htm">in HTML format</ref>,
+            <ref target="http://www.tei-c.org/Vault/ED/edw55.odd">in ODD format</ref>)
+          </bibl>
+          
+          <bibl><idno>TEI ED W57</idno>
+            <title>Procedures for Correcting Errors in the TEI Guidelines</title>,
+            <date>July 23, 1994</date>
+            (<ref target="http://www.tei-c.org/Vault/ED/edw57.tei">in TEI P2 format</ref>,
+            <ref target="http://www.tei-c.org/Vault/ED/edw57.htm">in HTML format</ref>)
+          </bibl>
+          
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

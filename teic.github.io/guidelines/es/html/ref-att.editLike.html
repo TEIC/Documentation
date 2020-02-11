@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class att.editLike </title><meta property="Language" content="es" /><meta property="DC.Title" content="TEI class att.editLike " /><meta property="DC.Language" content="SCHEME=iso639 es" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Directrices para la codificación y el intercambio de textos electrónicos</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Principal</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-ATTS.html">B Clases de atributos</a></li></ul></div><div><h3 class="oddSpec" id="att.editLike">att.editLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">att.editLike</span> proporciona atributos que describen la naturaleza de una intervención crítica codificada o una interpretación de cualquier tipo. [<a class="link_ptr" href="CO.html#COED" title="Simple Editorial Changes"><span class="headingNumber">3.4 </span>Simple Editorial Changes</a> <a class="link_ptr" href="MS.html#msdates" title="Origination"><span class="headingNumber">10.3.1 </span>Origination</a> <a class="link_ptr" href="ND.html#NDPERSE" title="The Person Element"><span class="headingNumber">13.3.2 </span>The Person Element</a> <a class="link_ptr" href="PH.html#PHCO" title="Core Elements for Transcriptional Work"><span class="headingNumber">11.3.1.1 </span>Core Elements for Transcriptional Work</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Módulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Miembros</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="proporciona a los atributos específicos a los elementos que codifican la intervención authorial o scribal en un texto al transcribir el manuscrito o las fuentes similares." href="ref-att.transcriptional.html">att.transcriptional</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(adición) contiene letras, palabras o frases introducidas en el texto por el autor, transcriptor, glosador o corrector." href="ref-add.html">add</a> <a class="link_odd_elementSpec" title="(fragmento de texto añadido) señala el inicio de un fragmento largo de texto añadido por un autor, un transcriptor, un comentarista o un corrector (ver también &lt;add&gt;)." href="ref-addSpan.html">addSpan</a> <a class="link_odd_elementSpec" title="(cancelación) contiene una letra, palabra o pasaje cancelado, marcado como omitido o bien como supérfluo o espurio en el texto por el autor, transcriptor, glosador o corrector." href="ref-del.html">del</a> <a class="link_odd_elementSpec" title="(fragmento de texto omitido) señala el inicio de un fragmento largo de texto omitido, o marcado como cancelado o como supérfluo o espurio, por un autor, un transcriptor, un comentarista o un corrector." href="ref-delSpan.html">delSpan</a> <a class="link_odd_elementSpec" title="" href="ref-mod.html">mod</a> <a class="link_odd_elementSpec" title="" href="ref-redo.html">redo</a> <a class="link_odd_elementSpec" title="indica la reconstrucción del texto a un estado precedente por la cancelación de una anotación o instrucción del autor o el editor." href="ref-restore.html">restore</a> <a class="link_odd_elementSpec" title="" href="ref-retrace.html">retrace</a> <a class="link_odd_elementSpec" title="(substitución) agrupa una o más cancelaciones con una o más adiciones cuando la combinación riguarda a una sola intervención en el texto." href="ref-subst.html">subst</a> <a class="link_odd_elementSpec" title="" href="ref-substJoin.html">substJoin</a> <a class="link_odd_elementSpec" title="" href="ref-undo.html">undo</a>] </span> <a class="link_odd_elementSpec" title="contiene una descripción informal de la afiliación presente o pasada de una persona a una determinada organización, p.ej. un empleado o un patrocinador." href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="especifica la edad de una persona." href="ref-age.html">age</a> <a class="link_odd_elementSpec" title="(marcador de la abreviatura) contiene una secuencia de letras o símbolos presentes en una abreviatura que han sido omitidos o substituidos en la forma extendida de la abreviatura." href="ref-am.html">am</a> <a class="link_odd_elementSpec" title="contiene información relativa al nacimiento de una persona, p.ej. fecha y lugar de nacimiento." href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="contiene información sobre el clima físico de un lugar." href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="(corrección) contiene la forma correcta de un pasaje aparentemente erróneo en el texto de copia." href="ref-corr.html">corr</a> <a class="link_odd_elementSpec" title="contiene una fecha en cualquier formato." href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="contiene informaciones relativas a la defunción de una persona, del tipo lugar y fecha." href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="contiene una descripción sobre la experiencia formativa de una persona" href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="cualquier fenómeno o evento no necesariamente vocal o comunicativo, como ruidos accidentales u otros fenómenos que inciden en la comunicación en acto." href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="(expansión) contiene una secuencia de letras añadidas por un editor o transcriptor al expandir una abreviatura." href="ref-ex.html">ex</a> <a class="link_odd_elementSpec" title="(expansión) contiene la expansión de una abreviatura." href="ref-expan.html">expan</a> <a class="link_odd_elementSpec" title="indica la fe, religión, o creencias de una persona." href="ref-faith.html">faith</a> <a class="link_odd_elementSpec" title="contiene información relativa al periodo de actividad de una persona." href="ref-floruit.html">floruit</a> <a class="link_odd_elementSpec" title="indicada un punto donde algún material ha sido omitido en una transcripción, bien por criterios de edición descritos en el cabezado TEI, bien como parte de una práctica habitual, o bien porqué el material es ilegible o incomprensible." href="ref-gap.html">gap</a> <a class="link_odd_elementSpec" title="(nombre de un elemento geográfico.) contiene un nombre común que identifica elementos geográficos incluidos en un nombre propio geográfico, como valle, monte, etc." href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="(nombre geográfico) un nombre asociado a un un elemento geográfico, como valle Windrush o Monte Sinaí." href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="(conocimiento del lenguaje) resume los conocimientos lingüísticos de una persona de forma descriptiva o a través de una lista de elementos &lt;langKnown&gt;" href="ref-langKnowledge.html">langKnowledge</a> <a class="link_odd_elementSpec" title="(competencia lingüística) resume la competencia de una persona en la lengua indicada." href="ref-langKnown.html">langKnown</a> <a class="link_odd_elementSpec" title="define la localización de un lugar como conjunto de coordenadas geográficas, en términos de alguna entidades geopolítica dada, o como dirección." href="ref-location.html">location</a> <a class="link_odd_elementSpec" title="(nombre, nombre propio) contiene un nombre propio o un sintagma nominal" href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="contiene una descripción informal de la nacionalidad o ciudadanía presente o pasada de una persona." href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="contiene una descripción informal de las actividades, la profesión o la ocupación de una persona." href="ref-occupation.html">occupation</a> <a class="link_odd_elementSpec" title="la parte de una expresión temporal o espacial relativa que indica la dirección del desfase entre dos nombres de lugar, fecha u horario al interno de la expresión." href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="(organización) proporciona a la información sobre una organización identificable tal como un negocio, una tribu, o cualquier otro grupo de personas." href="ref-org.html">org</a> <a class="link_odd_elementSpec" title="(nombre de una organización) contiene el nombre de una organización." href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="(fecha origen) contiene cualquier tipo de fecha utilizada para indicar la fecha de origen de un manuscrito o de una de sus partes." href="ref-origDate.html">origDate</a> <a class="link_odd_elementSpec" title="(lugar de origen) contiene cualquier tipo de nombre de lugar utilizado para indicar el lugar de origen de un manuscrito o de una de sus partes." href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="contiene informaciones relativas al orígen de un manuscrito o de una de sus partes." href="ref-origin.html">origin</a> <a class="link_odd_elementSpec" title="(nombre propio de persona) contiene un nombre propio o un sintagma identificable como un nombre propio, que se refiere a una persona y puede incluir cualquier o todos los nombres de pila, apellidos, títulos honoríficos, o nombres añadidos de la persona en cuestión." href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="proporciona información relativa a un individuo específico, p.ej. un participante de una interacción verbal o una persona identificada por una fuente histórica." href="ref-person.html">person</a> <a class="link_odd_elementSpec" title="" href="ref-persona.html">persona</a> <a class="link_odd_elementSpec" title="contiene los datos sobre una localización geográfica" href="ref-place.html">place</a> <a class="link_odd_elementSpec" title="contiene la indicación absoluta o relativa de un nombre de lugar." href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="contiene la información sobre la población de un lugar." href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="(regularización) contiene una lectura que ha sido regularizada o normalizada en algún sentido." href="ref-reg.html">reg</a> <a class="link_odd_elementSpec" title="(relación) describe cualquier tipo de relación o vínculo entre un determinato grupo de personas." href="ref-relation.html">relation</a> <a class="link_odd_elementSpec" title="(residencia) describe el lugar de residencia presente o pasado de una persona." href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="" href="ref-secl.html">secl</a> <a class="link_odd_elementSpec" title="especifica el sexo de una persona." href="ref-sex.html">sex</a> <a class="link_odd_elementSpec" title="(estatus socio-económico) contiene una descripción informal sobre el estatus socio-económico de una persona." href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="especifica un componente de una referencia canónica definida por el método milestone (hito)." href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="indica fragmentos de texto añadidos por el transcriptor o por el revisor en el lugar donde el original es ilegible, porqué presenta daños físicos, lagunas o por otros motivos." href="ref-supplied.html">supplied</a> <a class="link_odd_elementSpec" title="" href="ref-surplus.html">surplus</a> <a class="link_odd_elementSpec" title="contiene información sobre el terreno físico de un lugar." href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="contiene un sintagma que define un momento del día en cualquier formato." href="ref-time.html">time</a> <a class="link_odd_elementSpec" title="contiene la descripción de una característica personal o cultural determinada atribuida a una persona." href="ref-trait.html">trait</a> <a class="link_odd_elementSpec" title="contiene una palabra, frase o pasaje que no puede ser transcita con certeza, ya que en la fuente es ilegible o incomprensible." href="ref-unclear.html">unclear</a></span></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Atributos</span></td><td class="wovenodd-col2">Atributos<table class="attList"><tr><td class="odd_label">evidence<span class="bookmarklink"><a class="bookmarklink" id="tei_att.evidence" href="#tei_att.evidence" title="link to this attribute "><span class="invisible"> evidence</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">indica la naturaleza de las pruebas que sostienen la fiabilidad o precisión de la intervención o interpretación.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="es">Estado</span> </td><td class="odd_value"><span lang="es">Opcional</span></td></tr><tr><td class="odd_label"><span lang="es" class="label">Tipo de datos</span> </td><td class="odd_value"> 1–∞ <span lang="es">apariciones de</span> <a class="link_element" href="ref-teidata.enumerated.html">teidata.enumerated</a> <span lang="es">separado por espacio en blanco</span></td></tr><tr><td class="odd_label"><span class="label" lang="es">Los valores sugeridos incluyen:</span></td><td class="odd_value"><dl class="valList"><dt class="odd_label">internal</dt><dd class="odd_value">existen pruebas internas que sostienen la intervención.</dd><dt class="odd_label">external</dt><dd class="odd_value">existen pruebas externas que sostienen la intervención.</dd><dt class="odd_label">conjecture</dt><dd class="odd_value">la intervención o interpretación ha sido hecho por el editor, catalogador o crítico en base a su experiencia.</dd></dl></td></tr></table></td></tr><tr><td class="odd_label">instant<span class="bookmarklink"><a class="bookmarklink" id="tei_att.instant" href="#tei_att.instant" title="link to this attribute "><span class="invisible"> instant</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">indicates whether this is an instant revision or not.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="es">Estado</span> </td><td class="odd_value"><span lang="es">Opcional</span></td></tr><tr><td class="odd_label"><span lang="es" class="label">Tipo de datos</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.xTruthValue.html">teidata.xTruthValue</a></td></tr><tr><td class="odd_label"><span lang="es" class="label">Por defecto</span> </td><td class="odd_value">false</td></tr></table></td></tr></table></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Nota</span></td><td class="wovenodd-col2"><!-- --><p>los miembros de esta clase de atributo se usan normalmente para representar cualquier tipo de intervención editorial en un texto, por ejemplo una corrección, una interpretación, la fecha o incluso la signatura de los manuscritos etc.</p></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-att.editLike.html">English</a>]
+    [<a href="../../de/html/ref-att.editLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-att.editLike.html">Español</a>]
+    [<a href="../../it/html/ref-att.editLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-att.editLike.html">Français</a>]
+    [<a href="../../ja/html/ref-att.editLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-att.editLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-att.editLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Comentarios</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:03:06Z.</address></div></body></html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class att.datable.iso </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI class att.datable.iso " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-ATTS.html">B Attribute Classes</a></li></ul></div><div><h3 class="oddSpec" id="att.datable.iso">att.datable.iso</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">att.datable.iso</span> ISO 8601 표준을 사용해서 날짜를 추정할 수 있는 사건을 포함하는 요소의 규격화를 위한 속성을 제공한다. [<a class="link_ptr" href="CO.html#CONADA" title="Dates and Times"><span class="headingNumber">3.5.4 </span>Dates and Times</a> <a class="link_ptr" href="ND.html#NDDATE" title="Dates and Times"><span class="headingNumber">13.3.7 </span>Dates and Times</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">namesdates — Names, Dates, People, and Places</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">원소</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="날짜, 시간 또는 날짜 명기 사건을 포함하는 요소의 규격화에 대한 속성을 제공한다." href="ref-att.datable.html">att.datable</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="원고 또는 그 일부가 현 보유 기관에 입수된 과정에 관련한 기술적 또는 기타 정보를 포함한다." href="ref-acquisition.html">acquisition</a> <a class="link_odd_elementSpec" title="고용주 또는 후원자와 같이 개인의 현재 또는 과거 소속 조직에 대한 비공식적 기술을 포함한다." href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="개인의 나이를 명시한다." href="ref-age.html">age</a> <a class="link_odd_elementSpec" title="문서에 사용한 애플리케이션에 관한 정보를 제시한다." href="ref-application.html">application</a> <a class="link_odd_elementSpec" title="하나의 제본에 대한 기술을 포함한다. 즉, 원고에 적용된 커버, 표지 등의 유형" href="ref-binding.html">binding</a> <a class="link_odd_elementSpec" title="날짜, 장소와 같이 개인의 출생에 관한 정보를 포함한다." href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="둘 이상의 민족국가 또는 국가로 구성된 지리-정치적 단위의 이름을 포함한다." href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다." href="ref-change.html">change</a> <a class="link_odd_elementSpec" title="장소의 기후에 관한 정보를 포함한다." href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="하나의 블록보다 큰 국가, 지역, 식민지, 또는 공화국, 또는 하나의 블록보다 작은 지역의 상급 행정기관과 같은, 지리-정치 단위명을 포함한다." href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="텍스트 생성에 관한 정보를 포함한다." href="ref-creation.html">creation</a> <a class="link_odd_elementSpec" title="(보관 사건) 원고의 보관 이력 중 단일 사건에 대하여 기술한다." href="ref-custEvent.html">custEvent</a> <a class="link_odd_elementSpec" title="다양한 형식의 날짜를 포함한다." href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="날짜, 장소와 같이 개인의 죽음과 관련된 정보를 포함한다." href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="교구, 구 또는 다른 행정 지리적 단위와 같이 거주지의 하위 구분명을 포함한다." href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="개인의 학력에 대한 기술을 포함한다." href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="개인, 장소, 또는 조직과 관련된 중요한 사건에 해당하는 데이터를 포함한다." href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="개인의 신념, 종교 또는 믿음을 명시한다." href="ref-faith.html">faith</a> <a class="link_odd_elementSpec" title="개인의 활동 기간에 대한 정보를 포함한다." href="ref-floruit.html">floruit</a> <a class="link_odd_elementSpec" title="(지리적 특성명) 계곡 산 등과 같이 지리적명에 포함된 지리적 특성을 식별하는 일반명사를 포함한다." href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="(지리명) 윈드러시 계곡 또는 시나이 산과 같이 지리적 특성과 관련된 이름" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="(식별 숫자) 서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다." href="ref-idno.html">idno</a> <a class="link_odd_elementSpec" title="(언어 지식) 산문체 또는 &lt;langKnown&gt; 요소 목록으로 개인의 언어 지식 상태를 요약한다." href="ref-langKnowledge.html">langKnowledge</a> <a class="link_odd_elementSpec" title="(언어 능력) 개인의 언어 능력 상태를 요약한다. 즉, 한 언어에 대한 지식" href="ref-langKnown.html">langKnown</a> <a class="link_odd_elementSpec" title="" href="ref-licence.html">licence</a> <a class="link_odd_elementSpec" title="다른 이름의 지리-정치적 개체를 통하여 지리적 좌표의 집합으로, 또는 주소로 장소의 위치를 정의한다." href="ref-location.html">location</a> <a class="link_odd_elementSpec" title="(이름, 고유명사) 고유명사 또는 명사구를 포함한다." href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="개인의 현재 또는 과거의 국적 또는 시민권에 대한 비공식적 기술을 포함한다." href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="개인의 직업에 대한 비공식적 기술을 포함한다." href="ref-occupation.html">occupation</a> <a class="link_odd_elementSpec" title="표현에 포함된 두 장소명, 날짜, 또는 시간 사이의 차이 방향을 표시하는 상대적 시간 또는 공간 표현의 부분" href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="(조직명) 조직명을 포함한다." href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="(생성 날짜) 원고 또는 원고의 일부의 생산 날짜를 식별하는 날짜 형식을 포함한다." href="ref-origDate.html">origDate</a> <a class="link_odd_elementSpec" title="(생산 장소) 원고 또는 원고의 일부를 생산한 장소를 식별하는 장소 이름 형식을 포함한다." href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="원고 또는 원고 일부의 기원에 관한 기술적 또는 그 외의 정보를 포함한다." href="ref-origin.html">origin</a> <a class="link_odd_elementSpec" title="(개인 이름) 개인의 이름, 성, 존칭어, 추가 명 등의 하나 또는 전부를 사용하여 개인을 지칭하는, 고유명사 또는 고유명사구를 포함한다." href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="절대적 또는 상대적 위치명을 포함한다." href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="장소의 인구에 관한 정보를 포함한다." href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="" href="ref-precision.html">precision</a> <a class="link_odd_elementSpec" title="생성된 후부터 획득되기 전까지 원고 또는 원고 일부의 이력에 대해 확인가능한 에피소드에 관련한 기술적 또는 기타 정보를 포함한다." href="ref-provenance.html">provenance</a> <a class="link_odd_elementSpec" title="도보다는 작고 정착지보다는 큰 주, 성, 도와 같은 행정단위명을 포함한다." href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="(관련성) 명시된 참여자군 사이에 관련성 또는 연결 종류를 기술한다." href="ref-relation.html">relation</a> <a class="link_odd_elementSpec" title="(거주) 개인의 현재 또는 과거의 거주지를 기술한다." href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="(책임성) 개인의 지적 책임성에 관한 특성을 기술하는 구를 포함한다." href="ref-resp.html">resp</a> <a class="link_odd_elementSpec" title="원고에 적용된 봉인 또는 유사 부착물 기술을 포함한다." href="ref-seal.html">seal</a> <a class="link_odd_elementSpec" title="하나의 지리-정치 또는 행정 단위로 식별되는 시, 읍, 마을과 같이 거주지명을 포함한다." href="ref-settlement.html">settlement</a> <a class="link_odd_elementSpec" title="개인의 성을 명시한다." href="ref-sex.html">sex</a> <a class="link_odd_elementSpec" title="(사회-경제적 지위) 개인의 사회 또는 경제적 지위에 대한 비공식적 기술을 포함한다." href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="스탬프 또는 유사한 도구를 기술하는 단어 또는 구를 포함한다." href="ref-stamp.html">stamp</a> <a class="link_odd_elementSpec" title="개인, 장소, 또는 조직에 관련한 현재 지위 또는 특성 기술을 포함한다." href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="장소의 물리적 지역에 대한 정보를 포함한다." href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="어떤 형식의, 하루의 시간을 정의하는 구를 포함한다." href="ref-time.html">time</a> <a class="link_odd_elementSpec" title="다양한 종류의 작업에 대한 전체 제목을 제공한다." href="ref-title.html">title</a> <a class="link_odd_elementSpec" title="사람 또는 장소에 관한, 문화적으로 결정된 특성 기술을 포함한다." href="ref-trait.html">trait</a>] </span></span></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">속성</span></td><td class="wovenodd-col2">속성<table class="attList"><tr><td class="odd_label">when-iso<span class="bookmarklink"><a class="bookmarklink" id="tei_att.when-iso" href="#tei_att.when-iso" title="link to this attribute "><span class="invisible"> when-iso</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">표준형의 날짜 또는 시간 값을 제시한다.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ko">상태</span> </td><td class="odd_value"><span lang="ko">수의적</span></td></tr><tr><td class="odd_label"><span lang="ko" class="label">자료 유형</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.temporal.iso.html">teidata.temporal.iso</a></td></tr><tr><td colspan="2"><p>The following are examples of ISO date, time, and date &amp; time formats that are <em>not</em> valid W3C format normalizations.</p><div id="index-egXML-d52e114342" class="pre egXML_valid"><span class="element">&lt;date <span class="attribute">when-iso</span>="<span class="attributevalue">1996-09-24T07:25+00</span>"&gt;</span>Sept. 24th, 1996 at 3:25 in the morning<span class="element">&lt;/date&gt;</span><br /><span class="element">&lt;date <span class="attribute">when-iso</span>="<span class="attributevalue">1996-09-24T03:25-04</span>"&gt;</span>Sept. 24th, 1996 at 3:25 in the morning<span class="element">&lt;/date&gt;</span><br /><span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">1999-01-04T20:42-05</span>"&gt;</span>4 Jan 1999 at 8:42 pm<span class="element">&lt;/time&gt;</span><br /><span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">1999-W01-1T20,70-05</span>"&gt;</span>4 Jan 1999 at 8:42 pm<span class="element">&lt;/time&gt;</span><br /><span class="element">&lt;date <span class="attribute">when-iso</span>="<span class="attributevalue">2006-05-18T10:03</span>"&gt;</span>a few minutes after ten in the morning on Thu 18 May<span class="element">&lt;/date&gt;</span><br /><span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">03:00</span>"&gt;</span>3 A.M.<span class="element">&lt;/time&gt;</span><br /><span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">14</span>"&gt;</span>around two<span class="element">&lt;/time&gt;</span><br /><span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">15,5</span>"&gt;</span>half past three<span class="element">&lt;/time&gt;</span><div style="float: right;"><a href="BIB.html#NONE">bibliography</a> </div></div><p>All of the examples of the <span class="att">when</span> attribute in the <a class="link_odd" title="W3C 데이터 유형을 사용하여 날짜가 명기된 사건을 포함하는 요소의 규격화를 위한 속성을 제공한다." href="ref-att.datable.w3c.html">att.datable.w3c</a> class are also valid with respect to this attribute.</p></td></tr><tr><td colspan="2"><div id="index-egXML-d52e114423" class="pre egXML_valid">He likes to be punctual. I said <span class="element">&lt;q&gt;</span><br /> <span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">12</span>"&gt;</span>around noon<span class="element">&lt;/time&gt;</span><br /><span class="element">&lt;/q&gt;</span>, and he showed up at <span class="element">&lt;time <span class="attribute">when-iso</span>="<span class="attributevalue">12:00:00</span>"&gt;</span>12 O'clock<span class="element">&lt;/time&gt;</span> on the dot.<div style="float: right;"><a href="BIB.html#UND">bibliography</a> </div></div><p>The second occurence of <a class="gi" title="어떤 형식의, 하루의 시간을 정의하는 구를 포함한다." href="ref-time.html">time</a> could have been encoded with the <span class="att">when</span> attribute, as <span class="val">12:00:00</span> is a valid time with respect to the W3C <span class="titlem">XML Schema Part 2: Datatypes Second Edition</span> specification. The first occurence could not.</p></td></tr></table></td></tr><tr><td class="odd_label">notBefore-iso<span class="bookmarklink"><a class="bookmarklink" id="tei_att.notBefore-iso" href="#tei_att.notBefore-iso" title="link to this attribute "><span class="invisible"> notBefore-iso</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">yyyy-mm-dd 같은 표준형으로 사건의 시작 날짜를 명시한다.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ko">상태</span> </td><td class="odd_value"><span lang="ko">수의적</span></td></tr><tr><td class="odd_label"><span lang="ko" class="label">자료 유형</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.temporal.iso.html">teidata.temporal.iso</a></td></tr></table></td></tr><tr><td class="odd_label">notAfter-iso<span class="bookmarklink"><a class="bookmarklink" id="tei_att.notAfter-iso" href="#tei_att.notAfter-iso" title="link to this attribute "><span class="invisible"> notAfter-iso</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">yyyy-mm-dd 같은 표준형으로 사건의 종료 날짜를 명시한다.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ko">상태</span> </td><td class="odd_value"><span lang="ko">수의적</span></td></tr><tr><td class="odd_label"><span lang="ko" class="label">자료 유형</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.temporal.iso.html">teidata.temporal.iso</a></td></tr></table></td></tr><tr><td class="odd_label">from-iso<span class="bookmarklink"><a class="bookmarklink" id="tei_att.from-iso" href="#tei_att.from-iso" title="link to this attribute "><span class="invisible"> from-iso</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">표준형으로 기간의 시작 지점을 나타낸다.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ko">상태</span> </td><td class="odd_value"><span lang="ko">수의적</span></td></tr><tr><td class="odd_label"><span lang="ko" class="label">자료 유형</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.temporal.iso.html">teidata.temporal.iso</a></td></tr></table></td></tr><tr><td class="odd_label">to-iso<span class="bookmarklink"><a class="bookmarklink" id="tei_att.to-iso" href="#tei_att.to-iso" title="link to this attribute "><span class="invisible"> to-iso</span><span class="pilcrow">¶</span></a></span></td><td class="odd_value">표준형으로 기간의 종료 지점을 나타낸다.<table class="attDef"><tr><td class="odd_label"><span class="label" lang="ko">상태</span> </td><td class="odd_value"><span lang="ko">수의적</span></td></tr><tr><td class="odd_label"><span lang="ko" class="label">자료 유형</span> </td><td class="odd_value"><a class="link_element" href="ref-teidata.temporal.iso.html">teidata.temporal.iso</a></td></tr></table></td></tr></table></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-att.datable.iso.html">English</a>]
+    [<a href="../../de/html/ref-att.datable.iso.html">Deutsch</a>]
+    [<a href="../../es/html/ref-att.datable.iso.html">Español</a>]
+    [<a href="../../it/html/ref-att.datable.iso.html">Italiano</a>]
+    [<a href="../../fr/html/ref-att.datable.iso.html">Français</a>]
+    [<a href="../../ja/html/ref-att.datable.iso.html">日本語</a>]
+    [<a href="../../ko/html/ref-att.datable.iso.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-att.datable.iso.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

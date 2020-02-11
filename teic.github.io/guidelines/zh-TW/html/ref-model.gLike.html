@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.gLike </title><meta property="Language" content="zh-TW" /><meta property="DC.Title" content="TEI class model.gLike " /><meta property="DC.Language" content="SCHEME=iso639 zh-TW" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEI指引</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">首頁</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A 元素集</a></li></ul></div><div><h3 class="oddSpec" id="model.gLike">model.gLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.gLike</span> 匯集的元素穿插於正規文本中，代表非統一碼項目。</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">組件</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">屬於</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="" href="ref-am.html">am</a> <a class="link_odd_elementSpec" title="(書目資料) 包含結構零散的書目資料，其中次要元件不一定會明確標記。" href="ref-bibl.html">bibl</a> <a class="link_odd_elementSpec" title="包含作品的主要責任陳述，出現在題名頁或作品開頭或結尾處。" href="ref-byline.html">byline</a> <a class="link_odd_elementSpec" title="(角色項目) 包含角色清單中的一個項目，描述單一角色或無台詞角色的列表。" href="ref-castItem.html">castItem</a> <a class="link_odd_elementSpec" title="匯集日期地點、署名、稱呼語、及其他在區段結尾出現的類似措辭，尤指信件結尾。" href="ref-closer.html">closer</a> <a class="link_odd_elementSpec" title="包含任何格式的日期表示。" href="ref-date.html">date</a> <a class="link_odd_elementSpec" title="包含簡短的地點、日期及時間等的描述，通常出現在信件、報紙文章、或其他作品中的開頭或結尾，作為一種標頭或結尾。" href="ref-dateline.html">dateline</a> <a class="link_odd_elementSpec" title="() 字典辭條的片段，包含自由組合的詞組層次字典元素。" href="ref-dictScrap.html">dictScrap</a> <a class="link_odd_elementSpec" title="(文件出版說明) 包含文件出版陳述 (出版日期、地點以及出版公司名稱) ，同於 (通常) 題名頁尾所顯示的出版資訊。" href="ref-docImprint.html">docImprint</a> <a class="link_odd_elementSpec" title="() 所包含的辭條項目未必符合元素&lt;entry&gt;該有的限制條件。" href="ref-entryFree.html">entryFree</a> <a class="link_odd_elementSpec" title="(詞源) 包含詞源學資訊。" href="ref-etym.html">etym</a> <a class="link_odd_elementSpec" title="(形式資訊群) 匯集一個標題字在書寫及發音形式方面的所有資訊。" href="ref-form.html">form</a> <a class="link_odd_elementSpec" title="(文法資訊群) 匯集文字的型態及句法資訊，例如詞性、性別、單複數、格、或屈折變化種類。" href="ref-gramGrp.html">gramGrp</a> <a class="link_odd_elementSpec" title="(標題) 包含任何種類的標題，如章節、列表、詞彙表、寫本描述等的標題。" href="ref-head.html">head</a> <a class="link_odd_elementSpec" title="(識別代碼) 提供任何用來識別書目項目的標準或非標準編碼。" href="ref-idno.html">idno</a> <a class="link_odd_elementSpec" title="(解釋) 標明和某一文字段相連結的特定解釋性註釋。" href="ref-interp.html">interp</a> <a class="link_odd_elementSpec" title="(詩行) 包含詩文的一行，也許是不完整的詩行。" href="ref-l.html">l</a> <a class="link_odd_elementSpec" title="(主題) 包含一個原文變異的主題或基礎文件。" href="ref-lem.html">lem</a> <a class="link_odd_elementSpec" title="" href="ref-line.html">line</a> <a class="link_odd_elementSpec" title="定義一個手稿或手稿部分裡的位置，通常是用一系列的 (可能不連續的) 頁面參照。" href="ref-locus.html">locus</a> <a class="link_odd_elementSpec" title="(語素) 表示文法上的語素。" href="ref-m.html">m</a> <a class="link_odd_macroSpec" title="" href="ref-macro.paraContent.html">macro.paraContent</a> <a class="link_odd_macroSpec" title="" href="ref-macro.phraseSeq.html">macro.phraseSeq</a> <a class="link_odd_macroSpec" title="" href="ref-macro.specialPara.html">macro.specialPara</a> <a class="link_odd_macroSpec" title="" href="ref-macro.xtext.html">macro.xtext</a> <a class="link_odd_elementSpec" title="" href="ref-measureGrp.html">measureGrp</a> <a class="link_odd_elementSpec" title="(替換名稱) 包含手稿無特定結構的任何形式替換名稱，像是‘ocellus nominum’或是暱稱。" href="ref-msName.html">msName</a> <a class="link_odd_elementSpec" title="(拼字參照) 在字典範例中，參照出標題字的拼字形式。" href="ref-oRef.html">oRef</a> <a class="link_odd_elementSpec" title="匯集日期地點、署名、稱呼語及其他在區段開端出現的類似措辭，尤指信件開頭。" href="ref-opener.html">opener</a> <a class="link_odd_elementSpec" title="() 包含任何格式的日期，用以確認手稿或手稿部分的來源日期。" href="ref-origDate.html">origDate</a> <a class="link_odd_elementSpec" title="(發音參照) 在字典範例中，參照出標題字的發音形式。" href="ref-pRef.html">pRef</a> <a class="link_odd_elementSpec" title="" href="ref-pc.html">pc</a> <a class="link_odd_elementSpec" title="(對應本) 包含原文變異中的一個對應本。" href="ref-rdg.html">rdg</a> <a class="link_odd_elementSpec" title="(相關辭條) 和標題字相關聯的字典辭條，像是包括在一個更大辭條中的複合片語或衍生字。" href="ref-re.html">re</a> <a class="link_odd_elementSpec" title="匯集辭條中一個字義的所有相關資訊(定義、範例、翻譯等)。" href="ref-sense.html">sense</a> <a class="link_odd_elementSpec" title="(叢書資訊) 包含某書目項目所屬的叢書資訊。" href="ref-series.html">series</a> <a class="link_odd_elementSpec" title="包含一組字詞，以任何形式定義時間" href="ref-time.html">time</a> <a class="link_odd_elementSpec" title="包含文本中一個區段結束時的結尾題名或尾錄。" href="ref-trailer.html">trailer</a> <a class="link_odd_elementSpec" title="(單字) 表示文法上 (但未必是拼字法上) 定義的單字。" href="ref-w.html">w</a> <a class="link_odd_elementSpec" title="() 進一步提供一個特殊對應本的特殊版本資訊。" href="ref-witDetail.html">witDetail</a> <a class="link_odd_elementSpec" title="(交互參照) 包含一字詞、句子、或圖象，用以參照到相同文本或不同文本中的其他位置。" href="ref-xr.html">xr</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW"> 成員</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_elementSpec" title="(文字或字體) 非標準的文字或字體。" href="ref-g.html">g</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.gLike.html">English</a>]
+    [<a href="../../de/html/ref-model.gLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.gLike.html">Español</a>]
+    [<a href="../../it/html/ref-model.gLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.gLike.html">Français</a>]
+    [<a href="../../ja/html/ref-model.gLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.gLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.gLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">回饋</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:08:02Z.</address></div></body></html>

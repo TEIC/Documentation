@@ -1,0 +1,111 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI data teidata.language </title><meta property="Language" content="ja" /><meta property="DC.Title" content="TEI data teidata.language " /><meta property="DC.Language" content="SCHEME=iso639 ja" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEIガイドライン</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">ホーム</a></li></ul></div><div><h3 class="oddSpec" id="teidata.language">teidata.language</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">teidata.language</span> 自然言語を示す属性値の範囲を定義する． [<a class="link_ptr" href="CH.html#CHSH" title="Language Identification"><span class="headingNumber">vi.1. </span>Language Identification</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">モジュール</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">当該モジュールを使用するもの</span></td><td class="wovenodd-col2"><div class="parent"><div>クラス: <ul class="attrefs-class"><li><a class="link_odd_class" title="TEI符号化スキーム中の全要素に共通する属性を示す．" href="ref-att.global.html">att.global</a>/@xml:lang </li><li><a class="link_odd_class" title="URIにより要素を参照する要素に共通して付与される属性を定義する．" href="ref-att.pointing.html">att.pointing</a>/@targetLang </li></ul></div><div>要素: <ul class="attrefs-element"><li><a class="link_odd_element" title="個人の言語学的知識を散文または要素&lt;langKnown&gt;のリストでまとめ る．" href="ref-langKnowledge.html">langKnowledge</a>/@tags </li><li><a class="link_odd_element" title="個人の言語能力を示す．すなわち，単一言語の知識を示す．" href="ref-langKnown.html">langKnown</a>/@tag </li><li><a class="link_odd_element" title="テキスト中にあるひとつの言語または特殊言語を示す．" href="ref-language.html">language</a>/@ident </li><li><a class="link_odd_element" title="TEI準拠のスキーマや文書を示す．" href="ref-schemaSpec.html">schemaSpec</a>/@targetLang </li><li><a class="link_odd_element" title="TEI準拠のスキーマや文書を示す．" href="ref-schemaSpec.html">schemaSpec</a>/@docLang </li><li><a class="link_odd_element" title="手書き資料中の言語や書記システムを示す．(要素&lt;langUsage&gt;にあ る情報と対位する)" href="ref-textLang.html">textLang</a>/@mainLang </li><li><a class="link_odd_element" title="手書き資料中の言語や書記システムを示す．(要素&lt;langUsage&gt;にあ る情報と対位する)" href="ref-textLang.html">textLang</a>/@otherLangs </li></ul></div></div></td></tr>
+  
+  
+  
+  
+  
+  
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="ja">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;alternate&gt;</span><br />  <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">language</span>"/&gt;</span><br />  <span class="element">&lt;valList&gt;</span><br />   <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue"></span>"/&gt;</span><br />  <span class="element">&lt;/valList&gt;</span><br /> <span class="element">&lt;/alternate&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">宣言</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML表記</span><span class="RNG_XML">簡易表記</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">teidata.language</span>"&gt;</span><br /> <span class="element">&lt;rng:choice&gt;</span><br />  <span class="element">&lt;rng:data <span class="attribute">type</span>="<span class="attributevalue">language</span>"/&gt;</span><br />  <span class="element">&lt;rng:choice&gt;</span><br />   <span class="element">&lt;rng:value/&gt;</span><br />  <span class="element">&lt;/rng:choice&gt;</span><br /> <span class="element">&lt;/rng:choice&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+teidata.language = xsd:language | ( "" )</pre></div></td></tr>
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="ja">解説</span></td><td class="wovenodd-col2"><!-- --><p>当該属性値は， <a class="link_ref" href="https://tools.ietf.org/html/bcp47">BCP 47</a> で定義されている言語‘タグ’になる． 現行のBCPには，RFC4646とRFC4647の内容が含まれている． 今後は，他のIETF文書も採用されるかもしれない．</p><p>BCP 47にある‘言語タグ’は，ハイフン (<span class="mentioned">-</span>, U+002D)で区切られた一連の <span class="term">下位タグ</span>から構成されている．下位タグは，以下の順番 らなる．下位タグは，初めの1つは必須で，あとは選択的である． variantとextensionは複数回，他は1回のみ出現出現する．この下位タグ のグループは繰り返し可能である． </p><dl><dt><span>language</span></dt><dd>IANAの言語コード．この殆どは，該当言語が既にあれば，ISO 639の2文字 (以下，この場合の文字はラテン文字)言語コードと同じである．利用可能 な言語下位タグのリストは <a class="link_ptr" href="http://www.iana.org/assignments/language-subtag-registry"><span>http://www.iana.org/assignments/language-subtag-registry</span></a> にある．言語コードは，小文字で書かれることが推奨されている．</dd><dt><span>script</span></dt><dd>ISO 15924による文字を示すコード．4文字から構成され，冒頭文字は大文 字で，残り3文字は小文字で書かれることが推奨されている．このコード は，ユニコードコンソーシアムで管理され， <a class="link_ptr" href="http://unicode.org/iso15924/iso15924-codes.html"><span>http://unicode.org/iso15924/iso15924-codes.html</span></a>か ら入手することができる．IETFでは，不要であれば当該コードを省略する ことを推奨している．</dd><dt><span>region</span></dt><dd>ISO 3166またはUN M.49による国または地域コード．このコードはIANAに 登録されている(但し全てではない．例えば，UNコードには経済圏や， ISO 3166の2文字コードで既に登録されているところは含まれていない)． ISOコードは，2文字から構成され，大文字で書かれることが推奨されてい る．このコードは， <a class="link_ptr" href="http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html"><span>http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/index.html</span></a>にある． またUNコードは，3文字から構成されている．このコードは， <a class="link_ptr" href="http://unstats.un.org/unsd/methods/m49/m49.htm"><span>http://unstats.un.org/unsd/methods/m49/m49.htm</span></a>にあ る．</dd><dt><span>variant</span></dt><dd>IANAにある登録値．このコードは，<span class="quoted">他の下位タグでは対応できない，追加的であるがよく知られている，ある言語 や方言の種類を示すために使用される</span>． </dd><dt><span>extension</span></dt><dd>いち文字，ハイフン，追加下位タグの順番で，拡張情報が示される． これは，BCP 47が将来拡張された時のためある．現時点ではそのような 拡張はない． </dd><dt><span>private use</span></dt><dd><span class="mentioned">x</span>Xで始まる(すなわち，<code>x-</code>)下位タ グで示される拡張情報は，関連する団体間で決められた範囲の意味を持つ． このコードは大文字で書かれるべきである．これは，RFC4646aで使われて いるタグとの相互運用性を保つためである． このタグを使用してTEI準拠の文書を作成するには，要素 <a class="gi" title="テキスト中にあるひとつの言語または特殊言語を示す．" href="ref-language.html">language</a>をTEIヘダー中に記述しなければならない．</dd></dl><p>上記記述形式には，2つの例外がある．ひとつは，ここにある言語タグは， <a class="link_ref" href="http://www.iana.org/assignments/language-subtag-registry">IANA</a>にある統語規則に違反しているものがある． これはIANAでは昔の規定を‘継承している’からであ る．</p><p>ふたつめは，言語タグを，下位タグprivateだけで構成することができる ことである．<code>x-</code>で始まるタグの内容は，IETFにある規定に も当該TEIガイドラインにある規定にも従う必要はない．他の言語タグと 同様に，このタグを使用した場合には，TEIヘダーにある要素 <a class="gi" title="テキスト中にあるひとつの言語または特殊言語を示す．" href="ref-language.html">language</a>にこのタグを記述しなければならない．</p><p>言語コードには，以下のようなものがある． </p><dl><dt><span><span class="val">sn</span></span></dt><dd>ショナ語</dd><dt><span><span class="val">zh-TW</span></span></dt><dd>中国語，台湾</dd><dt><span><span class="val">zh-Hant-HK</span></span></dt><dd>中国語，繁体字，香港</dd><dt><span><span class="val">en-SL</span></span></dt><dd>英語，シエラレオネ共和国</dd><dt><span><span class="val">pl</span></span></dt><dd>ポーランド語</dd><dt><span><span class="val">es-MX</span></span></dt><dd>スペイン語，メキシコ</dd><dt><span><span class="val">es-419</span></span></dt><dd>スペイン語，ラテンアメリカ</dd></dl><p>W3Cの国際化活動では，BCP 47の解説を以下に用意している． <a class="link_ref" href="http://www.w3.org/International/articles/language-tags/Overview.en.php">HTMLとXMLで使用される言語タグ</a>.</p></td></tr>
+  
+  
+</table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teidata.language.html">English</a>]
+    [<a href="../../de/html/ref-teidata.language.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teidata.language.html">Español</a>]
+    [<a href="../../it/html/ref-teidata.language.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teidata.language.html">Français</a>]
+    [<a href="../../ja/html/ref-teidata.language.html">日本語</a>]
+    [<a href="../../ko/html/ref-teidata.language.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teidata.language.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">ご意見・ご感想</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:04:43Z.</address></div></body></html>

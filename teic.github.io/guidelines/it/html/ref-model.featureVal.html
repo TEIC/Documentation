@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.featureVal </title><meta property="Language" content="it" /><meta property="DC.Title" content="TEI class model.featureVal " /><meta property="DC.Language" content="SCHEME=iso639 it" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Linee guida per la codifica e l'interscambio del testo elettronico</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Home</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Classi di modelli</a></li></ul></div><div><h3 class="oddSpec" id="model.featureVal">model.featureVal</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.featureVal</span> raggruppa tutti gli elementi che rappresentano valori di tratti in strutture di tratti</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Modulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Usato da</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(un tratto) rappresenta una feature value specification, cioè l'associazione di un nome con il valore di uno qualsiasi di diversi tratti." href="ref-f.html">f</a> <a class="link_odd_elementSpec" title="(una biblioteca dei valori dei tratti) raccoglie una biblioteca degli elementi dei valori dei tratti riutilizzabili (incluse le strutture complete dei tratti)." href="ref-fvLib.html">fvLib</a> <a class="link_odd_elementSpec" title="definisce un valore predefinito condizionato di un tratto; la condizione è specificata come una struttura di tratti e se riscontrata sussume la struttura dei tratti nel testo per il quale si cerca un valore predefinito." href="ref-if.html">if</a> <a class="link_odd_elementSpec" title="(un'alterazione del valore) rappresenta la parte di valore di una specifica del valore dei tratti che contiene un insieme di valori, dei quali uno solo può essere valido." href="ref-vAlt.html">vAlt</a> <a class="link_odd_elementSpec" title="(valore predefinito) dichiara il valore predefinito da fornire quando una struttura di tratti non contiene una occorrenza di f per questo nome; se non condizionato, è specificato come uno o (a seconda del valore dell'attributo org del fDecl accluso) più elementi fs di valori primitivi; se condizionato, è specificato come uno o più elementi if; se non è specificto alcun valore predefinito, o nessuna condizione corrisponde, viene assunto il valore nessuno." href="ref-vDefault.html">vDefault</a> <a class="link_odd_elementSpec" title="(un'etichetta) rappresenta la parte di valore di una specifica del valore dei tratti che compare in più di un punto nella struttura dei tratti." href="ref-vLabel.html">vLabel</a> <a class="link_odd_elementSpec" title="(una raccolta unificata di valori) rappresenta un volre di un tratto che risulta dalla fusione dei vaolri dei tratti contenuti dai figli, usando l'organizzazione specificata dall'attributo @org." href="ref-vMerge.html">vMerge</a> <a class="link_odd_elementSpec" title="(una negazione del valore) rappresenta un valore del tratto che è la negazione del suo contenuto." href="ref-vNot.html">vNot</a> <a class="link_odd_elementSpec" title="(gamma di valori) definisce la gamma di valori ammessi per un tratto, sotto forma di un fs, di un vAlt, o di valore primitivo; affinché il valore di un f sia valido deve essere sussunto dalla gamma specificata; se f contiene valori multipli (come sancito dall'attributo org) allora ogni valore deve essere sussunto da vRange." href="ref-vRange.html">vRange</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="it">Membri</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="raggruppa elementi che esprimono valori di tratti complessi in strutture di tratti" href="ref-model.featureVal.complex.html">model.featureVal.complex</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(struttura dei tratti) rappresenta una feature structure, cioè una raccolta di coppie di valori tratti organizzata come una unità strutturale." href="ref-fs.html">fs</a> <a class="link_odd_elementSpec" title="(raccolta di valori) rappresenta la parte di valore di una specifica del valore dei tratti che contiene valori multipli organizzati in un insieme, borsa, o lista." href="ref-vColl.html">vColl</a> <a class="link_odd_elementSpec" title="(una raccolta unificata di valori) rappresenta un volre di un tratto che risulta dalla fusione dei vaolri dei tratti contenuti dai figli, usando l'organizzazione specificata dall'attributo @org." href="ref-vMerge.html">vMerge</a> <a class="link_odd_elementSpec" title="(una negazione del valore) rappresenta un valore del tratto che è la negazione del suo contenuto." href="ref-vNot.html">vNot</a>] </span> <a class="link_odd_classSpec" title="raggruppa elementi utilizzati per descrivere valori di tratti atomici in strutture di tratti" href="ref-model.featureVal.single.html">model.featureVal.single</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(un valore binario) rappresenta la parte di valore di una specifica del valore dei tratti che può contenere uno di soltanto due possibili valori." href="ref-binary.html">binary</a> <a class="link_odd_elementSpec" title="(un valore del tratto predefinito) rappresenta la parte di valore di una specifica del valore dei tratti che contiene un valore predefinito." href="ref-default.html">default</a> <a class="link_odd_elementSpec" title="(un valore numerico) rappresenta la parte di valore di una specifica del valore dei tratti che contiene un valore o una gamma di valori numerici." href="ref-numeric.html">numeric</a> <a class="link_odd_elementSpec" title="(una stringa) rappresenta la parte di valore di una specifica del valore dei tratti che contiene una stringa." href="ref-string.html">string</a> <a class="link_odd_elementSpec" title="(valore simbolico) rappresenta la parte di valore di una specifica del valore dei tratti che contiene un simbolo da una lista chiusa di simboli." href="ref-symbol.html">symbol</a> <a class="link_odd_elementSpec" title="(un'alterazione del valore) rappresenta la parte di valore di una specifica del valore dei tratti che contiene un insieme di valori, dei quali uno solo può essere valido." href="ref-vAlt.html">vAlt</a> <a class="link_odd_elementSpec" title="(un'etichetta) rappresenta la parte di valore di una specifica del valore dei tratti che compare in più di un punto nella struttura dei tratti." href="ref-vLabel.html">vLabel</a>] </span></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.featureVal.html">English</a>]
+    [<a href="../../de/html/ref-model.featureVal.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.featureVal.html">Español</a>]
+    [<a href="../../it/html/ref-model.featureVal.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.featureVal.html">Français</a>]
+    [<a href="../../ja/html/ref-model.featureVal.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.featureVal.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.featureVal.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commenti e suggerimenti</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:07:11Z.</address></div></body></html>

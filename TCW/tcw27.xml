@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Procedure for handling practices that are no longer recommended or
+               deprecated</title>
+            <author>Kevin Hawkins</author>
+         </titleStmt>
+         <editionStmt>
+            <edition>
+               <date>2013-05-16</date>
+            </edition>
+         </editionStmt>
+         <publicationStmt>
+            <p>freely available</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Manually reformatted from <ref>http://wiki.tei-c.org/index.php/Practices_no_longer_recommended_or_now_deprecated</ref></p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2014-01-01" who="KSH">Removed step about creating Schematron warning: Syd says they're generated automatically based on presence of @validUntil.</change>
+         <change when="2013-12-26" who="KSH">Added standard wording for Schematron warnings and instruction to notify TEI-L of planned deprecations</change>
+         <change when="2013-06-20" who="KSH">Copyediting</change>
+         <change when="2013-05-16" who="KSH">Added more missing markup from wiki</change>
+         <change when="2013-05-16" who="KSH">Added link to tcw09 (Birnbaum doctrine)</change>
+      </revisionDesc>
+   </teiHeader>
+
+   <text>
+      <body>
+            <p>At its April 2013 face-to-face meeting in Providence, the Technical Council agreed to
+               the following policy for handling practices that are "no longer recommended" or
+               "deprecated".</p>
+
+            <div>
+               <head>No longer recommended</head>
+
+               <p>While the TEI Guidelines often offer more than one way of encoding a particular
+                  phenomenon, in this case the Council agrees to identify a preferred method without
+                  making any definite plans to remove the non-preferred way from the Guidelines. In
+                  this case:</p>
+               <list>
+                  <item>The <gi>remarks</gi> element is used in the spec to indicate the preferred
+                     practice.</item>
+                  <item>The prose in one or more chapters is revised to indicate this preferred
+                     practice. Examples showing the non-preferred practice are maintained but
+                     preferably only in the section of the Guidelines where that element or
+                     attribute is discussed, not in passing elsewhere.</item>
+               </list>
+            </div>
+            
+            <div>
+               <head>Deprecated</head>
+               
+               <p>Following  the <ref target="tcw09.xml">Birnbaum doctrine</ref>, the Council has made the serious decision to
+                  break backwards compatibility by changing the content model of an element or class
+                  to remove an element or attribute, or to remove an element or attribute entirely
+                  from the Guidelines. In this case:</p>
+               <list>
+                  <item>The appropriate specification is given a <att>validUntil</att> attribute indicating the intended date 
+                     after which the specification will be withdrawn. Specifications which can be deprecated this way are all 
+                     members of the class <ident type="class">att.deprecated</ident>.</item>
+                  <item>An announcement is sent to TEI-L that the Technical Council has decided to 
+                     depreacate elementName and will drop it as early as YYYY-MM-DD. If anyone strongly objects, 
+                     they should reply to the list so that the Council might reconsider.</item>
+                  <item>Any examples of the deprecated practice are removed from the Guidelines, and
+                     any prose recommending them is reworded as appropriate.</item>
+                  <item>We will try to remember to include a mention of the deprecation in the
+                     release notes created for the following release.</item>
+               </list>
+               
+               <p>After the date specified in <att>validUntil</att>:</p>
+               <list>
+                  <item>The element or attribute is actually removed from the spec.</item>
+               </list>
+            </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,113 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI data teidata.xTruthValue  (extended truth value) </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI data teidata.xTruthValue  (extended truth value) " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li></ul></div><div><h3 class="oddSpec" id="teidata.xTruthValue">teidata.xTruthValue</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">teidata.xTruthValue</span> (확장 진리값) 알려지지 않을 수 있는 진리값을 표현하는 속성 값 범위를 정의한다.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><div>부류: <ul class="attrefs-class"><li><a class="link_odd_class" title="어떤 유형의 부호화된 학문적 간섭 또는 해석의 특성을 기술하는 속성을 제공한다." href="ref-att.editLike.html">att.editLike</a>/@instant </li><li><a class="link_odd_class" title="(원고 발췌) 원고의 발췌본을 기술하는 속성을 제시한다." href="ref-att.msExcerpt.html">att.msExcerpt</a>/@defective </li></ul></div><div>요소: <ul class="attrefs-element"><li><a class="link_odd_element" title="하나의 제본에 대한 기술을 포함한다. 즉, 원고에 적용된 커버, 표지 등의 유형" href="ref-binding.html">binding</a>/@contemporary </li><li><a class="link_odd_element" title="(중간 (또는 내부) 노드) 수형도의 중간 (또는 내부) 노드를 표시한다." href="ref-iNode.html">iNode</a>/@ord </li><li><a class="link_odd_element" title="예를 들어 제스처, 찡그림 등과 같이 의사소통적 현상이지만 반드시 목소리를 통한 것이 아닌 경우" href="ref-kinesic.html">kinesic</a>/@iterated </li><li><a class="link_odd_element" title="(뿌리 노드) 수형도의 뿌리 노드를 표시한다." href="ref-root.html">root</a>/@ord </li><li><a class="link_odd_element" title="(대화 또는 사고) 원본에 명시적으로 표시되었든지 않았든지, 직접적으로 또는 간접적으로 보고되었든지 않았든지, 그리고 실제 인물 또는 가공의 인물에 의해 생성되었는지 간에, 생각 혹은 소리 내어 말한 단락을 표시한다." href="ref-said.html">said</a>/@aloud </li><li><a class="link_odd_element" title="(대화 또는 사고) 원본에 명시적으로 표시되었든지 않았든지, 직접적으로 또는 간접적으로 보고되었든지 않았든지, 그리고 실제 인물 또는 가공의 인물에 의해 생성되었는지 간에, 생각 혹은 소리 내어 말한 단락을 표시한다." href="ref-said.html">said</a>/@direct </li><li><a class="link_odd_element" title="원고에 적용된 봉인 또는 유사 부착물 기술을 포함한다." href="ref-seal.html">seal</a>/@contemporary </li><li><a class="link_odd_element" title="시나리오 또는 라디오 스크립트에서 지정된 효과음 또는 음악을 기술한다." href="ref-sound.html">sound</a>/@discrete </li><li><a class="link_odd_element" title="예를 들어 목소리가 담긴 휴지, 비어휘적 비정규적 경로 등과 같이 목소리는 나지만 어휘적 현상은 아닌 것." href="ref-vocal.html">vocal</a>/@iterated </li><li><a class="link_odd_element" title="구어 텍스트의 진행과정에서 참여자에게 제공되는 문어 텍스트 단락" href="ref-writing.html">writing</a>/@gradual </li></ul></div></div></td></tr>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="ko">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;alternate&gt;</span><br />  <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">boolean</span>"/&gt;</span><br />  <span class="element">&lt;valList&gt;</span><br />   <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">unknown</span>"/&gt;</span><br />   <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">inapplicable</span>"/&gt;</span><br />  <span class="element">&lt;/valList&gt;</span><br /> <span class="element">&lt;/alternate&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">선언</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML 형식에 따른 규약?</span><span class="RNG_XML">규약에 대한 XML 형식?</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">teidata.xTruthValue</span>"&gt;</span><br /> <span class="element">&lt;rng:choice&gt;</span><br />  <span class="element">&lt;rng:data <span class="attribute">type</span>="<span class="attributevalue">boolean</span>"/&gt;</span><br />  <span class="element">&lt;rng:choice&gt;</span><br />   <span class="element">&lt;rng:value&gt;</span>unknown<span class="element">&lt;/rng:value&gt;</span><br />   <span class="element">&lt;rng:value&gt;</span>inapplicable<span class="element">&lt;/rng:value&gt;</span><br />  <span class="element">&lt;/rng:choice&gt;</span><br /> <span class="element">&lt;/rng:choice&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+teidata.xTruthValue = xsd:boolean | ( "unknown" | "inapplicable" )</pre></div></td></tr>
+  
+  
+  
+</table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teidata.xTruthValue.html">English</a>]
+    [<a href="../../de/html/ref-teidata.xTruthValue.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teidata.xTruthValue.html">Español</a>]
+    [<a href="../../it/html/ref-teidata.xTruthValue.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teidata.xTruthValue.html">Français</a>]
+    [<a href="../../ja/html/ref-teidata.xTruthValue.html">日本語</a>]
+    [<a href="../../ko/html/ref-teidata.xTruthValue.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teidata.xTruthValue.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

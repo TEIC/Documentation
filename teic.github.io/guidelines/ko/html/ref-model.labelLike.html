@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.labelLike </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI class model.labelLike " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Model Classes</a></li></ul></div><div><h3 class="oddSpec" id="model.labelLike">model.labelLike</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.labelLike</span> 문서의 다른 부분을 해설 또는 설명하는 요소를 모아 놓는다.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="문서에 사용한 애플리케이션에 관한 정보를 제시한다." href="ref-application.html">application</a> <a class="link_odd_elementSpec" title="장소의 기후에 관한 정보를 포함한다." href="ref-climate.html">climate</a> <a class="link_odd_elementSpec" title="개인, 장소, 또는 조직과 관련된 중요한 사건에 해당하는 데이터를 포함한다." href="ref-event.html">event</a> <a class="link_odd_elementSpec" title="(시행군) 예를 들어, 연, 후렴구, 운문 단락과 같이 형식적 단위로 기능하는 운문 행군을 포함한다." href="ref-lg.html">lg</a> <a class="link_odd_elementSpec" title="다른 이름의 지리-정치적 개체를 통하여 지리적 좌표의 집합으로, 또는 주소로 장소의 위치를 정의한다." href="ref-location.html">location</a> <a class="link_odd_classSpec" title="문단 같은 요소 내에서 또는 그 사이에서 나타날 수 있는 요소를 모아 놓는다." href="ref-model.inter.html">model.inter</a> <a class="link_odd_elementSpec" title="" href="ref-notatedMusic.html">notatedMusic</a> <a class="link_odd_elementSpec" title="(조직) 업무, 종족, 또는 사람들의 다른 종류의 그룹과 같은 식별 가능한 조직에 대한 정보를 제공한다." href="ref-org.html">org</a> <a class="link_odd_elementSpec" title="지리적 위치에 관한 데이터를 포함한다." href="ref-place.html">place</a> <a class="link_odd_elementSpec" title="장소의 인구에 관한 정보를 포함한다." href="ref-population.html">population</a> <a class="link_odd_elementSpec" title="개인, 장소, 또는 조직에 관련한 현재 지위 또는 특성 기술을 포함한다." href="ref-state.html">state</a> <a class="link_odd_elementSpec" title="직사각형의 좌표 공간과 그 내부에서 기록 표면부를 정의한다. 수의적으로 그 공간의 하나 이상의 그림 표상과 관심 있는 직사각형 공간을 모아놓는다." href="ref-surface.html">surface</a> <a class="link_odd_elementSpec" title="장소의 물리적 지역에 대한 정보를 포함한다." href="ref-terrain.html">terrain</a> <a class="link_odd_elementSpec" title="사람 또는 장소에 관한, 문화적으로 결정된 특성 기술을 포함한다." href="ref-trait.html">trait</a> <a class="link_odd_elementSpec" title="" href="ref-transcriptionDesc.html">transcriptionDesc</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">원소</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_elementSpec" title="(기술) 요소, 속성, 또는 속성 값의 목적과 적용에 대한 간단한 기술을 포함한다." href="ref-desc.html">desc</a> <a class="link_odd_elementSpec" title="목록의 항목과 관련된 표지를 포함한다; 용어집에서는 정의되고 있는 용어를 표지한다." href="ref-label.html">label</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.labelLike.html">English</a>]
+    [<a href="../../de/html/ref-model.labelLike.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.labelLike.html">Español</a>]
+    [<a href="../../it/html/ref-model.labelLike.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.labelLike.html">Français</a>]
+    [<a href="../../ja/html/ref-model.labelLike.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.labelLike.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.labelLike.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

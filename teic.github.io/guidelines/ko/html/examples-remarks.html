@@ -1,0 +1,105 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml"><!--THIS IS A GENERATED FILE. DO NOT EDIT (98) --><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>예: &lt;remarks&gt; </title><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><meta content="Text Encoding Initiative Consortium XSLT stylesheets" name="generator" /><meta property="Language" content="ko" /><meta property="DC.Title" content="예: remarks " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C Elements</a></li></ul></div><h3>예<a href="ref-remarks.html">: &lt;remarks&gt; </a></h3><p>These search results reproduce every example of the
+	      use of &lt;remarks&gt; in the Guidelines, including all localised
+	      and translated versions. In some cases, the examples have been drawn
+	      from discussion of other elements in the Guidelines and illustrating
+	      the use of &lt;remarks&gt;
+	      is not the main 
+	      focus of the passage in question. In other cases, examples may be direct 
+	      translations of each other, and hence identical from the perspective of 
+	      their encoding.</p><ul><li><b><a href="#TD"><span class="headingNumber">22 </span><span class="head">Documentation Elements</span><em> (defining module)</em></a></b></li></ul><h4 id="TD"><span class="headingNumber">22 </span><span class="head">Documentation Elements</span></h4><hr /><p><a href="../../en/html/ref-classSpec.html">&lt;classSpec&gt;</a></p><div id="index-egXML-d39e145834" class="pre egXML_valid"><span class="element">&lt;classSpec <span class="attribute">module</span>="<span class="attributevalue">tei</span>" <span class="attribute">type</span>="<span class="attributevalue">model</span>"<br /> <span class="attribute">ident</span>="<span class="attributevalue">model.segLike</span>"&gt;</span><br /> <span class="element">&lt;desc&gt;</span>groups elements used for arbitrary segmentation.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;classes&gt;</span><br />  <span class="element">&lt;memberOf <span class="attribute">key</span>="<span class="attributevalue">model.phrase</span>"/&gt;</span><br /> <span class="element">&lt;/classes&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br />  <span class="element">&lt;p&gt;</span>The principles on which segmentation is carried out, and<br />     any special codes or attribute values used, should be defined explicitly<br />     in the <span class="element">&lt;gi&gt;</span>segmentation<span class="element">&lt;/gi&gt;</span> element of the <span class="element">&lt;gi&gt;</span>encodingDesc<span class="element">&lt;/gi&gt;</span> within<br />     the associated TEI header.<span class="element">&lt;/p&gt;</span><br /> <span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span><br /><span class="element">&lt;/classSpec&gt;</span></div><hr /><p><a href="../../fr/html/ref-classSpec.html">&lt;classSpec&gt;</a></p><div id="index-egXML-d39e145850" class="pre egXML_valid"><span class="element">&lt;classSpec <span class="attribute">module</span>="<span class="attributevalue">tei</span>" <span class="attribute">type</span>="<span class="attributevalue">model</span>"<br /> <span class="attribute">ident</span>="<span class="attributevalue">model.segLike</span>"&gt;</span><br /> <span class="element">&lt;desc&gt;</span>regroupe des éléments utilisés pour des segmentations arbitraires.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;classes&gt;</span><br />  <span class="element">&lt;memberOf <span class="attribute">key</span>="<span class="attributevalue">model.phrase</span>"/&gt;</span><br /> <span class="element">&lt;/classes&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br />  <span class="element">&lt;p&gt;</span>Les principes selon lesquels la segmentation est effectuée, et tous les codes<br />     spéciaux ou toutes les valeurs d'attribut utilisées, devraient être définis<br />     explicitement dans l'élément<span class="element">&lt;gi&gt;</span>segmentation<span class="element">&lt;/gi&gt;</span> de l'élément<span class="element">&lt;gi&gt;</span>encodingDesc<span class="element">&lt;/gi&gt;</span><br />     dans l'en-tête TEI associé.<span class="element">&lt;/p&gt;</span><br /> <span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span><br /><span class="element">&lt;/classSpec&gt;</span></div><hr /><p><a href="../../zh-TW/html/ref-classSpec.html">&lt;classSpec&gt;</a></p><div id="index-egXML-d39e145866" class="pre egXML_valid"><span class="element">&lt;classSpec <span class="attribute">module</span>="<span class="attributevalue">tei</span>" <span class="attribute">type</span>="<span class="attributevalue">model</span>"<br /> <span class="attribute">ident</span>="<span class="attributevalue">model.segLike</span>"&gt;</span><br /> <span class="element">&lt;desc&gt;</span>匯集用於隨機分割的元素<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;classes&gt;</span><br />  <span class="element">&lt;memberOf <span class="attribute">key</span>="<span class="attributevalue">model.phrase</span>"/&gt;</span><br /> <span class="element">&lt;/classes&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br />  <span class="element">&lt;p&gt;</span>The principles on which segmentation is carried out, and any special codes or attribute<br />     values used, should be defined explicitly in the <span class="element">&lt;gi&gt;</span>segmentation<span class="element">&lt;/gi&gt;</span> element of the<br />  <span class="element">&lt;gi&gt;</span>encodingDesc<span class="element">&lt;/gi&gt;</span> within the associated TEI header.<span class="element">&lt;/p&gt;</span><br /> <span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span><br /><span class="element">&lt;/classSpec&gt;</span></div><hr /><p><a href="TD.html#TDcrystalsCEdc"><span class="headingNumber">22.4.1 </span><span class="head">Description of Components</span></a></p><div id="index-egXML-d39e146221" class="pre egXML_valid"><span class="element">&lt;elementSpec <span class="attribute">module</span>="<span class="attributevalue">core</span>" <span class="attribute">ident</span>="<span class="attributevalue">foreign</span>"&gt;</span><br /><span class="comment">&lt;!--... --&gt;</span><br /> <span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br />  <span class="element">&lt;p&gt;</span>This element is intended for use only where no other element is available to mark the phrase<br />     or words concerned. The global <span class="element">&lt;att&gt;</span>xml:lang<span class="element">&lt;/att&gt;</span> attribute should be used in preference to<br />     this element where it is intended to mark the language of the whole of some text element.<span class="element">&lt;/p&gt;</span><br />  <span class="element">&lt;p&gt;</span>The <span class="element">&lt;gi&gt;</span>distinct<span class="element">&lt;/gi&gt;</span> element may be used to identify phrases belonging to sublanguages or<br />     registers not generally regarded as true languages.<span class="element">&lt;/p&gt;</span><br /> <span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span><br /><span class="comment">&lt;!--... --&gt;</span><br /><span class="element">&lt;/elementSpec&gt;</span></div><hr /><p><a href="../../en/html/ref-remarks.html">&lt;remarks&gt;</a></p><div id="index-egXML-d39e146416" class="pre egXML_valid"><span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br /> <span class="element">&lt;p&gt;</span>This element is probably redundant.<span class="element">&lt;/p&gt;</span><br /><span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span></div><hr /><p><a href="../../fr/html/ref-remarks.html">&lt;remarks&gt;</a></p><div id="index-egXML-d39e146422" class="pre egXML_valid"><span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br /> <span class="element">&lt;p&gt;</span>Cet élément est probablement superflu.<span class="element">&lt;/p&gt;</span><br /><span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span></div><hr /><p><a href="../../zh-TW/html/ref-remarks.html">&lt;remarks&gt;</a></p><div id="index-egXML-d39e146427" class="pre egXML_valid"><span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br /> <span class="element">&lt;p&gt;</span>此元素可能是多餘的<span class="element">&lt;/p&gt;</span><br /><span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span></div><hr /><p><a href="../../en/html/ref-valItem.html">&lt;valItem&gt;</a></p><div id="index-egXML-d39e151508" class="pre egXML_valid"><span class="element">&lt;valList <span class="attribute">type</span>="<span class="attributevalue">closed</span>"&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">border</span>"&gt;</span><br />  <span class="element">&lt;desc&gt;</span>used to signify that there is border around a page.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">border-rule</span>"&gt;</span><br />  <span class="element">&lt;desc&gt;</span>used to signify that there is a border made of ruled lines.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">border-ornamental</span>"&gt;</span><br />  <span class="element">&lt;desc&gt;</span>used to signify that there is an ornamental border.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">catch</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>catchword<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for catch words.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">lineNum</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>line number<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for printed line numbers (usually in poetry).<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">listHead</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>list heading<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for headings of lists or similar constructs; often used in tables of contents for the<br />  <span class="element">&lt;q&gt;</span>page<span class="element">&lt;/q&gt;</span> heading.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">pageNum</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>page number<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for page numbers.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">pressFig</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>press figure<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for press figures. These are usually numbers, but are not sequential or regularly<br />     printed like signatures.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">sig</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>signature<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for printed signatures.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">unknown</span>"&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for a metawork whose function you do not know.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">vol</span>"&gt;</span><br />  <span class="element">&lt;gloss&gt;</span>volume number<span class="element">&lt;/gloss&gt;</span><br />  <span class="element">&lt;desc&gt;</span>for printed volume numbers.<span class="element">&lt;/desc&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /> <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue">other</span>"&gt;</span><br />  <span class="element">&lt;desc&gt;</span>anything not covered by the above values.<span class="element">&lt;/desc&gt;</span><br />  <span class="element">&lt;<span class="highlightelementname">remarks</span>&gt;</span><br />   <span class="element">&lt;p&gt;</span>Used for an ornament, decorated tool line, or symbol(s) that is not officially a<br />       delimiter (and thus there is no element on which to put <span class="element">&lt;val&gt;</span>pre()<span class="element">&lt;/val&gt;</span> or<br />   <span class="element">&lt;val&gt;</span>post()<span class="element">&lt;/val&gt;</span>) but is used to fill space at the bottom of a page so that a<br />   <span class="element">&lt;gi&gt;</span>floatingText<span class="element">&lt;/gi&gt;</span> or similar can start at the top of the next.<span class="element">&lt;/p&gt;</span><br />  <span class="element">&lt;/<span class="highlightelementname">remarks</span>&gt;</span><br /> <span class="element">&lt;/valItem&gt;</span><br /><span class="element">&lt;/valList&gt;</span></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/examples-remarks.html">English</a>]
+    [<a href="../../de/html/examples-remarks.html">Deutsch</a>]
+    [<a href="../../es/html/examples-remarks.html">Español</a>]
+    [<a href="../../it/html/examples-remarks.html">Italiano</a>]
+    [<a href="../../fr/html/examples-remarks.html">Français</a>]
+    [<a href="../../ja/html/examples-remarks.html">日本語</a>]
+    [<a href="../../ko/html/examples-remarks.html">한국어</a>]
+    [<a href="../../zh-TW/html/examples-remarks.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

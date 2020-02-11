@@ -1,0 +1,733 @@
+/* general styles */
+
+body {
+color: #000000;
+font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+font-size: 0.8em;
+line-height: 1.6em;
+text-align: center;
+background-color: #E6E6E6;
+margin: 0px;
+/*margin: 1em; */
+}
+
+/* layout styles */
+
+#container {
+text-align: left;
+margin:0px;
+/*margin: 10px 0px 0px 0px;*/
+color: #000000;
+background: #FFFFFF;
+padding: 0 !important;
+line-height: 1.6em;
+}
+#banner {
+height: 89px;
+color: #FFFFFF;
+background: #2277BB;
+margin-bottom: 0px;
+margin-top: 0px;
+border-bottom: 3px #CCEEFF solid;
+}
+
+#breadcrumb {
+margin: 0 0 1em 1em;
+}
+
+#main {
+margin: 0 0 0 0;
+}
+
+#content {
+float: left;
+width:70%; 
+margin: 0em 1em 0em 0em;
+color: #000000;
+background: #FFFFFF;
+padding: 5px;
+line-height: 1.6em;
+}
+
+#sidebar {
+color: #000000;
+background-color: #FFFFFF;
+float: left;
+width: 20%;
+margin: 10px 5px 0 5px;
+padding: 0;
+}
+
+
+
+#separator {
+width: 2px;
+height: 400px;
+float: left;
+margin: 5px 20px 0px 0px;
+padding: 0;
+color: #000000;
+background: #FFFFFF url(http://www.tei-c.org/cms/system/modules/org.tei.www/_common/images/bar.jpg) no-repeat top right;
+}
+
+.skip {
+position: absolute;
+overflow: hidden;
+width: 0;
+height: 0;
+}
+
+.skip:active, .skip:focus {
+position: absolute;
+overflow: visible;
+width: auto;
+height: auto;
+}
+
+/*supplemental nav */
+#nav-supp {
+margin: 1em;
+}
+
+
+#nav-supp ul {
+list-style: none;
+margin: 0 0 0 0em;
+padding: 0;
+}
+#nav-supp li {
+line-height: normal;
+margin-top: 1ex;
+margin-bottom: 1ex;
+}
+#nav-supp li.nav-0 {
+  margin-left: 0em;
+  margin-bottom: 0.2em;  
+}
+
+#nav-supp li.nav-1 {
+  margin-left: 1em;
+  margin-bottom: 0.1em; 
+}
+
+#nav-supp li.nav-2 {
+  margin-left: 2em;
+}
+
+#nav-supp li.nav-3 {
+  margin-left: 3em;
+}
+
+#nav-supp li.nav-4 {
+  margin-left: 4em;
+}
+
+
+/* special fix for MSIE;  prevents extra line space when indenting nested lists */
+#nav-supp li.indent {
+height: 100%;
+}
+
+#nav-supp a {
+text-decoration: none;
+font-weight: bold;
+color: #00487d;
+}
+
+#nav-supp a:hover {
+text-decoration: underline;
+font-weight: bold;
+color: #2277bb;
+}
+
+#nav-supp a.selected {
+color: #2277bb;
+}
+
+/* footer */
+
+#footer {
+clear: both;
+text-align: center;
+margin: 0;
+padding: 30px 0 15px 0;
+}
+
+#footer p {
+padding: 5px;
+border-top: 1px  solid #0067B3;
+margin: 10px 6px 10px 40px!important;
+color: #0067B3;
+background: #FFFFFF;
+}
+
+#udm {
+margin-top: 0px;
+}
+
+/* Generic style rules */
+
+dt
+{
+	font-weight: bold;
+	page-break-after: avoid;
+}
+
+div.lg { margin: 1em; }
+
+/* tables */
+td
+{
+	font-family: verdana, tahoma, helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+td.mono {
+font-family: courier, monospace;
+font-size: 10pt;
+}
+
+td ul,ol
+{
+	padding: 0;
+	margin-left: 1.5em;
+}
+
+table.border td { border: 1px solid black; }
+th { text-align: left; }
+
+td.label
+{
+	width: 15%;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.right
+{
+	text-align: right;
+}
+
+tr { page-break-after: avoid; }
+
+/* Styles for graphically rendered tables */
+table.graphic
+{
+	width: 90%;
+	margin: 2em;
+
+}
+
+table.graphic td
+{
+	font-family: verdana, tahoma, helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #ffffcc;
+	vertical-align: top;
+	border: 1px solid black;
+	font-weight: normal;
+	padding: .5em .5em .5em .5em;
+}
+
+table.graphic td.mono
+{
+	font-family: courier, monospace;
+	font-size: 8pt;
+	color: #000000;
+               background-color: #ffffcc;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+table.graphic td.label
+{
+	font-family: verdana, tahoma, helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	vertical-align: top;
+	color: #000000;
+	background-color: #ffff99;
+}
+
+table.graphic th
+{
+	font-family: verdana, tahoma, helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	vertical-align: top;
+	color: #000000;
+	background-color: #65d75d;
+}
+
+/* poetry */
+
+
+
+/* headings */
+.maintitle
+{
+	font-style: italic
+}
+
+h1
+{
+	font-size: 14pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	margin-bottom: 0;
+	page-break-after: avoid;
+}
+
+h1.small
+{
+	font-size: 10pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	margin-bottom: 0;
+	page-break-after: avoid;
+}
+
+h2
+{
+	font-size: 11pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	page-break-after: avoid;
+}
+
+.head
+{
+	font-size: 9pt;
+	page-break-after: avoid;
+}
+
+h3
+{
+	font-size: 10pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	font-style: italic;
+	page-break-after: avoid;
+}
+
+h4
+{
+	font-size: 9pt;
+	color: #666666;
+	background-color: #FFFFFF;
+               page-break-after: avoid;
+}
+
+div.genericHeading
+{
+	font-size: 9pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	page-break-after: avoid;
+}
+
+h5
+{
+	font-size: 9pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	page-break-after: avoid;
+}
+
+h6
+{
+	font-size: 9pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	page-break-after: avoid;
+}
+
+p.bibl, span.bibl
+{
+	display: block;
+	margin-left: 2em;
+	text-indent: -2em;
+	padding: 0;
+}
+
+.hang
+{
+	margin-left: 2em;
+	text-indent: -2em;
+	padding: 0;
+}
+
+.hangPadTop
+{
+	margin-left: 2em;
+	text-indent: -2em;
+	padding-top: 1em;
+}
+
+div
+{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	widows: 2;
+	orphans: 2;
+}
+
+div.p
+{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	widows: 2;
+	orphans: 2;
+	line-height: 1.5;
+}
+
+span[title="fw"] { text-align: center; }
+.center { text-align: center; }
+
+
+.super
+{
+	vertical-align: super;
+	font-size: 85%;
+}
+
+.sub
+{
+	vertical-align: sub;
+	font-size: 85%;
+}
+
+/* lists */
+
+.listStyleNone { list-style-type: none; }
+
+ul
+{
+              
+	widows: 2;
+	orphans: 2;
+        margin-top: .25em;	
+}
+
+p > ul {
+       margin-top: 1em;
+}
+
+
+li
+{
+	
+	margin-bottom: .25em;
+	widows: 2;
+	orphans: 2;
+}
+
+.listhead
+{
+        font-weight: bold;
+}  
+
+span.inlineNote { }
+
+/* italic class is deprecated in favor of i class */
+.italic { font-style: italic; }
+.i { font-style: italic; }
+
+/* bold class is deprecated in favor of b class */
+.bold { font-weight: bold; }
+.b { font-weight: bold; }
+
+/* underline class is deprecated in favor of u class */
+.underline { text-decoration: underline; }
+.u { text-decoration: underline; }
+.x-small { font-size: x-small; }
+.xx-small { font-size: xx-small; }
+.large { font-size: large; }
+.x-large { font-size: x-large; }
+.xx-large { font-size: xx-large; }
+
+/* normal class is deprecated in favor of n class */
+.normal { font-style: normal; }
+.n { font-style: normal; }
+
+.glossTerm
+{
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	color: #870429;
+	background-color: #FFFFFF;
+	padding: 0;
+	margin: 0;
+}
+
+.gloss
+{
+	display: block;
+	margin-left: 1em;
+	margin-top: 0;
+}
+
+.border
+{
+	border-style: solid;
+	border-color: #4b6fda;
+	border-width: 2px 2px 2px 2px;
+}
+
+.mono { font-family: courier, monospace; }
+.code { font-family: courier, monospace; }
+
+
+
+div.caption
+{
+	font-size: x-small;
+	text-align: left;
+	margin: 1em 1em 3em 0em;
+	padding: 1em 0 1em 1em;
+	border-top: 3px double black;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+
+div.comment
+{
+	font-family: courier, monospace;
+	color: gray;
+	background-color: #FFFFFF;
+}
+
+.sc { font-variant: small-caps; }
+
+ul.inline { display: inline; }
+
+/* div.inline used for div parents of inline lists */
+div.inline { display: inline; }
+
+ul.inlineColumn
+{
+	display: inline;
+	margin-left: 0;
+	padding-left: 0;
+	/* text-indent: 0; */
+}
+
+ul.inline li { /* display: inline; */ }
+
+ul.inlineColumn li
+{
+	/* This should be an inline *vertical* or columnular list.  Need to come up with proper CSS */
+	display: inline;
+	padding-right: .5em;
+	padding-left: .5em;
+	border-right: 1px dotted #333333;
+}
+
+/*
+ul.inlineColumn li:after {
+	
+}
+*/
+
+ul.inlineColumn li.first { padding-left: 0; }
+
+ul.inlineColumn li.last
+{
+	padding-right: 0;
+	border-right: none;
+}
+
+img.specialChar { vertical-align: top; }
+
+dt
+{
+	font-weight: bold;
+	font-size: 9pt;
+	margin-bottom: .2em;
+}
+
+dd { margin-bottom: .5em; }
+
+dl a { display: inline; }
+
+pre {
+                color: #000000;
+                background-color: #FFFFFF;
+                font-family: Courier, monospace;
+                line-height: normal;
+}
+
+tt {
+color: #000000;
+background-color: #FFFFFF;
+font-family: Courier, monospace;
+line-height: normal;
+}
+
+div.cdata
+{
+white-space: pre;
+}
+
+div.pre_eg, pre.eg, div.eg
+{
+background-color: #f2f7f9;
+padding: 10px;
+margin-top: 2.5em;
+margin-bottom: 2.5em;
+font-family: monospace;
+font-size: 9pt;
+border: 1px solid #e1e1e4;
+color: #222288;
+
+}
+
+
+
+/* notes */
+
+.notes
+{
+border-top: 3px double black;
+}
+
+.noteHeading 
+{
+	font-size: 11pt;
+	color: #00487D;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	page-break-after: avoid;
+}
+
+.noteLabel
+{
+	font-size: 9pt;
+	color: #00487D;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	margin-right: 4pt;
+}
+
+.noteBody
+{
+	font-size: 9pt;
+	color: #000000;
+	background-color: #FFFFFF;
+	display: inline;
+}
+/* title page */
+
+div.titlePage
+{
+border-top-width: 2pt;
+border-top-style: solid;
+border-top-color: #000000;
+border-bottom-width: 2pt;
+border-bottom-style: solid;
+border-bottom-color: #000000;
+padding-top: 6pt;
+padding-bottom: 6pt;
+text-align: center;
+}
+
+div.docTitle
+{
+    font-weight: bold;
+}
+div.docAuthor
+{
+font-style: italic;
+}
+div.docImprint
+{
+font-style: italic;
+}
+div.docDate
+{
+font-style: italic;
+}
+
+
+
+.toc {
+
+line-height: 1.2em;
+}
+
+.toc a {
+
+text-decoration: none;
+
+font-weight: bold;
+
+color: #00487d;
+
+
+}
+
+.toc a:hover {
+
+text-decoration: underline;
+
+font-weight: bold;
+
+color: #2277bb;
+
+
+}
+
+.toc a.selected {
+
+color: #2277bb;
+}
+
+.gi {
+
+font-family: monospace;
+font-size: 9pt;
+}
+
+.add {
+	color: green;
+	text-decoration: underline;
+	font-weight: bold;
+	}
+.del {
+	text-decoration: line-through;
+	color: red;
+	font-weight: bold;
+	}
+
+
+.term {font-style: italic}
+
+input.onlineform {
+width: 100%;
+}
+
+textarea {
+width: 100%;
+}
+
+.separator {
+margin-top: 3ex;
+margin-bottom: 3ex;
+}
+
+.news {font-size: 85%; margin-top: -1em; padding-bottom: 1em;}  
+.newslist {list-style-type: disc}
+.newslist li {margin-bottom: 2ex; }
+
+#badge {position:relative; top:12px; height:30px;}
+
+div.dateline {font-style: italic}
+
+table.rules tr.label {font-weight:bold; background-color: #CCEEFF;}
+table.rules {margin-left:auto; margin-right:auto;}
+
+.twitter-follow-button { vertical-align:middle;}

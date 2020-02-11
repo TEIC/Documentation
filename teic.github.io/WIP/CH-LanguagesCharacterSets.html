@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/tei.css" media="screen" title="no title" charset="utf-8">
+    <link type="application/tei+xml" rel="alternative" href="https://raw.githubusercontent.com/TEIC/TEI/LanguagesCharacterSets-revision/P5/Source/Guidelines/en/CH-LanguagesCharacterSets.xml">
+    <script src="../js/CETEI.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var c = new CETEI();
+    c.shadowCSS = "../css/tei.css";
+    c.getHTML5('https://raw.githubusercontent.com/TEIC/TEI/LanguagesCharacterSets-revision/P5/Source/Guidelines/en/CH-LanguagesCharacterSets.xml?new=' + Date.now(), function(data) {
+        document.getElementsByTagName("body")[0].appendChild(data);
+      });
+    </script>
+    <title>DRAFT: CH-LanguagesCharacterSets</title>
+  </head>
+  <body>
+
+  </body>
+</html>

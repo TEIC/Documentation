@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Building and Testing the TEI Guidelines and Stylesheets</title>
+        <author>Hugh Cayless</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>TEI Technical Council</publisher>
+        <date>2016</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital document.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>How to build and test the Guidelines and Stylesheets</head>
+        <p>Getting set up to run the various building and testing targets in the Guidelines and
+          Stylesheets is relatively easy in Debian-based Linuxes like Ubuntu. But it is quite tricky on
+          other systems, like Mac OS X or Windows. The TEI Jenkins server will run a variety of
+          builds when you push changes to the TEI or Stylesheets repos, but you may find you prefer
+          to run the tests locally, as they will likely be faster and will save you the trouble of
+          waiting for Jenkins to email you when it finds a problem. Moreover, if you’re doing work
+          in a branch, Jenkins won’t help you at all, and it can be very useful to “check your work”
+          as you go to avoid lots of bug-fixing when your merge back into dev.</p>
+        <p>The first step in setting up your development and testing environment is to get copies of
+          the TEI and Stylesheets repositories. These can be obtained from <ptr
+            target="https://github.com/TEIC/TEI"/> and <ptr
+            target="https://github.com/TEIC/Stylesheets"/> respectively. All of the following
+          instructions assume you are at least somewhat comfortable working in a command line
+          environment. If you aren’t, this would be a good time to learn. A rather Mac-biased
+          tutorial may be found at “<ref target="https://www.learnenough.com/command-line-tutorial"
+            >Learn Enough Command Line to Be Dangerous</ref>”, while Windows 10 users may learn how
+          to install a Bash shell and the basics of using it at “<ref
+            target="http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/"
+            >How to Install and Use the Linux Bash Shell on Windows 10</ref>”. Once you’re in a
+          terminal window, you can clone the TEI repos thus: 
+          <lb/><code>git clone git@github.com:TEIC/TEI.git</code> and 
+          <lb/><code>git clone git@github.com:TEIC/Stylesheets.git</code>
+        </p>
+        <p>It’s probably a good idea to keep these side-by-side. I put mine in a directory called:
+            <code>/Users/hcayless/Development/TEIC</code>. As you will see, it’s a good idea to do
+          this somewhere under the Users directory, whether you’re on Mac or Windows. If you’re
+          running Ubuntu or some other Linux, you can put them where you like. Let’s assume you’ve
+          got working copies of the TEI and Stylesheets repos, and that you’ve made some changes
+          you’d like to test before you push them back up to GitHub and make them available to
+          everyone. The TEI has set up a pre-built test environment in Docker that you can use.
+          First, you should get Docker Community Edition (CE). On a Mac, go to <ptr
+            target="https://docs.docker.com/docker-for-mac/install/"/>, on Windows, <ptr
+              target="https://docs.docker.com/docker-for-windows/install/"/>, and on Linux, choose your specific platform here: <ptr
+                target="https://docs.docker.com/install/"/>. Follow Docker’s “Get Started” instructions for your installation to configure Docker and include the TEI repositories in your Docker container. Once you have Docker
+          installed and set up, you can run <lb/><code>docker pull teic/teidev-docker</code>
+          <lb/>to grab a copy of the pre-built image.</p>
+        <p>Now you’re ready to run your test environment. You’ll need a couple of pieces of
+          information for Docker: the location of your repositories and your timezone. You can look up your timezone at <ref
+            target="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</ref>.
+          You need it because the default timezone of the container is UTC, which will lead to
+          strange warnings when you run the builds unless you actually happen to be in sync with
+          UTC, because the local time of your computer will differ from that set in the container.
+          The directory containing your repositories will be mapped to a directory in the container
+          (which is why it’s easier to put them side-by-side). You’ll run the test container with a
+          command like: 
+          <lb/><code>docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
+            teic/teidev-docker</code>
+          <lb/>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
+          The directory on your local file system where you cloned the TEI and
+          Stylesheets repos is mapped to <code>/tei</code> in the container (that’s the part after
+          <code>-v</code> above). If you then do <code>cd tei</code> and then <code>ls</code>, you
+          should  see the repos you cloned above. There’s one more piece of work to be done, and
+          that’s  to tell the Guidelines build process where it can find your copy of the
+          Stylesheets.  You do that by adding a <code>local.mk</code> file in <code>TEI/P5</code>.
+          So,  (from <code>/tei</code>) do <code>cd TEI/P5</code> and then 
+          <code>echo "XSL=/tei/Stylesheets" > local.mk</code>. Now
+          you can build things! And, what’s more, you can work on the Guidelines and Stylesheets in
+          your regular environment, and test them in Docker. The Docker command above will create a
+          container named “tei”, which you can return to later. Because it runs a Bash terminal, you
+          can exit it by typing <code>exit</code> at the command prompt, and that will stop the 
+          container. You can restart it with a command like <code>docker start -ai tei</code>, which
+          will start the container and attach your terminal to it, with whatever state it was in
+          when you left it. You may want to alias a simple command like <code>teidocker</code> to 
+          <code>docker start -ai tei</code>.
+        </p>
+        <p>To build the HTML version of the Guidelines, for example, you can run (in
+            <code>/tei/TEI/P5</code>) <code>make html-web</code>, and after the process finishes,
+          you’ll have a directory called “Guidelines-web” in your P5 directory. Outside your Docker
+          shell, you can browse to this folder, find the index.html file, and open it in a browser.
+          “Make” is a program typically used for compiling programs, but it’s also very useful as a 
+          kind of generic batch scripting tool, which is how it’s being used here. In the
+          Guidelines, you’ll typically want to run Make inside the <code>P5/</code> directory and in
+          the Stylesheets, you’ll want to run it at the top of the repo (in
+          <code>Stylesheets/</code>. You can also run Make in any directory that contains a
+          <code>Makefile</code>. Note that the targets may vary. Running <code>make</code> inside
+          <code>Stylesheets/Test</code> is pretty much the same as running <code>make test</code>
+          one level up. You can also run individual test targets if there’s a particular set 
+          of tests you want to troubleshoot (e.g. <code>make test-oddity</code> in
+          <code>Stylesheets/Test</code> to test ODD-conversion methods). The targets are all defined
+          in the <code>Makefile</code>s.</p>
+        <p>The <ref target="http://www.tei-c.org/Guidelines/P5/get.xml">Using the TEI GitHub
+          Repository</ref> document has more detail on all the processes you can run, and very
+          meager information on how to get set up to run them—but you just bypassed all that.
+          Besides the <code>make</code> targets listed there, both the TEI and Stylesheets repos
+          have <code>make test</code> targets which get run by Jenkins when you push to GitHub.
+          These are both good ways to check your code before pushing. Make does lots of things when
+          you run any of these targets, but all of them should finish with a “BUILD SUCCESSFUL”
+          message. If there’s a problem, you’ll get a failure message, hopefully with some
+          indication of what went wrong. If you’ve run a build target, you probably want to run a
+            <code>make clean</code> before doing it again to make sure files that were generated
+          during the last run don’t interfere with your next build (Make tries not to repeat itself,
+          so if it finds existing build artifacts, it won’t rebuild them). Targets can be put
+          together, so you can do <code>make clean test</code>, and it will clean things up before
+          running the test target.</p>
+        <p>When you run the tests and other build targets, you’ll see masses of text written out,
+          most of which can be ignored. If one of the processes errors out, Make should stop
+          running, so the last thing in your terminal should tell you what happened. This may not be
+          a very useful message, so you might need to isolate the command that Make ran and run it
+          yourself to see the error messages. In the Stylesheets, errors are often in the form of
+          differences between the expected output of certain tests and the actual output. Test
+          failures here aren’t necessarily errors—if you changed something to do with ODD
+          compilation or schema generation, your new output might be correct but different from the
+          old. When this happens, you can copy the new output from the <code>Test/</code> directory
+          into <code>Test/expected-results</code>. You’ll want to be a bit careful that your new
+          output is actually correct, of course, because now the test will pass even if it’s not
+          really working, because all it’s checking is whether the test output is the same as what
+          it expects.</p>
+        <p>Good luck and happy testing!</p>
+      </div>
+    </body>
+  </text>
+</TEI>

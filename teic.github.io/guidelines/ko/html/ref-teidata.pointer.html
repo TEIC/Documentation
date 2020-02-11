@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI data teidata.pointer </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI data teidata.pointer " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li></ul></div><div><h3 class="oddSpec" id="teidata.pointer">teidata.pointer</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">teidata.pointer</span> 현 문서 또는 다른 곳 어디서든 다른 자원에 대한 단일 포인터를 제공하는 속성 값 범위를 정의한다.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><div>부류: <ul class="attrefs-class"><li><a class="link_odd_class" title="특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다." href="ref-att.ascribed.html">att.ascribed</a>/@who </li><li><a class="link_odd_class" title="" href="ref-att.ascribed.directed.html">att.ascribed.directed</a>/@toWhom </li><li><a class="link_odd_class" title="" href="ref-att.canonical.html">att.canonical</a>/@ref </li><li><a class="link_odd_class" title="이차원 좌표 체계 내에서 위치될 수 있는 요소" href="ref-att.coordinated.html">att.coordinated</a>/@start </li><li><a class="link_odd_class" title="날짜, 시간 또는 날짜 명기 사건을 포함하는 요소의 규격화에 대한 속성을 제공한다." href="ref-att.datable.html">att.datable</a>/@calendar </li><li><a class="link_odd_class" title="날짜, 시간 또는 날짜 명기 사건을 포함하는 요소의 규격화에 대한 속성을 제공한다." href="ref-att.datable.html">att.datable</a>/@period </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@datingPoint </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@datingMethod </li><li><a class="link_odd_class" title="" href="ref-att.datcat.html">att.datcat</a>/@datcat </li><li><a class="link_odd_class" title="" href="ref-att.datcat.html">att.datcat</a>/@valueDatcat </li><li><a class="link_odd_class" title="헤더에서 선언 가능한 어떤 요소와 독립적으로 연관될 수 있는 속성을 제공한다. 이를 통해 그 요소의 상속된 기본값은 무효가 된다." href="ref-att.declaring.html">att.declaring</a>/@decls </li><li><a class="link_odd_class" title="" href="ref-att.edition.html">att.edition</a>/@edRef </li><li><a class="link_odd_class" title="TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다." href="ref-att.global.html">att.global</a>/@xml:base </li><li><a class="link_odd_class" title="텍스트의 일정한 부분의 특별한 분석 혹은 해석과 관련된 부가적인 전반적 속성들을 제공한다." href="ref-att.global.analytic.html">att.global.analytic</a>/@ana </li><li><a class="link_odd_class" title="" href="ref-att.global.change.html">att.global.change</a>/@change </li><li><a class="link_odd_class" title="&lt;facsimile&gt; 요소 내에서 이미지 또는 표면부와 관련될 수 있는 요소" href="ref-att.global.facs.html">att.global.facs</a>/@facs </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@corresp </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@synch </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@sameAs </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@copyOf </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@next </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@prev </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@exclude </li><li><a class="link_odd_class" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a>/@select </li><li><a class="link_odd_class" title="" href="ref-att.global.rendition.html">att.global.rendition</a>/@rendition </li><li><a class="link_odd_class" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a>/@resp </li><li><a class="link_odd_class" title="" href="ref-att.global.source.html">att.global.source</a>/@source </li><li><a class="link_odd_class" title="원고가 쓰여진 필적의 측면을 기술하는 속성을 제공한다." href="ref-att.handFeatures.html">att.handFeatures</a>/@scribeRef </li><li><a class="link_odd_class" title="원고가 쓰여진 필적의 측면을 기술하는 속성을 제공한다." href="ref-att.handFeatures.html">att.handFeatures</a>/@scriptRef </li><li><a class="link_odd_class" title="형식적 분석 또는 해석을 표상하는 요소의 속성을 제공한다." href="ref-att.interpLike.html">att.interpLike</a>/@inst </li><li><a class="link_odd_class" title="사전용 기본 태그 세트의 요소에서 이용 가능한 전반적 속성들의 집합을 정의한다." href="ref-att.lexicographic.html">att.lexicographic</a>/@location </li><li><a class="link_odd_class" title="사전용 기본 태그 세트의 요소에서 이용 가능한 전반적 속성들의 집합을 정의한다." href="ref-att.lexicographic.html">att.lexicographic</a>/@mergedIn </li><li><a class="link_odd_class" title="" href="ref-att.linguistic.html">att.linguistic</a>/@lemmaRef </li><li><a class="link_odd_class" title="" href="ref-att.msClass.html">att.msClass</a>/@class </li><li><a class="link_odd_class" title="사람, 장소, 조직 등의 이름을 지시하는 요소에 공통적 속성을 제공한다." href="ref-att.naming.html">att.naming</a>/@nymRef </li><li><a class="link_odd_class" title="하나 이상의 URI 참조를 통해서 다른 요소를 가리키는 모든 요소에 의해 사용된 속성 집합을 정의한다." href="ref-att.pointing.html">att.pointing</a>/@target </li><li><a class="link_odd_class" title="포인터 요소군을 포함하는 모든 요소에 공통적인 속성 집합을 정의한다." href="ref-att.pointing.group.html">att.pointing.group</a>/@domains </li><li><a class="link_odd_class" title="파편화된 원고 또는 다른 비교 대상 텍스트의 시작부 또는 종료부를 표지하는 요소의 속성" href="ref-att.rdgPart.html">att.rdgPart</a>/@wit </li><li><a class="link_odd_class" title="" href="ref-att.resourced.html">att.resourced</a>/@url </li><li><a class="link_odd_class" title="" href="ref-att.scoping.html">att.scoping</a>/@target </li><li><a class="link_odd_class" title="포함보다는 포인터 메카니즘을 통하여 구분된 텍스트 구간을 나타내는 요소의 속성을 제공한다." href="ref-att.spanning.html">att.spanning</a>/@spanTo </li><li><a class="link_odd_class" title="텍스트 비평 작품에서 이문 독법을 나타내는 모든 요소에 공통된 속성 집합을 정의한다." href="ref-att.textCritical.html">att.textCritical</a>/@require </li><li><a class="link_odd_class" title="절대적 또는 배열 지도에 대한 참조에 의해 표현된 시간의 지속을 나타내는 요소들 사이에 공통적 속성을 제공한다." href="ref-att.timed.html">att.timed</a>/@start </li><li><a class="link_odd_class" title="절대적 또는 배열 지도에 대한 참조에 의해 표현된 시간의 지속을 나타내는 요소들 사이에 공통적 속성을 제공한다." href="ref-att.timed.html">att.timed</a>/@end </li><li><a class="link_odd_class" title="" href="ref-att.witnessed.html">att.witnessed</a>/@wit </li><li><a class="link_odd_class" title="" href="ref-att.written.html">att.written</a>/@hand </li></ul></div><div>요소: <ul class="attrefs-element"><li><a class="link_odd_element" title="(교체) 요소나 단락 사이의 교체 또는 선택 집합을 식별한다." href="ref-alt.html">alt</a>/@target </li><li><a class="link_odd_element" title="(참조 도구 표제 항목) 수의적 레마와 적어도 하나의 독법을 포함하여 비평적 참조 도구에서 하나의 표제 항목을 포함한다." href="ref-app.html">app</a>/@from </li><li><a class="link_odd_element" title="(참조 도구 표제 항목) 수의적 레마와 적어도 하나의 독법을 포함하여 비평적 참조 도구에서 하나의 표제 항목을 포함한다." href="ref-app.html">app</a>/@to </li><li><a class="link_odd_element" title="그래프에서 노드 사이를 연결하는 호를 부호화한다." href="ref-arc.html">arc</a>/@from </li><li><a class="link_odd_element" title="그래프에서 노드 사이를 연결하는 호를 부호화한다." href="ref-arc.html">arc</a>/@to </li><li><a class="link_odd_element" title="(범주 참조) 분류법 또는 텍스트 유형 내에서 하나 이상의 정의된 범주를 명시한다." href="ref-catRef.html">catRef</a>/@scheme </li><li><a class="link_odd_element" title="텍스트 마크업의 어떤 특성과 관련된 확실성 또는 불확실성의 정도를 가리킨다." href="ref-certainty.html">certainty</a>/@given </li><li><a class="link_odd_element" title="몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다." href="ref-change.html">change</a>/@target </li><li><a class="link_odd_element" title="(분류 부호) 표준 분류 체계에서 이 텍스트에 대하여 사용된 분류 부호를 포함한다." href="ref-classCode.html">classCode</a>/@scheme </li><li><a class="link_odd_element" title="" href="ref-dataRef.html">dataRef</a>/@ref </li><li><a class="link_odd_element" title="(내포 수형도의 단말 노드) 내포 수형도의 단말 노드를 명시적으로 제공한다. 내포 수형도는 또한 eTree 요소로 부호화될 수 있다." href="ref-eLeaf.html">eLeaf</a>/@value </li><li><a class="link_odd_element" title="(내포 수형도) 순서가 있고 뿌리가 있는 수형 구조를 표시하기 위해 수형도 요소에 대체안을 제시한다." href="ref-eTree.html">eTree</a>/@value </li><li><a class="link_odd_element" title="(동치) 부모 요소와 동치로 고려되는 성분을 공지시 또는 외부 연결을 통해 명시한다." href="ref-equiv.html">equiv</a>/@uri </li><li><a class="link_odd_element" title="(동치) 부모 요소와 동치로 고려되는 성분을 공지시 또는 외부 연결을 통해 명시한다." href="ref-equiv.html">equiv</a>/@filter </li><li><a class="link_odd_element" title="개인, 장소, 또는 조직과 관련된 중요한 사건에 해당하는 데이터를 포함한다." href="ref-event.html">event</a>/@where </li><li><a class="link_odd_element" title="(자질) feature value specification, 즉, 이름과 몇 가지 다른 유형의 값을 연결시킨다." href="ref-f.html">f</a>/@fVal </li><li><a class="link_odd_element" title="(자질 구조) feature structure, 즉, 구조화된 단위로서 구성된 자질-값 쌍의 집합을 표시한다." href="ref-fs.html">fs</a>/@feats </li><li><a class="link_odd_element" title="(자질 구조 선언 연결) 자질 구조 선언에 유형화된 자질 구조의 이름을 관련시킨다." href="ref-fsdLink.html">fsdLink</a>/@target </li><li><a class="link_odd_element" title="(문자 또는 그림문자) 비표준 문자 또는 그림문자를 표시한다." href="ref-g.html">g</a>/@ref </li><li><a class="link_odd_element" title="새로운 필적으로 기록된 텍스트 연쇄의 시작 또는 필기 부분의 시작을 표시한다." href="ref-handShift.html">handShift</a>/@new </li><li><a class="link_odd_element" title="(중간 (또는 내부) 노드) 수형도의 중간 (또는 내부) 노드를 표시한다." href="ref-iNode.html">iNode</a>/@value </li><li><a class="link_odd_element" title="(중간 (또는 내부) 노드) 수형도의 중간 (또는 내부) 노드를 표시한다." href="ref-iNode.html">iNode</a>/@children </li><li><a class="link_odd_element" title="(중간 (또는 내부) 노드) 수형도의 중간 (또는 내부) 노드를 표시한다." href="ref-iNode.html">iNode</a>/@parent </li><li><a class="link_odd_element" title="(중간 (또는 내부) 노드) 수형도의 중간 (또는 내부) 노드를 표시한다." href="ref-iNode.html">iNode</a>/@follow </li><li><a class="link_odd_element" title="텍스트의 주제 또는 특성을 식별하는 주제어 또는 구의 목록을 포함한다." href="ref-keywords.html">keywords</a>/@scheme </li><li><a class="link_odd_element" title="수형도의 단말 노드를 부호화한다." href="ref-leaf.html">leaf</a>/@value </li><li><a class="link_odd_element" title="수형도의 단말 노드를 부호화한다." href="ref-leaf.html">leaf</a>/@parent </li><li><a class="link_odd_element" title="수형도의 단말 노드를 부호화한다." href="ref-leaf.html">leaf</a>/@follow </li><li><a class="link_odd_element" title="원고 또는 원고의 일부 내에서 위치를 정의한다." href="ref-locus.html">locus</a>/@scheme </li><li><a class="link_odd_element" title="" href="ref-locusGrp.html">locusGrp</a>/@scheme </li><li><a class="link_odd_element" title="" href="ref-metamark.html">metamark</a>/@target </li><li><a class="link_odd_element" title="(모듈 참조) 하나의 스키마로 통합된 모듈을 참조한다." href="ref-moduleRef.html">moduleRef</a>/@url </li><li><a class="link_odd_element" title="(이동) 무대에서 하나 이상의 등장 인물들의 실제적 입장과 퇴장을 표시한다." href="ref-move.html">move</a>/@perf </li><li><a class="link_odd_element" title="그래프에서 (표지가 붙는 지점일 수도 있는) 노드를 부호화한다." href="ref-node.html">node</a>/@value </li><li><a class="link_odd_element" title="그래프에서 (표지가 붙는 지점일 수도 있는) 노드를 부호화한다." href="ref-node.html">node</a>/@adjTo </li><li><a class="link_odd_element" title="그래프에서 (표지가 붙는 지점일 수도 있는) 노드를 부호화한다." href="ref-node.html">node</a>/@adjFrom </li><li><a class="link_odd_element" title="그래프에서 (표지가 붙는 지점일 수도 있는) 노드를 부호화한다." href="ref-node.html">node</a>/@adj </li><li><a class="link_odd_element" title="" href="ref-note.html">note</a>/@targetEnd </li><li><a class="link_odd_element" title="(표준 이름) 표준 이름 또는 어떤 종류의 이름부 정의를 포함한다." href="ref-nym.html">nym</a>/@parts </li><li><a class="link_odd_element" title="개인의 직업에 대한 비공식적 기술을 포함한다." href="ref-occupation.html">occupation</a>/@scheme </li><li><a class="link_odd_element" title="개인의 직업에 대한 비공식적 기술을 포함한다." href="ref-occupation.html">occupation</a>/@code </li><li><a class="link_odd_element" title="" href="ref-redo.html">redo</a>/@target </li><li><a class="link_odd_element" title="구성물이나 대체 버전과 같이 현 항목과 특정 방식으로 관련된 다른 서지 항목을 명시적 방식에 따라 포함하거나 지시한다." href="ref-relatedItem.html">relatedItem</a>/@target </li><li><a class="link_odd_element" title="(관련성) 명시된 참여자군 사이에 관련성 또는 연결 종류를 기술한다." href="ref-relation.html">relation</a>/@active </li><li><a class="link_odd_element" title="(관련성) 명시된 참여자군 사이에 관련성 또는 연결 종류를 기술한다." href="ref-relation.html">relation</a>/@mutual </li><li><a class="link_odd_element" title="(관련성) 명시된 참여자군 사이에 관련성 또는 연결 종류를 기술한다." href="ref-relation.html">relation</a>/@passive </li><li><a class="link_odd_element" title="(뿌리 노드) 수형도의 뿌리 노드를 표시한다." href="ref-root.html">root</a>/@value </li><li><a class="link_odd_element" title="(뿌리 노드) 수형도의 뿌리 노드를 표시한다." href="ref-root.html">root</a>/@children </li><li><a class="link_odd_element" title="(사회-경제적 지위) 개인의 사회 또는 경제적 지위에 대한 비공식적 기술을 포함한다." href="ref-socecStatus.html">socecStatus</a>/@scheme </li><li><a class="link_odd_element" title="(사회-경제적 지위) 개인의 사회 또는 경제적 지위에 대한 비공식적 기술을 포함한다." href="ref-socecStatus.html">socecStatus</a>/@code </li><li><a class="link_odd_element" title="복사본에서 중요한 공간의 위치를 표시한다." href="ref-space.html">space</a>/@resp </li><li><a class="link_odd_element" title="해석적 부호를 텍스트의 일정 부분과 직접적으로 연결시킨다." href="ref-span.html">span</a>/@from </li><li><a class="link_odd_element" title="해석적 부호를 텍스트의 일정 부분과 직접적으로 연결시킨다." href="ref-span.html">span</a>/@to </li><li><a class="link_odd_element" title="(명시 그룹에 대한 참조) 참조된 &lt;specGrp&gt;에 의해 포함된 선언은 이 지점에서 삽입되어야함을 나타낸다." href="ref-specGrpRef.html">specGrpRef</a>/@target </li><li><a class="link_odd_element" title="(전문적 무대 지시) 배우들에 지시하는 것이 아니라, 특별한 목적의 무대 지시를 기술한다." href="ref-tech.html">tech</a>/@perf </li><li><a class="link_odd_element" title="(시간선상) 해당 텍스트의 시간 정렬을 생성하기 위해 구어 텍스트의 요소들이 연결될 수 있는 시간의 순서로 정렬된 지점의 집합을 제시한다." href="ref-timeline.html">timeline</a>/@origin </li><li><a class="link_odd_element" title="(미명시된 내포 수형도, 도출될 때 그 특성적 모양 때문에 그렇게 불린다.) 미명시된 eTree를 제시한다. 즉, 정보가 삭제된 eTree" href="ref-triangle.html">triangle</a>/@value </li><li><a class="link_odd_element" title="" href="ref-undo.html">undo</a>/@target </li><li><a class="link_odd_element" title="동일 시간선상의 태그에서 다른 요소들에 대한 상대적 또는 절대적인 시간 지점을 표시한다." href="ref-when.html">when</a>/@since </li><li><a class="link_odd_element" title="(비교 대상 텍스트 세목) 특별한 비교 대상 텍스트에 관한 상세한 정보를 특별한 독법에 제공한다." href="ref-witDetail.html">witDetail</a>/@wit </li></ul></div></div></td></tr>
+  
+  
+  
+  
+  
+  
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="ko">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">anyURI</span>"/&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">선언</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML 형식에 따른 규약?</span><span class="RNG_XML">규약에 대한 XML 형식?</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">teidata.pointer</span>"&gt;</span><br /> <span class="element">&lt;rng:data <span class="attribute">type</span>="<span class="attributevalue">anyURI</span>"/&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+teidata.pointer = xsd:anyURI</pre></div></td></tr>
+  
+  
+  
+</table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teidata.pointer.html">English</a>]
+    [<a href="../../de/html/ref-teidata.pointer.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teidata.pointer.html">Español</a>]
+    [<a href="../../it/html/ref-teidata.pointer.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teidata.pointer.html">Français</a>]
+    [<a href="../../ja/html/ref-teidata.pointer.html">日本語</a>]
+    [<a href="../../ko/html/ref-teidata.pointer.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teidata.pointer.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

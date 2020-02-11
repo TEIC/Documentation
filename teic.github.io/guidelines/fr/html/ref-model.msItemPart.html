@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.msItemPart </title><meta property="Language" content="fr" /><meta property="DC.Title" content="TEI class model.msItemPart " /><meta property="DC.Language" content="SCHEME=iso639 fr" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Recommandations pour l'encodage et l'échange de textes électroniques</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Accueil</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Classes de structures</a></li></ul></div><div><h3 class="oddSpec" id="model.msItemPart">model.msItemPart</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.msItemPart</span> regroupe des éléments qui peuvent apparaître dans une description de manuscrit</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Module</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Utilisé par</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(item de manuscrit) décrit une œuvre ou un item individualisés dans le contenu intellectuel d'un manuscrit ou d'une partie de manuscrit." href="ref-msItem.html">msItem</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="fr">Membres</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="regroupe des éléments contenant une description bibliographique." href="ref-model.biblLike.html">model.biblLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(référence bibliographique.) contient une référence bibliographique faiblement structurée dans laquelle les sous-composants peuvent ou non être explicitement balisés." href="ref-bibl.html">bibl</a> <a class="link_odd_elementSpec" title="(référence bibliographique totalement structurée) contient une référence bibliographique totalement structurée : tous les composants de la description du fichier TEI y sont présents." href="ref-biblFull.html">biblFull</a> <a class="link_odd_elementSpec" title="(référence bibliographique structurée) contient une référence bibliographique dans laquelle seuls des sous-éléments bibliographiques apparaissent et cela, selon un ordre déterminé." href="ref-biblStruct.html">biblStruct</a> <a class="link_odd_elementSpec" title="(liste de références bibliographiques) contient une liste de références bibliographiques de toute nature." href="ref-listBibl.html">listBibl</a> <a class="link_odd_elementSpec" title="(description d'un manuscrit) contient la description d'un manuscrit individuel" href="ref-msDesc.html">msDesc</a>] </span> <a class="link_odd_classSpec" title="regroupe des éléments qui représentent des passages d'un manuscrit, tels que des titres cités comme une partie de sa description" href="ref-model.msQuoteLike.html">model.msQuoteLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(colophon) contient le colophon d'une section d'un manuscrit, c'est-à-dire la transcription des informations relatives à la date, au lieu, à l'organisme commanditaire ou aux raisons de la production du manuscrit." href="ref-colophon.html">colophon</a> <a class="link_odd_elementSpec" title="(explicit) contient l'explicit d'une section d'un manuscrit, c'est-à-dire les mots terminant le texte proprement dit, à l'exclusion de toute rubrique ou colophon qui pourraient le suivre." href="ref-explicit.html">explicit</a> <a class="link_odd_elementSpec" title="(rubrique de fin) Contient les derniers mots d'une section de texte, qui incluent souvent la mention de son auteur et de son titre, et sont généralement différenciés du texte lui-même par l'utilisation d'une encre rouge, par une taille ou un style d'écriture particuliers, ou par tout autre moyen visuel." href="ref-finalRubric.html">finalRubric</a> <a class="link_odd_elementSpec" title="contient l'incipit d'une section d'un manuscrit, c'est-à-dire les mots commençant le texte proprement dit, à l'exclusion de toute rubrique qui pourrait les précéder, la transcription étant de longueur suffisante pour permettre l'identification de l'œuvre. De tels incipit étaient autrefois souvent utilisés à la place du titre de l'œuvre, pour l'identifier." href="ref-incipit.html">incipit</a> <a class="link_odd_elementSpec" title="(rubrique) contient le texte d'une rubrique ou d'un intitulé propres à un item, c'est-à-dire des mots qui signalent le début du texte, qui incluent souvent la mention de son auteur et de son titre, et qui sont différenciés du texte lui-même, généralement à l'encre rouge, par une taille ou un style d'écriture particuliers, ou par tout autre procédé de ce genre." href="ref-rubric.html">rubric</a> <a class="link_odd_elementSpec" title="(titre) contient le titre complet d'une oeuvre quelconque" href="ref-title.html">title</a>] </span> <a class="link_odd_classSpec" title="regroupe des éléments employés pour contenir directement des citations" href="ref-model.quoteLike.html">model.quoteLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(citation) citation provenant d'un autre document comprenant la référence bibliographique de sa source. Dans un dictionnaire il peut contenir un exemple avec au moins une occurrence du mot employé dans l’acception qui est décrite, ou une traduction du mot-clé, ou un exemple." href="ref-cit.html">cit</a> <a class="link_odd_elementSpec" title="(citation) contient une expression ou un passage que le narrateur ou l'auteur attribue à une origine extérieure au texte." href="ref-quote.html">quote</a>] </span> <a class="link_odd_classSpec" title="regroupe des éléments qui sont utilisés pour indiquer une responsabilité intellectuelle ou une autre responsabilité significative, par exemple dans un élément bibliographique." href="ref-model.respLike.html">model.respLike</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(auteur) dans une référence bibliographique contient le nom de la (des) personne(s) physique(s) ou du collectif, auteur(s) d'une oeuvre ; par exemple dans la même forme que celle utilisée par une référence bibliographique reconnue." href="ref-author.html">author</a> <a class="link_odd_elementSpec" title="mention de responsabilité secondaire pour un item bibliographique, par exemple le nom d'une personne, d'une institution ou d'un organisme (ou de plusieurs d'entre eux) comme éditeur scientifique, compilateur, traducteur, etc." href="ref-editor.html">editor</a> <a class="link_odd_elementSpec" title="(financeur) désigne le nom d’une personne ou d’un organisme responsable du financement d’un projet ou d’un texte." href="ref-funder.html">funder</a> <a class="link_odd_elementSpec" title="contient le titre descriptif formalisé d’une réunion ou d’une conférence, employé dans une description bibliographique pour un article provenant d'une telle réunion, ou comme le titre ou le préambule aux publications qui en émanent." href="ref-meeting.html">meeting</a> <a class="link_odd_elementSpec" title="(chercheur principal) contient le nom du chercheur qui est principalement responsable de la création d’un texte électronique." href="ref-principal.html">principal</a> <a class="link_odd_elementSpec" title="(mention de responsabilité) indique la responsabilité quant au contenu intellectuel d'un texte, d'une édition, d'un enregistrement ou d'une publication en série, lorsque les éléments spécifiques relatifs aux auteurs, éditeurs, etc. ne suffisent pas ou ne s'appliquent pas." href="ref-respStmt.html">respStmt</a> <a class="link_odd_elementSpec" title="(commanditaire) indique le nom d’une institution ou d’un organisme partenaires." href="ref-sponsor.html">sponsor</a>] </span> <a class="link_odd_elementSpec" title="(note sur un élément de décoration) contient une note décrivant soit un élément de décoration du mansucrit, soit une catégorie relativement homogène de tels éléments." href="ref-decoNote.html">decoNote</a> <a class="link_odd_elementSpec" title="(filiation) contient les informations sur la filiation du manuscrit, c'est-à-dire sur ses relations avec d'autres manuscrits connus du même texte, ses protographes, antigraphes et apographes." href="ref-filiation.html">filiation</a> <a class="link_odd_elementSpec" title="(identifiant) donne un numéro normalisé ou non qui peut être utilisé pour identifier une référence bibliographique." href="ref-idno.html">idno</a> <a class="link_odd_elementSpec" title="(item de manuscrit) décrit une œuvre ou un item individualisés dans le contenu intellectuel d'un manuscrit ou d'une partie de manuscrit." href="ref-msItem.html">msItem</a> <a class="link_odd_elementSpec" title="(description structurée d'un item de manuscrit) contient la description structurée d'un item ou d'une œuvre, dans le contenu intellectuel d'un manuscrit ou d'une partie d'un manuscrit." href="ref-msItemStruct.html">msItemStruct</a> <a class="link_odd_elementSpec" title="(langues du texte) décrit les langues et systèmes d'écriture utilisés dans un manuscrit (et non dans la description du manuscrit, dont les langues et systèmes d'écriture sont décrits dans l'élément &lt;langUsage&gt;)." href="ref-textLang.html">textLang</a></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.msItemPart.html">English</a>]
+    [<a href="../../de/html/ref-model.msItemPart.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.msItemPart.html">Español</a>]
+    [<a href="../../it/html/ref-model.msItemPart.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.msItemPart.html">Français</a>]
+    [<a href="../../ja/html/ref-model.msItemPart.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.msItemPart.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.msItemPart.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Commentaires</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:06:21Z.</address></div></body></html>

@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI data teidata.word </title><meta property="Language" content="es" /><meta property="DC.Title" content="TEI data teidata.word " /><meta property="DC.Language" content="SCHEME=iso639 es" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    Directrices para la codificación y el intercambio de textos electrónicos</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">Principal</a></li></ul></div><div><h3 class="oddSpec" id="teidata.word">teidata.word</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">teidata.word</span> define una gama de valores de atributos expresados como una única palabra o señal.</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Módulo</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Usado por</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_dataSpec" title="" href="ref-teidata.enumerated.html">teidata.enumerated</a> <a class="link_odd_dataSpec" title="" href="ref-teidata.sex.html">teidata.sex</a><div>Clase: <ul class="attrefs-class"><li><a class="link_odd_class" title="" href="ref-att.citing.html">att.citing</a>/@from </li><li><a class="link_odd_class" title="" href="ref-att.citing.html">att.citing</a>/@to </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@when-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@notBefore-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@notAfter-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@from-custom </li><li><a class="link_odd_class" title="" href="ref-att.datable.custom.html">att.datable.custom</a>/@to-custom </li><li><a class="link_odd_class" title="" href="ref-att.edition.html">att.edition</a>/@ed </li><li><a class="link_odd_class" title="" href="ref-att.global.rendition.html">att.global.rendition</a>/@rend </li><li><a class="link_odd_class" title="atributos para registrar un periodo temporal normalizado" href="ref-att.internetMedia.html">att.internetMedia</a>/@mimeType </li><li><a class="link_odd_class" title="proporciona atributos que representen una medición regularizada o normalizada." href="ref-att.measurement.html">att.measurement</a>/@commodity </li><li><a class="link_odd_class" title="define un conjunto de atributos comunes a todos los elementos que incluyen grupos de indicadores." href="ref-att.pointing.group.html">att.pointing.group</a>/@targFunc </li><li><a class="link_odd_class" title="" href="ref-att.sortable.html">att.sortable</a>/@sortKey </li></ul></div><div>Elemento: <ul class="attrefs-element"><li><a class="link_odd_element" title="(entrada de aparato crítico) contiene una entrada en el aparato crítico, con un lema opcional y, al menos, una lectura." href="ref-app.html">app</a>/@loc </li><li><a class="link_odd_element" title="(señalizador del atributo) señala a la definición de un atributo o grupo de atributos." href="ref-attRef.html">attRef</a>/@class </li><li><a class="link_odd_element" title="proporciona datos binarios codificados que representan un objeto gráfico u otro tipo de objeto inserido en el texto." href="ref-binaryObject.html">binaryObject</a>/@encoding </li><li><a class="link_odd_element" title="Indica el grado de certeza o incertidumbre asociado a algun aspecto del marcaje de texto." href="ref-certainty.html">certainty</a>/@assertedValue </li><li><a class="link_odd_element" title="contiene un código alfabético que se deriva de un lenguaje formal, p.ej. un lenguaje de programación." href="ref-code.html">code</a>/@lang </li><li><a class="link_odd_element" title="" href="ref-dataFacet.html">dataFacet</a>/@name </li><li><a class="link_odd_element" title="(competencia lingüística) resume la competencia de una persona en la lengua indicada." href="ref-langKnown.html">langKnown</a>/@level </li><li><a class="link_odd_element" title="define una posición al interno de un manuscrito o de una de sus partes, generalmente como secuencia (no necesariamete contínua) de referencias de folios." href="ref-locus.html">locus</a>/@from </li><li><a class="link_odd_element" title="define una posición al interno de un manuscrito o de una de sus partes, generalmente como secuencia (no necesariamete contínua) de referencias de folios." href="ref-locus.html">locus</a>/@to </li><li><a class="link_odd_element" title="(morfema) representa un morfema gramatical." href="ref-m.html">m</a>/@baseForm </li><li><a class="link_odd_element" title="" href="ref-media.html">media</a>/@mimeType </li><li><a class="link_odd_element" title="(símbolo métrico de la notación) documenta la significación ideada para un carácter concreto o secuencia de caracteres al interno de una anotación métrica, o explícitamente o en términos de otros elementos simbólicos de la metDecl." href="ref-metSym.html">metSym</a>/@value </li><li><a class="link_odd_element" title="" href="ref-metamark.html">metamark</a>/@function </li><li><a class="link_odd_element" title="(organización) proporciona a la información sobre una organización identificable tal como un negocio, una tribu, o cualquier otro grupo de personas." href="ref-org.html">org</a>/@role </li><li><a class="link_odd_element" title="(grupo de personas) describe a un grupo de individuos considerados como una única persona para fines analíticos." href="ref-personGrp.html">personGrp</a>/@size </li><li><a class="link_odd_element" title="señala una parte del esquema rítmico de un verso" href="ref-rhyme.html">rhyme</a>/@label </li><li><a class="link_odd_element" title="" href="ref-secl.html">secl</a>/@reason </li><li><a class="link_odd_element" title="indica fragmentos de texto añadidos por el transcriptor o por el revisor en el lugar donde el original es ilegible, porqué presenta daños físicos, lagunas o por otros motivos." href="ref-supplied.html">supplied</a>/@reason </li><li><a class="link_odd_element" title="" href="ref-surplus.html">surplus</a>/@reason </li><li><a class="link_odd_element" title="(valor simbólico) representa la parte del valor de una especificación de valor de rasgo que contiene uno de una lista finita de símbolos." href="ref-symbol.html">symbol</a>/@value </li><li><a class="link_odd_element" title="(etiqueta de valor) representa la parte del valor de una especificación de valor de rasgo que aparece más de en un punto en una estructura de rasgo." href="ref-vLabel.html">vLabel</a>/@name </li></ul></div></div></td></tr>
+  
+  
+  
+  
+  
+  
+  
+  <tr><td class="wovenodd-col1"><span class="label" lang="es">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">token</span>"<br />  <span class="attribute">restriction</span>="<span class="attributevalue">(\p{L}|\p{N}|\p{P}|\p{S})+</span>"/&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="es">Declaración</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">De formato compacto a XML</span><span class="RNG_XML">De formato XML a compacto</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">teidata.word</span>"&gt;</span><br /> <span class="element">&lt;rng:data <span class="attribute">type</span>="<span class="attributevalue">token</span>"&gt;</span><br />  <span class="element">&lt;rng:param <span class="attribute">name</span>="<span class="attributevalue">pattern</span>"&gt;</span>(\p{L}|\p{N}|\p{P}|\p{S})+<span class="element">&lt;/rng:param&gt;</span><br /> <span class="element">&lt;/rng:data&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+teidata.word = token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }</pre></div></td></tr>
+  
+  
+  
+</table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-teidata.word.html">English</a>]
+    [<a href="../../de/html/ref-teidata.word.html">Deutsch</a>]
+    [<a href="../../es/html/ref-teidata.word.html">Español</a>]
+    [<a href="../../it/html/ref-teidata.word.html">Italiano</a>]
+    [<a href="../../fr/html/ref-teidata.word.html">Français</a>]
+    [<a href="../../ja/html/ref-teidata.word.html">日本語</a>]
+    [<a href="../../ko/html/ref-teidata.word.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-teidata.word.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">Comentarios</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:03:06Z.</address></div></body></html>

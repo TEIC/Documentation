@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI class model.pPart.edit </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI class model.pPart.edit " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-CLASSES-MODEL.html">A Model Classes</a></li></ul></div><div><h3 class="oddSpec" id="model.pPart.edit">model.pPart.edit</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">model.pPart.edit</span> 간단한 편집상 수정과 전사에 대한 구-층위 요소를 모아 놓는다. [<a class="link_ptr" href="CO.html#COED" title="Simple Editorial Changes"><span class="headingNumber">3.4 </span>Simple Editorial Changes</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 사용된</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(서지 인용) 하위 성분이 명시적으로 구분된 또는 그렇지 않은 덜 구조화된 서지 인용을 포함한다." href="ref-bibl.html">bibl</a> <a class="link_odd_classSpec" title="개별 단어 또는 구 층위에서 나타날 수 있는 요소를 모아 놓는다." href="ref-model.phrase.html">model.phrase</a> <a class="link_odd_elementSpec" title="" href="ref-pc.html">pc</a> <a class="link_odd_elementSpec" title="(단어) 문법적 (반드시 철자상이 아닌) 단어를 표시한다." href="ref-w.html">w</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">원소</span></td><td class="wovenodd-col2"><span class="showmembers1"><a class="link_odd_classSpec" title="전사와 저작 모두에서 유용할 수 있는 간단한 편집 간섭에 대한 구-층위 요소를 모아 놓는다." href="ref-model.pPart.editorial.html">model.pPart.editorial</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(약어) 어떤 종류의 약어를 포함한다." href="ref-abbr.html">abbr</a> <a class="link_odd_elementSpec" title="(축약 표지) 축약의 확장형에서 생략되거나 대체된 축약형으로, 제시된 문자열 또는 기호열을 포함한다." href="ref-am.html">am</a> <a class="link_odd_elementSpec" title="텍스트 동일 지점에서 대체 가능한 부호화를 모아 놓는다." href="ref-choice.html">choice</a> <a class="link_odd_elementSpec" title="(편집 상술) 축약을 확장할 때 편집자 또는 전사자에 의해 추가된 문자열을 포함한다." href="ref-ex.html">ex</a> <a class="link_odd_elementSpec" title="(확장 표기) 약어의 확장(비약어) 표기" href="ref-expan.html">expan</a> <a class="link_odd_elementSpec" title="(대체) 결합이 텍스트에서 단일 조작으로 간주될 때 하나 이상의 삭제를 하나 이상의 추가 사항으로 대체한다." href="ref-subst.html">subst</a>] </span> <a class="link_odd_classSpec" title="앞서 존재하는 원본 자료의 편집상 전사에 사용되는 구-층위 요소를 모아 놓는다." href="ref-model.pPart.transcriptional.html">model.pPart.transcriptional</a><span class="showmembers2"> [<a class="link_odd_elementSpec" title="(삽입, 첨가) 저자, 전사자, 부호화 작업자 또는 수정작업자에 의해 텍스트에 삽입된 문자, 단어, 또는 구를 포함한다." href="ref-add.html">add</a> <a class="link_odd_elementSpec" title="(정정) 복사된 텍스트에서 오류로 보이는 단락의 정정 형식을 포함한다." href="ref-corr.html">corr</a> <a class="link_odd_elementSpec" title="비교 대상 텍스트의 손상 영역을 포함한다." href="ref-damage.html">damage</a> <a class="link_odd_elementSpec" title="(삭제) 삭제된 것으로 표시되었거나, 저자, 전사자, 부호화자 또는 수정작업자에 의해 사본 텍스트에서 불필요하거나 위조된 것으로 표시되어 삭제된 문자, 단어, 단락을 포함한다." href="ref-del.html">del</a> <a class="link_odd_elementSpec" title="새로운 필적으로 기록된 텍스트 연쇄의 시작 또는 필기 부분의 시작을 표시한다." href="ref-handShift.html">handShift</a> <a class="link_odd_elementSpec" title="" href="ref-mod.html">mod</a> <a class="link_odd_elementSpec" title="(원형식) 표준화 또는 수정된 것이 아닌 원형식을 따르는 해석을 포함한다." href="ref-orig.html">orig</a> <a class="link_odd_elementSpec" title="" href="ref-redo.html">redo</a> <a class="link_odd_elementSpec" title="(정규화) 어떤 면에서 정규화 또는 표준화된 해석을 포함한다." href="ref-reg.html">reg</a> <a class="link_odd_elementSpec" title="편집 또는 저작 표지 또는 지시의 취소를 통해서 초기 상태로 텍스트 복구를 나타낸다." href="ref-restore.html">restore</a> <a class="link_odd_elementSpec" title="" href="ref-retrace.html">retrace</a> <a class="link_odd_elementSpec" title="" href="ref-secl.html">secl</a> <a class="link_odd_elementSpec" title="" href="ref-sic.html">sic</a> <a class="link_odd_elementSpec" title="일반적으로 원본은 물리적 손상 또는 손실로 인해 읽을 수 없기 때문에 전사자 또는 편집자에 의해 제공된 텍스트를 표시한다." href="ref-supplied.html">supplied</a> <a class="link_odd_elementSpec" title="" href="ref-surplus.html">surplus</a> <a class="link_odd_elementSpec" title="원본에서 읽거나 듣기 어려워서 분명하게 전사할 수 없는 단어, 구, 단락들을 포함한다." href="ref-unclear.html">unclear</a> <a class="link_odd_elementSpec" title="" href="ref-undo.html">undo</a>] </span></span></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-model.pPart.edit.html">English</a>]
+    [<a href="../../de/html/ref-model.pPart.edit.html">Deutsch</a>]
+    [<a href="../../es/html/ref-model.pPart.edit.html">Español</a>]
+    [<a href="../../it/html/ref-model.pPart.edit.html">Italiano</a>]
+    [<a href="../../fr/html/ref-model.pPart.edit.html">Français</a>]
+    [<a href="../../ja/html/ref-model.pPart.edit.html">日本語</a>]
+    [<a href="../../ko/html/ref-model.pPart.edit.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-model.pPart.edit.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

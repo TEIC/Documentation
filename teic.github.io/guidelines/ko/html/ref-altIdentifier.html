@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI element altIdentifier  (alternative identifier) </title><meta property="Language" content="ko" /><meta property="DC.Title" content="TEI element altIdentifier  (alternative identifier) " /><meta property="DC.Language" content="SCHEME=iso639 ko" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    전자 텍스트 부호화 및 교환에 대한 지침</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">가정</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C Elements</a></li></ul></div><div><h3 class="oddSpec" id="altIdentifier">&lt;altIdentifier&gt;</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">&lt;altIdentifier&gt; </span>(대체 확인소) 이전의 카탈로그의 번호와 같이 원고에 사용된 대체 또는 이전에 구조화된 확인소를 포함한다. [<a class="link_ptr" href="MS.html#msid" title="The Manuscript Identifier"><span class="headingNumber">10.4 </span>The Manuscript Identifier</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">모듈</span></td><td class="wovenodd-col2">msdescription — Manuscript Description</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">속성</span></td><td class="wovenodd-col2"><a class="link_odd" title="TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다." href="ref-att.global.html">att.global</a> (<span class="attribute">@xml:id</span>, <span class="attribute">@n</span>, <span class="attribute">@xml:lang</span>, <span class="attribute">@xml:base</span>, <span class="attribute">@xml:space</span>)  (<a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition</a> (<span class="attribute">@rend</span>, <span class="attribute">@style</span>, <span class="attribute">@rendition</span>))  (<a class="link_odd" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking</a> (<span class="attribute">@corresp</span>, <span class="attribute">@synch</span>, <span class="attribute">@sameAs</span>, <span class="attribute">@copyOf</span>, <span class="attribute">@next</span>, <span class="attribute">@prev</span>, <span class="attribute">@exclude</span>, <span class="attribute">@select</span>))  (<a class="link_odd" title="텍스트의 일정한 부분의 특별한 분석 혹은 해석과 관련된 부가적인 전반적 속성들을 제공한다." href="ref-att.global.analytic.html">att.global.analytic</a> (<span class="attribute">@ana</span>))  (<a class="link_odd" title="&lt;facsimile&gt; 요소 내에서 이미지 또는 표면부와 관련될 수 있는 요소" href="ref-att.global.facs.html">att.global.facs</a> (<span class="attribute">@facs</span>))  (<a class="link_odd" title="" href="ref-att.global.change.html">att.global.change</a> (<span class="attribute">@change</span>))  (<a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a> (<span class="attribute">@cert</span>, <span class="attribute">@resp</span>))  (<a class="link_odd" title="" href="ref-att.global.source.html">att.global.source</a> (<span class="attribute">@source</span>)) <a class="link_odd" title="요소의 분류 또는 하위분류에서 사용될 수 있는 속성을 제공한다." href="ref-att.typed.html">att.typed</a> (<span class="attribute">@type</span>, <span class="attribute">@subtype</span>) </td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">에 의해 포함된</span></td><td class="wovenodd-col2"><div class="parent"><div class="specChildren"><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="" href="ref-msFrag.html">msFrag</a> <a class="link_odd_elementSpec" title="(원고 확인소) 기술되고 있는 원고를 식별하기 위해 필요한 정보를 포함한다." href="ref-msIdentifier.html">msIdentifier</a></span></div><div class="specChild"><span class="specChildModule">namesdates: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="" href="ref-objectIdentifier.html">objectIdentifier</a></span></div></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">포함할 수 있다</span></td><td class="wovenodd-col2"><div class="specChildren"><div class="specChild"><span class="specChildModule">core: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="" href="ref-note.html">note</a></span></div><div class="specChild"><span class="specChildModule">header: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(식별 숫자) 서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다." href="ref-idno.html">idno</a></span></div><div class="specChild"><span class="specChildModule">msdescription: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="하나의 장서고 내에 반드시 위치할 필요는 없지만 원고의 모음집 이름을 포함한다." href="ref-collection.html">collection</a> <a class="link_odd_elementSpec" title="식별된 원고를 보유하고 있는 대학교 또는 대학 도서관과 같은 조직의 이름을 포함한다." href="ref-institution.html">institution</a> <a class="link_odd_elementSpec" title="기관의 부분을 형성하며, 원고를 보유하고 있는 보유 서고명을 포함한다." href="ref-repository.html">repository</a></span></div><div class="specChild"><span class="specChildModule">namesdates: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="둘 이상의 민족국가 또는 국가로 구성된 지리-정치적 단위의 이름을 포함한다." href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="하나의 블록보다 큰 국가, 지역, 식민지, 또는 공화국, 또는 하나의 블록보다 작은 지역의 상급 행정기관과 같은, 지리-정치 단위명을 포함한다." href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="교구, 구 또는 다른 행정 지리적 단위와 같이 거주지의 하위 구분명을 포함한다." href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="(지리명) 윈드러시 계곡 또는 시나이 산과 같이 지리적 특성과 관련된 이름" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="절대적 또는 상대적 위치명을 포함한다." href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="도보다는 작고 정착지보다는 큰 주, 성, 도와 같은 행정단위명을 포함한다." href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="하나의 지리-정치 또는 행정 단위로 식별되는 시, 읍, 마을과 같이 거주지명을 포함한다." href="ref-settlement.html">settlement</a></span></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">주석</span></td><td class="wovenodd-col2"><!-- --><p>An identifying number of some kind must be supplied if known; if it is not known, this should be stated. </p></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">예</span></td><td class="wovenodd-col2"><div id="index-egXML-d52e85048" class="pre egXML_valid"><span class="element">&lt;altIdentifier&gt;</span><br /> <span class="element">&lt;settlement&gt;</span>San Marino<span class="element">&lt;/settlement&gt;</span><br /> <span class="element">&lt;repository&gt;</span>Huntington Library<span class="element">&lt;/repository&gt;</span><br /> <span class="element">&lt;idno&gt;</span>MS.El.26.C.9<span class="element">&lt;/idno&gt;</span><br /><span class="element">&lt;/altIdentifier&gt;</span><div style="float: right;"><a href="BIB.html#UND">bibliography</a> </div><div style="float: right;"><a href="examples-altIdentifier.html">모두 보기</a> </div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;sequence&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.placeNamePart.html">model.placeNamePart</a>"<br />   <span class="attribute">expand</span>="<span class="attributevalue">sequenceOptional</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-institution.html">institution</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-repository.html">repository</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-collection.html">collection</a>"<br />   <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-idno.html">idno</a>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-note.html">note</a>" <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"/&gt;</span><br /> <span class="element">&lt;/sequence&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ko">선언</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML 형식에 따른 규약?</span><span class="RNG_XML">규약에 대한 XML 형식?</span></button><pre class="RNG_XML"><span class="element">&lt;rng:element <span class="attribute">name</span>="<span class="attributevalue">altIdentifier</span>"&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.rendition.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.linking.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.analytic.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.facs.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.change.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.responsibility.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.source.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.typed.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:group&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">placeName</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">bloc</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">country</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">region</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">settlement</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">district</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">geogName</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">institution</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">repository</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">collection</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">idno</span>"/&gt;</span><br />  <span class="element">&lt;rng:optional&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">note</span>"/&gt;</span><br />  <span class="element">&lt;/rng:optional&gt;</span><br /> <span class="element">&lt;/rng:group&gt;</span><br /><span class="element">&lt;/rng:element&gt;</span></pre><pre class="RNG_Compact">
+<span class="rnc_keyword">element</span> <span class="rnc_nc">altIdentifier</span>
+{
+   <a class="link_odd" title="TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다." href="ref-att.global.html">att.global.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition.attributes</a>,
+   <a class="link_odd" title="하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다." href="ref-att.global.linking.html">att.global.linking.attributes</a>,
+   <a class="link_odd" title="텍스트의 일정한 부분의 특별한 분석 혹은 해석과 관련된 부가적인 전반적 속성들을 제공한다." href="ref-att.global.analytic.html">att.global.analytic.attributes</a>,
+   <a class="link_odd" title="&lt;facsimile&gt; 요소 내에서 이미지 또는 표면부와 관련될 수 있는 요소" href="ref-att.global.facs.html">att.global.facs.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.change.html">att.global.change.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.source.html">att.global.source.attributes</a>,
+   <a class="link_odd" title="요소의 분류 또는 하위분류에서 사용될 수 있는 속성을 제공한다." href="ref-att.typed.html">att.typed.attributes</a>,
+   (
+      <a class="link_odd" title="절대적 또는 상대적 위치명을 포함한다." href="ref-placeName.html">placeName</a>?,
+      <a class="link_odd" title="둘 이상의 민족국가 또는 국가로 구성된 지리-정치적 단위의 이름을 포함한다." href="ref-bloc.html">bloc</a>?,
+      <a class="link_odd" title="하나의 블록보다 큰 국가, 지역, 식민지, 또는 공화국, 또는 하나의 블록보다 작은 지역의 상급 행정기관과 같은, 지리-정치 단위명을 포함한다." href="ref-country.html">country</a>?,
+      <a class="link_odd" title="도보다는 작고 정착지보다는 큰 주, 성, 도와 같은 행정단위명을 포함한다." href="ref-region.html">region</a>?,
+      <a class="link_odd" title="하나의 지리-정치 또는 행정 단위로 식별되는 시, 읍, 마을과 같이 거주지명을 포함한다." href="ref-settlement.html">settlement</a>?,
+      <a class="link_odd" title="교구, 구 또는 다른 행정 지리적 단위와 같이 거주지의 하위 구분명을 포함한다." href="ref-district.html">district</a>?,
+      <a class="link_odd" title="(지리명) 윈드러시 계곡 또는 시나이 산과 같이 지리적 특성과 관련된 이름" href="ref-geogName.html">geogName</a>?,
+      <a class="link_odd" title="식별된 원고를 보유하고 있는 대학교 또는 대학 도서관과 같은 조직의 이름을 포함한다." href="ref-institution.html">institution</a>?,
+      <a class="link_odd" title="기관의 부분을 형성하며, 원고를 보유하고 있는 보유 서고명을 포함한다." href="ref-repository.html">repository</a>?,
+      <a class="link_odd" title="하나의 장서고 내에 반드시 위치할 필요는 없지만 원고의 모음집 이름을 포함한다." href="ref-collection.html">collection</a>?,
+      <a class="link_odd" title="(식별 숫자) 서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다." href="ref-idno.html">idno</a>,
+      <a class="link_odd" title="" href="ref-note.html">note</a>?
+   )
+}</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-altIdentifier.html">English</a>]
+    [<a href="../../de/html/ref-altIdentifier.html">Deutsch</a>]
+    [<a href="../../es/html/ref-altIdentifier.html">Español</a>]
+    [<a href="../../it/html/ref-altIdentifier.html">Italiano</a>]
+    [<a href="../../fr/html/ref-altIdentifier.html">Français</a>]
+    [<a href="../../ja/html/ref-altIdentifier.html">日本語</a>]
+    [<a href="../../ko/html/ref-altIdentifier.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-altIdentifier.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">피드백</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:05:31Z.</address></div></body></html>

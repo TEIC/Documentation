@@ -1,0 +1,119 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI element textDesc  (text description) </title><meta property="Language" content="zh-TW" /><meta property="DC.Title" content="TEI element textDesc  (text description) " /><meta property="DC.Language" content="SCHEME=iso639 zh-TW" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEI指引</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">首頁</a></li><li class="subtoc"><a class="navigation" href="REF-ELEMENTS.html">C 元素</a></li></ul></div><div><h3 class="oddSpec" id="textDesc">&lt;textDesc&gt;</h3><table class="wovenodd"><tr><td colspan="2" class="wovenodd-col2"><span class="label">&lt;textDesc&gt; </span>(文本描述) 提供文本在情境特徵方面的相關描述。 [<a class="link_ptr" href="CC.html#CCAHTD" title="The Text Description"><span class="headingNumber">15.2.1 </span>The Text Description</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">組件</span></td><td class="wovenodd-col2">corpus — Language Corpora</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">屬性</span></td><td class="wovenodd-col2"><a class="link_odd" title="提供一組屬性，通用於TEI編碼標準中的所有元素。" href="ref-att.global.html">att.global</a> (<span class="attribute">@xml:id</span>, <span class="attribute">@n</span>, <span class="attribute">@xml:lang</span>, <span class="attribute">@xml:base</span>, <span class="attribute">@xml:space</span>)  (<a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition</a> (<span class="attribute">@rend</span>, <span class="attribute">@style</span>, <span class="attribute">@rendition</span>))  (<a class="link_odd" title="定義一組用於超文字連結及其他連結的屬性，當連結的附加標籤組被選擇時，這些屬性可用於所有元素。" href="ref-att.global.linking.html">att.global.linking</a> (<span class="attribute">@corresp</span>, <span class="attribute">@synch</span>, <span class="attribute">@sameAs</span>, <span class="attribute">@copyOf</span>, <span class="attribute">@next</span>, <span class="attribute">@prev</span>, <span class="attribute">@exclude</span>, <span class="attribute">@select</span>))  (<a class="link_odd" title="提供附加的全域屬性，將特定的分析或詮釋和合宜的文字結合。" href="ref-att.global.analytic.html">att.global.analytic</a> (<span class="attribute">@ana</span>))  (<a class="link_odd" title="" href="ref-att.global.facs.html">att.global.facs</a> (<span class="attribute">@facs</span>))  (<a class="link_odd" title="" href="ref-att.global.change.html">att.global.change</a> (<span class="attribute">@change</span>))  (<a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility</a> (<span class="attribute">@cert</span>, <span class="attribute">@resp</span>))  (<a class="link_odd" title="" href="ref-att.global.source.html">att.global.source</a> (<span class="attribute">@source</span>)) <a class="link_odd" title="提供屬性，用於TEI標頭內可單獨以特殊目的的屬性@decls選出的元素。" href="ref-att.declarable.html">att.declarable</a> (<span class="attribute">@default</span>) </td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">俱乐部会员</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_classSpec" title="匯集可用於元素&lt;catDesc&gt;內、並多次出現的元素" href="ref-model.catDescPart.html">model.catDescPart</a> <a class="link_odd_classSpec" title="匯集可用於元素&lt;profileDesc&gt;內，且多次出現的元素" href="ref-model.profileDescPart.html">model.profileDescPart</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">可包含在於</span></td><td class="wovenodd-col2"><div class="parent"><div class="specChildren"><div class="specChild"><span class="specChildModule">header: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(類目描述) 描述分類法中或文件類型學中的某些類目，可用短文描述的型式，或是用TEI正式元素&lt;textDesc&gt;所使用的狀況參數。" href="ref-catDesc.html">catDesc</a> <a class="link_odd_elementSpec" title="(文件背景描述) 提供文件非書目性方面的細節描述，特別是所使用的語言及次要語言、在何種情況下製作、參與人員及其環境背景。" href="ref-profileDesc.html">profileDesc</a></span></div></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">可包含</span></td><td class="wovenodd-col2"><div class="specChildren"><div class="specChild"><span class="specChildModule">corpus: </span><span class="specChildElements"><a class="link_odd_elementSpec" title="(主要途徑) 描述文本傳達的媒介或途徑。書面文本的途徑可能是印製、手稿、寫本、電子郵件等；口說文本則有廣播、電話、面對面交談等。" href="ref-channel.html">channel</a> <a class="link_odd_elementSpec" title="描述文本或文本樣本的內部結構，例如零碎的或完整的結構。" href="ref-constitution.html">constitution</a> <a class="link_odd_elementSpec" title="描述文本的特性與原創性的程度。" href="ref-derivation.html">derivation</a> <a class="link_odd_elementSpec" title="(應用領域) 描述該文本最重要的應用領域或是社會用途所在，例如私人與公共、教育、宗教等。" href="ref-domain.html">domain</a> <a class="link_odd_elementSpec" title="描述該文本內容可能被認定為想像的程度、所描繪的為虛構或真實的世界。" href="ref-factuality.html">factuality</a> <a class="link_odd_elementSpec" title="描述文本創作者與體驗者之間互動關係的規範、基數和特性，例如回應或感嘆、評論等。" href="ref-interaction.html">interaction</a> <a class="link_odd_elementSpec" title="描述文本可能被視為經過準備或自然呈現的程度。" href="ref-preparedness.html">preparedness</a> <a class="link_odd_elementSpec" title="描述該文本的一項目的或溝通功能" href="ref-purpose.html">purpose</a></span></div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">例子</span></td><td class="wovenodd-col2"><div id="index-egXML-d52e117359" class="pre egXML_valid"><span class="element">&lt;textDesc <span class="attribute">n</span>="<span class="attributevalue">非正式的家常談天</span>"&gt;</span><br /> <span class="element">&lt;channel <span class="attribute">mode</span>="<span class="attributevalue">s</span>"/&gt;</span><br /> <span class="element">&lt;constitution <span class="attribute">type</span>="<span class="attributevalue">single</span>"/&gt;</span><br /> <span class="element">&lt;derivation <span class="attribute">type</span>="<span class="attributevalue">original</span>"/&gt;</span><br /> <span class="element">&lt;domain <span class="attribute">type</span>="<span class="attributevalue">domestic</span>"/&gt;</span><br /> <span class="element">&lt;factuality <span class="attribute">type</span>="<span class="attributevalue">mixed</span>"/&gt;</span><br /> <span class="element">&lt;interaction <span class="attribute">type</span>="<span class="attributevalue">complete</span>"<br />  <span class="attribute">active</span>="<span class="attributevalue">plural</span>" <span class="attribute">passive</span>="<span class="attributevalue">many</span>"/&gt;</span><br /> <span class="element">&lt;preparedness <span class="attribute">type</span>="<span class="attributevalue">spontaneous</span>"/&gt;</span><br /> <span class="element">&lt;purpose <span class="attribute">type</span>="<span class="attributevalue">entertain</span>" <span class="attribute">degree</span>="<span class="attributevalue">high</span>"/&gt;</span><br /> <span class="element">&lt;purpose <span class="attribute">type</span>="<span class="attributevalue">inform</span>" <span class="attribute">degree</span>="<span class="attributevalue">medium</span>"/&gt;</span><br /><span class="element">&lt;/textDesc&gt;</span><div style="float: right;"><a href="BIB.html#UND">bibliography</a> </div><div style="float: right;"><a href="examples-textDesc.html">全部顯示</a> </div></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;sequence&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.textDescPart.html">model.textDescPart</a>"<br />   <span class="attribute">expand</span>="<span class="attributevalue">sequence</span>"/&gt;</span><br />  <span class="element">&lt;elementRef <span class="attribute">key</span>="<a class="link_odd" href="ref-purpose.html">purpose</a>" <span class="attribute">minOccurs</span>="<span class="attributevalue">1</span>"<br />   <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"/&gt;</span><br /> <span class="element">&lt;/sequence&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="zh-TW">宣告</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">簡潔式轉到XML式</span><span class="RNG_XML">XML式轉到簡潔式</span></button><pre class="RNG_XML"><span class="element">&lt;rng:element <span class="attribute">name</span>="<span class="attributevalue">textDesc</span>"&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.rendition.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.linking.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.analytic.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.facs.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.change.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.responsibility.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.global.source.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">att.declarable.attributes</span>"/&gt;</span><br /> <span class="element">&lt;rng:group&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">channel</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">constitution</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">derivation</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">domain</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">factuality</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">interaction</span>"/&gt;</span><br />  <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">preparedness</span>"/&gt;</span><br />  <span class="element">&lt;rng:oneOrMore&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">purpose</span>"/&gt;</span><br />  <span class="element">&lt;/rng:oneOrMore&gt;</span><br /> <span class="element">&lt;/rng:group&gt;</span><br /><span class="element">&lt;/rng:element&gt;</span></pre><pre class="RNG_Compact">
+<span class="rnc_keyword">element</span> <span class="rnc_nc">textDesc</span>
+{
+   <a class="link_odd" title="提供一組屬性，通用於TEI編碼標準中的所有元素。" href="ref-att.global.html">att.global.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.rendition.html">att.global.rendition.attributes</a>,
+   <a class="link_odd" title="定義一組用於超文字連結及其他連結的屬性，當連結的附加標籤組被選擇時，這些屬性可用於所有元素。" href="ref-att.global.linking.html">att.global.linking.attributes</a>,
+   <a class="link_odd" title="提供附加的全域屬性，將特定的分析或詮釋和合宜的文字結合。" href="ref-att.global.analytic.html">att.global.analytic.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.facs.html">att.global.facs.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.change.html">att.global.change.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.responsibility.html">att.global.responsibility.attributes</a>,
+   <a class="link_odd" title="" href="ref-att.global.source.html">att.global.source.attributes</a>,
+   <a class="link_odd" title="提供屬性，用於TEI標頭內可單獨以特殊目的的屬性@decls選出的元素。" href="ref-att.declarable.html">att.declarable.attributes</a>,
+   (
+      <a class="link_odd" title="(主要途徑) 描述文本傳達的媒介或途徑。書面文本的途徑可能是印製、手稿、寫本、電子郵件等；口說文本則有廣播、電話、面對面交談等。" href="ref-channel.html">channel</a>,
+      <a class="link_odd" title="描述文本或文本樣本的內部結構，例如零碎的或完整的結構。" href="ref-constitution.html">constitution</a>,
+      <a class="link_odd" title="描述文本的特性與原創性的程度。" href="ref-derivation.html">derivation</a>,
+      <a class="link_odd" title="(應用領域) 描述該文本最重要的應用領域或是社會用途所在，例如私人與公共、教育、宗教等。" href="ref-domain.html">domain</a>,
+      <a class="link_odd" title="描述該文本內容可能被認定為想像的程度、所描繪的為虛構或真實的世界。" href="ref-factuality.html">factuality</a>,
+      <a class="link_odd" title="描述文本創作者與體驗者之間互動關係的規範、基數和特性，例如回應或感嘆、評論等。" href="ref-interaction.html">interaction</a>,
+      <a class="link_odd" title="描述文本可能被視為經過準備或自然呈現的程度。" href="ref-preparedness.html">preparedness</a>,
+      <a class="link_odd" title="描述該文本的一項目的或溝通功能" href="ref-purpose.html">purpose</a>+
+   )
+}</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-textDesc.html">English</a>]
+    [<a href="../../de/html/ref-textDesc.html">Deutsch</a>]
+    [<a href="../../es/html/ref-textDesc.html">Español</a>]
+    [<a href="../../it/html/ref-textDesc.html">Italiano</a>]
+    [<a href="../../fr/html/ref-textDesc.html">Français</a>]
+    [<a href="../../ja/html/ref-textDesc.html">日本語</a>]
+    [<a href="../../ko/html/ref-textDesc.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-textDesc.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">回饋</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:08:02Z.</address></div></body></html>

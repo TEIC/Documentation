@@ -1,0 +1,99 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)--><title>TEI macro macro.phraseSeq  (phrase sequence) </title><meta property="Language" content="ja" /><meta property="DC.Title" content="TEI macro macro.phraseSeq  (phrase sequence) " /><meta property="DC.Language" content="SCHEME=iso639 ja" /><meta property="DC.Creator.Address" content="tei@oucs.ox.ac.uk" /><meta charset="utf-8" /><link href="guidelines.css" rel="stylesheet" type="text/css" /><link href="odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="guidelines-print.css" /><script type="text/javascript" src="jquery-1.2.6.min.js"></script><script type="text/javascript" src="columnlist.js"></script><script type="text/javascript" src="popupFootnotes.js"></script><script type="text/javascript">
+        $(function() {
+         $('ul.attrefs-class').columnizeList({cols:3,width:30,unit:'%'});
+         $('ul.attrefs-element').columnizeList({cols:3,width:30,unit:'%'});
+         $(".displayRelaxButton").click(function() {
+           $(this).parent().find('.RNG_XML').toggle();
+           $(this).parent().find('.RNG_Compact').toggle();
+         });
+         $(".tocTree .showhide").click(function() {
+          $(this).find(".tocShow,.tocHide").toggle();
+          $(this).parent().find("ul.continuedtoc").toggle();
+	  });
+        })
+    </script><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div id="container"><div id="banner"><img src="Images/banner.jpg" alt="Text Encoding Initiative logo and banner" /></div></div><div class="mainhead"><h1>P5: 
+    TEIガイドライン</h1><p>Version 3.5.0. Last updated on
+	29th January 2019, revision 3c0c64e</p></div><div class="main-content"><div class="miniTOC miniTOC_right"><ul class="subtoc"><li class="subtoc"></li><li class="subtoc"></li><li class="subtoc"><a class="navigation" href="index.html">ホーム</a></li><li class="subtoc"><a class="navigation" href="REF-MACROS.html">E データ型とマクロ</a></li></ul></div><div><h3 class="oddSpec" id="macro.phraseSeq">macro.phraseSeq</h3><table class="wovenodd"><tr><td colspan="2"><span class="label">macro.phraseSeq</span>  (phrase sequence) 一連の文字列と句レベル要素を定義する． [<a class="link_ptr" href="ST.html#STECST" title="Standard Content Models"><span class="headingNumber">1.4.1 </span>Standard Content Models</a>]</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">モジュール</span></td><td class="wovenodd-col2">tei — The TEI Infrastructure</td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">当該モジュールを使用するもの</span></td><td class="wovenodd-col2"><div class="parent"><a class="link_odd_elementSpec" title="(省略形) あらゆる種類の名称の省略を一つ含む." href="ref-abbr.html">abbr</a> <a class="link_odd_elementSpec" title="登場人物リスト中の役者名を示す．" href="ref-actor.html">actor</a> <a class="link_odd_elementSpec" title="(追加的名称) 付加的な名前要素を示す．例えば，愛称，渾名，別名などの個人名．" href="ref-addName.html">addName</a> <a class="link_odd_elementSpec" title="住所情報を記述する行を示す．" href="ref-addrLine.html">addrLine</a> <a class="link_odd_elementSpec" title="人物が所属している，またはしていた団体に関する情報を示す．例えば，雇 い主や出資者など．" href="ref-affiliation.html">affiliation</a> <a class="link_odd_elementSpec" title="書誌情報における，著作者(個人・団体)の名前を示す．書誌項目における歴 任者を示す第一位の記述を示す．" href="ref-author.html">author</a> <a class="link_odd_elementSpec" title="書誌情報の参照範囲を示す．例えば，ページ番号，下部単位の名前など．" href="ref-biblScope.html">biblScope</a> <a class="link_odd_elementSpec" title="人物の出生に関する情報を示す．例えば，日時や場所など．" href="ref-birth.html">birth</a> <a class="link_odd_elementSpec" title="複数の国や地域を跨ぐ地政学的な名前を示す．" href="ref-bloc.html">bloc</a> <a class="link_odd_elementSpec" title="古典籍において，冊子や初期刊本の折丁の順番を正しくするために使用され るシステムを示す．一般には，ページの脚に注釈(つなぎことば)を記す．" href="ref-catchwords.html">catchwords</a> <a class="link_odd_elementSpec" title="" href="ref-citedRange.html">citedRange</a> <a class="link_odd_elementSpec" title="言語学上の節を示す．" href="ref-cl.html">cl</a> <a class="link_odd_elementSpec" title="当該手書き資料のコロフォン(奥付情報)を示す．例えば，制 作の日時，場所，主体，制作主体，制作理由など．" href="ref-colophon.html">colophon</a> <a class="link_odd_elementSpec" title="1つの国家に相当する地政学的な単位名を示す．国家，植民地，共同体・連 邦を含む．これは，行政単位上の地域よりも大きい単位で，連合より小さな 単位である．" href="ref-country.html">country</a> <a class="link_odd_elementSpec" title="人物の死亡に関する情報を示す．例えば，日付や場所など．" href="ref-death.html">death</a> <a class="link_odd_elementSpec" title="言語上，異なる語句を示す．例えば，古語，技術語，方言，忌諱語など．ま た，特定グループでしか通用しない特殊言語など．" href="ref-distinct.html">distinct</a> <a class="link_odd_elementSpec" title="テキストの頒布に責任を持つ人物または団体の名前を示す．" href="ref-distributor.html">distributor</a> <a class="link_odd_elementSpec" title="場所を示す要素として，集落より小さい名前を示す．例えば，小教区や区な ど，行政上・地勢上の単位．" href="ref-district.html">district</a> <a class="link_odd_elementSpec" title="タイトルページにある(一般には署名欄にある)当該文書の著者名を示す．" href="ref-docAuthor.html">docAuthor</a> <a class="link_odd_elementSpec" title="文書の日付を示す．一般にはタイトルページに書かれている．" href="ref-docDate.html">docDate</a> <a class="link_odd_elementSpec" title="テキストの版の詳細を示す．" href="ref-edition.html">edition</a> <a class="link_odd_elementSpec" title="書誌情報における，第二位の責任者を示す．個人，団体，組織, 編集者，編 纂者，翻訳者の名前など．" href="ref-editor.html">editor</a> <a class="link_odd_elementSpec" title="人物の学歴を示す．" href="ref-education.html">education</a> <a class="link_odd_elementSpec" title="例を示す．" href="ref-eg.html">eg</a> <a class="link_odd_elementSpec" title="eメールを届けるeメールアドレスを示す．" href="ref-email.html">email</a> <a class="link_odd_elementSpec" title="省略形の元の表現を示す．" href="ref-expan.html">expan</a> <a class="link_odd_elementSpec" title="手書き資料の巻末語句(explicit)を示す．すなわち，当該テ キストの終了を示す語句のことである．これは，朱書き部分(rubric)やコロ フォン(奥付情報)とは異なる．" href="ref-explicit.html">explicit</a> <a class="link_odd_elementSpec" title="電子・非電子テキストのおよその大きさを任意の単位で示す．" href="ref-extent.html">extent</a> <a class="link_odd_elementSpec" title="人物の信仰・宗教を示す．" href="ref-faith.html">faith</a> <a class="link_odd_elementSpec" title="テキスト部分の終わりを示す文字列を示す．その著者やタイトルを含むこと がある．一般には，テキスト中にある朱書きや，大きさや種類の異なる字体 など，異なる視覚効果で示されている．" href="ref-finalRubric.html">finalRubric</a> <a class="link_odd_elementSpec" title="人物が活躍した時期に関する情報を示す．" href="ref-floruit.html">floruit</a> <a class="link_odd_elementSpec" title="記述のベースで使われている言語と異なる言語による語句を定義する．" href="ref-foreign.html">foreign</a> <a class="link_odd_elementSpec" title="人物に与えられた名前のうち，名の部分，すなわち個人を表す部分を示す．" href="ref-forename.html">forename</a> <a class="link_odd_elementSpec" title="版面の周りにある柱やノンブルを示す．" href="ref-fw.html">fw</a> <a class="link_odd_elementSpec" title="似た名前を区別する為に，相対的な年齢関係，世代関係などの情報を示す．" href="ref-genName.html">genName</a> <a class="link_odd_elementSpec" title="当該文書中にある要素&lt;geo&gt;の内容が表す座標の表記法を示す．" href="ref-geoDecl.html">geoDecl</a> <a class="link_odd_elementSpec" title="地理上の名前，例えば，谷，山などに含まれている地物を特定する名前を示 す．" href="ref-geogFeat.html">geogFeat</a> <a class="link_odd_elementSpec" title="ウィンドラッシュ峡谷，シナイ山などの地理的特性に関する名前．" href="ref-geogName.html">geogName</a> <a class="link_odd_elementSpec" title="語句の説明や定義を示す．" href="ref-gloss.html">gloss</a> <a class="link_odd_elementSpec" title="用語集などのリスト構造における各項目の見出しを示す．" href="ref-headItem.html">headItem</a> <a class="link_odd_elementSpec" title="(リストラベルの表題) リストなどにおけるラベルや，用語集などにおけ る語彙を示す．" href="ref-headLabel.html">headLabel</a> <a class="link_odd_elementSpec" title="紋章学的記述を含む．例えば，紋章記述や紋章など．" href="ref-heraldry.html">heraldry</a> <a class="link_odd_elementSpec" title="手書き資料の冒頭語句(incipit)を示す．冒頭語句とは，テキ ストの書き出しにある語句で，これに先行してある朱書き部分を除いた，当 該作品を特定するに充分な文量の部分である． 冒頭語句は，タイトル部分において，作品への参照を示す手段としてよく使 用されていた．" href="ref-incipit.html">incipit</a> <a class="link_odd_elementSpec" title="リスト中の項目に関連するラベルを示す．用語集においては，定義される用 語を示す．" href="ref-label.html">label</a> <a class="link_odd_elementSpec" title="手書き資料を構成する素材を表す語句を示す．" href="ref-material.html">material</a> <a class="link_odd_elementSpec" title="ある対象や商品の大きさを表す語句を示す．一般には，数値，単位，商品名 を含む．" href="ref-measure.html">measure</a> <a class="link_odd_elementSpec" title="言及された語句を示す．" href="ref-mentioned.html">mentioned</a> <a class="link_odd_elementSpec" title="固有名詞．" href="ref-name.html">name</a> <a class="link_odd_elementSpec" title="名前の中で使われているが，その一部としては見られない，関連する句やリ ンクを示す．例えば，“van der”や “of”など．" href="ref-nameLink.html">nameLink</a> <a class="link_odd_elementSpec" title="人物の国籍や市民権の形式的でない解説を示す．" href="ref-nationality.html">nationality</a> <a class="link_odd_elementSpec" title="各種形式による数値を示す．" href="ref-num.html">num</a> <a class="link_odd_elementSpec" title="" href="ref-objectName.html">objectName</a> <a class="link_odd_elementSpec" title="" href="ref-objectType.html">objectType</a> <a class="link_odd_elementSpec" title="当該表現に含まれている2つの場所名，日付，時間のオフセットの方向を示 す，相対的な時空表現の部分を示す．" href="ref-offset.html">offset</a> <a class="link_odd_elementSpec" title="組織の名前を示す．" href="ref-orgName.html">orgName</a> <a class="link_odd_elementSpec" title="手書き資料が生まれた場所を特定するための場所を示す．" href="ref-origPlace.html">origPlace</a> <a class="link_odd_elementSpec" title="人物の固有名詞を示す．例えば，名，姓，敬称，追加名など．" href="ref-persName.html">persName</a> <a class="link_odd_elementSpec" title="文法上の句を示す．" href="ref-phr.html">phr</a> <a class="link_odd_elementSpec" title="絶対的，相対的場所名を示す．" href="ref-placeName.html">placeName</a> <a class="link_odd_elementSpec" title="書誌項目が出版された場所の名前を示す．" href="ref-pubPlace.html">pubPlace</a> <a class="link_odd_elementSpec" title="書誌項目の出版や頒布に責任のある団体の名前を示す．" href="ref-publisher.html">publisher</a> <a class="link_odd_elementSpec" title="行政上の単位の名前を示す．例えば，地方，郡，居住地など．居住地よりも 広く，国家より狭い地域．" href="ref-region.html">region</a> <a class="link_odd_elementSpec" title="人物の，現在または過去の住居を示す．" href="ref-residence.html">residence</a> <a class="link_odd_elementSpec" title="配役リスト中にある，役名を示す．" href="ref-role.html">role</a> <a class="link_odd_elementSpec" title="舞台芸術における登場人物の役を示す．" href="ref-roleDesc.html">roleDesc</a> <a class="link_odd_elementSpec" title="参照されるものの，社会的な役割や地位，例えば，公式な役職名や地位など を示す，名前要素を示す" href="ref-roleName.html">roleName</a> <a class="link_odd_elementSpec" title="(参照文字列) 一般的な意味での名前や参照文字列．" href="ref-rs.html">rs</a> <a class="link_odd_elementSpec" title="朱書き部分，すなわち，手書き資料の見出し部分のテキスト を示す．手書き資料中にあるあるテキスト部分の始点を示すもので，よく著 者やタイトルが記されている．テキストとは異なって示されており，一般に は赤いインクで書かれている．または，異なる大きさや種類の字体が使われ るなど，ある視覚効果が使われている．" href="ref-rubric.html">rubric</a> <a class="link_odd_elementSpec" title="文に相当するテキスト単位を示す．" href="ref-s.html">s</a> <a class="link_odd_elementSpec" title="ユニークな識別子を示すために，冊子中の特定点にある単語を示す．" href="ref-secFol.html">secFol</a> <a class="link_odd_elementSpec" title="地政学上または行政上の単位としてある市，街，村などの居住地の名前を示 す．" href="ref-settlement.html">settlement</a> <a class="link_odd_elementSpec" title="人物の性別を示す．" href="ref-sex.html">sex</a> <a class="link_odd_elementSpec" title="著者や語り手が，責任を持ちたくない語句を示す．例えば，英語 文化圏では，引用符号で囲んだり，イタリック体で示される部分．" href="ref-soCalled.html">soCalled</a> <a class="link_odd_elementSpec" title="ある個人の，社会的・経済的状態を示す，形式的でない解説を示す．" href="ref-socecStatus.html">socecStatus</a> <a class="link_odd_elementSpec" title="舞台関連の文章に出てくる1人以上の発話者の名前を示す．見出しやラベル として書かれる．" href="ref-speaker.html">speaker</a> <a class="link_odd_elementSpec" title="印などにある語句を示す．" href="ref-stamp.html">stamp</a> <a class="link_odd_elementSpec" title="住所情報としての，通りを表す完全情報を示す．建物の名前や番号，通りの 名前など．" href="ref-street.html">street</a> <a class="link_odd_elementSpec" title="(継承される)苗字を示す．姓名中の名，洗礼名，愛称，別称とは異なる．" href="ref-surname.html">surname</a> <a class="link_odd_elementSpec" title="技術用語とされる単一語，複数語，記号表示を示す．" href="ref-term.html">term</a> <a class="link_odd_elementSpec" title="手書き資料中の言語や書記システムを示す．(要素&lt;langUsage&gt;にあ る情報と対位する)" href="ref-textLang.html">textLang</a> <a class="link_odd_elementSpec" title="" href="ref-unit.html">unit</a> <a class="link_odd_elementSpec" title="すかし模様などを表す語句を示す．" href="ref-watermark.html">watermark</a> <a class="link_odd_elementSpec" title="読みの元となる文献を表すひとつ以上の文献記号のリストを示す．" href="ref-wit.html">wit</a></div></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">Content model</span></td><td class="wovenodd-col2"><pre class="eg"><span class="element">&lt;content&gt;</span><br /> <span class="element">&lt;alternate <span class="attribute">minOccurs</span>="<span class="attributevalue">0</span>"<br />  <span class="attribute">maxOccurs</span>="<span class="attributevalue">unbounded</span>"&gt;</span><br />  <span class="element">&lt;textNode/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.gLike.html">model.gLike</a>"/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.qLike.html">model.qLike</a>"/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.phrase.html">model.phrase</a>"/&gt;</span><br />  <span class="element">&lt;classRef <span class="attribute">key</span>="<a class="link_odd" href="ref-model.global.html">model.global</a>"/&gt;</span><br /> <span class="element">&lt;/alternate&gt;</span><br /><span class="element">&lt;/content&gt;</span></pre></td></tr><tr><td class="wovenodd-col1"><span class="label" lang="ja">宣言</span></td><td class="wovenodd-col2"><div class="displayRelax"><button class="displayRelaxButton"><span class="RNG_Compact">XML表記</span><span class="RNG_XML">簡易表記</span></button><pre class="RNG_XML"><span class="element">&lt;rng:define <span class="attribute">name</span>="<span class="attributevalue">macro.phraseSeq</span>"&gt;</span><br /> <span class="element">&lt;rng:zeroOrMore&gt;</span><br />  <span class="element">&lt;rng:choice&gt;</span><br />   <span class="element">&lt;rng:text/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.gLike</span>"/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.qLike</span>"/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.phrase</span>"/&gt;</span><br />   <span class="element">&lt;rng:ref <span class="attribute">name</span>="<span class="attributevalue">model.global</span>"/&gt;</span><br />  <span class="element">&lt;/rng:choice&gt;</span><br /> <span class="element">&lt;/rng:zeroOrMore&gt;</span><br /><span class="element">&lt;/rng:define&gt;</span></pre><pre class="RNG_Compact">
+macro.phraseSeq =
+   ( text | <a class="link_odd" title="ユニコードになる文字やグリフを示す要素をまとめる．" href="ref-model.gLike.html">model.gLike</a> | <a class="link_odd" title="塊レベル要素内または間で出現可能な，強調部分と関連する要素をまとめる．" href="ref-model.qLike.html">model.qLike</a> | <a class="link_odd" title="独立した語句レベルに出現する要素をまとめる．" href="ref-model.phrase.html">model.phrase</a> | <a class="link_odd" title="TEIデータ内のどこでも出現可能な要素をまとめる．" href="ref-model.global.html">model.global</a> )*</pre></div></td></tr></table></div></div><div class="stdfooter autogenerated"><p>
+    [<a href="../../en/html/ref-macro.phraseSeq.html">English</a>]
+    [<a href="../../de/html/ref-macro.phraseSeq.html">Deutsch</a>]
+    [<a href="../../es/html/ref-macro.phraseSeq.html">Español</a>]
+    [<a href="../../it/html/ref-macro.phraseSeq.html">Italiano</a>]
+    [<a href="../../fr/html/ref-macro.phraseSeq.html">Français</a>]
+    [<a href="../../ja/html/ref-macro.phraseSeq.html">日本語</a>]
+    [<a href="../../ko/html/ref-macro.phraseSeq.html">한국어</a>]
+    [<a href="../../zh-TW/html/ref-macro.phraseSeq.html">中文</a>]
+    </p><hr /><div class="footer"><a class="plain" href="http://www.tei-c.org/About/">TEI Consortium</a> | <a class="plain" href="http://www.tei-c.org/About/contact.xml">ご意見・ご感想</a></div><hr /><address><br />TEI Guidelines <a class="link_ref" href="AB.html#ABTEI4">Version</a> <a class="link_ref" href="../../readme-3.5.0.html">3.5.0</a>. Last updated on <span class="date">29th January 2019</span>, revision <a class="link_ref" href="https://github.com/TEIC/TEI/commit/3c0c64e">3c0c64e</a>. This page generated on 2019-02-08T18:04:43Z.</address></div></body></html>
