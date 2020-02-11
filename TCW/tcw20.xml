@@ -24,6 +24,7 @@ $LastChangedRevision: 8769 $
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2020-02-10" who="EBB">Adding guidance on how to provide supporting explanation with remarks and with paragraphs within exempla.</change>
       <change when="2020-02-03" who="MS">Changed link to TCW 24.</change>
       <change when="2019-12-26" who="EBB">Revised explanation of how to work in repo branches other than dev branch.</change>
       <change when="2018-09-16" who="MDH">Linked to schema that actually exists, and tweaked to handle the fallout.</change>
@@ -192,7 +193,13 @@ processing instruction. If you think of other content that could be generated in
           <p>The purpose of an example is to illustrate a specific element or feature. Do not
             include irrelevant encoding which does not contribute to this primary goal. If such
             encoding is unavoidable (eg to make your example valid), then it must be explained in
-            the supporting text.</p>
+            the supporting text. You may provide supporting explanation for an example in one of two ways: 
+            in a <gi>p</gi> element within the <gi>exemplum</gi>, or in a <gi>remarks</gi> element. 
+            A <gi>p</gi> element within an <gi>exemplum</gi> should only be used for an explanation specific to that particular example. 
+          A <gi>remarks</gi> element should provide explanation for the usage of an element or attribute and need not be tied to a specific example, 
+            though it may refer to one. Be careful when writing a supporting explanation not to refer to an example as 
+            <q>above</q> or <q>below</q> the explanation, or to indicate the <q>first</q> or <q>second</q> example in a series since 
+            the rendering of the Guidelines could change and examples could change order or position as new ones are added.</p>
           <p>Wherever possible, choose your examples from real documents and provide bibliographic
             citations for them, either:
             <list>
@@ -213,6 +220,7 @@ processing instruction. If you think of other content that could be generated in
           broken table layout in the reference page. If you see this in the output, you can fix it 
           by adding hard-coded linebreaks at suitable points in the example code.</p>
         </div>
+        
         <div xml:id="encoding">
           <head>Good encoding practice</head>
           <p>Good encoding practice will ensure not only valid but 

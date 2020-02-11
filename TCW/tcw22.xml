@@ -24,6 +24,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2020-02-10" who="#EBB">Update all references about ssh to the tei server to the new HumaNum server consistently. Correct small grammatical errors.</change>
       <change when="2019-02-04" who="#EM">Add updates and clarifications learned from last release.</change>
       <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
       <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
@@ -72,8 +73,8 @@
 
       <div xml:id="githubPackages">
         <head>Packages on GitHub</head>
-        <p>The TEI maintains a number of distinct repository on GitHub, under the
-            <ref target="https://github.com/TEIC">TEIC</ref> organization. The main repository for the developing P5 Guidelines
+        <p>The TEI maintains a number of distinct repositories on GitHub under the
+            <ref target="https://github.com/TEIC">TEIC</ref> organization. The main repository for developing the P5 Guidelines
           and associated schemas is <ref target="https://github.com/TEIC/TEI">TEIC/TEI</ref>, and the TEI Stylesheets, the code for
           the Roma web application, and the source code for the Oxygen TEI plugin can be found in
             <ref target="https://github.com/TEIC/Stylesheets">TEIC/Stylesheets</ref>, 
@@ -104,7 +105,7 @@
               <item>Send the public key to the Council Chair, who will forward it on to the system
                 administrator.</item>
             </list> Make sure you get this set up well in advance of the release day, and make sure
-            you can ssh tei@tei-c.org successfully. </item>
+            you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. </item>
 
           <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers (their URLs
             are below). Take a little time to watch them work, and see how a push to the GitHub
@@ -120,7 +121,7 @@
         <list>
           <item> A copy of the public key that will enable you to sync the release zip with
             SourceForge. <list>
-              <item>log in to the tei server (ssh tei@tei-c.org; this requires that you've completed
+              <item>log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you've completed
                 the other public key step above).</item>
               <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
               <item>paste the result into a text editor and remove any linebreaks added by the
