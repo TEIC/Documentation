@@ -112,7 +112,7 @@
             you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. </item>
 
           <item>Some familiarity with the three TEI Jenkins Continuous Integration Servers.
-              <list>
+              <list type="ordered">
                 <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
                 <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
                 <item><ref target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</ref></item>
