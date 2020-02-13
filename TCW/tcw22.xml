@@ -353,7 +353,8 @@
           <item>
             <hi rend="bold">Update tags on GitHub</hi><lb/> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
-            You can do this from the command line on your own computer. Still in the master branch,
+            You can do this from the command line on your own computer. Before moving forward,
+            be sure to do a git pull and update your master branch. Then, still in the master branch,
             do:<lb/>
             <code>git tag -a P5_Release_X.X.X -m "Release X.X.X of the TEI Guidelines."</code><lb/>
             where X.X.X is your new release. Then<lb/>
