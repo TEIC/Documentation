@@ -364,7 +364,7 @@
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the TEI Tags page at <ref
             target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on GitHub. You should
             see the tag you just pushed there. Click on it and then click on "Edit Release". Add a link to the release notes README, which should be at
-            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html into the text box. Add a copy of the zipped
+            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text box. Add a copy of the zipped
             release by downloading it from <ref
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
               >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then uploading it to the release page. </item>
@@ -447,9 +447,7 @@
             Council Chair. They will announce the release to the TEI-L mailing list, including the
             text of P5/ReleaseNotes/readme-X.X.X.xml in plain text form (which can be generated
             using the "readme" profile for teitotxt), and place an announcement on the Text Encoding
-            Initiative Newsfeed blog in the category of 'News'. They will also update the table of
-            previous releases at <ref target="https://tei-c.org/guidelines/p5/#section-2"
-              >https://tei-c.org/guidelines/p5/#section-2</ref>.</item>
+            Initiative Newsfeed blog in the category of 'News'. </item>
           <item><hi rend="bold">Lift the freeze on committing changes to the repository</hi><lb/>
             Write to the TEI Council list and let them know that they can once again start
             committing changes to the repository.</item>
