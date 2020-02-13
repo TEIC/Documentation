@@ -439,6 +439,13 @@
                   <code>http://downloads.sourceforge.net/project/tei/tei-oxygen/teioxygen-2.6.0-7.9.0.zip</code></item>
                 
               </item>-->
+              <!-- 2020-02-13 ebb: During today's release, we did the following somewhat problematic steps to generate the plugin. 
+                1) Generate a zip file using the ant instructions above.
+                2) Make a release on the tei-oxygen GitHub repo, and attach the zip file to it.
+                NOTE: We could not add this to the tei-c.org server according to the posted instructions here . 
+                So we "did this by hand" as the tei-user logging in as we did to post the Guidelines and Stylesheets release files to the Vault.
+              -->
+              
             </list>
           </item>
 
