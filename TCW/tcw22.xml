@@ -165,7 +165,7 @@
 
         <list type="ordered">
           <head>1-2 weeks before release:</head>
-          <item>Inform the Jenkins maintainers (who may not be on the Council listserv, and the 
+          <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the 
             TEI sysadmin, of the pending release date, so that they can be available or on-call. </item>
           <item>Ask one of the Jenkins maintainers (currently Martin Holmes, Peter Stadler, and Raffaele Viglianti) 
             to run a link check on the Guidelines and fix broken links in the dev branch. </item>
@@ -437,15 +437,23 @@
             committing changes to the repository.</item>
 
           <item><hi rend="bold">Increment the build number for the next release cycle</hi><lb/>
+            Recalling how release preparation requires confirmation of version number,
+            use your best judgment to determine the version number for the next release (in consultation with Council,
+            if possible). TEI version numbers are based on the <ref target="http://www.unicode.org/versions/"
+              >system used by the Unicode Consortium</ref> but with the first digit for major
+            changes, the second for schema-changing revisions, and the third for
+            non-schema-changing revisions. When the first or second digit is incremented, the
+            following digit or digits is set to zero. 
+            
+            <!-- Revisit version control instructions at F2F (JL, 2020-02-13) -->
+            
             After the release process has been completed, the release number for both P5 and the
-            Stylesheets needs to be updated. Edit the P5/VERSION file and the Stylesheets/VERSION
+            Stylesheets needs to be updated. On the dev branch, edit the P5/VERSION file and the Stylesheets/VERSION
             file to the correct numbers. These files contain nothing except the bare version number. 
             It should be incremented appropriately, and "a" added to the end of it, so if for example 
             the release was number 2.8.0, you would change the number in the file to:<lb/>
             <code>2.9.0a</code><lb/> signifying that the versions built subsequent to the release
             are now in the alpha stage. </item>
-          
-            <!-- Add clarifying info about how to choose version numbers here in Step 24. (JL, 2020-02-13) -->
 
         </list>
 
