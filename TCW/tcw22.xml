@@ -362,7 +362,7 @@
           </item>
 
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the TEI Tags page at <ref
-            target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> page on GitHub. You should
+            target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on GitHub. You should
             see the tag you just pushed there. Click on it and then click on "Edit Release". Add a link to the release notes README, which should be at
             https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html into the text box. Add a copy of the zipped
             release by downloading it from <ref
