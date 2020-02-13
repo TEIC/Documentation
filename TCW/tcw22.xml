@@ -24,6 +24,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2020-02-13" who="#JL">Update all references, and add links, to Jenkins servers. Revise instructions regarding release version numbers.</change>
       <change when="2020-02-10" who="#EBB">Update all references about ssh to the tei server to the new HumaNum server consistently. Correct small grammatical errors.</change>
       <change when="2019-02-04" who="#EM">Add updates and clarifications learned from last release.</change>
       <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
@@ -107,8 +108,13 @@
             </list> Make sure you get this set up well in advance of the release day, and make sure
             you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. </item>
 
-          <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers (their URLs
-            are below). Take a little time to watch them work, and see how a push to the GitHub
+          <item>Some familiarity with the three TEI Jenkins Continuous Integration Servers.
+              <list>
+                <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
+                <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
+                <item><ref target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</ref></item>
+              </list>
+            Take a little time to watch them work, and see how a push to the GitHub
             repository causes them to start building TEI packages. There are three specific build
             jobs associated with P5, and they run in a fixed sequence.</item>
           <item>Access to the <ref target="https://tei-c.slack.com">TEI Council Slack</ref> 
@@ -157,7 +163,7 @@
         <list type="ordered">
           <head>1-2 weeks before release:</head>
           <item>Inform the Jenkins maintainers (who may not be on the Council listserv, and the 
-            TEI sysadmin, of the pending release date, so that they can be available or on-call.</item>
+            TEI sysadmin, of the pending release date, so that they can be available or on-call. </item>
           <item>Ask one of the Jenkins maintainers (currently Martin Holmes and Peter Stadler) 
             to run a link check on the Guidelines and fix broken links in the dev branch</item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
@@ -201,8 +207,8 @@
 	  systems to add a build of the release branch so that commits
 	  pushed there are properly tested, and advise them of the
 	  release schedule. Remember that the maintainers (currently
-	  Martin Holmes and Peter Stadler) may not be on the Council
-	  list.</item>
+	  Martin Holmes, Peter Stadler, and Raffaele Viglianti) may not be on the Council
+	  list. Verify with the maintainers that all Jenkins servers are functioning properly. </item>
           <item>Pushes to the release branch should be merged back into dev regularly:
 	  <lb/><code>git checkout dev</code>
 	  <lb/><code>git merge release-X.X.X</code></item>
@@ -222,10 +228,7 @@
             <code>2.8.2beta</code><lb/> For the release process, you need to remove the letters from
             the end, leaving a pure version number:<lb/>
             <code>2.8.2</code><lb/> This changes the release from beta (or possibly alpha) to the
-            actual release version number. After the release process has been completed, the number
-            should be incremented appropriately, and "alpha" added to the end of it:<lb/>
-            <code>2.8.3alpha</code><lb/> signifying that the versions built subsequent to the
-            release are now in the alpha stage. </item>
+            actual release version number. </item>
 
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
@@ -251,8 +254,8 @@
               <item><ptr target="http://jenkins.tei-c.org/"/></item>
               <item><ptr target="http://jenkins2.tei-c.org/"/></item>
             </list> And now you wait while the Jenkins servers build the packages. This can
-            take a couple of hours, so be patient. Both of the Jenkins servers should behave
-            identically, and they should both build all three TEI packages successfully. 
+            take a couple of hours, so be patient. All of the Jenkins servers should behave
+            identically, and they should all build all three TEI packages successfully. 
             <hi rend="bold">Note</hi>: The P5 and Stylesheets builds have reciprocal dependencies,
             so the first build of either the Stylesheets or the Guidelines may fail just because
             there isn't yet a current build of the other for it to use. This isn't a cause for
@@ -262,7 +265,7 @@
 	    changing how the dependency is managed).</item>
           <item><hi rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</hi><lb/> When all builds have
-            completed on both servers, click on the job number of the last build for each of the
+            completed on all Jenkins servers, click on the job number of the last build for each of the
             three TEI jobs to make sure that it was triggered by the commit that you made in the
             previous step (you should see your own commit message on the build page). Make sure that
             all builds were successful (they should have green balls next to them). </item>
@@ -438,6 +441,8 @@
             the release was number 2.8.0, you would change the number in the file to:<lb/>
             <code>2.9.0a</code><lb/> signifying that the versions built subsequent to the release
             are now in the alpha stage. </item>
+          
+            <!-- Add clarifying info about how to choose version numbers here in Step 24. (JL, 2020-02-13) -->
 
         </list>
 
