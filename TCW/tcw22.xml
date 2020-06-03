@@ -368,6 +368,13 @@
             release by downloading it from <ref
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
               >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then uploading it to the release page. </item>
+          
+          <item><hi rend="bold">Close/Add GitHub Milestones</hi><lb/> Go to the Milestones page of both the 
+            <ref target="https://github.com/TEIC/Stylesheets/milestones">Stylesheets</ref> and the 
+            <ref target="https://github.com/TEIC/TEI/milestones">Guidelines</ref> repo. Add new Milestones by 
+            incrementing the minor version number part and move all open issues from the current Milestone to the new one.
+            (If Council already decided on the next release date (unlikely) you can add the date to the new Milestone. Otherwise leave empty.)
+            Finally, close the current Milestone.</item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
             The TEI Debian packages are regularily created during each Jenkins build. 
