@@ -381,13 +381,13 @@
             For each release you need to update the TEI Debian repository at 
             <ref target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> 
             which can be done by simply running <code>ant</code> on the TEI server within the 
-            <code>~/packages.tei-c.org/deb/</code> directory. 
+            <code>/data/debian-packages</code> directory. 
             (The ANT script is currently hosted at Peter Stadler's GitHub, at <ref target="https://github.com/peterstadler/TEI-apt-repo">https://github.com/peterstadler/TEI-apt-repo</ref>.)
             <emph>Since the repository index needs to be signed, you'll need the passphrase for the GPG key.</emph> 
             Make sure you've received it in advance! 
             <lb/>Another caveat: <code>ant</code> fails to fetch the packages via HTTPS when 
             running an outdated Java VM. Make sure to set the environment variable <code>JAVA_HOME</code>
-            to some appropriate version! At present <code>export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk</code>
+            to some appropriate version! At present <code>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</code>
             will do.
             
             <!-- Need to revisit the above item. As of February 2020, Debian package update needs to be handled
