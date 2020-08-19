@@ -54,7 +54,7 @@
             <div>
                <head>Deprecated</head>
                
-               <p>Following  the <ref target="tcw09.xml">Birnbaum doctrine</ref>, the Council has made the serious decision to
+               <p>Following  the <ref target="https://tei-c.org/activities/council/working/tcw09-backward-compatibility-and-the-maintenance-of-the-text-encoding-initiative-guidelines/">Birnbaum doctrine</ref>, the Council has made the serious decision to
                   break backwards compatibility by changing the content model of an element or class
                   to remove an element or attribute, or to remove an element or attribute entirely
                   from the Guidelines. In this case:</p>

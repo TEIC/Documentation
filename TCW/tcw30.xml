@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>TEI Council: Workload and Guidelines for Resignation</title>
+                <author>Syd Bauman</author>
+                <author>Elisa Beshero-Bondar</author>
+                <author>Jessica Lu</author>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <date>2020-06-29</date>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <p>freely available</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born-digital document</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+
+    <text>
+        <body>
+            <div>
+                <head>TEI Council: Workload and Guidelines for Resignation</head>
+                <div>
+                    <head>Workload</head>
+                    <p> Once elected, your voluntary membership on the TEI Council is both an
+                        opportunity and a responsibility. The TEI and its community rely upon the
+                        Council’s consistent attention and engagement. While the Council shares and
+                        distributes duties among its members, each individual Council member can
+                        expect to devote, at a minimum: <list>
+                            <item>Several scheduled and self-paced hours, monthly, to “orientation”
+                                and mentorship during the first year of Council service;</item>
+                            <item>3 scheduled hours, monthly, to virtual conferencing for the
+                                duration of your elected term;</item>
+                            <item>4+ self-paced hours, monthly, to addressing tickets and other
+                                Council tasks (e.g. server maintenance, listserv correspondence,
+                                special projects, etc.) after your orientation and for the duration
+                                of your elected term;</item>
+                            <item>10 days, annually, to two face-to-face Council meetings and
+                                associated travel (expenses reimbursed).</item>
+                        </list>
+                    </p>
+                    <p>Furthermore, Councilmembers are encouraged to submit original work for peer
+                        review and presentation at the annual TEI Conference and Members’
+                        meeting.</p>
+                </div>
+                <div>
+                    <head>Resignation</head>
+                    <p> Occasionally, a Council member may be unable to meet the demands of their
+                        work on the Council. <lb/>While temporary absences (due to illness,
+                        financial or personal hardship, etc.), are certainly acceptable, Council
+                        members should communicate their needs for accommodations. Council members
+                        who must disengage from Council work for an extended period are asked to
+                        vacate their elected position in a timely manner. </p>
+                    <p> Resignation should be strongly considered if: <list>
+                            <item>A Council member is unable to attend all-Council virtual
+                                conferences for three consecutive months, or is unable to attend at
+                                least half of the all-Council virtual conferences over the course of
+                                a six-month period.</item>
+                            <item>A Council member is unable to assume responsibility for any
+                                regular Council tasks (including, but not limited to, minutes
+                                review, ticket triage, and ticket review) for three consecutive
+                                months.</item>
+                            <item>A Council member is unable to attend both the annual face-to-face
+                                all-Council meeting and the annual TEI Conference and Members’
+                                Meeting in a given year.</item>
+                        </list>
+                    </p>
+                    <div>
+                        <head>Process</head>
+                        <p>When Council members are considering resigning from their elected
+                            position, we ask that they: <list>
+                                <item>Discuss the situation with their mentor or another Council
+                                    member first <list>
+                                        <item>a) to discover whether accommodations other than their
+                                            departure might be made that would mutually benefit both
+                                            the member and the Council; and</item>
+                                        <item>b) to ensure that Council can prepare for their
+                                            absence and reassign their work.</item>
+                                    </list>
+                                </item>
+                                <item>Submit an official message of resignation from their elected
+                                    position via email to the Council chair.</item>
+                            </list>
+                        </p>
+                        <p>A Council member’s resignation will activate a provision of the TEI
+                            Council Bylaws and may initiate the process for a special election or
+                            appointment to fill the vacated position. </p>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>
