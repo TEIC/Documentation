@@ -424,38 +424,6 @@
                 updateSite.oxygen file from the tei-c.org site, and asks the user to provide the new
                 version number before creating a new version of updateSite.oxygen. It also offers to
                 upload that file to tei-c.org, if the user has shell access. </item>
-<<<<<<< HEAD
-=======
-              <!--
-              <item>Run the shell script <code>update-and-upload.sh</code>:<lb/>
-                <code>./update-and-upload.sh -\-teiversion=x.x.x -\-xslversion=y.y.y -\-sfuser=yoursourceforgeusername</code><lb/>
-                where the version numbers are taken from the latest VERSION files in the TEI git repository at <ref target="https://github.com/TEIC/TEI/blob/master/P5/VERSION">https://github.com/TEIC/TEI/blob/master/P5/VERSION</ref> (for P5), and the GitHub repository at <ref target="https://github.com/TEIC/Stylesheets/blob/master/VERSION">https://github.com/TEIC/Stylesheets/blob/master/VERSION</ref> (for the Stylesheets), and sfuser is your user name on SourceForge. </item>
-              <item>Now you need to update the file which the oXygen software uses to update its frameworks. Log into the TEI server as tei@tei-c.org, and then:
-                
-                <item>cd to <code>/var/www/vhosts/tei-c.org/projects/tei/web/Vault/P5/</code></item>
-                
-                <item><code>cp x.x.x/oxygen/updateSite.oxygen y.y.y/oxygen/updateSite.oxygen</code> (where <code>x.x.x</code>
-                  is the version number of the previous release, and <code>y.y.y</code> is that of the
-                  new release you just made).</item>
-                
-                <item>Edit <code>y.y.y/oxygen/updateSite.oxygen</code> in your preferred text editor.</item>
-                
-                <item>Change <code>xt:version</code> to match the new version number of the plugin.</item>
-                
-                <item>Change <code>xt:location</code> to point to the SourceForge [OR GITHUB?] download location for
-                  the zip (substituting the correct version numbers of P5 and the Stylesheets): <lb/>
-                  
-                  <code>http://downloads.sourceforge.net/project/tei/tei-oxygen/teioxygen-2.6.0-7.9.0.zip</code></item>
-                
-              </item>-->
-              <!-- 2020-02-13 ebb: During today's release, we did the following somewhat problematic steps to generate the plugin. 
-                1) Generate a zip file using the ant instructions above.
-                2) Make a release on the tei-oxygen GitHub repo, and attach the zip file to it.
-                NOTE: We could not add this to the tei-c.org server according to the posted instructions here . 
-                So we "did this by hand" as the tei-user logging in as we did to post the Guidelines and Stylesheets release files to the Vault.
-              -->
-              
->>>>>>> 58387973291d3b67287aa9edf505ef56da8c4f48
             </list>
           </item>
 
