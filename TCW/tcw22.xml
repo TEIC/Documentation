@@ -110,7 +110,9 @@
               <item>Send the public key to the Council Chair, who will forward it on to the system
                 administrator.</item>
             </list> Make sure you get this set up well in advance of the release day, and make sure
-            you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. </item>
+            you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. (Note: if you are a member
+            of the Infrastructure Group, you will already have your own login to the server, but you 
+            should test it.)</item>
 
           <item>Some familiarity with the three TEI Jenkins Continuous Integration Servers.
               <list type="ordered">
@@ -134,7 +136,8 @@
           <item> A copy of the public key that will enable you to sync the release zip with
             SourceForge. <list>
               <item>log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you've completed
-                the other public key step above).</item>
+                the other public key step above). (Note that if you are a member of the Infrastructure Group 
+                with your own login, log in as yourself, but sudo su tei before running any scripts.)</item>
               <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
               <item>paste the result into a text editor and remove any linebreaks added by the
                 terminal.</item>
@@ -289,8 +292,10 @@
             indicating a failed build, seek support via the TEI Council Slack. </item>
           <item>
             <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/>
-            Log into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code> 
-            and fetch the current version of the install script by issuing 
+            Log into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>. 
+            Note that if you are a member of the Infrastructure Group 
+            with your own login, log in as yourself, but <code>sudo su tei</code> before running any commands.
+            Then fetch the current version of the install script by issuing 
             <code>curl https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o ~/tei-install.sh</code>.
             <lb/> (If you'll need to tweak that script later during the install process please make 
             sure to feed the changes back to the original script in the TEI repo.) 
