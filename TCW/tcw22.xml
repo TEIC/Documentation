@@ -27,6 +27,8 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2021-03-12" who="#MDH">Adding a step to update the version of p5subset.xml which is in the Stylesheets repo,
+      prior to doing any of the release steps.</change>
       <change when="2020-02-13" who="#JL">Additional changes based on February 2020 release to make links visible, clarify release steps, confirm primacy of Paderborn Jenkins server.</change>
       <change when="2020-02-13" who="#JL">Update all references, and add links, to Jenkins servers. Revise instructions regarding release version numbers.</change>
       <change when="2020-02-10" who="#EBB">Update all references about ssh to the tei server to the new HumaNum server consistently. Correct small grammatical errors.</change>
@@ -209,7 +211,7 @@
             release technician should announce a temporary hold on pushes to the dev branch on the
             Council list, then create the branch and push it to GitHub using the following commands:
 	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch) or if you have the dev branch 
-            checked out, <code>git status</code> in order to make sure that you have the current version and no uncommited changes.
+            checked out, <code>git status</code> in order to make sure that you have the current version and no uncommitted changes.
 	    <lb/><code>git checkout -b release-X.X.X</code>
 	    <lb/><code>git push -u origin release-X.X.X</code></item>
 	  <item>Immediately after the release branch has been pushed,
@@ -242,6 +244,10 @@
             <code>2.8.2</code><lb/> This changes the release from beta (or possibly alpha) to the
             actual release version number. </item>
 
+          <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
+          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch (preferably on Jenkins, at a URL such as 
+            https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
+            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</item>
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
           <item><hi rend="bold">Merge the release branch into <code>released</code></hi>.  <lb/>
