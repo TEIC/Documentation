@@ -173,6 +173,10 @@
 
         <list type="ordered">
           <head>1-2 weeks before release:</head>
+          <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
+          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such as 
+            https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
+            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</item>
           <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the 
             TEI sysadmin, of the pending release date, so that they can be available or on-call. </item>
           <item>Ask one of the Jenkins maintainers (Peter Stadler, Martin Holmes, and Raffaele Viglianti) 
@@ -206,15 +210,16 @@
           </item>
           <item>At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
-            features. A release branch will be created by the release technician, to which ONLY
+            features. Release branches for the TEI and Stylesheets repos will be created by the release technician, to which ONLY
             release-blocking bug fixes and corrections to typographical errors will be pushed. The
-            release technician should announce a temporary hold on pushes to the dev branch on the
-            Council list, then create the branch and push it to GitHub using the following commands:
+            release technician should announce a temporary hold on pushes to the dev branches on the
+            Council list, then create the branches and push it to GitHub using the following commands, once in the
+            TEI repo and once in the Stylesheets repo:
 	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch) or if you have the dev branch 
             checked out, <code>git status</code> in order to make sure that you have the current version and no uncommitted changes.
 	    <lb/><code>git checkout -b release-X.X.X</code>
 	    <lb/><code>git push -u origin release-X.X.X</code></item>
-	  <item>Immediately after the release branch has been pushed,
+	  <item>Immediately after the release branches have been pushed,
 	  the release technician should inform the <ref
 	  target="mailto:tei-council@lists.tei-c.org">Council
 	  list</ref> and ask the maintainers of the TEI Jenkins
@@ -231,7 +236,7 @@
         <list type="ordered">
           <head>On release day:</head>
           <item>The instructions below for Git commands are assumed to be run in the release-X.X.X
-            branch unless otherwise specified. If you did not create the release branch, you can 
+            branches unless otherwise specified. If you did not create the release branch, you can 
             set up a copy of it using the following commands:<lb/>
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
@@ -247,7 +252,7 @@
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
           <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch (preferably on Jenkins, at a URL such as 
             https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
-            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</item>
+            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets release-X.X.X branch.</item>
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
           <item><hi rend="bold">Merge the release branch into <code>released</code></hi>.  <lb/>
