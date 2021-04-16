@@ -423,25 +423,38 @@
             hand this off to one of the maintainers (currently Syd Bauman, James Cummings, or Martin
             Holmes) to do this for you if you're not familiar with the project. <list>
               <item>Check that you have ant (at least version 1.8) installed on your machine.</item>
+              <item>Check that your current Java version is 1.8. This is an old version, but it is currently 
+              required for building the oxygen-tei package. If you are on e.g. Ubuntu Linux, you can 
+              install multiple Java versions and switch between them easily using <code>sudo update-alternatives --config java</code>. </item>
               <item>Check that the latest versions of the TEI Stylesheets and TEI P5 packages are
-                available for download from the SourceForge Files section, since the oxygen-tei
+                available for download from the TEI server, since the oxygen-tei
                 update/upload script retrieves them from there.</item>
+              
               <item>Check out or update a local copy of the source code from <ref
                   target="https://github.com/TEIC/oxygen-tei"
                   >https://github.com/TEIC/oxygen-tei</ref> to your local system.</item>
-              <item>Make sure the build script knows where to find your oxygen.jar file (from the
-                Oxygen installed on your system) by copying the file into
-                  <code>oxygen-tei/lib</code> or symlinking it.</item>
+              
               <item>cd into the oxygen-tei folder (it should contain folders called "frameworks" and
                 "jenkins").</item>
+              
               <item>Run the ant build process with the "release" parameter: <lb/>
                 <code>ant release</code><lb/> This builds the plugin using the latest stable
                 versions of P5 and the Stylesheets, then offers to upload the result to the TEI's
                 SourceForge repo to become a release of the TEI-maintained version of the plugin.
                 This also creates an updated updateSite.oxygen file, by retrieving the latest
                 updateSite.oxygen file from the tei-c.org site, and asks the user to provide the new
-                version number before creating a new version of updateSite.oxygen. It also offers to
-                upload that file to tei-c.org, if the user has shell access. </item>
+                version number before creating a new version of updateSite.oxygen. </item>
+              
+              <item>Go to the GitHub repo and create a new release, using the <code>Draft new release</code>
+              button. Copy the previous release info (tag, title and text), and tweak the versions as appropriate. The tag should be  <code>vx.x.x</code>, the title will be 
+                <code>Release x.x.x</code>, and the text <quote>Release number X of the oXygen TEI plugin, based on TEI P5 x.x.x and Stylesheets x.x.x.</quote></item>
+              
+              <item>Attach the zip file you just created in the build process, which will be named
+              something like <code>oxygen-tei-x.x.x-x.x.x.zip</code>, with the numbers from
+              the current TEI and Stylesheets releases.</item>
+              
+              <item>Once the tag/release has been published, run <lb/><code>ant uploadOxygenUpdateFile</code><lb/>
+              to push the <code>updateSite.oxygen</code> file up to the TEI server.</item>
             </list>
           </item>
 
