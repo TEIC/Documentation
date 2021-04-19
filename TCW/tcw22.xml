@@ -423,9 +423,11 @@
             hand this off to one of the maintainers (currently Syd Bauman, James Cummings, or Martin
             Holmes) to do this for you if you're not familiar with the project. <list>
               <item>Check that you have ant (at least version 1.8) installed on your machine.</item>
-              <item>Check that your current Java version is 1.8. This is an old version, but it is currently 
+              <!-- MDH 2021-04-19: Added release="8" to javac call in framework/build.xml, and this now seems to 
+                build fine with Java 14. Commenting out this step. -->
+              <!--<item>Check that your current Java version is 1.8. This is an old version, but it is currently 
               required for building the oxygen-tei package. If you are on e.g. Ubuntu Linux, you can 
-              install multiple Java versions and switch between them easily using <code>sudo update-alternatives --config java</code>. </item>
+              install multiple Java versions and switch between them easily using <code>sudo update-alternatives -\-config java</code>. </item>-->
               <item>Check that the latest versions of the TEI Stylesheets and TEI P5 packages are
                 available for download from the TEI server, since the oxygen-tei
                 update/upload script retrieves them from there.</item>
