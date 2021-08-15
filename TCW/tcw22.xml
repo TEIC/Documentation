@@ -16,6 +16,10 @@
         <author xml:id="EBB">Elisa Beshero-Bondar</author>
         <author xml:id="RV">Raffaele Viglianti</author>
         <author xml:id="JL">Jessica H. Lu</author>
+	<!-- Note: I mean <editor> as per Guidelines: secondary
+	     intellectual responsibility, rather than as an actual
+	     editor. —Syd, 2021-04-16 -->
+	<editor xml:id="SDB">Syd Bauman</editor>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>

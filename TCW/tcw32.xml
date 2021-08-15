@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" version="4.1.0">
+  <!--
+      When generating output from standard TEI stylesheets set the
+      "numberBackFigures" parameter to the string 'true'. E.g.:
+      $ saxon -xsl:/path/to/Stylesheets/profiles/default/html5/to.xsl -s:tcw32.xml -o:tcw32.html numberBackFigures='true'
+  -->
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Checking Pointers Using your TEI ODD Customization</title>
+        <author xml:id="sb">
+          <persName>Syd Bauman</persName>
+        </author>
+        <editor>
+          <orgName>TEI Technical Council</orgName>
+        </editor>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>
+          <orgName>TEI Consortium</orgName>
+        </publisher>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/">
+            This work is available under the terms of the Creative
+            Commons Attribution 4.0 International (CC BY 4.0)
+          </licence>
+          <p>Users should feel free to copy portions of this document
+          for use in their own TEI customizations, with or without
+          modification. The only expectation (and legal burden) is to
+          explicitly state that you have done so (e.g., in the prose
+          of your ODD or in a comment), preferably including the URL
+          of this file.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <ab>Born digital.</ab>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <ab>See <ref
+        target="https://github.com/TEIC/TEI/issues/1675">issue
+        #1675</ref>.</ab>
+      </projectDesc>
+      <schemaRef type="authoring" key="tei_customization"
+                 url="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/relaxng/tei_customization.rnc">
+        <desc>This ODD was generated using the helpful
+        tei_customization.rnc closed schema, but is not intended to be
+        valid against it. (E.g., the <gi>sourceDesc</gi> has a child
+        <gi>ab</gi>, which is not currently valid in
+        tei_customization.)</desc>
+      </schemaRef>
+      <schemaRef type="validation" key="tei_odds"
+                 url="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.rnc https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.isosch">
+        <desc>Should be valid against.</desc>
+      </schemaRef>
+    </encodingDesc>
+    <revisionDesc>
+      <change who="#sb" when="2021-08-15">
+	Tweaks to make public (e.g., remove references to file paths on my local system)
+      </change>
+      <change who="#sb" when="2021-08-01">
+        resume work, having last edited 2021-02-28T23:59.
+      </change>
+      <change who="#sb" when="2021-01-18">
+        started as a customziation ODD on my local system (home
+        desktop — we’re in the middle of a pandemic)
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage>
+        <docAuthor>The TEI Technical Council</docAuthor>
+	<!-- NOTE: Should probably change to a TCU document on release
+	     ('W' is for internal Council working documents; 'U' is
+	     for user documentation). -->
+        <docTitle n="TEI TCW 32">
+          <titlePart>
+            <title type="sub">TEI TCW 32:</title>
+          </titlePart>
+          <titlePart>
+            <title type="main">Customizing TEI to Check Pointers</title>
+          </titlePart>
+        </docTitle>
+        <docImprint>
+          <publisher>Text Encoding Initiative Consortium</publisher>
+        </docImprint>
+        <docDate>
+          <date when="2021">2021</date>
+        </docDate>
+      </titlePage>
+      <divGen type="toc"/>
+      <div type="section">
+        <head>Introduction</head>
+        <p>As with any other part of document production, when
+        using URIs (web pointers) it is advantageous to check
+        that they <soCalled>work</soCalled> early in the production
+        process. The aspects of a pointer we would want to test, in
+        increasing order of difficulty, are that the URI:
+        <list rend="numbered">
+          <item n="1">points to <emph>something</emph> (i.e., has proper syntax)</item>
+          <item n="2">points to something that can be retrieved (i.e., refers to an object that exists and to which the user has access)</item>
+          <item n="3">points to the right <emph>kind</emph> of thing (e.g., the <att>ref</att> of <gi>persName</gi> should point to a <gi>person</gi>, not a <gi>fileDesc</gi> nor an SVG chart of COVID-19 cases)</item>
+          <item n="4">points to the right thing (e.g., the
+          <val>#MLK</val> of <code>&lt;persName ref="#MLK">Martin
+          Luther King, Jr.&lt;/persName></code> should point to an
+          entry for Martin Luther King, Jr., not an entry for Lois
+          Lane).</item>
+        </list></p>
+        <p>Most of the main closed schema languages, including PureODD
+        and RELAX NG (but excluding DTDs), have the capability to test
+        that an information item (in our case, and thus hereafter, an
+        attribute value) meets the syntactic constraints of a URI.
+        That is, we can test (1) above by just using our schemas. But
+        none of those languages (including PureODD without use of
+        <gi>constraintSpec</gi>) have the capability to test
+        (2)–(4).</p>
+        <p>The open schema language used by TEI (ISO Schematron) does
+        allow for (2) and (3). However, a) it is difficult to
+        associate the needed tests with all <name
+        type="class">teidata.pointer</name> attributes, and b) it
+        requires special-case coding for (3), depending on what is
+        considered <soCalled>right</soCalled> in the current
+        circumstances. In any case, (4) is much more difficult, and
+        usually requires a human, if not a human with domain-specific
+	knowledge.</p>
+        <p>Thus the TEI Technical Council does not plan to include any
+        general tests for (2)–(4) directly in TEI P5, at least not in
+        the near future. However, recognizing that at least (2) &amp;
+        (3) represent an important subset of validation tests that
+        projects want to perform, we exemplify herein some mechanisms
+        for doing so. The intent is that projects can copy-and-paste
+        ODD fragments from this file into their own, and modify as
+        desired to suit their local needs.</p>
+	<p>Note, however, that this document only discusses testing of
+	URIs that are intended to return an XML document or fragment
+	thereof. It is possible to use URIs to point to and retrieve
+	other sorts of information objects including JSON, images,
+	HTML (other than XHTML), audio files, word processor files,
+	etc.</p>
+        <p>Note: The examples herein often use an attribute as the
+        context node in ISO Schematron rules. Some Schematron
+        processors fail to process this correctly. (The oXygen XML
+        Editor handles these perfectly well.)</p>
+      </div>
+    </front>
+    <body>
+      <p>There are over 100 attributes in TEI defined as <name
+      type="class">teidata.pointer</name>.<note>And another 4 or so
+      defined as <name type="class">teidata.namespace</name>, whose
+      values have the same syntax as a URI, but are not necessarily
+      intended to point at anything.</note> Roughly 60 of those are
+      restricted to having only 1 URL as a value, but the other nearly
+      50 permit multiple URLs in the value. Processing multiple
+      pointers is much more difficult than handling a single URI, and
+      thus we consider the singleton cases separately from the cases
+      in which multiple URI values of a single pointer attribute need
+      be tested.</p>
+      <p>We first discuss cases where items are being directly pointed
+      to (first in the singleton case, then with multiple pointers),
+      and then cases where the an tiem is being referred to indirectly
+      either via an intermediate <gi>link</gi> or <gi>alt</gi>
+      element, or via a prefix defined in the <gi>prefixDef</gi>. As a
+      last case, we demonsrate ensuring that the validation is being
+      performed after XInclude processing.</p>
+      <div type="section">
+        <head>direct reference by single value</head>
+        <!--
+            To get a list of attributes that are defined as singleton URIs try
+            $ xsel -t -m "//t:datatype[not(@maxOccurs) or @maxOccurs='1'][t:dataRef[not(@maxOccurs) or @maxOccurs='1'][@key='teidata.pointer']]" -v "concat( ancestor::t:elementSpec/@ident|ancestor::t:classSpec/@ident|ancestor::t:dataSpec/@ident,'/@',parent::t:attDef/@ident)" -n /path/to/local/P5/p5subset.xml | sort
+            on Syd’s machine.
+        -->
+        <p>Projects that intend to use an attribute which by default
+        in TEI may take multiple URIs with only 1 URI may find it best
+        to constrain said attribute to only 1 URI. For example, if the
+        (fictional) project <q>The Papers of Dr. Virgil Swann</q> were
+        to provide correspondence links between Dr. Swann’s English
+        translation of and his transcription of an intercepted
+        Kryptonian message, each <gi>s</gi> element with an
+        <att>xml:lang</att> of <val>en</val> would bear a
+        <att>corresp</att> attribute that pointed to the corresponding
+        <gi>s</gi> element with an <att>xml:lang</att> of
+        <val>x-kr</val>. The TEI <att>corresp</att> attribute allows
+        one or more URIs. But for this project, the <att>corresp</att>
+        of <gi>s</gi> should be limited to only 1 URI. This can be
+        accomplished as shown in <ptr target="#eg01"/>.
+        </p>
+        <div type="subsection">
+          <head>shorthand pointer fragment identifier</head>
+          <p>The <term>fragment identifier</term> portion of a URI is
+          that which follows the <code>#</code>. The portion of the
+          URI before the <code>#</code> locates the document of
+          interest; the portion after the <code>#</code> locates the
+          element of interest within said document. The portion after
+          the <code>#</code> can take many forms, only one of which we
+          consider in this document: the <term>shorthand
+          pointer</term> fragment identifier (previously called a
+          <soCalled>bare name</soCalled> fragment identifier) is
+          probably the most common form of fragment identifier; it
+          refers to an element in the document in question by refering
+          to its ID. (In TEI the ID is always indicated by the
+          <att>xml:id</att> attribute.) This typically looks like
+          either
+	  <eg>https://www.w3.org/TR/xptr-framework/#<emph style="font-weight:bold; font-style: normal;">shorthand</emph></eg>
+	  or
+	  <eg>#<emph style="font-weight:bold; font-style: normal;">DeRoseetal1990</emph></eg>.
+	  If there is no document mentioned to the left of the
+	  <code>#</code>, then the document being referred to is the
+	  base document, which is typically the current document in
+	  which the URI appears (but can be modified by the
+	  <att>xml:base</att> attribute).</p>
+          <p>First, just to demonstrate how this works in general, we
+          show in <ptr target="#eg02"/> how to test that the
+          <att>ref</att> attribute of <gi>g</gi> has the correct
+          syntax to point to <emph>something</emph> in the same file.
+          However, we also note that this check could be expressed in
+          PureODD without resorting to Schematron. This PureODD-only
+          mechanism, exemplified in <ptr target="#eg03"/>, has the
+          disadvantage that the TEI’s current ODD processor only has
+          partial support for it, and it is not entirely clear that
+          this is an intended feature of PureODD that will remain part
+          of the <title>Guidelines</title>.</p>
+          <p>To check that a shorthand pointer fragment identifier URI
+          points to <emph>something</emph> that can be retrieved
+          (i.e., to test a pointer that looks like <code>#duck</code>
+          for (2), above) we can take advantage of the XPath
+          <code>id()</code> function. This technique is used in <ptr
+          target="#eg04"/> to ensure that the <att>ref</att> of a
+          <gi>g</gi> actually points to something in the current
+          document. A call to <code>id('tho')</code> returns the
+          element from the same document, if there is one, that bears
+          an <att>xml:id</att> of <val>tho</val>. There is supposed to
+          be at most one such element; if there were two or more, only
+          the first is returned. Thus <code>id('tho')</code> may be
+          thought of as <code>//*[@xml:id eq 'tho'][1]</code><note
+          place="foot">Except there are differences in whitespace
+          normalization.</note>.</p>
+          <p>To check that a shorthand pointer fragment identifier URI
+          specifically points to a particular element type (in this
+          case <gi>char</gi> or <gi>glyph</gi>), we simply append a
+          node test, as seen in <ptr target="#eg05"/>. Note that
+          references to TEI elements in the XPath expressions in the
+          Schematron inside <gi>constraint</gi> need to be explicitly
+          bound to the TEI namespace. Although an ODD author may
+          define any namespace prefix for the purpose (using the
+          Schematron <gi>ns</gi> element), TEI ODD software will
+          automatically insert a definition that binds the string
+          <code>tei</code> to the TEI namespace.</p>
+        </div>
+        <div>
+          <head>local filesystem</head>
+          <p>A URI may refer to a file on the local filesystem using
+          either an <term>absolute-path reference</term> or a
+          <term>relative-path reference</term>.<note place="foot">A
+          URI may also refer to a file on the local filesystem using
+          the <term>file:</term> URI scheme. This document does not
+          consider these URIs, except the following comment on the
+          general syntax of a <term>file:</term> scheme URI. Said
+          format is <code>file://host/path</code>, where the
+          <mentioned>//host</mentioned> portion is optional
+          (defaulting to <q>localhost</q>), or may be expressed as
+          just <mentioned>//</mentioned> (again defaulting to
+          <q>localhost</q>). Thus <code>file:/path</code> and
+          <code>file:///path</code> are both perfectly acceptable ways
+          to refer to the file found at <mentioned>path</mentioned> on
+          the local filesystem.<!--
+          https://en.wikipedia.org/wiki/File_URI_scheme --></note> An
+          absolute-path reference starts with a slash; a relative-path
+          reference does not.<!--
+          https://tools.ietf.org/html/rfc3986#section-4.2 --> A
+          relative-path reference <emph>may</emph> start with a dot
+          segment (<code>./</code>), unless the first segment of its
+          path contains a colon, in which case it <emph>must</emph>
+          start with a dot segment.</p>
+          <p>The URI that refers to a file on the local filesystem may
+          have a <code>#</code> followed by a fragment identifier.
+          Here we first consider testing that a URI points to a local
+          file, then that it points to a local file with a particular
+          file extension, then that it points to a local file with a
+          particular root element, and last that it points to a
+          particular element type in a local file.</p>
+          <div>
+            <head>entire local file</head>
+            <p>A <gi>moduleRef</gi> element is typically used to refer
+            to one of the TEI modules (for example, <val>core</val>,
+            <val>gaiji</val>, or <val>namesdates</val>) from a
+            customization ODD file using its <att>key</att> attribute.
+            But <gi>moduleRef</gi> can also refer to a non-TEI module
+            using its <att>url</att> attribute. The TEI schema ensures
+            that the value of the <att>url</att> attribute is, in
+            fact, a URI (that is, it performs test (1)). It would be
+            quite reasonable for a project to want to check that the
+            value of <att>url</att> was a URI that referred to an
+            existing, readable, local XML file.</p>
+            <p>It is possible to write generic constraints for this
+            purpose that would allow <emph>any</emph> valid URI that
+            referred to a local file (whether an absolute path
+            reference, a relative path reference, or a
+            <name>file</name> URL scheme; see <ptr target="#eg58"/>)
+            or that a value uses a private URI scheme prefix defined
+            by a <gi>prefixDef</gi> (see <ptr target="#eg59"/>).
+            However, in most cases projects would probably want to
+            constrain the value to a particular way of refering to an
+            existing, readable, local XML file (if not a particular
+            file, for which see <ptr target="#eg06"/>). For example,
+            <ptr target="#eg07"/> demonstrates a method for requiring
+            that the <att>url</att> attribute of <gi>moduleRef</gi>
+            refer to a local file that is in the same directory as the
+            instance ODD and whose filename ends in <val>.rng</val>
+            (and thus is probably a RELAX NG file in the XML
+            syntax).</p>
+            <p>We may wish ensure that the file refered to (whether
+            local or remote) is readable, well-formed XML. Luckily,
+            XPath provides the <code>doc-available()</code> function
+            for this very purpose. The constraints demonstrated in
+            <ptr target="#eg08"/> first ensure that the information
+            item refered to by the <att>url</att> attribute is a
+            <emph>file</emph>, not an <emph>element</emph>, and then
+            require that the file be readable, well-formed XML. The
+            example at <ptr target="#eg09"/> duplicates these
+            constraints, and also tests that the outermost
+            element of the retrieved file is an <gi>rng:grammar</gi>
+            element.</p>
+            <!-- 
+            <p>To test that a value uses the proper
+            sytnax to refer to a local file we need to perform
+            explicit tests. There are three possible syntaxes: an
+            absolute path reference, a relative path reference, or a
+            <name>file</name> URL scheme. Testing for an absolute path
+            reference or a <name>file</name> URL scheme is trivial,
+            and can be performed by simple comparison. Testing for a
+            relative path reference is slightly more complex, as we
+            need to check for the lack of a particular character (a
+            colon), and thus is much easier to do with a regular
+            expression. So the XPath <code>starts-with( $val, './' )
+            or starts-with( $val, 'file:' ) or matches( $val,
+            '([A-Za-z0-9._~!$&amp;'()*+,;=@-]|(%[0-9A-Fa-f][0-9A-Fa-f]))+'
+            )</code>
+            <p>Luckily, XPath provides the
+            <code>doc-available()</code> function to test whether an
+            XML file is readable. Thus, as demonstrated in <ptr
+            target="#eg07"/>, the constraint required is relatively
+            simple.</p> -->
+          </div>
+          <div>
+            <head>element of a local file</head>
+            <p>The <att>ref</att> attribute of <gi>persName</gi>
+            should typically point to a <gi>person</gi> element, which
+            will often be in a separate
+            <soCalled>personography</soCalled> file. Presuming that
+            file is in a known location in the local filesystem, <ptr
+            target="#eg10"/> can be used to test that the <att>ref</att>
+            attribute refers to a <gi>person</gi> in that file.</p>
+          </div>
+      </div>
+      <div>
+        <head>remote pointers</head>
+        <p>Checking remote pointers is in principle very similar to
+        checking local pointers, but with different tests on the
+        syntax of the URI. (They are also, of course, a bit harder to
+        test because you must have a working internet connection, and
+        have to worry about firewalls, proxies, same-source problems,
+        cached files, etc.). For example, <ptr target="#eg11"/>
+        ensures that any <gi>equiv</gi> element has a <att>uri</att>
+        attribute, and further that said attribute refers to the
+        (fictional) <q>markup_taxonomy</q> portion of the WWP website,
+        allowing either the production or test version of the website
+        and access with or without specifying a secure connection.</p>
+        <p>The <ptr target="#eg12"/> example, on the other hand,
+        ensures that the <att>filter</att> attribute of <gi>equiv</gi>
+        points to an XSLT program. It does this by testing only the
+        namespace of the outermost element of the retrieved file,
+        because the outermost element of an XSLT program could be
+        either <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>.</p>
+      </div>
+    </div>
+    <div>
+      <head>direct access by multiple values</head>
+      <p>If a pointer attribute may have multiple values, testing is
+      mildly more difficult because the attribute needs to be parsed
+      first. In the general case, delivering a precise error message
+      is quite difficult, as the entire process needs to be handled in
+      XPath, as Schematron does not have an iteration construct.
+      However, specific cases may be reasonably easy. For example,
+      <ptr target="#eg13"/> tests that a <att>rendition</att>
+      attribute refers to at most 2 <gi>rendition</gi> elements in the
+      same file. This is not particularly difficult because of the
+      restriction that there are at most 2 pointers.</p>
+      <p>But in many, if not most, cases there is no such restriction.
+      For example, there may be dozens of witnesses to a particular
+      manuscript manisfestation. <ptr target="#eg14"/> tests that each
+      pointer in the value of a <att>wit</att> refers to a
+      <gi>witness</gi> element in the same file. In addition to tests
+      similar to the previous example, this example reports to the
+      user <emph>what</emph> each pointer in a failed value is, in
+      fact, pointing to.</p>
+    </div>
+    <div>
+      <head>Possibly indirect reference</head>
+      <p>We have already demonstrated a methodology for ensuring that
+      the <att>ref</att> of <gi>persName</gi> points to a
+      <gi>person</gi>. One recommended method for encoding an
+      ambiguous reference to a person is to use the <gi>alt</gi>
+      element — the encoding of the ambiguous reference itself points
+      to an <gi>alt</gi> element which, in turn, points to each of the
+      possible <gi>person</gi>s. (See <ptr
+      target="https://wwp.northeastern.edu/outreach/seminars/_current/presentations/contextual_encoding/advanced_context_09.xhtml"/>
+      for a sample encoding.) Similarly, a reference to multiple
+      individuals could be encoded as multiple pointers on a single
+      <att>ref</att>, or could be encoded as a single pointer on the
+      <att>ref</att> that points to a <gi>link</gi> element which, in
+      turn, points to each <gi>person</gi> referred to. One advantage
+      to this latter method is that you can restrict the
+      <att>ref</att> of <gi>persName</gi> to one and only 1 pointer,
+      and use similar constratins for both ambiguous and multiple
+      references. <ptr target="#eg15"/> demonstrates such
+      constraints.</p>
+      <p>A similar set of constraints can be expressed in a simpler,
+      perhaps easier to follow way by splitting them up as constraints
+      on the <att>ref</att> of <gi>persName</gi> and the
+      <att>target</att> of <gi>link</gi> and <gi>alt</gi> separately,
+      as demonstrated in <ptr target="#eg16"/>. Because the code for
+      <gi>alt</gi> and <gi>link</gi> is somewhat complicated, this
+      technique expresses that code only once as an abstract
+      Schematron pattern, which is instatiated separately, once for
+      <gi>alt</gi> and once for <gi>link</gi>.</p>
+    </div>
+    <div>
+      <head>Reference via <gi>prefixDef</gi></head>
+      <p>The TEI provides a method of indirection for both shortening
+      URLs and having a single place to change a set of URIs. This
+      mechanism makes use of a local URL prefix and a definition of
+      how that prefix is mapped to a full URI which is expressed in a
+      <gi>prefixDef</gi> element. Creating pointers using this method
+      is simpler, shorter, easier to read (and thus proofread), and
+      reduces the chance for errors in the first place. Checking
+      pointers that use this method, however, is significantly more
+      difficult. However, as with several other types of pointer
+      checking, it is the general case that is most difficult; 
+      particular cases may be reasonably easy.</p>
+      <p>Here we will limit ourselves to the simple (and to our
+      knowledge far most common) case in which the
+      <att>matchPattern</att> follows the shorthand pointer syntax or
+      a subset thereof, and the <att>replacementPattern</att> follows
+      the syntax of a URL except it ends with <code>#$1</code>. I.e.,
+      the case in which the matched bit is the shorthand pointer, as
+      seen in an <ref
+      target="https://www.tei-c.org/raelease/doc/tei-p5-doc/en/html/SA.html#index-egXML-d53e125265">example
+      from the <title>Guidelines</title></ref>. While example <ptr
+      target="#eg17"/> limits itself to <gi>prefixDef</gi>s of this
+      sort, it does not limit itself to any particular prefix. The
+      document is searched for possible prefix values.</p>
+    </div>
+    </body>
+    <back>
+      <div type="meat_of_the_matter">
+        <head>Examples</head>
+        <figure xml:id="eg01">
+          <head>PureODD to limit attribute to one URI</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="only_1_ptr">
+            <elementSpec module="analysis" ident="s" mode="change">
+              <attList>
+                <attDef ident="corresp" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef key="teidata.pointer"/>
+                  </datatype>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>In this example the <att>corresp</att> of <gi>s</gi> is
+          altered so that its value must be one and only one URL.</p>
+        </figure>
+        <figure xml:id="eg02">
+          <head>Ensure <att>ref</att> of <gi>g</gi> is a shorthand pointer</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_is_shorthand_ptr">
+            <elementSpec ident="g" module="gaiji" mode="change">
+              <attList>
+                <attDef ident="ref" mode="change">
+                  <constraintSpec ident="g_has_shorthand_ref" scheme="schematron">
+                    <desc>Somewhat useless example that just tests
+                    that the <emph>syntax</emph> of the <att>ref</att>
+                    attribute of <gi>g</gi> is nothing but a shorthand
+                    pointer, e.g. <val>#duck</val>. This example takes
+                    advantage of the fact that a
+                    <gi>constraintSpec</gi> specified inside an
+                    <gi>attDef</gi> has that attribute as its
+                    context.</desc>
+                    <constraint>
+                      <sch:let name="ref" value="normalize-space(.)"/>
+                      <sch:assert test="matches( $ref, '#\i\c*' )">
+                        The value of the ref= attribute of 'g' ("<sch:value-of select="."/>") is supposed to be a shorthand pointer; i.e., should look like '#duck'.
+                      </sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>Snippet of ODD code that uses Schematron to enforce that
+          the value of <att>ref</att> of <gi>g</gi> is a shorthand
+          pointer. The regular expression <code>\i\c*</code> matches
+          an <ref target="https://www.w3.org/TR/REC-xml/#NT-Name">XML
+          Name</ref>, and thus <code>#\i\c*</code> matches a shorthand
+          pointer to an XML element with an ID attribute.</p>
+        </figure>
+        <figure xml:id="eg03">
+          <head>Ensure <att>ref</att> of <gi>g</gi> is a shorthand pointer, PureODD</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg03_egXML">
+            <elementSpec module="core" ident="g" mode="change">
+              <attList>
+                <attDef mode="replace" ident="ref" usage="req">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef key="xmpdata.shorthandpointer"/>
+                  </datatype>
+                  <remarks>
+                    <p>This attribute must be a single pointer to an
+                    element in the same XML file, i.e. must look like
+                    <code>#duck</code>.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+            <!-- ... -->
+            <dataSpec ident="xmpdata.shorthandPointer">
+              <desc>defines the range of attribute values used to
+              provide a single shorthand pointer URI</desc>
+              <content>
+                <dataRef name="anyURI" restriction="#\i\c*"/>
+              </content>
+              <remarks>
+                <p>Formerly refered to as a
+                <soCalled>barename</soCalled>
+                identifier.</p></remarks>
+            </dataSpec>
+          </egXML>
+          <p>Two snippets of ODD code which together use a facet to
+          enforce that the value of <att>ref</att> of <gi>g</gi> is a
+          shorthand pointer.</p>
+          <p>While somewhat more complicated, this method has the
+          advantage that it is both faster and generally easier on the
+          encoder, in that the constraint will be expressed in RELAX
+          NG (or the W3C Schema Language), and modern XML editors
+          (like oXygen) can enforce such constraints immediately, as
+          you type.</p>
+          <p>However, this method as the disadvantage that the TEI’s
+          current ODD processor has only partial support for it, and
+          it is not entirely clear that this is an intended feature of
+          PureODD that will remain part of the
+          <title>Guidelines</title>.</p>
+        </figure>
+        <figure xml:id="eg04">
+          <head>Check that <att>ref</att> of <gi>g</gi> points to <emph>something</emph></head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_points_to_local">
+            <constraintSpec ident="g_points_locally" scheme="schematron">
+              <desc>Example of how to test that the <att>ref</att> of <gi>g</gi>
+              points to an element in the same document.</desc>
+              <constraint>
+                <sch:let name="ref" value="substring( normalize-space(.), 2 )"/>
+                <sch:assert test="id( $ref )">
+                  The ref= of this 'g' element ("<sch:value-of select="."/>") does not point to an element in this document.
+                </sch:assert>
+              </constraint>
+            </constraintSpec>
+          </egXML>
+          <p>In this example we presume that the <att>ref</att> of
+          <gi>g</gi> is a shorthand pointer. Thus this constraint
+          should be used in conjunction with something like <ptr
+          target="#eg02"/> or <ptr target="#eg03"/>.</p>
+        </figure>
+        <figure xml:id="eg05">
+          <head>Check that <att>ref</att> of <gi>g</gi> points to a <gi>char</gi> or a <gi>glyph</gi></head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_points_to_char_or_glyph">
+            <constraintSpec ident="g_points_locally" scheme="schematron">
+              <desc>Example of how to test that the <att>ref</att> of
+              <gi>g</gi> points to a local <gi>char</gi> or
+              <gi>glyph</gi>.</desc>
+              <constraint>
+                <sch:let name="ref" value="substring( normalize-space(.), 2 )"/>
+                <sch:assert test="id( $ref )/self::tei:char | id( $ref )/self::tei:glyph">
+                  The ref= of 'g' is supposed to point to a 'char' or 'glyph'; this one ("<sch:value-of select="."/>") points to a '<sch:value-of select="local-name( id( $ref ) )"/>'.
+                </sch:assert>
+              </constraint>
+            </constraintSpec>
+          </egXML>
+          <p>In this example we presume that the <att>ref</att> of
+          <gi>g</gi> is a shorthand pointer. Thus this constraint
+          should be used in conjunction with something like <ptr
+          target="#eg02"/> or <ptr target="#eg03"/>.</p>
+          <p>Note: use <code>self::tei:char</code>, not
+          <code>self::char</code>.</p>
+        </figure>
+        <figure xml:id="eg06">
+          <head>Require the <att>url</att> of <gi>moduleRef</gi> to refer to a particular file</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg06_egXML">
+            <elementSpec ident="moduleRef" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="url" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef key="teidata.enumerated"/>
+                  </datatype>
+                  <valList type="closed" mode="add">
+                    <valItem ident="./kryptonian.rng">
+                      <desc>Our special module for Kryptonian constructs</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>ODD fragment which requires that the value of
+          <att>url</att> of <gi>moduleRef</gi> be
+          <val>./kryptonian.rng</val>.</p>
+        </figure>
+        <figure xml:id="eg07">
+          <head>Check that <att>url</att> of <gi>moduleRef</gi> refers to an RNG file in the same directory</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg07_egXML">
+            <elementSpec ident="moduleRef" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="url" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI" restriction="\./.+\.rng"/>
+                  </datatype>
+                  <remarks>
+                    <p>The <att>url</att> attribute must refer to a file in the
+                    same directory as the ODD customization file, and must have the
+                    file extension <val>.rng</val>.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+        </figure>
+        <figure xml:id="eg08">
+          <head>Ensure file is readable XML</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg08_egXML">
+            <elementSpec ident="moduleRef" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="url" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI" restriction="[^#]+"/>
+                  </datatype>
+                  <constraintSpec scheme="schematron" ident="moduleRef_url_readable">
+                    <constraint>
+                      <sch:assert test="doc-available( normalize-space(.) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                  <remarks>
+                    <p>The <att>url</att> attribute must refer to a file, not
+                    an element.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>These constraints on the <att>url</att> attribute of
+          <gi>moduleRef</gi> ensure first that the item referred to is
+          a file, not a particular element within a file. This is done by requiring that
+          the value <emph>not</emph> contain a number sign (<q>#</q>, U+0023).</p>
+          <p>Second, the <gi>constraintSpec</gi> tests that said file
+          is readable, well-formed XML.</p>
+          <p>Note that leading and trailing whitespace are trimmed
+          from the value before it is handed to the
+          <code>doc-available()</code> function. This is because
+          <name>xsd:anyURL</name> will allow leading or trailing
+          whitespace, but <code>doc-available()</code> does not. (The
+          <code>normalize-space()</code> function would also normalize
+          internal whitespace if there were any, but there is not,
+          because <name>xsd:anyURI</name> does not allow internal
+          whitespace.)</p>
+        </figure>
+        <figure xml:id="eg09">
+          <head>Ensure file is readable RELAX NG grammar</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg09_egXML">
+            <elementSpec ident="moduleRef" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="url" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI" restriction="[^#]+"/>
+                  </datatype>
+                  <constraintSpec scheme="schematron" ident="moduleRef_url_relaxng">
+                    <constraint>
+                  <sch:assert test="doc-available( normalize-space(.) ) and doc( normalize-space(.) )/*[self::rng:grammar]">Module <sch:value-of select="normalize-space(.)"/> is not a readable, well-formed RELAX NG grammar in the XML syntax.</sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                  <remarks>
+                    <p>The <att>url</att> attribute must refer to a
+                    RELAX NG grammar in the XML syntax.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>See comments for <ptr target="#eg08"/>.</p>
+          <p>The prefix <code>rng:</code> is automatically bound to
+          the RELAX NG namespace by the TEI ODD processor.</p>
+          <p>Note that the test for <code>doc-available()</code> is
+          not strictly necessary; the same pointers will succeed or
+          fail with or without that test. But with the
+          <code>doc-available()</code> test the user gets the custom
+          error message when the file is not readable well-formed XML;
+          without it, the user gets a generic error message, e.g.
+          <q>No such file or directory</q>.</p>
+        </figure>
+        <figure xml:id="eg10">
+          <head>Require <gi>persName</gi> to refer to a <gi>person</gi> in the local personography</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg10_egXML">
+            <elementSpec ident="persName" module="namesdates" mode="change">
+              <attList>
+                <attDef ident="ref" mode="change">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI" restriction="(\./)?persons\.xml#\i\c*"/>
+                  </datatype>
+                  <constraintSpec scheme="schematron" ident="ref_points_to_person">
+                    <constraint>
+                      <sch:let name="file" value="substring-before( ., '#')"/>
+                      <sch:let name="ID" value="substring-after( ., '#')"/>
+                      <sch:let name="element_found" value="doc( $file )//id( $ID )"/>
+                      <sch:assert test="$element_found[ self::tei:person ]">persName should refer to a person; this one refers to <sch:value-of select="if ( $element_found ) then concat( 'a ', local-name( $element_found ) ) else 'nothing'"/>.</sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                  <remarks>
+                    <p>The <att>ref</att> attribute must refer to a <gi>person</gi>
+                    element in the persons.xml file.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>This constraint takes advantage of Schematron’s facility
+          for storing values in <soCalled>variables</soCalled>.</p>
+        </figure>
+        <figure xml:id="eg11">
+          <head>Ensure <att>uri</att> of <gi>equiv</gi> is present and refers to an item on a particular page</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg11_egXML">
+            <elementSpec ident="equiv" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="uri" mode="change" usage="req">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI"
+                             restriction="https?://www\.wwp(-test)?\.(northeastern|neu)\.edu/markup_taxonomy.xhtml#\i\c*"/>
+                  </datatype>
+                  <remarks>
+                    <p>The <att>url</att> attribute is required, and
+                    must refer to an ID on our markup_taxonomy
+                    page.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>The <q>our markup_taxonomy</q> page is accessible using 8
+          different possible URLs, all of which are checked for by the
+          <att>restriction</att>.</p>
+        </figure>
+        <figure xml:id="eg12">
+          <head>Require a <att>filter</att> on <gi>equiv</gi> that points to an XSLT program</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg12_egXML">
+            <elementSpec ident="equiv" module="tagdocs" mode="change">
+              <attList>
+                <attDef ident="filter" mode="change" usage="req">
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef name="anyURI"/>
+                  </datatype>
+                  <constraintSpec scheme="schematron" ident="filter_is_XSLT">
+                    <constraint>
+                      <sch:let name="xsltNS" value="'http://www.w3.org/1999/XSL/Transform'"/>
+                      <sch:assert test="doc(.)/*[namespace-uri() eq $xsltNS]">The filter must be an XSLT program!</sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+        </figure>
+        <figure xml:id="eg13">
+          <head><att>rendtion</att> points to 1 or 2 <gi>rendition</gi>s</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg13_egXML">
+            <classSpec ident="att.global.rendition" mode="change" type="atts">
+              <attList>
+                <attDef ident="rendition" mode="change">
+                  <datatype minOccurs="1" maxOccurs="2">
+                    <dataRef key="teidata.pointer"/>
+                  </datatype>
+                  <constraintSpec scheme="schematron" ident="rendition_ponts_to_rendition">
+                    <desc>Ensure that the pointers in a
+                    <att>rendition</att> each point to a
+                    <gi>rendition</gi>.</desc>
+                    <constraint>
+
+                      <!-- Get sequence of 1 or 2 pointers -->
+                      <sch:let name="RENDITIONs" value="tokenize( normalize-space(.),'&#x20;')"/>
+                      
+                      <!-- Test that each starts with '#' -->
+                      <sch:assert test="starts-with( $RENDITIONs[1], '#')">
+                        First rendition reference does not start with a number sign.
+                      </sch:assert>
+                      <sch:assert test="empty( $RENDITIONs[2] )  or  starts-with( $RENDITIONs[2], '#')">
+                        Second rendition reference does not start with a number sign.
+                      </sch:assert>
+                      
+                      <!-- Test that they point to <rendition>s -->
+                      <!--
+                          Note: since leaving off the '#' is BY FAR the most common error, we
+                          actually test the pointer whether it had a '#' or not, thus avoiding
+                          two error messages for "style03" when "#style03" would have worked.
+                      -->
+                      <sch:let name="RND_ONE" value="replace( $RENDITIONs[1], '^#','')"/>
+                      <sch:let name="RND_TWO" value="replace( $RENDITIONs[2], '^#','')"/>
+                      <sch:assert test="id( $RND_ONE )[self::tei:rendition]">
+                        The first rendition reference (<sch:value-of
+                        select="$RENDITIONs[1]"/>) does not point to a
+                        local 'rendition' element.
+                      </sch:assert>
+                      <sch:assert test="empty( $RND_TWO )  or  id( $RND_TWO )[self::tei:rendition]">
+                        The second rendition reference (<sch:value-of
+                        select="$RENDITIONs[2]"/>) does not point to a
+                        local 'rendition' element.
+                      </sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                </attDef>
+              </attList>
+              <remarks>
+                <p>Here at the <title>The Papers of Dr. Virgil
+                Swann</title> project the <att>rendition</att> attribute
+                is limited to 1 or 2 values. If a more complex description
+                of rendition is required, the individual CSS declarations
+                (property:value pairs) should be combined into a new
+                <gi>rendition</gi>, and the <att>rendition</att> should
+                point at that.</p>
+                <p>On generation of schemas the TEI ODD software will
+                issue an information message: <quote>constraint for
+                @rendition of the att.global.rendition class does not have
+                a context=. Resulting rule is applied to *all* occurences
+                of @rendition.</quote> Since we do not declare any other
+                <att>rendition</att> attributes, this is not a
+                concern.</p>
+              </remarks>
+            </classSpec>
+          </egXML>
+          <p>Note that the comparision <code>$VAR eq ''</code> could
+          have been used instead of the function <code>empty( $VAR
+          )</code>.</p>
+        </figure>
+        <figure xml:id="eg14">
+          <head>Check that each pointer in <att>wit</att> points to <gi>witness</gi></head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg14_egXML">
+            <elementSpec ident="rdg" module="textcrit" mode="change">
+              <attList>
+                <attDef ident="wit" mode="change">
+                  <constraintSpec scheme="schematron" ident="wit_ponts_to_witnesses">
+                    <constraint>
+
+                      <!-- value is a string (supposedly of shorthand pointers); change it to a sequence -->
+                      <sch:let name="WITs" value="tokenize( normalize-space(.), '&#x20;')"/>
+
+                      <!-- check each starts with number sign -->
+                      <sch:assert test="every $WIT in $WITs satisfies starts-with( $WIT, '#')">
+                        One (or more) of the pointers in this @wit attribute does (do) not start with a '#'.
+                      </sch:assert>
+
+                      <!--
+                          develop sequence of ID values (i.e., IDREFs), rather than shorthand pointers,
+                          by stripping off '#', if present, from each
+                      -->
+                      <sch:let name="WITIDs" value="for $WIT in $WITs return replace( $WIT, '^#','')"/>
+                      <!--
+                          Note that we we actually test the pointer whether it had a '#' or not, thus
+                          avoiding two error messages for "wit015" when "#wit015" would have worked.
+                      -->
+                      
+                      <!-- Test that each points to a <witness>, storing result as boolean -->
+                      <sch:let name="points_to_witness" value="for $ID in $WITIDs return exists( id( $ID )[self::tei:witness] )"/>
+
+                      <!--
+                          Now we have a sequence of boolean values. If
+                          even one is false(), we have a problem that
+                          needs to be reported to the user.
+                      -->
+                      <sch:report test="$points_to_witness = false()">
+                        One (or more) of the pointers of this @wit does (do) not point to a 'witness' element;
+                        they point to the following items, in the order specified:
+                        <sch:value-of select="for $ID in $WITIDs return if ( exists( id( $ID ) ) ) then local-name( id( $ID ) ) else '*nothing*'"/>.
+                      </sch:report>
+
+                    </constraint>
+                  </constraintSpec>
+                  <remarks>
+                    <p>Note that the <att>wit</att> is constrained here, not in the definition
+                    of <name>att.witnessed</name>, because the only other element that is a member
+                    of <name>att.witnessed</name> is <gi>lem</gi>, and at our project <gi>lem</gi>
+                    never uses the <att>wit</att> attribute.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+        </figure>
+        <figure xml:id="eg15">
+          <head>Required <att>ref</att> of <gi>persName</gi> eventually refers to <gi>person</gi></head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg15_egXML">
+            <elementSpec ident="persName" mode="change">
+              <constraintSpec scheme="schematron" ident="people_have_refs">
+                <constraint>
+                  <sch:rule context="tei:persName[ not( ancestor::tei:teiHeader ) ]">
+                    <sch:assert test="@ref">A transcribed personal name (as opposed to a personal name in the metadata) must have a @ref</sch:assert>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+              <constraintSpec scheme="schematron" ident="persName_refers_eventually_to_person">
+                <constraint>
+                  <sch:rule context="tei:persName/@ref">
+                    <sch:let name="direct_target" value="id( substring-after( normalize-space(.), '#') )"/>
+                    <sch:let name="IT" value="parent::*"/>
+                    <sch:let name="indirect_targets" value="
+                        if ( $direct_target/self::tei:person )
+                        then $direct_target
+                        else
+                          if ( $direct_target[self::tei:link|self::tei:alt][@type eq 'person'] )
+                          then for $it in tokenize( normalize-space( $direct_target/@target ) ) return id( substring-after( $it, '#') )
+                          else parent::* "/>
+                    <sch:let name="targs_pt_to_person" value="for $targ in $indirect_targets return exists( $targ/self::tei:person )"/>
+                    <sch:report test="$targs_pt_to_person = false()">
+                      At least one of the pointers in "<sch:value-of select="normalize-space(.)"/>" does not end
+                      up pointing to a 'person' element, even via a 'link' or 'alt' with type="person".
+                    </sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+          </egXML>
+          <p>This set of constraints requires that <gi>persName</gi>
+          have a <att>ref</att> unless it is part of the document
+          metadata, and also requires that the pointers on the
+          <att>ref</att> attribute point to <gi>person</gi> elements,
+          even if through intermediate <gi>alt</gi> or
+          <gi>link</gi>.</p>
+        </figure>
+        <figure xml:id="eg16">
+          <head>Required <att>ref</att> of <gi>persName</gi> eventually refers to <gi>person</gi> using abstract patterns</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg16_egXML">
+            <constraintSpec scheme="schematron" ident="abstract_indirect_person">
+              <constraint>
+                <sch:pattern abstract="true" id="abstract_indirect_person">
+                  <sch:rule context="$alt_or_link_of_type_person">
+                    <sch:let name="TARGETs" value="tokenize( normalize-space( @target ), '&#x20;')"/>
+                    <sch:let name="IDREFs" value="for $target in $TARGETs return replace( $target, '^#','')"/>
+                    <sch:let name="TARGET_ELEMENTs" value="for $idref in $IDREFs return id( $idref )"/>
+                    <sch:let name="TEs_ARE_PERSON" value="for $element in $TARGET_ELEMENTs return exists( $element/self::tei:person )"/>
+                    <sch:report test="$TEs_ARE_PERSON = false()">
+                      One or more of the items pointed to by @target of
+                      this <sch:value-of select="local-name(.)"/> (of type
+                      "person") does not point to a 'person' element.
+                    </sch:report>
+                  </sch:rule>
+                </sch:pattern>
+              </constraint>
+            </constraintSpec>  
+            <classSpec ident="att.canonical" type="atts" mode="change">
+              <attList>
+                <attDef ident="key" mode="delete"/>
+                <attDef ident="ref" mode="change">
+                  <desc>provides a definition for the entity being named
+                  or referred to via a single URI pointer</desc>
+                  <datatype minOccurs="1" maxOccurs="1">
+                    <dataRef key="teidata.pointer"/>
+                  </datatype>
+                  <remarks>
+                    <p>If the word or phrase being encoded directly refers
+                    to multiple entities, this attribute should point to a
+                    <gi>link</gi> which in turn should point to the
+                    definitions.</p>
+                    <p>If the word or phrase being encoded is ambiguous,
+                    this attribute should point to a <gi>alt</gi> which in
+                    turn should point to the various possible
+                    defnitions.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </classSpec>
+            <elementSpec ident="alt" mode="change">
+              <constraintSpec scheme="schematron" ident="indirect_person_alt">
+                <constraint>
+                  <sch:pattern id="concrete_indirect_person_alt" is-a="abstract_indirect_person">
+                    <sch:param name="alt_or_link_of_type_person" value="tei:alt[ ( @type, ../@type ) = 'person' ]"/>
+                  </sch:pattern>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            <elementSpec ident="link" mode="change">
+              <constraintSpec scheme="schematron" ident="indirect_person_link">
+                <constraint>
+                  <sch:pattern id="concrete_indirect_person_link" is-a="abstract_indirect_person">
+                    <sch:param name="alt_or_link_of_type_person" value="tei:link[ ( @type, ../@type ) = 'person' ]"/>
+                  </sch:pattern>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            <elementSpec ident="persName" mode="change">
+              <constraintSpec scheme="schematron" ident="people_have_refs">
+                <constraint>
+                  <sch:rule context="tei:persName[ not( ancestor::tei:teiHeader ) ]">
+                    <sch:assert test="@ref">A transcribed personal name
+                    (as opposed to a personal name in the metadata) must
+                    have a @ref</sch:assert>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+              <attList>
+                <attDef mode="change" ident="ref">
+                  <constraintSpec scheme="schematron" ident="persNamen_refers_to_person_alt_or_link">
+                    <constraint>
+                      <sch:let name="target" value="id( substring-after( normalize-space(.), '#') )"/>
+                      <sch:assert test=" $target/self::tei:person
+                                        |$target/self::tei:alt[ ( @type, ../@type ) = 'person']
+                                        |$target/self::tei:link[ ( @type, ../@type ) = 'person']">
+                        The @ref of a personal name should refer to a
+                        'person' element, or either a 'link' or 'alt'
+                      element with type="person".</sch:assert>
+                    </constraint>
+                  </constraintSpec>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </egXML>
+          <p>This set of constraints makes use of the abstract pattern
+          facility of ISO Schematron.</p>
+        </figure>
+        <figure xml:id="eg17">
+          <head>Resolve <gi>prefixDef</gi> for references to people</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg17_egXML">
+            <sch:rule context="tei:persName/@ref|tei:rs[@type eq 'person']/@ref|tei:author/@ref">
+
+              <!-- rememgber the element type and attribute value we matched on -->
+              <sch:let name="gi" value="local-name(.)"/>
+              <sch:let name="val" value="normalize-space(.)"/>
+              
+              <!-- get a sequence of the references in the attr value -->
+              <sch:let name="REFs" value="tokenize( $val )"/>
+
+              <!-- get a sequence of the prefixes thereof[1] -->
+              <sch:let name="PREFs" value="for $r in $REFs return substring-before( $r,':')"/>
+
+              <!-- get a sequence of the URLs associated with each prefix[1] -->
+              <sch:let name="URLs" value="for $p in $PREFs return
+                                            substring-before(
+                                              /*/tei:teiHeader
+                                              /tei:encodingDesc/tei:listPrefixDef
+                                              //tei:prefixDef[ @ident eq $p ]
+                                              /@replacementPattern,
+                                              '#'
+                                            )" />
+
+              <!-- get a sequence of the keys associated with each prefix[1] -->
+              <sch:let name="KEYs" value="for $r in $REFs return substring-after( $r,':')"/>
+              
+              <!-- get a sequence of the elements pointed to by each key in the corresponding URL. -->
+              <!--
+                  If, for some reason, the URL & KEY combination does not
+                  point to a TEI element, record the current node as the
+                  target. (Thus we can test later to see if the pointer failed
+                  by testing for the current node).
+              -->
+              <sch:let name="PERSONs"
+                       value="for $k in $KEYs return
+                              if ( count( index-of( $KEYs, $k ) ) eq 1 )
+                              then 
+                                if ( doc-available( $URLs[ index-of( $KEYs, $k )] ) )
+                                then
+                                  if ( document( $URLs[ index-of( $KEYs, $k )] )//tei:*[ @xml:id eq $k ] )
+                                  then
+                                    document( $URLs[ index-of( $KEYs, $k )] )//tei:*[ @xml:id eq $k ]
+                                  else .
+                                else .
+                              else ."/>
+
+              <!-- If there are no references in @ref, that's an error; report it -->
+              <sch:report test="count( $REFs ) eq 0">
+                Empty @ref of element '<sch:value-of select="$gi"/>'
+              </sch:report>
+
+              <!-- If there are any references that point to something other than <tei:person>, -->
+              <!-- report it (them).                                                            -->
+              <sch:report test="count( $PERSONs[ not( self::tei:person ) ] ) gt 0">
+                Each pointer in the @ref attribute of a '<sch:value-of
+                select="$gi"/>' element should point to a 'person'
+                element, but the pointers in this one ("<sch:value-of
+                select="$val"/>") point to the following in the order
+                specified:
+                <sch:value-of
+                    select="if ( not( $PERSONs ) )
+                            then 'nowhere'
+                            else for $p in $PERSONs return
+                              if ( $p is . )
+                              then ' *nothing*'
+                              else concat(' &lt;', name($p), '>')"/>.
+              </sch:report>
+              <!-- 
+               [1] The PREFs, URLs, KEYs, and PERSONs sequences have the
+                   same number of items as the REFs sequence, but some of the
+                   items may be nil.
+              -->
+            </sch:rule>
+          </egXML>
+          <p>The constraint above checks only <att>ref</att>
+          attributes that occur on <gi>persName</gi>, <gi>author</gi>,
+          and <tag>rs type="person"</tag>.</p>
+          <p>Note that the constraints above only check the
+          <gi>prefixDef</gi>s that are in the <gi>teiHeader</gi> child
+          of the outermost element; <gi>prefixDef</gi>s inside nested
+          <gi>TEI</gi> or <gi>teiCorpus</gi> elements are ignored.
+          This can easily be changed by either removing just the
+          asterisk (<q>*</q>, U+002A) from the XPath, or replacing the
+          entire precise XPath with <code>//tei:prefixDef</code>.
+          These paths may be slower, however.</p>
+          <p>Heretofore we have avoided use of the less-than sign
+          (<q>&lt;</q>, U+003C) and greater-than sign (<q>></q>,
+          U+003E) inside messsages to indicate <q>this is an
+          element</q>. The only reason for this is that some
+          Schematron processors produce ugly output when these
+          characters occur in a message.</p>
+        </figure>
+        <figure xml:id="eg18">
+          <head>eg18</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg18_egXML">
+          </egXML>
+          <p>caption of eg18</p>
+        </figure>
+        <figure xml:id="eg19">
+          <head>eg19</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg19_egXML">
+          </egXML>
+          <p>caption of eg19</p>
+        </figure>
+        <figure xml:id="eg20">
+          <head>eg20</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg20_egXML">
+          </egXML>
+          <p>caption of eg20</p>
+        </figure>
+        <figure xml:id="eg21">
+          <head>eg21</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg21_egXML">
+          </egXML>
+          <p>caption of eg21</p>
+        </figure>
+        <figure xml:id="eg22">
+          <head>eg22</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg22_egXML">
+          </egXML>
+          <p>caption of eg22</p>
+        </figure>
+        <figure xml:id="eg23">
+          <head>eg23</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg23_egXML">
+          </egXML>
+          <p>caption of eg23</p>
+        </figure>
+        <figure xml:id="eg24">
+          <head>eg24</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg24_egXML">
+          </egXML>
+          <p>caption of eg24</p>
+        </figure>
+        <figure xml:id="eg25">
+          <head>eg25</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg25_egXML">
+          </egXML>
+          <p>caption of eg25</p>
+        </figure>
+        <figure xml:id="eg26">
+          <head>eg26</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg26_egXML">
+          </egXML>
+          <p>caption of eg26</p>
+        </figure>
+        <figure xml:id="eg27">
+          <head>eg27</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg27_egXML">
+          </egXML>
+          <p>caption of eg27</p>
+        </figure>
+        <figure xml:id="eg28">
+          <head>eg28</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg28_egXML">
+          </egXML>
+          <p>caption of eg28</p>
+        </figure>
+        <figure xml:id="eg29">
+          <head>eg29</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg29_egXML">
+          </egXML>
+          <p>caption of eg29</p>
+        </figure>
+        <figure xml:id="eg30">
+          <head>eg30</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg30_egXML">
+          </egXML>
+          <p>caption of eg30</p>
+        </figure>
+        <figure xml:id="eg31">
+          <head>eg31</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg31_egXML">
+          </egXML>
+          <p>caption of eg31</p>
+        </figure>
+        <figure xml:id="eg32">
+          <head>eg32</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg32_egXML">
+          </egXML>
+          <p>caption of eg32</p>
+        </figure>
+        <figure xml:id="eg33">
+          <head>eg33</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg33_egXML">
+          </egXML>
+          <p>caption of eg33</p>
+        </figure>
+        <figure xml:id="eg34">
+          <head>eg34</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg34_egXML">
+          </egXML>
+          <p>caption of eg34</p>
+        </figure>
+        <figure xml:id="eg35">
+          <head>eg35</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg35_egXML">
+          </egXML>
+          <p>caption of eg35</p>
+        </figure>
+        <figure xml:id="eg36">
+          <head>eg36</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg36_egXML">
+          </egXML>
+          <p>caption of eg36</p>
+        </figure>
+        <figure xml:id="eg37">
+          <head>eg37</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg37_egXML">
+          </egXML>
+          <p>caption of eg37</p>
+        </figure>
+        <figure xml:id="eg38">
+          <head>eg38</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg38_egXML">
+          </egXML>
+          <p>caption of eg38</p>
+        </figure>
+        <figure xml:id="eg39">
+          <head>eg39</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg39_egXML">
+          </egXML>
+          <p>caption of eg39</p>
+        </figure>
+        <figure xml:id="eg40">
+          <head>eg40</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg40_egXML">
+          </egXML>
+          <p>caption of eg40</p>
+        </figure>
+        <figure xml:id="eg41">
+          <head>eg41</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg41_egXML">
+          </egXML>
+          <p>caption of eg41</p>
+        </figure>
+        <figure xml:id="eg42">
+          <head>eg42</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg42_egXML">
+          </egXML>
+          <p>caption of eg42</p>
+        </figure>
+        <figure xml:id="eg43">
+          <head>eg43</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg43_egXML">
+          </egXML>
+          <p>caption of eg43</p>
+        </figure>
+        <figure xml:id="eg44">
+          <head>eg44</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg44_egXML">
+          </egXML>
+          <p>caption of eg44</p>
+        </figure>
+        <figure xml:id="eg45">
+          <head>eg45</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg45_egXML">
+          </egXML>
+          <p>caption of eg45</p>
+        </figure>
+        <figure xml:id="eg46">
+          <head>eg46</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg46_egXML">
+          </egXML>
+          <p>caption of eg46</p>
+        </figure>
+        <figure xml:id="eg47">
+          <head>eg47</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg47_egXML">
+          </egXML>
+          <p>caption of eg47</p>
+        </figure>
+        <figure xml:id="eg48">
+          <head>eg48</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg48_egXML">
+          </egXML>
+          <p>caption of eg48</p>
+        </figure>
+        <figure xml:id="eg49">
+          <head>eg49</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg49_egXML">
+          </egXML>
+          <p>caption of eg49</p>
+        </figure>
+        <figure xml:id="eg50">
+          <head>eg50</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg50_egXML">
+          </egXML>
+          <p>caption of eg50</p>
+        </figure>
+        <figure xml:id="eg51">
+          <head>eg51</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg51_egXML">
+          </egXML>
+          <p>caption of eg51</p>
+        </figure>
+        <figure xml:id="eg52">
+          <head>eg52</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg52_egXML">
+          </egXML>
+          <p>caption of eg52</p>
+        </figure>
+        <figure xml:id="eg53">
+          <head>eg53</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg53_egXML">
+          </egXML>
+          <p>caption of eg53</p>
+        </figure>
+        <figure xml:id="eg54">
+          <head>eg54</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg54_egXML">
+          </egXML>
+          <p>caption of eg54</p>
+        </figure>
+        <figure xml:id="eg55">
+          <head>eg55</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg55_egXML">
+          </egXML>
+          <p>caption of eg55</p>
+        </figure>
+        <figure xml:id="eg56">
+          <head>eg56</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg56_egXML">
+          </egXML>
+          <p>caption of eg56</p>
+        </figure>
+        <figure xml:id="eg57">
+          <head>eg57</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg57_egXML">
+          </egXML>
+          <p>caption of eg57</p>
+        </figure>
+        <figure xml:id="eg58">
+          <head>eg58</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg58_egXML">
+          </egXML>
+          <p>caption of eg58</p>
+        </figure>
+        <figure xml:id="eg59">
+          <head>eg59</head>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg59_egXML">
+          </egXML>
+          <p>caption of eg59</p>
+        </figure>
+      </div>
+    </back>
+  </text>
+</TEI>
