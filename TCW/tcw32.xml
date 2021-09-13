@@ -58,13 +58,13 @@
     </encodingDesc>
     <revisionDesc>
       <change who="#sb" when="2021-08-15">
-	Tweaks to make public (e.g., remove references to file paths on my local system)
+        Tweaks to make public (e.g., remove references to file paths on my local system)
       </change>
       <change who="#sb" when="2021-08-01">
         resume work, having last edited 2021-02-28T23:59.
       </change>
       <change who="#sb" when="2021-01-18">
-        started as a customziation ODD on my local system (home
+        started as a customization ODD on my local system (home
         desktop — we’re in the middle of a pandemic)
       </change>
     </revisionDesc>
@@ -73,9 +73,9 @@
     <front>
       <titlePage>
         <docAuthor>The TEI Technical Council</docAuthor>
-	<!-- NOTE: Should probably change to a TCU document on release
-	     ('W' is for internal Council working documents; 'U' is
-	     for user documentation). -->
+        <!-- NOTE: Should probably change to a TCU document on release
+             ('W' is for internal Council working documents; 'U' is
+             for user documentation). -->
         <docTitle n="TEI TCW 32">
           <titlePart>
             <title type="sub">TEI TCW 32:</title>
@@ -125,7 +125,7 @@
         considered <soCalled>right</soCalled> in the current
         circumstances. In any case, (4) is much more difficult, and
         usually requires a human, if not a human with domain-specific
-	knowledge.</p>
+        knowledge.</p>
         <p>Thus the TEI Technical Council does not plan to include any
         general tests for (2)–(4) directly in TEI P5, at least not in
         the near future. However, recognizing that at least (2) &amp;
@@ -134,12 +134,12 @@
         for doing so. The intent is that projects can copy-and-paste
         ODD fragments from this file into their own, and modify as
         desired to suit their local needs.</p>
-	<p>Note, however, that this document only discusses testing of
-	URIs that are intended to return an XML document or fragment
-	thereof. It is possible to use URIs to point to and retrieve
-	other sorts of information objects including JSON, images,
-	HTML (other than XHTML), audio files, word processor files,
-	etc.</p>
+        <p>Note, however, that this document only discusses testing of
+        URIs that are intended to return an XML document or fragment
+        thereof. It is possible to use URIs to point to and retrieve
+        other sorts of information objects including JSON, images,
+        HTML (other than XHTML), audio files, word processor files,
+        etc.</p>
         <p>Note: The examples herein often use an attribute as the
         context node in ISO Schematron rules. Some Schematron
         processors fail to process this correctly. (The oXygen XML
@@ -160,10 +160,10 @@
       be tested.</p>
       <p>We first discuss cases where items are being directly pointed
       to (first in the singleton case, then with multiple pointers),
-      and then cases where the an tiem is being referred to indirectly
+      and then cases where the an item is being referred to indirectly
       either via an intermediate <gi>link</gi> or <gi>alt</gi>
       element, or via a prefix defined in the <gi>prefixDef</gi>. As a
-      last case, we demonsrate ensuring that the validation is being
+      last case, we demonstrate ensuring that the validation is being
       performed after XInclude processing.</p>
       <div type="section">
         <head>direct reference by single value</head>
@@ -199,18 +199,18 @@
           pointer</term> fragment identifier (previously called a
           <soCalled>bare name</soCalled> fragment identifier) is
           probably the most common form of fragment identifier; it
-          refers to an element in the document in question by refering
+          refers to an element in the document in question by referring
           to its ID. (In TEI the ID is always indicated by the
           <att>xml:id</att> attribute.) This typically looks like
           either
-	  <eg>https://www.w3.org/TR/xptr-framework/#<emph style="font-weight:bold; font-style: normal;">shorthand</emph></eg>
-	  or
-	  <eg>#<emph style="font-weight:bold; font-style: normal;">DeRoseetal1990</emph></eg>.
-	  If there is no document mentioned to the left of the
-	  <code>#</code>, then the document being referred to is the
-	  base document, which is typically the current document in
-	  which the URI appears (but can be modified by the
-	  <att>xml:base</att> attribute).</p>
+          <eg>https://www.w3.org/TR/xptr-framework/#<emph style="font-weight:bold; font-style: normal;">shorthand</emph></eg>
+          or
+          <eg>#<emph style="font-weight:bold; font-style: normal;">DeRoseetal1990</emph></eg>.
+          If there is no document mentioned to the left of the
+          <code>#</code>, then the document being referred to is the
+          base document, which is typically the current document in
+          which the URI appears (but can be modified by the
+          <att>xml:base</att> attribute).</p>
           <p>First, just to demonstrate how this works in general, we
           show in <ptr target="#eg02"/> how to test that the
           <att>ref</att> attribute of <gi>g</gi> has the correct
@@ -302,7 +302,7 @@
             or that a value uses a private URI scheme prefix defined
             by a <gi>prefixDef</gi> (see <ptr target="#eg59"/>).
             However, in most cases projects would probably want to
-            constrain the value to a particular way of refering to an
+            constrain the value to a particular way of referring to an
             existing, readable, local XML file (if not a particular
             file, for which see <ptr target="#eg06"/>). For example,
             <ptr target="#eg07"/> demonstrates a method for requiring
@@ -311,12 +311,12 @@
             instance ODD and whose filename ends in <val>.rng</val>
             (and thus is probably a RELAX NG file in the XML
             syntax).</p>
-            <p>We may wish ensure that the file refered to (whether
+            <p>We may wish ensure that the file referred to (whether
             local or remote) is readable, well-formed XML. Luckily,
             XPath provides the <code>doc-available()</code> function
             for this very purpose. The constraints demonstrated in
             <ptr target="#eg08"/> first ensure that the information
-            item refered to by the <att>url</att> attribute is a
+            item referred to by the <att>url</att> attribute is a
             <emph>file</emph>, not an <emph>element</emph>, and then
             require that the file be readable, well-formed XML. The
             example at <ptr target="#eg09"/> duplicates these
@@ -325,7 +325,7 @@
             element.</p>
             <!-- 
             <p>To test that a value uses the proper
-            sytnax to refer to a local file we need to perform
+            syntax to refer to a local file we need to perform
             explicit tests. There are three possible syntaxes: an
             absolute path reference, a relative path reference, or a
             <name>file</name> URL scheme. Testing for an absolute path
@@ -390,7 +390,7 @@
       restriction that there are at most 2 pointers.</p>
       <p>But in many, if not most, cases there is no such restriction.
       For example, there may be dozens of witnesses to a particular
-      manuscript manisfestation. <ptr target="#eg14"/> tests that each
+      manuscript manifestation. <ptr target="#eg14"/> tests that each
       pointer in the value of a <att>wit</att> refers to a
       <gi>witness</gi> element in the same file. In addition to tests
       similar to the previous example, this example reports to the
@@ -414,7 +414,7 @@
       turn, points to each <gi>person</gi> referred to. One advantage
       to this latter method is that you can restrict the
       <att>ref</att> of <gi>persName</gi> to one and only 1 pointer,
-      and use similar constratins for both ambiguous and multiple
+      and use similar constraints for both ambiguous and multiple
       references. <ptr target="#eg15"/> demonstrates such
       constraints.</p>
       <p>A similar set of constraints can be expressed in a simpler,
@@ -424,7 +424,7 @@
       as demonstrated in <ptr target="#eg16"/>. Because the code for
       <gi>alt</gi> and <gi>link</gi> is somewhat complicated, this
       technique expresses that code only once as an abstract
-      Schematron pattern, which is instatiated separately, once for
+      Schematron pattern, which is instantiated separately, once for
       <gi>alt</gi> and once for <gi>link</gi>.</p>
     </div>
     <div>
@@ -531,7 +531,7 @@
                 <dataRef name="anyURI" restriction="#\i\c*"/>
               </content>
               <remarks>
-                <p>Formerly refered to as a
+                <p>Formerly referred to as a
                 <soCalled>barename</soCalled>
                 identifier.</p></remarks>
             </dataSpec>
@@ -664,7 +664,7 @@
           <p>Note that leading and trailing whitespace are trimmed
           from the value before it is handed to the
           <code>doc-available()</code> function. This is because
-          <name>xsd:anyURL</name> will allow leading or trailing
+          <name>xsd:anyURI</name> will allow leading or trailing
           whitespace, but <code>doc-available()</code> does not. (The
           <code>normalize-space()</code> function would also normalize
           internal whitespace if there were any, but there is not,
@@ -776,7 +776,7 @@
           </egXML>
         </figure>
         <figure xml:id="eg13">
-          <head><att>rendtion</att> points to 1 or 2 <gi>rendition</gi>s</head>
+          <head><att>rendition</att> points to 1 or 2 <gi>rendition</gi>s</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg13_egXML">
             <classSpec ident="att.global.rendition" mode="change" type="atts">
               <attList>
@@ -834,14 +834,14 @@
                 <p>On generation of schemas the TEI ODD software will
                 issue an information message: <quote>constraint for
                 @rendition of the att.global.rendition class does not have
-                a context=. Resulting rule is applied to *all* occurences
+                a context=. Resulting rule is applied to *all* occurrences
                 of @rendition.</quote> Since we do not declare any other
                 <att>rendition</att> attributes, this is not a
                 concern.</p>
               </remarks>
             </classSpec>
           </egXML>
-          <p>Note that the comparision <code>$VAR eq ''</code> could
+          <p>Note that the comparison <code>$VAR eq ''</code> could
           have been used instead of the function <code>empty( $VAR
           )</code>.</p>
         </figure>
@@ -976,7 +976,7 @@
                     <p>If the word or phrase being encoded is ambiguous,
                     this attribute should point to a <gi>alt</gi> which in
                     turn should point to the various possible
-                    defnitions.</p>
+                    definitions.</p>
                   </remarks>
                 </attDef>
               </attList>
@@ -1118,7 +1118,7 @@
           These paths may be slower, however.</p>
           <p>Heretofore we have avoided use of the less-than sign
           (<q>&lt;</q>, U+003C) and greater-than sign (<q>></q>,
-          U+003E) inside messsages to indicate <q>this is an
+          U+003E) inside messages to indicate <q>this is an
           element</q>. The only reason for this is that some
           Schematron processors produce ugly output when these
           characters occur in a message.</p>
