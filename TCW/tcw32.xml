@@ -299,6 +299,8 @@
             referred to a local file (whether an absolute path
             reference, a relative path reference, or a
             <name>file</name> URL scheme; see <ptr target="#eg58"/>)
+            <!-- Note to Council and other reviewers: I have not
+                 written eg58 nor eg59 yet      —Syd, 2021-09-13 -->
             or that a value uses a private URI scheme prefix defined
             by a <gi>prefixDef</gi> (see <ptr target="#eg59"/>).
             However, in most cases projects would probably want to
@@ -307,10 +309,10 @@
             file, for which see <ptr target="#eg06"/>). For example,
             <ptr target="#eg07"/> demonstrates a method for requiring
             that the <att>url</att> attribute of <gi>moduleRef</gi>
-            refer to a local file that is in the same directory as the
-            instance ODD and whose filename ends in <val>.rng</val>
-            (and thus is probably a RELAX NG file in the XML
-            syntax).</p>
+            refers to a local file that is in the same directory as
+            the instance ODD and whose filename ends in
+            <val>.rng</val> (and thus is probably a RELAX NG file in
+            the XML syntax).</p>
             <p>We may wish ensure that the file referred to (whether
             local or remote) is readable, well-formed XML. Luckily,
             XPath provides the <code>doc-available()</code> function
@@ -718,7 +720,13 @@
                       <sch:let name="file" value="substring-before( ., '#')"/>
                       <sch:let name="ID" value="substring-after( ., '#')"/>
                       <sch:let name="element_found" value="doc( $file )//id( $ID )"/>
-                      <sch:assert test="$element_found[ self::tei:person ]">persName should refer to a person; this one refers to <sch:value-of select="if ( $element_found ) then concat( 'a ', local-name( $element_found ) ) else 'nothing'"/>.</sch:assert>
+                      <sch:assert test="$element_found[ self::tei:person ]">
+                        persName should refer to a person; this one
+                        refers to <sch:value-of select="
+                          if ($element_found )
+                          then concat( 'a ', local-name( $element_found ) )
+                          else 'nothing'"/>.
+                      </sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
