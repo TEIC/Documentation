@@ -775,13 +775,18 @@
                   <constraintSpec scheme="schematron" ident="filter_is_XSLT">
                     <constraint>
                       <sch:let name="xsltNS" value="'http://www.w3.org/1999/XSL/Transform'"/>
-                      <sch:assert test="doc(.)/*[namespace-uri() eq $xsltNS]">The filter must be an XSLT program!</sch:assert>
+                      <sch:let name="relURI" value="resolve-uri( normalize-space(.) )"/>
+                      <sch:assert test="doc($relURI)/*[namespace-uri() eq $xsltNS]">The filter must be an XSLT program!</sch:assert>
                     </constraint>
                   </constraintSpec>
                 </attDef>
               </attList>
             </elementSpec>
           </egXML>
+          <p>The use of <code>resolve-uri()</code> assures that if a
+          relative URI is used, the document we attempt to retrive is
+          the one at that URI relative to the input document, not the
+          Schematron schema.</p>
         </figure>
         <figure xml:id="eg13">
           <head><att>rendition</att> points to 1 or 2 <gi>rendition</gi>s</head>
