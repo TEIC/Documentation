@@ -646,7 +646,7 @@
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_readable">
                     <constraint>
-                      <sch:assert test="doc-available( normalize-space(.) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
+                      <sch:assert test="doc-available( resolve-uri( normalize-space(.) ) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
@@ -684,7 +684,11 @@
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_relaxng">
                     <constraint>
-                  <sch:assert test="doc-available( normalize-space(.) ) and doc( normalize-space(.) )/*[self::rng:grammar]">Module <sch:value-of select="normalize-space(.)"/> is not a readable, well-formed RELAX NG grammar in the XML syntax.</sch:assert>
+                  <sch:assert test="
+			doc-available( resolve-uri( normalize-space(.) ) )
+			and
+			doc( resolve-uri( normalize-space(.) ) )/*[self::rng:grammar]"
+			      >Module <sch:value-of select="normalize-space(.)"/> is not a readable, well-formed RELAX NG grammar in the XML syntax.</sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
