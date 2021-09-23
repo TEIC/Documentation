@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" version="4.1.0">
   <!--
       When generating output from standard TEI stylesheets set the
@@ -684,11 +684,13 @@
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_relaxng">
                     <constraint>
-                  <sch:assert test="
-			doc-available( resolve-uri( normalize-space(.) ) )
-			and
-			doc( resolve-uri( normalize-space(.) ) )/*[self::rng:grammar]"
-			      >Module <sch:value-of select="normalize-space(.)"/> is not a readable, well-formed RELAX NG grammar in the XML syntax.</sch:assert>
+                      <sch:assert test="doc-available( resolve-uri( normalize-space(.) ) )
+                                        and
+                                        doc( resolve-uri( normalize-space(.) ) )/*[self::rng:grammar]
+                                       ">
+                        Module <sch:value-of select="normalize-space(.)"/> is not a readable,
+                        well-formed RELAX NG grammar in the XML syntax.
+                      </sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
@@ -957,25 +959,35 @@
           <gi>link</gi>.</p>
         </figure>
         <figure xml:id="eg16">
-          <head>Required <att>ref</att> of <gi>persName</gi> eventually refers to <gi>person</gi> using abstract patterns</head>
+          <head>Required <att>ref</att> of <gi>persName</gi>
+          eventually refers to <gi>person</gi> using abstract
+          patterns</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg16_egXML">
-            <constraintSpec scheme="schematron" ident="abstract_indirect_person">
+            <constraintSpec ident="abstract_indirect_person" scheme="schematron" >
               <constraint>
                 <sch:pattern abstract="true" id="abstract_indirect_person">
                   <sch:rule context="$alt_or_link_of_type_person">
                     <sch:let name="TARGETs" value="tokenize( normalize-space( @target ), '&#x20;')"/>
                     <sch:let name="IDREFs" value="for $target in $TARGETs return replace( $target, '^#','')"/>
-                    <sch:let name="TARGET_ELEMENTs" value="for $idref in $IDREFs return id( $idref )"/>
-                    <sch:let name="TEs_ARE_PERSON" value="for $element in $TARGET_ELEMENTs return exists( $element/self::tei:person )"/>
-                    <sch:report test="$TEs_ARE_PERSON = false()">
-                      One or more of the items pointed to by @target of
-                      this <sch:value-of select="local-name(.)"/> (of type
-                      "person") does not point to a 'person' element.
-                    </sch:report>
+                    <sch:let name="TARGET_ELEMENTs"
+                             value="for $idref in $IDREFs return
+                                      (: if it points to an element in this document … :)
+                                      if ( id( $idref ) )
+                                        (: … then return it … :)
+                                        then id( $idref )
+                                        (: … otherwise return current link or alt element, which is not a
+                                           person element, so will be caught as an error, below. :)
+                                        else ."/><!-- myself as target is an error either way :-) -->
+                    <sch:let name="TEs_ARE_PERSON"
+                             value="for $element in $TARGET_ELEMENTs return
+                                      exists( $element/self::tei:person )"/>
+                    <sch:report test="$TEs_ARE_PERSON = false()">One or more of the items pointed to by
+                    @target of this <sch:value-of select="local-name(.)"/> (of type "person") does not
+                    point to a 'person' element.</sch:report>
                   </sch:rule>
                 </sch:pattern>
               </constraint>
-            </constraintSpec>  
+            </constraintSpec>
             <classSpec ident="att.canonical" type="atts" mode="change">
               <attList>
                 <attDef ident="key" mode="delete"/>
@@ -986,14 +998,14 @@
                     <dataRef key="teidata.pointer"/>
                   </datatype>
                   <remarks>
-                    <p>If the word or phrase being encoded directly refers
-                    to multiple entities, this attribute should point to a
-                    <gi>link</gi> which in turn should point to the
-                    definitions.</p>
-                    <p>If the word or phrase being encoded is ambiguous,
-                    this attribute should point to a <gi>alt</gi> which in
-                    turn should point to the various possible
-                    definitions.</p>
+                    <p>If the word or phrase being encoded directly
+                    refers to multiple entities, this attribute should
+                    point to a <gi>link</gi> which in turn should
+                    point to the definitions.</p>
+                    <p>If the word or phrase being encoded is
+                    ambiguous, this attribute should point to a
+                    <gi>alt</gi> which in turn should point to the
+                    various possible definitions.</p>
                   </remarks>
                 </attDef>
               </attList>
@@ -1002,7 +1014,8 @@
               <constraintSpec scheme="schematron" ident="indirect_person_alt">
                 <constraint>
                   <sch:pattern id="concrete_indirect_person_alt" is-a="abstract_indirect_person">
-                    <sch:param name="alt_or_link_of_type_person" value="tei:alt[ ( @type, ../@type ) = 'person' ]"/>
+                    <sch:param name="alt_or_link_of_type_person"
+                               value="tei:alt[ ( @type, ../@type ) = 'person' ]"/>
                   </sch:pattern>
                 </constraint>
               </constraintSpec>
@@ -1011,7 +1024,8 @@
               <constraintSpec scheme="schematron" ident="indirect_person_link">
                 <constraint>
                   <sch:pattern id="concrete_indirect_person_link" is-a="abstract_indirect_person">
-                    <sch:param name="alt_or_link_of_type_person" value="tei:link[ ( @type, ../@type ) = 'person' ]"/>
+                    <sch:param name="alt_or_link_of_type_person"
+                               value="tei:link[ ( @type, ../@type ) = 'person' ]"/>
                   </sch:pattern>
                 </constraint>
               </constraintSpec>
@@ -1020,9 +1034,9 @@
               <constraintSpec scheme="schematron" ident="people_have_refs">
                 <constraint>
                   <sch:rule context="tei:persName[ not( ancestor::tei:teiHeader ) ]">
-                    <sch:assert test="@ref">A transcribed personal name
-                    (as opposed to a personal name in the metadata) must
-                    have a @ref</sch:assert>
+                    <sch:assert test="@ref">A transcribed personal
+                    name (as opposed to a personal name in the
+                    metadata) must have a @ref</sch:assert>
                   </sch:rule>
                 </constraint>
               </constraintSpec>
@@ -1031,12 +1045,13 @@
                   <constraintSpec scheme="schematron" ident="persNamen_refers_to_person_alt_or_link">
                     <constraint>
                       <sch:let name="target" value="id( substring-after( normalize-space(.), '#') )"/>
-                      <sch:assert test=" $target/self::tei:person
-                                        |$target/self::tei:alt[ ( @type, ../@type ) = 'person']
-                                        |$target/self::tei:link[ ( @type, ../@type ) = 'person']">
-                        The @ref of a personal name should refer to a
-                        'person' element, or either a 'link' or 'alt'
-                      element with type="person".</sch:assert>
+                      <sch:assert test="  $target/self::tei:person
+                                        | $target/self::tei:alt[ ( @type, ../@type) = 'person']
+                                        | $target/self::tei:link[ ( @type, ../@type ) = 'person']
+                                       ">The @ref of a personal name should refer to a 'person' element,
+                      or either a 'link' or 'alt' element with type="person"; but this one points to the
+                      '<sch:value-of select="name($target)"/>' with ID
+                      "<sch:value-of select="$target/@xml:id"/>".</sch:assert>
                     </constraint>
                   </constraintSpec>
                 </attDef>
