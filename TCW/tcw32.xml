@@ -900,8 +900,9 @@
                           needs to be reported to the user.
                       -->
                       <sch:report test="$points_to_witness = false()">
-                        One (or more) of the pointers of this @wit does (do) not point to a 'witness' element;
-                        they point to the following items, in the order specified:
+                        One (or more) of the pointers of this @wit does (do) not point
+                        to a 'witness' element. The pointers of this @wit point to the
+                        following items, in the order specified:
                         <sch:value-of select="for $ID in $WITIDs return if ( exists( id( $ID ) ) ) then local-name( id( $ID ) ) else '*nothing*'"/>.
                       </sch:report>
 
@@ -973,7 +974,7 @@
                              value="for $idref in $IDREFs return
                                       (: if it points to an element in this document … :)
                                       if ( id( $idref ) )
-                                        (: … then return it … :)
+                                        (: … then return the element it points to … :)
                                         then id( $idref )
                                         (: … otherwise return current link or alt element, which is not a
                                            person element, so will be caught as an error, below. :)
