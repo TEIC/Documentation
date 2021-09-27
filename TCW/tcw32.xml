@@ -246,8 +246,8 @@
           bound to the TEI namespace. Although an ODD author may
           define any namespace prefix for the purpose (using the
           Schematron <gi>ns</gi> element), TEI ODD software will
-          automatically insert a definition that binds the string
-          <code>tei</code> to the TEI namespace.</p>
+          automatically insert a definition that binds the prefix
+          <code>tei:</code> to the TEI namespace.</p>
         </div>
         <div>
           <head>local filesystem</head>
@@ -588,9 +588,12 @@
             </constraintSpec>
           </egXML>
           <p>In this example we presume that the <att>ref</att> of
-          <gi>g</gi> is a shorthand pointer. Thus this constraint
-          should be used in conjunction with something like <ptr
-          target="#eg02"/> or <ptr target="#eg03"/>.</p>
+          <gi>g</gi> is a shorthand pointer that actually points to
+          <emph>something</emph> in the current document. Thus this
+          constraint should be used in conjunction with a constraint
+          like <ptr target="#eg04"/> (which itself should be used in
+          conjunction with a constraint like <ptr target="#eg02"/> or
+          <ptr target="#eg03"/>).</p>
           <p>Note: use <code>self::tei:char</code>, not
           <code>self::char</code>.</p>
         </figure>
