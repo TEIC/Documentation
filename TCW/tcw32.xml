@@ -45,11 +45,10 @@
       </projectDesc>
       <schemaRef type="authoring" key="tei_customization"
                  url="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/relaxng/tei_customization.rnc">
-        <desc>This ODD was generated using the helpful
-        tei_customization.rnc closed schema, but is not intended to be
-        valid against it. (E.g., the <gi>sourceDesc</gi> has a child
-        <gi>ab</gi>, which is not currently valid in
-        tei_customization.)</desc>
+        <desc>This ODD was generated using the helpful tei_customization.rnc
+        closed schema, but is not intended to be valid against it. (E.g., the
+        <gi>sourceDesc</gi> has a child <gi>ab</gi>, which is not currently
+        valid in tei_customization.)</desc>
       </schemaRef>
       <schemaRef type="validation" key="tei_odds"
                  url="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.rnc https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.isosch">
@@ -148,7 +147,7 @@
     </front>
     <body>
       <p>There are over 100 attributes in TEI defined as <name
-      type="class">teidata.pointer</name>.<note>And another 4 or so
+      type="class">teidata.pointer</name>.<note place="foot">And another 4 or so
       defined as <name type="class">teidata.namespace</name>, whose
       values have the same syntax as a URI, but are not necessarily
       intended to point at anything.</note> Roughly 60 of those are
@@ -166,7 +165,7 @@
       last case, we demonstrate ensuring that the validation is being
       performed after XInclude processing.</p>
       <div type="section">
-        <head>direct reference by single value</head>
+        <head>Direct reference by single value</head>
         <!--
             To get a list of attributes that are defined as singleton URIs try
             $ xsel -t -m "//t:datatype[not(@maxOccurs) or @maxOccurs='1'][t:dataRef[not(@maxOccurs) or @maxOccurs='1'][@key='teidata.pointer']]" -v "concat( ancestor::t:elementSpec/@ident|ancestor::t:classSpec/@ident|ancestor::t:dataSpec/@ident,'/@',parent::t:attDef/@ident)" -n /path/to/local/P5/p5subset.xml | sort
@@ -379,7 +378,7 @@
       </div>
     </div>
     <div>
-      <head>direct access by multiple values</head>
+      <head>Direct access by multiple values</head>
       <p>If a pointer attribute may have multiple values, testing is
       mildly more difficult because the attribute needs to be parsed
       first. In the general case, delivering a precise error message
@@ -455,10 +454,55 @@
       sort, it does not limit itself to any particular prefix. The
       document is searched for possible prefix values.</p>
     </div>
+    <div type="section">
+      <head>XInclude, yet?</head>
+      <p>It is often the case that we know certain tests will fail
+      before XInclude processing, whereas we hope they would succeed
+      after XInclude processing. For example, imagine that at our
+      (fictional) <q>The Papers of Dr. Virgil Swann</q> project the
+      extant documents to be encoded (which include letters,
+      scientific notebooks, satellite schematics, a dictionary, and
+      translations of intercepted radio transmissions) have been
+      categorized using a project-specific taxonomy. This taxonomy is
+      encoded as a <gi>taxonomy</gi> element. Since each TEI document
+      refers to this taxonomy (from its
+      <code>/TEI/teiHeader/profileDesc/textClass/catRef/@target</code>),
+      the project has chosen to have a copy of the entire project
+      taxonomy in each TEI document’s header (in its
+      <code>/TEI/teiHeader/encodingDesc/classDecl</code>). In order to
+      avoid multiple copies of the same information, the project has
+      chosen to store the <gi>taxonomy</gi> in a separate document and
+      use XInclude to insert it into each TEI header.<note
+      place="foot">Why they would choose to do this rather than use a
+      URI that points to an external document is an interesting, if
+      irrelevant, question. They may well have been influenced by the
+      fact that <emph>every</emph> example of <gi>catRef</gi> in the
+      <title>Guidelines</title> uses shorthand pointers.</note></p>
+      <p>Given this situation, imagine now that the project wishes to
+      check that the <att>target</att> attributes actually point to
+      one or more <gi>category</gi> elements. This is problematic,
+      because the <gi>category</gi> elements are not actually in the
+      file as it sits unprocessed. There are a variety of ways this
+      could be handled, probably the easiest of which is simply to
+      skip the test (and warn the user it is being skipped) if
+      XInclude processing has not yet taken place.</p>
+      <p>There are two straightforward methods of asking the question
+      <q>has XInclude processing taken place yet?</q>. The first
+      relies on the fact that after XInclude processing, no elements
+      from the XInclude namespace should remain: they should have
+      become the file to be included or, in case of error, the
+      contents of the <gi>xi:fallback</gi>. This method is exemplified
+      in <ptr target="#eg18"/>.</p>
+      <p>The second relies on the fact that before XInclude processing
+      the file does not have a <gi>taxonomy</gi>, and after XInclude
+      processing it does. This method is exemplified in <ptr
+      target="#eg19"/>.</p>
+    </div>
     </body>
     <back>
       <div type="meat_of_the_matter">
         <head>Examples</head>
+        <!-- ========= figure eg01 ========= -->
         <figure xml:id="eg01">
           <head>PureODD to limit attribute to one URI</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="only_1_ptr">
@@ -475,6 +519,7 @@
           <p>In this example the <att>corresp</att> of <gi>s</gi> is
           altered so that its value must be one and only one URL.</p>
         </figure>
+        <!-- ========= figure eg02 ========= -->
         <figure xml:id="eg02">
           <head>Ensure <att>ref</att> of <gi>g</gi> is a shorthand pointer</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_is_shorthand_ptr">
@@ -508,6 +553,7 @@
           Name</ref>, and thus <code>#\i\c*</code> matches a shorthand
           pointer to an XML element with an ID attribute.</p>
         </figure>
+        <!-- ========= figure eg03 ========= -->
         <figure xml:id="eg03">
           <head>Ensure <att>ref</att> of <gi>g</gi> is a shorthand pointer, PureODD</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg03_egXML">
@@ -547,12 +593,13 @@
           NG (or the W3C Schema Language), and modern XML editors
           (like oXygen) can enforce such constraints immediately, as
           you type.</p>
-          <p>However, this method as the disadvantage that the TEI’s
+          <p>However, this method has the disadvantage that the TEI’s
           current ODD processor has only partial support for it, and
           it is not entirely clear that this is an intended feature of
           PureODD that will remain part of the
           <title>Guidelines</title>.</p>
         </figure>
+        <!-- ========= figure eg04 ========= -->
         <figure xml:id="eg04">
           <head>Check that <att>ref</att> of <gi>g</gi> points to <emph>something</emph></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_points_to_local">
@@ -572,6 +619,7 @@
           should be used in conjunction with something like <ptr
           target="#eg02"/> or <ptr target="#eg03"/>.</p>
         </figure>
+        <!-- ========= figure eg05 ========= -->
         <figure xml:id="eg05">
           <head>Check that <att>ref</att> of <gi>g</gi> points to a <gi>char</gi> or a <gi>glyph</gi></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_points_to_char_or_glyph">
@@ -597,6 +645,7 @@
           <p>Note: use <code>self::tei:char</code>, not
           <code>self::char</code>.</p>
         </figure>
+        <!-- ========= figure eg06 ========= -->
         <figure xml:id="eg06">
           <head>Require the <att>url</att> of <gi>moduleRef</gi> to refer to a particular file</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg06_egXML">
@@ -619,6 +668,7 @@
           <att>url</att> of <gi>moduleRef</gi> be
           <val>./kryptonian.rng</val>.</p>
         </figure>
+        <!-- ========= figure eg07 ========= -->
         <figure xml:id="eg07">
           <head>Check that <att>url</att> of <gi>moduleRef</gi> refers to an RNG file in the same directory</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg07_egXML">
@@ -638,6 +688,7 @@
             </elementSpec>
           </egXML>
         </figure>
+        <!-- ========= figure eg08 ========= -->
         <figure xml:id="eg08">
           <head>Ensure file is readable XML</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg08_egXML">
@@ -676,6 +727,7 @@
           because <name>xsd:anyURI</name> does not allow internal
           whitespace.)</p>
         </figure>
+        <!-- ========= figure eg09 ========= -->
         <figure xml:id="eg09">
           <head>Ensure file is readable RELAX NG grammar</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg09_egXML">
@@ -715,6 +767,7 @@
           without it, the user gets a generic error message, e.g.
           <q>No such file or directory</q>.</p>
         </figure>
+        <!-- ========= figure eg10 ========= -->
         <figure xml:id="eg10">
           <head>Require <gi>persName</gi> to refer to a <gi>person</gi> in the local personography</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg10_egXML">
@@ -749,6 +802,7 @@
           <p>This constraint takes advantage of Schematron’s facility
           for storing values in <soCalled>variables</soCalled>.</p>
         </figure>
+        <!-- ========= figure eg11 ========= -->
         <figure xml:id="eg11">
           <head>Ensure <att>uri</att> of <gi>equiv</gi> is present and refers to an item on a particular page</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg11_egXML">
@@ -772,6 +826,7 @@
           different possible URLs, all of which are checked for by the
           <att>restriction</att>.</p>
         </figure>
+        <!-- ========= figure eg12 ========= -->
         <figure xml:id="eg12">
           <head>Require a <att>filter</att> on <gi>equiv</gi> that points to an XSLT program</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg12_egXML">
@@ -793,10 +848,11 @@
             </elementSpec>
           </egXML>
           <p>The use of <code>resolve-uri()</code> assures that if a
-          relative URI is used, the document we attempt to retrive is
+          relative URI is used, the document we attempt to retrieve is
           the one at that URI relative to the input document, not the
           Schematron schema.</p>
         </figure>
+        <!-- ========= figure eg13 ========= -->
         <figure xml:id="eg13">
           <head><att>rendition</att> points to 1 or 2 <gi>rendition</gi>s</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg13_egXML">
@@ -867,6 +923,7 @@
           have been used instead of the function <code>empty( $VAR
           )</code>.</p>
         </figure>
+        <!-- ========= figure eg14 ========= -->
         <figure xml:id="eg14">
           <head>Check that each pointer in <att>wit</att> points to <gi>witness</gi></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg14_egXML">
@@ -890,12 +947,14 @@
                       -->
                       <sch:let name="WITIDs" value="for $WIT in $WITs return replace( $WIT, '^#','')"/>
                       <!--
-                          Note that we we actually test the pointer whether it had a '#' or not, thus
-                          avoiding two error messages for "wit015" when "#wit015" would have worked.
+                          Note that we actually test the pointer whether it had
+                          a '#' or not, thus avoiding two error messages for
+                          "wit015" when "#wit015" would have worked.
                       -->
                       
                       <!-- Test that each points to a <witness>, storing result as boolean -->
-                      <sch:let name="points_to_witness" value="for $ID in $WITIDs return exists( id( $ID )[self::tei:witness] )"/>
+                      <sch:let name="points_to_witness"
+                               value="for $ID in $WITIDs return exists( id( $ID )[self::tei:witness] )"/>
 
                       <!--
                           Now we have a sequence of boolean values. If
@@ -906,7 +965,10 @@
                         One (or more) of the pointers of this @wit does (do) not point
                         to a 'witness' element. The pointers of this @wit point to the
                         following items, in the order specified:
-                        <sch:value-of select="for $ID in $WITIDs return if ( exists( id( $ID ) ) ) then local-name( id( $ID ) ) else '*nothing*'"/>.
+                        <sch:value-of select="for $ID in $WITIDs return
+                                                if ( exists( id( $ID ) ) )
+                                                  then local-name( id( $ID ) )
+                                                  else '*nothing*'"/>.
                       </sch:report>
 
                     </constraint>
@@ -922,6 +984,7 @@
             </elementSpec>
           </egXML>
         </figure>
+        <!-- ========= figure eg15 ========= -->
         <figure xml:id="eg15">
           <head>Required <att>ref</att> of <gi>persName</gi> eventually refers to <gi>person</gi></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg15_egXML">
@@ -962,6 +1025,7 @@
           even if through intermediate <gi>alt</gi> or
           <gi>link</gi>.</p>
         </figure>
+        <!-- ========= figure eg16 ========= -->
         <figure xml:id="eg16">
           <head>Required <att>ref</att> of <gi>persName</gi>
           eventually refers to <gi>person</gi> using abstract
@@ -1065,13 +1129,14 @@
           <p>This set of constraints makes use of the abstract pattern
           facility of ISO Schematron.</p>
         </figure>
+        <!-- ========= figure eg17 ========= -->
         <figure xml:id="eg17">
           <head>Resolve <gi>prefixDef</gi> for references to people</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg17_egXML">
-            <sch:rule context="tei:persName/@ref|tei:rs[@type eq 'person']/@ref|tei:author/@ref">
+            <sch:rule context="tei:persName/@ref | tei:rs[@type eq 'person']/@ref | tei:author/@ref">
 
-              <!-- rememgber the element type and attribute value we matched on -->
-              <sch:let name="gi" value="local-name(.)"/>
+              <!-- remember the element type and attribute value we matched on -->
+              <sch:let name="gi" value="local-name(..)"/>
               <sch:let name="val" value="normalize-space(.)"/>
               
               <!-- get a sequence of the references in the attr value -->
@@ -1081,17 +1146,17 @@
               <sch:let name="PREFs" value="for $r in $REFs return substring-before( $r,':')"/>
 
               <!-- get a sequence of the URLs associated with each prefix[1] -->
-              <sch:let name="URLs" value="for $p in $PREFs return
+              <sch:let name="URLs" value="for $prefix in $PREFs return
                                             substring-before(
                                               /*/tei:teiHeader
                                               /tei:encodingDesc/tei:listPrefixDef
-                                              //tei:prefixDef[ @ident eq $p ]
+                                              //tei:prefixDef[ @ident eq $prefix ]
                                               /@replacementPattern,
                                               '#'
                                             )" />
 
               <!-- get a sequence of the keys associated with each prefix[1] -->
-              <sch:let name="KEYs" value="for $r in $REFs return substring-after( $r,':')"/>
+              <sch:let name="KEYs" value="for $ref in $REFs return substring-after( $ref,':')"/>
               
               <!-- get a sequence of the elements pointed to by each key in the corresponding URL. -->
               <!--
@@ -1101,14 +1166,14 @@
                   by testing for the current node).
               -->
               <sch:let name="PERSONs"
-                       value="for $k in $KEYs return
-                              if ( count( index-of( $KEYs, $k ) ) eq 1 )
+                       value="for $key in $KEYs return
+                              if ( count( index-of( $KEYs, $key ) ) eq 1 )
                               then 
-                                if ( doc-available( $URLs[ index-of( $KEYs, $k )] ) )
+                                if ( doc-available( $URLs[ index-of( $KEYs, $key )] ) )
                                 then
-                                  if ( document( $URLs[ index-of( $KEYs, $k )] )//tei:*[ @xml:id eq $k ] )
+                                  if ( document( $URLs[ index-of( $KEYs, $key )] )//tei:*[ @xml:id eq $key ] )
                                   then
-                                    document( $URLs[ index-of( $KEYs, $k )] )//tei:*[ @xml:id eq $k ]
+                                    document( $URLs[ index-of( $KEYs, $key )] )//tei:*[ @xml:id eq $key ]
                                   else .
                                 else .
                               else ."/>
@@ -1159,252 +1224,294 @@
           Schematron processors produce ugly output when these
           characters occur in a message.</p>
         </figure>
+        <!-- ========= figure eg18 ========= -->
         <figure xml:id="eg18">
           <head>eg18</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg18_egXML">
           </egXML>
           <p>caption of eg18</p>
         </figure>
+        <!-- ========= figure eg19 ========= -->
         <figure xml:id="eg19">
           <head>eg19</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg19_egXML">
           </egXML>
           <p>caption of eg19</p>
         </figure>
+        <!-- ========= figure eg20 ========= -->
         <figure xml:id="eg20">
           <head>eg20</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg20_egXML">
           </egXML>
           <p>caption of eg20</p>
         </figure>
+        <!-- ========= figure eg21 ========= -->
         <figure xml:id="eg21">
           <head>eg21</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg21_egXML">
           </egXML>
           <p>caption of eg21</p>
         </figure>
+        <!-- ========= figure eg22 ========= -->
         <figure xml:id="eg22">
           <head>eg22</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg22_egXML">
           </egXML>
           <p>caption of eg22</p>
         </figure>
+        <!-- ========= figure eg23 ========= -->
         <figure xml:id="eg23">
           <head>eg23</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg23_egXML">
           </egXML>
           <p>caption of eg23</p>
         </figure>
+        <!-- ========= figure eg24 ========= -->
         <figure xml:id="eg24">
           <head>eg24</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg24_egXML">
           </egXML>
           <p>caption of eg24</p>
         </figure>
+        <!-- ========= figure eg25 ========= -->
         <figure xml:id="eg25">
           <head>eg25</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg25_egXML">
           </egXML>
           <p>caption of eg25</p>
         </figure>
+        <!-- ========= figure eg26 ========= -->
         <figure xml:id="eg26">
           <head>eg26</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg26_egXML">
           </egXML>
           <p>caption of eg26</p>
         </figure>
+        <!-- ========= figure eg27 ========= -->
         <figure xml:id="eg27">
           <head>eg27</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg27_egXML">
           </egXML>
           <p>caption of eg27</p>
         </figure>
+        <!-- ========= figure eg28 ========= -->
         <figure xml:id="eg28">
           <head>eg28</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg28_egXML">
           </egXML>
           <p>caption of eg28</p>
         </figure>
+        <!-- ========= figure eg29 ========= -->
         <figure xml:id="eg29">
           <head>eg29</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg29_egXML">
           </egXML>
           <p>caption of eg29</p>
         </figure>
+        <!-- ========= figure eg30 ========= -->
         <figure xml:id="eg30">
           <head>eg30</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg30_egXML">
           </egXML>
           <p>caption of eg30</p>
         </figure>
+        <!-- ========= figure eg31 ========= -->
         <figure xml:id="eg31">
           <head>eg31</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg31_egXML">
           </egXML>
           <p>caption of eg31</p>
         </figure>
+        <!-- ========= figure eg32 ========= -->
         <figure xml:id="eg32">
           <head>eg32</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg32_egXML">
           </egXML>
           <p>caption of eg32</p>
         </figure>
+        <!-- ========= figure eg33 ========= -->
         <figure xml:id="eg33">
           <head>eg33</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg33_egXML">
           </egXML>
           <p>caption of eg33</p>
         </figure>
+        <!-- ========= figure eg34 ========= -->
         <figure xml:id="eg34">
           <head>eg34</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg34_egXML">
           </egXML>
           <p>caption of eg34</p>
         </figure>
+        <!-- ========= figure eg35 ========= -->
         <figure xml:id="eg35">
           <head>eg35</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg35_egXML">
           </egXML>
           <p>caption of eg35</p>
         </figure>
+        <!-- ========= figure eg36 ========= -->
         <figure xml:id="eg36">
           <head>eg36</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg36_egXML">
           </egXML>
           <p>caption of eg36</p>
         </figure>
+        <!-- ========= figure eg37 ========= -->
         <figure xml:id="eg37">
           <head>eg37</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg37_egXML">
           </egXML>
           <p>caption of eg37</p>
         </figure>
+        <!-- ========= figure eg38 ========= -->
         <figure xml:id="eg38">
           <head>eg38</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg38_egXML">
           </egXML>
           <p>caption of eg38</p>
         </figure>
+        <!-- ========= figure eg39 ========= -->
         <figure xml:id="eg39">
           <head>eg39</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg39_egXML">
           </egXML>
           <p>caption of eg39</p>
         </figure>
+        <!-- ========= figure eg40 ========= -->
         <figure xml:id="eg40">
           <head>eg40</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg40_egXML">
           </egXML>
           <p>caption of eg40</p>
         </figure>
+        <!-- ========= figure eg41 ========= -->
         <figure xml:id="eg41">
           <head>eg41</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg41_egXML">
           </egXML>
           <p>caption of eg41</p>
         </figure>
+        <!-- ========= figure eg42 ========= -->
         <figure xml:id="eg42">
           <head>eg42</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg42_egXML">
           </egXML>
           <p>caption of eg42</p>
         </figure>
+        <!-- ========= figure eg43 ========= -->
         <figure xml:id="eg43">
           <head>eg43</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg43_egXML">
           </egXML>
           <p>caption of eg43</p>
         </figure>
+        <!-- ========= figure eg44 ========= -->
         <figure xml:id="eg44">
           <head>eg44</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg44_egXML">
           </egXML>
           <p>caption of eg44</p>
         </figure>
+        <!-- ========= figure eg45 ========= -->
         <figure xml:id="eg45">
           <head>eg45</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg45_egXML">
           </egXML>
           <p>caption of eg45</p>
         </figure>
+        <!-- ========= figure eg46 ========= -->
         <figure xml:id="eg46">
           <head>eg46</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg46_egXML">
           </egXML>
           <p>caption of eg46</p>
         </figure>
+        <!-- ========= figure eg47 ========= -->
         <figure xml:id="eg47">
           <head>eg47</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg47_egXML">
           </egXML>
           <p>caption of eg47</p>
         </figure>
+        <!-- ========= figure eg48 ========= -->
         <figure xml:id="eg48">
           <head>eg48</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg48_egXML">
           </egXML>
           <p>caption of eg48</p>
         </figure>
+        <!-- ========= figure eg49 ========= -->
         <figure xml:id="eg49">
           <head>eg49</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg49_egXML">
           </egXML>
           <p>caption of eg49</p>
         </figure>
+        <!-- ========= figure eg50 ========= -->
         <figure xml:id="eg50">
           <head>eg50</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg50_egXML">
           </egXML>
           <p>caption of eg50</p>
         </figure>
+        <!-- ========= figure eg51 ========= -->
         <figure xml:id="eg51">
           <head>eg51</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg51_egXML">
           </egXML>
           <p>caption of eg51</p>
         </figure>
+        <!-- ========= figure eg52 ========= -->
         <figure xml:id="eg52">
           <head>eg52</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg52_egXML">
           </egXML>
           <p>caption of eg52</p>
         </figure>
+        <!-- ========= figure eg53 ========= -->
         <figure xml:id="eg53">
           <head>eg53</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg53_egXML">
           </egXML>
           <p>caption of eg53</p>
         </figure>
+        <!-- ========= figure eg54 ========= -->
         <figure xml:id="eg54">
           <head>eg54</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg54_egXML">
           </egXML>
           <p>caption of eg54</p>
         </figure>
+        <!-- ========= figure eg55 ========= -->
         <figure xml:id="eg55">
           <head>eg55</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg55_egXML">
           </egXML>
           <p>caption of eg55</p>
         </figure>
+        <!-- ========= figure eg56 ========= -->
         <figure xml:id="eg56">
           <head>eg56</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg56_egXML">
           </egXML>
           <p>caption of eg56</p>
         </figure>
+        <!-- ========= figure eg57 ========= -->
         <figure xml:id="eg57">
           <head>eg57</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg57_egXML">
           </egXML>
           <p>caption of eg57</p>
         </figure>
+        <!-- ========= figure eg58 ========= -->
         <figure xml:id="eg58">
           <head>eg58</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg58_egXML">
           </egXML>
           <p>caption of eg58</p>
         </figure>
+        <!-- ========= figure eg59 ========= -->
         <figure xml:id="eg59">
           <head>eg59</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg59_egXML">
