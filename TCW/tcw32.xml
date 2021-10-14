@@ -1226,17 +1226,57 @@
         </figure>
         <!-- ========= figure eg18 ========= -->
         <figure xml:id="eg18">
-          <head>eg18</head>
+          <head>XIncluded yet? — one size fits all</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg18_egXML">
+            <sch:ns prefix="xi" uri="http://www.w3.org/2001/XInclude"/>
+            <sch:rule context="/">
+              <sch:report test="//xi:*">
+                Error! XInclude processing has not been performed yet.
+                Many rule-based tests will fail because of this.
+              </sch:report>
+            </sch:rule>
           </egXML>
-          <p>caption of eg18</p>
+          <p>This is a very generic test which is easy to write and
+          very fast, but does not tell the user which particular test
+          will fail.</p>
+          <p>Note that the TEI processors do not automatically bind
+          the <code>xi:</code> prefix to the XInclude namespace. It is
+          common to put all of your <gi>sch:ns</gi> elements in a
+          <gi>constraintSpec</gi> that is a direct child of the
+          <gi>schemaSpec</gi> of your customization ODD.</p>
         </figure>
         <!-- ========= figure eg19 ========= -->
         <figure xml:id="eg19">
-          <head>eg19</head>
+          <head>XIncluded yet? — per-test reporting</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg19_egXML">
+            <sch:rule context="tei:textClass[ not( preceding::tei:textClass ) ]">
+              <!-- The predicate above simply keeps this error to a
+                   single occurence, instead of once for each
+                   <textClass>. The TEI permits multiple <textClass>
+                   elements in any given <profileDesc> (and multiple
+                   <profileDesc> elements in any given <teiHeader>);
+                   but most projects only use one, so you may well not
+                   need this predicate. -->
+              <sch:assert test="/tei:TEI/tei:teiHeader//tei:taxonomy">
+                There is no &lt;taxonomy> in the header, so no &lt;catRef> pointer can point into the taxonomy.
+                (Have you performed XInclude processing yet?)
+              </sch:assert>
+            </sch:rule>
+            <sch:rule context="tei:catRef[ /tei:TEI/tei:teiHeader//tei:taxonomy ]">
+              <sch:let name="target" value="normalize-space(@target)"/>
+              <sch:assert test="id($target)[self::tei:category]">
+                This &lt;catRef> does not point to a &lt;category>!
+              </sch:assert>
+            </sch:rule>
           </egXML>
-          <p>caption of eg19</p>
+          <p>In this example we presume that the <att>target</att> of
+          <gi>catRef</gi> is a single shorthand pointer that actually
+          points to <emph>something</emph> in the current document.
+          Thus this constraint should be used in conjunction with
+          constraints like those in <ptr target="#eg01"/> and <ptr
+          target="#eg04"/> (which itself should be used in conjunction
+          with a constraint like <ptr target="#eg02"/> or <ptr
+          target="#eg03"/>).</p>
         </figure>
         <!-- ========= figure eg20 ========= -->
         <figure xml:id="eg20">
