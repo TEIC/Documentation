@@ -863,8 +863,8 @@
                     <dataRef key="teidata.pointer"/>
                   </datatype>
                   <constraintSpec scheme="schematron" ident="rendition_ponts_to_rendition">
-                    <desc>Ensure that the pointers in a
-                    <att>rendition</att> each point to a
+                    <desc>Ensure that each pointer in a
+                    <att>rendition</att> points to a
                     <gi>rendition</gi>.</desc>
                     <constraint>
 
