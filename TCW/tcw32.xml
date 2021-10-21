@@ -826,9 +826,8 @@
               </attList>
             </elementSpec>
           </egXML>
-          <p>The <q>our markup_taxonomy</q> page is accessible using 8
-          different possible URLs, all of which are checked for by the
-          <att>restriction</att>.</p>
+          <p>The <q>our markup_taxonomy</q> page is accessible at eight
+          different possible URLs; the <att>restriction</att> allows only these eight URLs.</p>
         </figure>
         <!-- ========= figure eg12 ========= -->
         <figure xml:id="eg12">
@@ -867,8 +866,8 @@
                     <dataRef key="teidata.pointer"/>
                   </datatype>
                   <constraintSpec scheme="schematron" ident="rendition_ponts_to_rendition">
-                    <desc>Ensure that the pointers in a
-                    <att>rendition</att> each point to a
+                    <desc>Ensure that each pointer in a
+                    <att>rendition</att> points to a
                     <gi>rendition</gi>.</desc>
                     <constraint>
 
