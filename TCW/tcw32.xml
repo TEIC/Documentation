@@ -458,14 +458,18 @@
       <head>XInclude, yet?</head>
       <p>It is often the case that we know certain tests will fail
       before XInclude processing, whereas we hope they would succeed
-      after XInclude processing. For example, imagine that at our
-      (fictional) <q>The Papers of Dr. Virgil Swann</q> project the
-      extant documents to be encoded (which include letters,
-      scientific notebooks, satellite schematics, a dictionary, and
-      translations of intercepted radio transmissions) have been
-      categorized using a project-specific taxonomy. This taxonomy is
-      encoded as a <gi>taxonomy</gi> element. Since each TEI document
-      refers to this taxonomy (from its
+      after XInclude processing.<note place="foot">In the OXygen XML
+      editor, you can toggle whether XInclude processing is performed
+      before validation using the <q>Enable XInclude Processing</q>
+      checkbox in the Options > Preferences > XML > XML Parser
+      pane.</note> For example, imagine that at our (fictional)
+      <q>The Papers of Dr. Virgil Swann</q> project the extant
+      documents to be encoded (which include letters, scientific
+      notebooks, satellite schematics, a dictionary, and translations
+      of intercepted radio transmissions) have been categorized using
+      a project-specific taxonomy. This taxonomy is encoded as a
+      <gi>taxonomy</gi> element. Since each TEI document refers to
+      this taxonomy (from its
       <code>/TEI/teiHeader/profileDesc/textClass/catRef/@target</code>),
       the project has chosen to have a copy of the entire project
       taxonomy in each TEI document’s header (in its
