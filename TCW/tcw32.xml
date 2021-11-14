@@ -159,7 +159,7 @@
       be tested.</p>
       <p>We first discuss cases where items are being directly pointed
       to (first in the singleton case, then with multiple pointers),
-      and then cases where the an item is being referred to indirectly
+      and then cases where an item is being referred to indirectly
       either via an intermediate <gi>link</gi> or <gi>alt</gi>
       element, or via a prefix defined in the <gi>prefixDef</gi>. As a
       last case, we demonstrate ensuring that the validation is being
@@ -366,15 +366,21 @@
         cached files, etc.). For example, <ptr target="#eg11"/>
         ensures that any <gi>equiv</gi> element has a <att>uri</att>
         attribute, and further that said attribute refers to the
-        (fictional) <q>markup_taxonomy</q> portion of the WWP website,
+        (fictional) <q>markup_taxonomy</q> page of the WWP website,
         allowing either the production or test version of the website
-        and access with or without specifying a secure connection.</p>
+        and access with or without specifying a secure connection.
+        Note that this example only checks the <emph>syntax</emph> of
+        the <att>uri</att> attribute, and does not ensure that there
+        is actually is such a page or specific element on that page.</p>
         <p>The <ptr target="#eg12"/> example, on the other hand,
         ensures that the <att>filter</att> attribute of <gi>equiv</gi>
         points to an XSLT program. It does this by testing only the
         namespace of the outermost element of the retrieved file,
         because the outermost element of an XSLT program could be
-        either <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>.</p>
+        either <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>.
+        Thus, in order for a <att>filter</att> attribute to pass this
+        test, it not only needs the right syntax, but it must point to
+        an XSLT program that exists and is accessible via the web.</p>
       </div>
     </div>
     <div>
@@ -568,9 +574,9 @@
                     <dataRef key="xmpdata.shorthandpointer"/>
                   </datatype>
                   <remarks>
-                    <p>This attribute must be a single pointer to an
-                    element in the same XML file, i.e. must look like
-                    <code>#duck</code>.</p>
+                    <p>This attribute must be a single shorthand
+                    pointer to an element in the same XML file, i.e.
+                    must look like <code>#duck</code>.</p>
                   </remarks>
                 </attDef>
               </attList>
@@ -826,8 +832,12 @@
               </attList>
             </elementSpec>
           </egXML>
-          <p>The <q>our markup_taxonomy</q> page is accessible at eight
-          different possible URLs; the <att>restriction</att> allows only these eight URLs.</p>
+          <p>Note that this constraint ensures that the <att>uri</att>
+          attribute has the correct syntax, but does not actually try
+          to retrieve the document it refers to.</p>
+          <p>The <q>our markup_taxonomy</q> web page is accessible at
+          eight different possible URLs; the <att>restriction</att>
+          allows only these eight URLs.</p>
         </figure>
         <!-- ========= figure eg12 ========= -->
         <figure xml:id="eg12">
@@ -850,10 +860,14 @@
               </attList>
             </elementSpec>
           </egXML>
-          <p>The use of <code>resolve-uri()</code> assures that if a
-          relative URI is used, the document we attempt to retrieve is
-          the one at that URI relative to the input document, not the
-          Schematron schema.</p>
+          <p>Note that this constraint actually tries to retrieve the
+          document <att>filter</att> refers to. This results in more
+          thorough testing than <ptr target="#eg11"/>, but requires a
+          working internet connection.</p>
+          <p>The use of <code>resolve-uri()</code> assures
+          that if a relative URI is used, the document we attempt to
+          retrieve is the one at that URI relative to the input
+          document, not the Schematron schema.</p>
         </figure>
         <!-- ========= figure eg13 ========= -->
         <figure xml:id="eg13">
