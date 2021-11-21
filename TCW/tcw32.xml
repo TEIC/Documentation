@@ -151,8 +151,8 @@
       defined as <name type="class">teidata.namespace</name>, whose
       values have the same syntax as a URI, but are not necessarily
       intended to point at anything.</note> Roughly 60 of those are
-      restricted to having only 1 URL as a value, but the other nearly
-      50 permit multiple URLs in the value. Processing multiple
+      restricted to having only 1 URI as a value, but the other nearly
+      50 permit multiple URIs in the value. Processing multiple
       pointers is much more difficult than handling a single URI, and
       thus we consider the singleton cases separately from the cases
       in which multiple URI values of a single pointer attribute need
@@ -527,7 +527,7 @@
             </elementSpec>
           </egXML>
           <p>In this example the <att>corresp</att> of <gi>s</gi> is
-          altered so that its value must be one and only one URL.</p>
+          altered so that its value must be one and only one URI.</p>
         </figure>
         <!-- ========= figure eg02 ========= -->
         <figure xml:id="eg02">
