@@ -15,7 +15,12 @@
         in oXygen because several of the test values of @icon are invalid
         against some internal schema oXygen is using.
 -->
+
+
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+  <!--
+      Note: we do NOT permit zone identifiers which were added by RFC 6874.
+  -->
 
   <!-- ********* start test data ********* -->
   <sch:p icon="filesansext"/>
@@ -94,6 +99,9 @@
   <!-- ********* start constraint ********* -->
   <sch:pattern id="eg58">
     <sch:rule context="@icon">
+
+      <!-- ******** First, define the component pieces for RFC 3986 'relative-ref' ******** -->
+
       <sch:let name="HEXDIG"      value="'[0-9A-Fa-f]'"/>
       <sch:let name="pct-encoded" value="concat('%', $HEXDIG, $HEXDIG )"/>
       <!--
@@ -165,6 +173,7 @@
       <sch:let name="authority"
                value="concat('(', $userinfo, '@)?', $host, '(:', $port, ')?')"/>
 
+      <!-- ******** relative reference itself ******** -->
       <sch:let name="relative-ref"
                value="concat('(', '//', $authority, $path-abempty,
                              '|', $path-absolute,
@@ -172,24 +181,21 @@
                              '|', $path-empty,
                              ')(\?', $query, ')?(#', $fragment, ')?'
                             )"/>
-      
-      <sch:let name="auth-path" value="concat( '(localhost)?', $path-absolute )"/>
-      <!--
-          Note on preceding: We do not consider, and thus do not permit, the possibility that the
-          host is specified as something other than nil or “localhost”, even though
-          any host name, including an IPv4 or IPv6 address, is actually allowed.
-      -->
-      
-      <sch:let name="fileURI"
-        value="concat('file:((//', $auth-path, ')|(', $path-absolute, '))' )"/>
+
+      <!-- ******** now components of an RFC 8089 file-URI ******** -->
+      <!-- host and path-absolute have already been defined, above. -->
+      <sch:let name="file-auth" value="concat('(', $host, '|(localhost))')"/>
+      <sch:let name="auth-path" value="concat( $file-auth, '?', $path-absolute )"/>
+      <sch:let name="file-hier-part" value="concat( '(//', $auth-path, '|', $path-absolute, ')')"/>
+
+      <sch:let name="file-URI" value="concat('file:', $file-hier-part )"/>
       <sch:assert test="../preceding-sibling::*/@icon">
-        The regular expression is: <sch:value-of select="concat('(',$relative-ref,'|',$fileURI,')')"/>.
+        The regular expression is: <sch:value-of select="concat('(', $relative-ref, '|', $file-URI, ')')"/>.
       </sch:assert>
       <sch:report test="true()">
-        <!-- The question is matches( <sch:value-of select="."/>, <sch:value-of select="$relative-ref"/> )? -->
         The answer for <sch:value-of select="."/> is:
         <sch:value-of select="
-          matches( ., concat('^',concat('(',$relative-ref,'|',$fileURI,')'),'$') )
+          matches( ., concat('^',concat('(',$relative-ref,'|',$file-URI,')'),'$') )
           "/>
       </sch:report>
     </sch:rule>
