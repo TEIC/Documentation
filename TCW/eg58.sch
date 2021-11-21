@@ -100,18 +100,18 @@
   <sch:pattern id="eg58">
     <sch:rule context="@icon">
 
-      <!-- ******** First, define the component pieces for RFC 3986 'relative-ref' ******** -->
+      <!-- ******** First, define the component pieces for RFC 3986 “relative-ref” ******** -->
 
       <sch:let name="HEXDIG"      value="'[0-9A-Fa-f]'"/>
       <sch:let name="pct-encoded" value="concat('%', $HEXDIG, $HEXDIG )"/>
       <!--
-          Since unrserved and sub-delims are never used independently
+          Since “unrserved” and “sub-delims” are never used independently
           we simply use a combined form here:
             ursdsh = unreserved and sub-delims sans hyphen
       -->
       <sch:let name="unressubdel" value='"A-Za-z0-9\-._~!$&amp;&apos;()*+,;="'/>
       <!--
-          “unencoded” is a combination of unreserved, sub-delims, COMMERCIAL AT, and COLON;
+          “unencoded” is a combination of “unreserved”, “sub-delims”, COMMERCIAL AT, and COLON;
           “unencodednc” is the same without COLON.
       -->
       <sch:let name="unencoded"   value="concat('[', $unressubdel, '@', ':', ']')"/>
@@ -132,7 +132,7 @@
       <sch:let name="query"    value="concat('(', $pchar, '|/|\?)*')"/>
       <sch:let name="fragment" value="concat('(', $pchar, '|/|\?)*')"/>
 
-      <!-- The following are only used in the host pattern -->
+      <!-- The following are only used in the “host” pattern -->
       <sch:let name="dec-octet"
                value="'((1?[1-9])?[0-9]|2([0-4][0-9]|5[0-5]))'"/>
       <sch:let name="IPv4address"
@@ -165,7 +165,7 @@
       <sch:let name="IP-literal"
                value="concat('\[(', $IPv6address, '|', $IPvFuture, ')\]')"/>
       <sch:let name="reg-name" value="concat('([', $unressubdel, ']|', $pct-encoded, ')*')"/>
-      <!-- end host-pattern only portion -->
+      <!-- end “host”-pattern only portion -->
 
       <sch:let name="userinfo" value="concat('([', $unressubdel, ':]|', $pct-encoded, ')*')"/>
       <sch:let name="host" value="concat('(', $IP-literal, '|', $IPv4address, '|', $reg-name, ')')"/>
@@ -182,8 +182,8 @@
                              ')(\?', $query, ')?(#', $fragment, ')?'
                             )"/>
 
-      <!-- ******** now components of an RFC 8089 file-URI ******** -->
-      <!-- host and path-absolute have already been defined, above. -->
+      <!-- ******** now components of an RFC 8089 “file-URI” ******** -->
+      <!-- “host” and “path-absolute” have already been defined, above. -->
       <sch:let name="file-auth" value="concat('(', $host, '|(localhost))')"/>
       <sch:let name="auth-path" value="concat( $file-auth, '?', $path-absolute )"/>
       <sch:let name="file-hier-part" value="concat( '(//', $auth-path, '|', $path-absolute, ')')"/>

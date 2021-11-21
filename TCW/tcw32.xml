@@ -1563,10 +1563,135 @@
         </figure>
         <!-- ========= figure eg58 ========= -->
         <figure xml:id="eg58">
-          <head>eg58</head>
+          <head>Test for <emph>any</emph> local URI</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg58_egXML">
+    <sch:rule context="tei:ptr[@type='localOnly']/@target">
+
+      <!-- ******** First, define the component pieces for RFC 3986 “relative-ref” ******** -->
+
+      <sch:let name="HEXDIG"      value="'[0-9A-Fa-f]'"/>
+      <sch:let name="pct-encoded" value="concat('%', $HEXDIG, $HEXDIG )"/>
+      <!--
+          Since “unrserved” and “sub-delims” are never used independently
+          we simply use a combined form here:
+            ursdsh = unreserved and sub-delims sans hyphen
+      -->
+      <sch:let name="unressubdel" value='"A-Za-z0-9\-._~!$&amp;&apos;()*+,;="'/>
+      <!--
+          “unencoded” is a combination of “unreserved”, “sub-delims”, COMMERCIAL AT, and COLON;
+          “unencodednc” is the same without COLON.
+      -->
+      <sch:let name="unencoded"   value="concat('[', $unressubdel, '@', ':', ']')"/>
+      <sch:let name="unencodednc" value="concat('[', $unressubdel, '@',      ']')"/>
+      
+      <sch:let name="pchar"   value="concat( $unencoded,   '|', $pct-encoded )"/>
+      <sch:let name="ncpchar" value="concat( $unencodednc, '|', $pct-encoded )"/>
+      
+      <sch:let name="segment"       value="concat('(', $pchar,   ')*')"/>
+      <sch:let name="segment-nz"    value="concat('(', $pchar,   ')+')"/>
+      <sch:let name="segment-nz-nc" value="concat('(', $ncpchar, ')+')"/>
+      
+      <sch:let name="path-abempty"  value="concat('(/', $segment, ')*')"/>
+      <sch:let name="path-absolute" value="concat('/(', $segment-nz, '(/', $segment, ')*)?')"/>
+      <sch:let name="path-noscheme" value="concat( $segment-nz-nc, '(/', $segment, ')*' )"/>
+      <sch:let name="path-empty"    value="'[empty]{0}'"/>
+      
+      <sch:let name="query"    value="concat('(', $pchar, '|/|\?)*')"/>
+      <sch:let name="fragment" value="concat('(', $pchar, '|/|\?)*')"/>
+
+      <!-- The following are only used in the “host” pattern -->
+      <sch:let name="dec-octet"
+               value="'((1?[1-9])?[0-9]|2([0-4][0-9]|5[0-5]))'"/>
+      <sch:let name="IPv4address"
+               value="concat( $dec-octet, '.', $dec-octet, '.', $dec-octet, '.', $dec-octet )"/>
+      <sch:let name="h16" value="'[0-9A-Fa-f]{1,4}'"/>
+      <sch:let name="h16c" value="concat('(', $h16, ':',')')"/>
+      <sch:let name="ls32" value="concat('((', $h16, ':', $h16, ')|(', $IPv4address, '))')"/>
+      <sch:let name="IPv6addr_a" value="concat(                                   $h16c, '{6}', $ls32 )"/>
+      <sch:let name="IPv6addr_b" value="concat(                             '::', $h16c, '{5}', $ls32 )"/>
+      <sch:let name="IPv6addr_c" value="concat('(', $h16c, '{0,0}', $h16, ')?::', $h16c, '{4}', $ls32 )"/>
+      <sch:let name="IPv6addr_d" value="concat('(', $h16c, '{0,1}', $h16, ')?::', $h16c, '{3}', $ls32 )"/>
+      <sch:let name="IPv6addr_e" value="concat('(', $h16c, '{0,2}', $h16, ')?::', $h16c, '{2}', $ls32 )"/>
+      <sch:let name="IPv6addr_f" value="concat('(', $h16c, '{0,3}', $h16, ')?::', $h16c, '{1}', $ls32 )"/>
+      <sch:let name="IPv6addr_g" value="concat('(', $h16c, '{0,4}', $h16, ')?::',               $ls32 )"/>
+      <sch:let name="IPv6addr_h" value="concat('(', $h16c, '{0,5}', $h16, ')?::',               $ls32 )"/>
+      <sch:let name="IPv6addr_i" value="concat('(', $h16c, '{0,6}', $h16, ')?::',               $ls32 )"/>
+      <sch:let name="IPv6address"
+               value="concat('(',
+                             '|', $IPv6addr_a,
+                             '|', $IPv6addr_b,
+                             '|', $IPv6addr_c,
+                             '|', $IPv6addr_d,
+                             '|', $IPv6addr_e,
+                             '|', $IPv6addr_f,
+                             '|', $IPv6addr_g,
+                             '|', $IPv6addr_h,
+                             '|', $IPv6addr_i,
+                             ')')"/>
+      <sch:let name="IPvFuture" value="concat('v', $HEXDIG, '+\.[', $unressubdel, ':', ']*')"/>
+      <sch:let name="IP-literal"
+               value="concat('\[(', $IPv6address, '|', $IPvFuture, ')\]')"/>
+      <sch:let name="reg-name" value="concat('([', $unressubdel, ']|', $pct-encoded, ')*')"/>
+      <!-- end “host”-pattern only portion -->
+
+      <sch:let name="userinfo" value="concat('([', $unressubdel, ':]|', $pct-encoded, ')*')"/>
+      <sch:let name="host" value="concat('(', $IP-literal, '|', $IPv4address, '|', $reg-name, ')')"/>
+      <sch:let name="port" value="'[0-9]*'"/>
+      <sch:let name="authority"
+               value="concat('(', $userinfo, '@)?', $host, '(:', $port, ')?')"/>
+
+      <!-- ******** relative reference itself ******** -->
+      <sch:let name="relative-ref"
+               value="concat('(', '//', $authority, $path-abempty,
+                             '|', $path-absolute,
+                             '|', $path-noscheme,
+                             '|', $path-empty,
+                             ')(\?', $query, ')?(#', $fragment, ')?'
+                            )"/>
+
+      <!-- ******** now components of an RFC 8089 “file-URI” ******** -->
+      <!-- “host” and “path-absolute” have already been defined, above. -->
+      <sch:let name="file-auth" value="concat('(', $host, '|(localhost))')"/>
+      <sch:let name="auth-path" value="concat( $file-auth, '?', $path-absolute )"/>
+      <sch:let name="file-hier-part" value="concat( '(//', $auth-path, '|', $path-absolute, ')')"/>
+
+      <sch:let name="file-URI" value="concat('file:', $file-hier-part )"/>
+
+      <!-- ******** now perform the actual test ******** -->
+      <sch:assert test="matches(
+			  normalize-space(.),
+			  concat('^', concat('(', $relative-ref, '|', $file-URI, ')' ), '$')
+			)">
+	Value of @target should be a local URI (a relative URI reference or a 'file:' scheme URI).
+      </sch:assert>
+    </sch:rule>
           </egXML>
-          <p>caption of eg58</p>
+          <p>This example is different from the others in that it is
+          not intended to be copied, pasted, modified, and used. (And
+          thus has not been tested as well as the others.) It is
+          really here to demonstrate the fact that a) testing for the
+          syntax of a general URI <emph>can</emph> be done, and b) it
+          is very complex. We suspect that the vast majority of TEI
+          projects use only a very specific subset of local URI
+          formats (e.g., only relative filepaths with or without a
+          fragment identifier, or even only relative filepaths that
+          start with an explicit dot-segment), and thus would either
+          test only for the syntax of that particular format, or
+          simply test to see if the desired target is retrievable,
+          which is demonstrated in <ptr target="#eg07"/>.</p>
+	  <p>Note that this constraint only tests that the value of
+	  <att>target</att> is either a relative URI reference or uses
+	  the <code>file:</code> URI scheme. It does not test that the
+	  file referred to with the <code>file:</code> scheme, if any,
+	  is actually local. This would require testing that the host
+	  specified is, in fact, the local machine. If the host is not
+	  specified or is <code>localhost</code>, we know it refers to
+	  the local machine. But for any other value of host we would
+	  need to resolve the address and then ask the local system
+	  for its address and compare the two.</p>
+	  <p>Note that the test in this example does
+	  not permit zone identifiers, which were added to IPv6
+	  addresses by RFC 6874.</p>
         </figure>
         <!-- ========= figure eg59 ========= -->
         <figure xml:id="eg59">
