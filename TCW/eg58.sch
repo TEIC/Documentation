@@ -188,7 +188,10 @@
       <sch:let name="auth-path" value="concat( $file-auth, '?', $path-absolute )"/>
       <sch:let name="file-hier-part" value="concat( '(//', $auth-path, '|', $path-absolute, ')')"/>
 
+      <!-- ******** the file-URI itself ********  -->
       <sch:let name="file-URI" value="concat('file:', $file-hier-part )"/>
+
+      <!-- ******** now perform the actual test ******** -->
       <sch:assert test="../preceding-sibling::*/@icon">
         The regular expression is: <sch:value-of select="concat('(', $relative-ref, '|', $file-URI, ')')"/>.
       </sch:assert>

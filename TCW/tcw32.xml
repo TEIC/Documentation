@@ -1655,12 +1655,13 @@
       <sch:let name="auth-path" value="concat( $file-auth, '?', $path-absolute )"/>
       <sch:let name="file-hier-part" value="concat( '(//', $auth-path, '|', $path-absolute, ')')"/>
 
+      <!-- ******** the file-URI itself ********  -->
       <sch:let name="file-URI" value="concat('file:', $file-hier-part )"/>
 
       <!-- ******** now perform the actual test ******** -->
       <sch:assert test="matches(
 			  normalize-space(.),
-			  concat('^', concat('(', $relative-ref, '|', $file-URI, ')' ), '$')
+			  concat('^(', $relative-ref, '|', $file-URI, ')$')
 			)">
 	Value of @target should be a local URI (a relative URI reference or a 'file:' scheme URI).
       </sch:assert>
