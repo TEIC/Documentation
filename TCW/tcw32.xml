@@ -43,17 +43,6 @@
         target="https://github.com/TEIC/TEI/issues/1675">issue
         #1675</ref>.</ab>
       </projectDesc>
-      <schemaRef type="authoring" key="tei_customization"
-                 url="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/relaxng/tei_customization.rnc">
-        <desc>This ODD was generated using the helpful tei_customization.rnc
-        closed schema, but is not intended to be valid against it. (E.g., the
-        <gi>sourceDesc</gi> has a child <gi>ab</gi>, which is not currently
-        valid in tei_customization.)</desc>
-      </schemaRef>
-      <schemaRef type="validation" key="tei_odds"
-                 url="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.rnc https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5odds.isosch">
-        <desc>Should be valid against.</desc>
-      </schemaRef>
     </encodingDesc>
     <revisionDesc>
       <change who="#sb" when="2021-08-15">
@@ -100,7 +89,12 @@
         increasing order of difficulty, are that the URI:
         <list rend="numbered">
           <item n="1">points to <emph>something</emph> (i.e., has proper syntax)</item>
-          <item n="2">points to something that can be retrieved (i.e., refers to an object that exists and to which the user has access)</item>
+          <item n="2">points to something that can be retrieved (i.e.,
+          refers to an object that exists and to which the user has
+          access)</item>
+          <!-- Note: <ref> in next item is not rendered properly by
+               bin/teitohtml; see
+               https://github.com/TEIC/Stylesheets/issues/535 -->
           <item n="3">points to the right <emph>kind</emph> of thing (e.g., the <att>ref</att> of <gi>persName</gi> should point to a <gi>person</gi>, not a <gi>fileDesc</gi> nor an SVG chart of COVID-19 cases)</item>
           <item n="4">points to the right thing (e.g., the
           <val>#MLK</val> of <code>&lt;persName ref="#MLK">Martin
@@ -189,27 +183,28 @@
         <div type="subsection">
           <head>shorthand pointer fragment identifier</head>
           <p>The <term>fragment identifier</term> portion of a URI is
-          that which follows the <code>#</code>. The portion of the
-          URI before the <code>#</code> locates the document of
-          interest; the portion after the <code>#</code> locates the
-          element of interest within said document. The portion after
-          the <code>#</code> can take many forms, only one of which we
+          that which follows the first <code>#</code> (read
+          left-to-right). The portion of the URI before the first
+          <code>#</code> locates the document of interest; the portion
+          after the first <code>#</code> locates the element of
+          interest within said document. The portion after the first
+          <code>#</code> can take many forms, only one of which we
           consider in this document: the <term>shorthand
           pointer</term> fragment identifier (previously called a
-          <soCalled>bare name</soCalled> fragment identifier) is
-          probably the most common form of fragment identifier; it
-          refers to an element in the document in question by referring
-          to its ID. (In TEI the ID is always indicated by the
-          <att>xml:id</att> attribute.) This typically looks like
-          either
-          <eg>https://www.w3.org/TR/xptr-framework/#<emph style="font-weight:bold; font-style: normal;">shorthand</emph></eg>
-          or
-          <eg>#<emph style="font-weight:bold; font-style: normal;">DeRoseetal1990</emph></eg>.
-          If there is no document mentioned to the left of the
-          <code>#</code>, then the document being referred to is the
-          base document, which is typically the current document in
-          which the URI appears (but can be modified by the
-          <att>xml:base</att> attribute).</p>
+          <soCalled>bare name</soCalled> fragment identifier). It is
+          probably by far the most common form of fragment identifier;
+          it refers to an element in the document in question by
+          referring to its ID. (In TEI the ID is always indicated by
+          the <att>xml:id</att> attribute.) This typically looks like
+          either <eg>https://www.w3.org/TR/xptr-framework/#<emph
+          style="font-weight:bold; font-style:
+          normal;">shorthand</emph></eg> or <eg>#<emph
+          style="font-weight:bold; font-style:
+          normal;">DeRoseetal1990</emph></eg>. If there is no document
+          mentioned to the left of the first <code>#</code>, then the
+          document being referred to is the base document, which is
+          typically the current document in which the URI appears (but
+          can be modified by the <att>xml:base</att> attribute).</p>
           <p>First, just to demonstrate how this works in general, we
           show in <ptr target="#eg02"/> how to test that the
           <att>ref</att> attribute of <gi>g</gi> has the correct
@@ -217,10 +212,10 @@
           However, we also note that this check could be expressed in
           PureODD without resorting to Schematron. This PureODD-only
           mechanism, exemplified in <ptr target="#eg03"/>, has the
-          disadvantage that the TEI’s current ODD processor only has
-          partial support for it, and it is not entirely clear that
-          this is an intended feature of PureODD that will remain part
-          of the <title>Guidelines</title>.</p>
+          sizable advantage that the testing is perfomed by the closed
+          schema language. Note, however, that although this use of
+          the <att>restriction</att> attribute is supported by the
+          TEI’s current ODD processor, other uses may not be.</p>
           <p>To check that a shorthand pointer fragment identifier URI
           points to <emph>something</emph> that can be retrieved
           (i.e., to test a pointer that looks like <code>#duck</code>
@@ -298,20 +293,18 @@
             referred to a local file (whether an absolute path
             reference, a relative path reference, or a
             <name>file</name> URL scheme; see <ptr target="#eg58"/>)
-            <!-- Note to Council and other reviewers: I have not
-                 written eg58 nor eg59 yet      —Syd, 2021-09-13 -->
             or that a value uses a private URI scheme prefix defined
             by a <gi>prefixDef</gi> (see <ptr target="#eg59"/>).
             However, in most cases projects would probably want to
-            constrain the value to a particular way of referring to an
-            existing, readable, local XML file (if not a particular
-            file, for which see <ptr target="#eg06"/>). For example,
-            <ptr target="#eg07"/> demonstrates a method for requiring
-            that the <att>url</att> attribute of <gi>moduleRef</gi>
-            refers to a local file that is in the same directory as
-            the instance ODD and whose filename ends in
-            <val>.rng</val> (and thus is probably a RELAX NG file in
-            the XML syntax).</p>
+            constrain the value to a particular method for referring
+            to an existing, readable, local XML file (if not a
+            particular file, for which see <ptr target="#eg06"/>). For
+            example, <ptr target="#eg07"/> demonstrates a method for
+            requiring that the <att>url</att> attribute of
+            <gi>moduleRef</gi> refers to a local file that is in the
+            same directory as the instance ODD and whose filename ends
+            in <val>.rng</val> (and thus is probably a RELAX NG file
+            in the XML syntax).</p>
             <p>We may wish ensure that the file referred to (whether
             local or remote) is readable, well-formed XML. Luckily,
             XPath provides the <code>doc-available()</code> function
@@ -652,6 +645,14 @@
           like <ptr target="#eg04"/> (which itself should be used in
           conjunction with a constraint like <ptr target="#eg02"/> or
           <ptr target="#eg03"/>).</p>
+          <p>There are several other ways to express the XPath in the
+          <att>test</att> of the <gi>sch:assert</gi>, of course. E.g.,
+          many would consider <code>id( $ref )[ self::tei:char |
+          self::tei:glyph ]</code> better because it is more compact.
+          In either of these example XPaths the union operator
+          (<code>|</code>, which may also be expressed
+          <code>union</code>) could be replaced with <code>or</code>
+          to indicate an OrExpr.</p>
           <p>Note: use <code>self::tei:char</code>, not
           <code>self::char</code>.</p>
         </figure>
@@ -1660,10 +1661,10 @@
 
       <!-- ******** now perform the actual test ******** -->
       <sch:assert test="matches(
-			  normalize-space(.),
-			  concat('^(', $relative-ref, '|', $file-URI, ')$')
-			)">
-	Value of @target should be a local URI (a relative URI reference or a 'file:' scheme URI).
+                          normalize-space(.),
+                          concat('^(', $relative-ref, '|', $file-URI, ')$')
+                        )">
+        Value of @target should be a local URI (a relative URI reference or a 'file:' scheme URI).
       </sch:assert>
     </sch:rule>
           </egXML>
@@ -1680,26 +1681,69 @@
           test only for the syntax of that particular format, or
           simply test to see if the desired target is retrievable,
           which is demonstrated in <ptr target="#eg07"/>.</p>
-	  <p>Note that this constraint only tests that the value of
-	  <att>target</att> is either a relative URI reference or uses
-	  the <code>file:</code> URI scheme. It does not test that the
-	  file referred to with the <code>file:</code> scheme, if any,
-	  is actually local. This would require testing that the host
-	  specified is, in fact, the local machine. If the host is not
-	  specified or is <code>localhost</code>, we know it refers to
-	  the local machine. But for any other value of host we would
-	  need to resolve the address and then ask the local system
-	  for its address and compare the two.</p>
-	  <p>Note that the test in this example does
-	  not permit zone identifiers, which were added to IPv6
-	  addresses by RFC 6874.</p>
+          <p>Note that this constraint only tests that the value of
+          <att>target</att> is either a relative URI reference or uses
+          the <code>file:</code> URI scheme. It does not test that the
+          file referred to with the <code>file:</code> scheme, if any,
+          is actually local. This would require testing that the host
+          specified is, in fact, the local machine. If the host is not
+          specified or is <code>localhost</code>, we know it refers to
+          the local machine. But for any other value of host we would
+          need to resolve the address and then ask the local system
+          for its address and compare the two.</p>
+          <p>Note that the test in this example does
+          not permit zone identifiers, which were added to IPv6
+          addresses by RFC 6874.</p>
         </figure>
         <!-- ========= figure eg59 ========= -->
         <figure xml:id="eg59">
-          <head>eg59</head>
+          <head><att>ref</att> uses defined prefix</head>
+          <p>This example tests that each separate pointer in a
+          <att>ref</att> attribute on a <gi>geogName</gi>,
+          <gi>name</gi>, <gi>persName</gi>, <gi>placeName</gi>,
+          <gi>pubPlace</gi>, <gi>rs</gi>, or <gi>title</gi> element
+          begins with a prefix that is defined in the
+          <gi>listPrefixDef</gi>.</p>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg59_egXML">
+            <sch:rule context=" tei:geogName[@ref]
+                               |tei:name[@ref]
+                               |tei:persName[@ref]
+                               |tei:placeName[@ref]
+                               |tei:pubPlace[@ref]
+                               |tei:rs[@ref]
+                               |tei:title[@ref]  ">
+              <!-- get a sequence of the references in $val -->
+              <sch:let name="REFs" value="tokenize( @ref )"/>
+              <!-- get a sequence of the prefixes thereof[1] -->
+              <sch:let name="PREFs"
+                       value="for $r in $REFs return substring-before( $r,':')"/>
+              <!-- get the list of defined prefxies -->
+              <sch:let name="DEFINEDs"
+                       value="for $prefixDef in /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:listPrefixDef//tei:prefixDef
+                              return $prefixDef/@ident"/>
+              <!-- create a sequence of booleans that indicate if prefix is defined -->
+              <sch:let name="BOOLEANs"
+                       value="for $pfd in distinct-values( $PREFs ) return $pfd = $DEFINEDs"/>
+              <!-- if any 1 of PREFs is not in list of DEFINEDs, warn user -->
+              <sch:report test="$BOOLEANs = false()">
+                One or more of the references in the @ref of this <sch:name/> does
+                not start with a defined prefix.
+                The complete set of pointers on this @ref is "<sch:value-of
+                  select="normalize-space( @ref )"/>".
+                The complete set of defined prefixes is <sch:value-of
+                  select="string-join( $DEFINEDs, ', ')"/>.
+              </sch:report>
+            </sch:rule>
           </egXML>
-          <p>caption of eg59</p>
+          <p>Note that the above code requires an XSLT3
+          <att>queryBinding</att>, as it uses <code>tokenize()</code>.
+          In order to convert this to a constraint that will work with
+          an XSLT2 <att>queryBinding</att>, change the <code>tokenize()</code> to <code>tokenize( normalize-space(.), '&#x20;')</code>.</p>
+          <p>This constraint could be quite a bit simpler if there
+          were never a need to test more than 1 value in a given
+          <att>ref</att>. In which case, one would only need test that
+          <code>substring-before( normalize-space( @ref ),':') =
+          /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:listPrefixDef//tei:prefixDef/@ident</code>.</p>
         </figure>
       </div>
     </back>
