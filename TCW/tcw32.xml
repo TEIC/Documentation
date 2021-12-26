@@ -133,10 +133,12 @@
         other sorts of information objects including JSON, images,
         HTML (other than XHTML), audio files, word processor files,
         etc.</p>
-        <p>Note: The examples herein often use an attribute as the
-        context node in ISO Schematron rules. Some Schematron
-        processors fail to process this correctly. (The oXygen XML
-        Editor handles these perfectly well.)</p>
+        <p>Also note that the examples in this document often use an
+        attribute as the context node of an ISO Schematron rule. Some
+        Schematron processors fail to process this correctly. (The
+        oXygen XML Editor handles these perfectly well, as does David
+        Maus’s <ref
+        target="https://github.com/schxslt/schxslt/releases/latest">XsltSch</ref>.)</p>
       </div>
     </front>
     <body>
@@ -215,7 +217,10 @@
           sizable advantage that the testing is perfomed by the closed
           schema language. Note, however, that although this use of
           the <att>restriction</att> attribute is supported by the
-          TEI’s current ODD processor, other uses may not be.</p>
+          TEI’s current ODD processor, other uses may not be; in
+          particular, <att>restriction</att> is currently only usable
+          with the <att>name</att> attribute, not the <att>key</att>
+          attribute of <gi>dataRef</gi>.</p>
           <p>To check that a shorthand pointer fragment identifier URI
           points to <emph>something</emph> that can be retrieved
           (i.e., to test a pointer that looks like <code>#duck</code>
@@ -250,8 +255,10 @@
           <term>relative-path reference</term>.<note place="foot">A
           URI may also refer to a file on the local filesystem using
           the <term>file:</term> URI scheme. This document does not
-          consider these URIs, except the following comment on the
-          general syntax of a <term>file:</term> scheme URI. Said
+          consider these URIs, except in a demonstration that testing
+          that a URI uses the <code>file:</code> scheme is possible
+          (in <ptr target="#eg58"/>) and the following comment on the
+          general syntax of a <term>file:</term> scheme URI — Said
           format is <code>file://host/path</code>, where the
           <mentioned>//host</mentioned> portion is optional
           (defaulting to <q>localhost</q>), or may be expressed as
@@ -596,11 +603,6 @@
           NG (or the W3C Schema Language), and modern XML editors
           (like oXygen) can enforce such constraints immediately, as
           you type.</p>
-          <p>However, this method has the disadvantage that the TEI’s
-          current ODD processor has only partial support for it, and
-          it is not entirely clear that this is an intended feature of
-          PureODD that will remain part of the
-          <title>Guidelines</title>.</p>
         </figure>
         <!-- ========= figure eg04 ========= -->
         <figure xml:id="eg04">
@@ -707,11 +709,11 @@
               <attList>
                 <attDef ident="url" mode="change">
                   <datatype minOccurs="1" maxOccurs="1">
-                    <dataRef name="anyURI" restriction="[^#]+"/>
+                    <dataRef name="anyURI" restriction="[^ #]+"/>
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_readable">
                     <constraint>
-                      <sch:assert test="doc-available( resolve-uri( normalize-space(.) ) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
+                      <sch:assert test="doc-available( resolve-uri(.) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
@@ -722,21 +724,24 @@
               </attList>
             </elementSpec>
           </egXML>
-          <p>These constraints on the <att>url</att> attribute of
-          <gi>moduleRef</gi> ensure first that the item referred to is
-          a file, not a particular element within a file. This is done by requiring that
-          the value <emph>not</emph> contain a number sign (<q>#</q>, U+0023).</p>
-          <p>Second, the <gi>constraintSpec</gi> tests that said file
+          <p>The constraints placed on the <att>url</att> attribute of
+          <gi>moduleRef</gi> by the <att>restriction</att> attribute
+          ensure both that the value is a single reference (by
+          disallowing whitespace), and also is not a reference to a
+          particular element within a file (by disallowing number sign
+          (<q>#</q>, U+0023)).</p>
+          <!--
+              Do we need a paragraph explaining that testing for
+              U+0020 is sufficient when dealing with xsd:anyURI? I am
+              a bit hesitant to write one, because although I know it
+              *does* work (I tested it), I do not know *why*. Likely
+              internal whitespace is reduced to a single blank in an
+              xsd:anyURI before comparision, but I do not know that; I
+              am afraid this is an aspect of RELAX NG that escapes me.
+              —Syd, 2021-12-25
+          -->
+          <p>The <gi>constraintSpec</gi> then tests that said file
           is readable, well-formed XML.</p>
-          <p>Note that leading and trailing whitespace are trimmed
-          from the value before it is handed to the
-          <code>doc-available()</code> function. This is because
-          <name>xsd:anyURI</name> will allow leading or trailing
-          whitespace, but <code>doc-available()</code> does not. (The
-          <code>normalize-space()</code> function would also normalize
-          internal whitespace if there were any, but there is not,
-          because <name>xsd:anyURI</name> does not allow internal
-          whitespace.)</p>
         </figure>
         <!-- ========= figure eg09 ========= -->
         <figure xml:id="eg09">
@@ -746,14 +751,13 @@
               <attList>
                 <attDef ident="url" mode="change">
                   <datatype minOccurs="1" maxOccurs="1">
-                    <dataRef name="anyURI" restriction="[^#]+"/>
+                    <dataRef name="anyURI" restriction="[^ #]+"/>
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_relaxng">
                     <constraint>
-                      <sch:assert test="doc-available( resolve-uri( normalize-space(.) ) )
+                      <sch:assert test="doc-available( resolve-uri(.) )
                                         and
-                                        doc( resolve-uri( normalize-space(.) ) )/*[self::rng:grammar]
-                                       ">
+                                        doc( resolve-uri(.) )/rng:grammar ">
                         Module <sch:value-of select="normalize-space(.)"/> is not a readable,
                         well-formed RELAX NG grammar in the XML syntax.
                       </sch:assert>
@@ -847,9 +851,6 @@
             <elementSpec ident="equiv" module="tagdocs" mode="change">
               <attList>
                 <attDef ident="filter" mode="change" usage="req">
-                  <datatype minOccurs="1" maxOccurs="1">
-                    <dataRef name="anyURI"/>
-                  </datatype>
                   <constraintSpec scheme="schematron" ident="filter_is_XSLT">
                     <constraint>
                       <sch:let name="xsltNS" value="'http://www.w3.org/1999/XSL/Transform'"/>
@@ -905,12 +906,12 @@
                       -->
                       <sch:let name="RND_ONE" value="replace( $RENDITIONs[1], '^#','')"/>
                       <sch:let name="RND_TWO" value="replace( $RENDITIONs[2], '^#','')"/>
-                      <sch:assert test="id( $RND_ONE )[self::tei:rendition]">
+                      <sch:assert test="id( $RND_ONE )/self::tei:rendition">
                         The first rendition reference (<sch:value-of
                         select="$RENDITIONs[1]"/>) does not point to a
                         local 'rendition' element.
                       </sch:assert>
-                      <sch:assert test="empty( $RND_TWO )  or  id( $RND_TWO )[self::tei:rendition]">
+                      <sch:assert test="empty( $RND_TWO )  or  id( $RND_TWO )/self::tei:rendition">
                         The second rendition reference (<sch:value-of
                         select="$RENDITIONs[2]"/>) does not point to a
                         local 'rendition' element.
@@ -1281,8 +1282,8 @@
               </sch:assert>
             </sch:rule>
             <sch:rule context="tei:catRef[ /tei:TEI/tei:teiHeader//tei:taxonomy ]">
-              <sch:let name="target" value="normalize-space(@target)"/>
-              <sch:assert test="id($target)[self::tei:category]">
+              <sch:let name="target" value="substring-after( normalize-space( @target ),'#')"/>
+              <sch:assert test="id($target)/self::tei:category">
                 This &lt;catRef> does not point to a &lt;category>!
               </sch:assert>
             </sch:rule>
