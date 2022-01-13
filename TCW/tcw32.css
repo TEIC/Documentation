@@ -1,0 +1,10 @@
+# This is a (probably temporary) additional CSS file for use with TCW
+# 32. Created because I want TCW 32 output to look better, but do not
+# know without a lot of work what effect these changes would have on
+# our various other outputs if added to the main CSS. So I am tucking
+# them in here and inserting them in my output using the
+# $cssInlineFiles parameter. —Syd, 2022-01-13
+
+span.gi { font-size: small; font-face: monospace; }
+span.val { font-size: small; font-face: monospace; }
+span.att { font-size: small; font-face: monospace; }
