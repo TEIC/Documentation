@@ -137,7 +137,7 @@
         guess that for any sequence of spaces that is *longer* than the space we are
         stripping off the first space should probably be a newline instead.
       -->
-      <xsl:variable name="regex" select="' ('||$spaceB4eg||' *)'"/>
+      <xsl:variable name="regex" select="' '||$spaceB4eg||'( *)'"/>
       <xsl:analyze-string select="." regex="{$regex}">
         <xsl:matching-substring>
           <br/>
