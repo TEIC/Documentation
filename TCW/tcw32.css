@@ -1,10 +1,69 @@
-# This is a (probably temporary) additional CSS file for use with TCW
-# 32. Created because I want TCW 32 output to look better, but do not
-# know without a lot of work what effect these changes would have on
-# our various other outputs if added to the main CSS. So I am tucking
-# them in here and inserting them in my output using the
-# $cssInlineFiles parameter. —Syd, 2022-01-13
+/*
+   This is a (probably temporary) additional CSS file for use with TCW
+   32. Created because I want TCW 32 output to look better, but I do
+   not know without a lot of work what effect these changes would have
+   on our various other outputs if added to the main CSS. So I am
+   tucking them in here and inserting them in my output using the
+   cssInlineFiles parameter. —Syd, 2022-01-13
+*/
+   
 
+/* One change to main formatting, because I can't stand gutterless pages: */
+body.simple { padding: 1em; }
+
+
+/* --------- phrase-level markup for tagdocs --------- */
 span.gi { font-size: small; font-face: monospace; }
 span.val { font-size: small; font-face: monospace; }
 span.att { font-size: small; font-face: monospace; }
+/* --------- */
+
+
+/* --------- egXML --------- */
+/*
+   XML-serialization, large portions of which are modified from John
+   Walsh's teibp.css, a part of the TEI boilerplate system; and colors
+   for which are mostly taken from oXygen.
+*/
+
+figure.figure {  display: block; }
+pre { overflow: auto; }
+
+span.egXML {
+  display: pre;
+  font-size: 80%;
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 0.5ex solid #A0BEBE;
+  margin-top: .75em;
+  margin-bottom: .75em;
+  padding-top: .75em;
+  padding-bottom: .75em;
+  font-family: monospace;
+  white-space: pre;
+}
+.eg-tag {
+  color: #0064C8;
+}
+.eg-tei {
+  color: #000096;
+}
+.eg-com {
+  color: #006400;
+}
+.eg-attrName, .eg-nsdecl {
+  color: #F5844C;
+}
+.eg-attrVal, .eg-ns {
+  color: #993300;
+}
+.eg-content {
+  color: #000000;
+}
+.eg-lit {
+  color:  #969600;
+}
+.eg-pi {
+  color: #8B26C9;
+}
+/* --------- */
