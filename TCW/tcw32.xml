@@ -18,6 +18,13 @@
         <editor>
           <orgName>TEI Technical Council</orgName>
         </editor>
+        <editor>
+          <persName>Sarah Connell</persName>
+        </editor>
+	<respStmt>
+	  <resp>Additional technical review</resp>
+	  <persName>Ash Clark</persName>
+	</respStmt>
       </titleStmt>
       <publicationStmt>
         <publisher>
@@ -109,7 +116,7 @@
         and RELAX NG (but excluding DTDs), have the capability to test
         that an information item (in our case, and thus hereafter, an
         attribute value) meets the syntactic constraints of a URI.
-        That is, we can test (1) above by just using our schemas. But
+        That is, we can test (1) above just by using our schemas. But
         none of those languages (including PureODD without use of
         <gi>constraintSpec</gi>) have the capability to test
         (2)–(4).</p>
@@ -135,7 +142,7 @@
         thereof. It is possible to use URIs to point to and retrieve
         other sorts of information objects including JSON, images,
         HTML (other than XHTML), audio files, word processor files,
-        etc.</p>
+        etc., but we do not consider these cases herein.</p>
         <p>Also note that the examples in this document often use an
         attribute as the context node of an ISO Schematron rule. Some
         Schematron processors fail to process this correctly. (The
@@ -154,8 +161,8 @@
       50 permit multiple URIs in the value. Processing multiple
       pointers is much more difficult than handling a single URI, and
       thus we consider the singleton cases separately from the cases
-      in which multiple URI values of a single pointer attribute need
-      be tested.</p>
+      in which multiple URI values of a single pointer attribute need 
+      to be tested.</p>
       <p>We first discuss cases where items are being directly pointed
       to (first in the singleton case, then with multiple pointers),
       and then cases where an item is being referred to indirectly
@@ -170,20 +177,21 @@
             $ xsel -t -m "//t:datatype[not(@maxOccurs) or @maxOccurs='1'][t:dataRef[not(@maxOccurs) or @maxOccurs='1'][@key='teidata.pointer']]" -v "concat( ancestor::t:elementSpec/@ident|ancestor::t:classSpec/@ident|ancestor::t:dataSpec/@ident,'/@',parent::t:attDef/@ident)" -n /path/to/local/P5/p5subset.xml | sort
             on Syd’s machine.
         -->
-        <p>Projects that intend to use an attribute which by default
-        in TEI may take multiple URIs with only 1 URI may find it best
-        to constrain said attribute to only 1 URI. For example, if the
-        (fictional) project <q>The Papers of Dr. Virgil Swann</q> were
-        to provide correspondence links between Dr. Swann’s English
-        translation of and his transcription of an intercepted
-        Kryptonian message, each <gi>s</gi> element with an
-        <att>xml:lang</att> of <val>en</val> would bear a
-        <att>corresp</att> attribute that pointed to the corresponding
-        <gi>s</gi> element with an <att>xml:lang</att> of
-        <val>x-kr</val>. The TEI <att>corresp</att> attribute allows
-        one or more URIs. But for this project, the <att>corresp</att>
-        of <gi>s</gi> should be limited to only 1 URI. This can be
-        accomplished as shown in <ptr target="#eg01"/>.
+        <p>Projects that intend to always use one and only one URI as
+        the value of an attribute which by default in TEI may take
+        multiple URIs will probably find it best to constrain said
+        attribute to only 1 URI. For example, if the (fictional)
+        project <q>The Papers of Dr. Virgil Swann</q> were to provide
+        correspondence links between Dr. Swann’s English translation
+        of and his transcription of an intercepted Kryptonian message,
+        each <gi>s</gi> element with an <att>xml:lang</att> of
+        <val>en</val> would bear a <att>corresp</att> attribute that
+        pointed to the corresponding <gi>s</gi> element with an
+        <att>xml:lang</att> of <val>x-kr</val>. The TEI
+        <att>corresp</att> attribute allows one or more URIs. But for
+        this project, the <att>corresp</att> of <gi>s</gi> should be
+        limited to only 1 URI. This can be accomplished as shown in
+        <ptr target="#eg01"/>.
         </p>
         <div type="subsection">
           <head>shorthand pointer fragment identifier</head>
@@ -195,12 +203,11 @@
           interest within said document. The portion after the first
           <code>#</code> can take many forms, only one of which we
           consider in this document: the <term>shorthand
-          pointer</term> fragment identifier (previously called a
-          <soCalled>bare name</soCalled> fragment identifier). It is
-          probably by far the most common form of fragment identifier;
-          it refers to an element in the document in question by
-          referring to its ID. (In TEI the ID is always indicated by
-          the <att>xml:id</att> attribute.) This typically looks like
+          pointer</term> fragment identifier. It is probably by far
+          the most common form of fragment identifier; it refers to an
+          element in the document in question by referring to its
+          ID. (In TEI the ID is always indicated by the
+          <att>xml:id</att> attribute.) This typically looks like
           either <eg>https://www.w3.org/TR/xptr-framework/#<emph
           style="font-weight:bold; font-style:
           normal;">shorthand</emph></eg> or <eg>#<emph
@@ -209,7 +216,8 @@
           mentioned to the left of the first <code>#</code>, then the
           document being referred to is the base document, which is
           typically the current document in which the URI appears (but
-          can be modified by the <att>xml:base</att> attribute).</p>
+          which can be modified by the <att>xml:base</att>
+          attribute).</p>
           <p>First, just to demonstrate how this works in general, we
           show in <ptr target="#eg02"/> how to test that the
           <att>ref</att> attribute of <gi>g</gi> has the correct
@@ -217,7 +225,7 @@
           However, we also note that this check could be expressed in
           PureODD without resorting to Schematron. This PureODD-only
           mechanism, exemplified in <ptr target="#eg03"/>, has the
-          sizable advantage that the testing is perfomed by the closed
+          sizable advantage that the testing is performed by the closed
           schema language. Note, however, that although this use of
           the <att>restriction</att> attribute is supported by the
           TEI’s current ODD processor, other uses may not be; in
@@ -315,7 +323,7 @@
             same directory as the instance ODD and whose filename ends
             in <val>.rng</val> (and thus is probably a RELAX NG file
             in the XML syntax).</p>
-            <p>We may wish ensure that the file referred to (whether
+            <p>We may wish to ensure that the file referred to (whether
             local or remote) is readable, well-formed XML. Luckily,
             XPath provides the <code>doc-available()</code> function
             for this very purpose. The constraints demonstrated in
@@ -366,15 +374,16 @@
         syntax of the URI. (They are also, of course, a bit harder to
         test because you must have a working internet connection, and
         have to worry about firewalls, proxies, same-source problems,
-        cached files, etc.). For example, <ptr target="#eg11"/>
-        ensures that any <gi>equiv</gi> element has a <att>uri</att>
+        cached files, etc.) For example, <ptr target="#eg11"/> ensures
+        that any <gi>equiv</gi> element has a <att>uri</att>
         attribute, and further that said attribute refers to the
         (fictional) <q>markup_taxonomy</q> page of the WWP website,
-        allowing either the production or test version of the website
-        and access with or without specifying a secure connection.
-        Note that this example only checks the <emph>syntax</emph> of
-        the <att>uri</att> attribute, and does not ensure that there
-        is actually is such a page or specific element on that page.</p>
+        allowing a reference to that page on either the production
+        or test version of the website, and allowing access with or
+        without specifying a secure connection. Note that this example
+        only checks the <emph>syntax</emph> of the <att>uri</att>
+        attribute, and does not ensure that there actually is such a
+        page or specific element on that page.</p>
         <p>The <ptr target="#eg12"/> example, on the other hand,
         ensures that the <att>filter</att> attribute of <gi>equiv</gi>
         points to an XSLT program. It does this by testing only the
@@ -382,7 +391,7 @@
         because the outermost element of an XSLT program could be
         either <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>.
         Thus, in order for a <att>filter</att> attribute to pass this
-        test, it not only needs the right syntax, but it must point to
+        test, it not only needs the right syntax, but it must also point to
         an XSLT program that exists and is accessible via the web.</p>
       </div>
     </div>
@@ -392,8 +401,8 @@
       mildly more difficult because the attribute needs to be parsed
       first. In the general case, delivering a precise error message
       is quite difficult, as the entire process needs to be handled in
-      XPath, as Schematron does not have an iteration construct.
-      However, specific cases may be reasonably easy. For example,
+      XPath because Schematron does not have an iteration construct.
+      However, specific cases may be reasonably easy to handle.
       <ptr target="#eg13"/> tests that a <att>rendition</att>
       attribute refers to at most 2 <gi>rendition</gi> elements in the
       same file. This is not particularly difficult because of the
@@ -423,12 +432,12 @@
       <att>ref</att> that points to a <gi>link</gi> element which, in
       turn, points to each <gi>person</gi> referred to. One advantage
       to this latter method is that you can restrict the
-      <att>ref</att> of <gi>persName</gi> to one and only 1 pointer,
+      <att>ref</att> of <gi>persName</gi> to one and only one pointer,
       and use similar constraints for both ambiguous and multiple
       references. <ptr target="#eg15"/> demonstrates such
       constraints.</p>
       <p>A similar set of constraints can be expressed in a simpler,
-      perhaps easier to follow way by splitting them up as constraints
+      perhaps easier to follow, way by splitting them up as constraints
       on the <att>ref</att> of <gi>persName</gi> and the
       <att>target</att> of <gi>link</gi> and <gi>alt</gi> separately,
       as demonstrated in <ptr target="#eg16"/>. Because the code for
@@ -447,9 +456,9 @@
       is simpler, shorter, easier to read (and thus proofread), and
       reduces the chance for errors in the first place. Checking
       pointers that use this method, however, is significantly more
-      difficult. However, as with several other types of pointer
-      checking, it is the general case that is most difficult; 
-      particular cases may be reasonably easy.</p>
+      difficult. As with several other types of pointer checking, it
+      is the general case that is most difficult; particular cases may
+      be reasonably easy.</p>
       <p>Here we will limit ourselves to the simple (and to our
       knowledge far most common) case in which the
       <att>matchPattern</att> follows the shorthand pointer syntax or
@@ -471,14 +480,14 @@
       editor, you can toggle whether XInclude processing is performed
       before validation using the <q>Enable XInclude Processing</q>
       checkbox in the Options > Preferences > XML > XML Parser
-      pane.</note> For example, imagine that at our (fictional)
-      <q>The Papers of Dr. Virgil Swann</q> project the extant
-      documents to be encoded (which include letters, scientific
-      notebooks, satellite schematics, a dictionary, and translations
-      of intercepted radio transmissions) have been categorized using
-      a project-specific taxonomy. This taxonomy is encoded as a
-      <gi>taxonomy</gi> element. Since each TEI document refers to
-      this taxonomy (from its
+      pane.</note> For example, imagine that at our <q>The Papers of
+      Dr. Virgil Swann</q> project the extant documents to be encoded
+      (which include letters, scientific notebooks, satellite
+      schematics, a dictionary, and translations of intercepted radio
+      transmissions) have been categorized using a project-specific
+      taxonomy. This taxonomy is encoded as a <gi>taxonomy</gi>
+      element. Since each TEI document refers to this taxonomy (from
+      its
       <code>/TEI/teiHeader/profileDesc/textClass/catRef/@target</code>),
       the project has chosen to have a copy of the entire project
       taxonomy in each TEI document’s header (in its
@@ -570,11 +579,11 @@
         <figure xml:id="eg03">
           <head>Ensure <att>ref</att> of <gi>g</gi> is a shorthand pointer, PureODD</head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg03_egXML">
-            <elementSpec module="core" ident="g" mode="change">
+            <elementSpec module="gaiji" ident="g" mode="change">
               <attList>
                 <attDef mode="replace" ident="ref" usage="req">
                   <datatype minOccurs="1" maxOccurs="1">
-                    <dataRef key="xmpdata.shorthandpointer"/>
+                    <dataRef key="xmpdata.shorthandPointer"/>
                   </datatype>
                   <remarks>
                     <p>This attribute must be a single shorthand
@@ -631,7 +640,7 @@
         <figure xml:id="eg05">
           <head>Check that <att>ref</att> of <gi>g</gi> points to a <gi>char</gi> or a <gi>glyph</gi></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="ref_of_g_points_to_char_or_glyph">
-            <constraintSpec ident="g_points_locally" scheme="schematron">
+            <constraintSpec ident="g_points_to_local_char_or_glyph" scheme="schematron">
               <desc>Example of how to test that the <att>ref</att> of
               <gi>g</gi> points to a local <gi>char</gi> or
               <gi>glyph</gi>.</desc>
@@ -659,7 +668,9 @@
           <code>union</code>) could be replaced with <code>or</code>
           to indicate an OrExpr.</p>
           <p>Note: use <code>self::tei:char</code>, not
-          <code>self::char</code>.</p>
+          <code>self::char</code> — the use of the namespace prefix in
+          the XPaths in <att>test</att> attributes is currently
+          required.</p>
         </figure>
         <!-- ========= figure eg06 ========= -->
         <figure xml:id="eg06">
@@ -903,9 +914,13 @@
                       
                       <!-- Test that they point to <rendition>s -->
                       <!--
-                          Note: since leaving off the '#' is BY FAR the most common error, we
-                          actually test the pointer whether it had a '#' or not, thus avoiding
-                          two error messages for "style03" when "#style03" would have worked.
+                          Note: since leaving off the '#' is BY FAR
+                          the most common error, we actually test the
+                          two tokens that should start with '#'
+                          whether or not they do (adding the '#' if
+                          needed), thus avoiding two error messages
+                          for "style03" when "#style03" would have
+                          worked.
                       -->
                       <sch:let name="RND_ONE" value="replace( $RENDITIONs[1], '^#','')"/>
                       <sch:let name="RND_TWO" value="replace( $RENDITIONs[2], '^#','')"/>
@@ -1185,7 +1200,7 @@
                   If, for some reason, the URL & KEY combination does not
                   point to a TEI element, record the current node as the
                   target. (Thus we can test later to see if the pointer failed
-                  by testing for the current node).
+                  by testing for the current node.)
               -->
               <sch:let name="PERSONs"
                        value="for $key in $KEYs return
@@ -1205,8 +1220,8 @@
                 Empty @ref of element '<sch:value-of select="$gi"/>'
               </sch:report>
 
-              <!-- If there are any references that point to something other than <tei:person>, -->
-              <!-- report it (them).                                                            -->
+              <!-- If there are any references that point to something
+                   other than <tei:person>, report it (them).  -->
               <sch:report test="count( $PERSONs[ not( self::tei:person ) ] ) gt 0">
                 Each pointer in the @ref attribute of a '<sch:value-of
                 select="$gi"/>' element should point to a 'person'
@@ -1273,7 +1288,7 @@
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg19_egXML">
             <sch:rule context="tei:textClass[ not( preceding::tei:textClass ) ]">
               <!-- The predicate above simply keeps this error to a
-                   single occurence, instead of once for each
+                   single occurrence, instead of once for each
                    <textClass>. The TEI permits multiple <textClass>
                    elements in any given <profileDesc> (and multiple
                    <profileDesc> elements in any given <teiHeader>);
@@ -1300,7 +1315,7 @@
           with a constraint like <ptr target="#eg02"/> or <ptr
           target="#eg03"/>).</p>
         </figure>
-	<!-- ... figures 20 to 57 go here, if ever needed ... -->
+        <!-- ... figures 20 to 57 go here, if ever needed ... -->
         <!-- ========= figure eg58 ========= -->
         <figure xml:id="eg58">
           <head>Test for <emph>any</emph> local URI</head>
@@ -1459,7 +1474,7 @@
               <!-- get a sequence of the prefixes thereof[1] -->
               <sch:let name="PREFs"
                        value="for $r in $REFs return substring-before( $r,':')"/>
-              <!-- get the list of defined prefxies -->
+              <!-- get the list of defined prefixes -->
               <sch:let name="DEFINEDs"
                        value="for $prefixDef in /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:listPrefixDef//tei:prefixDef
                               return $prefixDef/@ident"/>

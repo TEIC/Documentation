@@ -84,8 +84,8 @@
         <xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute>
       </xsl:if>
       <xsl:attribute name="class" select="if (@valid)
-                                                                  then local-name(.)||'_'||@valid
-                                                                  else local-name(.)"/>
+                                          then local-name(.)||'_'||@valid
+                                          else local-name(.)"/>
       <xsl:apply-templates select="node()" mode="eg">
         <xsl:with-param name="spaceB4eg" select="$whitespace_B4_me" tunnel="yes"/>
       </xsl:apply-templates>
