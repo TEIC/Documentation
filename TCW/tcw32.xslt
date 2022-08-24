@@ -22,7 +22,8 @@
     This is intended as a (perhaps temporary) one-off wrapper/driver of the TEI
     Stylesheets for the particular use case of TCW 32. All it does is load the
     main TEI convert-to-HTML5 stylesheet, and then re-define the templates used
-    in generation of examples (i.e., <egXML>).
+    in generation of examples (i.e., <egXML>), and add templates for <val> and
+    <tag>. (For which see https://github.com/TEIC/Stylesheets/issues/567.)
     
     To use THIS method of generating TCW 32,
     a) change the path in the <xsl:import> to the correct path on your system
@@ -50,6 +51,35 @@
   <!-- Just easier to process LIT and LITA if you have variables: -->
   <xsl:variable name="quot" select="'&quot;'"/>
   <xsl:variable name="apos" select='"&apos;"'/>
+
+  <!-- Next two templates to get around https://github.com/TEIC/Stylesheets/issues/567. -->
+
+  <!-- Add processing of <val>: -->
+  <xsl:template match="tei:val">
+    <span class="val">
+      <xsl:text>"</xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text>"</xsl:text>
+    </span>
+  </xsl:template>
+
+  <!-- And of <tag>: -->
+  <xsl:template match="tei:tag">
+    <xsl:variable name="class">
+      <xsl:sequence select="'tag'"/>
+      <xsl:if test="@type">
+        <xsl:sequence select="'-'||normalize-space( @type )"/>
+      </xsl:if>
+      <xsl:if test="@scheme">
+        <xsl:sequence select="'-'||normalize-space( @scheme )"/>
+      </xsl:if>
+    </xsl:variable>
+    <span class="{$class}">
+      <xsl:text>&lt;</xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text>&gt;</xsl:text>
+    </span>
+  </xsl:template>
   
   <!-- Completely replace standard TEI processing of <egXML>. -->
   <!--

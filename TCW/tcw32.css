@@ -16,6 +16,7 @@ body.simple { padding: 1em; }
 span.gi { font-size: small; font-face: monospace; }
 span.val { font-size: small; font-face: monospace; }
 span.att { font-size: small; font-face: monospace; }
+span[class|="tag"] { font-size: small; font-face: monospace; }
 /* --------- */
 
 

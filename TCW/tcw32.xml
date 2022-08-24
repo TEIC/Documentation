@@ -1147,7 +1147,7 @@
               </constraintSpec>
               <attList>
                 <attDef mode="change" ident="ref">
-                  <constraintSpec scheme="schematron" ident="persNamen_refers_to_person_alt_or_link">
+                  <constraintSpec scheme="schematron" ident="persName_refers_to_person_alt_or_link">
                     <constraint>
                       <sch:let name="target" value="id( substring-after( normalize-space(.), '#') )"/>
                       <sch:assert test="  $target/self::tei:person
