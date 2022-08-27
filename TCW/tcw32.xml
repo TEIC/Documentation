@@ -148,7 +148,7 @@
         Schematron processors fail to process this correctly. (The
         oXygen XML Editor handles these perfectly well, as does David
         Maus’s <ref
-        target="https://github.com/schxslt/schxslt/releases/latest">XsltSch</ref>.)</p>
+        target="https://github.com/schxslt/schxslt/releases/latest">SchXslt</ref>.)</p>
       </div>
     </front>
     <body>
