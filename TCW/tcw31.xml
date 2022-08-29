@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI Council: Update P5 subset</title>
+        <author>Syd Bauman</author>
+        <author>Elisa Beshero-Bondar</author>
+        <author>Elli Bleeker</author>
+        <author>Martin Holmes</author>
+        <author>Janelle Jenstad</author>
+        <author>Martina Scholger</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date>2022-08-29</date>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <p>freely available</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born-digital document</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>TEI Council: Update P5 subset</head>
+        <p>Rationale: the Stylesheets are built against the Guidelines, so there needs to be a (more
+          or less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the
+          Guidelines, the file “p5subset.xml”, is updated monthly by Council members.</p>
+        <div>
+          <head>Step-by-Step Instructions:</head>
+          <list>
+            <item>Get the p5subset.xml (two possibilities): <list>
+                <item>from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such
+                  as
+                    <code>https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</code>) </item>
+                <item>build the p5subset locally <list>
+                    <item>use your local copy of the P5 dev branch or install via docker</item>
+                    <item>start the TEI docker container</item>
+                    <item>change to the <code>[relative path to TEIC/TEI/ directory]/P5</code>
+                      directory</item>
+                    <item>run make test</item>
+                    <item>after you finish the steps below, don’t forget to clean your directory
+                      with <code>make clean</code> to make sure that files generated while running
+                      the test are removed again</item>
+                  </list>
+                </item>
+              </list>
+            </item>
+            <item>Change to the Stylesheets dev branch</item>
+            <item>Update the version of the p5subset.xml in the <code>Stylesheets/source/</code>
+              directory in the Stylesheets dev branch: <code>cp -p [relative path to TEIC/TEI/
+                directory]/P5/p5subset.xml source/p5subset.xml</code>. For example, if you have the
+                <code>TEIC/TEI/</code> repo in <code>~/TEICouncil/repos/TEI/</code> and the
+                <code>TEIC/Stylesheets</code> repo in <code>~/TEICouncil/repos/Stylesheets/</code>,
+              you would issue: <list>
+                <item><code>$ cd ~/TEICouncil/Stylesheets/</code></item>
+                <item><code>$ cp -p ../P5/p5subset.xml source/p5subset.xml</code></item>
+              </list>
+            </item>
+            <item>Run Test2 to make sure that the results are as expected (run in the docker image
+              if you are using the docker approach): <list>
+                <item><code>$ cd Test2</code></item>
+                <item><code>$ ant test</code></item>
+              </list>
+            </item>
+            <item>Error handling in Test2 (if there are no errors from Test2 process, go on to Test,
+              below.): <list>
+                <item>The vast majority of all errors from Test2 will be “diff errors”, i.e. a
+                  difference between a file generated from processing with the new p5subset (in the
+                    <code>Test2/outputFiles/</code> directory) and the corresponding file that had
+                  previously been generated from processing with the old p5subset (in the
+                    <code>expected-results/</code> directory).</item>
+                <item>If the process stops with an error that is not a diff error, notice whether
+                  it's due to something failing to load that the testing process requires. If that's
+                  the case, read the error message carefully and see if you can figure out what's
+                  failing (and reach out to Council members for help). See <ref
+                    target="#troubleshooting">Troubleshooting</ref>, below for an example failure of
+                  the ant process and a simple fix.</item>
+                <item><p>In the case of a diff error, examine the differences generated. If the
+                    differences are what you would expect given the change in P5 (which is by far
+                    the most common case), just copy the output file to be the new expected results
+                    file. For example, if one of the changes made to P5 was to add an English gloss
+                    for <gi>mentioned</gi>, a diff error would be entirely expected. It would look
+                    like <eg> [echo] about to compare files:<lb/> [echo] inFile otherFile =
+                      [path]/Test2/outputFiles/testPure1.rng
+                      [path]/Test2/expected-results/testPure1.rng<lb/> [echo] ERROR: DIFF
+                      FAILURE…<lb/> [exec] output: &lt;a:documentation
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"&gt;(mentioned)
+                      contains a specialized form of heading or label, giving the name of one or
+                      more speakers in a dramatic text or fragment. [3.13.2. Core Tags for
+                      Drama]&lt;/a:documentation&gt;<lb/> [exec] expect: &lt;a:documentation
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"&gt;contains a
+                      specialized form of heading or label, giving the name of one or more speakers
+                      in a dramatic text or fragment. [3.13.2. Core Tags for
+                      Drama]&lt;/a:documentation&gt;<lb/> [exec] Result: 1<lb/> BUILD FAILED<lb/>
+                      [path]/Test2/build.xml:541: The following error occurred while executing this
+                      line:<lb/> [path]/Test2/build_odd.xml:44: The following error occurred while
+                      executing this line:<lb/> [path]/Test2/build_odd.xml:103: The following error
+                      occurred while executing this line:<lb/> [path]/Test2/build_utilities.xml:148:
+                      The following error occurred while executing this line:<lb/>
+                      [path]/Test2/build_utilities.xml:210: Build failed because of differences
+                      between [path]/Test2/outputFiles/testPure1.rng and
+                      [path]/Test2/expected-results/testPure1.rng. See diff output above. </eg>
+                  </p>
+                  <p>As a human you can quickly look at the differences (“(mentioned)” was
+                    inserted), and realize that is an appropriate change. So to fix this error you
+                    just copy the actual output file to be the new expected file. Note that the 2nd
+                    line of the output is specifically designed to make executing the desired copy
+                    command easy. (You can copy everything after the “<code>=</code>”, type
+                      “<code>cp -p</code>” on the command line and then paste in the paths: <code>$
+                      cp -p [path]/Test2/outputFiles/testPure1.rng
+                      [path]/Test2/expected-results/testPure1.rng</code> Note that the
+                      “<code>-p</code>” switch is optional — it just gives the copy the same
+                    timestamp and permissions as the original.) If the error is either a diff error
+                    you would not have expected, or worse a different kind of error completely, fix
+                    it. Note that fixing it might be trivially easy or might take weeks of work from
+                    half a dozen different people.</p>
+                </item>
+                <item>If the error is either a diff error you would not have expected, or worse a
+                  different kind of error completely, fix it. Note that fixing it might be trivially
+                  easy or might take weeks of work from half a dozen different people.</item>
+              </list>
+            </item>
+            <item> After all errors have been fixed in Test2/, move on to Test/. <list>
+                <item>switch to the main directory (<code>cd ..</code> will do, if you are still in
+                    <code>Test2/</code> from previous step)</item>
+                <item>run either <code>make</code> or <code>time make</code> [See <ref
+                    target="#addendum">Addendum</ref>, below, for using the <code>–jobs</code>
+                  switch to make <code>make</code> run faster.]</item>
+                <item>check the errors (the make file stops after each error)</item>
+                <item>When there is an error, you will find a diff of the relevant file from the
+                    <code>actual-results/</code> folder and the <code>expected-results/</code>
+                  folder.</item>
+                <item>In case the output is not as expected (i.e., the difference is a real problem,
+                  rather than just an expected difference from changes made to p5subset), fix the
+                  error.</item>
+                <item>In case the output is as expected, copy the file from
+                    <code>actual-results/</code> to <code>expected-results/</code>. As with the
+                    <code>Test2/</code> case, you can copy and paste the correct paths from the
+                  error message. It looks like “<code>then diff actual-results/test.rng
+                    expected-results/test.rng;</code>”. You just need to replace the initial
+                    “<code>then diff</code>” with “<code>cp -p</code>” and strip off the ending
+                  semicolon. Thus: <lb/><code>$ cp -p
+                    Test/actual-results/test.rng</code><lb/><code>Test/expected-results/test.rng</code></item>
+              </list>
+            </item>
+            <item>If you are quite comfortable on the commandline and facile with a text editor, you
+              might prefer to run all the tests in <code>Test/</code> at once and test the outputs
+              yourself, rather than have the make command test the outputs, because it stops after
+              the first error. (Remember that a lot of what the Makefile does is transform a test
+              file using the Stylesheets and then compare the actual output of that command to a
+              file which contains the expected output of that command. These comparisons are done
+              using the diff command.) If you ask it nicely, the make command will just generate the
+              outputs, and defer the actual testing of them (by diffing them with the corresponding
+              expected output). This means that running make is dramatically faster, but it does not
+              do all the work, you have to do some of it. To do this: <list>
+                <item>Make sure you are in the <code>Test/</code> directory.</item>
+                <item><code>$ make DIFFNOW=0</code>
+                  <lb/>or, if you want to try to use multiple threads: <lb/><code>$ make DIFFNOW=0
+                    --jobs=`nproc 2>/dev/null || echo 1` -Oline</code></item>
+                <item>To actually see the filenames being diffed, add the “<code>-C0</code>” switch:
+                    <lb/><code>make DIFFNOW=0 -C0</code></item>
+                <item>When the Makefile has run a transformation, instead of comparing the actual
+                  output of that transformation to the expected output, it will say something like
+                    “<code>==deferring: ` diff actual-results/test27.html
+                    expected-results/test27.html `</code>”.</item>
+                <item>Once the make command is complete, you now need to perform all those
+                  comparisons yourself. Luckily, this is designed to be relatively easy. E.g., each
+                  message that reports a diff command that has not been executed is preceded with
+                    “<code>==</code>”, and no other output from the Makefile is.</item>
+                <item>Copy the output from the <code>make DIFFNOW=0 -C0</code> command into your
+                  favorite text editor.</item>
+                <item>Delete all lines that <emph>do not</emph> start with “<code>==</code>”.</item>
+                <item>Remove the “<code>==deferring: `</code>” from the beginning of each
+                  line.</item>
+                <item>Remove the “<code>`</code>” from the end of each line.</item>
+                <item>Insert “<code>#! /bin/bash</code>” as a 1st line.</item>
+                <item>Save this file as <code>diffnow_erase_me_soon.bash</code>, or whatever.</item>
+                <item>Change the mode of this new file to be executable (i.e., <code>chmod a+x
+                    diffnow_erase_me_soon.bash</code>).</item>
+                <item>Run it (i.e. <code>./diffnow_erase_me_soon.bash</code>).</item>
+              </list></item>
+          </list>
+        </div>
+        <div xml:id="addendum">
+          <head>Addendum: faster testing (recommendations by Syd Bauman)</head>
+          <p>One of the reasons the test procedure in <code>Stylesheets/Test2/</code> is
+            dramatically faster than the one in <code>Stylesheets/Test/</code> is that it is, by
+            default, run in parallel.<note n="1"><code>ant test</code>​ runs them in parallel; if
+              you want them in series (likely because the order of messages was confusing when run
+              in parallel) use <code>ant testSeries​</code>.</note><note n="2">There are other
+              reasons, like it is written to be less redundant, and the JVM is only spun up once,
+              rather than once for every test.</note></p>
+          <p>You can also ask the make​ command to run multiple jobs at once. The switches that
+            control this are <code>--jobs=</code> and <code>--output-sync=.</code> I just tried an
+            experiment, comparing how long it took to run <code>make​</code> vs <code>make --jobs=7
+              --output-sync=lines</code>. (I chose 7 because my system has 8 threads, and I wanted
+            to have some CPU available. What little I have found on the web seems to suggest I may
+            as well go ahead and use 8.)</p>
+          <p>The result was faster, although not even close to 7 times faster: down to 03:32 from
+            04:36. I compared the output of the 2 commands, and they were identical.</p>
+          <p>On GNU/Linux, at least, the <code>nproc</code>​ command will tell you how many threads
+            are available. Thus using the command <lb/><code>$ make --jobs=`nproc 2>/dev/null ||
+              echo 1` -Oline</code>
+            <lb/>seems to make sense to me. (<code>-O</code> is shorthand for
+              <code>--output-sync=​.</code>)</p>
+          <p>It is also possible to get the Makefile to do that on its own. My first thought is that
+            might not be such a good idea, because you may want to run with <code>--jobs=1</code> in
+            order to force error messages into the right order. (I.e., in case <code>-Oline</code>
+            wasn’t good enough.)</p>
+          <p>I ran the experiment again, this time using <code>--jobs=8</code> and getting screen
+            captures of the process monitor roughly 40 s after the make command started. The timing
+            results were very similar (down to 03:36 from 04:36), but the order of output lines was
+            different. (Same output; i.e., they were identical after sorting and removing
+            timestamps.)</p>
+          <p>So I think anyone running the Stylesheets test process would do well to use the
+              <code>--jobs</code> switch. You could use any of <eg> -j 8 # if you know you have 8
+              threads, e.g.<lb/> --jobs=`nproc` # if you know the nproc command works on your
+              system<lb/> -j `nproc 2> /dev/null || echo 1​` # if there is a chance nproc
+              fails,<lb/> # so it defaults to '1' </eg>
+          </p>
+        </div>
+        <div xml:id="troubleshooting">
+          <head>Troubleshooting</head>
+          <p>Test 2: What if the ant process fails because some necessary dependency is missing? For
+            example, you may see an error message like this:<lb/>
+            <eg>A class needed by class org.apache.fop.tools.anttasks.Fop cannot be found:<lb/>
+              org/apache/commons/logging/Log using the classloader<lb/>
+              AntClassLoader[/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-core-3.1.9.jar:/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-fop-3.1.9.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop-hyph.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop.jar</eg></p>
+          <p>This signals that a dependency is missing or corrupted. In our example, fop-2.6 is a
+            directory generated by ant while it is running a jar dependency. Perhaps a network
+            connection was interrupted somehow or the process didn't complete as it was supposed to
+            do. The simplest way to correct this is to delete the fop-2.6 directory, and return to
+            Test2 and run “<code>ant test</code>” again. This lets ant pull in a clean copy of the
+            missing dependency.</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
