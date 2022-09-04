@@ -21,11 +21,14 @@
         <editor>
           <persName>Sarah Connell</persName>
         </editor>
-	<respStmt>
-	  <resp>Additional technical review</resp>
-	  <persName>Ash Clark</persName>
-	</respStmt>
+        <respStmt>
+          <resp>Additional technical review</resp>
+          <persName>Ash Clark</persName>
+        </respStmt>
       </titleStmt>
+      <editionStmt>
+        <edition>1.0.0</edition>
+      </editionStmt>
       <publicationStmt>
         <publisher>
           <orgName>TEI Consortium</orgName>
@@ -55,8 +58,16 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change n="1.0.0" who="#sb" when="2022-09-01">
+        Having made lots of various minor improvements over the past
+        year, and incorporated changes recomended by my colleagues
+        Sarah Connell and Ash Clark, and from Martina Scholger, I
+        think this is finally ready for initial release. Thus this
+        version is considered edition 1.0.0.
+      </change>
       <change who="#sb" when="2021-08-15">
-        Tweaks to make public (e.g., remove references to file paths on my local system)
+        Tweaks to make public (e.g., remove references to file paths
+        on my local system)
       </change>
       <change who="#sb" when="2021-08-01">
         resume work, having last edited 2021-02-28T23:59.
@@ -212,12 +223,18 @@
           style="font-weight:bold; font-style:
           normal;">shorthand</emph></eg> or <eg>#<emph
           style="font-weight:bold; font-style:
-          normal;">DeRoseetal1990</emph></eg>. If there is no document
-          mentioned to the left of the first <code>#</code>, then the
-          document being referred to is the base document, which is
-          typically the current document in which the URI appears (but
-          which can be modified by the <att>xml:base</att>
-          attribute).</p>
+          normal;">DeRoseetal1990</emph></eg><!--. ← Sentencing ending
+          period shows up at beginning of next line. I claim this is a
+          Stylesheets problem. But it is not one I am confident I can
+          fix at all, let alone in the next few minutes, so I have
+          just commented it out. (BTW, not really that hard to fix,
+          but hard to fix and be confident you haven’t broken
+          something else.) —Syd, 2022-09-01 --> If there is no
+          document mentioned to the left of the first <code>#</code>,
+          then the document being referred to is the base document,
+          which is typically the current document in which the URI
+          appears (but which can be modified by the
+          <att>xml:base</att> attribute).</p>
           <p>First, just to demonstrate how this works in general, we
           show in <ptr target="#eg02"/> how to test that the
           <att>ref</att> attribute of <gi>g</gi> has the correct
@@ -727,7 +744,7 @@
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_readable">
                     <constraint>
-                      <sch:assert test="doc-available( resolve-uri(.) )">Module <sch:value-of select="normalize-space(.)"/> is not readable, well-formed XML.</sch:assert>
+                      <sch:assert test="doc-available( resolve-uri( ., base-uri(/) ) )">Module <sch:value-of select="."/> is not readable, well-formed XML.</sch:assert>
                     </constraint>
                   </constraintSpec>
                   <remarks>
@@ -754,8 +771,12 @@
               am afraid this is an aspect of RELAX NG that escapes me.
               —Syd, 2021-12-25
           -->
-          <p>The <gi>constraintSpec</gi> then tests that said file
-          is readable, well-formed XML.</p>
+          <p>The <gi>constraintSpec</gi> then tests that said file is
+          readable, well-formed XML. The use of
+          <code>resolve-uri()</code> assures that if a relative URI is
+          used, the document we attempt to retrieve is the one at that
+          URI relative to the input document, not the Schematron
+          schema.</p>
         </figure>
         <!-- ========= figure eg09 ========= -->
         <figure xml:id="eg09">
@@ -769,10 +790,10 @@
                   </datatype>
                   <constraintSpec scheme="schematron" ident="moduleRef_url_relaxng">
                     <constraint>
-                      <sch:assert test="doc-available( resolve-uri(.) )
+                      <sch:assert test="doc-available( resolve-uri( ., base-uri(/) ) )
                                         and
-                                        doc( resolve-uri(.) )/rng:grammar ">
-                        Module <sch:value-of select="normalize-space(.)"/> is not a readable,
+                                        doc( resolve-uri( ., base-uri(/) ) )/rng:grammar">
+                        Module <sch:value-of select="."/> is not a readable,
                         well-formed RELAX NG grammar in the XML syntax.
                       </sch:assert>
                     </constraint>
@@ -868,7 +889,7 @@
                   <constraintSpec scheme="schematron" ident="filter_is_XSLT">
                     <constraint>
                       <sch:let name="xsltNS" value="'http://www.w3.org/1999/XSL/Transform'"/>
-                      <sch:let name="relURI" value="resolve-uri( normalize-space(.) )"/>
+                      <sch:let name="relURI" value="resolve-uri( normalize-space(.), base-uri(/) )"/>
                       <sch:assert test="doc($relURI)/*[namespace-uri() eq $xsltNS]">The filter must be an XSLT program!</sch:assert>
                     </constraint>
                   </constraintSpec>
@@ -1025,7 +1046,7 @@
         <figure xml:id="eg15">
           <head>Required <att>ref</att> of <gi>persName</gi> eventually refers to <gi>person</gi></head>
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="eg15_egXML">
-            <elementSpec ident="persName" mode="change">
+            <elementSpec ident="persName" module="namesdates" mode="change">
               <constraintSpec scheme="schematron" ident="people_have_refs">
                 <constraint>
                   <sch:rule context="tei:persName[ not( ancestor::tei:teiHeader ) ]">
@@ -1234,7 +1255,7 @@
                             else for $p in $PERSONs return
                               if ( $p is . )
                               then ' *nothing*'
-                              else concat(' &lt;', name($p), '>')"/>.
+                              else concat(' &amp;lt;', name($p), '>')"/>.
               </sch:report>
               <!-- 
                [1] The PREFs, URLs, KEYs, and PERSONs sequences have the
