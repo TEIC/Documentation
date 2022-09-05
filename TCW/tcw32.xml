@@ -159,7 +159,7 @@
         Schematron processors fail to process this correctly. (The
         oXygen XML Editor handles these perfectly well, as does David
         Maus’s <ref
-        target="https://github.com/schxslt/schxslt/releases/latest">XsltSch</ref>.)</p>
+        target="https://github.com/schxslt/schxslt/releases/latest">SchXslt</ref>.)</p>
       </div>
     </front>
     <body>
@@ -386,44 +386,46 @@
       </div>
       <div>
         <head>remote pointers</head>
-        <p>Checking remote pointers is in principle very similar to
-        checking local pointers, but with different tests on the
-        syntax of the URI. (They are also, of course, a bit harder to
-        test because you must have a working internet connection, and
-        have to worry about firewalls, proxies, same-source problems,
-        cached files, etc.) For example, <ptr target="#eg11"/> ensures
-        that any <gi>equiv</gi> element has a <att>uri</att>
-        attribute, and further that said attribute refers to the
-        (fictional) <q>markup_taxonomy</q> page of the WWP website,
-        allowing a reference to that page on either the production
-        or test version of the website, and allowing access with or
-        without specifying a secure connection. Note that this example
-        only checks the <emph>syntax</emph> of the <att>uri</att>
-        attribute, and does not ensure that there actually is such a
-        page or specific element on that page.</p>
-        <p>The <ptr target="#eg12"/> example, on the other hand,
-        ensures that the <att>filter</att> attribute of <gi>equiv</gi>
-        points to an XSLT program. It does this by testing only the
-        namespace of the outermost element of the retrieved file,
-        because the outermost element of an XSLT program could be
-        either <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>.
-        Thus, in order for a <att>filter</att> attribute to pass this
-        test, it not only needs the right syntax, but it must also point to
-        an XSLT program that exists and is accessible via the web.</p>
+        <p>Checking remote pointers is in principle very similar to checking local pointers, but
+            with different tests on the syntax of the URI. (They are also, of course, a bit harder
+            to test because you must have a
+            <?oxy_comment_start author="dmaus" timestamp="20220904T095640+0200" comment="It is maybe worth mentioning OASIS XML Catalogs at this point. With a catalog you can transparently rewrite pointers to external resources."?>working
+            internet connection<?oxy_comment_end?>, and have to worry about firewalls, proxies,
+            same-source problems, cached files, etc.) For example, <ptr target="#eg11"/> ensures
+            that any <gi>equiv</gi> element has a <att>uri</att> attribute, and further that said
+            attribute refers to the (fictional) <q>markup_taxonomy</q> page of the WWP website,
+            allowing a reference to that page on either the production or test version of the
+            website, and allowing access with or without specifying a secure connection. Note that
+            this example only checks the <emph>syntax</emph> of the <att>uri</att> attribute, and
+            does not ensure that there actually is such a page or specific element on that page.</p>
+        <p>The <ptr target="#eg12"/> example, on the other hand, ensures that the <att>filter</att>
+            attribute of <gi>equiv</gi> points to an XSLT program. It does this by testing only the
+            namespace of the outermost element of the retrieved file, because the outermost element
+            of an XSLT program could be either <gi>xsl:stylesheet</gi> or
+            <gi>xsl:transform</gi><?oxy_comment_start author="dmaus" timestamp="20220904T100102+0200" comment="...or it could be a simplified stylesheet module. See: https://www.w3.org/TR/2017/REC-xslt-30-20170608/#simplified-stylesheet"?>.<?oxy_comment_end?>
+            Thus, in order for a <att>filter</att> attribute to pass this test, it not only needs
+            the right syntax, but it must also point to an XSLT program that exists and is
+            accessible via the web.</p>
       </div>
     </div>
     <div>
       <head>Direct access by multiple values</head>
-      <p>If a pointer attribute may have multiple values, testing is
-      mildly more difficult because the attribute needs to be parsed
-      first. In the general case, delivering a precise error message
-      is quite difficult, as the entire process needs to be handled in
-      XPath because Schematron does not have an iteration construct.
-      However, specific cases may be reasonably easy to handle.
-      <ptr target="#eg13"/> tests that a <att>rendition</att>
-      attribute refers to at most 2 <gi>rendition</gi> elements in the
-      same file. This is not particularly difficult because of the
-      restriction that there are at most 2 pointers.</p>
+      <p>If a pointer attribute may have multiple values, testing is mildly more difficult because
+          the attribute needs to be parsed first. In the general case,
+          <?oxy_comment_start author="dmaus" timestamp="20220904T100520+0200" comment="I don&apos;t agree. Let&apos;s take the example in figure 14. You could rewrite it as:
+
+&lt;sch:let name=&quot;WITs&quot; value=&quot;tokenize( normalize-space(.), &apos; &apos;)&quot;/&gt;
+
+&lt;sch:let name=&quot;WITs_invalid&quot; value=&quot;filter(function ($WIT) { not(starts-with($WIT, &apos;#&apos;)) }, $WITs)&quot;/&gt;
+
+&lt;sch:assert test=&quot;empty($WITs_invalid)&quot;&gt;
+The following pointers in this @wit attribute do not start with a &apos;#&apos;: &lt;sch:value-of select=&quot;$WITs_invalid&quot;/&gt;
+&lt;/sch:assert&gt;"?>delivering a precise error message is quite
+          difficult<?oxy_comment_end?>, as the entire process needs to be handled in XPath because
+          Schematron does not have an iteration construct. However, specific cases may be reasonably
+          easy to handle. <ptr target="#eg13"/> tests that a <att>rendition</att> attribute refers
+          to at most 2 <gi>rendition</gi> elements in the same file. This is not particularly
+          difficult because of the restriction that there are at most 2 pointers.</p>
       <p>But in many, if not most, cases there is no such restriction.
       For example, there may be dozens of witnesses to a particular
       manuscript manifestation. <ptr target="#eg14"/> tests that each
@@ -491,32 +493,32 @@
     </div>
     <div type="section">
       <head>XInclude, yet?</head>
-      <p>It is often the case that we know certain tests will fail
-      before XInclude processing, whereas we hope they would succeed
-      after XInclude processing.<note place="foot">In the OXygen XML
-      editor, you can toggle whether XInclude processing is performed
-      before validation using the <q>Enable XInclude Processing</q>
-      checkbox in the Options > Preferences > XML > XML Parser
-      pane.</note> For example, imagine that at our <q>The Papers of
-      Dr. Virgil Swann</q> project the extant documents to be encoded
-      (which include letters, scientific notebooks, satellite
-      schematics, a dictionary, and translations of intercepted radio
-      transmissions) have been categorized using a project-specific
-      taxonomy. This taxonomy is encoded as a <gi>taxonomy</gi>
-      element. Since each TEI document refers to this taxonomy (from
-      its
-      <code>/TEI/teiHeader/profileDesc/textClass/catRef/@target</code>),
-      the project has chosen to have a copy of the entire project
-      taxonomy in each TEI document’s header (in its
-      <code>/TEI/teiHeader/encodingDesc/classDecl</code>). In order to
-      avoid multiple copies of the same information, the project has
-      chosen to store the <gi>taxonomy</gi> in a separate document and
-      use XInclude to insert it into each TEI header.<note
-      place="foot">Why they would choose to do this rather than use a
-      URI that points to an external document is an interesting, if
-      irrelevant, question. They may well have been influenced by the
-      fact that <emph>every</emph> example of <gi>catRef</gi> in the
-      <title>Guidelines</title> uses shorthand pointers.</note></p>
+      <p>It is often the case that we know certain tests will fail before XInclude processing,
+          whereas we hope they would succeed after XInclude processing.<note place="foot">In the
+            OXygen XML editor, you can toggle whether XInclude processing is performed before
+            validation using the <q>Enable XInclude Processing</q> checkbox in the Options >
+            Preferences > XML > XML Parser pane.</note> For example, imagine that at our <q>The
+            Papers of Dr. Virgil Swann</q> project the extant documents to be encoded (which include
+          letters, scientific notebooks, satellite schematics, a dictionary, and translations of
+          intercepted radio transmissions) have been categorized using a project-specific taxonomy.
+          This taxonomy is encoded as a <gi>taxonomy</gi> element. Since each TEI document refers to
+          this taxonomy (from its <code>/TEI/teiHeader/profileDesc/textClass/catRef/@target</code>),
+          the project has chosen to have a copy of the entire project taxonomy in each TEI
+          document’s header (in its <code>/TEI/teiHeader/encodingDesc/classDecl</code>). In order to
+          avoid multiple copies of the same information, the project has chosen to store the
+            <gi>taxonomy</gi> in a separate document and use XInclude to insert it into each TEI
+            header.<note place="foot">Why they would choose to do this rather than use a URI that
+            points to an external document is an interesting, if irrelevant, question. They may well
+            have been influenced by the fact that <emph>every</emph> example of <gi>catRef</gi> in
+            the <title>Guidelines</title> uses
+            <?oxy_comment_start author="dmaus" timestamp="20220904T103827+0200" comment="Just an observation.
+
+If we have a file taxonomy.xml that defines the &lt;category&gt; @xml:id &quot;cat&quot; and we have a file document.xml with &lt;catRef target=&quot;#cat&quot;/&gt; that uses XInclude to include taxonomy.xml, then the reference &quot;#cat&quot; is a dangling reference *even after XInclude is performed*.
+
+The reason is, that XInclude performs XML Base URI Fixup (Cf. XInclude specs) and modifies the base URI of the included taxonomy.
+
+id() works because it does *not* rely on URIs but ID/IDREF."?>shorthand
+            pointers<?oxy_comment_end?>.</note></p>
       <p>Given this situation, imagine now that the project wishes to
       check that the <att>target</att> attributes actually point to
       one or more <gi>category</gi> elements. This is problematic,
