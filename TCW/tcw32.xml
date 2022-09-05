@@ -24,6 +24,7 @@
         <respStmt>
           <resp>Additional technical review</resp>
           <persName>Ash Clark</persName>
+          <persName>David Maus</persName>
         </respStmt>
       </titleStmt>
       <editionStmt>
@@ -386,46 +387,64 @@
       </div>
       <div>
         <head>remote pointers</head>
-        <p>Checking remote pointers is in principle very similar to checking local pointers, but
-            with different tests on the syntax of the URI. (They are also, of course, a bit harder
-            to test because you must have a
-            <?oxy_comment_start author="dmaus" timestamp="20220904T095640+0200" comment="It is maybe worth mentioning OASIS XML Catalogs at this point. With a catalog you can transparently rewrite pointers to external resources."?>working
-            internet connection<?oxy_comment_end?>, and have to worry about firewalls, proxies,
-            same-source problems, cached files, etc.) For example, <ptr target="#eg11"/> ensures
-            that any <gi>equiv</gi> element has a <att>uri</att> attribute, and further that said
-            attribute refers to the (fictional) <q>markup_taxonomy</q> page of the WWP website,
-            allowing a reference to that page on either the production or test version of the
-            website, and allowing access with or without specifying a secure connection. Note that
-            this example only checks the <emph>syntax</emph> of the <att>uri</att> attribute, and
-            does not ensure that there actually is such a page or specific element on that page.</p>
-        <p>The <ptr target="#eg12"/> example, on the other hand, ensures that the <att>filter</att>
-            attribute of <gi>equiv</gi> points to an XSLT program. It does this by testing only the
-            namespace of the outermost element of the retrieved file, because the outermost element
-            of an XSLT program could be either <gi>xsl:stylesheet</gi> or
-            <gi>xsl:transform</gi><?oxy_comment_start author="dmaus" timestamp="20220904T100102+0200" comment="...or it could be a simplified stylesheet module. See: https://www.w3.org/TR/2017/REC-xslt-30-20170608/#simplified-stylesheet"?>.<?oxy_comment_end?>
-            Thus, in order for a <att>filter</att> attribute to pass this test, it not only needs
-            the right syntax, but it must also point to an XSLT program that exists and is
-            accessible via the web.</p>
+        <p>Checking remote pointers is in principle very similar to
+        checking local pointers, but with different tests on the
+        syntax of the URI. (They are also, of course, a bit harder to
+        test because you must have a working internet connection (or
+        alternatively use an <ref
+        target="https://xmlcatalogs.org/catalogs-1.1.html">XML
+        Catalog</ref>), and have to worry about firewalls, proxies,
+        same-source problems, cached files, etc.)  For example, <ptr
+        target="#eg11"/> ensures that any <gi>equiv</gi> element has a
+        <att>uri</att> attribute, and further that said attribute
+        refers to the (fictional) <q>markup_taxonomy</q> page of the
+        WWP website, allowing a reference to that page on either the
+        production or test version of the website, and allowing access
+        with or without specifying a secure connection. Note that this
+        example only checks the <emph>syntax</emph> of the
+        <att>uri</att> attribute, and does not ensure that there
+        actually is such a page or specific element on that page.</p>
+        <p>The <ptr target="#eg12"/> example, on the other hand,
+        ensures that the <att>filter</att> attribute of <gi>equiv</gi>
+        points to an XSLT program. It does this by testing that either
+        the namespace of the outermost element of the retrieved file
+        is the XSLT namespace (because the outermost element of a
+        <soCalled>normal</soCalled> XSLT program could be either
+        <gi>xsl:stylesheet</gi> or <gi>xsl:transform</gi>), or that
+        the outermost element has a <att>xsl:version</att> attribute
+        (because a <ref
+        target="https://www.w3.org/TR/2017/REC-xslt-30-20170608/#simplified-stylesheet">simplified
+        stylesheet</ref> must have such an attribute).  Thus, in order
+        for a <att>filter</att> attribute to pass this test, it not
+        only needs the right syntax, but it must also point to an XSLT
+        program that exists and is accessible via the web.</p>
       </div>
     </div>
     <div>
       <head>Direct access by multiple values</head>
-      <p>If a pointer attribute may have multiple values, testing is mildly more difficult because
-          the attribute needs to be parsed first. In the general case,
-          <?oxy_comment_start author="dmaus" timestamp="20220904T100520+0200" comment="I don&apos;t agree. Let&apos;s take the example in figure 14. You could rewrite it as:
-
-&lt;sch:let name=&quot;WITs&quot; value=&quot;tokenize( normalize-space(.), &apos; &apos;)&quot;/&gt;
-
-&lt;sch:let name=&quot;WITs_invalid&quot; value=&quot;filter(function ($WIT) { not(starts-with($WIT, &apos;#&apos;)) }, $WITs)&quot;/&gt;
-
-&lt;sch:assert test=&quot;empty($WITs_invalid)&quot;&gt;
-The following pointers in this @wit attribute do not start with a &apos;#&apos;: &lt;sch:value-of select=&quot;$WITs_invalid&quot;/&gt;
-&lt;/sch:assert&gt;"?>delivering a precise error message is quite
-          difficult<?oxy_comment_end?>, as the entire process needs to be handled in XPath because
-          Schematron does not have an iteration construct. However, specific cases may be reasonably
-          easy to handle. <ptr target="#eg13"/> tests that a <att>rendition</att> attribute refers
-          to at most 2 <gi>rendition</gi> elements in the same file. This is not particularly
-          difficult because of the restriction that there are at most 2 pointers.</p>
+      <p>If a pointer attribute may have multiple values, testing is
+      mildly more difficult because the attribute needs to be parsed
+      first. In the general case, delivering a precise error message
+      is quite difficult,
+      <!-- 
+           Comment by dmj:
+           
+           I don’t agree. Let’s take the example in figure 14. You could rewrite it as:
+           +- - - - - -
+           | <sch:let name="WITs" value="tokenize( normalize-space(.), ' ')"/>
+           | <sch:let name="WITs_invalid" value="filter(function ($WIT) { not(starts-with($WIT, '#')) }, $WITs)"/>
+           | <sch:assert test="empty($WITs_invalid)">
+           |   The following pointers in this @wit attribute do not start with a '#': <sch:value-of select="$WITs_invalid"/>
+           | </sch:assert>
+           +- - - - - -
+      -->
+      as the entire process needs to be handled in XPath because
+      Schematron does not have an iteration construct. However,
+      specific cases may be reasonably easy to handle. <ptr
+      target="#eg13"/> tests that a <att>rendition</att> attribute
+      refers to at most 2 <gi>rendition</gi> elements in the same
+      file. This is not particularly difficult because of the
+      restriction that there are at most 2 pointers.</p>
       <p>But in many, if not most, cases there is no such restriction.
       For example, there may be dozens of witnesses to a particular
       manuscript manifestation. <ptr target="#eg14"/> tests that each
@@ -511,14 +530,25 @@ The following pointers in this @wit attribute do not start with a &apos;#&apos;:
             points to an external document is an interesting, if irrelevant, question. They may well
             have been influenced by the fact that <emph>every</emph> example of <gi>catRef</gi> in
             the <title>Guidelines</title> uses
-            <?oxy_comment_start author="dmaus" timestamp="20220904T103827+0200" comment="Just an observation.
+            <!--
+                Comment by DMJ:
+                An observation —
 
-If we have a file taxonomy.xml that defines the &lt;category&gt; @xml:id &quot;cat&quot; and we have a file document.xml with &lt;catRef target=&quot;#cat&quot;/&gt; that uses XInclude to include taxonomy.xml, then the reference &quot;#cat&quot; is a dangling reference *even after XInclude is performed*.
+                If we have a file taxonomy.xml that defines a
+                <category xml:id="cat">, and we have a file
+                document.xml that uses XInclude to include
+                taxonomy.xml, and has <catRef target="#cat"/>, then
+                the reference "#cat" is a dangling reference *even
+                after XInclude is performed*.
 
-The reason is, that XInclude performs XML Base URI Fixup (Cf. XInclude specs) and modifies the base URI of the included taxonomy.
+                The reason is, that XInclude performs XML Base URI
+                Fixup (Cf. XInclude specs) and modifies the base URI
+                of the included taxonomy.
 
-id() works because it does *not* rely on URIs but ID/IDREF."?>shorthand
-            pointers<?oxy_comment_end?>.</note></p>
+                id() works because it does *not* rely on URIs but
+                ID/IDREF. 
+            -->
+            shorthand pointers.</note></p>
       <p>Given this situation, imagine now that the project wishes to
       check that the <att>target</att> attributes actually point to
       one or more <gi>category</gi> elements. This is problematic,
@@ -890,9 +920,12 @@ id() works because it does *not* rely on URIs but ID/IDREF."?>shorthand
                 <attDef ident="filter" mode="change" usage="req">
                   <constraintSpec scheme="schematron" ident="filter_is_XSLT">
                     <constraint>
+                      <sch:ns prefix="xsl" uri="http://www.w3.org/1999/XSL/Transform"/>
                       <sch:let name="xsltNS" value="'http://www.w3.org/1999/XSL/Transform'"/>
                       <sch:let name="relURI" value="resolve-uri( normalize-space(.), base-uri(/) )"/>
-                      <sch:assert test="doc($relURI)/*[namespace-uri() eq $xsltNS]">The filter must be an XSLT program!</sch:assert>
+                      <sch:assert test="doc($relURI)/*[namespace-uri() eq $xsltNS  or  @xsl:version]">
+                        The filter must be an XSLT program!
+                      </sch:assert>
                     </constraint>
                   </constraintSpec>
                 </attDef>
@@ -902,11 +935,18 @@ id() works because it does *not* rely on URIs but ID/IDREF."?>shorthand
           <p>Note that this constraint actually tries to retrieve the
           document <att>filter</att> refers to. This results in more
           thorough testing than <ptr target="#eg11"/>, but requires a
-          working internet connection.</p>
+          working internet connection or re-direction via an <ref
+          target="https://xmlcatalogs.org/catalogs-1.1.html">XML
+          Catalog</ref>.</p>
           <p>The use of <code>resolve-uri()</code> assures
           that if a relative URI is used, the document we attempt to
           retrieve is the one at that URI relative to the input
           document, not the Schematron schema.</p>
+          <p>Note that the TEI processors do not automatically bind
+          the <code>xsl:</code> prefix to the XSLT namespace. It is
+          common to put all of your <gi>sch:ns</gi> elements in a
+          <gi>constraintSpec</gi> that is a direct child of the
+          <gi>schemaSpec</gi> of your customization ODD.</p>
         </figure>
         <!-- ========= figure eg13 ========= -->
         <figure xml:id="eg13">
