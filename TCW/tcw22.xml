@@ -353,8 +353,8 @@
             change made since the last release is being reflected online. </item>
           
           <item><hi rend="bold">Update <ref target="https://roma.tei-c.org/">Roma</ref>, 
-            <ref target="https://romabeta.tei-c.org/">Romabeta</ref>, and <ref target="https://oxgarage.tei-c.org/">OxGarage</ref></hi> 
-            <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code> and issue the script 
+            <ref target="https://romabeta.tei-c.org/">Romabeta</ref>, and <ref target="https://teigarage.tei-c.org/">TEIGarage</ref></hi> 
+            <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code>, do a <code>git pull</code>, and issue the script 
             <code>docker-update.sh</code> for every service, i.e. 
             <list>
               <item><code># ./docker-update.sh roma</code></item>
