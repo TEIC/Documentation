@@ -360,6 +360,7 @@
               <item><code># ./docker-update.sh roma</code></item>
               <item><code># ./docker-update.sh romabeta</code></item>
               <item><code># ./docker-update.sh oxgarage</code></item>
+              <item><code># ./docker-update.sh teigarage</code></item>
             </list>
             NB: Every invocation might take some time but each should succesfully finish with the notification 
             "Creating $CONTAINER$ ... done" 
