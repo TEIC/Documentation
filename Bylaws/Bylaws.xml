@@ -23,7 +23,7 @@
         As of 2023, the version in Wordpress was marked, <q>2013 Revision. Edited from online version, last updated 2011-08-09</q>, 
         but it was amended in subsequent years, regrettably without a changelog due to the Wordpress format.
         Restoring these Bylaws to TEI format allows for more robust preservation of our consortium’s history and policies, 
-        in keeping with the principles of the TEI Consortium. In restoring the Bylaws to TEI, elements and structure for this 2023 edition were chosen in consultation with 2000 edition in TEI P4 and remnants of the changelog visible in the Wordpress encoding.</p></encodingDesc>
+        in keeping with the principles of the TEI Consortium. In restoring the Bylaws to TEI, elements and structure for this 2023 edition were chosen in consultation with the 2000 edition in TEI P4 and remnants of the changelog visible in the Wordpress encoding. XML comments visible in the Wordpress encoding are restored here.</p></encodingDesc>
      <revisionDesc>
         <listChange>
            <change when="2013">2013 Revision. Edited from online version, last updated 2011-08-09. Corrections and comments from <persName>Kevin</persName> and <persName>Brett</persName>. Revised and simplified for presentation and vote at 2013 Members Meeting.</change>
@@ -55,18 +55,19 @@
   </teiHeader>
   <text>
       <body>
-
-<!--head></head--><!-- heading commented out to please stupid stylesheet on website -->
-
-These Bylaws are those proposed at the time of incorporation as subsequently
+<div>
+<head>TEI Bylaws</head>
+<p>These Bylaws are those proposed at the time of incorporation as subsequently
 revised. They may be revised further by the TEI Board, as described in <a href="#TEIby-A7">Article 7</a> below. The Bylaws specify <a href="#TEIby-A1">classes of membership</a>, <a href="#TEIby-A2">conduct of meetings of the Consortium Members</a>, <a href="#TEIby-A3">appointment and responsibilities of Consortium
 Officers</a>, <a href="#TEIby-A4">constitution and responsibilities of
 the Board of Directors</a>, <a href="#TEIby-A6">constitution and
 responsibilities of the Technical Council</a>, and <a href="#TEIby-A5">funding of Consortium
-activities</a>.
+activities</a>.</p>
 <div id="TEIby-A1">
-<h2>Article I. Members</h2>
-<div id="TEIby-A1.1"><strong>1. Classes of Membership.</strong>  There shall be two classes of membership in the TEI
+<head>Article I. Members</head>
+<div id="TEIby-A1.1">
+   <head>1. Classes of Membership.</head>  
+   <p>There shall be two classes of membership in the TEI
 Consortium: individual membership and institutional
 membership. Any form of institution, consortium, organization,
 project or company may become an Institutional Member. Only
@@ -80,46 +81,47 @@ shall be equally eligible for such other membership benefits
 as the TEI Board of Directors may determine from time to time,
 including but not limited to preferential rates for attendance
 at TEI-sponsored events, discounted rates for purchase of
-TEI-related services or software, or similar.</div>
-<div id="TEIby-A1.2"><strong>2. Application and Dues. </strong>Any organization or individual wishing to become a Member
+TEI-related services or software, or similar.</p></div>
+<div id="TEIby-A1.2"><head>2. Application and Dues.</head>
+<p>Any organization or individual wishing to become a Member
 of the TEI Consortium may apply by submitting an application, in form prescribed
 by the Board of
-Directors to the Secretary of the Consortium or other Officer.Individual and Institutional Members shall pay membership dues
+Directors to the Secretary of the Consortium or other Officer. Individual and Institutional Members shall pay membership dues
 in such amounts and at such intervals as determined by the Board
 of Directors from time to time. Notice of any dues increase
 approved by the Board of Directors shall be provided to Members at
 least 60 days prior to the annual billing date for dues. No Member
 shall be entitled to a refund of any dues or other charges or
-assessments upon resignation or termination.</div>
-<div id="TEIby-A1.3"><strong>3. Duration.</strong> Each Member may hold membership as long as such Member remains qualified for
+assessments upon resignation or termination.</p></div>
+<div id="TEIby-A1.3"><head>3. Duration.</head> <p>Each Member may hold membership as long as such Member remains qualified for
 membership, except that membership may be sooner terminated by suspension or
 expulsion as provided in <a href="#TEIby-A1.4">Clause 4</a> of this
-Article or by resignation as provided in <a href="#TEIby-A1.5">Clause 5</a> of this Article.</div>
-<div id="TEIby-A1.4"><strong>4. Termination.</strong> The Board of Directors may terminate a membership in the
+Article or by resignation as provided in <a href="#TEIby-A1.5">Clause 5</a> of this Article.</p></div>
+<div id="TEIby-A1.4"><head>4. Termination.</head> <p>The Board of Directors may terminate a membership in the
 Consortium upon a good-faith finding of (a) misconduct by such Member
 reflecting discredit upon the Consortium or (b) violation of these
 Bylaws (including but not limited to the nonpayment of dues or other
-required charges or assessments).</div>
-<div id="TEIby-A1.5"><strong>5. Resignation.</strong> Any Member may resign from the Consortium by
+required charges or assessments).</p></div>
+<div id="TEIby-A1.5"><head>5. Resignation.</head> <p>Any Member may resign from the Consortium by
 delivering written notice of resignation to the Secretary. Such resignation
-shall be effective upon the Secretary's receipt of such written notice.</div>
+shall be effective upon the Secretary's receipt of such written notice.</p></div>
 </div>
 <div id="TEIby-A2">
-<h2>Article II: Meetings of Members</h2>
-<div id="TEIby-A2.1"><strong>1. Meetings.</strong> Meetings of the Members shall be held not less than once a year,
+<head>Article II: Meetings of Members</head>
+<div id="TEIby-A2.1"><head>1. Meetings.</head> <p>Meetings of the Members shall be held not less than once a year,
 on such dates and at such places as the Board of Directors may
 designate from time to time. The last meeting before December 31 in
 any year shall be designated the Annual Meeting for that year. At the
 Annual Meeting, both the Board of Directors and the Technical Council
 shall report to the membership on the operation of the Consortium
 during the preceding year. The results of annual elections will also
-be presented at this Annual Meeting.</div>
-<div id="TEIby-A2.2"><strong>2. Special Meetings.</strong> A Special Meeting of Members may be called by the Board of
+be presented at this Annual Meeting.</p></div>
+<div id="TEIby-A2.2"><head>2. Special Meetings.</head> <p>A Special Meeting of Members may be called by the Board of
 Directors at its discretion or upon written request to the Secretary
 by one-third or more of the Institutional Members of the Consortium.
 No business other than that specified in the notice of the meeting
-shall be transacted at any Special Meeting of the Members.</div>
-<div id="TEIby-A2.3"><strong>3. Voting.</strong> Members shall be entitled to voting rights as provided in Article I
+shall be transacted at any Special Meeting of the Members.</p></div>
+<div id="TEIby-A2.3"><head>3. Voting.</head> <p>Members shall be entitled to voting rights as provided in Article I
 of these Bylaws. Only designated Electors shall be permitted to
 vote. For Individual Members, the Member shall be the Elector and their
 vote is not transferable to any other person, except by means of a
@@ -142,13 +144,13 @@ Meeting.A Member may designate a Proxy voter. Where votes are to be cast by
 means of a Proxy, details of that Proxy shall be returned to the
 Secretary by the time designated in the material sent with the notice
 of Meeting, as defined in <a href="#TEIby-A2.4">Clause 4
-below</a>.</div>
-<div id="TEIby-A2.4"><strong>4. Notice of Meetings.</strong> A written notice stating the place, day and hour of the Meeting,
+below</a>.</p></div>
+<div id="TEIby-A2.4"><head>4. Notice of Meetings.</head> <p>A written notice stating the place, day and hour of the Meeting,
 and, in the case of a Special Meeting, the purpose or purposes for
 which the Meeting is called ("Notice") shall be given not less than
 twenty-one (21) days nor more than sixty (60) days before the date of
-the Meeting to each designated Elector entitled to vote at the Meeting.</div>
-<div id="TEIby-A2.5"><strong>5. Quorum.</strong> A quorum is required before any vote may be taken at any Meeting
+the Meeting to each designated Elector entitled to vote at the Meeting.</p></div>
+<div id="TEIby-A2.5"><head>5. Quorum.</head> <p>A quorum is required before any vote may be taken at any Meeting
 of the Members The quorum required shall be one-third of the total
 number of Members entitled to vote. The number of Electors present in
 person or by proxy, or having previously cast a vote by electronic
@@ -157,9 +159,9 @@ vote at a Meeting shall be necessary and sufficient for the adoption of any
 matter voted upon by the Members, unless a greater vote of the Members is
 required by law or these Bylaws. In the event quorum is not achieved at a
 Meeting of the Members, the issue in question may be passed to the Board
-for resolution or deferred to a subsequent Meeting of the Members.</div>
+for resolution or deferred to a subsequent Meeting of the Members.</p></div>
 <div id="TEIby-A2.6"><!-- was id="TEIby-A6.5" -->
-<strong>6. Nominating Committee.</strong> Not less than three months prior to the notice date for each Annual Meeting
+<head>6. Nominating Committee.</head> <p>Not less than three months prior to the notice date for each Annual Meeting
 of the Members, the Board of Directors shall appoint a Nominating Committee
 consisting of two (2) or more of the Directors, one of whom the Board shall
 designate as the Chair of the Nominating Committee.The Nominating Committee shall solicit Members and others for
@@ -170,36 +172,36 @@ on the slate of candidates proposed by the Nominating Committee. The
 Nominating Committee shall propose candidates for each vacancy on the
 Board of Directors and Technical Council. The slate of candidates
 proposed by the Nominating Committee shall be contained in the notice
-of the Annual Meeting.</div>
+of the Annual Meeting.</p></div>
 </div>
 <div id="TEIby-A3">
-<h2>Article III: Officers</h2>
+<head>Article III: Officers</head>
 <div id="TEIby-A3.1">
 
-<strong>1. Officers of the Consortium.</strong> The following Officers shall discharge the affairs of the Consortium:
-<ul>
- 	<li>Chair of the Board</li>
- 	<li>Chair of the Technical Council</li>
- 	<li>Board Secretary</li>
- 	<li>Membership Secretary</li>
- 	<li>Treasurer</li>
-</ul>
+<head>1. Officers of the Consortium.</head> <p>The following Officers shall discharge the affairs of the Consortium:
+<list rend="bulleted">
+ 	<item>Chair of the Board</item>
+ 	<item>Chair of the Technical Council</item>
+ 	<item>Board Secretary</item>
+ 	<item>Membership Secretary</item>
+ 	<item>Treasurer</item>
+</list>
 Unless otherwise stated in these Bylaws, the Board of Directors
 may appoint Officers from its own membership or elsewhere and may also
 appoint such additional non-voting Officers as it deems necessary or
-appropriate from time to time.
+appropriate from time to time.</p>
 
-The Officers of the Consortium shall have the respective powers set forth
+<p>The Officers of the Consortium shall have the respective powers set forth
 herein and as otherwise provided by resolution of the Board of Directors.
 Notwithstanding any other provision herein, the power to set salaries and
 fees of employees and independent contractors shall reside in the Board of
-Directors and not in any Officer or Officers.
+Directors and not in any Officer or Officers.</p>
 
-All Officers of the Consortium shall be appointed for a maximum term of two
-years with possibility of reelection to subsequent two-year terms.
+<p>All Officers of the Consortium shall be appointed for a maximum term of two
+years with possibility of reelection to subsequent two-year terms.</p>
 
 </div>
-<div id="TEIby-A3.2"><strong>2. Chair of the Board.</strong> The Chair of the Board shall be elected by the Board of Directors
+<div id="TEIby-A3.2"><head>2. Chair of the Board.</head> <p>The Chair of the Board shall be elected by the Board of Directors
 from its membership and shall serve as the chief executive officer of
 the Consortium. If no Director is able or willing to assume the
 chair, the Directors may request the Technical Council to second one
@@ -211,9 +213,9 @@ to the office of Chair, shall see that all orders and resolutions of
 the Board of Directors are carried out, and shall oversee the other
 Officers in the discharge of their duties. The Chair shall, if
 present, preside at all meetings of the Board of Directors and of the
-Members.</div>
+Members.</p></div>
 <div><!-- was id="TEIby-A3.5" -->
-<strong>3. Chair of the Technical Council.</strong> The Chair of the Technical Council shall be elected by the voting
+<head>3. Chair of the Technical Council.</head> <p>The Chair of the Technical Council shall be elected by the voting
 Members of the <a href="#TEIby-A6">TEI-C Technical Council</a>
 from its membership and shall serve as the chief technical officer of
 the Consortium. If no Technical Council Member is able or willing to
@@ -224,9 +226,9 @@ non-voting Director, responsible to the Consortium for its technical
 activities, notably the maintenance and development of the
 Guidelines.The Council Chair shall, if present, preside at all meetings of the
 Technical Council and report on its activities to the Board of
-Directors and at Meetings of the Members.</div>
+Directors and at Meetings of the Members.</p></div>
 <div><!-- was id="TEIby-A3.3"-->
-<strong>4. Board Secretary.</strong> The Board Secretary shall be elected by the Board of Directors from
+<head>4. Board Secretary.</head> <p>The Board Secretary shall be elected by the Board of Directors from
 its membership. The Secretary shall keep the minutes of all Meetings
 of the Members and of the Board of Directors, serve all notices,
 present all pertinent communications before the proper committees,
@@ -238,16 +240,16 @@ duties as the Board of Directors may require.In the absence of the Chair, the Se
 Chair's duties at meetings. In the event the position of Chair
 becomes vacant, the secretary shall carry out the Chair's duties as
 set forth above, until the Board elects or appoints a successor
-Chair.</div>
+Chair.</p></div>
 <div><!-- was id="TEIby-A3.6" -->
-<strong>5. Membership Secretary.</strong> The Membership Secretary shall be responsible for the recruitment
+<head>5. Membership Secretary.</head> <p>The Membership Secretary shall be responsible for the recruitment
 and maintenance of the Member rolls and direction and development of
 membership benefits and programmes. The Membership Secretary shall
 assist the Treasurer in annual invoicing. In addition to day-to-day
 activity, the Membership Secretary shall also be responsible for the
-strategic development of the membership.</div>
+strategic development of the membership.</p></div>
 <div><!-- id="TEIby-A3.4" -->
-<strong>6. Treasurer.</strong> The Treasurer shall collect, have custody of and be responsible for all funds
+<head>6. Treasurer.</head> <p>The Treasurer shall collect, have custody of and be responsible for all funds
 of the Consortium, shall keep an accurate account of such funds, shall pay
 all just bills when due and funds are available, and shall prepare and
 submit such financial reports as are legally required by the fiscal
@@ -257,13 +259,15 @@ Meeting. All checks, drafts, invoices, notices and orders for the payment or
 receipt of money issued by the Consortium and other similar documents
 requiring the signature of the Consortium shall be signed by the Treasurer
 or by such other person or persons as the Board of Directors may from time
-to time designate for this purpose.</div>
+to time designate for this purpose.</p></div>
 </div>
-<h2 id="TEIby-A4">Article IV: Board of Directors</h2>
-<div>The TEI Board of Directors shall determine overall policy directions for the
+<div id="TEIby-A4">
+<head >Article IV: Board of Directors</head>
+<p>The TEI Board of Directors shall determine overall policy directions for the
 Consortium and is also responsible for managing and promoting membership in the
-Consortium.
-<div id="TEIby-A4.1"><strong>1. Directors.</strong> The Board of Directors shall consist of no more than five (5) voting Directors,
+Consortium.</p>
+<div id="TEIby-A4.1"><head>1. Directors.</head> 
+ <p>The Board of Directors shall consist of no more than five (5) voting Directors,
 <!-- no minimum is stated... -->
 elected by the membership as described in <a href="#TEIby-A2">Article II</a>. Additional non-voting appointments to the Board
 may be made by the Board as necessary for the efficient conduct of
@@ -275,17 +279,17 @@ nor need they be affiliated with an Institutional Member of the
 Consortium.No decrease in the number of elected Directors shall affect the
 tenure of any incumbent Director. Any vacancy among the elected
 membership of the Board shall be filled by the vote of Members in
-normal or special elections.</div>
-<div id="TEIby-A4.2"><strong>2. Term.</strong> Each Director shall be elected for a term of three (3) years, or in
+normal or special elections.</p></div>
+<div id="TEIby-A4.2"><head>2. Term.</head> <p>Each Director shall be elected for a term of three (3) years, or in
 the case of election or appointment to fill a vacancy between regular elections, for
 the term remaining for the vacant position. Terms of office begin at
-the following January 1 and end on December 31.</div>
-<div id="TEIby-A4.3"><strong>3. Elections.</strong> At each Annual Meeting the Institutional Members shall elect
+the following January 1 and end on December 31.</p></div>
+<div id="TEIby-A4.3"><head>3. Elections.</head> <p>At each Annual Meeting the Institutional Members shall elect
 candidates to any of the elected positions on the Board of Directors
 due to be vacated. In the election of Directors each elected position
 shall be voted on as a separate matter with each member entitled to
-vote receiving one vote for each such position.</div>
-<div id="TEIby-A4.4"><strong>4. Meetings.</strong> Meetings of the Board of Directors may be held at such time and
+vote receiving one vote for each such position.</p></div>
+<div id="TEIby-A4.4"><head>4. Meetings.</head> <p>Meetings of the Board of Directors may be held at such time and
 place as the Board of Directors may by resolution designate. Directors
 may attend Board meetings by telephonic or other two-way connection
 provided that any Director not physically present can hear, and be
@@ -296,19 +300,19 @@ Directors then in office. In the case of a special meeting of the
 Board, no business other than that specified in the notice of the
 meeting shall be transacted, unless all members of the Board are
 present at such meeting and consent to the transaction of such other
-business.</div>
-<div id="TEIby-A4.5"><strong>5. Quorum.</strong> A majority of the elected Directors shall constitute a quorum for the
-transaction of business.</div>
-<div id="TEIby-A4.6"><strong>6. Notice of Meetings.</strong> Notice of all meetings of the Board of Directors shall be required
+business.</p></div>
+<div id="TEIby-A4.5"><head>5. Quorum.</head> <p>A majority of the elected Directors shall constitute a quorum for the
+transaction of business.</p></div>
+<div id="TEIby-A4.6"><head>6. Notice of Meetings.</head> <p>Notice of all meetings of the Board of Directors shall be required
 at least seven (7) days prior to regular meetings and at least
 fourteen (14) days prior to special meetings. The notice shall state
 the date, time, and place of the meeting and the purpose thereof and
 shall be delivered to each Director at the address registered for them
-by the Secretary.
+by the Secretary.</p>
 <!-- what about public announcement? --></div>
-</div>
-<h2 id="TEIby-A5">Article V: Funds</h2>
-<div>Funds for meeting the expenses of the Consortium may be provided in
+</div><div id="TEIby-A5">
+<head>Article V: Funds</head>
+<p>Funds for meeting the expenses of the Consortium may be provided in
 such manner as the Board of Directors may determine, including without
 limitation such annual or other periodic membership dues as may be
 fixed from time to time by the Board of Directors and specified in a
@@ -317,13 +321,14 @@ Consortium, and such charges for meetings, seminars, and publications
 as may be fixed from time to time by the Board of Directors. Charges
 other than for membership dues and assessments may be set on a
 per-person basis or any other basis deemed appropriate by the Board of
-Directors.</div>
-<h2 id="TEIby-A6">Article VI: Technical Council</h2>
-<div>The Technical Council shall superintend the technical work of the
+Directors.</p></div>
+<div id="TEIby-A6">
+<head>Article VI: Technical Council</head>
+<p>The Technical Council shall superintend the technical work of the
 Consortium, in particular (but not only) by monitoring, evaluating,
 and acting upon requests from the TEI Community for new features and
-correction of errors in the TEI Guidelines.
-<div><strong>1. Membership.</strong> The Technical Council shall consist of eleven (11) Council Members
+correction of errors in the TEI Guidelines.</p>
+<div><head>1. Membership.</head> <p>The Technical Council shall consist of eleven (11) Council Members
 elected by the membership, as described in <a href="#TEIby-A2">Article II</a>. Additional non-voting Council
 Members may be appointed or co-opted as necessary for the efficient
 conduct of business. Only Council Members elected by the membership as
@@ -331,21 +336,21 @@ described in <a href="#TEIby-A2">Article II</a> shall be
 eligible to vote in Technical Council decisions. Candidates need not be Individual Members of the Consortium in
 order to be nominated and elected to serve on the Technical Council,
 nor need they be affiliated with an Institutional Member of the
-Consortium.</div>
-<div><strong>2. Term.</strong> Each Technical Council Member shall be elected for a three-year
+Consortium.</p></div>
+<div><head>2. Term.</head> <p>Each Technical Council Member shall be elected for a three-year
 term, or in the case of an election or appointment to fill a vacancy between regular
 elections, for the term remaining for the vacant position. Terms of
-office begin at the following January 1 and end on December 31.</div>
-<div><strong>3. Elections.</strong> At each Annual Meeting both Institutional and Individual members
+office begin at the following January 1 and end on December 31.</p></div>
+<div><head>3. Elections.</head> <p>At each Annual Meeting both Institutional and Individual members
 shall elect candidates to any of the elected positions due to be
 vacated on the Technical Council. In the election of Council Members
 each elected position shall be voted on as a separate matter with each
-Member entitled to vote receiving one vote for each such position.</div>
-<div><strong>4. Meetings.</strong> Regular meetings of the Technical Council shall be held at such
+Member entitled to vote receiving one vote for each such position.</p></div>
+<div><head>4. Meetings.</head> <p>Regular meetings of the Technical Council shall be held at such
 time and place as necessary to carry out its work programme. The bulk
 of the Technical Council's work programme shall be carried out by
 electronic or telephonic means, but at least one meeting shall be held
-face to face each year.The Technical Council may be convened upon call of the Chair, at
+face to face each year. The Technical Council may be convened upon call of the Chair, at
 the request of a majority of its members, at a time and place
 designated by resolution of the Technical Council. Council Members may
 attend Technical Council meetings by telephonic or other two-way
@@ -354,23 +359,25 @@ heard by, all those participating in such meeting, and a Council
 Member so participating shall be deemed present for quorum
 purposes.A record of all business transacted at the meetings of the
 Technical Council shall be kept, and shall be made publicly
-available.</div>
-<div><strong>5. Quorum.</strong> A majority of the elected Technical Council Members shall
-constitute a quorum.</div>
-<div><strong>6. Working Groups.</strong> The work of the Technical Council shall be to collect, propose,
+available.</p></div>
+<div><head>5. Quorum.</head>
+   <p>A majority of the elected Technical Council Members shall
+constitute a quorum.</p></div>
+<div><head>6. Working Groups.</head> <p>The work of the Technical Council shall be to collect, propose,
 evaluate, and implement editorial changes to the TEI Guidelines (and
 its derivatives), to assist in technical endeavours of the TEI-C, and
 to provide consultation to the Board of Directors on technical matters
-or other areas of interest.The Technical Council may delegate any of these functions to
+or other areas of interest. The Technical Council may delegate any of these functions to
 appointed working groups or committees at its discretion. The
 Technical Council shall also have the power to create working groups
 or appoint non-voting staff and advisors with a fixed term and a
 specific charter. Where Consortium funding for such workgroups or
 staff is required this shall be subject to prior approval of the
-Board.</div>
+Board.</p></div>
 </div>
-<h2 id="TEIby-A7">Article VII: Amendments</h2>
-<div>These Bylaws may be repealed or amended or new Bylaws adopted by
+<div id="TEIby-A7">
+<head>Article VII: Amendments</head>
+<p>These Bylaws may be repealed or amended or new Bylaws adopted by
 affirmative vote of at least one-half of the Members of Consortium
 voting in person or by proxy at a regular or Special Meeting, or, to
 the extent permitted by law and not in conflict with the Articles of
@@ -383,8 +390,8 @@ notice given for such Meeting. With respect to any Board meeting at
 which a Bylaw change is to be put to a vote, notice of such proposed
 Bylaw change, including the text thereof, shall be given twenty-one
 (21) days before the date of such Meeting, by any of the various means
-set forth in <a href="#TEIby-A2">Article II</a>, above.</div>
-&nbsp;
+set forth in <a href="#TEIby-A2">Article II</a>, above.</p></div></div>
+
       </body>
   </text>
 </TEI>
