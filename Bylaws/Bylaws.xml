@@ -31,9 +31,9 @@
             Wordpress format. Restoring these Bylaws to TEI format allows for more robust
             preservation of our consortium’s history and policies, in keeping with the principles of
             the TEI Consortium. In restoring the Bylaws to TEI, elements and structure for this 2023
-            edition were chosen in consultation with the 2000 edition in TEI P4 and remnants of the
+            edition were chosen in consultation with a version from 2000 edition and remnants of the
             changelog visible in the Wordpress encoding. XML comments visible in the Wordpress
-            encoding are restored here.</p>
+            encoding are preserved here.</p>
       </encodingDesc>
       <revisionDesc>
          <listChange>
