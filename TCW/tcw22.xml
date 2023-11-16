@@ -31,6 +31,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</change>
       <change when="2021-04-11" who="#SDB">Per Nick Cole, since $PATH is not set up on server, need to specify
       current directory in path to some executables.</change>
       <change when="2021-03-12" who="#MDH">Adding a step to update the version of p5subset.xml which is in the Stylesheets repo,
