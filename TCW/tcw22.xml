@@ -405,7 +405,7 @@
             <ref target="https://github.com/TEIC/TEI/milestones">Guidelines</ref> repo. Add new Milestones by 
             incrementing the minor version number part and move all open issues from the current Milestone to the new one.
             (If Council already decided on the next release date (unlikely) you can add the date to the new Milestone. Otherwise leave empty.)
-            Finally, close the current Milestone.</item>
+            Finally, close the current Milestone (do not delete it).</item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
             The TEI Debian packages are regularily created during each Jenkins build. 
