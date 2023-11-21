@@ -9,13 +9,15 @@ jobs:
     steps:
     - name: Check out repo
       uses: actions/checkout@v4
-      with:
-        ref: gh-pages
     - name: Install libxml2-utils
       run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
     - name: transform XML
       run: bash bin/publish.sh
-    - name: Commit and push if it changed
+    - name: Switch to gh-pages
+      run: git checkout gh-pages
+    - name: Update files
+      run: mv __output/TCW/* TCW && rm -r __output
+    - name: Commit and push if changed
       run: |-
         git config user.name "Automated"
         git config user.email "actions@users.noreply.github.com"
