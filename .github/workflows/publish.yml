@@ -18,8 +18,10 @@ jobs:
         path: main
     - name: Install libxml2-utils
       run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
-    - name: transform XML
+    - name: Transform XML
       run: bash main/bin/publish.sh
+    - name: Cleanup
+      run: rm -r main
     - name: Commit and push if changed
       run: |-
         git config user.name "Automated"
