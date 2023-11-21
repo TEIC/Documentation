@@ -29,7 +29,7 @@
       </tei-publicationstmt>
       <tei-sourcedesc data-teiname="sourceDesc">
         <tei-p data-teiname="p">This document was originally a section of tcw20.xml, but has now been spun off into its
-          own document</tei-p>
+          own document.</tei-p>
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
@@ -315,13 +315,14 @@
             change made since the last release is being reflected online. </tei-item>
           
           <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update <tei-ref data-teiname="ref" target="https://roma.tei-c.org/">Roma</tei-ref>, 
-            <tei-ref data-teiname="ref" target="https://romabeta.tei-c.org/">Romabeta</tei-ref>, and <tei-ref data-teiname="ref" target="https://oxgarage.tei-c.org/">OxGarage</tei-ref></tei-hi> 
+            <tei-ref data-teiname="ref" target="https://romabeta.tei-c.org/">Romabeta</tei-ref>, and <tei-ref data-teiname="ref" target="https://teigarage.tei-c.org/">TEIGarage</tei-ref></tei-hi> 
             <tei-lb data-teiname="lb"></tei-lb>Change to the directory <tei-code data-teiname="code">~/repos/infrastructure/humanum</tei-code> and issue the script 
             <tei-code data-teiname="code">docker-update.sh</tei-code> for every service, i.e. 
             <tei-list data-teiname="list">
               <tei-item data-teiname="item"><tei-code data-teiname="code"># docker-update.sh roma</tei-code></tei-item>
               <tei-item data-teiname="item"><tei-code data-teiname="code"># docker-update.sh romabeta</tei-code></tei-item>
               <tei-item data-teiname="item"><tei-code data-teiname="code"># docker-update.sh oxgarage</tei-code></tei-item>
+	      <tei-item data-teiname="item"><tei-code data-teiname="code"># docker-update.sh teigarage</tei-code></tei-item>
             </tei-list>
             NB: Every invocation might take some time but each should succesfully finish with the notification 
             "Creating $CONTAINER$ ... done" 
