@@ -1,0 +1,17 @@
+name: Publish TEI Council Documentation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+    - name: Install libxml2-utils
+      run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
+    - name: transform XML
+      run: mkdir teic.github.io && bash bin/publish.sh
