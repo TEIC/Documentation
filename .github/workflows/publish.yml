@@ -14,7 +14,9 @@ jobs:
     - name: transform XML
       run: bash bin/publish.sh
     - name: Switch to gh-pages
-      run: git checkout gh-pages
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
     - name: Update files
       run: mv __output/TCW/* TCW && rm -r __output
     - name: Commit and push if changed
