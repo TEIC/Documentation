@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
+          var c = new CETEI();
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editionStmt","edition","date","publicationStmt","p","sourceDesc","ref","revisionDesc","change","text","body","div","head","list","item","gi","att","ident",];
+          c.els.push("egXML");
+          if (document.registerElement) {
+            c.registerAll(c.els);
+          } else {
+            c.fallback(c.els);
+          }
+        </script></head><body>
+<tei-tei data-xmlns="http://www.tei-c.org/ns/1.0" data-teiname="TEI">
+   <tei-teiheader data-teiname="teiHeader">
+      <tei-filedesc data-teiname="fileDesc">
+         <tei-titlestmt data-teiname="titleStmt">
+            <tei-title data-teiname="title">Procedure for handling practices that are no longer recommended or
+               deprecated</tei-title>
+            <tei-author data-teiname="author">Kevin Hawkins</tei-author>
+         </tei-titlestmt>
+         <tei-editionstmt data-teiname="editionStmt">
+            <tei-edition data-teiname="edition">
+               <tei-date data-teiname="date">2013-05-16</tei-date>
+            </tei-edition>
+         </tei-editionstmt>
+         <tei-publicationstmt data-teiname="publicationStmt">
+            <tei-p data-teiname="p">freely available</tei-p>
+         </tei-publicationstmt>
+         <tei-sourcedesc data-teiname="sourceDesc">
+            <tei-p data-teiname="p">Manually reformatted from <tei-ref data-teiname="ref">http://wiki.tei-c.org/index.php/Practices_no_longer_recommended_or_now_deprecated</tei-ref></tei-p>
+         </tei-sourcedesc>
+      </tei-filedesc>
+      <tei-revisiondesc data-teiname="revisionDesc">
+         <tei-change data-teiname="change" when="2014-01-01" who="KSH">Removed step about creating Schematron warning: Syd says they're generated automatically based on presence of @validUntil.</tei-change>
+         <tei-change data-teiname="change" when="2013-12-26" who="KSH">Added standard wording for Schematron warnings and instruction to notify TEI-L of planned deprecations</tei-change>
+         <tei-change data-teiname="change" when="2013-06-20" who="KSH">Copyediting</tei-change>
+         <tei-change data-teiname="change" when="2013-05-16" who="KSH">Added more missing markup from wiki</tei-change>
+         <tei-change data-teiname="change" when="2013-05-16" who="KSH">Added link to tcw09 (Birnbaum doctrine)</tei-change>
+      </tei-revisiondesc>
+   </tei-teiheader>
+
+   <tei-text data-teiname="text">
+      <tei-body data-teiname="body">
+            <tei-p data-teiname="p">At its April 2013 face-to-face meeting in Providence, the Technical Council agreed to
+               the following policy for handling practices that are "no longer recommended" or
+               "deprecated".</tei-p>
+
+            <tei-div data-teiname="div">
+               <tei-head data-teiname="head">No longer recommended</tei-head>
+
+               <tei-p data-teiname="p">While the TEI Guidelines often offer more than one way of encoding a particular
+                  phenomenon, in this case the Council agrees to identify a preferred method without
+                  making any definite plans to remove the non-preferred way from the Guidelines. In
+                  this case:</tei-p>
+               <tei-list data-teiname="list">
+                  <tei-item data-teiname="item">The <tei-gi data-teiname="gi">remarks</tei-gi> element is used in the spec to indicate the preferred
+                     practice.</tei-item>
+                  <tei-item data-teiname="item">The prose in one or more chapters is revised to indicate this preferred
+                     practice. Examples showing the non-preferred practice are maintained but
+                     preferably only in the section of the Guidelines where that element or
+                     attribute is discussed, not in passing elsewhere.</tei-item>
+               </tei-list>
+            </tei-div>
+            
+            <tei-div data-teiname="div">
+               <tei-head data-teiname="head">Deprecated</tei-head>
+               
+               <tei-p data-teiname="p">Following  the <tei-ref data-teiname="ref" target="https://tei-c.org/activities/council/working/tcw09-backward-compatibility-and-the-maintenance-of-the-text-encoding-initiative-guidelines/">Birnbaum doctrine</tei-ref>, the Council has made the serious decision to
+                  break backwards compatibility by changing the content model of an element or class
+                  to remove an element or attribute, or to remove an element or attribute entirely
+                  from the Guidelines. In this case:</tei-p>
+               <tei-list data-teiname="list">
+                  <tei-item data-teiname="item">The appropriate specification is given a <tei-att data-teiname="att">validUntil</tei-att> attribute indicating the intended date 
+                     after which the specification will be withdrawn. Specifications which can be deprecated this way are all 
+                     members of the class <tei-ident data-teiname="ident" type="class">att.deprecated</tei-ident>.</tei-item>
+                  <tei-item data-teiname="item">An announcement is sent to TEI-L that the Technical Council has decided to 
+                     depreacate elementName and will drop it as early as YYYY-MM-DD. If anyone strongly objects, 
+                     they should reply to the list so that the Council might reconsider.</tei-item>
+                  <tei-item data-teiname="item">Any examples of the deprecated practice are removed from the Guidelines, and
+                     any prose recommending them is reworded as appropriate.</tei-item>
+                  <tei-item data-teiname="item">We will try to remember to include a mention of the deprecation in the
+                     release notes created for the following release.</tei-item>
+               </tei-list>
+               
+               <tei-p data-teiname="p">After the date specified in <tei-att data-teiname="att">validUntil</tei-att>:</tei-p>
+               <tei-list data-teiname="list">
+                  <tei-item data-teiname="item">The element or attribute is actually removed from the spec.</tei-item>
+               </tei-list>
+            </tei-div>
+      </tei-body>
+   </tei-text>
+</tei-tei>
+</body></html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
+          var c = new CETEI();
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editionStmt","edition","date","publicationStmt","p","sourceDesc","text","body","div","head","div","list","item","list","item","code","list","ref","gi","eg","lb","emph","note",];
+          c.els.push("egXML");
+          if (document.registerElement) {
+            c.registerAll(c.els);
+          } else {
+            c.fallback(c.els);
+          }
+        </script></head><body>
+<tei-tei data-xmlns="http://www.tei-c.org/ns/1.0" data-teiname="TEI">
+  <tei-teiheader data-teiname="teiHeader">
+    <tei-filedesc data-teiname="fileDesc">
+      <tei-titlestmt data-teiname="titleStmt">
+        <tei-title data-teiname="title">TEI Council: Update P5 subset</tei-title>
+        <tei-author data-teiname="author">Syd Bauman</tei-author>
+        <tei-author data-teiname="author">Elisa Beshero-Bondar</tei-author>
+        <tei-author data-teiname="author">Elli Bleeker</tei-author>
+        <tei-author data-teiname="author">Martin Holmes</tei-author>
+        <tei-author data-teiname="author">Janelle Jenstad</tei-author>
+        <tei-author data-teiname="author">Martina Scholger</tei-author>
+      </tei-titlestmt>
+      <tei-editionstmt data-teiname="editionStmt">
+        <tei-edition data-teiname="edition">
+          <tei-date data-teiname="date">2022-08-29</tei-date>
+        </tei-edition>
+      </tei-editionstmt>
+      <tei-publicationstmt data-teiname="publicationStmt">
+        <tei-p data-teiname="p">freely available</tei-p>
+      </tei-publicationstmt>
+      <tei-sourcedesc data-teiname="sourceDesc">
+        <tei-p data-teiname="p">Born-digital document</tei-p>
+      </tei-sourcedesc>
+    </tei-filedesc>
+  </tei-teiheader>
+  <tei-text data-teiname="text">
+    <tei-body data-teiname="body">
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">TEI Council: Update P5 subset</tei-head>
+        <tei-p data-teiname="p">Rationale: the Stylesheets are built against the Guidelines, so there needs to be a (more
+          or less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the
+          Guidelines, the file “p5subset.xml”, is updated monthly by Council members.</tei-p>
+        <tei-div data-teiname="div">
+          <tei-head data-teiname="head">Step-by-Step Instructions:</tei-head>
+          <tei-list data-teiname="list">
+            <tei-item data-teiname="item">Get the p5subset.xml (two possibilities): <tei-list data-teiname="list">
+                <tei-item data-teiname="item">from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such
+                  as
+                    <tei-code data-teiname="code">https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</tei-code>) </tei-item>
+                <tei-item data-teiname="item">build the p5subset locally <tei-list data-teiname="list">
+                    <tei-item data-teiname="item">use your local copy of the P5 dev branch or install via docker</tei-item>
+                    <tei-item data-teiname="item">start the TEI docker container</tei-item>
+                    <tei-item data-teiname="item">change to the <tei-code data-teiname="code">[relative path to TEIC/TEI/ directory]/P5</tei-code>
+                      directory</tei-item>
+                    <tei-item data-teiname="item">run make test</tei-item>
+                    <tei-item data-teiname="item">after you finish the steps below, don’t forget to clean your directory
+                      with <tei-code data-teiname="code">make clean</tei-code> to make sure that files generated while running
+                      the test are removed again</tei-item>
+                  </tei-list>
+                </tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item">Change to the Stylesheets dev branch</tei-item>
+            <tei-item data-teiname="item">Update the version of the p5subset.xml in the <tei-code data-teiname="code">Stylesheets/source/</tei-code>
+              directory in the Stylesheets dev branch: <tei-code data-teiname="code">cp -p [relative path to TEIC/TEI/
+                directory]/P5/p5subset.xml source/p5subset.xml</tei-code>. For example, if you have the
+                <tei-code data-teiname="code">TEIC/TEI/</tei-code> repo in <tei-code data-teiname="code">~/TEICouncil/repos/TEI/</tei-code> and the
+                <tei-code data-teiname="code">TEIC/Stylesheets</tei-code> repo in <tei-code data-teiname="code">~/TEICouncil/repos/Stylesheets/</tei-code>,
+              you would issue: <tei-list data-teiname="list">
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ cd ~/TEICouncil/Stylesheets/</tei-code></tei-item>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ cp -p ../P5/p5subset.xml source/p5subset.xml</tei-code></tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item">Run Test2 to make sure that the results are as expected (run in the docker image
+              if you are using the docker approach): <tei-list data-teiname="list">
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ cd Test2</tei-code></tei-item>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ ant test</tei-code></tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item">Error handling in Test2 (if there are no errors from Test2 process, go on to Test,
+              below.): <tei-list data-teiname="list">
+                <tei-item data-teiname="item">The vast majority of all errors from Test2 will be “diff errors”, i.e. a
+                  difference between a file generated from processing with the new p5subset (in the
+                    <tei-code data-teiname="code">Test2/outputFiles/</tei-code> directory) and the corresponding file that had
+                  previously been generated from processing with the old p5subset (in the
+                    <tei-code data-teiname="code">expected-results/</tei-code> directory).</tei-item>
+                <tei-item data-teiname="item">If the process stops with an error that is not a diff error, notice whether
+                  it's due to something failing to load that the testing process requires. If that's
+                  the case, read the error message carefully and see if you can figure out what's
+                  failing (and reach out to Council members for help). See <tei-ref data-teiname="ref" target="#troubleshooting">Troubleshooting</tei-ref>, below for an example failure of
+                  the ant process and a simple fix.</tei-item>
+                <tei-item data-teiname="item"><tei-p data-teiname="p">In the case of a diff error, examine the differences generated. If the
+                    differences are what you would expect given the change in P5 (which is by far
+                    the most common case), just copy the output file to be the new expected results
+                    file. For example, if one of the changes made to P5 was to add an English gloss
+                    for <tei-gi data-teiname="gi">mentioned</tei-gi>, a diff error would be entirely expected. It would look
+                    like <tei-eg data-teiname="eg"> [echo] about to compare files:<tei-lb data-teiname="lb"></tei-lb> [echo] inFile otherFile =
+                      [path]/Test2/outputFiles/testPure1.rng
+                      [path]/Test2/expected-results/testPure1.rng<tei-lb data-teiname="lb"></tei-lb> [echo] ERROR: DIFF
+                      FAILURE…<tei-lb data-teiname="lb"></tei-lb> [exec] output: &lt;a:documentation
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"&gt;(mentioned)
+                      contains a specialized form of heading or label, giving the name of one or
+                      more speakers in a dramatic text or fragment. [3.13.2. Core Tags for
+                      Drama]&lt;/a:documentation&gt;<tei-lb data-teiname="lb"></tei-lb> [exec] expect: &lt;a:documentation
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"&gt;contains a
+                      specialized form of heading or label, giving the name of one or more speakers
+                      in a dramatic text or fragment. [3.13.2. Core Tags for
+                      Drama]&lt;/a:documentation&gt;<tei-lb data-teiname="lb"></tei-lb> [exec] Result: 1<tei-lb data-teiname="lb"></tei-lb> BUILD FAILED<tei-lb data-teiname="lb"></tei-lb>
+                      [path]/Test2/build.xml:541: The following error occurred while executing this
+                      line:<tei-lb data-teiname="lb"></tei-lb> [path]/Test2/build_odd.xml:44: The following error occurred while
+                      executing this line:<tei-lb data-teiname="lb"></tei-lb> [path]/Test2/build_odd.xml:103: The following error
+                      occurred while executing this line:<tei-lb data-teiname="lb"></tei-lb> [path]/Test2/build_utilities.xml:148:
+                      The following error occurred while executing this line:<tei-lb data-teiname="lb"></tei-lb>
+                      [path]/Test2/build_utilities.xml:210: Build failed because of differences
+                      between [path]/Test2/outputFiles/testPure1.rng and
+                      [path]/Test2/expected-results/testPure1.rng. See diff output above. </tei-eg>
+                  </tei-p>
+                  <tei-p data-teiname="p">As a human you can quickly look at the differences (“(mentioned)” was
+                    inserted), and realize that is an appropriate change. So to fix this error you
+                    just copy the actual output file to be the new expected file. Note that the 2nd
+                    line of the output is specifically designed to make executing the desired copy
+                    command easy. (You can copy everything after the “<tei-code data-teiname="code">=</tei-code>”, type
+                      “<tei-code data-teiname="code">cp -p</tei-code>” on the command line and then paste in the paths: <tei-code data-teiname="code">$
+                      cp -p [path]/Test2/outputFiles/testPure1.rng
+                      [path]/Test2/expected-results/testPure1.rng</tei-code> Note that the
+                      “<tei-code data-teiname="code">-p</tei-code>” switch is optional — it just gives the copy the same
+                    timestamp and permissions as the original.) If the error is either a diff error
+                    you would not have expected, or worse a different kind of error completely, fix
+                    it. Note that fixing it might be trivially easy or might take weeks of work from
+                    half a dozen different people.</tei-p>
+                </tei-item>
+                <tei-item data-teiname="item">If the error is either a diff error you would not have expected, or worse a
+                  different kind of error completely, fix it. Note that fixing it might be trivially
+                  easy or might take weeks of work from half a dozen different people.</tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item"> After all errors have been fixed in Test2/, move on to Test/. <tei-list data-teiname="list">
+                <tei-item data-teiname="item">switch to the main directory (<tei-code data-teiname="code">cd ..</tei-code> will do, if you are still in
+                    <tei-code data-teiname="code">Test2/</tei-code> from previous step)</tei-item>
+                <tei-item data-teiname="item">run either <tei-code data-teiname="code">make</tei-code> or <tei-code data-teiname="code">time make</tei-code> [See <tei-ref data-teiname="ref" target="#addendum">Addendum</tei-ref>, below, for using the <tei-code data-teiname="code">–jobs</tei-code>
+                  switch to make <tei-code data-teiname="code">make</tei-code> run faster.]</tei-item>
+                <tei-item data-teiname="item">check the errors (the make file stops after each error)</tei-item>
+                <tei-item data-teiname="item">When there is an error, you will find a diff of the relevant file from the
+                    <tei-code data-teiname="code">actual-results/</tei-code> folder and the <tei-code data-teiname="code">expected-results/</tei-code>
+                  folder.</tei-item>
+                <tei-item data-teiname="item">In case the output is not as expected (i.e., the difference is a real problem,
+                  rather than just an expected difference from changes made to p5subset), fix the
+                  error.</tei-item>
+                <tei-item data-teiname="item">In case the output is as expected, copy the file from
+                    <tei-code data-teiname="code">actual-results/</tei-code> to <tei-code data-teiname="code">expected-results/</tei-code>. As with the
+                    <tei-code data-teiname="code">Test2/</tei-code> case, you can copy and paste the correct paths from the
+                  error message. It looks like “<tei-code data-teiname="code">then diff actual-results/test.rng
+                    expected-results/test.rng;</tei-code>”. You just need to replace the initial
+                    “<tei-code data-teiname="code">then diff</tei-code>” with “<tei-code data-teiname="code">cp -p</tei-code>” and strip off the ending
+                  semicolon. Thus: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ cp -p
+                    Test/actual-results/test.rng</tei-code><tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">Test/expected-results/test.rng</tei-code></tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item">If you are quite comfortable on the commandline and facile with a text editor, you
+              might prefer to run all the tests in <tei-code data-teiname="code">Test/</tei-code> at once and test the outputs
+              yourself, rather than have the make command test the outputs, because it stops after
+              the first error. (Remember that a lot of what the Makefile does is transform a test
+              file using the Stylesheets and then compare the actual output of that command to a
+              file which contains the expected output of that command. These comparisons are done
+              using the diff command.) If you ask it nicely, the make command will just generate the
+              outputs, and defer the actual testing of them (by diffing them with the corresponding
+              expected output). This means that running make is dramatically faster, but it does not
+              do all the work, you have to do some of it. To do this: <tei-list data-teiname="list">
+                <tei-item data-teiname="item">Make sure you are in the <tei-code data-teiname="code">Test/</tei-code> directory.</tei-item>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ make DIFFNOW=0</tei-code>
+                  <tei-lb data-teiname="lb"></tei-lb>or, if you want to try to use multiple threads: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ make DIFFNOW=0
+                    --jobs=`nproc 2&gt;/dev/null || echo 1` -Oline</tei-code></tei-item>
+                <tei-item data-teiname="item">To actually see the filenames being diffed, add the “<tei-code data-teiname="code">-C0</tei-code>” switch:
+                    <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">make DIFFNOW=0 -C0</tei-code></tei-item>
+                <tei-item data-teiname="item">When the Makefile has run a transformation, instead of comparing the actual
+                  output of that transformation to the expected output, it will say something like
+                    “<tei-code data-teiname="code">==deferring: ` diff actual-results/test27.html
+                    expected-results/test27.html `</tei-code>”.</tei-item>
+                <tei-item data-teiname="item">Once the make command is complete, you now need to perform all those
+                  comparisons yourself. Luckily, this is designed to be relatively easy. E.g., each
+                  message that reports a diff command that has not been executed is preceded with
+                    “<tei-code data-teiname="code">==</tei-code>”, and no other output from the Makefile is.</tei-item>
+                <tei-item data-teiname="item">Copy the output from the <tei-code data-teiname="code">make DIFFNOW=0 -C0</tei-code> command into your
+                  favorite text editor.</tei-item>
+                <tei-item data-teiname="item">Delete all lines that <tei-emph data-teiname="emph">do not</tei-emph> start with “<tei-code data-teiname="code">==</tei-code>”.</tei-item>
+                <tei-item data-teiname="item">Remove the “<tei-code data-teiname="code">==deferring: `</tei-code>” from the beginning of each
+                  line.</tei-item>
+                <tei-item data-teiname="item">Remove the “<tei-code data-teiname="code">`</tei-code>” from the end of each line.</tei-item>
+                <tei-item data-teiname="item">Insert “<tei-code data-teiname="code">#! /bin/bash</tei-code>” as a 1st line.</tei-item>
+                <tei-item data-teiname="item">Save this file as <tei-code data-teiname="code">diffnow_erase_me_soon.bash</tei-code>, or whatever.</tei-item>
+                <tei-item data-teiname="item">Change the mode of this new file to be executable (i.e., <tei-code data-teiname="code">chmod a+x
+                    diffnow_erase_me_soon.bash</tei-code>).</tei-item>
+                <tei-item data-teiname="item">Run it (i.e. <tei-code data-teiname="code">./diffnow_erase_me_soon.bash</tei-code>).</tei-item>
+              </tei-list></tei-item>
+          </tei-list>
+        </tei-div>
+        <tei-div id="addendum" data-teiname="div" xml:id="addendum">
+          <tei-head data-teiname="head">Addendum: faster testing (recommendations by Syd Bauman)</tei-head>
+          <tei-p data-teiname="p">One of the reasons the test procedure in <tei-code data-teiname="code">Stylesheets/Test2/</tei-code> is
+            dramatically faster than the one in <tei-code data-teiname="code">Stylesheets/Test/</tei-code> is that it is, by
+            default, run in parallel.<tei-note data-teiname="note" n="1"><tei-code data-teiname="code">ant test</tei-code>​ runs them in parallel; if
+              you want them in series (likely because the order of messages was confusing when run
+              in parallel) use <tei-code data-teiname="code">ant testSeries​</tei-code>.</tei-note><tei-note data-teiname="note" n="2">There are other
+              reasons, like it is written to be less redundant, and the JVM is only spun up once,
+              rather than once for every test.</tei-note></tei-p>
+          <tei-p data-teiname="p">You can also ask the make​ command to run multiple jobs at once. The switches that
+            control this are <tei-code data-teiname="code">--jobs=</tei-code> and <tei-code data-teiname="code">--output-sync=.</tei-code> I just tried an
+            experiment, comparing how long it took to run <tei-code data-teiname="code">make​</tei-code> vs <tei-code data-teiname="code">make --jobs=7
+              --output-sync=lines</tei-code>. (I chose 7 because my system has 8 threads, and I wanted
+            to have some CPU available. What little I have found on the web seems to suggest I may
+            as well go ahead and use 8.)</tei-p>
+          <tei-p data-teiname="p">The result was faster, although not even close to 7 times faster: down to 03:32 from
+            04:36. I compared the output of the 2 commands, and they were identical.</tei-p>
+          <tei-p data-teiname="p">On GNU/Linux, at least, the <tei-code data-teiname="code">nproc</tei-code>​ command will tell you how many threads
+            are available. Thus using the command <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ make --jobs=`nproc 2&gt;/dev/null ||
+              echo 1` -Oline</tei-code>
+            <tei-lb data-teiname="lb"></tei-lb>seems to make sense to me. (<tei-code data-teiname="code">-O</tei-code> is shorthand for
+              <tei-code data-teiname="code">--output-sync=​.</tei-code>)</tei-p>
+          <tei-p data-teiname="p">It is also possible to get the Makefile to do that on its own. My first thought is that
+            might not be such a good idea, because you may want to run with <tei-code data-teiname="code">--jobs=1</tei-code> in
+            order to force error messages into the right order. (I.e., in case <tei-code data-teiname="code">-Oline</tei-code>
+            wasn’t good enough.)</tei-p>
+          <tei-p data-teiname="p">I ran the experiment again, this time using <tei-code data-teiname="code">--jobs=8</tei-code> and getting screen
+            captures of the process monitor roughly 40 s after the make command started. The timing
+            results were very similar (down to 03:36 from 04:36), but the order of output lines was
+            different. (Same output; i.e., they were identical after sorting and removing
+            timestamps.)</tei-p>
+          <tei-p data-teiname="p">So I think anyone running the Stylesheets test process would do well to use the
+              <tei-code data-teiname="code">--jobs</tei-code> switch. You could use any of <tei-eg data-teiname="eg"> -j 8 # if you know you have 8
+              threads, e.g.<tei-lb data-teiname="lb"></tei-lb> --jobs=`nproc` # if you know the nproc command works on your
+              system<tei-lb data-teiname="lb"></tei-lb> -j `nproc 2&gt; /dev/null || echo 1​` # if there is a chance nproc
+              fails,<tei-lb data-teiname="lb"></tei-lb> # so it defaults to '1' </tei-eg>
+          </tei-p>
+        </tei-div>
+        <tei-div id="troubleshooting" data-teiname="div" xml:id="troubleshooting">
+          <tei-head data-teiname="head">Troubleshooting</tei-head>
+          <tei-p data-teiname="p">Test 2: What if the ant process fails because some necessary dependency is missing? For
+            example, you may see an error message like this:<tei-lb data-teiname="lb"></tei-lb>
+            <tei-eg data-teiname="eg">A class needed by class org.apache.fop.tools.anttasks.Fop cannot be found:<tei-lb data-teiname="lb"></tei-lb>
+              org/apache/commons/logging/Log using the classloader<tei-lb data-teiname="lb"></tei-lb>
+              AntClassLoader[/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-core-3.1.9.jar:/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-fop-3.1.9.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop-hyph.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop.jar</tei-eg></tei-p>
+          <tei-p data-teiname="p">This signals that a dependency is missing or corrupted. In our example, fop-2.6 is a
+            directory generated by ant while it is running a jar dependency. Perhaps a network
+            connection was interrupted somehow or the process didn't complete as it was supposed to
+            do. The simplest way to correct this is to delete the fop-2.6 directory, and return to
+            Test2 and run “<tei-code data-teiname="code">ant test</tei-code>” again. This lets ant pull in a clean copy of the
+            missing dependency.</tei-p>
+        </tei-div>
+      </tei-div>
+    </tei-body>
+  </tei-text>
+</tei-tei>
+</body></html>
