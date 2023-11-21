@@ -1,7 +1,7 @@
 name: Publish TEI Council Documentation
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -14,4 +14,4 @@ jobs:
     - name: Install libxml2-utils
       run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
     - name: transform XML
-      run: mkdir teic.github.io && bash bin/publish.sh
+      run: bash bin/publish.sh
