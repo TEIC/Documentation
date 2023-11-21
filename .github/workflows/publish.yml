@@ -7,19 +7,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repo
-      uses: actions/checkout@v4
-    - name: Install libxml2-utils
-      run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
-    - name: transform XML
-      run: bash bin/publish.sh
-    - name: Switch to gh-pages
+    - name: Checkout gh-pages
       uses: actions/checkout@v4
       with:
         ref: gh-pages
-        path: pages
-    - name: Update files
-      run: mv __output/TCW/* pages/TCW && rm -r __output && cd pages
+    - name: Checkout main
+      uses: actions/checkout@v4
+      with:
+        ref: master
+        path: main
+    - name: Install libxml2-utils
+      run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc
+    - name: transform XML
+      run: bash main/bin/publish.sh
     - name: Commit and push if changed
       run: |-
         git config user.name "Automated"
