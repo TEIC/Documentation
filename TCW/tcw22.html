@@ -40,6 +40,7 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes affecting ODD customizations.</tei-change>
       <tei-change data-teiname="change" when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</tei-change>
       <tei-change data-teiname="change" when="2021-04-11" who="#SDB">Per Nick Cole, since $PATH is not set up on server, need to specify
       current directory in path to some executables.</tei-change>
@@ -218,6 +219,8 @@
                 TEI repository and running:<tei-lb data-teiname="lb"></tei-lb>
                 <tei-code data-teiname="code">git log --after=2015-08-01</tei-code><tei-lb data-teiname="lb"></tei-lb> where the date is that of the previous
                 release. </tei-item>
+	      <tei-item data-teiname="item">The Release Notes ought to list changes that affect ODD customizations even when they do not affect the resulting schemata, such as (but not limited to) the renaming of a class,
+		      or the moving of an attribute definition from an element to an attribute class.</tei-item>
               <tei-item data-teiname="item">Add the new file into the repository with <tei-code data-teiname="code">git
                 add</tei-code>.</tei-item>
             </tei-list>
