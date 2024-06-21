@@ -20,6 +20,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2024-06-21" who="RV">Added guidelines for changes only affecting ODD customizations.</change>
          <change when="2014-01-01" who="KSH">Removed step about creating Schematron warning: Syd says they're generated automatically based on presence of @validUntil.</change>
          <change when="2013-12-26" who="KSH">Added standard wording for Schematron warnings and instruction to notify TEI-L of planned deprecations</change>
          <change when="2013-06-20" who="KSH">Copyediting</change>
