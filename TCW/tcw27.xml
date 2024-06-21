@@ -76,6 +76,18 @@
                   <item>The element or attribute is actually removed from the spec.</item>
                </list>
             </div>
+
+            <div>
+               <head>Changes only affecting ODD customizations</head>
+
+               <p>This is an addition agreed on the 2023-11-10 TEI council call, formalizing an already established practice.</p>
+               
+               <p>Occasionally, some changes in the TEI source do not result in a deprecation, but will still affect ODD customizations. 
+                  For example, in Release 2.3.0, <gi>abbr</gi> stopped defining its own @type attribute and became members of from att.typed.
+                  As a result, an ODD modifying att.typed would affect <gi>abbr</gi>, a possible unwanted consequence of this change.</p>
+               <p>In these circumstances, a deprecation period is not required; however, the change must be listed in the release notes.</p>
+            </div>
+         
       </body>
    </text>
 </TEI>
