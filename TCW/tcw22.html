@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
           var c = new CETEI();
-          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editor","publicationStmt","publisher","date","sourceDesc","p","revisionDesc","change","text","body","div","head","ref","ident","list","item","list","code","lb","q","hi","emph","quote",];
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editor","publicationStmt","publisher","date","sourceDesc","p","revisionDesc","change","text","body","head","div","ref","ident","list","item","list","code","lb","q","hi","emph","quote",];
           c.els.push("egXML");
           if (document.registerElement) {
             c.registerAll(c.els);
@@ -12,7 +12,7 @@
   <tei-teiheader data-teiname="teiHeader">
     <tei-filedesc data-teiname="fileDesc">
       <tei-titlestmt data-teiname="titleStmt">
-        <tei-title data-teiname="title">Building a TEI Release</tei-title>
+        <tei-title data-teiname="title">TCW22: Building a TEI Release</tei-title>
         <tei-author id="MDH" data-teiname="author" xml:id="MDH">Martin Holmes</tei-author>
         <tei-author data-teiname="author">James Cummings</tei-author>
         <tei-author data-teiname="author">Lou Burnard</tei-author>
@@ -87,7 +87,7 @@
   </tei-teiheader>
   <tei-text data-teiname="text">
     <tei-body data-teiname="body">
-
+      <tei-head data-teiname="head">Building a TEI Release</tei-head>
       <tei-p data-teiname="p">This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
         prepare for and manage the release process. It assumes that the new packages will be taken

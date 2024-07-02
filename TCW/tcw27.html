@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
           var c = new CETEI();
-          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editionStmt","edition","date","publicationStmt","p","sourceDesc","ref","revisionDesc","change","text","body","div","head","list","item","gi","att","ident",];
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editionStmt","edition","date","publicationStmt","p","sourceDesc","ref","revisionDesc","change","text","body","head","div","list","item","gi","att","ident",];
           c.els.push("egXML");
           if (document.registerElement) {
             c.registerAll(c.els);
@@ -12,7 +12,7 @@
    <tei-teiheader data-teiname="teiHeader">
       <tei-filedesc data-teiname="fileDesc">
          <tei-titlestmt data-teiname="titleStmt">
-            <tei-title data-teiname="title">Procedure for handling practices that are no longer recommended or
+            <tei-title data-teiname="title">TCW27: Procedure for handling practices that are no longer recommended or
                deprecated</tei-title>
             <tei-author data-teiname="author">Kevin Hawkins</tei-author>
          </tei-titlestmt>
@@ -40,6 +40,7 @@
 
    <tei-text data-teiname="text">
       <tei-body data-teiname="body">
+        <tei-head data-teiname="head">Procedure for handling practices that are no longer recommended or deprecated</tei-head>
             <tei-p data-teiname="p">At its April 2013 face-to-face meeting in Providence, the Technical Council agreed to
                the following policy for handling practices that are "no longer recommended" or
                "deprecated".</tei-p>
