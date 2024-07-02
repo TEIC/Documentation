@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Building a TEI Release</title>
+        <title>TCW22: Building a TEI Release</title>
         <author xml:id="MDH">Martin Holmes</author>
         <author>James Cummings</author>
         <author>Lou Burnard</author>
@@ -78,7 +78,7 @@
   </teiHeader>
   <text>
     <body>
-
+      <head>Building a TEI Release</head>
       <p>This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
         prepare for and manage the release process. It assumes that the new packages will be taken

@@ -3,7 +3,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Procedure for handling practices that are no longer recommended or
+            <title>TCW27: Procedure for handling practices that are no longer recommended or
                deprecated</title>
             <author>Kevin Hawkins</author>
          </titleStmt>
@@ -31,6 +31,7 @@
 
    <text>
       <body>
+        <head>Procedure for handling practices that are no longer recommended or deprecated</head>
             <p>At its April 2013 face-to-face meeting in Providence, the Technical Council agreed to
                the following policy for handling practices that are "no longer recommended" or
                "deprecated".</p>

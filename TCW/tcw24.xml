@@ -8,7 +8,7 @@ $LastChangedRevision: 0001$
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Style Guide for Editing the TEI Guidelines</title>
+        <title>TCW24: Style Guide for Editing the TEI Guidelines</title>
         <author>TEI Technical Council</author>
       </titleStmt>
       <publicationStmt>
@@ -41,6 +41,7 @@ $LastChangedRevision: 0001$
   </teiHeader>
   <text>
     <body>
+      <head>Style Guide for Editing the TEI Guidelines</head>
       <p>This document aims to capture decisions about House Style for writing and editing the TEI
         Guidelines, in order to maintain consistency throughout the Guidelines.</p>
       <div xml:id="house-style-tone-and-voice">

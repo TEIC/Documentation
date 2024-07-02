@@ -12,7 +12,7 @@ $LastChangedRevision: 8769 $
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>How to edit the TEI Guidelines</title>
+        <title>TCW20: How to edit the TEI Guidelines</title>
         <author>Lou Burnard</author>
       </titleStmt>
       <publicationStmt>
@@ -59,6 +59,7 @@ $LastChangedRevision: 8769 $
   </teiHeader>
   <text>
     <body>
+      <head>How to edit the TEI Guidelines</head>
       <p>This document is intended to set out the way things are
       currently managed  in the
         editing of the TEI Guidelines. General notes on the rationale

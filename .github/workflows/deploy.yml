@@ -1,0 +1,16 @@
+name: Notify TEI Site to Deploy Documentation
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.TEIWEB_TOKEN }}
+          repository: TEIC/website
+          event-type: update-documentation
