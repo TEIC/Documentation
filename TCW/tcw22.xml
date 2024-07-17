@@ -20,6 +20,8 @@
 	     intellectual responsibility, rather than as an actual
 	     editor. —Syd, 2021-04-16 -->
 	<editor xml:id="SDB">Syd Bauman</editor>
+      <editor xml:id="POC">Patricia O Connor</editor>
+        <!-- Note: I'm listing myself as an editor solely because I added a change to update the document -->
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
@@ -31,6 +33,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</change>
       <change when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes affecting ODD customizations.</change>
       <change when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</change>
       <change when="2021-04-11" who="#SDB">Per Nick Cole, since $PATH is not set up on server, need to specify
@@ -218,7 +221,7 @@
                 add</code>.</item>
             </list>
           </item>
-          <item>At least one week before releasing, we enter a review period, during which the only
+          <item><hi rend="bold">Review all issues labelled as Release Blocker (red label)</hi><lb/><!-- Adding this reminder in bold, as requested following the July 2024 release to ensure that all tickets labelled as release blockers are reviewed and fixed prior to the release. --> At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
             features. Release branches for the TEI and Stylesheets repos will be created by the release technician, to which ONLY
             release-blocking bug fixes and corrections to typographical errors will be pushed. The
