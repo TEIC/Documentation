@@ -22,7 +22,7 @@
         <tei-author id="HC" data-teiname="author" xml:id="HC">Hugh Cayless</tei-author>
         <tei-author id="PS" data-teiname="author" xml:id="PS">Peter Stadler</tei-author>
         <tei-author id="EM" data-teiname="author" xml:id="EM">Elli Mylonas</tei-author>
-        <tei-author id="EBB" data-teiname="author" xml:id="EBB">Elisa Beshero-Bondar</tei-author>
+        <tei-editor id="EBB" data-teiname="editor" xml:id="EBB">Elisa Beshero-Bondar</tei-editor>
         <tei-author id="RV" data-teiname="author" xml:id="RV">Raffaele Viglianti</tei-author>
         <tei-author id="JL" data-teiname="author" xml:id="JL">Jessica H. Lu</tei-author>
 	<!-- Note: I mean <editor> as per Guidelines: secondary
@@ -42,6 +42,8 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
+        Revised instructions on how to update the table of releases for the GitHub website.</tei-change>
       <tei-change data-teiname="change" when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</tei-change>
       <tei-change data-teiname="change" when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes affecting ODD customizations.</tei-change>
       <tei-change data-teiname="change" when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</tei-change>
@@ -431,9 +433,9 @@
             will do.-->
           </tei-item>
 
-          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update the list of previous releases of P5</tei-hi>, which is found at <tei-ref data-teiname="ref" target="https://tei-c.org/guidelines/p5/#section-2">https://tei-c.org/guidelines/p5/#section-2</tei-ref>.<tei-lb data-teiname="lb"></tei-lb>
-            If you have editing privileges on the TEI WordPress on tei-c.org, add the new release to the top of the release table. If not, ask one of the
-            other Council members who does (currently Elisa Beshero-Bondar and Martina Scholger) to make the change. </tei-item>
+          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</tei-hi>. The table is found in the src/guidelines/p5 markdown page, 
+            published at <tei-ref data-teiname="ref" target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</tei-ref>.<tei-lb data-teiname="lb"></tei-lb>
+             Add the new release information and links to the top of the release table.</tei-item>
 
           <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update the oXygen-ready distribution of TEI.</tei-hi><tei-lb data-teiname="lb"></tei-lb> This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
@@ -446,10 +448,14 @@
               <!--<item>Check that your current Java version is 1.8. This is an old version, but it is currently 
               required for building the oxygen-tei package. If you are on e.g. Ubuntu Linux, you can 
               install multiple Java versions and switch between them easily using <code>sudo update-alternatives -\-config java</code>. </item>-->
-              <tei-item data-teiname="item">Check that the latest versions of the TEI Stylesheets and TEI P5 packages are
-                available for download from the TEI server, since the oxygen-tei
-                update/upload script retrieves them from there.</tei-item>
-              
+              <tei-item data-teiname="item">Check that the latest versions of the Stylesheets and TEI P5 are
+                available from the TEI Vault, since the oxygen-tei update/upload script retrieves them from there. 
+                <tei-list data-teiname="list" type="unordered">
+                  <tei-item data-teiname="item">Check for the Stylesheets at <tei-ref data-teiname="ref" target="https://tei-c.org/Vault/Stylesheets/">https://tei-c.org/Vault/Stylesheets/</tei-ref>.</tei-item>
+                  <tei-item data-teiname="item">Check for the Guidelines at <tei-ref data-teiname="ref" target="https://tei-c.org/Vault/P5/">https://tei-c.org/Vault/P5/</tei-ref>.</tei-item>
+                </tei-list>
+              </tei-item>
+           
               <tei-item data-teiname="item">Check out or update a local copy of the source code from <tei-ref data-teiname="ref" target="https://github.com/TEIC/oxygen-tei">https://github.com/TEIC/oxygen-tei</tei-ref> to your local system.</tei-item>
               
               <tei-item data-teiname="item">cd into the oxygen-tei folder (it should contain folders called "frameworks" and
