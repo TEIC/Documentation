@@ -13,7 +13,7 @@
         <author xml:id="HC">Hugh Cayless</author>
         <author xml:id="PS">Peter Stadler</author>
         <author xml:id="EM">Elli Mylonas</author>
-        <author xml:id="EBB">Elisa Beshero-Bondar</author>
+        <editor xml:id="EBB">Elisa Beshero-Bondar</editor>
         <author xml:id="RV">Raffaele Viglianti</author>
         <author xml:id="JL">Jessica H. Lu</author>
 	<!-- Note: I mean <editor> as per Guidelines: secondary
@@ -33,6 +33,8 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
+        Revised instructions on how to update the table of releases for the GitHub website.</change>
       <change when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</change>
       <change when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes affecting ODD customizations.</change>
       <change when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</change>
@@ -431,10 +433,9 @@
             will do.-->
           </item>
 
-          <item><hi rend="bold">Update the list of previous releases of P5</hi>, which is found at <ref
-            target="https://tei-c.org/guidelines/p5/#section-2">https://tei-c.org/guidelines/p5/#section-2</ref>.<lb/>
-            If you have editing privileges on the TEI WordPress on tei-c.org, add the new release to the top of the release table. If not, ask one of the
-            other Council members who does (currently Elisa Beshero-Bondar and Martina Scholger) to make the change. </item>
+          <item><hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>. The table is found in the src/guidelines/p5 markdown page, 
+            published at <ref target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.<lb/>
+             Add the new release information and links to the top of the release table.</item>
 
           <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
@@ -447,10 +448,14 @@
               <!--<item>Check that your current Java version is 1.8. This is an old version, but it is currently 
               required for building the oxygen-tei package. If you are on e.g. Ubuntu Linux, you can 
               install multiple Java versions and switch between them easily using <code>sudo update-alternatives -\-config java</code>. </item>-->
-              <item>Check that the latest versions of the TEI Stylesheets and TEI P5 packages are
-                available for download from the TEI server, since the oxygen-tei
-                update/upload script retrieves them from there.</item>
-              
+              <item>Check that the latest versions of the Stylesheets and TEI P5 are
+                available from the TEI Vault, since the oxygen-tei update/upload script retrieves them from there. 
+                <list type="unordered">
+                  <item>Check for the Stylesheets at <ref target="https://tei-c.org/Vault/Stylesheets/">https://tei-c.org/Vault/Stylesheets/</ref>.</item>
+                  <item>Check for the Guidelines at <ref target="https://tei-c.org/Vault/P5/">https://tei-c.org/Vault/P5/</ref>.</item>
+                </list>
+              </item>
+           
               <item>Check out or update a local copy of the source code from <ref
                   target="https://github.com/TEIC/oxygen-tei"
                   >https://github.com/TEIC/oxygen-tei</ref> to your local system.</item>
