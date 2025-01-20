@@ -65,7 +65,7 @@
                      after which the specification will be withdrawn. Specifications which can be deprecated this way are all 
                      members of the class <ident type="class">att.deprecated</ident>.</item>
                   <item>An announcement is sent to TEI-L that the Technical Council has decided to 
-                     depreacate elementName and will drop it as early as YYYY-MM-DD. If anyone strongly objects, 
+                     deprecate elementName and will drop it as early as YYYY-MM-DD. If anyone strongly objects, 
                      they should reply to the list so that the Council might reconsider.</item>
                   <item>Any examples of the deprecated practice are removed from the Guidelines, and
                      any prose recommending them is reworded as appropriate.</item>
