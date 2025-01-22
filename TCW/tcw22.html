@@ -42,6 +42,7 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2025-01-22" who="#RV">Removed any mentions of Jenkins 3, now defunct.</tei-change>
       <tei-change data-teiname="change" when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
         Revised instructions on how to update the table of releases for the GitHub website.</tei-change>
       <tei-change data-teiname="change" when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</tei-change>
@@ -137,11 +138,10 @@
             of the Infrastructure Group, you will already have your own login to the server, but you 
             should test it.)</tei-item>
 
-          <tei-item data-teiname="item">Some familiarity with the three TEI Jenkins Continuous Integration Servers.
+          <tei-item data-teiname="item">Some familiarity with the two TEI Jenkins Continuous Integration Servers.
               <tei-list data-teiname="list" type="ordered">
                 <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</tei-ref></tei-item>
                 <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</tei-ref></tei-item>
-                <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</tei-ref></tei-item>
               </tei-list>
             Take a little time to watch them work, and see how a push to the GitHub
             repository causes them to start building TEI packages. There are three specific build
@@ -200,7 +200,7 @@
             update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</tei-item>
           <tei-item data-teiname="item">Inform the Jenkins maintainers (who may not be on the Council listserv), and the 
             TEI sysadmin, of the pending release date, so that they can be available or on-call. </tei-item>
-          <tei-item data-teiname="item">Ask one of the Jenkins maintainers (Peter Stadler, Martin Holmes, and Raffaele Viglianti) 
+          <tei-item data-teiname="item">Ask one of the Jenkins maintainers (Peter Stadler and Martin Holmes) 
             to run a link check on the Guidelines and fix broken links in the dev branch. </tei-item>
           <tei-item data-teiname="item">Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
             (The GPG private key itself is hosted on the server at the default location.)</tei-item>
@@ -248,7 +248,7 @@
 	  pushed there are properly tested, and advise them of the
 	  release schedule. Remember that the maintainers (currently
 	  Martin Holmes, Peter Stadler, and Raffaele Viglianti) may not be on the Council
-	  list. Verify with the maintainers that all Jenkins servers are functioning properly. </tei-item>
+	  list. Verify with the maintainers that both Jenkins servers are functioning properly. </tei-item>
           <tei-item data-teiname="item">Pushes to the release branch should be merged back into dev regularly:
 	  <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git checkout dev</tei-code>
 	  <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git merge release-X.X.X</tei-code></tei-item>
@@ -298,7 +298,6 @@
             <tei-list data-teiname="list">
               <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</tei-ref></tei-item>
               <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</tei-ref></tei-item>
-              <tei-item data-teiname="item"><tei-ref data-teiname="ref" target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</tei-ref></tei-item>
             </tei-list>
             And now you wait while the Jenkins servers build the packages, keeping in mind that
             subsequent steps will require the build packages from the Paderborn Jenkins server 
