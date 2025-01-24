@@ -33,6 +33,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2025-01-22" who="#RV">Removed any mentions of Jenkins 3, now defunct.</change>
       <change when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
         Revised instructions on how to update the table of releases for the GitHub website.</change>
       <change when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</change>
@@ -129,11 +130,10 @@
             of the Infrastructure Group, you will already have your own login to the server, but you 
             should test it.)</item>
 
-          <item>Some familiarity with the three TEI Jenkins Continuous Integration Servers.
+          <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers.
               <list type="ordered">
                 <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
                 <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
-                <item><ref target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</ref></item>
               </list>
             Take a little time to watch them work, and see how a push to the GitHub
             repository causes them to start building TEI packages. There are three specific build
@@ -192,7 +192,7 @@
             update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</item>
           <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the 
             TEI sysadmin, of the pending release date, so that they can be available or on-call. </item>
-          <item>Ask one of the Jenkins maintainers (Peter Stadler, Martin Holmes, and Raffaele Viglianti) 
+          <item>Ask one of the Jenkins maintainers (Peter Stadler and Martin Holmes) 
             to run a link check on the Guidelines and fix broken links in the dev branch. </item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
             (The GPG private key itself is hosted on the server at the default location.)</item>
@@ -242,7 +242,7 @@
 	  pushed there are properly tested, and advise them of the
 	  release schedule. Remember that the maintainers (currently
 	  Martin Holmes, Peter Stadler, and Raffaele Viglianti) may not be on the Council
-	  list. Verify with the maintainers that all Jenkins servers are functioning properly. </item>
+	  list. Verify with the maintainers that both Jenkins servers are functioning properly. </item>
           <item>Pushes to the release branch should be merged back into dev regularly:
 	  <lb/><code>git checkout dev</code>
 	  <lb/><code>git merge release-X.X.X</code></item>
@@ -292,7 +292,6 @@
             <list>
               <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
               <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
-              <item><ref target="https://jenkins3.tei-c.org">https://jenkins3.tei-c.org</ref></item>
             </list>
             And now you wait while the Jenkins servers build the packages, keeping in mind that
             subsequent steps will require the build packages from the Paderborn Jenkins server 
