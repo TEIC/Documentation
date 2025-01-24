@@ -80,6 +80,7 @@
       <change when="2012-06-16" who="#KSH">Explained version numbers and added reminder about
         including readme file in announcement.</change>
       <change when="2012-02-02" who="#MDH">Document forked from tcw20.xml.</change>
+      <change when="2025-01-24" who="#POC">Added note on needing to update tests after the p5subset is built and copied into Stylesheets/source.</change>
     </revisionDesc>
   </teiHeader>
   <text>
@@ -267,7 +268,8 @@
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
           <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch (preferably on Jenkins, at a URL such as 
             https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
-            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets release-X.X.X branch.</item>
+            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets release-X.X.X branch. <lb/>
+            <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated p5subset.xml file to the Stylesheets/source directory of the Stylesheets release-X.X.X branch. It is recommended to use <code>make DIFFNOW=0 test</code> as this will generate all the actual results and then compare against the expected results afterwards. Once the actual results are generated, you have to manually compare the expected-results and actual-results folders (both under Stylesheets\Test\) and check through all of the files containing differences.</item>
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
           <item><hi rend="bold">Merge the release branch into <code>released</code></hi>.  <lb/>
