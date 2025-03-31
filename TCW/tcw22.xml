@@ -273,7 +273,18 @@
             <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated p5subset.xml file to the Stylesheets/source directory of the Stylesheets release-X.X.X branch. It is recommended to use <code>make DIFFNOW=0 test</code> as this will generate all the actual results and then compare against the expected results afterwards. Once the actual results are generated, you have to manually compare the expected-results and actual-results folders (both under Stylesheets\Test\) and check through all of the files containing differences.</item>
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
-          <!-- Steps 5 and 6 which instruct on how to merge the release branch into the released branch were originally here, but proved to be too early in the process and have now been moved after step 14 -->
+          
+          <item><hi rend="bold">Commit your changes to the P5 release branch  <code>release-X.X.X</code></hi>.  <lb/>
+           </item>
+          
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand to help debug problems):
+            <list type="ordered">
+              <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
+                remove the 'a').</item>
+              <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
+            </list>
+          </item>
+          <!-- Steps 5 and 6 which instruct on how to merge the release branch into the released branch were originally here, but for the Jan 2025 creating the released branch at this point proved to be too early in the process and have now been moved after step 14 -->
           <item><hi rend="bold">Push your changes</hi> for both P5 and the Stylesheets to the git 
             repository, <code>git push origin release-X.X.X</code><lb/> and watch Jenkins build P5 for you.<lb/> 
             This should be the final push for this version, and it will trigger the Jenkins servers 
@@ -374,11 +385,8 @@
             <code>git checkout released</code><lb/>
             <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
           
-          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand when releasing Stylesheets to help debug problems):
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>:
             <list type="ordered">
-              <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
-                remove the 'a').</item>
-              <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
               <item>Merge the release branch into <code>released</code><lb/>
                 <code>git checkout released</code><lb/>
                 <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
