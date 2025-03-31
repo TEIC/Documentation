@@ -428,7 +428,7 @@
             Finally, close the current Milestone (do not delete it).</item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
-            The TEI Debian packages are regularily created during each Jenkins build. 
+            The TEI Debian packages are regularly created during each Jenkins build. 
             For each release you need to update the TEI Debian repository at 
             <ref target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> 
             which can be done by simply running <code>ant</code> on the TEI server within the 
