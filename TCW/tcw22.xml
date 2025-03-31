@@ -277,7 +277,7 @@
           <item><hi rend="bold">Commit your changes to the P5 release branch  <code>release-X.X.X</code></hi>.  <lb/>
            </item>
           
-          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand to help debug problems):
+          <item><hi rend="bold">Complete the following steps for the Stylesheets</hi> (have a stylesheets expert on hand to help debug problems):
             <list type="ordered">
               <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
                 remove the 'a').</item>
