@@ -33,6 +33,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2025-03-31" who="#POC">Revised and updated procedure as some checking steps are currently listed after the released branch is created. Moved steps 6 and 7 to after step 14.</change>
       <change when="2025-01-22" who="#RV">Removed any mentions of Jenkins 3, now defunct.</change>
       <change when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
         Revised instructions on how to update the table of releases for the GitHub website.</change>
@@ -272,23 +273,9 @@
             <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated p5subset.xml file to the Stylesheets/source directory of the Stylesheets release-X.X.X branch. It is recommended to use <code>make DIFFNOW=0 test</code> as this will generate all the actual results and then compare against the expected results afterwards. Once the actual results are generated, you have to manually compare the expected-results and actual-results folders (both under Stylesheets\Test\) and check through all of the files containing differences.</item>
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
-          <item><hi rend="bold">Merge the release branch into <code>released</code></hi>.  <lb/>
-            <code>git checkout released</code><lb/>
-            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand 
-            when releasing Stylesheets to help debug problems):
-            <list type="ordered">
-            <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
-              remove the 'a').</item>
-            <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
-            <item>Merge the release branch into <code>released</code><lb/>
-              <code>git checkout released</code><lb/>
-              <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
-            </item>
-          </list>
-          </item>
+          <!-- Steps 5 and 6 which instruct on how to merge the release branch into the released branch were originally here, but proved to be too early in the process and have now been moved after step 14 -->
           <item><hi rend="bold">Push your changes</hi> for both P5 and the Stylesheets to the git 
-            repository, <code>git push origin released</code><lb/> and watch Jenkins build P5 for you.<lb/> 
+            repository, <code>git push origin release-X.X.X</code><lb/> and watch Jenkins build P5 for you.<lb/> 
             This should be the final push for this version, and it will trigger the Jenkins servers 
             to rebuild the TEI packages. As a reminder, you can find the Jenkins servers here:
             <list>
@@ -383,6 +370,22 @@
             log in, and click the information button on your new release. Make it the default download for all
             operating systems. Now make sure that the main Download button links to your package. </item>
 
+          <item><hi rend="bold">Merge the release branch into <code>released</code></hi>.  <lb/>
+            <code>git checkout released</code><lb/>
+            <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+          
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi> (have a stylesheets expert on hand when releasing Stylesheets to help debug problems):
+            <list type="ordered">
+              <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
+                remove the 'a').</item>
+              <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
+              <item>Merge the release branch into <code>released</code><lb/>
+                <code>git checkout released</code><lb/>
+                <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
+              </item>
+            </list>
+          </item>
+          
           <item>
             <hi rend="bold">Update tags on GitHub</hi><lb/> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
