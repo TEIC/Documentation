@@ -40,7 +40,7 @@
           <head>Step-by-Step Instructions:</head>
           <list rend="numbered">
             <item n="1">Update your local copies of both the TEI and Stylesheets repositories.</item>
-            <item n="2">Get the p5subset.xml by completing either step 2.1 or 2.2: <list>
+            <item n="2">Get the p5subset.xml by completing <hi rend="bold">either</hi> step 2.1 or 2.2: <list>
                 <item n="2.1">from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such
                   as
                     <code>https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</code>) </item>
