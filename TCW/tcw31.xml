@@ -49,8 +49,7 @@
                     <item n="2.2.1.1">Start the TEI docker container</item>
                     <item n="2.2.1.2">change to the TEI/P5 directory <code>cd [relative path to TEIC/TEI/ directory]/P5</code>
                       </item>
-                  <item n="2.2.1.3">run <code>make clean</code> to clean your repository of any previously generated files</item>
-                    <item n="2.2.1.4">run <code>make test</code></item>
+                  <item n="2.2.1.3">run <code>make clean test</code>. The <code>clean</code> command is to clean your repository of any previously generated files</item>
                     <!--<item>after you finish the steps below, don’t forget to clean your directory
                       with <code>make clean</code> to make sure that files generated while running
                       the test are removed again</item>-->
