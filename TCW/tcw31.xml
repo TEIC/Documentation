@@ -33,8 +33,10 @@
       <div>
         <head>TEI Council: Update P5 subset</head>
         <head>Rationale</head>
-        <p>The Stylesheets are built against the Guidelines, so there needs to be a (more
-          or less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the Guidelines is a file called “p5subset.xml” and it is stored in the source/ directory. Building the Guidelines in the TEI repository does <hi rend="italics">not</hi> put a new copy of p5subset.xml into the Stylesheets/source/ directory. In order to keep the version of the p5subset.xml in the Stylesheets repository up to date, that file is updated monthly by Council members.
+        <p>The Stylesheets tests can succeed only against either the release branch of P5, or the dev branch of P5, but often not against both simultaneously. For instance, the Stylesheets dev branch sometimes successfully builds against P5 release, but fails against P5 dev branch. On release day, when we need the Stylesheets release branch to build against P5 release branch, the tests work with the release branch against the release branch.</p>
+        <p>Changes on either side (Stylesheets or Guidelines) may break either build because the Stylesheets test procedure is quite fragile, and if it fails, the build fails. In particular, since the contents of <gi>desc</gi> elements are copied over into schemas, even a small change (like adding a comma) to an element description in the Guidelines might break the Stylesheets build.
+        </p>
+        <p>Since the Stylesheets are built against the Guidelines, there needs to be a (more or less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the Guidelines is a file called “p5subset.xml” and it is stored in the source/ directory. Building the Guidelines in the TEI repository does <hi rend="italics">not</hi> put a new copy of p5subset.xml into the Stylesheets/source/ directory. In order to keep the version of the p5subset.xml in the Stylesheets repository up to date, that file is updated monthly by Council members.
           </p>
         <div>
           <head>Step-by-Step Instructions:</head>
@@ -50,9 +52,6 @@
                     <item n="2.2.1.2">change to the TEI/P5 directory <code>cd [relative path to TEIC/TEI/ directory]/P5</code>
                       </item>
                   <item n="2.2.1.3">run <code>make clean test</code>. The <code>clean</code> command is to clean your repository of any previously generated files</item>
-                    <!--<item>after you finish the steps below, don’t forget to clean your directory
-                      with <code>make clean</code> to make sure that files generated while running
-                      the test are removed again</item>-->
                   </list>
                 </item>
               </list>
@@ -90,7 +89,7 @@
                   the case, read the error message carefully and see if you can figure out what's
                   failing (and reach out to Council members for help). See <ref
                     target="#troubleshooting">Troubleshooting</ref>, below for an example failure of
-                  the ant process and a simple fix.</item>
+                  the <code>ant</code> process and a simple fix.</item>
                 <item n="4.3"><p>In the case of a diff error, examine the differences generated. If the
                     differences are what you would expect given the change in P5 (which is by far
                     the most common case), just copy the output file to be the new expected results
@@ -165,16 +164,17 @@
                     [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:77:345: error: element "att_quant:test" missing required attribute "req_2??"<lb/>
                   </eg>
                 </item>
-              <item n="4.5">To resolve this error, simply run the command below and re-attempt running Test2/ (step 3.2):  
+              <item n="4.5">To resolve this error, simply run the command below and re-attempt running <code>ant test</code> (step 3.3):  
                 <code>export LC_ALL=C.UTF-8; export LANG=C.UTF-8</code></item>
               </list>
             </item>
+            <item n="4.6">When you solve a "diff" error, re-attempt running <code>ant test</code> again until the build is successful (returns no errors).</item>
             <item n="5">After all the errors have been fixed in Test2/, move on to Test/. <hi rend="bold">Note:</hi> Step 6 is an alternative approach for Test/.<list>
                 <item n="5.1">switch to the main directory (<code>cd ../Test</code> will do, if you are still in
                     <code>Test2/</code> from previous step)</item>
                 <item n="5.2">run either <code>make</code> or <code>time make</code> [See <ref
                     target="#addendum">Addendum</ref>, below, for using the <code>–jobs</code>
-                  switch to make <code>make</code> run faster.]</item>
+                  switch for <code>make</code> to run faster.]</item>
               <item n="5.3">check the errors (the make file stops after each error). <hi rend="bold">Note:</hi> If there is no error, the process is complete.</item>
               <item n="5.4">When there is an error, you will find a diff of the relevant file from the
                     <code>actual-results/</code> folder and the <code>expected-results/</code>
