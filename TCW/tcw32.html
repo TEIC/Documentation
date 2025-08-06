@@ -44,8 +44,8 @@
           tutorial may be found at “<tei-ref data-teiname="ref" target="https://www.learnenough.com/command-line-tutorial">Learn Enough Command Line to Be Dangerous</tei-ref>”, while Windows 10 users may learn how
           to install a Bash shell and the basics of using it at “<tei-ref data-teiname="ref" target="http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/">How to Install and Use the Linux Bash Shell on Windows 10</tei-ref>”. Once you’re in a
           terminal window, you can clone the TEI repos thus: 
-          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git clone git@github.com:TEIC/TEI.git</tei-code> and 
-          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git clone git@github.com:TEIC/Stylesheets.git</tei-code>
+          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code" lang="sh">git clone git@github.com:TEIC/TEI.git</tei-code> and 
+          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code" lang="sh">git clone git@github.com:TEIC/Stylesheets.git</tei-code>
         </tei-p>
         <tei-p data-teiname="p">It’s probably a good idea to keep these side-by-side. I put mine in a directory called:
             <tei-code data-teiname="code">/Users/hcayless/Development/TEIC</tei-code>. As you will see, it’s a good idea to do
@@ -65,7 +65,7 @@
           The directory containing your repositories will be mapped to a directory in the container
           (which is why it’s easier to put them side-by-side). You’ll run the test container with a
           command like: 
-          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
+          <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code" lang="sh">docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
             teic/teidev-docker</tei-code>
           <tei-lb data-teiname="lb"></tei-lb>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
           The directory on your local file system where you cloned the TEI and
@@ -100,7 +100,7 @@
           of tests you want to troubleshoot (e.g. <tei-code data-teiname="code">make test-oddity</tei-code> in
           <tei-code data-teiname="code">Stylesheets/Test</tei-code> to test ODD-conversion methods). The targets are all defined
           in the <tei-code data-teiname="code">Makefile</tei-code>s.</tei-p>
-        <tei-p data-teiname="p">The <tei-ref data-teiname="ref" target="http://www.tei-c.org/Guidelines/P5/get.xml">Using the TEI GitHub
+        <tei-p data-teiname="p">The <tei-ref data-teiname="ref" target="https://tei-c.org/guidelines/p5/using-the-tei-github-repository/">Using the TEI GitHub
           Repository</tei-ref> document has more detail on all the processes you can run, and very
           meager information on how to get set up to run them—but you just bypassed all that.
           Besides the <tei-code data-teiname="code">make</tei-code> targets listed there, both the TEI and Stylesheets repos
