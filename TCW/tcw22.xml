@@ -281,7 +281,7 @@
             <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
               remove the 'a').</item>
             <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
-              <!-- Need to update here to include merge the release branch into dev -->
+              <!-- Need to update here to include a step to merge the release branch into dev before proceeding to merge the release branch into the released branch -->
             <item>Merge the release branch into <code>released</code><lb/>
               <code>git checkout released</code><lb/>
               <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
