@@ -130,7 +130,28 @@
             you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. (Note: if you are a member
             of the Infrastructure Group, you will already have your own login to the server, but you 
             should test it.)</item>
-
+          
+          <item>A copy of the public key that will enable you to sync the release zip with
+            SourceForge. <list type="ordered">
+            <item>Log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you have already generated the SSH public key and sent it to the system administrator
+              as outlined in the step above). (Note that if you are a member of the Infrastructure Group 
+              with your own login, log in as yourself, but <code>sudo su tei</code> before running any scripts.)</item>
+            <item>Once logged into the tei server complete the following steps: <list>
+                <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
+                <item>paste the result into a text editor and remove any linebreaks added by the
+                  terminal.</item>
+                <item>copy-paste the result into https://sourceforge.net/auth/shell_services</item>
+              </list> What this does is to enable you (when logged in as tei to tei-c.org) to connect
+              to SourceForge (as your SF user) to upload the release files. </item>
+            
+            <item>Test it by trying to log into SourceForge via ssh from the tei-c.org server:<lb/>
+              <code>ssh sfuser,tei@frs.sourceforge.net</code><lb/> where "sfuser" is your SourceForge
+              user name. You should not see a prompt for a password (because of the ssh keys you have
+              set up). Instead, you should immediately see <q>Welcome! This is a restricted Shell
+                Account. You can only copy files to/from here.</q> If you see this, then everything is
+              set up correctly.</item>
+          </list>
+          </item>
           <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers.
               <list type="ordered">
                 <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
@@ -148,27 +169,7 @@
             have to retrace your steps. It's best to start first thing in the morning, and prepare
             to be busy all day.</item>
         </list>
-        <list>
-          <item> A copy of the public key that will enable you to sync the release zip with
-            SourceForge. <list>
-              <item>log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you've completed
-                the other public key step above). (Note that if you are a member of the Infrastructure Group 
-                with your own login, log in as yourself, but sudo su tei before running any scripts.)</item>
-              <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
-              <item>paste the result into a text editor and remove any linebreaks added by the
-                terminal.</item>
-              <item>copy-paste the result into https://sourceforge.net/auth/shell_services</item>
-            </list> What this does is to enable you (when logged in as tei to tei-c.org) to connect
-            to SourceForge (as your SF user) to upload the release files. </item>
-
-          <item>Test it by trying to log into SourceForge via ssh from the tei-c.org server:<lb/>
-            <code>ssh sfuser,tei@frs.sourceforge.net</code><lb/> where "sfuser" is your SourceForge
-            user name. You should not see a prompt for a password (because of the ssh keys you have
-            set up). Instead, you should immediately see <q>Welcome! This is a restricted Shell
-              Account. You can only copy files to/from here.</q> If you see this, then everything is
-            set up correctly.</item>
-
-        </list>
+        
       </div>
 
       <div xml:id="issueHandlingGuidelines">
