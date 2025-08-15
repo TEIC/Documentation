@@ -281,6 +281,7 @@
             <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
               remove the 'a').</item>
             <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
+              <!-- Need to update here to include merge the release branch into dev -->
             <item>Merge the release branch into <code>released</code><lb/>
               <code>git checkout released</code><lb/>
               <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
@@ -372,7 +373,7 @@
               <item><code># ./docker-update.sh oxgarage</code></item>
               <item><code># ./docker-update.sh teigarage</code></item>
             </list>
-            NB: Every invocation might take some time but each should succesfully finish with the notification 
+            NB: Every invocation might take some time but each should successfully finish with the notification 
             "Creating $CONTAINER$ ... done" 
           </item>
 
