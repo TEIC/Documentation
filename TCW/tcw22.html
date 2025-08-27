@@ -29,8 +29,7 @@
 	     intellectual responsibility, rather than as an actual
 	     editor. —Syd, 2021-04-16 -->
 	<tei-editor id="SDB" data-teiname="editor" xml:id="SDB">Syd Bauman</tei-editor>
-      <tei-editor id="POC" data-teiname="editor" xml:id="POC">Patricia O Connor</tei-editor>
-        <!-- Note: I'm listing myself as an editor solely because I added a change to update the document -->
+	<tei-editor id="POC" data-teiname="editor" xml:id="POC">Patricia O Connor</tei-editor>
       </tei-titlestmt>
       <tei-publicationstmt data-teiname="publicationStmt">
         <tei-publisher data-teiname="publisher">TEI Technical Council</tei-publisher>
@@ -42,6 +41,7 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2025-08-27" who="#SDB">Per HBS, move “merge into "released"” steps up to immediately after the push into the "release-X.X.X" step.</tei-change>
       <tei-change data-teiname="change" when="2025-03-31" who="#POC">Revised and updated procedure as some checking steps are currently listed after the released branch is created. Moved steps 6 and 7 to after step 14.</tei-change>
       <tei-change data-teiname="change" when="2025-01-22" who="#RV">Removed any mentions of Jenkins 3, now defunct.</tei-change>
       <tei-change data-teiname="change" when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
@@ -314,6 +314,29 @@
 	    the Stylesheets build may fail after the TEI release is complete, so it is better to wait
 	    until the TEI release is complete before doing the Stylesheets release. (Council is considering 
 	    changing how the dependency is managed).</tei-item>
+
+            <tei-item data-teiname="item">
+	      <tei-hi data-teiname="hi" rend="bold">Merge the release branch into <tei-code data-teiname="code">dev</tei-code> and <tei-code data-teiname="code">released</tei-code></tei-hi>.
+              <tei-list data-teiname="list" type="ordered">
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git checkout released</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git checkout dev</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
+		<tei-item data-teiname="item">and don’t forget to <tei-code data-teiname="code">git checkout released</tei-code></tei-item>
+	      </tei-list>
+	    </tei-item>
+            
+            <tei-item data-teiname="item">
+	      <tei-hi data-teiname="hi" rend="bold">Repeat the steps above for the Stylesheets</tei-hi>:
+              <tei-list data-teiname="list" type="ordered">
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git checkout released</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git checkout dev</tei-code></tei-item>
+		<tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
+		<tei-item data-teiname="item">and don’t forget to <tei-code data-teiname="code">git checkout released</tei-code></tei-item>
+	      </tei-list>
+            </tei-item>
+          
           <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</tei-hi><tei-lb data-teiname="lb"></tei-lb> When all builds have
             completed on all Jenkins servers, click on the job number of the last build for each of the
@@ -385,19 +408,6 @@
             log in, and click the information button on your new release. Make it the default download for all
             operating systems. Now make sure that the main Download button links to your package. </tei-item>
 
-          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Merge the release branch into <tei-code data-teiname="code">released</tei-code></tei-hi>.  <tei-lb data-teiname="lb"></tei-lb>
-            <tei-code data-teiname="code">git checkout released</tei-code><tei-lb data-teiname="lb"></tei-lb>
-            <tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
-          
-          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Repeat the steps above for the Stylesheets</tei-hi>:
-            <tei-list data-teiname="list" type="ordered">
-              <tei-item data-teiname="item">Merge the release branch into <tei-code data-teiname="code">released</tei-code><tei-lb data-teiname="lb"></tei-lb>
-                <tei-code data-teiname="code">git checkout released</tei-code><tei-lb data-teiname="lb"></tei-lb>
-                <tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code>
-              </tei-item>
-            </tei-list>
-          </tei-item>
-          
           <tei-item data-teiname="item">
             <tei-hi data-teiname="hi" rend="bold">Update tags on GitHub</tei-hi><tei-lb data-teiname="lb"></tei-lb> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
