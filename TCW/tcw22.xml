@@ -312,9 +312,13 @@
             <item>
 	      <hi rend="bold">Merge the release branch into <code>dev</code> and <code>released</code></hi>.
               <list type="ordered">
+		<item><code>git checkout release-X.X.X</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git checkout released</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item><code>git checkout dev</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item>and don’t forget to <code>git checkout released</code></item>
 	      </list>
@@ -323,9 +327,13 @@
             <item>
 	      <hi rend="bold">Repeat the steps above for the Stylesheets</hi>:
               <list type="ordered">
+		<item><code>git checkout release-X.X.X</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git checkout released</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item><code>git checkout dev</code></item>
+		<item><code>git pull</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item>and don’t forget to <code>git checkout released</code></item>
 	      </list>
