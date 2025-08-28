@@ -463,11 +463,17 @@
             will do.-->
           </item>
 
-          <item><hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>. The table is found in the src/guidelines/p5 markdown page, 
-            published at <ref target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.<lb/>
-             Add the new release information and links to the top of the release table.</item>
+          <item>
+	    <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>.
+	    The table is found in the <q>src/guidelines/p5.md</q> file
+	    in the <q>website</q> repository; it is published at <ref
+	    target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.
+	    <lb/>Add the new release information and links to the top
+	    of the release table.</item>
 
-          <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
+          <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi>
+	  <lb/>
+	  This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
             TEI server so that the oXygen software knows about the new release. You may request to
             hand this off to one of the maintainers (currently Syd Bauman, James Cummings, or Martin
@@ -490,27 +496,42 @@
                   target="https://github.com/TEIC/oxygen-tei"
                   >https://github.com/TEIC/oxygen-tei</ref> to your local system.</item>
               
-              <item>cd into the oxygen-tei folder (it should contain folders called "frameworks" and
-                "jenkins").</item>
+              <item>cd into the ./oxygen-tei/ folder (it should contain folders called frameworks/ and
+                jenkins/).</item>
               
-              <item>Run the ant build process with the "release" parameter: <lb/>
-                <code>ant release</code><lb/> This builds the plugin using the latest stable
-                versions of P5 and the Stylesheets, then offers to upload the result to the TEI's
-                SourceForge repo to become a release of the TEI-maintained version of the plugin.
-                This also creates an updated updateSite.oxygen file, by retrieving the latest
-                updateSite.oxygen file from the tei-c.org site, and asks the user to provide the new
-                version number before creating a new version of updateSite.oxygen. </item>
+              <item>Run the ant build process with the "release" parameter:
+	      <lb/><code>ant release</code>
+	      <lb/>This builds the plugin using the latest stable
+	      versions of P5 and the Stylesheets, then offers to
+	      upload the result to the TEI’s SourceForge repo to
+	      become a release of the TEI-maintained version of the
+	      plugin. This also creates an updated updateSite.oxygen
+	      file, by retrieving the latest updateSite.oxygen file
+	      from the tei-c.org site, and asks the user to provide
+	      the new version number before creating a new version of
+	      updateSite.oxygen.</item>
               
-              <item>Go to the GitHub repo and create a new release, using the <code>Draft new release</code>
-              button. Copy the previous release info (tag, title and text), and tweak the versions as appropriate. The tag should be  <code>vx.x.x</code>, the title will be 
-                <code>Release x.x.x</code>, and the text <quote>Release number X of the oXygen TEI plugin, based on TEI P5 x.x.x and Stylesheets x.x.x.</quote></item>
+              <item>Go to the TEI-C/oxygen-tei GitHub repo and create
+              a new release, using the <code>Draft new release</code>
+              button. Copy the previous release info (tag, title and
+              text), and tweak the versions as appropriate. The tag
+              should be <code>vx.x.x</code>, the title will be
+              <code>Release x.x.x</code>, and the text <quote>Release
+              number X of the oXygen TEI plugin, based on TEI P5 x.x.x
+              and Stylesheets x.x.x.</quote></item>
               
               <item>Attach the zip file you just created in the build process, which will be named
               something like <code>oxygen-tei-x.x.x-x.x.x.zip</code>, with the numbers from
               the current TEI and Stylesheets releases.</item>
               
-              <item>Once the tag/release has been published, run <lb/><code>ant uploadOxygenUpdateFile</code><lb/>
-              to push the <code>updateSite.oxygen</code> file up to the TEI server.</item>
+              <item>Once the tag/release has been published, run
+              <lb/><code>ant uploadOxygenUpdateFile</code> <lb/>to
+              push the <code>updateSite.oxygen</code> file up to the
+              TEI server. To check that this has worked, you can look
+              at the last <code>&lt;xt:extension></code> element in
+              <ref
+              target="https://www.tei-c.org/Vault/P5/current/oxygen/updateSite.oxygen">the
+              XML file on the web</ref>.</item>
             </list>
           </item>
 
