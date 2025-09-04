@@ -458,11 +458,6 @@
             will do.-->
           </item>
 
-<<<<<<< HEAD
-          <item><hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>. The table is found in the src/guidelines/p5 markdown page, 
-            published at <ref target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.<lb/>
-             Add the new release information and links to the top of the release table.</item>
-=======
           <item>
 	    <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>.
 	    The table is found in the <q>src/guidelines/p5.md</q> file
@@ -470,7 +465,6 @@
 	    target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.
 	    <lb/>Add the new release information and links to the top
 	    of the release table.</item>
->>>>>>> 05620f2 (Minor tweaks from)
 
           <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
