@@ -151,7 +151,7 @@
         </list>
         <list>
           <item> A copy of the public key that will enable you to sync the release zip with
-            SourceForge. <list>
+            SourceForge. <list type="bulleted">
               <item>log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you've completed
                 the other public key step above). (Note that if you are a member of the Infrastructure Group 
                 with your own login, log in as yourself, but sudo su tei before running any scripts.)</item>
@@ -203,7 +203,7 @@
             and is actually handled by Peter Stadler, this step is not necessary. (JL, 2020-02-13) -->
           <item><hi rend="bold">Communicate with the TEI Council chair to make sure that the P5/ReleaseNotes/readme-X.X.X.xml 
             is compiled</hi><lb/> Normally, this will be created by the TEI Council chair at the
-            point when the repository moved from its "alpha" stage to "beta", following these steps: <list>
+            point when the repository moved from its "alpha" stage to "beta", following these steps: <list type="bulleted">
               <item>Confirm the version number for the new release in consultation with Council. TEI
                 version numbers are based on the Unicode Consortium system (<ref target="http://www.unicode.org/versions/"
                   >http://www.unicode.org/versions/</ref>) but with the first digit for major
@@ -289,7 +289,7 @@
             repository, <code>git push origin release-X.X.X</code><lb/> and watch Jenkins build P5 for you.<lb/> 
             This should be the final push for this version, and it will trigger the Jenkins servers 
             to rebuild the TEI packages. As a reminder, you can find the Jenkins servers here:
-            <list>
+            <list type="bulleted">
               <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
               <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
             </list>
@@ -355,10 +355,11 @@
             <code>curl https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o ~/tei-install.sh</code>.
             <lb/> (If you'll need to tweak that script later during the install process please make 
             sure to feed the changes back to the original script in the TEI repo.) 
-            <lb/> Do the following three steps: <list>
+            <lb/> Do the following three steps:
+	    <list type="bulleted">
               <item>Install on tei-c.org: <code>./tei-install.sh --package=TEIP5 --version=X.X.X
                   --sfuser=username --install</code> and then <emph>go test the version this puts in
-                  the Vault</emph>.</item>
+                  the <ref target="https://www.tei-c.org/Vault/P5/">Vault</ref></emph>.</item>
               <item>If that looks good and everyone agrees then: <code>./tei-install.sh
                   --package=TEIP5 --version=X.X.X --sfuser=username --makecurrent</code> and
                 then <emph>test that it appears on website correctly</emph>.</item>
@@ -372,9 +373,11 @@
             the URL of the other server if necessary with the --Jenkins parameter, e.g. 
             --Jenkins=http://jenkins2.tei-c.org/. Make sure the script completes successfully each time 
             changing the final parameter from --install, to --makecurrent, and then --upload. </item>
-          
-          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>, remembering that the version number is the Stylesheets version, which will be different from
-            the Guidelines version:
+
+            <item><hi rend="bold">Repeat the steps above for the
+            Stylesheets</hi>, remembering that the version number is
+            the Stylesheets version, which will be different from the
+            Guidelines version:
             <lb/><code>./tei-install.sh --package=Stylesheets
               --version=X.X.X --sfuser=username --install</code>
             <lb/><code>./tei-install.sh --package=Stylesheets
@@ -466,7 +469,7 @@
           <item>
 	    <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>.
 	    The table is found in the <q>src/guidelines/p5.md</q> file
-	    in the <q>website</q> repository; it is published at <ref
+	    in the <ref target="https://github.com/TEIC/website">website</ref> repository; it is published at <ref
 	    target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.
 	    <lb/>Add the new release information and links to the top
 	    of the release table.</item>
@@ -477,7 +480,7 @@
             building the new package of oxygen-tei, and then updating the distribution file on the
             TEI server so that the oXygen software knows about the new release. You may request to
             hand this off to one of the maintainers (currently Syd Bauman, James Cummings, or Martin
-            Holmes) to do this for you if you're not familiar with the project. <list>
+            Holmes) to do this for you if you're not familiar with the project. <list type="bulleted">
               <item>Check that you have ant (at least version 1.8) installed on your machine.</item>
               <!-- MDH 2021-04-19: Added release="8" to javac call in framework/build.xml, and this now seems to 
                 build fine with Java 14. Commenting out this step. -->
@@ -515,10 +518,11 @@
               a new release, using the <code>Draft new release</code>
               button. Copy the previous release info (tag, title and
               text), and tweak the versions as appropriate. The tag
-              should be <code>vx.x.x</code>, the title will be
-              <code>Release x.x.x</code>, and the text <quote>Release
-              number X of the oXygen TEI plugin, based on TEI P5 x.x.x
-              and Stylesheets x.x.x.</quote></item>
+              should be <code><emph>v</emph>x.x.x</code> (don’t forget
+              the <q>v</q>!), the title will be <code>Release
+              x.x.x</code>, and the text <quote>Release number X of
+              the oXygen TEI plugin, based on TEI P5 x.x.x and
+              Stylesheets x.x.x.</quote></item>
               
               <item>Attach the zip file you just created in the build process, which will be named
               something like <code>oxygen-tei-x.x.x-x.x.x.zip</code>, with the numbers from
