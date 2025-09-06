@@ -261,7 +261,7 @@
           </item>
          <item>Check the release notes for typos, link issues, or other glaring errors, one last time. If the current release notes
          mention revision of past release notes, check that the link URL is pointing to the current release in the Vault, 
-         which contains the full collection of release notes. For example, for a revision to release notes in 4.10.0 in release 4.10.2, 
+         which will contain the full collection of release notes. For example, for a revision to release notes in 4.10.0 in release 4.10.2, 
          the URL should be:
          <ref target="https://www.tei-c.org/Vault/P5/4.10.2/doc/tei-p5-doc/readme-4.10.0.html">https://www.tei-c.org/Vault/P5/<hi rend="bold">4.10.2</hi>/doc/tei-p5-doc/<hi rend="bold">readme-4.10.0.html</hi></ref>.
          </item>
