@@ -337,7 +337,7 @@
                 changes.</item>
               <item>Merge the release branch into the <code>dev</code> branch<lb/>
                 <code>git checkout dev</code><lb/>
-                <code>git merge</code>
+                <code>git merge release-X.X.X</code>
               </item>
               <item>Merge the release branch into <code>released</code><lb/>
                 <code>git checkout released</code><lb/>
