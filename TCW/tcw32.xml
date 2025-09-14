@@ -42,8 +42,8 @@
             target="http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/"
             >How to Install and Use the Linux Bash Shell on Windows 10</ref>”. Once you’re in a
           terminal window, you can clone the TEI repos thus: 
-          <lb/><code>git clone git@github.com:TEIC/TEI.git</code> and 
-          <lb/><code>git clone git@github.com:TEIC/Stylesheets.git</code>
+          <lb/><code lang="sh">git clone git@github.com:TEIC/TEI.git</code> and 
+          <lb/><code lang="sh">git clone git@github.com:TEIC/Stylesheets.git</code>
         </p>
         <p>It’s probably a good idea to keep these side-by-side. I put mine in a directory called:
             <code>/Users/hcayless/Development/TEIC</code>. As you will see, it’s a good idea to do
@@ -67,7 +67,7 @@
           The directory containing your repositories will be mapped to a directory in the container
           (which is why it’s easier to put them side-by-side). You’ll run the test container with a
           command like: 
-          <lb/><code>docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
+          <lb/><code lang="sh">docker run --name tei -v /Users/hcayless/Development/TEIC:/tei -it -e TZ=America/New_York
             teic/teidev-docker</code>
           <lb/>which will put you in a Bash shell inside the container (named 'tei'), at the root directory.
           The directory on your local file system where you cloned the TEI and
@@ -102,7 +102,7 @@
           of tests you want to troubleshoot (e.g. <code>make test-oddity</code> in
           <code>Stylesheets/Test</code> to test ODD-conversion methods). The targets are all defined
           in the <code>Makefile</code>s.</p>
-        <p>The <ref target="http://www.tei-c.org/Guidelines/P5/get.xml">Using the TEI GitHub
+        <p>The <ref target="https://tei-c.org/guidelines/p5/using-the-tei-github-repository/">Using the TEI GitHub
           Repository</ref> document has more detail on all the processes you can run, and very
           meager information on how to get set up to run them—but you just bypassed all that.
           Besides the <code>make</code> targets listed there, both the TEI and Stylesheets repos
