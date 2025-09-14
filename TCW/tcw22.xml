@@ -280,7 +280,7 @@
           <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
               TEI Technical Council mailing list</hi></item>
           
-          <item><hi rend="bold">Commit your changes to the P5 release branch  <code>release-X.X.X</code></hi>.  <lb/>
+          <item><hi rend="bold">Commit your changes to the P5 release branch <code>release-X.X.X</code></hi>.  <lb/>
            </item>
           
           <item><hi rend="bold">Complete the following steps for the Stylesheets</hi> (have a stylesheets expert on hand to help debug problems):
@@ -288,8 +288,11 @@
             <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
               remove the 'a').</item>
             <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
-              <!-- Need to update here to include a step to merge the release branch into dev before proceeding to merge the release branch into the released branch -->
-            <item>Merge the release branch into <code>released</code><lb/>
+            <item>Merge the release branch into the <code>dev</code> branch<lb/>
+            <code>git checkout dev</code><lb/>
+            <code>git merge</code>
+            </item>
+              <item>Merge the release branch into <code>released</code><lb/>
               <code>git checkout released</code><lb/>
               <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
             </item>
@@ -321,13 +324,13 @@
 	    changing how the dependency is managed).</item>
 
             <item>
-	      <hi rend="bold">Merge the release branch into <code>dev</code> and <code>released</code></hi>.
+	      <hi rend="bold">Merge the release branch into the <code>dev</code> and <code>released</code> branches</hi>.
               <list type="ordered">
 		<item><code>git checkout released</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item><code>git checkout dev</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item>and don’t forget to <code>git checkout released</code></item>
+		<item>and don’t forget to change directory to the released branch <code>git checkout released</code></item>
 	      </list>
 	    </item>
             
@@ -338,7 +341,7 @@
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
 		<item><code>git checkout dev</code></item>
 		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item>and don’t forget to <code>git checkout released</code></item>
+		<item>and don't forgot to change directory back to the released branch <code>git checkout released</code></item>
 	      </list>
             </item>
           
@@ -422,12 +425,17 @@
             <hi rend="bold">Update tags on GitHub</hi><lb/> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
             You can do this from the command line on your own computer. Before moving forward, be
-            sure to do a git pull and update your released branch. Then, still in the released
+            sure to do a git pull and update your <code>released</code> branch.<lb/>
+            <code>git checkout released</code><lb/>
+            <code>git pull</code><lb/>
+            Then, still in the released
             branch, do:<lb/>
             <code>git tag -a P5_Release_X.X.X -m "Release X.X.X of the TEI Guidelines."</code><lb/>
             where X.X.X is your new release. Then<lb/>
             <code>git push origin P5_Release_X.X.X</code><lb/>
             Do the same for the Stylesheets as well, on the released branch:<lb/>
+            <code>git checkout released</code><lb/>
+            <code>git pull</code><lb/>
 	    <code>git tag -a vX.X.X -m "Release X.X.X of the TEI Stylesheets."</code><lb/>
             where X.X.X is your new release. Then<lb/>
             <code>git push origin vX.X.X</code>
@@ -436,7 +444,7 @@
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the TEI Tags page at <ref
             target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on GitHub. You should
             see the tag you just pushed there. Click on it and then click on "Create Release". Add a link to the release notes README, which should be at
-            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text box. Add a copy of the zipped
+            <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html">https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html</ref>, into the text box. Add a copy of the zipped
             release by downloading it from <ref
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
               >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then uploading it to the release page.<lb/>
@@ -471,7 +479,7 @@
 
           <item>
 	    <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>.
-	    The table is found in the <q>src/guidelines/p5.md</q> file
+	    The table is found in the <code>src/guidelines/p5.md</code> file
 	    in the <ref target="https://github.com/TEIC/website">website</ref> repository; it is published at <ref
 	    target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.
 	    <lb/>Add the new release information and links to the top
@@ -500,8 +508,10 @@
                   target="https://github.com/TEIC/oxygen-tei"
                   >https://github.com/TEIC/oxygen-tei</ref> to your local system.</item>
               
-              <item>cd into the oxygen-tei folder (it should contain folders called "frameworks" and
-                "jenkins").</item>
+              <item>Change directory to the oxygen-tei folder<lb/>
+                <code>cd oxygen-tei</code><lb/>
+                List the contents of the folder to double check by entering <code>ls</code>. The folder should contain folders called "frameworks" and
+                "jenkins".</item>
               
               <item>Run the ant build process with the "release" parameter: <lb/>
                 <code>ant release</code><lb/> This builds the plugin using the latest stable
@@ -511,12 +521,12 @@
                 updateSite.oxygen file from the tei-c.org site, and asks the user to provide the new
                 version number before creating a new version of updateSite.oxygen. </item>
               
-              <item>Go to the TEIC/oxygen-tei GitHub repo and create
+              <item>Go to the <ref target="https://github.com/TEIC/oxygen-tei/releases">TEIC/oxygen-tei</ref> GitHub repo and create
               a new release, using the <code>Draft new release</code>
               button. Copy the previous release info (tag, title, and
               text), and tweak the versions as appropriate. The tag
-              should be <code><emph>v</emph>x.x.x</code> (don’t forget
-              the <q>v</q>!), the title will be <code>Release
+              should be <code>vx.x.x</code> (don’t forget
+              the <emph>v</emph>!), the title will be <code>Release
               x.x.x</code>, and the text <quote>Release number X of
               the oXygen TEI plugin, based on TEI P5 x.x.x and
               Stylesheets x.x.x.</quote></item>
@@ -535,7 +545,7 @@
             Council Chair. They will announce the release to the TEI-L mailing list, including the
             text of P5/ReleaseNotes/readme-X.X.X.xml in plain text form (which can be generated
             using the "readme" profile for teitotxt), and place an announcement on the Text Encoding
-            Initiative Newsfeed blog in the category of 'News'. 
+            Initiative Newsfeed blog in the category of '<ref target="https://tei-c.org/news/">News</ref>'. 
             The Chair should contact the Social Media coordinator (currently Anna Sofia Lippolis) to help spread the news.</item>
           <item><hi rend="bold">Lift the freeze on committing changes to the repository</hi><lb/>
             Write to the TEI Council list and let them know that they can once again start
