@@ -312,7 +312,7 @@
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
           <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch
             (preferably on Jenkins, at a URL such as
-            <ref target="https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml">https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</ref>)
+            https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml)
             and update the version of p5subset.xml in the Stylesheets/source directory in the
             Stylesheets release-X.X.X branch. <lb/>
             <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated
