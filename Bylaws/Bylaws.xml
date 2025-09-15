@@ -203,7 +203,6 @@
                      deferred to a subsequent Meeting of the Members.</p>
                </div>
                <div xml:id="TEIby-A2.6">
-                  <!-- was xml:id="TEIby-A6.5" -->
                   <head>6. Nominating Committee.</head>
                   <p>Not less than three months prior to the notice date for each Annual Meeting of
                      the Members, the Board of Directors shall appoint a Nominating Committee consisting 
@@ -219,7 +218,7 @@
                </div>
             </div>
             <div xml:id="TEIby-A3">
-               <head>Article IV: Board of Directors</head>
+               <head>Article III: Board of Directors</head>
                <p>The TEI Board of Directors shall determine overall policy directions for the
                   Consortium and is also responsible for managing and promoting membership in the
                   Consortium.</p>
@@ -255,22 +254,21 @@
                </div>
                <div xml:id="TEIby-A3.4">
                   <head>4. Meetings.</head>
-                  <p>Meetings of the Board of Directors may be held at such time and place as the
-                     Board of Directors may by resolution designate. Directors may attend Board
-                     meetings by telephonic or other two-way connection provided that any Director
-                     not physically present can hear, and be heard by, all those participating in
-                     such meeting, and a Director so participating shall be deemed present for
-                     quorum purposes.Special meetings may be called by the Chair or any combination
-                     of Directors constituting at least one-third of the total number of Directors
-                     then in office. In the case of a special meeting of the Board, no business
-                     other than that specified in the notice of the meeting shall be transacted,
-                     unless all members of the Board are present at such meeting and consent to the
-                     transaction of such other business.</p>
+                  <p>Meetings of the Board of Directors may be held at such time and place as the Board
+                     of Directors may by resolution designate; customarily these meetings happen on a 
+                     monthly basis. Directors may attend Board meetings via teleconferencing connection 
+                     provided that any Director not physically present can hear, and be heard by, all those 
+                     participating in such meeting, and a Director so participating shall be deemed present 
+                     for quorum purposes. Special meetings may be called by the Chair or any combination 
+                     of Directors constituting at least two-thirds of the total number of Directors then in 
+                     office. In the case of a special meeting of the Board, no business other than that specified 
+                     in the notice of the meeting shall be transacted, unless all members of the Board are present 
+                     at such meeting and consent to the transaction of such other business.</p>
                </div>
                <div xml:id="TEIby-A3.5">
                   <head>5. Quorum.</head>
-                  <p>A majority of the elected Directors shall constitute a quorum for the
-                     transaction of business.</p>
+                  <p>A majority of the elected Directors shall constitute a quorum for the transaction of business. 
+                     If a quorum is not reached, no business may be conducted during that directors’ meeting.</p>
                </div>
                <div xml:id="TEIby-A3.6">
                   <head>6. Notice of Meetings.</head>
@@ -282,13 +280,69 @@
                   <!-- what about public announcement? -->
                </div>
             </div>
-            
-            
-            
-            
-            
-            
-       
+            <div xml:id="TEIby-A4">
+               <head>Article IV: Technical Council</head>
+               <p>The Technical Council shall superintend the technical work of the Consortium, in
+                  particular (but not only) by monitoring, evaluating, and acting upon requests from
+                  the TEI Community for new features and correction of errors in the TEI
+                  Guidelines.</p>
+               <div xml:id="TEIby-A4.1">
+                  <head>1. Membership.</head>
+                  <p>The Technical Council shall consist of eleven (11) Council Members elected by
+                     the membership, as described in <ref target="#TEIby-A2">Article II</ref>.
+                     Additional non-voting Council Members may be appointed or co-opted as necessary
+                     for the efficient conduct of business. Only Council Members elected by the
+                     membership as described in <ref target="#TEIby-A2">Article II</ref> shall be
+                     eligible to vote in Technical Council decisions.</p>
+               </div>
+               <div xml:id="TEIby-A4.2">
+                  <head>2. Term.</head>
+                  <p>Each Technical Council Member shall be elected for a three-year term, or in the
+                     case of an election or appointment to fill a vacancy between regular elections,
+                     for the term remaining for the vacant position. Terms of office begin at the
+                     following January 1 and end on December 31.</p>
+               </div>
+               <div xml:id="TEIby-A4.3">
+                  <head>3. Elections.</head>
+                  <p>At each Annual Meeting both Institutional and Individual members shall elect
+                     candidates to any of the elected positions due to be vacated on the Technical
+                     Council. In the election of Council Members each elected position shall be
+                     voted on as a separate matter with each Member entitled to vote receiving one
+                     vote for each such position.</p>
+               </div>
+               <div xml:id="TEIby-A4.4">
+                  <head>4. Meetings.</head>
+                  <p>Regular meetings of the Technical Council shall be held at such time and place
+                     as necessary to carry out its work programme. The bulk of the Technical
+                     Council’s work programme shall be carried out by electronic or teleconferencing
+                     means, but at least one meeting shall be held face to face each year. The
+                     Technical Council may be convened upon call of the Chair, at the request of a
+                     majority of its members, at a time and place designated by resolution of the
+                     Technical Council. Council Members may attend Technical Council meetings by
+                     telephonic or other two-way connection provided that those not physically
+                     present can hear, and be heard by, all those participating in such meeting, and
+                     a Council Member so participating shall be deemed present for quorum purposes.A
+                     record of all business transacted at the meetings of the Technical Council
+                     shall be kept, and shall be made publicly available.</p>
+               </div>
+               <div xml:id="TEIby-A4.5">
+                  <head>5. Quorum.</head>
+                  <p>A majority of the elected Technical Council Members shall constitute a
+                     quorum.</p>
+               </div>
+               <div xml:id="TEIby-A4.6">
+                  <head>6. Working Groups.</head>
+                  <p>The work of the Technical Council shall be to collect, propose, evaluate, and
+                     implement editorial changes to the TEI Guidelines (and its derivatives), to
+                     assist in technical endeavours of the TEI-C, and to provide consultation to the
+                     Board of Directors on technical matters or other areas of interest. The Technical 
+                     Council shall have the power to appoint and/or convene, and may delegate any of 
+                     these functions to, appointed working groups, committees, non-voting staff, and/or 
+                     advisors at its discretion, with a fixed term and a specific charter. Where Consortium 
+                     funding for such workgroups or staff is required this shall be subject to prior approval 
+                     of the Board of Directors. </p>
+               </div>
+            </div>
             <div xml:id="TEIby-A5">
                <head>Article V: Officers</head>
                <div xml:id="TEIby-A5.1">
@@ -300,7 +354,7 @@
                         <item>Chair of the Technical Council</item>
                         <item>Board Secretary</item>
                         <item>Membership Secretary</item>
-                        <item>Treasurer</item>
+                        <item>Treasurer and Membership Secretary</item>
                      </list> Unless otherwise stated in these Bylaws, the Board of Directors may
                      appoint Officers from its own membership or elsewhere and may also appoint such
                      additional non-voting Officers as it deems necessary or appropriate from time
@@ -310,7 +364,7 @@
                      herein and as otherwise provided by resolution of the Board of Directors.
                      Notwithstanding any other provision herein, the power to set salaries and fees
                      of employees and independent contractors shall reside in the Board of Directors
-                     and not in any Officer or Officers.</p>
+                     and not in any Officers.</p>
 
                   <p>All Officers of the Consortium shall be appointed for a maximum term of two
                      years with possibility of reelection to subsequent two-year terms.</p>
@@ -333,31 +387,27 @@
                <div xml:id="TEIby-A5.3">
                   <head>3. Chair of the Technical Council.</head>
                   <p>The Chair of the Technical Council shall be elected by the voting Members of
-                     the <ref target="#TEIby-A6">TEI-C Technical Council</ref> from its membership
+                     the <ref target="#TEIby-A4">TEI-C Technical Council</ref> from its membership
                      and shall serve as the chief technical officer of the Consortium. If no
                      Technical Council Member is able or willing to assume the chair, the Technical
                      Council may request the Board of Directors to second one of its elected members
                      to the role, or it may nominate a non-elected individual. The Chair of the
                      Technical Council shall be an ex-officio non-voting Director, responsible to
                      the Consortium for its technical activities, notably the maintenance and
-                     development of the Guidelines.The Council Chair shall, if present, preside at
-                     all meetings of the Technical Council and report on its activities to the Board
-                     of Directors and at Meetings of the Members.</p>
+                     development of the Guidelines and associated software. The Council Chair shall, 
+                     if present, preside at all meetings of the Technical Council and report on its 
+                     activities to the Board of Directors and at Meetings of the Members.</p>
                </div>
                <div xml:id="TEIby-A5.4">
                   <head>4. Board Secretary.</head>
-                  <p>The Board Secretary shall be elected by the Board of Directors from its
-                     membership. The Secretary shall keep the minutes of all Meetings of the Members
-                     and of the Board of Directors, serve all notices, present all pertinent
-                     communications before the proper committees, shall be custodian of the records,
-                     shall attest the seal of the Consortium on all contracts and agreements
-                     required by law to be under seal as authorized by the Board of Directors, shall
-                     conduct the correspondence incident to this office and shall perform such other
-                     duties as the Board of Directors may require. In the absence of the Chair, the
-                     Secretary shall carry out the Chair's duties at meetings. In the event the
-                     position of Chair becomes vacant, the secretary shall carry out the Chair's
-                     duties as set forth above, until the Board elects or appoints a successor
-                     Chair.</p>
+                  <p>The Board Secretary shall be elected by the Board of Directors from its membership. 
+                     The Secretary shall keep the minutes of all Meetings of the Members and of the Board 
+                     of Directors, serve all notices, present all pertinent communications before the proper 
+                     committees, shall be custodian of the records, shall conduct the correspondence incident 
+                     to this office and shall perform such other duties as the Board of Directors may require. 
+                     In the absence of the Chair, the Secretary shall carry out the Chair’s duties at meetings. 
+                     In the event the position of Chair becomes vacant, the secretary shall carry out the Chair’s 
+                     duties as set forth above, until the Board elects or appoints a successor Chair.</p>
                </div>
                <div xml:id="TEIby-A5.5">
                   <head>5. Treasurer and Membership Secretary.</head>
@@ -376,8 +426,8 @@
                </div>
             </div>
            
-            <div xml:id="TEIby-A5">
-               <head>Article V: Funds</head>
+            <div xml:id="TEIby-65">
+               <head>Article VI: Funds</head>
                <p>Funds for meeting the expenses of the Consortium may be provided in such manner as
                   the Board of Directors may determine, including without limitation such annual or
                   other periodic membership dues as may be fixed from time to time by the Board of
@@ -387,77 +437,11 @@
                   membership dues and assessments may be set on a per-person basis or any other
                   basis deemed appropriate by the Board of Directors.</p>
             </div>
-            <div xml:id="TEIby-A6">
-               <head>Article VI: Technical Council</head>
-               <p>The Technical Council shall superintend the technical work of the Consortium, in
-                  particular (but not only) by monitoring, evaluating, and acting upon requests from
-                  the TEI Community for new features and correction of errors in the TEI
-                  Guidelines.</p>
-               <div>
-                  <head>1. Membership.</head>
-                  <p>The Technical Council shall consist of eleven (11) Council Members elected by
-                     the membership, as described in <ref target="#TEIby-A2">Article II</ref>.
-                     Additional non-voting Council Members may be appointed or co-opted as necessary
-                     for the efficient conduct of business. Only Council Members elected by the
-                     membership as described in <ref target="#TEIby-A2">Article II</ref> shall be
-                     eligible to vote in Technical Council decisions. Candidates need not be
-                     Individual Members of the Consortium in order to be nominated and elected to
-                     serve on the Technical Council, nor need they be affiliated with an
-                     Institutional Member of the Consortium.</p>
-               </div>
-               <div>
-                  <head>2. Term.</head>
-                  <p>Each Technical Council Member shall be elected for a three-year term, or in the
-                     case of an election or appointment to fill a vacancy between regular elections,
-                     for the term remaining for the vacant position. Terms of office begin at the
-                     following January 1 and end on December 31.</p>
-               </div>
-               <div>
-                  <head>3. Elections.</head>
-                  <p>At each Annual Meeting both Institutional and Individual members shall elect
-                     candidates to any of the elected positions due to be vacated on the Technical
-                     Council. In the election of Council Members each elected position shall be
-                     voted on as a separate matter with each Member entitled to vote receiving one
-                     vote for each such position.</p>
-               </div>
-               <div>
-                  <head>4. Meetings.</head>
-                  <p>Regular meetings of the Technical Council shall be held at such time and place
-                     as necessary to carry out its work programme. The bulk of the Technical
-                     Council's work programme shall be carried out by electronic or telephonic
-                     means, but at least one meeting shall be held face to face each year. The
-                     Technical Council may be convened upon call of the Chair, at the request of a
-                     majority of its members, at a time and place designated by resolution of the
-                     Technical Council. Council Members may attend Technical Council meetings by
-                     telephonic or other two-way connection provided that those not physically
-                     present can hear, and be heard by, all those participating in such meeting, and
-                     a Council Member so participating shall be deemed present for quorum purposes.A
-                     record of all business transacted at the meetings of the Technical Council
-                     shall be kept, and shall be made publicly available.</p>
-               </div>
-               <div>
-                  <head>5. Quorum.</head>
-                  <p>A majority of the elected Technical Council Members shall constitute a
-                     quorum.</p>
-               </div>
-               <div>
-                  <head>6. Working Groups.</head>
-                  <p>The work of the Technical Council shall be to collect, propose, evaluate, and
-                     implement editorial changes to the TEI Guidelines (and its derivatives), to
-                     assist in technical endeavours of the TEI-C, and to provide consultation to the
-                     Board of Directors on technical matters or other areas of interest. The
-                     Technical Council may delegate any of these functions to appointed working
-                     groups or committees at its discretion. The Technical Council shall also have
-                     the power to create working groups or appoint non-voting staff and advisors
-                     with a fixed term and a specific charter. Where Consortium funding for such
-                     workgroups or staff is required this shall be subject to prior approval of the
-                     Board.</p>
-               </div>
-            </div>
+           
             <div xml:id="TEIby-A7">
                <head>Article VII: Amendments</head>
                <p>These Bylaws may be repealed or amended or new Bylaws adopted by affirmative vote
-                  of at least one-half of the Members of Consortium voting in person or by proxy at
+                  of at least one-half of the Members of Consortium voting in person, online, or by proxy at
                   a regular or Special Meeting, or, to the extent permitted by law and not in
                   conflict with the Articles of Incorporation, by a true majority of the Board of
                   Directors then in office acting at a regular or Special Meeting, or by unanimous
