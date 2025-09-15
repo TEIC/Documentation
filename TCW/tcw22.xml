@@ -375,18 +375,18 @@
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-              <item>and don’t forget to change directory to the released branch <code>git checkout
+              <item>Don’t forget to change directory to the released branch <code>git checkout
                   released</code></item>
             </list>
           </item>
 
           <item>
-            <hi rend="bold">Repeat the steps above for the Stylesheets</hi>: <list type="ordered">
+            <hi rend="bold">Repeat the steps above for the Stylesheets</hi>. <list type="ordered">
               <item><code>git checkout released</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-              <item>and don't forget to change directory back to the released branch <code>git
+              <item>Don't forget to change directory back to the released branch <code>git
                   checkout released</code></item>
             </list>
           </item>
@@ -421,8 +421,8 @@
             SourceForge user name, and type your SourceForge password when prompted. By default, the
             script will pull the release package from the first Jenkins server, but you can supply
             the URL of the other server if necessary with the --Jenkins parameter, e.g.
-            --Jenkins=http://jenkins2.tei-c.org/. Make sure the script completes successfully each
-            time changing the final parameter from --install, to --makecurrent, and then --upload. </item>
+            <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make sure the script completes successfully each
+            time changing the final parameter from <code>--install</code>, to <code>--makecurrent</code>, and then <code>--upload</code>. </item>
 
           <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>, remembering that
             the version number is the Stylesheets version, which will be different from the
