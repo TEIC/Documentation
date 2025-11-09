@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TCW09: Backward Compatibility and the Maintenance of the Text Encoding Initiative Guidelines</title>
+        <author xml:id="djb">David J. Birnbaum</author>
+        <editor>CJR</editor> <!-- identified as tagging this in TEI from David's email of 2006-08-02 -->
+        <editor>Lou Burnard</editor><!-- identifed as convertng the document to TEI P5 -->
+        <editor xml:id="EBB">Elisa Beshero-Bondar</editor> <!-- restoring this from the Wayback Machine on 2025-11-09 to store in the TEI Documentation GitHub repository-->
+      </titleStmt>
+      <publicationStmt>
+        <publisher>TEI Technical Council</publisher>
+        <date>2018</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This document was resurrected from the WayBack Machine representing TCW 09 from the TEI WordPress website that has, as of 2025, been removed.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2025-11-09" who="#EBB">Restored the document by copying it from the WayBack Machine.</change>
+     
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>TCW09: Backward Compatibility and the Maintenance of the Text Encoding 
+        Initiative Guidelines</head>
+      <p>At the May 2006 TEI Council Meeting in Kyoto, Council expressed an 
+        interest in elaborating principles for further development of the TEI 
+        guidelines. In particular, Council expressed an interest in reconciling 
+        two potentially conflicting principles:
+      <list type="ordered">
+        <item>As new technologies permit us to improve the ability of the TEI 
+          guidelines to serve the research needs of users, those new capabilities 
+          should be made available to users. The TEI should not eschew better ways 
+          of doing things for fear of breaking backward compatibility.</item>
+        <item>Because breaking backward compatibility is unpopular with users, and 
+          for good reason, the TEI should avoid doing so unless the benefits are 
+          compelling.</item>
+      </list></p>
+      <p>Some Council members argued in Kyoto that our license to break backward 
+        compatibility would be revoked once we signed off on P5; others felt 
+        that Council (especially new Council members) would appreciate the 
+        availability of guiding and stable principles that did not simply 
+        prohibit breaking backward compatibility, but that indicated how and 
+        when it should be permitted.</p>
+      <p>It should be noted that documents developed with a particular schema 
+        remain valid against that schema in perpetuity, and in this sense no 
+        change to the TEI Guidelines breaks backward compatibility. On the other 
+        hand, a user may wish to integrate new, emerging features into an 
+        existing project without rendering existing encoded information invalid, 
+        and may need to produce a new schema for that purpose. It is in this 
+        context that backward compatibility with existing features of the user&#8217;s 
+        original schema becomes particularly important.</p>
+      <p>Finally, the TEI currently seems to make no use of the concept of 
+        deprecated features, although such a concept may provide a compromise 
+        that allows the TEI to adopt new structures without invalidating old ones.</p>
+      
+
+      <div xml:id="history">
+        <head>History</head>
+        <p>Relevant sources for determining a suitable policy include:
+         <list type="bulleted">
+           <item>TEI PCP1. <title>The Preparation of Text Encoding Guidelines</title>. Closing Statement 
+             of the Vassar Planning Conference. Version of 13 November 1987. 
+             <ptr target="http://www.tei-c.org/Vault/SC/teipcp1.gml"/> or 
+             <ptr target="http://www.tei-c.org/Vault/SC/teipcp1.txt"/>.</item>
+           <item>TEI EDP1. <title>Design Principles for Text Encoding Guidelines</title>. Version of 9 
+             January 1990. <ptr target="http://www.tei-c.org/Vault/ED/edp01.gml"/></item>
+           <item>TEI EDW57. <title>Procedures for Correcting Errors in the TEI Guidelines. </title>
+             Version of July 23, 1994 (Revised July 27, 1994). 
+             <ptr target="http://www.tei-c.org/Vault/ED/edw57.htm"/></item>
+           <item>TEI EDW48. <title>Procedures for Maintenance and Extension of the TEI 
+               Guidelines</title>. Version of 21 May 1995. <ptr target="http://www.tei-c.org/Vault/ED/edw48.htm"/></item>
+         </list>
+          None of these documents explicitly prohibits the breaking of backward compatibility, although 
+          TEI EDW57 distinguishes corrigible errors from those that are not 
+          corrigible according to (among other things) whether correction would 
+          break backward compatibility. The editors are empowered to 
+          implement changes needed to remove corrigible errors without further
+          ado; if not, the proposed 
+          correction must be <q>referred to TC</q> (i.e. to the <q>Technical [Review] Committee</q>,
+          or presumably now the TEI Technical Council) for action. The
+          historical record thus seems to 
+          suggest an awareness that breaking backward compatibility might confer 
+          sufficient benefit that it should not be prohibited, but  also that it should 
+          not be undertaken without careful review.</p>
+      </div>
+      <div xml:id="guidelines">
+        <head>Proposed Guidelines</head>
+        <p>A. The TEI Technical Council should not be constrained by a policy that bluntly
+          prohibits breaking backward compatibility after the publication of
+          P5 version 1.0.0. The Technical Council should instead feel authorized to break backward
+          compatibility when the Technical Council concludes that the advantages of doing so
+          outweigh the disadvantages.
+        </p>
+        <p>B. Wherever possible, the Technical Council should implement changes so that new
+          schemas are supersets of old ones, and do not render invalid any
+          documents that would have been valid before the implementation of
+          the changes. The addition of an element to a class creates such a
+          superset; removing an element from a class has the opposite effect.
+        </p>
+        <p>C. In extreme situations, where the Technical Council concludes that the utility
+          of a component would be improved substantially by a revision that
+          could break backward compatibility, Council should:
+          <list type="instructions">
+            <item>Create the necessary new structure (class, content model,
+              etc.) under a new name.</item>
+            <item>Deprecate but retain the structure it is intended to replace. 
+              [Note: The TEI Technical Council subsequently adopted a deprecation mechanism that supersedes this: 
+              <ref target="https://tei-c.org/documentation/tcw27/">TCW27</ref>]
+              <list type="bulleted">
+                <item>Deprecated structures determined to be in wide use might be maintained in perpetuity. 
+                  Such a decision would reflect the Technical Council’s expert opinion that eliminating them 
+                  would be too disruptive to existing projects to be entertained, while making clear that 
+                  their employment in new projects does not conform to best practice.</item>
+                <item>Deprecated structures determined not to be in wide use
+                  might eventually (as discussed immediately below) be removed
+                  from the Guidelines.</item>
+              </list>
+            </item>
+            <item>Council may break backward compatibility in a more
+              substantial and comprehensive way (as happened with the
+              transition to P4 to P5) with the transition to a new major
+              TEI proposal version (e.g., P6 version 1.0.0, but not P5 99.99.0). Such transitions should
+              only happen in response to the emergence of new technologies
+              (e.g., the transition from SGML to XML) or the development of a
+              new architecture that conveys substantial benefit (e.g., the
+              development of the new class system). Historically, new major
+              versions have emerged approximately every five years, but with P5 
+              a new system of rolling major/minor versions has been adopted.</item>
+          </list>
+        </p>
+      </div>
+    </body>
+  </text>
+</TEI>
+
