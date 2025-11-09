@@ -5,7 +5,7 @@
       <titleStmt>
         <title>TCW09: Backward Compatibility and the Maintenance of the Text Encoding Initiative Guidelines</title>
         <author xml:id="djb">David J. Birnbaum</author>
-        <editor>CJR</editor> <!-- identified as tagging this in TEI from David's email of 2006-08-02 -->
+        <editor>Chris Ruotolo</editor> <!-- identified as tagging this in TEI from David's email of 2006-08-02 -->
         <editor>Lou Burnard</editor><!-- identifed as convertng the document to TEI P5 -->
         <editor xml:id="EBB">Elisa Beshero-Bondar</editor> <!-- restoring this from the Wayback Machine on 2025-11-09 to store in the TEI Documentation GitHub repository-->
       </titleStmt>
