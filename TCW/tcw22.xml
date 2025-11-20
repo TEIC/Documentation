@@ -109,8 +109,8 @@
       <head>Building a TEI Release</head>
       <p>This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
-        prepare for and manage the release process. It assumes that the new packages will be taken
-        from one of the Jenkins servers rather than being built locally by the release technician.
+        prepare for and manage the release process. The release process normally involves more than one release technician. In the event that there is more than one release technician, the release technicians should coordinate and divide the various steps in the release process amongst themselves. The release process detailed below assumes that the new packages will be taken
+        from one of the Jenkins servers rather than being built locally by the release technician(s).
         This is easier and more reliable, because we ensure that the Jenkins servers are regularly
         updated and are correctly configured to build the TEI products.</p>
 
@@ -265,8 +265,8 @@
             At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
             features. Release branches for the TEI and Stylesheets repos will be created by the
-            release technician, to which ONLY release-blocking bug fixes and corrections to
-            typographical errors will be pushed. The release technician should announce a temporary
+            release technician(s), to which ONLY release-blocking bug fixes and corrections to
+            typographical errors will be pushed. The release technician(s) should announce a temporary
             hold on pushes to the dev branches on the Council list, then create the branches and
             push it to GitHub using the following commands, once in the TEI repo and once in the
             Stylesheets repo: <lb/><code>git checkout dev</code> (make sure you start from the dev
@@ -274,7 +274,7 @@
             make sure that you have the current version and no uncommitted changes. <lb/><code>git
               checkout -b release-X.X.X</code>
             <lb/><code>git push -u origin release-X.X.X</code></item>
-          <item>Immediately after the release branches have been pushed, the release technician
+          <item>Immediately after the release branches have been pushed, the release technician(s)
             should inform the <ref target="mailto:tei-council@lists.tei-c.org">Council list</ref>
             and ask the maintainers of the TEI Jenkins systems to add a build of the release branch
             so that commits pushed there are properly tested, and advise them of the release
