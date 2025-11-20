@@ -232,9 +232,8 @@
             Stylesheets dev branch.</item>
           <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the TEI
             sysadmin, of the pending release date, so that they can be available or on-call. </item>
-          <item>Ask one of the Jenkins maintainers (Martin Holmes, Peter Stadler, and
-            Raffaele Viglianti) to run a link
-            check on the Guidelines and fix broken links in the dev branch. </item>
+          <item>Ask one of the Jenkins maintainers (Martin Holmes, Peter Stadler, and Raffaele
+            Viglianti) to run a link check on the Guidelines and fix broken links in the dev branch. </item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian
             packages. (The GPG private key itself is hosted on the server at the default
             location.)</item>
@@ -298,8 +297,9 @@
         <list type="ordered">
           <head>On release day:</head>
           <item>The instructions below for Git commands are assumed to be run in the release-X.X.X
-            branches unless otherwise specified. If you did not create the release branch, you can
-            set up a copy of it using the following commands:<lb/>
+            branches unless otherwise specified. If there is more than one release technician, one
+            of the release technicians should create the release branch and the other release
+            technicians can set up a copy of the release branch using the following commands:<lb/>
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
           </item>
