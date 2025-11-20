@@ -375,7 +375,7 @@
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-              <item>Don’t forget to change directory to the released branch <code>git checkout
+              <item>Don’t forget to switch to the released branch <code>git checkout
                   released</code></item>
             </list>
           </item>
@@ -386,7 +386,7 @@
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-              <item>Don't forget to change directory back to the released branch <code>git
+              <item>Don't forget to switch back to the released branch <code>git
                   checkout released</code></item>
             </list>
           </item>
