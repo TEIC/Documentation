@@ -109,13 +109,32 @@
       <head>Building a TEI Release</head>
       <p>This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
-        prepare for and manage the release process. The release process normally involves more than one release technician. In the event that there is more than one release technician, the release technicians should coordinate and divide the various steps in the release process amongst themselves. The release process detailed below assumes that the new packages will be taken
-        from one of the Jenkins servers rather than being built locally by the release technician(s).
-        This is easier and more reliable, because we ensure that the Jenkins servers are regularly
-        updated and are correctly configured to build the TEI products.</p>
+        prepare for and manage the release process. The release process normally involves more than
+        one release technician. In the event that there is more than one release technician, the
+        release technicians should coordinate and divide the various steps in the release process
+        amongst themselves.</p>
+
+      <div xml:id="issueHandlingGuidelines">
+        <head>Issue Handling Recommendations</head>
+        <p>In the lead up to the release, all Council members should review assigned tickets and
+          adhere to the following general guidance:</p>
+        <list type="unordered">
+          <item>Assign tickets to release milestone</item>
+          <item>Use ticket reference in any commits addressing or fixing the issue</item>
+          <item>At least for the final commit addressing the issue try to prepare the commit message
+            so it can be used for Release Notes</item>
+          <item>Label the issue as Release Note (green label) if it’s important to include the note
+            about it in Release Notes</item>
+
+        </list>
+      </div>
 
       <div xml:id="githubPackages">
         <head>Packages on GitHub</head>
+        <p>The release process detailed below assumes that the new packages will be taken from one
+          of the Jenkins servers rather than being built locally by the release technician(s). This
+          is easier and more reliable, because we ensure that the Jenkins servers are regularly
+          updated and are correctly configured to build the TEI products.</p>
         <p>The TEI maintains a number of distinct repositories on GitHub under the <ref
             target="https://github.com/TEIC">TEIC</ref> organization. The main repository for
           developing the P5 Guidelines and associated schemas is <ref
@@ -166,8 +185,9 @@
                     clipboard.</item>
                   <item>Paste the result into a text editor and remove any linebreaks added by the
                     terminal.</item>
-                  <item>Copy-paste the result into
-                    <ref target="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</ref></item>
+                  <item>Copy-paste the result into <ref
+                      target="https://sourceforge.net/auth/shell_services"
+                      >https://sourceforge.net/auth/shell_services</ref></item>
                 </list> What this does is to enable you (when logged in as tei to tei-c.org) to
                 connect to SourceForge (as your SF user) to upload the release files. </item>
 
@@ -198,19 +218,6 @@
         </list>
       </div>
 
-      <div xml:id="issueHandlingGuidelines">
-        <head>Issue Handling Recommendations</head>
-        <list type="unordered">
-          <item>Assign tickets to release milestone</item>
-          <item>Use ticket reference in any commits addressing or fixing the issue</item>
-          <item>At least for the final commit addressing the issue try to prepare the commit message
-            so it can be used for Release Notes</item>
-          <item>Label the issue as Release Note (green label) if it’s important to include the note
-            about it in Release Notes</item>
-
-        </list>
-      </div>
-
       <div xml:id="releaseSteps">
         <head>Step-by-step instructions</head>
 
@@ -225,7 +232,8 @@
             Stylesheets dev branch.</item>
           <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the TEI
             sysadmin, of the pending release date, so that they can be available or on-call. </item>
-          <item>Ask one of the Jenkins maintainers (Peter Stadler and Martin Holmes) to run a link
+          <item>Ask one of the Jenkins maintainers (Martin Holmes, Peter Stadler, and
+            Raffaele Viglianti) to run a link
             check on the Guidelines and fix broken links in the dev branch. </item>
           <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian
             packages. (The GPG private key itself is hosted on the server at the default
@@ -257,7 +265,8 @@
                 of a class, or the moving of an attribute definition from an element to an attribute
                 class.</item>
               <item>Add the new file into the repository with <code>git add
-                P5/ReleaseNotes/readme-X.X.X.xml</code>. Be sure to change X.X.X with the version numbers.</item>
+                  P5/ReleaseNotes/readme-X.X.X.xml</code>. Be sure to change X.X.X with the version
+                numbers.</item>
             </list>
           </item>
           <item><hi rend="bold">Review all issues labelled as Release Blocker (red
@@ -266,13 +275,13 @@
             changes made to the code to be released should be to fix errors, rather than to add new
             features. Release branches for the TEI and Stylesheets repos will be created by the
             release technician(s), to which ONLY release-blocking bug fixes and corrections to
-            typographical errors will be pushed. The release technician(s) should announce a temporary
-            hold on pushes to the dev branches on the Council list, then create the branches and
-            push it to GitHub using the following commands, once in the TEI repo and once in the
-            Stylesheets repo: <lb/><code>git checkout dev</code> (make sure you start from the dev
-            branch) or if you have the dev branch checked out, <code>git status</code> in order to
-            make sure that you have the current version and no uncommitted changes. <lb/><code>git
-              checkout -b release-X.X.X</code>
+            typographical errors will be pushed. The release technician(s) should announce a
+            temporary hold on pushes to the dev branches on the Council list, then create the
+            release branches and push it to GitHub using the following commands, once in the TEI
+            repo and once in the Stylesheets repo: <lb/><code>git checkout dev</code> (make sure you
+            start from the dev branch) or if you have the dev branch checked out, <code>git
+              status</code> in order to make sure that you have the current version and no
+            uncommitted changes. <lb/><code>git checkout -b release-X.X.X</code>
             <lb/><code>git push -u origin release-X.X.X</code></item>
           <item>Immediately after the release branches have been pushed, the release technician(s)
             should inform the <ref target="mailto:tei-council@lists.tei-c.org">Council list</ref>
@@ -376,7 +385,7 @@
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item>Don’t forget to switch to the released branch <code>git checkout
-                  released</code></item>
+                released</code></item>
             </list>
           </item>
 
@@ -386,8 +395,8 @@
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
               <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-              <item>Don't forget to switch back to the released branch <code>git
-                  checkout released</code></item>
+              <item>Don't forget to switch back to the released branch <code>git checkout
+                  released</code></item>
             </list>
           </item>
 
@@ -421,8 +430,9 @@
             SourceForge user name, and type your SourceForge password when prompted. By default, the
             script will pull the release package from the first Jenkins server, but you can supply
             the URL of the other server if necessary with the --Jenkins parameter, e.g.
-            <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make sure the script completes successfully each
-            time changing the final parameter from <code>--install</code>, to <code>--makecurrent</code>, and then <code>--upload</code>. </item>
+              <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make sure the script completes
+            successfully each time changing the final parameter from <code>--install</code>, to
+              <code>--makecurrent</code>, and then <code>--upload</code>. </item>
 
           <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>, remembering that
             the version number is the Stylesheets version, which will be different from the
@@ -484,8 +494,9 @@
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the TEI Tags page at <ref
               target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on
             GitHub. You should see the tag you just pushed there. Click on it and then click on
-            "Create Release". Add a link to the release notes README, which should be at https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text
-            box. Add a copy of the zipped release by downloading it from <ref
+            "Create Release". Add a link to the release notes README, which should be at
+            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text box. Add a
+            copy of the zipped release by downloading it from <ref
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
               >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then
             uploading it to the release page.<lb/> Do the same for the Stylesheets as well. Go to
