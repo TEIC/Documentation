@@ -167,7 +167,7 @@
                   <item>Paste the result into a text editor and remove any linebreaks added by the
                     terminal.</item>
                   <item>Copy-paste the result into
-                    https://sourceforge.net/auth/shell_services</item>
+                    <ref target="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</ref></item>
                 </list> What this does is to enable you (when logged in as tei to tei-c.org) to
                 connect to SourceForge (as your SF user) to upload the release files. </item>
 
