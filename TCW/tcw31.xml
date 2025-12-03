@@ -274,7 +274,7 @@
               </list>
             </item>
             <item n="5.7">Once the <code>expected-results/</code> file has been updated (either by
-              completeing step 5.5 or 5.6), re-attempt step 5.2. When the <code>Test/</code> build
+              completing step 5.5 or 5.6), re-attempt step 5.2. When the <code>Test/</code> build
               process is successful, continue to step 7.</item>
             <item n="6"><hi rend="bold">Alternative to step 5:</hi> If you are quite comfortable on
               the commandline and facile with a text editor, you might prefer to run all the tests
