@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
           var c = new CETEI();
-          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editor","editionStmt","edition","date","publicationStmt","p","sourceDesc","revisionDesc","change","text","body","div","head","gi","code","hi","div","list","item","list","list","lb","ref","eg","emph","note",];
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","editor","editionStmt","edition","date","publicationStmt","p","sourceDesc","revisionDesc","change","code","text","body","div","head","gi","hi","div","list","item","list","list","lb","ref","eg","emph","note",];
           c.els.push("egXML");
           if (document.registerElement) {
             c.registerAll(c.els);
@@ -34,7 +34,10 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
-      <tei-change data-teiname="change" when="2025-06-10" who="#POC">Revise and update procedure to keep it in line with current practices as outlined in the Council shared document</tei-change>
+      <tei-change data-teiname="change" when="2025-12-03" who="#POC">Update procedure with the improved <tei-code data-teiname="code">/Test</tei-code> process which moves
+        comparisons to the end of Makefile, replaced <tei-code data-teiname="code">DIFFNOW=0</tei-code> with <tei-code data-teiname="code">DIFFEND=1</tei-code>.</tei-change>
+      <tei-change data-teiname="change" when="2025-06-10" who="#POC">Revise and update procedure to keep it in line with
+        current practices as outlined in the Council shared document</tei-change>
     </tei-revisiondesc>
   </tei-teiheader>
   <tei-text data-teiname="text">
@@ -42,66 +45,95 @@
       <tei-div data-teiname="div">
         <tei-head data-teiname="head">TEI Council: Update P5 subset</tei-head>
         <tei-head data-teiname="head">Rationale</tei-head>
-        <tei-p data-teiname="p">The Stylesheets tests can succeed only against either the release branch of P5, or the dev branch of P5, but often not against both simultaneously. For instance, the Stylesheets dev branch sometimes successfully builds against P5 release, but fails against P5 dev branch. On release day, we need the Stylesheets release branch to build against P5 release branch successfully i.e. we need the tests to work with the release branch against the release branch without producing any errors.</tei-p>
-        <tei-p data-teiname="p">Changes on either side (Stylesheets or Guidelines) may break either build. The Stylesheets test procedure in particular is quite fragile, and if it fails, the build fails. For instance, since the contents of <tei-gi data-teiname="gi">desc</tei-gi> elements are copied over into schemas, even a small change (like adding a comma) to an element description in the Guidelines might break the Stylesheets build.
-        </tei-p>
-        <tei-p data-teiname="p">Since the Stylesheets are built against the Guidelines, there needs to be a (more or less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the Guidelines is a file called “p5subset.xml” and it is stored in the <tei-code data-teiname="code">source/</tei-code> directory. Building the Guidelines in the TEI repository does <tei-hi data-teiname="hi" rend="italics">not</tei-hi> put a new copy of p5subset.xml into the <tei-code data-teiname="code">Stylesheets/source/</tei-code> directory. In order to keep the version of the p5subset.xml in the Stylesheets repository up to date, that file is updated monthly by Council members.
-          </tei-p>
+        <tei-p data-teiname="p">The Stylesheets tests can succeed only against either the release branch of P5, or the
+          dev branch of P5, but often not against both simultaneously. For instance, the Stylesheets
+          dev branch sometimes successfully builds against P5 release, but fails against P5 dev
+          branch. On release day, we need the Stylesheets release branch to build against P5 release
+          branch successfully i.e. we need the tests to work with the release branch against the
+          release branch without producing any errors.</tei-p>
+        <tei-p data-teiname="p">Changes on either side (Stylesheets or Guidelines) may break either build. The
+          Stylesheets test procedure in particular is quite fragile, and if it fails, the build
+          fails. For instance, since the contents of <tei-gi data-teiname="gi">desc</tei-gi> elements are copied over into
+          schemas, even a small change (like adding a comma) to an element description in the
+          Guidelines might break the Stylesheets build. </tei-p>
+        <tei-p data-teiname="p">Since the Stylesheets are built against the Guidelines, there needs to be a (more or
+          less) up-to-date copy of the Guidelines in the Stylesheet repository. This copy of the
+          Guidelines is a file called “p5subset.xml” and it is stored in the <tei-code data-teiname="code">source/</tei-code>
+          directory. Building the Guidelines in the TEI repository does <tei-hi data-teiname="hi" rend="italics">not</tei-hi>
+          put a new copy of p5subset.xml into the <tei-code data-teiname="code">Stylesheets/source/</tei-code> directory. In
+          order to keep the version of the p5subset.xml in the Stylesheets repository up to date,
+          that file is updated monthly by Council members. </tei-p>
         <tei-div data-teiname="div">
           <tei-head data-teiname="head">Step-by-Step Instructions:</tei-head>
           <tei-list data-teiname="list" rend="numbered">
-            <tei-item data-teiname="item" n="1">Update your local copies of both the TEI and Stylesheets repositories.</tei-item>
-            <tei-item data-teiname="item" n="2">Get the p5subset.xml by completing <tei-hi data-teiname="hi" rend="bold">either</tei-hi> step 2.1 or 2.2: <tei-list data-teiname="list">
-                <tei-item data-teiname="item" n="2.1">from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such as
+            <tei-item data-teiname="item" n="1">Update your local copies of both the TEI and Stylesheets
+              repositories.</tei-item>
+            <tei-item data-teiname="item" n="2">Get the p5subset.xml by completing <tei-hi data-teiname="hi" rend="bold">either</tei-hi> step 2.1 or
+              2.2: <tei-list data-teiname="list">
+                <tei-item data-teiname="item" n="2.1">from a fresh build of the P5 dev branch (preferably on Jenkins, at a
+                  URL such as
                     <tei-code data-teiname="code">https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</tei-code>) </tei-item>
                 <tei-item data-teiname="item" n="2.2">build the p5subset locally: <tei-list data-teiname="list">
-                    <tei-item data-teiname="item" n="2.2.1">use your local copy of the P5 dev branch or install via docker</tei-item>
+                    <tei-item data-teiname="item" n="2.2.1">use your local copy of the P5 dev branch or install via
+                      docker</tei-item>
                     <tei-item data-teiname="item" n="2.2.1.1">Start the TEI docker container</tei-item>
-                  <tei-item data-teiname="item" n="2.2.1.2">change to the <tei-code data-teiname="code">TEI/P5</tei-code> directory: <tei-code data-teiname="code">cd [relative path to TEIC/TEI/ directory]/P5</tei-code>. For example, <tei-code data-teiname="code">cd /tei/TEI/P5</tei-code>
-                      </tei-item>
-                  <tei-item data-teiname="item" n="2.2.1.3">run <tei-code data-teiname="code">make clean test</tei-code>. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> The purpose of the <tei-code data-teiname="code">clean</tei-code> command is to clean your repository of any previously generated files</tei-item>
+                    <tei-item data-teiname="item" n="2.2.1.2">change to the <tei-code data-teiname="code">TEI/P5</tei-code> directory: <tei-code data-teiname="code">cd
+                        [relative path to TEIC/TEI/ directory]/P5</tei-code>. For example, <tei-code data-teiname="code">cd
+                        /tei/TEI/P5</tei-code>
+                    </tei-item>
+                    <tei-item data-teiname="item" n="2.2.1.3">run <tei-code data-teiname="code">make clean test</tei-code>. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi>
+                      The purpose of the <tei-code data-teiname="code">clean</tei-code> command is to clean your repository of
+                      any previously generated files</tei-item>
                   </tei-list>
                 </tei-item>
               </tei-list>
             </tei-item>
-            <tei-item data-teiname="item" n="2.2.2">Change to the Stylesheets dev branch:
-            <tei-list data-teiname="list">
-              <tei-item data-teiname="item"><tei-code data-teiname="code">cd ../..</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code">cd tei/Stylesheets</tei-code></tei-item>
-            </tei-list>
-            </tei-item>
-            <tei-item data-teiname="item" n="2.2.3">Update the version of the p5subset.xml in the <tei-code data-teiname="code">Stylesheets/source/</tei-code> directory in the Stylesheets dev branch: 
-              <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">cp -p [relative path to TEIC/TEI/ directory]/P5/p5subset.xml source/p5subset.xml</tei-code>. 
-              <tei-lb data-teiname="lb"></tei-lb>For example, if you have the <tei-code data-teiname="code">TEIC/TEI</tei-code> repo in <tei-code data-teiname="code">~/TEICouncil/repos/TEI/</tei-code> and the <tei-code data-teiname="code">TEIC/Stylesheets</tei-code> repo in <tei-code data-teiname="code">~/TEICouncil/repos/Stylesheets/</tei-code>,
-              you would issue: 
-              <tei-list data-teiname="list">
-                <tei-lb data-teiname="lb"></tei-lb><tei-item data-teiname="item"><tei-code data-teiname="code">$ cd ~/TEICouncil/Stylesheets/</tei-code></tei-item>
-                <tei-lb data-teiname="lb"></tei-lb><tei-item data-teiname="item"><tei-code data-teiname="code">$ cp -p ../P5/p5subset.xml source/p5subset.xml</tei-code></tei-item>
+            <tei-item data-teiname="item" n="2.2.2">Change to the Stylesheets dev branch: <tei-list data-teiname="list">
+                <tei-item data-teiname="item"><tei-code data-teiname="code">cd ../..</tei-code></tei-item>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">cd tei/Stylesheets</tei-code></tei-item>
               </tei-list>
             </tei-item>
-            <tei-item data-teiname="item" n="3">Run <tei-code data-teiname="code">Test2</tei-code> to make sure that the results are as expected (run in the docker image if you are using the docker approach): <tei-list data-teiname="list">
-              <tei-item data-teiname="item" n="3.1">If you are using Docker, make sure you are in the <tei-code data-teiname="code">tei/Stylesheets</tei-code> directory first: <tei-code data-teiname="code">cd tei/Stylesheets</tei-code></tei-item>
-                    <tei-item data-teiname="item" n="3.2">Change directory to Test2: <tei-code data-teiname="code">$ cd Test2</tei-code></tei-item>
+            <tei-item data-teiname="item" n="2.2.3">Update the version of the p5subset.xml in the
+                <tei-code data-teiname="code">Stylesheets/source/</tei-code> directory in the Stylesheets dev branch:
+                <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">cp -p [relative path to TEIC/TEI/ directory]/P5/p5subset.xml
+                source/p5subset.xml</tei-code>. <tei-lb data-teiname="lb"></tei-lb>For example, if you have the <tei-code data-teiname="code">TEIC/TEI</tei-code>
+              repo in <tei-code data-teiname="code">~/TEICouncil/repos/TEI/</tei-code> and the <tei-code data-teiname="code">TEIC/Stylesheets</tei-code>
+              repo in <tei-code data-teiname="code">~/TEICouncil/repos/Stylesheets/</tei-code>, you would issue: <tei-list data-teiname="list">
+                <tei-lb data-teiname="lb"></tei-lb>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ cd ~/TEICouncil/Stylesheets/</tei-code></tei-item>
+                <tei-lb data-teiname="lb"></tei-lb>
+                <tei-item data-teiname="item"><tei-code data-teiname="code">$ cp -p ../P5/p5subset.xml source/p5subset.xml</tei-code></tei-item>
+              </tei-list>
+            </tei-item>
+            <tei-item data-teiname="item" n="3">Run <tei-code data-teiname="code">Test2</tei-code> to make sure that the results are as expected (run in
+              the docker image if you are using the docker approach): <tei-list data-teiname="list">
+                <tei-item data-teiname="item" n="3.1">If you are using Docker, make sure you are in the
+                    <tei-code data-teiname="code">tei/Stylesheets</tei-code> directory first: <tei-code data-teiname="code">cd
+                  tei/Stylesheets</tei-code></tei-item>
+                <tei-item data-teiname="item" n="3.2">Change directory to Test2: <tei-code data-teiname="code">$ cd Test2</tei-code></tei-item>
                 <tei-item data-teiname="item" n="3.3">Once you are in <tei-code data-teiname="code">Test2</tei-code>, run <tei-code data-teiname="code">$ ant test</tei-code></tei-item>
               </tei-list>
             </tei-item>
-            <tei-item data-teiname="item" n="4">If there are no errors from the <tei-code data-teiname="code">Test2</tei-code> process, proceed to the <tei-code data-teiname="code">Test/</tei-code> process outlined in steps 5 and 6. If there are errors from the <tei-code data-teiname="code">Test2</tei-code> process, complete steps 4.1 to 4.6: <tei-list data-teiname="list">
-                <tei-item data-teiname="item" n="4.1">The vast majority of all errors from <tei-code data-teiname="code">Test2</tei-code> will be “diff errors”, i.e. a difference between a file generated from processing with the new p5subset (in the
-                    <tei-code data-teiname="code">Test2/outputFiles/</tei-code> directory) and the corresponding file that had
-                  previously been generated from processing with the old p5subset (in the
-                    <tei-code data-teiname="code">expected-results/</tei-code> directory).</tei-item>
-                <tei-item data-teiname="item" n="4.2">If the process stops with an error that is not a diff error, notice whether
-                  it's due to something failing to load that the testing process requires. If that's
-                  the case, read the error message carefully and see if you can figure out what's
-                  failing (and reach out to Council members for help). See the <tei-ref data-teiname="ref" target="#troubleshooting">Troubleshooting</tei-ref> section, below for an example failure of the <tei-code data-teiname="code">ant</tei-code> process and a simple fix.</tei-item>
-                <tei-item data-teiname="item" n="4.3"><tei-p data-teiname="p">In the case of a diff error, examine the differences generated. If the
-                    differences are what you would expect given the change in P5 (which is by far
-                    the most common case), just copy the output file to be the new expected results
-                    file. For example, if one of the changes made to P5 was to add an English gloss
-                    for <tei-gi data-teiname="gi">mentioned</tei-gi>, a diff error would be entirely expected. It would look
-                    like 
-                  <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg"> [echo] about to compare files:<tei-lb data-teiname="lb"></tei-lb> [echo] inFile otherFile =
-                      [path]/Test2/outputFiles/testPure1.rng
+            <tei-item data-teiname="item" n="4">If there are no errors from the <tei-code data-teiname="code">Test2</tei-code> process, proceed to the
+                <tei-code data-teiname="code">Test/</tei-code> process outlined in steps 5 and 6. If there are errors from the
+                <tei-code data-teiname="code">Test2</tei-code> process, complete steps 4.1 to 4.6: <tei-list data-teiname="list">
+                <tei-item data-teiname="item" n="4.1">The vast majority of all errors from <tei-code data-teiname="code">Test2</tei-code> will be “diff
+                  errors”, i.e. a difference between a file generated from processing with the new
+                  p5subset (in the <tei-code data-teiname="code">Test2/outputFiles/</tei-code> directory) and the corresponding
+                  file that had previously been generated from processing with the old p5subset (in
+                  the <tei-code data-teiname="code">expected-results/</tei-code> directory).</tei-item>
+                <tei-item data-teiname="item" n="4.2">If the process stops with an error that is not a diff error, notice
+                  whether it's due to something failing to load that the testing process requires.
+                  If that's the case, read the error message carefully and see if you can figure out
+                  what's failing (and reach out to Council members for help). See the <tei-ref data-teiname="ref" target="#troubleshooting">Troubleshooting</tei-ref> section, below for an example
+                  failure of the <tei-code data-teiname="code">ant</tei-code> process and a simple fix.</tei-item>
+                <tei-item data-teiname="item" n="4.3"><tei-p data-teiname="p">In the case of a diff error, examine the differences generated. If
+                    the differences are what you would expect given the change in P5 (which is by
+                    far the most common case), just copy the output file to be the new expected
+                    results file. For example, if one of the changes made to P5 was to add an
+                    English gloss for <tei-gi data-teiname="gi">mentioned</tei-gi>, a diff error would be entirely expected.
+                    It would look like <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg"> [echo] about to compare files:<tei-lb data-teiname="lb"></tei-lb> [echo] inFile
+                      otherFile = [path]/Test2/outputFiles/testPure1.rng
                       [path]/Test2/expected-results/testPure1.rng<tei-lb data-teiname="lb"></tei-lb> [echo] ERROR: DIFF
                       FAILURE…<tei-lb data-teiname="lb"></tei-lb> [exec] output: &lt;a:documentation
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"&gt;(mentioned)
@@ -121,176 +153,261 @@
                       between [path]/Test2/outputFiles/testPure1.rng and
                       [path]/Test2/expected-results/testPure1.rng. See diff output above. </tei-eg>
                   </tei-p>
-                  <tei-p data-teiname="p">You can quickly look at the differences (“(mentioned)” was
-                    inserted), and realize that is an appropriate change. So to fix this error you
-                    just copy the actual output file to be the new expected file. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> The 2nd line of the output is specifically designed to make executing the desired copy
-                    command easy. (You can copy everything after the “<tei-code data-teiname="code">=</tei-code>”, type
-                      “<tei-code data-teiname="code">cp -p</tei-code>” on the command line and then paste in the paths you just copied: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ cp -p [path]/Test2/outputFiles/testPure1.rng [path]/Test2/expected-results/testPure1.rng</tei-code> 
+                  <tei-p data-teiname="p">You can quickly look at the differences (“(mentioned)” was inserted), and
+                    realize that is an appropriate change. So to fix this error you just copy the
+                    actual output file to be the new expected file. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> The
+                    2nd line of the output is specifically designed to make executing the desired
+                    copy command easy. (You can copy everything after the “<tei-code data-teiname="code">=</tei-code>”, type
+                      “<tei-code data-teiname="code">cp -p</tei-code>” on the command line and then paste in the paths you just
+                    copied: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ cp -p [path]/Test2/outputFiles/testPure1.rng
+                      [path]/Test2/expected-results/testPure1.rng</tei-code>
                     <tei-lb data-teiname="lb"></tei-lb>The “<tei-code data-teiname="code">-p</tei-code>” switch is optional — it just gives the copy the same
                     timestamp and permissions as the original.)</tei-p>
                 </tei-item>
-                <tei-item data-teiname="item" n="4.4">If the error is either a diff error you would not have expected, or worse a
-                  different kind of error completely, fix it. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> Fixing the error might be trivially easy or might take weeks of work from half a dozen different people. For example, if the diff errors are caused by character recognition issues, the diff output would look like 
-                  <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg">[echo] about to compare files:<tei-lb data-teiname="lb"></tei-lb>
-                    [echo] inFile otherFile = /tei/Stylesheets/Test2/outputFiles/testAttValQuantInvalidInstanceRngMessages.txt /tei/Stylesheets/Test2/expected-results/testAttValQuantInvalidInstanceRngMessages.txt<tei-lb data-teiname="lb"></tei-lb>
-                    [echo] ERROR: DIFF FAILURE...<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:34:321: error: element "att_quant:test" missing required attribute "req_0?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:35:321: error: element "att_quant:test" missing required attribute "req_0?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:34:321: error: element "att_quant:test" missing required attribute "req_0??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:35:321: error: element "att_quant:test" missing required attribute "req_0??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:40:321: error: element "att_quant:test" missing required attribute "req_1?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:41:321: error: element "att_quant:test" missing required attribute "req_1?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:40:321: error: element "att_quant:test" missing required attribute "req_1??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:41:321: error: element "att_quant:test" missing required attribute "req_1??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:46:321: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:47:321: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:46:321: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:47:321: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:58:321: error: value of attribute "req_1?" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:58:321: error: value of attribute "req_1??" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:59:321: error: value of attribute "opt_1?" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:59:321: error: value of attribute "opt_1??" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:64:321: error: value of attribute "req_2?" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:64:321: error: value of attribute "req_2??" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:65:321: error: value of attribute "opt_2?" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:65:321: error: value of attribute "opt_2??" is invalid; missing token; must be a string matching the regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:72:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:72:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:73:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:73:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:74:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:74:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:75:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:75:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:76:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:76:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] output: /invalidInstances/testAttValQuantInvalidInstance.xml:77:345: error: element "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb>
-                    [exec] expect: /invalidInstances/testAttValQuantInvalidInstance.xml:77:345: error: element "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
+                <tei-item data-teiname="item" n="4.4">If the error is either a diff error you would not have expected, or
+                  worse a different kind of error completely, fix it. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi>
+                  Fixing the error might be trivially easy or might take weeks of work from half a
+                  dozen different people. For example, if the diff errors are caused by character
+                  recognition issues, the diff output would look like <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg">[echo] about to
+                    compare files:<tei-lb data-teiname="lb"></tei-lb> [echo] inFile otherFile =
+                    /tei/Stylesheets/Test2/outputFiles/testAttValQuantInvalidInstanceRngMessages.txt
+                    /tei/Stylesheets/Test2/expected-results/testAttValQuantInvalidInstanceRngMessages.txt<tei-lb data-teiname="lb"></tei-lb>
+                    [echo] ERROR: DIFF FAILURE...<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:34:321: error: element
+                    "att_quant:test" missing required attribute "req_0?"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:35:321: error: element
+                    "att_quant:test" missing required attribute "req_0?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:34:321: error: element
+                    "att_quant:test" missing required attribute "req_0??"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:35:321: error: element
+                    "att_quant:test" missing required attribute "req_0??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:40:321: error: element
+                    "att_quant:test" missing required attribute "req_1?"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:41:321: error: element
+                    "att_quant:test" missing required attribute "req_1?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:40:321: error: element
+                    "att_quant:test" missing required attribute "req_1??"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:41:321: error: element
+                    "att_quant:test" missing required attribute "req_1??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:46:321: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:47:321: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:46:321: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:47:321: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:58:321: error: value of
+                    attribute "req_1?" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:58:321: error: value of
+                    attribute "req_1??" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:59:321: error: value of
+                    attribute "opt_1?" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:59:321: error: value of
+                    attribute "opt_1??" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:64:321: error: value of
+                    attribute "req_2?" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:64:321: error: value of
+                    attribute "req_2??" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:65:321: error: value of
+                    attribute "opt_2?" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:65:321: error: value of
+                    attribute "opt_2??" is invalid; missing token; must be a string matching the
+                    regular expression "[^\p{C}\p{Z}]+"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:72:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:72:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:73:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:73:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:74:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:74:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:75:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:75:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:76:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:76:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb> [exec] output:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:77:345: error: element
+                    "att_quant:test" missing required attribute "req_2?"<tei-lb data-teiname="lb"></tei-lb> [exec] expect:
+                    /invalidInstances/testAttValQuantInvalidInstance.xml:77:345: error: element
+                    "att_quant:test" missing required attribute "req_2??"<tei-lb data-teiname="lb"></tei-lb>
                   </tei-eg>
                 </tei-item>
-              <tei-item data-teiname="item" n="4.5">To resolve this error, simply run the command below and re-attempt running <tei-code data-teiname="code">ant test</tei-code> in <tei-code data-teiname="code">Test2</tei-code> (see steps 3.2 and 3.3):  
-                <tei-code data-teiname="code">export LC_ALL=C.UTF-8; export LANG=C.UTF-8</tei-code></tei-item>
+                <tei-item data-teiname="item" n="4.5">To resolve this error, simply run the command below and re-attempt
+                  running <tei-code data-teiname="code">ant test</tei-code> in <tei-code data-teiname="code">Test2</tei-code> (see steps 3.2 and 3.3):
+                    <tei-code data-teiname="code">export LC_ALL=C.UTF-8; export LANG=C.UTF-8</tei-code></tei-item>
               </tei-list>
             </tei-item>
-            <tei-item data-teiname="item" n="4.6">When you solve a "diff" error, re-attempt running <tei-code data-teiname="code">ant test</tei-code> again until the build is successful (returns no errors).</tei-item>
-            <tei-item data-teiname="item" n="5">After all the errors have been fixed in <tei-code data-teiname="code">Test2/</tei-code>, move on to Test/<tei-code data-teiname="code"></tei-code>. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> Step 6 is an alternative approach for completing <tei-code data-teiname="code">Test/</tei-code>. (See <tei-ref data-teiname="ref" target="#addendum1">Step 5 vs. Step 6</tei-ref> below for an overview and explanation of the different approaches).<tei-list data-teiname="list">
-                <tei-item data-teiname="item" n="5.1">switch to the main directory (<tei-code data-teiname="code">cd ../Test</tei-code> will do, if you are still in <tei-code data-teiname="code">Test2/</tei-code> from step 4)</tei-item>
-                <tei-item data-teiname="item" n="5.2">run either <tei-code data-teiname="code">make</tei-code> or <tei-code data-teiname="code">time make</tei-code>. (See <tei-ref data-teiname="ref" target="#addendum2">Faster testing</tei-ref>, below, for using the <tei-code data-teiname="code">–jobs</tei-code>
-                  switch to expedite the <tei-code data-teiname="code">make</tei-code> process).</tei-item>
-              <tei-item data-teiname="item" n="5.3">check the errors (the make file stops after each error). <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> If there is no error, the process is complete.</tei-item>
-              <tei-item data-teiname="item" n="5.4">When there is an error, you will find a diff of the relevant file from the
-                    <tei-code data-teiname="code">actual-results/</tei-code> folder and the <tei-code data-teiname="code">expected-results/</tei-code>
+            <tei-item data-teiname="item" n="4.6">When you solve a "diff" error, re-attempt running <tei-code data-teiname="code">ant test</tei-code>
+              again until the build is successful (returns no errors).</tei-item>
+            <tei-item data-teiname="item" n="5">After all the errors have been fixed in <tei-code data-teiname="code">Test2/</tei-code>, move on to
+                <tei-code data-teiname="code">Test/</tei-code>. <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> Step 6 is an alternative approach for
+              completing <tei-code data-teiname="code">Test/</tei-code>. (See <tei-ref data-teiname="ref" target="#addendum1">Step 5 vs. Step 6</tei-ref>
+              below for an overview and explanation of the different approaches).<tei-list data-teiname="list">
+                <tei-item data-teiname="item" n="5.1">switch to the main directory (<tei-code data-teiname="code">cd ../Test</tei-code> will do, if you
+                  are still in <tei-code data-teiname="code">Test2/</tei-code> from step 4)</tei-item>
+                <tei-item data-teiname="item" n="5.2">run either <tei-code data-teiname="code">make</tei-code> or <tei-code data-teiname="code">time make</tei-code>. (See <tei-ref data-teiname="ref" target="#addendum2">Faster testing</tei-ref>, below, for using the
+                    <tei-code data-teiname="code">–jobs</tei-code> switch to expedite the <tei-code data-teiname="code">make</tei-code> process).</tei-item>
+                <tei-item data-teiname="item" n="5.3">check the errors (the make file stops after each error). <tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> If there is no error, the process is complete.</tei-item>
+                <tei-item data-teiname="item" n="5.4">When there is an error, you will find a diff of the relevant file from
+                  the <tei-code data-teiname="code">actual-results/</tei-code> folder and the <tei-code data-teiname="code">expected-results/</tei-code>
                   folder.</tei-item>
-                <tei-item data-teiname="item" n="5.5">In case the output is not as expected (i.e., the difference is a real problem,
-                  rather than just an expected difference from changes made to p5subset), fix the
-                  error.</tei-item>
+                <tei-item data-teiname="item" n="5.5">In case the output is not as expected (i.e., the difference is a real
+                  problem, rather than just an expected difference from changes made to p5subset),
+                  fix the error.</tei-item>
                 <tei-item data-teiname="item" n="5.6">In case the output is as expected, copy the file from
                     <tei-code data-teiname="code">actual-results/</tei-code> to <tei-code data-teiname="code">expected-results/</tei-code>. As with the
                     <tei-code data-teiname="code">Test2/</tei-code> case, you can copy and paste the correct paths from the
                   error message. It looks like “<tei-code data-teiname="code">then diff actual-results/test.rng
                     expected-results/test.rng;</tei-code>”. You just need to replace the initial
-                    “<tei-code data-teiname="code">then diff</tei-code>” with “<tei-code data-teiname="code">cp -p</tei-code>” (and, depending on your shell, you may need to delete the ending semicolon). For example: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ cp -p
-                    Test/actual-results/test.rng Test/expected-results/test.rng</tei-code></tei-item>
+                    “<tei-code data-teiname="code">then diff</tei-code>” with “<tei-code data-teiname="code">cp -p</tei-code>” (and, depending on your
+                  shell, you may need to delete the ending semicolon). For example: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ cp
+                    -p Test/actual-results/test.rng Test/expected-results/test.rng</tei-code></tei-item>
               </tei-list>
             </tei-item>
-            <tei-item data-teiname="item" n="5.7">Once the <tei-code data-teiname="code">expected-results/</tei-code> file has been updated (either by completeing step 5.5 or 5.6), re-attempt step 5.2. When the <tei-code data-teiname="code">Test/</tei-code> build process is successful, continue to step 7.</tei-item>
-            <tei-item data-teiname="item" n="6"><tei-hi data-teiname="hi" rend="bold">Alternative to step 5:</tei-hi> If you are quite comfortable on the commandline and facile with a text editor, you
-              might prefer to run all the tests in <tei-code data-teiname="code">Test/</tei-code> at once and test the outputs
-              yourself, rather than have the <tei-code data-teiname="code">make</tei-code> command test the outputs, because it stops after
-              the first error. (Remember that a lot of what the Makefile does is transform a test
-              file using the Stylesheets and then compare the actual output of that command to a
-              file which contains the expected output of that command. These comparisons are done
-              using the <tei-code data-teiname="code">diff</tei-code> command.) If you ask it nicely, the <tei-code data-teiname="code">make</tei-code> command will just generate the
-              outputs, and defer the actual testing of them (by diffing them with the corresponding
-              expected output). This means that running <tei-code data-teiname="code">make</tei-code> is dramatically faster, but it does not
-              do all the work, you have to do some of it. To do this: <tei-list data-teiname="list">
+            <tei-item data-teiname="item" n="5.7">Once the <tei-code data-teiname="code">expected-results/</tei-code> file has been updated (either by
+              completeing step 5.5 or 5.6), re-attempt step 5.2. When the <tei-code data-teiname="code">Test/</tei-code> build
+              process is successful, continue to step 7.</tei-item>
+            <tei-item data-teiname="item" n="6"><tei-hi data-teiname="hi" rend="bold">Alternative to step 5:</tei-hi> If you are quite comfortable on
+              the commandline and facile with a text editor, you might prefer to run all the tests
+              in <tei-code data-teiname="code">Test/</tei-code> at once and test the outputs yourself, rather than have the
+                <tei-code data-teiname="code">make</tei-code> command test the outputs, because it stops after the first error.
+              (Remember that a lot of what the Makefile does is transform a test file using the
+              Stylesheets and then compare the actual output of that command to a file which
+              contains the expected output of that command. These comparisons are done using the
+                <tei-code data-teiname="code">diff</tei-code> command.) If you ask it nicely, the <tei-code data-teiname="code">make</tei-code> command will
+              just generate the outputs, and defer the actual testing of them (by diffing them with
+              the corresponding expected output). This means that running <tei-code data-teiname="code">make</tei-code> is
+              dramatically faster, but it does not do all the work, you have to do some of it. To do
+              this: <tei-list data-teiname="list">
                 <tei-item data-teiname="item" n="6.1">Make sure you are in the <tei-code data-teiname="code">Test/</tei-code> directory.</tei-item>
-                <tei-item data-teiname="item" n="6.2">run <tei-code data-teiname="code">$ time make DIFFNOW=0</tei-code>
-                  <tei-lb data-teiname="lb"></tei-lb>or, if you want to try to use multiple threads, run: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ time make DIFFNOW=0
-                    --jobs=`nproc 2&gt;/dev/null || echo 1` -Oline</tei-code></tei-item>
-                <tei-item data-teiname="item" n="6.3">To see the actual filenames being diffed, add the “<tei-code data-teiname="code">-C0</tei-code>” switch:
-                    <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">make DIFFNOW=0 -C0</tei-code></tei-item>
-                <tei-item data-teiname="item" n="6.4">When the Makefile has run a transformation, instead of comparing the actual
-                  output of that transformation to the expected output, it will say something like
-                    “<tei-code data-teiname="code">==deferring: ` diff actual-results/test27.html
+                <tei-item data-teiname="item" n="6.2">run <tei-code data-teiname="code">$ time make DIFFEND=1</tei-code>
+                  <tei-lb data-teiname="lb"></tei-lb>or, if you want to try to use multiple threads, run: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ time make
+                    DIFFEND=1 --jobs=`nproc 2&gt;/dev/null || echo 1` -Oline</tei-code></tei-item>
+                <tei-item data-teiname="item" n="6.3">To see the actual filenames being diffed, add the “<tei-code data-teiname="code">-C0</tei-code>”
+                  switch: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">make DIFFEND=1 -C0</tei-code></tei-item>
+                <tei-item data-teiname="item" n="6.4">When the Makefile has run a transformation, instead of comparing the
+                  actual output of that transformation to the expected output, it will say something
+                  like “<tei-code data-teiname="code">==deferring: ` diff actual-results/test27.html
                     expected-results/test27.html `</tei-code>”.</tei-item>
-                <tei-item data-teiname="item" n="6.5">Once the <tei-code data-teiname="code">make</tei-code> command is complete, you now need to perform all those
-                  comparisons yourself. Luckily, this is designed to be relatively easy. E.g., each
-                  message that reports a <tei-code data-teiname="code">diff</tei-code> command that has not been executed is preceded with
-                  “<tei-code data-teiname="code">==</tei-code>” at the beginning of the line (and no other output from the Makefile starts with “<tei-code data-teiname="code">==</tei-code>” at the beginning of the line).</tei-item>
-                <tei-item data-teiname="item" n="6.6">Copy the output from the <tei-code data-teiname="code">make DIFFNOW=0</tei-code> command into your favorite text editor.</tei-item>
-                <tei-item data-teiname="item" n="6.7">Delete all lines that <tei-emph data-teiname="emph">do not</tei-emph> start with “<tei-code data-teiname="code">==</tei-code>”.</tei-item>
+                <tei-item data-teiname="item" n="6.5">Once the <tei-code data-teiname="code">make</tei-code> command is complete, you now need to
+                  perform all those comparisons yourself. Luckily, this is designed to be relatively
+                  easy. E.g., each message that reports a <tei-code data-teiname="code">diff</tei-code> command that has not
+                  been executed is preceded with “<tei-code data-teiname="code">==</tei-code>” at the beginning of the line (and
+                  no other output from the Makefile starts with “<tei-code data-teiname="code">==</tei-code>” at the beginning
+                  of the line).</tei-item>
+                <tei-item data-teiname="item" n="6.6">Copy the output from the <tei-code data-teiname="code">make DIFFEND=1</tei-code> command into your
+                  favorite text editor.</tei-item>
+                <tei-item data-teiname="item" n="6.7">Delete all lines that <tei-emph data-teiname="emph">do not</tei-emph> start with
+                  “<tei-code data-teiname="code">==</tei-code>”.</tei-item>
                 <tei-item data-teiname="item" n="6.8">Remove the “<tei-code data-teiname="code">==deferring: `</tei-code>” from the beginning of each
                   line.</tei-item>
                 <tei-item data-teiname="item" n="6.9">Remove the “<tei-code data-teiname="code">`</tei-code>” from the end of each line.</tei-item>
                 <tei-item data-teiname="item" n="6.10">Insert “<tei-code data-teiname="code">#! /bin/bash</tei-code>” as a 1st line.</tei-item>
-                <tei-item data-teiname="item" n="6.11">Save this file as <tei-code data-teiname="code">diffnow_erase_me_soon.bash</tei-code> or choose an equally recognisable filename so you can easily find and delete it once finished.</tei-item>
-                <tei-item data-teiname="item" n="6.12">Change the mode of this new file to be executable (i.e., <tei-code data-teiname="code">chmod a+x diffnow_erase_me_soon.bash</tei-code>).</tei-item>
+                <tei-item data-teiname="item" n="6.11">Save this file as <tei-code data-teiname="code">diffnow_erase_me_soon.bash</tei-code> or choose
+                  an equally recognisable filename so you can easily find and delete it once
+                  finished.</tei-item>
+                <tei-item data-teiname="item" n="6.12">Change the mode of this new file to be executable (i.e., <tei-code data-teiname="code">chmod
+                    a+x diffnow_erase_me_soon.bash</tei-code>).</tei-item>
                 <tei-item data-teiname="item" n="6.13">Run it (i.e. <tei-code data-teiname="code">./diffnow_erase_me_soon.bash</tei-code>).</tei-item>
               </tei-list></tei-item>
-            <tei-item data-teiname="item" n="7">If <tei-code data-teiname="code">Test/</tei-code> is successful (returns zero mis-matches) or if you have fixed all the mis-matches manually following step 6, commit the change with the following command: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git commit -a -m “update p5 subset”</tei-code>
+            <tei-item data-teiname="item" n="7">If <tei-code data-teiname="code">Test/</tei-code> is successful (returns zero mis-matches) or if you
+              have fixed all the mis-matches manually following step 6, commit the change with the
+              following command: <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">git commit -a -m “update p5 subset”</tei-code>
             </tei-item>
-            <tei-item data-teiname="item" n="8">A prompt to add any untracked files to the commit will be generated. Ignore the prompt to add the untracked files to the commit. Push the commit to dev with the command: <tei-code data-teiname="code">git push</tei-code>
+            <tei-item data-teiname="item" n="8">A prompt to add any untracked files to the commit will be generated. Ignore
+              the prompt to add the untracked files to the commit. Push the commit to dev with the
+              command: <tei-code data-teiname="code">git push</tei-code>
             </tei-item>
-            <tei-item data-teiname="item" n="9">The <tei-code data-teiname="code">git push</tei-code> command will generate the correct command to push the changes to the main branch. The generated command will start with <tei-code data-teiname="code">git push --set-upstream origin</tei-code>. Copy and paste the generated command to push your changes.</tei-item>
+            <tei-item data-teiname="item" n="9">The <tei-code data-teiname="code">git push</tei-code> command will generate the correct command to push
+              the changes to the main branch. The generated command will start with <tei-code data-teiname="code">git push
+                --set-upstream origin</tei-code>. Copy and paste the generated command to push your
+              changes.</tei-item>
           </tei-list>
         </tei-div>
-        <tei-div id="addenda" data-teiname="div" xml:id="addenda">          
-            <tei-head data-teiname="head">Addenda</tei-head>
-            <tei-div id="addendum1" data-teiname="div" xml:id="addendum1">
-              <tei-head data-teiname="head">Step 5 vs. Step 6</tei-head>
-              <tei-p data-teiname="p">Following step 5, each actual result is generated in turn and compared to the expected result. The first time there is a mis-match, the whole process fails. You need to fix the mis-match and start again from step 5.2.</tei-p>
-            <tei-p data-teiname="p">Following step 6, all actual results are generated first, and then compared to the expected results afterwards. Thus the make process does not fail for a mis-match, but you have to manually find and fix the mis-matches on your own.</tei-p>
-            <tei-p data-teiname="p">If there are only a very few mis-matches, step 5 is the better way to go.
+        <tei-div id="addenda" data-teiname="div" xml:id="addenda">
+          <tei-head data-teiname="head">Addenda</tei-head>
+          <tei-div id="addendum1" data-teiname="div" xml:id="addendum1">
+            <tei-head data-teiname="head">Step 5 vs. Step 6</tei-head>
+            <tei-p data-teiname="p">Following step 5, each actual result is generated in turn and compared to the
+              expected result. The first time there is a mis-match, the whole process fails. You
+              need to fix the mis-match and start again from step 5.2.</tei-p>
+            <tei-p data-teiname="p">Following step 6, all actual results are generated first, and then compared to the
+              expected results afterwards. Thus the make process does not fail for a mis-match, but
+              you have to manually find and fix the mis-matches on your own.</tei-p>
+            <tei-p data-teiname="p">If there are only a very few mis-matches, step 5 is the better way to go. </tei-p>
+            <tei-p data-teiname="p">If there are lots of mis-matches, step 6 is harder, but a <tei-hi data-teiname="hi" rend="italics">lot</tei-hi>
+              faster.</tei-p>
+            <tei-p data-teiname="p">Of course, you have no way of knowing the number of mis-matches for sure until you
+              are done, unfortunately.</tei-p>
+          </tei-div>
+          <tei-div id="addendum2" data-teiname="div" xml:id="addendum2">
+            <tei-head data-teiname="head">Faster testing</tei-head>
+            <tei-p data-teiname="p"><tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> Recommendations by Syd Bauman. One of the reasons the test
+              procedure in <tei-code data-teiname="code">Stylesheets/Test2/</tei-code> is dramatically faster than the one in
+                <tei-code data-teiname="code">Stylesheets/Test/</tei-code> is that it is, by default, run in parallel.<tei-note data-teiname="note" n="1"><tei-code data-teiname="code">ant test</tei-code>​ runs them in parallel; if you want them in series
+                (likely because the order of messages was confusing when run in parallel) use
+                  <tei-code data-teiname="code">ant testSeries​</tei-code>.</tei-note><tei-note data-teiname="note" n="2">There are other reasons, like it
+                is written to be less redundant, and the JVM is only spun up once, rather than once
+                for every test.</tei-note></tei-p>
+            <tei-p data-teiname="p">You can also ask the <tei-code data-teiname="code">make​</tei-code> command to run multiple jobs at once. The
+              switches that control this are <tei-code data-teiname="code">--jobs=</tei-code> and <tei-code data-teiname="code">--output-sync=.</tei-code> I
+              just tried an experiment, comparing how long it took to run <tei-code data-teiname="code">make​</tei-code> vs
+                <tei-code data-teiname="code">make --jobs=7 --output-sync=lines</tei-code>. (I chose 7 because my system has 8
+              threads, and I wanted to have some CPU available. What little I have found on the web
+              seems to suggest I may as well go ahead and use 8.)</tei-p>
+            <tei-p data-teiname="p">The result was faster, although not even close to 7 times faster: down to 03:32 from
+              04:36. I compared the output of the 2 commands, and they were identical.</tei-p>
+            <tei-p data-teiname="p">On GNU/Linux, at least, the <tei-code data-teiname="code">nproc</tei-code>​ command will tell you how many
+              threads are available. Thus using the command <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ make --jobs=`nproc
+                2&gt;/dev/null || echo 1` -Oline</tei-code>
+              <tei-lb data-teiname="lb"></tei-lb>seems to make sense to me. (<tei-code data-teiname="code">-O</tei-code> is shorthand for
+                <tei-code data-teiname="code">--output-sync=​.</tei-code>)</tei-p>
+            <tei-p data-teiname="p">It is also possible to get the Makefile to do that on its own. My first thought is
+              that might not be such a good idea, because you may want to run with
+                <tei-code data-teiname="code">--jobs=1</tei-code> in order to force error messages into the right order. (I.e.,
+              in case <tei-code data-teiname="code">-Oline</tei-code> wasn’t good enough.)</tei-p>
+            <tei-p data-teiname="p">I ran the experiment again, this time using <tei-code data-teiname="code">--jobs=8</tei-code> and getting screen
+              captures of the process monitor roughly 40 s after the make command started.<tei-note data-teiname="note" n="3">For evidence as to why the <tei-code data-teiname="code">--jobs</tei-code> switch expedites the
+                  <tei-code data-teiname="code">make​</tei-code> process, see <tei-ref data-teiname="ref" target="https://bauman.zapto.org/~syd/temp/4TEICouncil/Screenshot_of_make_process_monitor_2022-04-05T12:07:52.png">Screenshot_of_make_process_monitor_2022-04-05T12:07:52.png</tei-ref> and <tei-ref data-teiname="ref" target="https://bauman.zapto.org/~syd/temp/4TEICouncil/Screenshot_of_make_-j_process_monitor_2022-04-05T12:12:32.png">Screenshot_of_make_-j_process_monitor_2022-04-05T12:12:32.png</tei-ref>
+              </tei-note> The timing results were very similar (down to 03:36 from 04:36), but the order
+              of output lines was different. (Same output; i.e., they were identical after sorting
+              and removing timestamps.)</tei-p>
+            <tei-p data-teiname="p">So I think anyone running the Stylesheets test process would do well to use the
+                <tei-code data-teiname="code">--jobs</tei-code> switch. You could use any of <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg"> <tei-code data-teiname="code">-j 8 #</tei-code> if you know you
+                have 8 threads, e.g. <tei-lb data-teiname="lb"></tei-lb> <tei-code data-teiname="code">--jobs=`nproc` #</tei-code> if you know the <tei-code data-teiname="code">nproc</tei-code> command works on
+                your system <tei-lb data-teiname="lb"></tei-lb> <tei-code data-teiname="code">-j `nproc 2&gt; /dev/null || echo 1​` #</tei-code> if there is a chance <tei-code data-teiname="code">nproc</tei-code>
+                fails,<tei-lb data-teiname="lb"></tei-lb> <tei-code data-teiname="code">#</tei-code> so it defaults to '<tei-code data-teiname="code">1</tei-code>' </tei-eg>
             </tei-p>
-            <tei-p data-teiname="p">If there are lots of mis-matches, step 6 is harder, but a <tei-hi data-teiname="hi" rend="italics">lot</tei-hi> faster.</tei-p>
-            <tei-p data-teiname="p">Of course, you have no way of knowing the number of mis-matches for sure until you are done, unfortunately.</tei-p>
-            </tei-div>
-        <tei-div id="addendum2" data-teiname="div" xml:id="addendum2">
-          <tei-head data-teiname="head">Faster testing</tei-head>
-          <tei-p data-teiname="p"><tei-hi data-teiname="hi" rend="bold">Note:</tei-hi> Recommendations by Syd Bauman. One of the reasons the test procedure in <tei-code data-teiname="code">Stylesheets/Test2/</tei-code> is
-            dramatically faster than the one in <tei-code data-teiname="code">Stylesheets/Test/</tei-code> is that it is, by
-            default, run in parallel.<tei-note data-teiname="note" n="1"><tei-code data-teiname="code">ant test</tei-code>​ runs them in parallel; if
-              you want them in series (likely because the order of messages was confusing when run
-              in parallel) use <tei-code data-teiname="code">ant testSeries​</tei-code>.</tei-note><tei-note data-teiname="note" n="2">There are other
-              reasons, like it is written to be less redundant, and the JVM is only spun up once,
-              rather than once for every test.</tei-note></tei-p>
-          <tei-p data-teiname="p">You can also ask the <tei-code data-teiname="code">make​</tei-code> command to run multiple jobs at once. The switches that
-            control this are <tei-code data-teiname="code">--jobs=</tei-code> and <tei-code data-teiname="code">--output-sync=.</tei-code> I just tried an
-            experiment, comparing how long it took to run <tei-code data-teiname="code">make​</tei-code> vs <tei-code data-teiname="code">make --jobs=7 --output-sync=lines</tei-code>. (I chose 7 because my system has 8 threads, and I wanted
-            to have some CPU available. What little I have found on the web seems to suggest I may
-            as well go ahead and use 8.)</tei-p>
-          <tei-p data-teiname="p">The result was faster, although not even close to 7 times faster: down to 03:32 from
-            04:36. I compared the output of the 2 commands, and they were identical.</tei-p>
-          <tei-p data-teiname="p">On GNU/Linux, at least, the <tei-code data-teiname="code">nproc</tei-code>​ command will tell you how many threads are available. Thus using the command 
-            <tei-lb data-teiname="lb"></tei-lb><tei-code data-teiname="code">$ make --jobs=`nproc 2&gt;/dev/null || echo 1` -Oline</tei-code>
-            <tei-lb data-teiname="lb"></tei-lb>seems to make sense to me. (<tei-code data-teiname="code">-O</tei-code> is shorthand for <tei-code data-teiname="code">--output-sync=​.</tei-code>)</tei-p>
-          <tei-p data-teiname="p">It is also possible to get the Makefile to do that on its own. My first thought is that
-            might not be such a good idea, because you may want to run with <tei-code data-teiname="code">--jobs=1</tei-code> in order to force error messages into the right order. (I.e., in case <tei-code data-teiname="code">-Oline</tei-code>
-            wasn’t good enough.)</tei-p>
-          <tei-p data-teiname="p">I ran the experiment again, this time using <tei-code data-teiname="code">--jobs=8</tei-code> and getting screen
-            captures of the process monitor roughly 40 s after the make command started.<tei-note data-teiname="note" n="3">For evidence as to why the <tei-code data-teiname="code">--jobs</tei-code> switch expedites the <tei-code data-teiname="code">make​</tei-code> process, see 	<tei-ref data-teiname="ref" target="https://bauman.zapto.org/~syd/temp/4TEICouncil/Screenshot_of_make_process_monitor_2022-04-05T12:07:52.png">Screenshot_of_make_process_monitor_2022-04-05T12:07:52.png</tei-ref> and 	<tei-ref data-teiname="ref" target="https://bauman.zapto.org/~syd/temp/4TEICouncil/Screenshot_of_make_-j_process_monitor_2022-04-05T12:12:32.png">Screenshot_of_make_-j_process_monitor_2022-04-05T12:12:32.png</tei-ref>
-            </tei-note> The timing
-            results were very similar (down to 03:36 from 04:36), but the order of output lines was
-            different. (Same output; i.e., they were identical after sorting and removing
-            timestamps.)</tei-p>
-          <tei-p data-teiname="p">So I think anyone running the Stylesheets test process would do well to use the
-              <tei-code data-teiname="code">--jobs</tei-code> switch. You could use any of 
-            <tei-lb data-teiname="lb"></tei-lb><tei-eg data-teiname="eg"> -j 8 # if you know you have 8 threads, e.g.
-              <tei-lb data-teiname="lb"></tei-lb> --jobs=`nproc` # if you know the nproc command works on your
-              system
-              <tei-lb data-teiname="lb"></tei-lb> -j `nproc 2&gt; /dev/null || echo 1​` # if there is a chance nproc
-              fails,<tei-lb data-teiname="lb"></tei-lb> # so it defaults to '1' </tei-eg>
-          </tei-p>
-        </tei-div>
+          </tei-div>
         </tei-div>
         <tei-div id="troubleshooting" data-teiname="div" xml:id="troubleshooting">
           <tei-head data-teiname="head">Troubleshooting</tei-head>
-          <tei-p data-teiname="p">Test 2: What if the <tei-code data-teiname="code">ant</tei-code> process fails because some necessary dependency is missing? For example, you may see an error message like this:<tei-lb data-teiname="lb"></tei-lb>
+          <tei-p data-teiname="p">Test 2: What if the <tei-code data-teiname="code">ant</tei-code> process fails because some necessary dependency is
+            missing? For example, you may see an error message like this:<tei-lb data-teiname="lb"></tei-lb>
             <tei-eg data-teiname="eg">A class needed by class org.apache.fop.tools.anttasks.Fop cannot be found:<tei-lb data-teiname="lb"></tei-lb>
               org/apache/commons/logging/Log using the classloader<tei-lb data-teiname="lb"></tei-lb>
               AntClassLoader[/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-core-3.1.9.jar:/YOUR/FILEPATH/TO/TEIC/Stylesheets/lib/fop-2.6/fop/lib/jeuclid-fop-3.1.9.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop-hyph.jar:/Users/eeb4/Documents/GitHub/TEIC/Stylesheets/lib/fop-2.6/fop/build/fop.jar</tei-eg></tei-p>
-          <tei-p data-teiname="p">This signals that a dependency is missing or corrupted. In our example, fop-2.6 is a directory generated by <tei-code data-teiname="code">ant</tei-code> while it is running a jar dependency. Perhaps a network connection was interrupted somehow or the process didn't complete as it was supposed to do. The simplest way to correct this is to delete the fop-2.6 directory, and return to <tei-code data-teiname="code">Test2</tei-code> and run “<tei-code data-teiname="code">ant test</tei-code>” again. This lets <tei-code data-teiname="code">ant</tei-code> pull in a clean copy of the missing dependency.</tei-p>
+          <tei-p data-teiname="p">This signals that a dependency is missing or corrupted. In our example, fop-2.6 is a
+            directory generated by <tei-code data-teiname="code">ant</tei-code> while it is running a jar dependency. Perhaps a
+            network connection was interrupted somehow or the process didn't complete as it was
+            supposed to do. The simplest way to correct this is to delete the fop-2.6 directory, and
+            return to <tei-code data-teiname="code">Test2</tei-code> and run “<tei-code data-teiname="code">ant test</tei-code>” again. This lets
+              <tei-code data-teiname="code">ant</tei-code> pull in a clean copy of the missing dependency.</tei-p>
         </tei-div>
       </tei-div>
     </tei-body>
