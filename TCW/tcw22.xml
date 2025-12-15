@@ -9,18 +9,18 @@
         <author>Lou Burnard</author>
         <author>Sebastian Rahtz</author>
         <author>David Sewell</author>
-	<author xml:id="KSH">Kevin Hawkins</author>
+        <author xml:id="KSH">Kevin Hawkins</author>
         <author xml:id="HC">Hugh Cayless</author>
         <author xml:id="PS">Peter Stadler</author>
         <author xml:id="EM">Elli Mylonas</author>
         <editor xml:id="EBB">Elisa Beshero-Bondar</editor>
         <author xml:id="RV">Raffaele Viglianti</author>
         <author xml:id="JL">Jessica H. Lu</author>
-	<!-- Note: I mean <editor> as per Guidelines: secondary
+        <!-- Note: I mean <editor> as per Guidelines: secondary
 	     intellectual responsibility, rather than as an actual
 	     editor. —Syd, 2021-04-16 -->
-	<editor xml:id="SDB">Syd Bauman</editor>
-	<editor xml:id="POC">Patricia O Connor</editor>
+        <editor xml:id="SDB">Syd Bauman</editor>
+        <editor xml:id="POC">Patricia O Connor</editor>
       </titleStmt>
       <publicationStmt>
         <publisher>TEI Technical Council</publisher>
@@ -32,28 +32,44 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
-      <change when="2025-09-06" who="#EBB">Added guidance to check links in release notes, including links to latest corrected version of past release notes.</change>
-      <change when="2025-08-27" who="#SDB">Per HBS, move “merge into "released"” steps up to immediately after the push into the "release-X.X.X" step.</change>
-      <change when="2025-03-31" who="#POC">Revised and updated procedure as some checking steps are currently listed after the released branch is created. Moved steps 6 and 7 to after step 14.</change>
+      <change when="2025-09-06" who="#EBB">Added guidance to check links in release notes, including
+        links to latest corrected version of past release notes.</change>
+      <change when="2025-08-27" who="#SDB">Per HBS, move “merge into "released"” steps up to
+        immediately after the push into the "release-X.X.X" step.</change>
+      <change when="2025-03-31" who="#POC">Revised and updated procedure as some checking steps are
+        currently listed after the released branch is created. Moved steps 6 and 7 to after step
+        14.</change>
       <change when="2025-01-22" who="#RV">Removed any mentions of Jenkins 3, now defunct.</change>
-      <change when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current releases of Stylesheets and Guidelines needed for building the oXygen plugin. 
-        Revised instructions on how to update the table of releases for the GitHub website.</change>
-      <change when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled issues.</change>
-      <change when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes affecting ODD customizations.</change>
-      <change when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release process.</change>
-      <change when="2021-04-11" who="#SDB">Per Nick Cole, since $PATH is not set up on server, need to specify
-      current directory in path to some executables.</change>
-      <change when="2021-03-12" who="#MDH">Adding a step to update the version of p5subset.xml which is in the Stylesheets repo,
-      prior to doing any of the release steps.</change>
-      <change when="2020-02-13" who="#JL">Additional changes based on February 2020 release to make links visible, clarify release steps, confirm primacy of Paderborn Jenkins server.</change>
-      <change when="2020-02-13" who="#JL">Update all references, and add links, to Jenkins servers. Revise instructions regarding release version numbers.</change>
-      <change when="2020-02-10" who="#EBB">Update all references about ssh to the tei server to the new HumaNum server consistently. Correct small grammatical errors.</change>
-      <change when="2019-02-04" who="#EM">Add updates and clarifications learned from last release.</change>
-      <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the Debian packages</change>
-      <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of time</change>
-      <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate preparing the Release Notes.</change>
-      <change when="2016-04-02" who="#MDH">Beginning edits arising out of the experiences
-      releasing 3.0.0. More to come.</change>
+      <change when="2024-11-02" who="#EBB">Clarified where to check on the Vault for the current
+        releases of Stylesheets and Guidelines needed for building the oXygen plugin. Revised
+        instructions on how to update the table of releases for the GitHub website.</change>
+      <change when="2024-07-17" who="#POC">Added reminder to review release-blocker labelled
+        issues.</change>
+      <change when="2024-06-21" who="#RV">Added reminder to mention in the Release Notes any changes
+        affecting ODD customizations.</change>
+      <change when="2023-11-16" who="#RV">Updated Docker build info to account for new Roma (was
+        Romabeta) and Roma Antiqua (was Roma). Clarified Stylesheets GitHub release
+        process.</change>
+      <change when="2021-04-11" who="#SDB">Per Nick Cole, since $PATH is not set up on server, need
+        to specify current directory in path to some executables.</change>
+      <change when="2021-03-12" who="#MDH">Adding a step to update the version of p5subset.xml which
+        is in the Stylesheets repo, prior to doing any of the release steps.</change>
+      <change when="2020-02-13" who="#JL">Additional changes based on February 2020 release to make
+        links visible, clarify release steps, confirm primacy of Paderborn Jenkins server.</change>
+      <change when="2020-02-13" who="#JL">Update all references, and add links, to Jenkins servers.
+        Revise instructions regarding release version numbers.</change>
+      <change when="2020-02-10" who="#EBB">Update all references about ssh to the tei server to the
+        new HumaNum server consistently. Correct small grammatical errors.</change>
+      <change when="2019-02-04" who="#EM">Add updates and clarifications learned from last
+        release.</change>
+      <change when="2019-01-30" who="#PS">Add information about setting JAVA_HOME for updating the
+        Debian packages</change>
+      <change when="2019-01-29" who="#sb">Be explicit about contacting Jenkins maintainers ahead of
+        time</change>
+      <change when="2016-09-25" who="mt">Recommendations for issue handling that facilitate
+        preparing the Release Notes.</change>
+      <change when="2016-04-02" who="#MDH">Beginning edits arising out of the experiences releasing
+        3.0.0. More to come.</change>
       <change when="2016-03-16" who="#KSH">Fixed error in git command as just reported on
         tei-council</change>
       <change when="2016-02-23" who="#HC">Edits for new release process.</change>
@@ -64,8 +80,10 @@
         GitHub.</change>
       <change when="2015-10-03" who="#MDH">Updates to account for the shift from SF SVN to
         GitHub.</change>
-      <change when="2015-04-06" who="#MDH">Updates arising out of release process for 2.8.0.</change>
-      <change when="2015-04-06" who="#KSH">Added link to http://wiki.tei-c.org/index.php/IRC</change>
+      <change when="2015-04-06" who="#MDH">Updates arising out of release process for
+        2.8.0.</change>
+      <change when="2015-04-06" who="#KSH">Added link to
+        http://wiki.tei-c.org/index.php/IRC</change>
       <change when="2015-04-04" who="#MDH">Updates to take account of oxygen-tei's move from Google
         Code to GitHub, along with a couple of other tweaks.</change>
       <change when="2014-01" who="#MDH">Updates for changes in procedure ahead of the 2.6.0
@@ -77,12 +95,13 @@
       <change when="2012-07-24" who="#KSH">Newsfeed blog is no longer in SourceForge.</change>
       <change when="2012-06-28" who="#KSH">A few changes based on messages to tei-council on
         2012-06-19 and 2012-06-20.</change>
-      <change when="2012-06-19" who="#KSH">Improvements suggested by various Council members based on
-        experiences with version 2.1.0.</change>
+      <change when="2012-06-19" who="#KSH">Improvements suggested by various Council members based
+        on experiences with version 2.1.0.</change>
       <change when="2012-06-16" who="#KSH">Explained version numbers and added reminder about
         including readme file in announcement.</change>
       <change when="2012-02-02" who="#MDH">Document forked from tcw20.xml.</change>
-      <change when="2025-01-24" who="#POC">Added note on needing to update tests after the p5subset is built and copied into Stylesheets/source.</change>
+      <change when="2025-01-24" who="#POC">Added note on needing to update tests after the p5subset
+        is built and copied into Stylesheets/source.</change>
     </revisionDesc>
   </teiHeader>
   <text>
@@ -90,20 +109,40 @@
       <head>Building a TEI Release</head>
       <p>This document aims to provide a set of detailed instructions enabling a "release
         technician" (the Council member tasked with implementing a new release of the TEI) to
-        prepare for and manage the release process. It assumes that the new packages will be taken
-        from one of the Jenkins servers rather than being built locally by the release technician.
-        This is easier and more reliable, because we ensure that the Jenkins servers are regularly
-        updated and are correctly configured to build the TEI products.</p>
+        prepare for and manage the release process. The release process normally involves more than
+        one release technician. In the event that there is more than one release technician, the
+        release technicians should coordinate and divide the various steps in the release process
+        amongst themselves.</p>
+
+      <div xml:id="issueHandlingGuidelines">
+        <head>Issue Handling Recommendations</head>
+        <p>In the lead up to the release, all Council members should review assigned tickets and
+          adhere to the following general guidance:</p>
+        <list type="unordered">
+          <item>Assign tickets to release milestone</item>
+          <item>Use ticket reference in any commits addressing or fixing the issue</item>
+          <item>At least for the final commit addressing the issue try to prepare the commit message
+            so it can be used for Release Notes</item>
+          <item>Label the issue as Release Note (green label) if it’s important to include the note
+            about it in Release Notes</item>
+
+        </list>
+      </div>
 
       <div xml:id="githubPackages">
         <head>Packages on GitHub</head>
-        <p>The TEI maintains a number of distinct repositories on GitHub under the
-            <ref target="https://github.com/TEIC">TEIC</ref> organization. The main repository for developing the P5 Guidelines
-          and associated schemas is <ref target="https://github.com/TEIC/TEI">TEIC/TEI</ref>, and the TEI Stylesheets, the code for
-          the Roma web application, and the source code for the Oxygen TEI plugin can be found in
-            <ref target="https://github.com/TEIC/Stylesheets">TEIC/Stylesheets</ref>, 
-            <ref target="https://github.com/TEIC/Roma">TEIC/Roma</ref>, and
-            <ref target="https://github.com/TEIC/oxygen-tei">TEIC/oxygen-tei</ref> respectively. </p>
+        <p>The release process detailed below assumes that the new packages will be taken from one
+          of the Jenkins servers rather than being built locally by the release technician(s). This
+          is easier and more reliable, because we ensure that the Jenkins servers are regularly
+          updated and are correctly configured to build the TEI products.</p>
+        <p>The TEI maintains a number of distinct repositories on GitHub under the <ref
+            target="https://github.com/TEIC">TEIC</ref> organization. The main repository for
+          developing the P5 Guidelines and associated schemas is <ref
+            target="https://github.com/TEIC/TEI">TEIC/TEI</ref>, and the TEI Stylesheets, the code
+          for the Roma web application, and the source code for the Oxygen TEI plugin can be found
+          in <ref target="https://github.com/TEIC/Stylesheets">TEIC/Stylesheets</ref>, <ref
+            target="https://github.com/TEIC/Roma">TEIC/Roma</ref>, and <ref
+            target="https://github.com/TEIC/oxygen-tei">TEIC/oxygen-tei</ref> respectively. </p>
         <p>The rest of this section describes how to make a new release for the main
             <ident>P5</ident> package, but similar procedures apply to the others. The instructions
           assume you are working on a Linux or MacOSX system with a command line, and know (more or
@@ -113,75 +152,70 @@
 
       <div xml:id="beforeStarting">
         <head>What you will need before you start</head>
+        <p><hi rend="bold">Important: Make sure to go through each of the following steps carefully
+            and well in advance, to avoid delays on Release Day.</hi></p>
 
         <list type="bulleted">
           <item>An account on GitHub, and committer privileges over the TEI repository. If you have
-            ever pushed a change to the TEI repository, you should have all the
-            required permissions.</item>
+            ever pushed a change to the TEI repository, you should have all the required
+            permissions.</item>
           <item>Shell access on the TEI SourceForge project. Contact one of the admins to have this
             turned on. Normal committers don't have shell access.</item>
-          <item> The release manager will need SSH login access to the tei account on the tei-c.org
+          <item>The release manager will need SSH login access to the tei account on the tei-c.org
             server. This involves two steps: <list type="ordered">
               <item>Generate an SSH key pair (if you don't have one already). If this is new to you,
                 look at <ref target="https://en.wikipedia.org/wiki/Ssh-keygen"
                   >https://en.wikipedia.org/wiki/Ssh-keygen</ref>.</item>
-
               <item>Send the public key to the Council Chair, who will forward it on to the system
                 administrator.</item>
             </list> Make sure you get this set up well in advance of the release day, and make sure
-            you can ssh tei@cchum-kvm-dockerteic.in2p3.fr successfully. (Note: if you are a member
-            of the Infrastructure Group, you will already have your own login to the server, but you 
-            should test it.)</item>
+            you can <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code> successfully. See next steps.
+            (Note: if you are a member of the Infrastructure Group, you will already have your own
+            login to the server, but you should test it.)</item>
 
-          <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers.
-              <list type="ordered">
-                <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
-                <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
-              </list>
-            Take a little time to watch them work, and see how a push to the GitHub
+          <item>A copy of the public key that will enable you to sync the release zip with
+            SourceForge. <list type="ordered">
+              <item>Log in to the tei server at <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>
+                (this requires that you have already generated the SSH public key and sent it to the
+                system administrator as outlined in the step above). (Note that if you are a member
+                of the Infrastructure Group with your own login, log in as yourself, but <code>sudo
+                  su tei</code> before running any scripts.)</item>
+              <item>Once logged into the tei server complete the following steps: <list>
+                  <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the
+                    clipboard.</item>
+                  <item>Paste the result into a text editor and remove any linebreaks added by the
+                    terminal.</item>
+                  <item>Copy-paste the result into <ref
+                      target="https://sourceforge.net/auth/shell_services"
+                      >https://sourceforge.net/auth/shell_services</ref></item>
+                </list> What this does is to enable you (when logged in as tei to tei-c.org) to
+                connect to SourceForge (as your SF user) to upload the release files. </item>
+
+              <item>Test it by trying to log into SourceForge via ssh from the tei-c.org server:<lb/>
+                <code>ssh sfuser,tei@frs.sourceforge.net</code><lb/> where "sfuser" is your
+                SourceForge user name. You should not see a prompt for a password (because of the
+                ssh keys you have set up). Instead, you should immediately see <q>Welcome! This is a
+                  restricted Shell Account. You can only copy files to/from here.</q> If you see
+                this, then everything is set up correctly.</item>
+            </list>
+          </item>
+          <item>Some familiarity with the two TEI Jenkins Continuous Integration Servers. <list
+              type="ordered">
+              <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
+              <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
+            </list> Take a little time to watch them work, and see how a push to the GitHub
             repository causes them to start building TEI packages. There are three specific build
-            jobs associated with P5, and they run in a fixed sequence. Currently, as of February 2020,
-            the actual build for the release will rely on the first Jenkins server, often referred to as
-            the "Paderborn Jenkins" (maintained by Peter Stadler in Paderborn, Germany).</item>
-          <item>Access to the <ref target="https://tei-c.slack.com">TEI Council Slack</ref> 
-            which will be the communication channel during the release process.</item>
+            jobs associated with P5, and they run in a fixed sequence. Currently, as of February
+            2020, the actual build for the release will rely on the first Jenkins server, often
+            referred to as the "Paderborn Jenkins" (maintained by Peter Stadler in Paderborn,
+            Germany).</item>
+          <item>Access to the <ref target="https://tei-c.slack.com">TEI Council Slack</ref> which
+            will be the communication channel during the release process.</item>
           <item>Several hours of time. You won't be busy all the time, but the process from
             beginning to end takes several hours, especially if something goes a bit wrong and you
             have to retrace your steps. It's best to start first thing in the morning, and prepare
             to be busy all day.</item>
         </list>
-        <list>
-          <item> A copy of the public key that will enable you to sync the release zip with
-            SourceForge. <list type="bulleted">
-              <item>log in to the tei server at ssh tei@cchum-kvm-dockerteic.in2p3.fr (this requires that you've completed
-                the other public key step above). (Note that if you are a member of the Infrastructure Group 
-                with your own login, log in as yourself, but sudo su tei before running any scripts.)</item>
-              <item><code>cat ~/.ssh/id_rsa.pub</code> and copy the contents to the clipboard.</item>
-              <item>paste the result into a text editor and remove any linebreaks added by the
-                terminal.</item>
-              <item>copy-paste the result into https://sourceforge.net/auth/shell_services</item>
-            </list> What this does is to enable you (when logged in as tei to tei-c.org) to connect
-            to SourceForge (as your SF user) to upload the release files. </item>
-
-          <item>Test it by trying to log into SourceForge via ssh from the tei-c.org server:<lb/>
-            <code>ssh sfuser,tei@frs.sourceforge.net</code><lb/> where "sfuser" is your SourceForge
-            user name. You should not see a prompt for a password (because of the ssh keys you have
-            set up). Instead, you should immediately see <q>Welcome! This is a restricted Shell
-              Account. You can only copy files to/from here.</q> If you see this, then everything is
-            set up correctly.</item>
-
-        </list>
-      </div>
-
-      <div xml:id="issueHandlingGuidelines">
-          <head>Issue Handling Recommendations</head>
-      <list type="unordered">
-        <item>Assign tickets to release milestone</item>
-        <item>Use ticket reference in any commits addressing or fixing the issue</item>
-        <item>At least for the final commit addressing the issue try to prepare the commit message so it can be used for Release Notes</item>
-        <item>Label the issue as Release Note (green label) if it’s important to include the note about it in Release Notes</item>
-        
-      </list>
       </div>
 
       <div xml:id="releaseSteps">
@@ -190,81 +224,93 @@
         <list type="ordered">
           <head>1-2 weeks before release:</head>
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
-          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 dev branch (preferably on Jenkins, at a URL such as 
-            https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
-            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets dev branch.</item>
-          <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the 
-            TEI sysadmin, of the pending release date, so that they can be available or on-call. </item>
-          <item>Ask one of the Jenkins maintainers (Peter Stadler and Martin Holmes) 
-            to run a link check on the Guidelines and fix broken links in the dev branch. </item>
-          <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian packages. 
-            (The GPG private key itself is hosted on the server at the default location.)</item>
-            <!-- Revisit the above item, which was called into question during February 2020 release.
+          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 dev branch
+            (preferably on Jenkins, at a URL such as <ref
+              target="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml"
+              >https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml</ref>)
+            and update the version of p5subset.xml in the Stylesheets/source directory in the
+            Stylesheets dev branch.</item>
+          <item>Inform the Jenkins maintainers (who may not be on the Council listserv), and the TEI
+            sysadmin, of the pending release date, so that they can be available or on-call. </item>
+          <item>Ask one of the Jenkins maintainers (Martin Holmes, Peter Stadler, and Raffaele
+            Viglianti) to run a link check on the Guidelines and fix broken links in the dev branch. </item>
+          <item>Ask for the TEI-C GPG key passphrase. You'll need it for signing the Debian
+            packages. (The GPG private key itself is hosted on the server at the default
+            location.)</item>
+          <!-- Revisit the above item, which was called into question during February 2020 release.
               If Debian package update is not the responsibility of release technician(s),
             and is actually handled by Peter Stadler, this step is not necessary. (JL, 2020-02-13) -->
-          <item><hi rend="bold">Communicate with the TEI Council chair to make sure that the P5/ReleaseNotes/readme-X.X.X.xml 
-            is compiled</hi><lb/> Normally, this will be created by the TEI Council chair at the
-            point when the repository moved from its "alpha" stage to "beta", following these steps: <list type="bulleted">
+          <item><hi rend="bold">Communicate with the TEI Council chair to make sure that the
+              P5/ReleaseNotes/readme-X.X.X.xml is compiled</hi><lb/> Normally, this will be created
+            by the TEI Council chair at the point when the repository moved from its "alpha" stage
+            to "beta", following these steps: <list type="bulleted">
               <item>Confirm the version number for the new release in consultation with Council. TEI
-                version numbers are based on the Unicode Consortium system (<ref target="http://www.unicode.org/versions/"
-                  >http://www.unicode.org/versions/</ref>) but with the first digit for major
-                changes, the second for schema-changing revisions, and the third for
-                non-schema-changing revisions. When the first or second digit is incremented, the
-                following digit or digits is set to zero. During initial development, the version
-                number is followed by "alpha"; during the pre-release checking stage, it's followed
-                by "beta"; and when the release takes place, "beta" is removed and the version
-                number has only digits and periods.</item>
+                version numbers are based on the Unicode Consortium system (<ref
+                  target="http://www.unicode.org/versions/">http://www.unicode.org/versions/</ref>)
+                but with the first digit for major changes, the second for schema-changing
+                revisions, and the third for non-schema-changing revisions. When the first or second
+                digit is incremented, the following digit or digits is set to zero. During initial
+                development, the version number is followed by "alpha"; during the pre-release
+                checking stage, it's followed by "beta"; and when the release takes place, "beta" is
+                removed and the version number has only digits and periods.</item>
               <item>Create the new file by cloning a previous one.</item>
-              <item>Consult the git log log to check for all the significant changes since the last
+              <item>Consult the git log to check for all the significant changes since the last
                 release. You can do this by opening a terminal in the root of a working copy of the
                 TEI repository and running:<lb/>
                 <code>git log --after=2015-08-01</code><lb/> where the date is that of the previous
                 release. </item>
-	      <item>The Release Notes ought to list changes that affect ODD customizations even when they do not affect the resulting schemata, such as (but not limited to) the renaming of a class,
-		      or the moving of an attribute definition from an element to an attribute class.</item>
-              <item>Add the new file into the repository with <code>git
-                add</code>.</item>
+              <item>The Release Notes ought to list changes that affect ODD customizations even when
+                they do not affect the resulting schemata, such as (but not limited to) the renaming
+                of a class, or the moving of an attribute definition from an element to an attribute
+                class.</item>
+              <item>Add the new file into the repository with <code>git add
+                  P5/ReleaseNotes/readme-X.X.X.xml</code>. Be sure to change X.X.X with the version
+                numbers.</item>
             </list>
           </item>
-          <item><hi rend="bold">Review all issues labelled as Release Blocker (red label)</hi><lb/><!-- Adding this reminder in bold, as requested following the July 2024 release to ensure that all tickets labelled as release blockers are reviewed and fixed prior to the release. --> At least one week before releasing, we enter a review period, during which the only
+          <item><hi rend="bold">Review all issues labelled as Release Blocker (red
+            label)</hi><lb/><!-- Adding this reminder in bold, as requested following the July 2024 release to ensure that all tickets labelled as release blockers are reviewed and fixed prior to the release. -->
+            At least one week before releasing, we enter a review period, during which the only
             changes made to the code to be released should be to fix errors, rather than to add new
-            features. Release branches for the TEI and Stylesheets repos will be created by the release technician, to which ONLY
-            release-blocking bug fixes and corrections to typographical errors will be pushed. The
-            release technician should announce a temporary hold on pushes to the dev branches on the
-            Council list, then create the branches and push it to GitHub using the following commands, once in the
-            TEI repo and once in the Stylesheets repo:
-	    <lb/><code>git checkout dev</code> (make sure you start from the dev branch) or if you have the dev branch 
-            checked out, <code>git status</code> in order to make sure that you have the current version and no uncommitted changes.
-	    <lb/><code>git checkout -b release-X.X.X</code>
-	    <lb/><code>git push -u origin release-X.X.X</code></item>
-	  <item>Immediately after the release branches have been pushed,
-	  the release technician should inform the <ref
-	  target="mailto:tei-council@lists.tei-c.org">Council
-	  list</ref> and ask the maintainers of the TEI Jenkins
-	  systems to add a build of the release branch so that commits
-	  pushed there are properly tested, and advise them of the
-	  release schedule. Remember that the maintainers (currently
-	  Martin Holmes, Peter Stadler, and Raffaele Viglianti) may not be on the Council
-	  list. Verify with the maintainers that both Jenkins servers are functioning properly. </item>
+            features. Release branches for the TEI and Stylesheets repos will be created by the
+            release technician(s), to which ONLY release-blocking bug fixes and corrections to
+            typographical errors will be pushed. The release technician(s) should announce a
+            temporary hold on pushes to the dev branches on the Council list, then create the
+            release branches and push it to GitHub using the following commands, once in the TEI
+            repo and once in the Stylesheets repo: <lb/><code>git checkout dev</code> (make sure you
+            start from the dev branch) or if you have the dev branch checked out, <code>git
+              status</code> in order to make sure that you have the current version and no
+            uncommitted changes. <lb/><code>git checkout -b release-X.X.X</code>
+            <lb/><code>git push -u origin release-X.X.X</code></item>
+          <item>Immediately after the release branches have been pushed, the release technician(s)
+            should inform the <ref target="mailto:tei-council@lists.tei-c.org">Council list</ref>
+            and ask the maintainers of the TEI Jenkins systems to add a build of the release branch
+            so that commits pushed there are properly tested, and advise them of the release
+            schedule. Remember that the maintainers (currently Martin Holmes, Peter Stadler, and
+            Raffaele Viglianti) may not be on the Council list. Verify with the maintainers that
+            both Jenkins servers are functioning properly.</item>
           <item>Pushes to the release branch should be merged back into dev regularly:
-	  <lb/><code>git checkout dev</code>
-	  <lb/><code>git merge release-X.X.X</code></item>
-          
+              <lb/><code>git checkout dev</code>
+            <lb/><code>git merge release-X.X.X</code></item>
+
         </list>
         <list type="ordered">
           <head>On release day:</head>
           <item>The instructions below for Git commands are assumed to be run in the release-X.X.X
-            branches unless otherwise specified. If you did not create the release branch, you can 
-            set up a copy of it using the following commands:<lb/>
+            branches unless otherwise specified. If there is more than one release technician, one
+            of the release technicians should create the release branch and the other release
+            technicians can set up a copy of the release branch using the following commands:<lb/>
             <code>git pull origin</code> (to make sure your copy knows about the release branch)<lb/>
             <code>git checkout --track origin/release-X.X.X</code>
           </item>
-         <item>Check the release notes for typos, link issues, or other glaring errors, one last time. If the current release notes
-         mention revision of past release notes, check that the link URL is pointing to the current release in the Vault, 
-         which will contain the full collection of release notes. For example, for a revision to release notes in 4.10.0 in release 4.10.2, 
-         the URL should be:
-         <ref target="https://www.tei-c.org/Vault/P5/4.10.2/doc/tei-p5-doc/readme-4.10.0.html">https://www.tei-c.org/Vault/P5/<hi rend="bold">4.10.2</hi>/doc/tei-p5-doc/<hi rend="bold">readme-4.10.0.html</hi></ref>.
-         </item>
+          <item>Check the release notes for typos, link issues, or other glaring errors, one last
+            time. If the current release notes mention revision of past release notes, check that
+            the link URL is pointing to the current release in the Vault, which will contain the
+            full collection of release notes. For example, for a revision to release notes in 4.10.0
+            in release 4.10.2, the URL should be: <ref
+              target="https://www.tei-c.org/Vault/P5/4.10.2/doc/tei-p5-doc/readme-4.10.0.html"
+                >https://www.tei-c.org/Vault/P5/<hi rend="bold">4.10.2</hi>/doc/tei-p5-doc/<hi
+                rend="bold">readme-4.10.0.html</hi></ref>. </item>
           <item><hi rend="bold">Edit the P5/VERSION file to the correct number</hi><lb/> This file
             consists only of the bare version number, followed by "alpha" or "beta":<lb/>
             <code>2.8.2beta</code><lb/> For the release process, you need to remove the letters from
@@ -273,36 +319,52 @@
             actual release version number. </item>
 
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
-          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch (preferably on Jenkins, at a URL such as 
-            https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml) and
-            update the version of p5subset.xml in the Stylesheets/source directory in the Stylesheets release-X.X.X branch. <lb/>
-            <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated p5subset.xml file to the Stylesheets/source directory of the Stylesheets release-X.X.X branch. It is recommended to use <code>make DIFFNOW=0 test</code> as this will generate all the actual results and then compare against the expected results afterwards. Once the actual results are generated, you have to manually compare the expected-results and actual-results folders (both under Stylesheets\Test\) and check through all of the files containing differences.</item>
-          <item><hi rend="bold">Announce a freeze on pushes to the release branch on the
-              TEI Technical Council mailing list</hi></item>
-          
-          <item><hi rend="bold">Commit your changes to the P5 release branch  <code>release-X.X.X</code></hi>.  <lb/>
-           </item>
-          
-          <item><hi rend="bold">Complete the following steps for the Stylesheets</hi> (have a stylesheets expert on hand to help debug problems):
-            <list type="ordered">
+          <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch
+            (preferably on Jenkins, at a URL such as
+            https://jenkins.tei-c.org/job/TEIP5-release-X.X.X/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5subset.xml)
+            and update the version of p5subset.xml in the Stylesheets/source directory in the
+            Stylesheets release-X.X.X branch. <lb/>
+            <hi rend="bold">Note:</hi> Tests may need to be updated after copying the updated
+            p5subset.xml file to the Stylesheets/source directory of the Stylesheets release-X.X.X
+            branch. It is recommended to use <code>make DIFFNOW=0 test</code> as this will generate
+            all the actual results and then compare against the expected results afterwards. Once
+            the actual results are generated, you have to manually compare the expected-results and
+            actual-results folders (both under Stylesheets\Test\) and check through all of the files
+            containing differences.</item>
+          <item><hi rend="bold">Announce a freeze on pushes to the release branch on the TEI
+              Technical Council mailing list</hi></item>
+
+          <item><hi rend="bold">Commit your changes to the P5 release branch
+                <code>release-X.X.X</code></hi>. <lb/>
+          </item>
+
+          <item><hi rend="bold">Complete the following steps for the Stylesheets</hi> (have a
+            stylesheets expert on hand to help debug problems): <list type="ordered">
               <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
                 remove the 'a').</item>
-              <item>Run <code>make log</code> to generate the changelog. Then commit the changes.</item>
+              <item>Run <code>make log</code> to generate the changelog. Then commit the
+                changes.</item>
+              <item>Merge the release branch into the <code>dev</code> branch<lb/>
+                <code>git checkout dev</code><lb/>
+                <code>git merge release-X.X.X</code>
+              </item>
+              <item>Merge the release branch into <code>released</code><lb/>
+                <code>git checkout released</code><lb/>
+                <code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code>
+              </item>
             </list>
           </item>
           <!-- Steps 5 and 6 which instruct on how to merge the release branch into the released branch were originally here, but for the Jan 2025 creating the released branch at this point proved to be too early in the process and have now been moved after step 14 -->
-          <item><hi rend="bold">Push your changes</hi> for both P5 and the Stylesheets to the git 
-            repository, <code>git push origin release-X.X.X</code><lb/> and watch Jenkins build P5 for you.<lb/> 
-            This should be the final push for this version, and it will trigger the Jenkins servers 
-            to rebuild the TEI packages. As a reminder, you can find the Jenkins servers here:
-            <list type="bulleted">
+          <item><hi rend="bold">Push your changes</hi> for both P5 and the Stylesheets to the git
+            repository, <code>git push origin release-X.X.X</code><lb/> and watch Jenkins build P5
+            for you.<lb/> This should be the final push for this version, and it will trigger the
+            Jenkins servers to rebuild the TEI packages. As a reminder, you can find the Jenkins
+            servers here: <list type="bulleted">
               <item><ref target="https://jenkins.tei-c.org">https://jenkins.tei-c.org</ref></item>
               <item><ref target="https://jenkins2.tei-c.org">https://jenkins2.tei-c.org</ref></item>
-            </list>
-            And now you wait while the Jenkins servers build the packages, keeping in mind that
-            subsequent steps will require the build packages from the Paderborn Jenkins server 
-            (as of February 2020). This can take a couple of hours, so be patient. 
-            <!-- As of February 2020, the following sentence, which previously appeared in the TCW,
+            </list> And now you wait while the Jenkins servers build the packages, keeping in mind
+            that subsequent steps will require the build packages from the Paderborn Jenkins server
+            (as of February 2020). This can take a couple of hours, so be patient. <!-- As of February 2020, the following sentence, which previously appeared in the TCW,
               was proven false.
               
               "All of the Jenkins servers should behave
@@ -310,78 +372,76 @@
             <hi rend="bold">Note</hi>: The P5 and Stylesheets builds have reciprocal dependencies,
             so the first build of either the Stylesheets or the Guidelines may fail just because
             there isn't yet a current build of the other for it to use. This isn't a cause for
-            panic, but it may mean that (e.g.) the Stylesheets build needs to run twice. In particular,
-	    the Stylesheets build may fail after the TEI release is complete, so it is better to wait
-	    until the TEI release is complete before doing the Stylesheets release. (Council is considering 
-	    changing how the dependency is managed).</item>
+            panic, but it may mean that (e.g.) the Stylesheets build needs to run twice. In
+            particular, the Stylesheets build may fail after the TEI release is complete, so it is
+            better to wait until the TEI release is complete before doing the Stylesheets release.
+            (Council is considering changing how the dependency is managed).</item>
 
-            <item>
-	      <hi rend="bold">Merge the release branch into <code>dev</code> and <code>released</code></hi>.
-              <list type="ordered">
-		<item><code>git checkout released</code></item>
-		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item><code>git checkout dev</code></item>
-		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item>and don’t forget to <code>git checkout released</code></item>
-	      </list>
-	    </item>
-            
-            <item>
-	      <hi rend="bold">Repeat the steps above for the Stylesheets</hi>:
-              <list type="ordered">
-		<item><code>git checkout released</code></item>
-		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item><code>git checkout dev</code></item>
-		<item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
-		<item>and don’t forget to <code>git checkout released</code></item>
-	      </list>
-            </item>
-          
+          <item>
+            <hi rend="bold">Merge the release branch into the <code>dev</code> and
+                <code>released</code> branches</hi>. <list type="ordered">
+              <item><code>git checkout released</code></item>
+              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item><code>git checkout dev</code></item>
+              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item>Don’t forget to switch to the released branch <code>git checkout
+                released</code></item>
+            </list>
+          </item>
+
+          <item>
+            <hi rend="bold">Repeat the steps above for the Stylesheets</hi>. <list type="ordered">
+              <item><code>git checkout released</code></item>
+              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item><code>git checkout dev</code></item>
+              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item>Don't forget to switch back to the released branch <code>git checkout
+                  released</code></item>
+            </list>
+          </item>
+
           <item><hi rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</hi><lb/> When all builds have
-            completed on all Jenkins servers, click on the job number of the last build for each of the
-            three TEI jobs to make sure that it was triggered by the commit that you made in the
+            completed on all Jenkins servers, click on the job number of the last build for each of
+            the three TEI jobs to make sure that it was triggered by the commit that you made in the
             previous step (you should see your own commit message on the build page). Make sure that
-            all builds were successful (they should have green balls next to them). In the case of red balls,
-            indicating a failed build, seek support via the TEI Council Slack. </item>
+            all builds were successful (they should have green balls next to them). In the case of
+            red balls, indicating a failed build, seek support via the TEI Council Slack. </item>
           <item>
-            <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/>
-            Log into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>. 
-            Note that if you are a member of the Infrastructure Group 
-            with your own login, log in as yourself, but <code>sudo su tei</code> before running any commands.
-            Then fetch the current version of the install script by issuing 
-            <code>curl https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o ~/tei-install.sh</code>.
-            <lb/> (If you'll need to tweak that script later during the install process please make 
-            sure to feed the changes back to the original script in the TEI repo.) 
-            <lb/> Do the following three steps:
-	    <list type="bulleted">
+            <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/> Log
+            into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>. Note that if
+            you are a member of the Infrastructure Group with your own login, log in as yourself,
+            but <code>sudo su tei</code> before running any commands. Then fetch the current version
+            of the install script by issuing <code>curl
+              https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o
+              ~/tei-install.sh</code>. <lb/> (If you'll need to tweak that script later during the
+            install process please make sure to feed the changes back to the original script in the
+            TEI repo.) <lb/> Do the following three steps: <list type="bulleted">
               <item>Install on tei-c.org: <code>./tei-install.sh --package=TEIP5 --version=X.X.X
                   --sfuser=username --install</code> and then <emph>go test the version this puts in
                   the <ref target="https://www.tei-c.org/Vault/P5/">Vault</ref></emph>.</item>
               <item>If that looks good and everyone agrees then: <code>./tei-install.sh
-                  --package=TEIP5 --version=X.X.X --sfuser=username --makecurrent</code> and
-                then <emph>test that it appears on website correctly</emph>.</item>
+                  --package=TEIP5 --version=X.X.X --sfuser=username --makecurrent</code> and then
+                  <emph>test that it appears on website correctly</emph>.</item>
               <item>If the website looks right then: <code>./tei-install.sh --package=TEIP5
                   --version=X.X.X --sfuser=username --upload</code> and then move on to the next
                 step.</item>
-            </list>
-            In each of these steps, replace the Xs with your release version. Supply your
+            </list> In each of these steps, replace the Xs with your release version. Supply your
             SourceForge user name, and type your SourceForge password when prompted. By default, the
             script will pull the release package from the first Jenkins server, but you can supply
-            the URL of the other server if necessary with the --Jenkins parameter, e.g. 
-            --Jenkins=http://jenkins2.tei-c.org/. Make sure the script completes successfully each time 
-            changing the final parameter from --install, to --makecurrent, and then --upload. </item>
+            the URL of the other server if necessary with the --Jenkins parameter, e.g.
+              <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make sure the script completes
+            successfully each time changing the final parameter from <code>--install</code>, to
+              <code>--makecurrent</code>, and then <code>--upload</code>. </item>
 
-            <item><hi rend="bold">Repeat the steps above for the
-            Stylesheets</hi>, remembering that the version number is
-            the Stylesheets version, which will be different from the
-            Guidelines version:
-            <lb/><code>./tei-install.sh --package=Stylesheets
-              --version=X.X.X --sfuser=username --install</code>
-            <lb/><code>./tei-install.sh --package=Stylesheets
-              --version=X.X.X --sfuser=username --makecurrent</code>
-            <lb/><code>./tei-install.sh --package=Stylesheets
-              --version=X.X.X --sfuser=username --upload</code>
+          <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>, remembering that
+            the version number is the Stylesheets version, which will be different from the
+            Guidelines version: <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X
+              --sfuser=username --install</code>
+            <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
+              --makecurrent</code>
+            <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
+              --upload</code>
             <lb/>
           </item>
 
@@ -391,73 +451,81 @@
               released version on the TEI site</ref> and browse the Guidelines. Check that your
             version number is displayed in the footer of the page, and check that at least one
             change made since the last release is being reflected online. </item>
-          
-          <item><hi rend="bold">Update <ref target="https://roma.tei-c.org/">Roma</ref>, 
-            <ref target="https://romaantiqua.tei-c.org/">Roma Antiqua</ref>, and <ref target="https://teigarage.tei-c.org/">TEIGarage</ref></hi> 
-            <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code>, do a <code>git pull</code>, and issue the script 
-            <code>docker-update.sh</code> for every service, i.e. 
-            <list>
+
+          <item><hi rend="bold">Update <ref target="https://roma.tei-c.org/">Roma</ref>, <ref
+                target="https://romaantiqua.tei-c.org/">Roma Antiqua</ref>, and <ref
+                target="https://teigarage.tei-c.org/">TEIGarage</ref></hi>
+            <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code>, do a <code>git
+              pull</code>, and issue the script <code>docker-update.sh</code> for every service,
+            i.e. <list>
               <item><code># ./docker-update.sh roma</code></item>
               <item><code># ./docker-update.sh romaantiqua</code></item>
               <item><code># ./docker-update.sh oxgarage</code></item>
               <item><code># ./docker-update.sh teigarage</code></item>
-            </list>
-            NB: Every invocation might take some time but each should succesfully finish with the notification 
-            "Creating $CONTAINER$ ... done" 
-          </item>
+            </list> NB: Every invocation might take some time but each should successfully finish
+            with the notification "Creating $CONTAINER$ ... done" </item>
 
           <item>
             <hi rend="bold">Make your release the default downloadable version from
-              Sourceforge</hi><lb/> Go to the SourceForge site (<ref
-                target="https://sourceforge.net/projects/tei/files/TEI-P5-all/">https://sourceforge.net/projects/tei/files/TEI-P5-all/</ref>),
-            log in, and click the information button on your new release. Make it the default download for all
-            operating systems. Now make sure that the main Download button links to your package. </item>
+            Sourceforge</hi><lb/> Go to the SourceForge site (<ref
+              target="https://sourceforge.net/projects/tei/files/TEI-P5-all/"
+              >https://sourceforge.net/projects/tei/files/TEI-P5-all/</ref>), log in, and click the
+            information button on your new release. Make it the default download for all operating
+            systems. Now make sure that the main Download button links to your package. </item>
 
           <item>
             <hi rend="bold">Update tags on GitHub</hi><lb/> Every time a new release is made, a
             "tag" is created consisting of a pointer to the state of the P5 tree at release time.
             You can do this from the command line on your own computer. Before moving forward, be
-            sure to do a git pull and update your released branch. Then, still in the released
-            branch, do:<lb/>
+            sure to do a <code>git pull</code> and update your <code>released</code> branch.<lb/>
+            <code>git checkout released</code><lb/>
+            <code>git pull</code><lb/> Then, still in the released branch, do:<lb/>
             <code>git tag -a P5_Release_X.X.X -m "Release X.X.X of the TEI Guidelines."</code><lb/>
             where X.X.X is your new release. Then<lb/>
-            <code>git push origin P5_Release_X.X.X</code><lb/>
-            Do the same for the Stylesheets as well, on the released branch:<lb/>
-	    <code>git tag -a vX.X.X -m "Release X.X.X of the TEI Stylesheets."</code><lb/>
-            where X.X.X is your new release. Then<lb/>
+            <code>git push origin P5_Release_X.X.X</code><lb/> Do the same for the Stylesheets as
+            well, on the released branch:<lb/>
+            <code>git checkout released</code><lb/>
+            <code>git pull</code><lb/>
+            <code>git tag -a vX.X.X -m "Release X.X.X of the TEI Stylesheets."</code><lb/> where
+            X.X.X is your new release. Then<lb/>
             <code>git push origin vX.X.X</code>
           </item>
 
           <item><hi rend="bold">Make a Release on GitHub</hi><lb/> Go to the TEI Tags page at <ref
-            target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on GitHub. You should
-            see the tag you just pushed there. Click on it and then click on "Create Release". Add a link to the release notes README, which should be at
-            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text box. Add a copy of the zipped
-            release by downloading it from <ref
+              target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/TEI/tags</ref> on
+            GitHub. You should see the tag you just pushed there. Click on it and then click on
+            "Create Release". Add a link to the release notes README, which should be at
+            https://www.tei-c.org/release/doc/tei-p5-doc/readme-X.X.X.html, into the text box. Add a
+            copy of the zipped release by downloading it from <ref
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
-              >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then uploading it to the release page.<lb/>
-	    Do the same for the Stylesheets as well. Go to the Stylesheets Tags page at <ref
-            target="https://github.com/TEIC/TEI/tags">https://github.com/TEIC/Stylesheets/tags</ref> on GitHub and follow the same procedure.
-	  </item>
-          
-          <item><hi rend="bold">Close/Add GitHub Milestones</hi><lb/> Go to the Milestones page of both the 
-            <ref target="https://github.com/TEIC/Stylesheets/milestones">Stylesheets</ref> and the 
-            <ref target="https://github.com/TEIC/TEI/milestones">Guidelines</ref> repo. Add new Milestones by 
-            incrementing the minor version number part and move all open issues from the current Milestone to the new one.
-            (If Council already decided on the next release date (unlikely) you can add the date to the new Milestone. Otherwise leave empty.)
-            Finally, close the current Milestone (do not delete it).</item>
+              >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then
+            uploading it to the release page.<lb/> Do the same for the Stylesheets as well. Go to
+            the Stylesheets Tags page at <ref target="https://github.com/TEIC/TEI/tags"
+              >https://github.com/TEIC/Stylesheets/tags</ref> on GitHub and follow the same
+            procedure. </item>
+
+          <item><hi rend="bold">Close/Add GitHub Milestones</hi><lb/> Go to the Milestones page of
+            both the <ref target="https://github.com/TEIC/Stylesheets/milestones">Stylesheets</ref>
+            and the <ref target="https://github.com/TEIC/TEI/milestones">Guidelines</ref> repo. Add
+            new Milestones by incrementing the minor version number part and move all open issues
+            from the current Milestone to the new one. (If Council already decided on the next
+            release date (unlikely) you can add the date to the new Milestone. Otherwise leave
+            empty.) Finally, close the current Milestone (do not delete it).</item>
 
           <item><hi rend="bold">Update the Debian Package repository with the new release</hi><lb/>
-            The TEI Debian packages are regularly created during each Jenkins build. 
-            For each release you need to update the TEI Debian repository at 
-            <ref target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> 
-            which can be done by simply running <code>ant</code> on the TEI server within the 
-            <code>/data/debian-packages</code> directory. 
-            (This directory is cloned from <ref target="https://github.com/TEIC/TEI-apt-repo">https://github.com/TEIC/TEI-apt-repo</ref>)
-            <emph>Since the repository index needs to be signed, you'll need the passphrase for the GPG key.</emph> 
-            Make sure you've received it in advance! 
-            <lb/>Once the process has finished and the repo is updated, the page at <ref target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref>
-            should reflect the changes immediately. If not, try to restart the NGINX Docker container that serves this directory 
-            with <code>docker restart debian-packages</code>.
+            The TEI Debian packages are regularly created during each Jenkins build. For each
+            release you need to update the TEI Debian repository at <ref
+              target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> which can
+            be done by simply running <code>ant</code> on the TEI server within the
+              <code>/data/debian-packages</code> directory. (This directory is cloned from <ref
+              target="https://github.com/TEIC/TEI-apt-repo"
+              >https://github.com/TEIC/TEI-apt-repo</ref>) <emph>Since the repository index needs to
+              be signed, you'll need the passphrase for the GPG key.</emph> Make sure you've
+            received it in advance! <lb/>Once the process has finished and the repo is updated, the
+            page at <ref target="http://packages.tei-c.org/deb/"
+              >http://packages.tei-c.org/deb/</ref> should reflect the changes immediately. If not,
+            try to restart the NGINX Docker container that serves this directory with <code>docker
+              restart debian-packages</code>.
             <!--<lb/>Another caveat: <code>ant</code> fails to fetch the packages via HTTPS when 
             running an outdated Java VM. Make sure to set the environment variable <code>JAVA_HOME</code>
             to some appropriate version! At present <code>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</code>
@@ -465,39 +533,45 @@
           </item>
 
           <item>
-	    <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the TEI-C website</hi>.
-	    The table is found in the <q>src/guidelines/p5.md</q> file
-	    in the <ref target="https://github.com/TEIC/website">website</ref> repository; it is published at <ref
-	    target="https://tei-c.org/guidelines/p5/#releases">https://tei-c.org/guidelines/p5</ref>.
-	    <lb/>Add the new release information and links to the top
-	    of the release table.</item>
+            <hi rend="bold">Update the table of previous releases of P5 in the GitHub repo for the
+              TEI-C website</hi>. The table is found in the <code>src/guidelines/p5.md</code> file
+            in the <ref target="https://github.com/TEIC/website">website</ref> repository; it is
+            published at <ref target="https://tei-c.org/guidelines/p5/#releases"
+              >https://tei-c.org/guidelines/p5</ref>. <lb/>Add the new release information and links
+            to the top of the release table.</item>
 
           <item><hi rend="bold">Update the oXygen-ready distribution of TEI.</hi><lb/> This involves
             building the new package of oxygen-tei, and then updating the distribution file on the
             TEI server so that the oXygen software knows about the new release. You may request to
             hand this off to one of the maintainers (currently Syd Bauman, James Cummings, or Martin
-            Holmes) to do this for you if you're not familiar with the project. <list type="bulleted">
+            Holmes) to do this for you if you're not familiar with the project. <list
+              type="bulleted">
               <item>Check that you have ant (at least version 1.8) installed on your machine.</item>
               <!-- MDH 2021-04-19: Added release="8" to javac call in framework/build.xml, and this now seems to 
                 build fine with Java 14. Commenting out this step. -->
               <!--<item>Check that your current Java version is 1.8. This is an old version, but it is currently 
               required for building the oxygen-tei package. If you are on e.g. Ubuntu Linux, you can 
               install multiple Java versions and switch between them easily using <code>sudo update-alternatives -\-config java</code>. </item>-->
-              <item>Check that the latest versions of the Stylesheets and TEI P5 are
-                available from the TEI Vault, since the oxygen-tei update/upload script retrieves them from there. 
-                <list type="unordered">
-                  <item>Check for the Stylesheets at <ref target="https://tei-c.org/Vault/Stylesheets/">https://tei-c.org/Vault/Stylesheets/</ref>.</item>
-                  <item>Check for the Guidelines at <ref target="https://tei-c.org/Vault/P5/">https://tei-c.org/Vault/P5/</ref>.</item>
+              <item>Check that the latest versions of the Stylesheets and TEI P5 are available from
+                the TEI Vault, since the oxygen-tei update/upload script retrieves them from there.
+                  <list type="unordered">
+                  <item>Check for the Stylesheets at <ref
+                      target="https://tei-c.org/Vault/Stylesheets/"
+                      >https://tei-c.org/Vault/Stylesheets/</ref>.</item>
+                  <item>Check for the Guidelines at <ref target="https://tei-c.org/Vault/P5/"
+                      >https://tei-c.org/Vault/P5/</ref>.</item>
                 </list>
               </item>
-           
+
               <item>Check out or update a local copy of the source code from <ref
                   target="https://github.com/TEIC/oxygen-tei"
                   >https://github.com/TEIC/oxygen-tei</ref> to your local system.</item>
-              
-              <item>cd into the oxygen-tei folder (it should contain folders called "frameworks" and
-                "jenkins").</item>
-              
+
+              <item>Change directory to the oxygen-tei folder<lb/>
+                <code>cd oxygen-tei</code><lb/> List the contents of the folder to double check by
+                entering <code>ls</code>. The folder should contain folders called "frameworks" and
+                "jenkins".</item>
+
               <item>Run the ant build process with the "release" parameter: <lb/>
                 <code>ant release</code><lb/> This builds the plugin using the latest stable
                 versions of P5 and the Stylesheets, then offers to upload the result to the TEI's
@@ -505,23 +579,22 @@
                 This also creates an updated updateSite.oxygen file, by retrieving the latest
                 updateSite.oxygen file from the tei-c.org site, and asks the user to provide the new
                 version number before creating a new version of updateSite.oxygen. </item>
-              
-              <item>Go to the TEIC/oxygen-tei GitHub repo and create
-              a new release, using the <code>Draft new release</code>
-              button. Copy the previous release info (tag, title, and
-              text), and tweak the versions as appropriate. The tag
-              should be <code><emph>v</emph>x.x.x</code> (don’t forget
-              the <q>v</q>!), the title will be <code>Release
-              x.x.x</code>, and the text <quote>Release number X of
-              the oXygen TEI plugin, based on TEI P5 x.x.x and
-              Stylesheets x.x.x.</quote></item>
-              
+
+              <item>Go to the <ref target="https://github.com/TEIC/oxygen-tei/releases"
+                  >TEIC/oxygen-tei</ref> GitHub repo and create a new release, using the <code>Draft
+                  new release</code> button. Copy the previous release info (tag, title, and text),
+                and tweak the versions as appropriate. The tag should be <code>vx.x.x</code> (don’t
+                forget the <emph>v</emph>!), the title will be <code>Release x.x.x</code>, and the
+                text <quote>Release number X of the oXygen TEI plugin, based on TEI P5 x.x.x and
+                  Stylesheets x.x.x.</quote></item>
+
               <item>Attach the zip file you just created in the build process, which will be named
-              something like <code>oxygen-tei-x.x.x-x.x.x.zip</code>, with the numbers from
-              the current TEI and Stylesheets releases.</item>
-              
-              <item>Once the tag/release has been published, run <lb/><code>ant uploadOxygenUpdateFile</code><lb/>
-              to push the <code>updateSite.oxygen</code> file up to the TEI server.</item>
+                something like <code>oxygen-tei-x.x.x-x.x.x.zip</code>, with the numbers from the
+                current TEI and Stylesheets releases.</item>
+
+              <item>Once the tag/release has been published, run <lb/><code>ant
+                  uploadOxygenUpdateFile</code><lb/> to push the <code>updateSite.oxygen</code> file
+                up to the TEI server.</item>
             </list>
           </item>
 
@@ -530,28 +603,28 @@
             Council Chair. They will announce the release to the TEI-L mailing list, including the
             text of P5/ReleaseNotes/readme-X.X.X.xml in plain text form (which can be generated
             using the "readme" profile for teitotxt), and place an announcement on the Text Encoding
-            Initiative Newsfeed blog in the category of 'News'. 
-            The Chair should contact the Social Media coordinator (currently Anna Sofia Lippolis) to help spread the news.</item>
+            Initiative Newsfeed blog in the category of '<ref target="https://tei-c.org/news/"
+              >News</ref>'. The Chair should contact the Social Media coordinator (currently Anna
+            Sofia Lippolis) to help spread the news.</item>
           <item><hi rend="bold">Lift the freeze on committing changes to the repository</hi><lb/>
             Write to the TEI Council list and let them know that they can once again start
             committing changes to the repository.</item>
 
           <item><hi rend="bold">Increment the build number for the next release cycle</hi><lb/>
-            Recalling how release preparation requires confirmation of version number,
-            use your best judgment to determine the version number for the next release (in consultation with Council,
-            if possible). TEI version numbers are based on the Unicode Consortium system (<ref
-              target="http://www.unicode.org/versions/">http://www.unicode.org/versions/</ref>) but with the first
-            digit for major changes, the second for schema-changing revisions, and the third for
-            non-schema-changing revisions. When the first or second digit is incremented, the
-            following digit or digits is set to zero. 
-            
-            <!-- Revisit version control instructions at May 2020 F2F (JL, 2020-02-13) -->
-            
+            Recalling how release preparation requires confirmation of version number, use your best
+            judgment to determine the version number for the next release (in consultation with
+            Council, if possible). TEI version numbers are based on the Unicode Consortium system
+              (<ref target="http://www.unicode.org/versions/"
+            >http://www.unicode.org/versions/</ref>) but with the first digit for major changes, the
+            second for schema-changing revisions, and the third for non-schema-changing revisions.
+            When the first or second digit is incremented, the following digit or digits is set to
+            zero. <!-- Revisit version control instructions at May 2020 F2F (JL, 2020-02-13) -->
             After the release process has been completed, the release number for both P5 and the
-            Stylesheets needs to be updated. On the dev branch, edit the P5/VERSION file and the Stylesheets/VERSION
-            file to the correct numbers. These files contain nothing except the bare version number. 
-            It should be incremented appropriately, and "a" added to the end of it, so if for example 
-            the release was number 2.8.0, you would change the number in the file to:<lb/>
+            Stylesheets needs to be updated. On the dev branch, edit the P5/VERSION file and the
+            Stylesheets/VERSION file to the correct numbers. These files contain nothing except the
+            bare version number. It should be incremented appropriately, and "a" added to the end of
+            it, so if for example the release was number 2.8.0, you would change the number in the
+            file to:<lb/>
             <code>2.9.0a</code><lb/> signifying that the versions built subsequent to the release
             are now in the alpha stage. </item>
 
@@ -564,4 +637,3 @@
 
   </text>
 </TEI>
-
