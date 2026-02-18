@@ -32,6 +32,8 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2026-02-18" who="#POC">Add missing links and correct incorrect links in the
+        release instructions</change>
       <change when="2025-09-06" who="#EBB">Added guidance to check links in release notes, including
         links to latest corrected version of past release notes.</change>
       <change when="2025-08-27" who="#SDB">Per HBS, move “merge into "released"” steps up to
@@ -311,12 +313,19 @@
               target="https://www.tei-c.org/Vault/P5/4.10.2/doc/tei-p5-doc/readme-4.10.0.html"
                 >https://www.tei-c.org/Vault/P5/<hi rend="bold">4.10.2</hi>/doc/tei-p5-doc/<hi
                 rend="bold">readme-4.10.0.html</hi></ref>. </item>
-          <item><hi rend="bold">Edit the P5/VERSION file to the correct number</hi><lb/> This file
-            consists only of the bare version number, followed by "alpha" or "beta":<lb/>
-            <code>2.8.2beta</code><lb/> For the release process, you need to remove the letters from
+          <item><hi rend="bold">Edit the P5/VERSION file to the correct number</hi><lb/> Change
+            directory to TEI/P5 <code>cd TEI/P5</code>.<lb/> To open the VERSION file, enter
+              <code>nano VERSION</code>.<lb/> This file consists only of the bare version number,
+            followed by "alpha" or "beta":<lb/>
+            <code>2.8.2b</code><lb/> For the release process, you need to remove the letters from
             the end, leaving a pure version number:<lb/>
             <code>2.8.2</code><lb/> This changes the release from beta (or possibly alpha) to the
-            actual release version number. </item>
+            actual release version number.<lb/> Save your changes to the VERSION file using the
+            keyboard keys <code>Ctrl + S</code>.<lb/> Exit the file using the keyboard keys
+              <code>Ctrl + X</code>.<lb/> Commit your changes with the command <code>git commit -a
+              -m "Update VERSION number"</code>.<lb/> Push your changes with the command <code>git
+              push</code>.<lb/>
+          </item>
 
           <!-- MDH and SB: Adding a new step to update p5subset.xml in the Stylesheets repo. -->
           <item><hi rend="bold">Get p5subset.xml</hi> from a fresh build of the P5 release branch
@@ -339,9 +348,18 @@
           </item>
 
           <item><hi rend="bold">Complete the following steps for the Stylesheets</hi> (have a
-            stylesheets expert on hand to help debug problems): <list type="ordered">
+            stylesheets expert on hand to help debug problems):<lb/>
+            <list type="ordered">
               <item>Edit the Stylesheets/VERSION number to the correct release number (usually just
-                remove the 'a').</item>
+                remove the 'a'). <lb/> To update the VERSION file, first change directory to the
+                Stylesheets. If you are already in the TEI/P5 directory you could change directory
+                to the Stylesheets using the following command: <code>cd
+                ../../Stylesheets</code><lb/> To open the VERSION file, enter <code>nano
+                  VERSION</code>.<lb/> Remove the letter at the end and save your changes using the
+                keyboard keys <code>Ctrl + S</code>.<lb/> Exit the file using the keyboard keys
+                  <code>Ctrl + X</code><lb/>. Commit your changes with the command <code>git commit
+                  -a -m "Update VERSION number"</code>.<lb/> Push your changes with the command
+                  <code>git push</code><lb/>.</item>
               <item>Run <code>make log</code> to generate the changelog. Then commit the
                 changes.</item>
               <item>Merge the release branch into the <code>dev</code> branch<lb/>
@@ -416,7 +434,14 @@
               https://raw.githubusercontent.com/TEIC/TEI/dev/P5/Utilities/tei-install.sh -o
               ~/tei-install.sh</code>. <lb/> (If you'll need to tweak that script later during the
             install process please make sure to feed the changes back to the original script in the
-            TEI repo.) <lb/> Do the following three steps: <list type="bulleted">
+            TEI repo.) <lb/>In each of the following steps, <emph>replace the Xs with your release
+              version number</emph>. Supply your SourceForge user name, and type your SourceForge
+            password when prompted. By default, the script will pull the release package from the
+            first Jenkins server, but you can supply the URL of the other server if necessary with
+            the --Jenkins parameter, e.g. <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make
+            sure the script completes successfully each time changing the final parameter from
+              <code>--install</code>, to <code>--makecurrent</code>, and then <code>--upload</code>.
+            <lb/>Following the above guidance, complete these three steps: <list type="bulleted">
               <item>Install on tei-c.org: <code>./tei-install.sh --package=TEIP5 --version=X.X.X
                   --sfuser=username --install</code> and then <emph>go test the version this puts in
                   the <ref target="https://www.tei-c.org/Vault/P5/">Vault</ref></emph>.</item>
@@ -426,23 +451,20 @@
               <item>If the website looks right then: <code>./tei-install.sh --package=TEIP5
                   --version=X.X.X --sfuser=username --upload</code> and then move on to the next
                 step.</item>
-            </list> In each of these steps, replace the Xs with your release version. Supply your
-            SourceForge user name, and type your SourceForge password when prompted. By default, the
-            script will pull the release package from the first Jenkins server, but you can supply
-            the URL of the other server if necessary with the --Jenkins parameter, e.g.
-              <code>--Jenkins=http://jenkins2.tei-c.org/</code>. Make sure the script completes
-            successfully each time changing the final parameter from <code>--install</code>, to
-              <code>--makecurrent</code>, and then <code>--upload</code>. </item>
+            </list>
+          </item>
 
           <item><hi rend="bold">Repeat the steps above for the Stylesheets</hi>, remembering that
             the version number is the Stylesheets version, which will be different from the
-            Guidelines version: <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X
-              --sfuser=username --install</code>
-            <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
-              --makecurrent</code>
-            <lb/><code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
-              --upload</code>
-            <lb/>
+            Guidelines version: <lb/><list type="bulleted"><item><code>./tei-install.sh --package=Stylesheets --version=X.X.X
+              --sfuser=username --install</code> and then <emph>go test the version this puts in
+                the <ref target="https://www.tei-c.org/Vault/stylesheets/">Vault</ref></emph>.</item>
+              <lb/><item>If that looks good and everyone agrees then:<code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
+                  --makecurrent</code> and then
+                <emph>test that it appears on website correctly</emph>.</item>
+              <lb/><item>If the website looks right then: <code>./tei-install.sh --package=Stylesheets --version=X.X.X --sfuser=username
+              --upload</code></item>
+              <lb/></list>
           </item>
 
           <item><hi rend="bold">Check the TEI website and all downloadable files are displaying the
@@ -500,9 +522,12 @@
               target="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/"
               >https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/</ref> and then
             uploading it to the release page.<lb/> Do the same for the Stylesheets as well. Go to
-            the Stylesheets Tags page at <ref target="https://github.com/TEIC/TEI/tags"
+            the Stylesheets Tags page at <ref target="https://github.com/TEIC/Stylesheets/tags"
               >https://github.com/TEIC/Stylesheets/tags</ref> on GitHub and follow the same
-            procedure. </item>
+            procedure. Be sure to add a copy of the zipped release by downloading it from <ref
+              target="https://jenkins.tei-c.org/job/Stylesheets/lastSuccessfulBuild/artifact/"
+              >https://jenkins.tei-c.org/job/Stylesheets/lastSuccessfulBuild/artifact/</ref> and then
+            uploading it to the release page. </item>
 
           <item><hi rend="bold">Close/Add GitHub Milestones</hi><lb/> Go to the Milestones page of
             both the <ref target="https://github.com/TEIC/Stylesheets/milestones">Stylesheets</ref>
