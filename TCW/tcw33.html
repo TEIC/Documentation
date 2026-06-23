@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
+          var c = new CETEI();
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","publicationStmt","publisher","date","sourceDesc","p","text","body","div","head",];
+          c.els.push("egXML");
+          if (document.registerElement) {
+            c.registerAll(c.els);
+          } else {
+            c.fallback(c.els);
+          }
+        </script></head><body>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"><tei-tei data-xmlns="http://www.tei-c.org/ns/1.0" data-teiname="TEI">
+  <!-- THIS IS A DRAFT DOCUMENT. -->
+  <tei-teiheader data-teiname="teiHeader">
+    <tei-filedesc data-teiname="fileDesc">
+      <tei-titlestmt data-teiname="titleStmt">
+        <tei-title data-teiname="title">TCW33: TEI Council: Formal Specification for ODD and ODD Processing</tei-title>
+        <tei-author data-teiname="author">Syd Bauman</tei-author>
+        <tei-author data-teiname="author">Helena Bermudez-Saleh</tei-author>
+        <tei-author data-teiname="author">Martin Holmes</tei-author>
+      </tei-titlestmt>
+      <tei-publicationstmt data-teiname="publicationStmt">
+        <tei-publisher data-teiname="publisher">TEI Technical Council</tei-publisher>
+        <tei-date data-teiname="date">2016</tei-date>
+      </tei-publicationstmt>
+      <tei-sourcedesc data-teiname="sourceDesc">
+        <tei-p data-teiname="p">Born digital document.</tei-p>
+      </tei-sourcedesc>
+    </tei-filedesc>
+  </tei-teiheader>
+  <tei-text data-teiname="text">
+    <tei-body data-teiname="body">
+      <tei-div data-teiname="div">
+        <tei-head data-teiname="head">Formal Specification for ODD and ODD Processing</tei-head>
+        <tei-p data-teiname="p">THIS IS A DRAFT IN DEVELOPMENT.</tei-p>
+        <tei-p data-teiname="p">Although the TEI Guidelines includes a chapter on using ODD (Documentation Elements),
+        and the elements and attributes for ODD are defined in the P5 schema specification,
+        there is no formal documentation to guide developers or maintainers of TEI ODD processors.
+        That is the purpose of this document. It is being developed as part of the ATOP (Another
+        TEI ODD Processor) teamʼs work to create a replacement for the existing TEI Stylesheets
+        modules which generate RELAXNG and Schematron schemas from TEI ODD files.</tei-p>
+      </tei-div>
+    </tei-body>
+  </tei-text>
+</tei-tei>
+</body></html>
