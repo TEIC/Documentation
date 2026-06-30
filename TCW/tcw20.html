@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="/css/tei.css"><script type="text/javascript" src="/js/CETEI.js"></script><script type="text/javascript">
           var c = new CETEI();
-          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","publicationStmt","publisher","date","sourceDesc","p","revisionDesc","change","name","text","body","head","emph","div","list","item","gi","ptr","ident","att","soCalled","ref","eg","label","q","val","code","table","row","cell","back","listBibl","bibl","idno",];
+          c.els = ["TEI","teiHeader","fileDesc","titleStmt","title","author","publicationStmt","publisher","date","sourceDesc","p","revisionDesc","change","att","gi","name","text","body","head","emph","div","list","item","ptr","ident","soCalled","ref","eg","label","q","code","val","table","row","cell","back","listBibl","bibl","idno",];
           c.els.push("egXML");
           if (document.registerElement) {
             c.registerAll(c.els);
@@ -28,6 +28,9 @@ $LastChangedRevision: 8769 $
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2026-06-30" who="MDH">Adding guidance on the requirement for <tei-att data-teiname="att">ident</tei-att> on
+      <tei-gi data-teiname="gi">remarks</tei-gi> elements, and how to construct a value for it, following Council decision
+      to require it.</tei-change>
       <tei-change data-teiname="change" when="2020-02-10" who="EBB">Adding guidance on how to provide supporting explanation with remarks and with paragraphs within exempla.</tei-change>
       <tei-change data-teiname="change" when="2020-02-03" who="MS">Changed link to TCW 24.</tei-change>
       <tei-change data-teiname="change" when="2019-12-26" who="EBB">Revised explanation of how to work in repo branches other than dev branch.</tei-change>
@@ -205,6 +208,27 @@ processing instruction. If you think of other content that could be generated in
             though it may refer to one. Be careful when writing a supporting explanation not to refer to an example as 
             <tei-q data-teiname="q">above</tei-q> or <tei-q data-teiname="q">below</tei-q> the explanation, or to indicate the <tei-q data-teiname="q">first</tei-q> or <tei-q data-teiname="q">second</tei-q> example in a series since 
             the rendering of the Guidelines could change and examples could change order or position as new ones are added.</tei-p>
+          <tei-p data-teiname="p">When creating a <tei-gi data-teiname="gi">remarks</tei-gi> element, give it an 
+            <tei-att data-teiname="att">ident</tei-att> attribute. The value of this
+          attribute is constructed in the following way: 
+          <tei-list data-teiname="list">
+            <tei-item data-teiname="item">For a <tei-gi data-teiname="gi">remarks</tei-gi> element applying to an 
+              <tei-gi data-teiname="gi">elementSpec</tei-gi>, <tei-gi data-teiname="gi">classSpec</tei-gi>, <tei-gi data-teiname="gi">macroSpec</tei-gi>, 
+              or <tei-gi data-teiname="gi">dataSpec</tei-gi> use the value of the spec's <tei-att data-teiname="att">ident</tei-att> 
+              + <tei-code data-teiname="code">-remarks</tei-code>.</tei-item>
+            <tei-item data-teiname="item">For a <tei-gi data-teiname="gi">remarks</tei-gi> element applying to an attribute 
+              inside a spec element, use the value of the spec's <tei-ident data-teiname="ident">ident</tei-ident> 
+              + <tei-code data-teiname="code">-attr.</tei-code> + the value of the attribute's <tei-att data-teiname="att">ident</tei-att> 
+              <tei-code data-teiname="code">-remarks</tei-code>.</tei-item>
+          </tei-list>
+            There should only be one <tei-gi data-teiname="gi">remarks</tei-gi> element in English for any 
+            identifiable component; if there are  multiple points to be made, 
+            use a separate <tei-gi data-teiname="gi">p</tei-gi> element inside the <tei-gi data-teiname="gi">remarks</tei-gi>
+            for each point. The first <tei-gi data-teiname="gi">remarks</tei-gi> element in any context
+            should have <tei-att data-teiname="att">xml:lang</tei-att>=<tei-val data-teiname="val">en</tei-val>; translations of that
+            element should bear the same <tei-att data-teiname="att">ident</tei-att> value, along with 
+            the appropriate <tei-att data-teiname="att">xml:lang</tei-att>.
+          </tei-p>
           <tei-p data-teiname="p">Wherever possible, choose your examples from real documents and provide bibliographic
             citations for them, either:
             <tei-list data-teiname="list">
