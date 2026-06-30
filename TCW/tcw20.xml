@@ -24,6 +24,9 @@ $LastChangedRevision: 8769 $
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2026-06-30" who="MDH">Adding guidance on the requirement for <att>ident</att> on
+      <gi>remarks</gi> elements, and how to construct a value for it, following Council decision
+      to require it.</change>
       <change when="2020-02-10" who="EBB">Adding guidance on how to provide supporting explanation with remarks and with paragraphs within exempla.</change>
       <change when="2020-02-03" who="MS">Changed link to TCW 24.</change>
       <change when="2019-12-26" who="EBB">Revised explanation of how to work in repo branches other than dev branch.</change>
@@ -201,6 +204,27 @@ processing instruction. If you think of other content that could be generated in
             though it may refer to one. Be careful when writing a supporting explanation not to refer to an example as 
             <q>above</q> or <q>below</q> the explanation, or to indicate the <q>first</q> or <q>second</q> example in a series since 
             the rendering of the Guidelines could change and examples could change order or position as new ones are added.</p>
+          <p>When creating a <gi>remarks</gi> element, give it an 
+            <att>ident</att> attribute. The value of this
+          attribute is constructed in the following way: 
+          <list>
+            <item>For a <gi>remarks</gi> element applying to an 
+              <gi>elementSpec</gi>, <gi>classSpec</gi>, <gi>macroSpec</gi>, 
+              or <gi>dataSpec</gi> use the value of the spec's <att>ident</att> 
+              + <code>-remarks</code>.</item>
+            <item>For a <gi>remarks</gi> element applying to an attribute 
+              inside a spec element, use the value of the spec's <ident>ident</ident> 
+              + <code>-attr.</code> + the value of the attribute's <att>ident</att> 
+              <code>-remarks</code>.</item>
+          </list>
+            There should only be one <gi>remarks</gi> element in English for any 
+            identifiable component; if there are  multiple points to be made, 
+            use a separate <gi>p</gi> element inside the <gi>remarks</gi>
+            for each point. The first <gi>remarks</gi> element in any context
+            should have <att>xml:lang</att>=<val>en</val>; translations of that
+            element should bear the same <att>ident</att> value, along with 
+            the appropriate <att>xml:lang</att>.
+          </p>
           <p>Wherever possible, choose your examples from real documents and provide bibliographic
             citations for them, either:
             <list>
