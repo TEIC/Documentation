@@ -422,7 +422,7 @@
             red balls, indicating a failed build, seek support via the TEI Council Slack. </tei-item>
           <tei-item data-teiname="item">
             <tei-hi data-teiname="hi" rend="bold">Log into TEI server and run the tei-install.sh script:</tei-hi><tei-lb data-teiname="lb"></tei-lb> Log
-            into the TEI server via <tei-code data-teiname="code">ssh tei@cchum-kvm-dockerteic.in2p3.fr</tei-code>. Note that if
+            into the TEI server via <tei-code data-teiname="code">ssh tei@tei-c.huma-num.fr</tei-code>. Note that if
             you are a member of the Infrastructure Group with your own login, log in as yourself,
             but <tei-code data-teiname="code">sudo su tei</tei-code> before running any commands. Then fetch the current version
             of the install script by issuing <tei-code data-teiname="code">curl
@@ -468,15 +468,12 @@
             version number is displayed in the footer of the page, and check that at least one
             change made since the last release is being reflected online. </tei-item>
 
-          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update <tei-ref data-teiname="ref" target="https://roma.tei-c.org/">Roma</tei-ref>, <tei-ref data-teiname="ref" target="https://romaantiqua.tei-c.org/">Roma Antiqua</tei-ref>, and <tei-ref data-teiname="ref" target="https://teigarage.tei-c.org/">TEIGarage</tei-ref></tei-hi>
+          <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Update <tei-ref data-teiname="ref" target="https://teigarage.tei-c.org/">TEIGarage</tei-ref></tei-hi>
             <tei-lb data-teiname="lb"></tei-lb>Change to the directory <tei-code data-teiname="code">~/repos/infrastructure/humanum</tei-code>, do a <tei-code data-teiname="code">git
-              pull</tei-code>, and issue the script <tei-code data-teiname="code">docker-update.sh</tei-code> for every service,
+              pull</tei-code>, and issue the script <tei-code data-teiname="code">docker-update.sh</tei-code> for TEIGarage,
             i.e. <tei-list data-teiname="list">
-              <tei-item data-teiname="item"><tei-code data-teiname="code"># ./docker-update.sh roma</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code"># ./docker-update.sh romaantiqua</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code"># ./docker-update.sh oxgarage</tei-code></tei-item>
               <tei-item data-teiname="item"><tei-code data-teiname="code"># ./docker-update.sh teigarage</tei-code></tei-item>
-            </tei-list> NB: Every invocation might take some time but each should successfully finish
+            </tei-list> NB: This might take some time but it should successfully finish
             with the notification "Creating $CONTAINER$ ... done" </tei-item>
 
           <tei-item data-teiname="item">
@@ -525,7 +522,7 @@
             The TEI Debian packages are regularly created during each Jenkins build. For each
             release you need to update the TEI Debian repository at <tei-ref data-teiname="ref" target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</tei-ref> which can
             be done by simply running <tei-code data-teiname="code">ant</tei-code> on the TEI server within the
-              <tei-code data-teiname="code">/data/debian-packages</tei-code> directory. (This directory is cloned from <tei-ref data-teiname="ref" target="https://github.com/TEIC/TEI-apt-repo">https://github.com/TEIC/TEI-apt-repo</tei-ref>) <tei-emph data-teiname="emph">Since the repository index needs to
+            <tei-code data-teiname="code">/data/TEI-apt-repo</tei-code> directory. (This directory is cloned from <tei-ref data-teiname="ref" target="https://github.com/TEIC/TEI-apt-repo">https://github.com/TEIC/TEI-apt-repo</tei-ref>) <tei-emph data-teiname="emph">Since the repository index needs to
               be signed, you'll need the passphrase for the GPG key.</tei-emph> Make sure you've
             received it in advance! <tei-lb data-teiname="lb"></tei-lb>Once the process has finished and the repo is updated, the
             page at <tei-ref data-teiname="ref" target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</tei-ref> should reflect the changes immediately. If not,
