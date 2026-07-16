@@ -427,7 +427,7 @@
             red balls, indicating a failed build, seek support via the TEI Council Slack. </item>
           <item>
             <hi rend="bold">Log into TEI server and run the tei-install.sh script:</hi><lb/> Log
-            into the TEI server via <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>. Note that if
+            into the TEI server via <code>ssh tei@tei-c.huma-num.fr</code>. Note that if
             you are a member of the Infrastructure Group with your own login, log in as yourself,
             but <code>sudo su tei</code> before running any commands. Then fetch the current version
             of the install script by issuing <code>curl
@@ -474,17 +474,13 @@
             version number is displayed in the footer of the page, and check that at least one
             change made since the last release is being reflected online. </item>
 
-          <item><hi rend="bold">Update <ref target="https://roma.tei-c.org/">Roma</ref>, <ref
-                target="https://romaantiqua.tei-c.org/">Roma Antiqua</ref>, and <ref
+          <item><hi rend="bold">Update <ref
                 target="https://teigarage.tei-c.org/">TEIGarage</ref></hi>
             <lb/>Change to the directory <code>~/repos/infrastructure/humanum</code>, do a <code>git
-              pull</code>, and issue the script <code>docker-update.sh</code> for every service,
+              pull</code>, and issue the script <code>docker-update.sh</code> for TEIGarage,
             i.e. <list>
-              <item><code># ./docker-update.sh roma</code></item>
-              <item><code># ./docker-update.sh romaantiqua</code></item>
-              <item><code># ./docker-update.sh oxgarage</code></item>
               <item><code># ./docker-update.sh teigarage</code></item>
-            </list> NB: Every invocation might take some time but each should successfully finish
+            </list> NB: This might take some time but it should successfully finish
             with the notification "Creating $CONTAINER$ ... done" </item>
 
           <item>
@@ -542,7 +538,7 @@
             release you need to update the TEI Debian repository at <ref
               target="http://packages.tei-c.org/deb/">http://packages.tei-c.org/deb/</ref> which can
             be done by simply running <code>ant</code> on the TEI server within the
-              <code>/data/debian-packages</code> directory. (This directory is cloned from <ref
+            <code>/data/TEI-apt-repo</code> directory. (This directory is cloned from <ref
               target="https://github.com/TEIC/TEI-apt-repo"
               >https://github.com/TEIC/TEI-apt-repo</ref>) <emph>Since the repository index needs to
               be signed, you'll need the passphrase for the GPG key.</emph> Make sure you've
