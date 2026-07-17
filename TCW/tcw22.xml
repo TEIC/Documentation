@@ -171,13 +171,13 @@
               <item>Send the public key to the Council Chair, who will forward it on to the system
                 administrator.</item>
             </list> Make sure you get this set up well in advance of the release day, and make sure
-            you can <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code> successfully. See next steps.
+            you can <code>ssh tei@tei-c.huma-num.fr</code> successfully. See next steps.
             (Note: if you are a member of the Infrastructure Group, you will already have your own
             login to the server, but you should test it.)</item>
 
           <item>A copy of the public key that will enable you to sync the release zip with
             SourceForge. <list type="ordered">
-              <item>Log in to the tei server at <code>ssh tei@cchum-kvm-dockerteic.in2p3.fr</code>
+              <item>Log in to the tei server at <code>ssh tei@tei-c.huma-num.fr</code>
                 (this requires that you have already generated the SSH public key and sent it to the
                 system administrator as outlined in the step above). (Note that if you are a member
                 of the Infrastructure Group with your own login, log in as yourself, but <code>sudo
