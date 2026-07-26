@@ -41,6 +41,8 @@
       </tei-sourcedesc>
     </tei-filedesc>
     <tei-revisiondesc data-teiname="revisionDesc">
+      <tei-change data-teiname="change" when="2026-07-25" who="#EBB">Updated instructions on how to access one’s Sourceforge
+        account as the tei user.</tei-change>
       <tei-change data-teiname="change" when="2026-02-18" who="#POC">Add missing links and correct incorrect links in the
         release instructions</tei-change>
       <tei-change data-teiname="change" when="2025-09-06" who="#EBB">Added guidance to check links in release notes, including
@@ -172,8 +174,8 @@
             server. This involves two steps: <tei-list data-teiname="list" type="ordered">
               <tei-item data-teiname="item">Generate an SSH key pair (if you don't have one already). If this is new to you,
                 look at <tei-ref data-teiname="ref" target="https://en.wikipedia.org/wiki/Ssh-keygen">https://en.wikipedia.org/wiki/Ssh-keygen</tei-ref>.</tei-item>
-              <tei-item data-teiname="item">Send the public key to the Council Chair, who will forward it on to the system
-                administrator.</tei-item>
+              <tei-item data-teiname="item">Send the public key to the system administrator, or to the Council Chair (who will forward it on to the system
+                administrator).</tei-item>
             </tei-list> Make sure you get this set up well in advance of the release day, and make sure
             you can <tei-code data-teiname="code">ssh tei@tei-c.huma-num.fr</tei-code> successfully. See next steps.
             (Note: if you are a member of the Infrastructure Group, you will already have your own
@@ -187,17 +189,17 @@
                 of the Infrastructure Group with your own login, log in as yourself, but <tei-code data-teiname="code">sudo
                   su tei</tei-code> before running any scripts.)</tei-item>
               <tei-item data-teiname="item">Once logged into the tei server complete the following steps: <tei-list data-teiname="list">
-                  <tei-item data-teiname="item"><tei-code data-teiname="code">cat ~/.ssh/id_rsa.pub</tei-code> and copy the contents to the
+                  <tei-item data-teiname="item"><tei-code data-teiname="code">cat ~/.ssh/id_ed25519.pub</tei-code> and copy the contents to the
                     clipboard.</tei-item>
                   <tei-item data-teiname="item">Paste the result into a text editor and remove any linebreaks added by the
                     terminal.</tei-item>
-                  <tei-item data-teiname="item">Copy-paste the result into <tei-ref data-teiname="ref" target="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</tei-ref></tei-item>
+                  <tei-item data-teiname="item">Copy-paste the result into <tei-ref data-teiname="ref" target="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</tei-ref> and press Save.</tei-item>
                 </tei-list> What this does is to enable you (when logged in as tei to tei-c.org) to
                 connect to SourceForge (as your SF user) to upload the release files. </tei-item>
 
               <tei-item data-teiname="item">Test it by trying to log into SourceForge via ssh from the tei-c.org server:<tei-lb data-teiname="lb"></tei-lb>
                 <tei-code data-teiname="code">ssh sfuser,tei@frs.sourceforge.net</tei-code><tei-lb data-teiname="lb"></tei-lb> where "sfuser" is your
-                SourceForge user name. You should not see a prompt for a password (because of the
+                  SourceForge user name. You should not see a prompt for a password (because of the
                 ssh keys you have set up). Instead, you should immediately see <tei-q data-teiname="q">Welcome! This is a
                   restricted Shell Account. You can only copy files to/from here.</tei-q> If you see
                 this, then everything is set up correctly.</tei-item>
