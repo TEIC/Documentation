@@ -191,7 +191,7 @@
                     terminal.</item>
                   <item>Copy-paste the result into <ref
                       target="https://sourceforge.net/auth/shell_services"
-                      >https://sourceforge.net/auth/shell_services</ref></item>
+                      >https://sourceforge.net/auth/shell_services</ref> and press Save.</item>
                 </list> What this does is to enable you (when logged in as tei to tei-c.org) to
                 connect to SourceForge (as your SF user) to upload the release files. </item>
 
