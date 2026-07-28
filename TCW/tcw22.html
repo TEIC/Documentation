@@ -404,16 +404,17 @@
             </tei-list>
           </tei-item>
 
-          <tei-item data-teiname="item">
-            <tei-hi data-teiname="hi" rend="bold">Repeat the steps above for the Stylesheets</tei-hi>. <tei-list data-teiname="list" type="ordered">
-              <tei-item data-teiname="item"><tei-code data-teiname="code">git checkout released</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code">git checkout dev</tei-code></tei-item>
-              <tei-item data-teiname="item"><tei-code data-teiname="code">git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</tei-code></tei-item>
-              <tei-item data-teiname="item">Don't forget to switch back to the released branch <tei-code data-teiname="code">git checkout
-                  released</tei-code></tei-item>
-            </tei-list>
-          </tei-item>
+          <!-- MDH, MS, and EBB 2026-07-28: This is handled above, so unnecessary here. -->
+          <!--<item>
+            <hi rend="bold">Repeat the steps above for the Stylesheets</hi>. <list type="ordered">
+              <item><code>git checkout released</code></item>
+              <item><code>git merge -\-no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item><code>git checkout dev</code></item>
+              <item><code>git merge -\-no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item>Don't forget to switch back to the released branch <code>git checkout
+                  released</code></item>
+            </list>
+          </item>-->
 
           <tei-item data-teiname="item"><tei-hi data-teiname="hi" rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</tei-hi><tei-lb data-teiname="lb"></tei-lb> When all builds have
