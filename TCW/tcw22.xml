@@ -409,16 +409,17 @@
             </list>
           </item>
 
-          <item>
+          <!-- MDH, MS, and EBB 2026-07-28: This is handled above, so unnecessary here. -->
+          <!--<item>
             <hi rend="bold">Repeat the steps above for the Stylesheets</hi>. <list type="ordered">
               <item><code>git checkout released</code></item>
-              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item><code>git merge -\-no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item><code>git checkout dev</code></item>
-              <item><code>git merge --no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
+              <item><code>git merge -\-no-ff -m "YOUR COMMIT MESSAGE" release-X.X.X</code></item>
               <item>Don't forget to switch back to the released branch <code>git checkout
                   released</code></item>
             </list>
-          </item>
+          </item>-->
 
           <item><hi rend="bold">Ensure all changes have been committed, built, and successfully
               passed tests on the continuous integration server</hi><lb/> When all builds have
