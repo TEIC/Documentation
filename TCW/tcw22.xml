@@ -32,6 +32,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2026-07-25" who="#MS #PS">Add instructions on how to release TEI P5 on Zenodo.</change>
       <change when="2026-07-25" who="#EBB">Updated instructions on how to access one’s Sourceforge
         account as the tei user.</change>
       <change when="2026-02-18" who="#POC">Add missing links and correct incorrect links in the
@@ -296,6 +297,11 @@
           <item>Pushes to the release branch should be merged back into dev regularly:
               <lb/><code>git checkout dev</code>
             <lb/><code>git merge release-X.X.X</code></item>
+          
+          <item><hi rend="bold">Zenodo account</hi><lb/>
+            Make sure you have a Zenodo account and permission to modify the “TEI P5: Guidelines for Electronic Text Encoding and Interchange” record (latest release: <ref target="https://zenodo.org/records/17161156">https://zenodo.org/records/17161156</ref>). 
+            If you don't yet have editing access, ask Peter Stadler or Martina Scholger to add you as editor for this record.
+          </item>
 
         </list>
         <list type="ordered">
@@ -619,6 +625,23 @@
               <item>Once the tag/release has been published, run <lb/><code>ant
                   uploadOxygenUpdateFile</code><lb/> to push the <code>updateSite.oxygen</code> file
                 up to the TEI server.</item>
+            </list>
+          </item>
+          
+          <item>
+            <hi rend="bold">Create a TEI P5 Zenodo Release</hi>
+            <list type="bulleted">
+              <item>Go to the TEI P5 Zenodo record <ref target="https://zenodo.org/records/22046453">https://zenodo.org/records/22046453</ref></item>
+              <item>Make sure you have the .zip file (`tei-X.X.X.zip`) of the current TEI P5 release, which you obtained from the Jenkins Server and uploaded to Github, available.</item>
+              <item>Click “new version”</item>
+              <item>Click "upload files" and upload the complete .zip file. Do not unzip it.</item>
+              <item>Set the publication date to the date listed on the corresponding Github release page.</item>
+              <item>Update the description by (1) removing the current content, (2) copy/paste the release notes (e.g. <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/readme-4.12.0.html">https://www.tei-c.org/release/doc/tei-p5-doc/readme-4.12.0.html</ref>) into the rich text editor, and (3) 
+                finally, delete the Stylesheets section from the release notes, since the Stylesheets are not part of the Zenodo release.</item>
+              <item>Add the version info into the "version field" using the format vX.X.X (for example, v4.12.0).</item>
+              <item>Click “save draft” and preview your new record. Verify that file and metadata are correct.</item>
+              <item>Once everything looks good, click “publish”. Important: Once the record is published you will no longer be able to change the files in the upload! 
+                However, you will still be able to update the record's metadata later.</item>
             </list>
           </item>
 
